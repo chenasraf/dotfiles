@@ -93,6 +93,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-for a in (aliases functions exports); do
-    if [[ -f "$HOME/.$a" ]]; then source "$HOME/.$a"; fi
+for a in aliases functions exports; do
+    if [[ -f "$HOME/.$a" ]]; then; source "$HOME/.$a"; fi
 done
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
