@@ -1,2 +1,0 @@
-#!/usr/bin/env zsh
-alias home="git --git-dir=$HOME/Dev/dotfiles/.git --work-tree=$HOME"
