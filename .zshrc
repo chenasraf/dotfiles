@@ -92,7 +92,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-for a in (aliases functions exports); do
-    if [[ -f "$HOME/.$a" ]]; then source "$HOME/.$a"; fi
-done
+alias home="git --git-dir=$HOME/Dev/dotfiles/.git --work-tree=$HOME"
