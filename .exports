@@ -1,2 +1,5 @@
 #!/usr/bin/env zsh
 export PATH=$PATH:/usr/local/opt/fzf/bin
+export PATH=$PATH:$HOME/Library/Python/3.6/bin
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"

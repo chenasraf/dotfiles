@@ -61,6 +61,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   chucknorris
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,7 +99,14 @@ for a in aliases functions exports; do
     if [[ -f "$HOME/.$a" ]]; then; source "$HOME/.$a"; fi
 done
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# autocompletions/suggestions/etc
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # history fuzzy finder
+# install autosuggestions:
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# install syntax highlighting
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 chuck_cow
+# source /Users/chenasraf/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
