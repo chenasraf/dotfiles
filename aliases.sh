@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source $HOME/.dotfiles/colors.sh
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -9,6 +11,14 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias reload-zsh="source $HOME/.zshrc"
+update-dotfiles () {
+  cwd="$(pwd)"
+  cd "$HOME/.dotfiles"
+  echo_cyan "Changed directory to: $HOME/.dotfiles"
+  git pull
+  cd "$cwd"
+  echo_cyan "Returned to previous directory: $cwd"
+}
 alias dv="cd $HOME/Dev"
 alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
