@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-alias home="git --git-dir=$HOME/Dev/dotfiles/.git --work-tree=$HOME"
-alias dv="cd $HOME/Dev"
-alias dt="cd $HOME/Desktop"
-alias dl="cd $HOME/Downloads"
-alias serve="python3 -m http.server ${PORT:-3001}"
-alias python="PYTHONPATH=$(pwd):$PYTHONPATH python"
-alias -g G='| grep'
