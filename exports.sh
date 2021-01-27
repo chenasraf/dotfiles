@@ -5,4 +5,6 @@ export PATH="$PATH:$HOME/.flutter-src/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/chen/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
+export DOTFILES="$HOME/.dotfiles"

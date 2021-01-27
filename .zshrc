@@ -1,4 +1,4 @@
-source ./exports.sh         # must run before zsh_init
-source ./zsh_init.sh
-source ./aliases.sh
-source ./sources.sh
+source $HOME/.dotfiles/exports.sh         # must run before zsh_init
+source $HOME/.dotfiles/zsh_init.sh
+source $HOME/.dotfiles/aliases.sh
+source $HOME/.dotfiles/sources.sh
