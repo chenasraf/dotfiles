@@ -3,6 +3,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:$HOME/.flutter-src/bin"
 export PATH="$PATH:$HOME/.pub-cache/bin"
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

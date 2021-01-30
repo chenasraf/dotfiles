@@ -11,14 +11,6 @@ source $HOME/.dotfiles/colors.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias reload-zsh="source $HOME/.zshrc"
-update-dotfiles () {
-  cwd="$(pwd)"
-  cd "$HOME/.dotfiles"
-  echo_cyan "Changed directory to: $HOME/.dotfiles"
-  git pull
-  cd "$cwd"
-  echo_cyan "Returned to previous directory: $cwd"
-}
 alias dv="cd $HOME/Dev"
 alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
