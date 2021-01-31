@@ -30,24 +30,11 @@ __home_do_relink () {
   echo_cyan "Linking Profiles.json..."
   ln -f ./synced/Profiles.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/Profiles.json"
 
-  # iTerm load dynamic profile by default
-  echo_cyan "Checking to see if iTerm2 pip package is installed..."
-  python3 -c 'import iterm2' > /dev/null
-  if [[ $? -ne 0 ]]; then
-    echo_yellow "Installing iTerm2 pip package..."
-    pip3 install --user iterm2
-  else
-    echo_cyan "iTerm2 pip package is already installed"
-  fi
-  echo
-  echo "Please add the following file to your startup items:"
-  echo "$(pwd)/.dotfiles/synced/iTerm Default Dynamic Profile.app"
-  echo "If it already exists in your startup items, you can ignore this info."
-  echo
-
+  # Manfile
   man_out_dir="./man/man7"
   man_file="home.7"
   man_srcdir="./man_src"
+
   if [[ ! -f "$man_out_dir/$man_file.gz" ]]; then 
     echo_cyan "Copying MAN page..."
     mkdir -p $man_out_dir
