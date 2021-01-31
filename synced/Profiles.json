@@ -1,37 +1,28 @@
 {
   "Profiles": [
     {
-      "Use Non-ASCII Font": false,
-      "Tags": [],
+      "Ansi 6 Color": {
+        "Red Component": 0.16470588235294117,
+        "Color Space": "sRGB",
+        "Blue Component": 0.59607843137254901,
+        "Green Component": 0.63137254901960782
+      },
+      "Tags": [
+        "Dynamic"
+      ],
       "Ansi 12 Color": {
         "Red Component": 0.51372549019607838,
         "Color Space": "sRGB",
         "Blue Component": 0.58823529411764708,
         "Green Component": 0.58039215686274515
       },
-      "Ansi 7 Color": {
-        "Red Component": 0.93333333333333335,
-        "Color Space": "sRGB",
-        "Blue Component": 0.83529411764705885,
-        "Green Component": 0.90980392156862744
-      },
-      "Ansi 8 Color": {
-        "Red Component": 0,
-        "Color Space": "sRGB",
-        "Blue Component": 0.21176470588235294,
-        "Green Component": 0.16862745098039217
-      },
+      "Horizontal Spacing": 1,
+      "Normal Font": "Monaco 12",
       "Bold Color": {
         "Red Component": 0.57647058823529407,
         "Color Space": "sRGB",
         "Blue Component": 0.63137254901960782,
         "Green Component": 0.63137254901960782
-      },
-      "Ansi 9 Color": {
-        "Red Component": 0.79607843137254897,
-        "Color Space": "sRGB",
-        "Blue Component": 0.086274509803921567,
-        "Green Component": 0.29411764705882354
       },
       "Ansi 3 Color": {
         "Red Component": 0.70980392156862748,
@@ -39,6 +30,7 @@
         "Blue Component": 0,
         "Green Component": 0.53725490196078429
       },
+      "Custom Directory": "No",
       "Ansi 5 Color": {
         "Red Component": 0.82745098039215681,
         "Color Space": "sRGB",
@@ -81,6 +73,9 @@
         "Blue Component": 0.58823529411764708,
         "Green Component": 0.58039215686274515
       },
+      "Bound Hosts": [
+        "*"
+      ],
       "Working Directory": "\/Users\/chen",
       "Blinking Cursor": false,
       "Disable Window Resizing": true,
@@ -89,6 +84,7 @@
       "BM Growl": true,
       "Command": "",
       "Description": "Default",
+      "Dynamic Profile Filename": "\/Users\/chen\/Library\/Application Support\/iTerm2\/DynamicProfiles\/Profiles.json",
       "Mouse Reporting": true,
       "Screen": -1,
       "Selection Color": {
@@ -338,6 +334,8 @@
         "Blue Component": 0.58823529411764708,
         "Green Component": 0.58039215686274515
       },
+      "Transparency": 0,
+      "Guid": "650b63bd-771b-47fd-b209-020a5fc9bc66",
       "Ansi 0 Color": {
         "Red Component": 0.027450980392156862,
         "Color Space": "sRGB",
@@ -350,29 +348,37 @@
         "Blue Component": 0.18431372549019609,
         "Green Component": 0.19607843137254902
       },
-      "Horizontal Spacing": 1,
-      "Custom Directory": "No",
-      "Transparency": 0,
-      "Guid": "650b63bd-771b-47fd-b209-020a5fc9bc66",
-      "Ansi 6 Color": {
-        "Red Component": 0.16470588235294117,
-        "Color Space": "sRGB",
-        "Blue Component": 0.59607843137254901,
-        "Green Component": 0.63137254901960782
-      },
       "Ansi 2 Color": {
         "Red Component": 0.52156862745098043,
         "Color Space": "sRGB",
         "Blue Component": 0,
         "Green Component": 0.59999999999999998
       },
-      "Normal Font": "Monaco 12",
       "Link Color": {
         "Red Component": 0,
         "Color Space": "sRGB",
         "Blue Component": 0.73423302173614502,
         "Alpha Component": 1,
         "Green Component": 0.35916060209274292
+      },
+      "Use Non-ASCII Font": false,
+      "Ansi 7 Color": {
+        "Red Component": 0.93333333333333335,
+        "Color Space": "sRGB",
+        "Blue Component": 0.83529411764705885,
+        "Green Component": 0.90980392156862744
+      },
+      "Ansi 8 Color": {
+        "Red Component": 0,
+        "Color Space": "sRGB",
+        "Blue Component": 0.21176470588235294,
+        "Green Component": 0.16862745098039217
+      },
+      "Ansi 9 Color": {
+        "Red Component": 0.79607843137254897,
+        "Color Space": "sRGB",
+        "Blue Component": 0.086274509803921567,
+        "Green Component": 0.29411764705882354
       },
       "Ansi 4 Color": {
         "Red Component": 0.14901960784313725,
