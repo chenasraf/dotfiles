@@ -1,0 +1,31 @@
+.\" Manpage for home.
+.\" Contact vivek@nixcraft.net.in to correct errors or typos.
+.TH man 7 "31 Jan 2021" "1.0" "home man page"
+.SH NAME
+home \- dotfiles manager
+.SH SYNOPSIS
+home [COMMAND]
+.SH DESCRIPTION
+home is a command for managing dotfiles across the system.
+.SH OPTIONS
+home takes one command:
+
+    push        Push updates to git
+
+    pull        Pull updates from
+
+    reload      Reload (source) the current shell
+
+    refresh     Refresh (source) only the home script
+
+    relink      Re\-link all settings files to their appropriate locations (e.g. iTerm profiles file)
+
+    help
+    -h          Dislpay help file
+
+.SH SEE ALSO
+git(1)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Chen Asraf (contact@casraf.com)

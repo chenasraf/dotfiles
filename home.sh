@@ -44,6 +44,16 @@ __home_do_relink () {
   echo "$(pwd)/.dotfiles/synced/iTerm Default Dynamic Profile.app"
   echo "If it already exists in your startup items, you can ignore this info."
   echo
+
+  man_out_dir="./man/man7"
+  man_file="home.7"
+  man_srcdir="./man_src"
+  if [[ ! -f "$man_out_dir/$man_file.gz" ]]; then 
+    echo_cyan "Copying MAN page..."
+    mkdir -p $man_out_dir
+    cp $man_srcdir/$man_file $man_out_dir/$man_file
+    gzip $man_out_dir/$man_file
+  fi
   
   # END 
   
@@ -63,6 +73,10 @@ __home_print_help () {
   __home_print_help_arg "reload" "Reload (source) the current shell"
   __home_print_help_arg "refresh" "Refresh (source) only the home script"
   __home_print_help_arg "relink" "Re-link all settings files to their appropriate locations (e.g. iTerm profiles file)"
+}
+
+rhome () {
+  home refresh && home $@
 }
 
 home() {

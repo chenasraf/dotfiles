@@ -16,4 +16,5 @@ alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
 alias serve="python3 -m http.server ${PORT:-3001}"
 alias python="PYTHONPATH=$(pwd):$PYTHONPATH python"
-alias -g G='| grep'
+alias -g G='| grep -i'
+mansect () { man -aWS ${1?man section not provided} \* | xargs basename | sed 's/\.[^.]*$//' | sort -u; }

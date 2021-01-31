@@ -9,3 +9,4 @@ export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 export ZSH="$HOME/.oh-my-zsh"
 
 export DOTFILES="$HOME/.dotfiles"
+export MANPATH="$HOME/.dotfiles/man:$MANPATH"
