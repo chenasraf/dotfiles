@@ -16,5 +16,7 @@ alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
 alias serve="python3 -m http.server ${PORT:-3001}"
 alias python="PYTHONPATH=$(pwd):$PYTHONPATH python"
-alias -g G='| grep -i'
-mansect () { man -aWS ${1?man section not provided} \* | xargs basename | sed 's/\.[^.]*$//' | sort -u; }
+alias python3="PYTHONPATH=$(pwd):$PYTHONPATH python3"
+alias -g G="| grep -i"
+alias brew-dump="brew bundle dump --describe"
+mansect () { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }

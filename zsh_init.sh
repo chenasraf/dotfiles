@@ -69,7 +69,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     zsh-autosuggestions
-    # zsh-syntax-highlighting # significally slows zsh boot time
+    zsh-syntax-highlighting # significally slows zsh boot time
 )
 
 source $ZSH/oh-my-zsh.sh
