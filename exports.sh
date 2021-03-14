@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:$HOME/.flutter-src/bin"
-export PATH="$PATH:$HOME/.pub-cache/bin"
-export PATH="$PATH:$HOME/Library/Python/3.9/bin"
-export PATH="$PATH:/opt/homebrew/opt/flex/bin"
-export PATH="$PATH:/opt/homebrew/opt/make/libexec/gnubin"
+export PATH="$HOME/.flutter-src/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/flex/bin:$PATH"
+export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

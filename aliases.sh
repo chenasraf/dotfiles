@@ -10,6 +10,8 @@ source $HOME/.dotfiles/colors.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Aliases
 alias reload-zsh="source $HOME/.zshrc"
 alias dv="cd $HOME/Dev"
 alias dt="cd $HOME/Desktop"
@@ -19,4 +21,17 @@ alias python="PYTHONPATH=$(pwd):$PYTHONPATH python"
 alias python3="PYTHONPATH=$(pwd):$PYTHONPATH python3"
 alias -g G="| grep -i"
 alias brew-dump="brew bundle dump --describe"
+alias epwd="echo $(pwd)"
+
+# Functions
 mansect () { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
+
+# TODO not working with custom commands...
+tcd () { 
+  source $HOME/.zshrc
+  cd $1
+  shift
+  exec $@ 2>&1 | tee --
+  # command "$@" 2>&1
+  cd $OLDPWD
+}
