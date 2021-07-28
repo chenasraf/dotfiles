@@ -17,7 +17,7 @@
         "Green Component": 0.58039215686274515
       },
       "Horizontal Spacing": 1,
-      "Normal Font": "Monaco 12",
+      "Normal Font": "'Cascadia Code' 13",
       "Bold Color": {
         "Red Component": 0.57647058823529407,
         "Color Space": "sRGB",
@@ -103,7 +103,7 @@
       },
       "Custom Command": "No",
       "ASCII Anti Aliased": true,
-      "Non Ascii Font": "Monaco 12",
+      "Non Ascii Font": "'Cascadia Code' 13",
       "Vertical Spacing": 1,
       "Use Bold Font": true,
       "Option Key Sends": 0,
