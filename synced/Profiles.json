@@ -1,6 +1,7 @@
 {
   "Profiles": [
     {
+      "Dynamic Profile Parent Name": "Default",
       "Ansi 6 Color": {
         "Red Component": 0.16470588235294117,
         "Color Space": "sRGB",
@@ -307,7 +308,7 @@
         "Alpha Component": 0.5,
         "Green Component": 0.1491314172744751
       },
-      "Scrollback Lines": 1000,
+      "Scrollback Lines": null,
       "Send Code When Idle": false,
       "Close Sessions On End": true,
       "Terminal Type": "xterm-256color",
