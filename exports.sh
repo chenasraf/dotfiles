@@ -17,3 +17,7 @@ export DOTFILES="$HOME/.dotfiles"
 export MANPATH="$HOME/.dotfiles/man:$MANPATH"
 export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
+
+# Ruby User Install (for CocoaPods)
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
