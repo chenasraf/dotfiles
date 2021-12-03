@@ -5,26 +5,31 @@
 home \- dotfiles manager
 .SH SYNOPSIS
 home [COMMAND]
+.P
+rhome [COMMAND]
 .SH DESCRIPTION
 home is a command for managing dotfiles across the system.
+.P
+rhome is a complementary command that runs 
+.B home reload
 .SH OPTIONS
 home takes one command:
 
     push        Push updates to git
 
-    pull        Pull updates from
+    pull        Pull updates from git
 
     reload      Reload (source) the current shell
 
     refresh     Refresh (source) only the home script
 
-    relink      Re\-link all settings files to their appropriate locations (e.g. iTerm profiles file)
+    install     Install all settings files to their appropriate locations (e.g. iTerm profiles file, MAN pages)
 
     help
     -h          Dislpay help file
 
-.SH SEE ALSO
-git(1)
+.\" .SH SEE ALSO
+.\" git(1)
 .SH BUGS
 No known bugs.
 .SH AUTHOR

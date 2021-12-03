@@ -1,13 +1,7 @@
 {
   "Profiles": [
     {
-      "Dynamic Profile Parent Name": "Default",
-      "Ansi 6 Color": {
-        "Red Component": 0.16470588235294117,
-        "Color Space": "sRGB",
-        "Blue Component": 0.59607843137254901,
-        "Green Component": 0.63137254901960782
-      },
+      "Use Non-ASCII Font": false,
       "Tags": [
         "Dynamic"
       ],
@@ -17,13 +11,29 @@
         "Blue Component": 0.58823529411764708,
         "Green Component": 0.58039215686274515
       },
-      "Horizontal Spacing": 1,
-      "Normal Font": "'Cascadia Code' 13",
+      "Ansi 7 Color": {
+        "Red Component": 0.93333333333333335,
+        "Color Space": "sRGB",
+        "Blue Component": 0.83529411764705885,
+        "Green Component": 0.90980392156862744
+      },
+      "Ansi 8 Color": {
+        "Red Component": 0,
+        "Color Space": "sRGB",
+        "Blue Component": 0.21176470588235294,
+        "Green Component": 0.16862745098039217
+      },
       "Bold Color": {
         "Red Component": 0.57647058823529407,
         "Color Space": "sRGB",
         "Blue Component": 0.63137254901960782,
         "Green Component": 0.63137254901960782
+      },
+      "Ansi 9 Color": {
+        "Red Component": 0.79607843137254897,
+        "Color Space": "sRGB",
+        "Blue Component": 0.086274509803921567,
+        "Green Component": 0.29411764705882354
       },
       "Ansi 3 Color": {
         "Red Component": 0.70980392156862748,
@@ -31,14 +41,13 @@
         "Blue Component": 0,
         "Green Component": 0.53725490196078429
       },
-      "Custom Directory": "No",
       "Ansi 5 Color": {
         "Red Component": 0.82745098039215681,
         "Color Space": "sRGB",
         "Blue Component": 0.50980392156862742,
         "Green Component": 0.21176470588235294
       },
-      "Rows": 25,
+      "Rows": 28,
       "Default Bookmark": "No",
       "Cursor Guide Color": {
         "Red Component": 0.70213186740875244,
@@ -74,9 +83,6 @@
         "Blue Component": 0.58823529411764708,
         "Green Component": 0.58039215686274515
       },
-      "Bound Hosts": [
-        "*"
-      ],
       "Working Directory": "\/Users\/chen",
       "Blinking Cursor": false,
       "Disable Window Resizing": true,
@@ -84,8 +90,7 @@
       "Prompt Before Closing 2": false,
       "BM Growl": true,
       "Command": "",
-      "Description": "Default",
-      "Dynamic Profile Filename": "\/Users\/chen\/Library\/Application Support\/iTerm2\/DynamicProfiles\/Profiles.json",
+      "Description": "Synced",
       "Mouse Reporting": true,
       "Screen": -1,
       "Selection Color": {
@@ -94,7 +99,7 @@
         "Blue Component": 0.25882352941176473,
         "Green Component": 0.21176470588235294
       },
-      "Columns": 80,
+      "Columns": 120,
       "Idle Code": 0,
       "Ansi 13 Color": {
         "Red Component": 0.42352941176470588,
@@ -104,7 +109,7 @@
       },
       "Custom Command": "No",
       "ASCII Anti Aliased": true,
-      "Non Ascii Font": "'Cascadia Code' 13",
+      "Non Ascii Font": "Monaco 12",
       "Vertical Spacing": 1,
       "Use Bold Font": true,
       "Option Key Sends": 0,
@@ -128,7 +133,7 @@
         "Green Component": 0.4823529411764706
       },
       "Use Italic Font": true,
-      "Unlimited Scrollback": false,
+      "Unlimited Scrollback": true,
       "Keyboard Map": {
         "0xf700-0x260000": {
           "Text": "[1;6A",
@@ -308,7 +313,7 @@
         "Alpha Component": 0.5,
         "Green Component": 0.1491314172744751
       },
-      "Scrollback Lines": null,
+      "Scrollback Lines": 0,
       "Send Code When Idle": false,
       "Close Sessions On End": true,
       "Terminal Type": "xterm-256color",
@@ -321,6 +326,7 @@
         "Blue Component": 0.63137254901960782,
         "Green Component": 0.63137254901960782
       },
+      "ASCII Ligatures": true,
       "Name": "Synced",
       "Cursor Text Color": {
         "Red Component": 0.027450980392156862,
@@ -335,8 +341,6 @@
         "Blue Component": 0.58823529411764708,
         "Green Component": 0.58039215686274515
       },
-      "Transparency": 0,
-      "Guid": "650b63bd-771b-47fd-b209-020a5fc9bc66",
       "Ansi 0 Color": {
         "Red Component": 0.027450980392156862,
         "Color Space": "sRGB",
@@ -355,31 +359,23 @@
         "Blue Component": 0,
         "Green Component": 0.59999999999999998
       },
+      "Custom Directory": "Recycle",
+      "Transparency": 0,
+      "Guid": "F5FB9C94-2223-4D67-AA94-93799F2AB7F3",
+      "Ansi 6 Color": {
+        "Red Component": 0.16470588235294117,
+        "Color Space": "sRGB",
+        "Blue Component": 0.59607843137254901,
+        "Green Component": 0.63137254901960782
+      },
+      "Horizontal Spacing": 1,
+      "Normal Font": "CascadiaCode-Roman 13",
       "Link Color": {
         "Red Component": 0,
         "Color Space": "sRGB",
         "Blue Component": 0.73423302173614502,
         "Alpha Component": 1,
         "Green Component": 0.35916060209274292
-      },
-      "Use Non-ASCII Font": false,
-      "Ansi 7 Color": {
-        "Red Component": 0.93333333333333335,
-        "Color Space": "sRGB",
-        "Blue Component": 0.83529411764705885,
-        "Green Component": 0.90980392156862744
-      },
-      "Ansi 8 Color": {
-        "Red Component": 0,
-        "Color Space": "sRGB",
-        "Blue Component": 0.21176470588235294,
-        "Green Component": 0.16862745098039217
-      },
-      "Ansi 9 Color": {
-        "Red Component": 0.79607843137254897,
-        "Color Space": "sRGB",
-        "Blue Component": 0.086274509803921567,
-        "Green Component": 0.29411764705882354
       },
       "Ansi 4 Color": {
         "Red Component": 0.14901960784313725,
