@@ -45,7 +45,11 @@ __home_do_install() {
 }
 
 __home_print_help() {
-  man home
+  __home_prepare_dir -q
+
+  man ./man_src/home.7
+
+  __home_revert_dir -q
 }
 
 rhome() {
