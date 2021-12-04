@@ -22,9 +22,6 @@ __home_print_help_arg() {
 __home_do_install() {
   __home_prepare_dir
 
-  # BEGIN
-  # Add install actions to perform here.
-
   # iTerm dynamic profile
   echo_cyan "Linking Profiles.json..."
   ln -f ./synced/Profiles.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/Profiles.json"
@@ -32,18 +29,17 @@ __home_do_install() {
   # Manfile
   man_out_dir="./man/man7"
   man_src_dir="./man_src"
-  man_file="home.7"
+  man_files=$(ls $man_src_dir)
 
-  # if [[ ! -f "$man_out_dir/$man_file.gz" ]]; then
   echo_cyan "Copying MAN page..."
   mkdir -p $man_out_dir
-  rm -f $man_out_dir/$man_file.gz
-  cp $man_src_dir/$man_file $man_out_dir/$man_file
-  gzip $man_out_dir/$man_file
-  rm -f $man_out_dir/$man_file
-  # fi
 
-  # END
+  for man_file in $man_files; do
+    rm -f $man_out_dir/$man_file.gz
+    cp $man_src_dir/$man_file $man_out_dir/$man_file
+    gzip $man_out_dir/$man_file
+    rm -f $man_out_dir/$man_file
+  done
 
   __home_revert_dir
 }
@@ -80,18 +76,18 @@ home() {
       git push
       __home_revert_dir
       ;;
-    reload)
+    reload | rl)
       reload-zsh
       return 0
       ;;
-    refresh)
+    refresh | rr)
       source ./home.sh
       return 0
       ;;
-    install)
+    install | i)
       __home_do_install
       ;;
-    help | -h)
+    help | -h | h)
       __home_print_help
       return 0
       ;;
