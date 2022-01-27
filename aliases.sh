@@ -17,17 +17,18 @@ alias dv="cd $HOME/Dev"
 alias dt="cd $HOME/Desktop"
 alias dl="cd $HOME/Downloads"
 alias serve="python3 -m http.server ${PORT:-3001}"
-alias python="PYTHONPATH=$(pwd):$PYTHONPATH python"
-alias python3="PYTHONPATH=$(pwd):$PYTHONPATH python3"
+alias python2="PYTHONPATH=$(pwd):$PYTHONPATH $(whence python)"
+alias python3="PYTHONPATH=$(pwd):$PYTHONPATH $(whence python3)"
+alias python="python3"
 alias -g G="| grep -i"
 alias brew-dump="brew bundle dump --describe"
 alias epwd="echo $(pwd)"
 
 # Functions
-mansect () { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
+mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
 
 # TODO not working with custom commands...
-tcd () { 
+tcd() {
   source $HOME/.zshrc
   cd $1
   shift
