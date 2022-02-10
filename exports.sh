@@ -10,7 +10,7 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/flex/bin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin :$PATH"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 export ANDROID_SDK_ROOT="/opt/homebrew/bin"
 
 # Path to your oh-my-zsh installation.
@@ -20,10 +20,10 @@ export DOTFILES="$HOME/.dotfiles"
 export MANPATH="$HOME/.dotfiles/man:$MANPATH"
 export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
-export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home/bin/"
-export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/bin/"
-export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk//Contents/Home/bin/"
-export $ANDROID_HOME="$HOME/Android/sdk"
+export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home/"
+export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/"
+export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # Ruby User Install (for CocoaPods)
 export GEM_HOME="$HOME/.gem"

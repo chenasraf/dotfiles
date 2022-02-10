@@ -49,3 +49,5 @@ brew "mongodb/brew/mongodb-community"
 # Android SDK component
 cask "android-platform-tools"
 cask "android-sdk"
+# Simple application that will prevent iTunes or Apple Music from launching
+cask "notunes"
