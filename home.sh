@@ -102,6 +102,22 @@ home() {
     install | i)
       __home_do_install
       ;;
+    brew)
+      shift
+      sub="$1"
+      case $sub in
+      dump)
+        __home_prepare_dir
+        brew bundle dump
+        __home_revert_dir
+        ;;
+      install)
+        __home_prepare_dir
+        brew bundle
+        __home_revert_dir
+        ;;
+      esac
+      ;;
     help | -h | h)
       __home_print_help
       return 0
