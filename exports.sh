@@ -20,9 +20,6 @@ export DOTFILES="$HOME/.dotfiles"
 export MANPATH="$HOME/.dotfiles/man:$MANPATH"
 export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
-export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home/"
-export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home/"
-export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # Ruby User Install (for CocoaPods)

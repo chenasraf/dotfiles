@@ -47,7 +47,11 @@ __home_do_install() {
 __home_print_help() {
   __home_prepare_dir -q
 
-  man ./man_src/home.7
+  if [[ "$1" == "0" ]]; then
+    man -P cat ./man_src/home.7
+  else
+    man ./man_src/home.7
+  fi
 
   __home_revert_dir -q
 }
@@ -64,9 +68,16 @@ home() {
 
   if [[ $# -gt 0 ]]; then
     case "$1" in
+    git)
+      __home_prepare_dir
+      shift
+      git $@
+      __home_revert_dir
+      ;;
     pull)
       __home_prepare_dir
       git pull
+      reload-zsh
       __home_revert_dir
       ;;
     push)

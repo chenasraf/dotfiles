@@ -1,33 +1,62 @@
+#!/usr/bin/env bash
+
 java() {
-  echo $JAVA_HOME
   $JAVA_HOME/bin/java $@
 }
 
 jver_file="$HOME/.jver"
 
+__list_jvers__() {
+  ls /Library/Java/JavaVirtualMachines
+}
+
 jver() {
   ver="$1"
+
+  if [[ "$ver" == "list" ]]; then
+    echo
+    echo_cyan "All installed versions on this machine:"
+    echo
+    __list_jvers__ | tr " " "\n"
+    echo
+    echo_yellow 'You can use "jver [version]" to switch to the required version.'
+    echo_yellow 'Supplying the [version] is done via grep, so can support partial matches or patterns.'
+    echo_yellow 'For example, "jver 17" will match correctly for "jdk-17.0.2.jdk"'
+    return 0
+  fi
+
   quiet="$2"
   if [[ $ver == "" ]]; then
     echo "No version supplied. Usage: jver [version]"
     return 1
   fi
 
-  found=$(eval "echo \$JAVA_${ver}_HOME")
+  count=$(__list_jvers__ | grep -i $ver -c)
+  found=$(__list_jvers__ | grep -i $ver)
 
-  if [[ "$found" == "" ]]; then
-    echo "Version $ver not found"
-    echo "Possible versions are:"
-    env | grep -E 'JAVA_[0-9]+_HOME'
-    echo "(use only the number, e.g. 8)"
+  if [[ $count -gt 1 ]]; then
+    echo_red "Multiple versions found:"
+    echo
+    echo_red $found | tr " " "\n"
+    echo
+    echo_red "Please use a more specific pattern so that only one result matches"
     return 2
   fi
 
-  export JAVA_HOME="$found"
+  if [[ "$found" == "" ]]; then
+    echo_red "Version $ver not found"
+    echo_yellow "Possible versions are:"
+    env | grep -E 'JAVA_[0-9]+_HOME'
+    echo_yellow "(use only the number, e.g. 8)"
+    return 2
+  fi
+
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/$found/Contents/Home"
   touch $jver_file
-  echo $ver >$jver_file
+  echo $found >$jver_file
   if [[ $quiet != '-q' ]]; then
-    echo "JAVA_HOME=$found"
+    echo_cyan "Found version: $found"
+    echo
     java -version
   fi
 }
