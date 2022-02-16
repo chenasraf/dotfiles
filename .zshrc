@@ -5,8 +5,5 @@ source $HOME/.dotfiles/sources.sh
 source $HOME/.dotfiles/home.sh
 source $HOME/.dotfiles/scripts/java.sh
 
-test -e "$HOME/.dotfiles/_local.sh" && source "$HOME/.dotfiles/_local.sh"
-test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
-
-# noop - prevent previous commands from returning non-zero exit code
-:
+if [[ -f "$HOME/.dotfiles/_local.sh" ]]; then source "$HOME/.dotfiles/_local.sh"; fi
+if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then source "$HOME/.iterm2_shell_integration.zsh"; fi
