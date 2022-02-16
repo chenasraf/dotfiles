@@ -111,7 +111,7 @@ home() {
         brew bundle dump
         __home_revert_dir
         ;;
-      install)
+      restore)
         __home_prepare_dir
         brew bundle
         __home_revert_dir
