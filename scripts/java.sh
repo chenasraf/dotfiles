@@ -27,7 +27,8 @@ jver() {
 
   quiet="$2"
   if [[ $ver == "" ]]; then
-    echo "No version supplied. Usage: jver [version]"
+    echo_red "No version supplied. Usage: jver [version]"
+    echo_yellow "Current version: $(cat $jver_file)"
     return 1
   fi
 
@@ -46,7 +47,7 @@ jver() {
   if [[ "$found" == "" ]]; then
     echo_red "Version $ver not found"
     echo_yellow "Possible versions are:"
-    env | grep -E 'JAVA_[0-9]+_HOME'
+    __list_jvers__ | tr " " "\n"
     echo_yellow "(use only the number, e.g. 8)"
     return 2
   fi
