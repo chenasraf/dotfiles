@@ -41,6 +41,20 @@ __home_do_install() {
     rm -f $man_out_dir/$man_file
   done
 
+  echo "Install oh-my-zsh plugins? (y/N) "
+  read reply
+
+  case "$reply" in
+  y*)
+    echo "Installing oh-my-zsh plugins..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    echo "Done"
+    ;;
+  *) ;;
+
+  esac
+
   __home_revert_dir
 }
 
