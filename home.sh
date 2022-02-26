@@ -57,7 +57,10 @@ __home_print_help() {
 }
 
 rhome() {
-  home refresh && home $@
+  home refresh
+  if [[ $# -gt 0 ]]; then
+    home $@
+  fi
 }
 
 home() {
@@ -108,7 +111,7 @@ home() {
       case $sub in
       dump)
         __home_prepare_dir
-        brew bundle dump
+        brew bundle dump -f --describe
         __home_revert_dir
         ;;
       restore)

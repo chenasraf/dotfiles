@@ -22,6 +22,10 @@ brew "gdbm"
 brew "git-lfs"
 # Render markdown on the CLI
 brew "glow"
+# Portable Foreign Function Interface library
+brew "libffi"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
 # Validating, recursive, caching DNS resolver
