@@ -7,10 +7,10 @@
    git clone git@github.com:chenasraf/dotfiles.git ~/.dotfiles
    ```
 
-3. Replace entire contents of `~/.zshrc` with:
+3. Replace entire contents of `~/.zshrc` to the new version using:
 
    ```bash
-   source "$HOME/.dotfiles/.zshrc"
+   echo 'source "$HOME/.dotfiles/.zshrc"' > ~/.zshrc
    ```
 
 4. In a new terminal, run install scripts:
