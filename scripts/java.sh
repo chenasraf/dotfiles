@@ -1,5 +1,26 @@
 #!/usr/bin/env bash
 
+# helper fns
+color() {
+  echo -e "\033[0;$1m$2\033[0m"
+}
+
+echo_red() {
+  color 31 "$1"
+}
+
+echo_yellow() {
+  color 33 "$1"
+}
+
+echo_cyan() {
+  color 36 "$1"
+}
+
+# update these if necessary for your machine
+BASE_DIR="/Library/Java/JavaVirtualMachines"
+DIR_SUFFIX="Contents/Home"
+
 java() {
   $JAVA_HOME/bin/java $@
 }
@@ -7,11 +28,14 @@ java() {
 jver_file="$HOME/.jver"
 
 __list_jvers__() {
-  ls /Library/Java/JavaVirtualMachines
+  ls $BASE_DIR
 }
 
+# main script fn
 jver() {
   ver="$1"
+  quiet="$2"
+  verbose=$([[ $quiet == '-q' ]] && echo 0 || echo 1)
 
   if [[ "$ver" == "list" ]]; then
     echo
@@ -25,7 +49,6 @@ jver() {
     return 0
   fi
 
-  quiet="$2"
   if [[ $ver == "" ]]; then
     echo_red "No version supplied. Usage: jver [version]"
     echo_yellow "Current version: $(cat $jver_file)"
@@ -48,14 +71,13 @@ jver() {
     echo_red "Version $ver not found"
     echo_yellow "Possible versions are:"
     __list_jvers__ | tr " " "\n"
-    echo_yellow "(use only the number, e.g. 8)"
     return 2
   fi
 
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/$found/Contents/Home"
+  export JAVA_HOME="$BASE_DIR/$found/$DIR_SUFFIX"
   touch $jver_file
   echo $found >$jver_file
-  if [[ $quiet != '-q' ]]; then
+  if [[ $verbose -eq 1 ]]; then
     echo_cyan "Found version: $found"
     echo
     java -version
