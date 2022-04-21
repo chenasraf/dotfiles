@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>1907AFC2-CCC0-4B03-9182-B79AEF39472C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ff</string>
+			<key>text</key>
+			<string>GamerEscape (FFXIV)</string>
+			<key>url</key>
+			<string>https://ffxiv.gamerescape.com/w/index.php?search={query}&amp;title=Special%3ASearch</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>1E5B4124-C193-4FEC-8E63-D3A01ADB23D1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>r</string>
+			<key>text</key>
+			<string>Search Reddit for '{query}'</string>
+			<key>url</key>
+			<string>https://www.reddit.com/search/?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>76B9DF04-402A-4AA1-A0E2-9020FF5A1F0F</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>r</string>
+			<key>spaces</key>
+			<string>_</string>
+			<key>text</key>
+			<string>Open {query} Subreddit</string>
+			<key>url</key>
+			<string>https://reddit.com/r/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>9A36BFD7-BB62-4140-ABF6-99D89528EC79</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdn</string>
+			<key>text</key>
+			<string>MDN</string>
+			<key>url</key>
+			<string>https://developer.mozilla.org/en-US/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>B1A2715A-0717-4F2D-986E-8F416752F73C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pub</string>
+			<key>text</key>
+			<string>Dart Pub</string>
+			<key>url</key>
+			<string>https://pub.dev/packages/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>C1BCFFD3-2DB3-4E34-B817-B0796528B12B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>dev</string>
+			<key>text</key>
+			<string>Search devdocs.io for '{query}'</string>
+			<key>url</key>
+			<string>https://devdocs.io/#q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>E8ABA2E3-2815-463D-BB81-1B8D4643EBB6</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>p5</string>
+			<key>text</key>
+			<string>p5.js</string>
+			<key>url</key>
+			<string>https://p5js.org/reference/#/p5/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>F952C90D-522B-4CB5-A6CF-0D0424BF02A6</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>brave</string>
+			<key>text</key>
+			<string>Search Brave for '{query}'</string>
+			<key>url</key>
+			<string>https://search.brave.com/search?q={query}&amp;source=web</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

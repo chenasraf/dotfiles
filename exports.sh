@@ -26,3 +26,4 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 # Ruby User Install (for CocoaPods)
 export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
