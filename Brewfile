@@ -34,6 +34,8 @@ brew "unbound"
 brew "gnutls"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # YAML Parser
@@ -44,6 +46,10 @@ brew "make"
 brew "nghttp2"
 # Minimal, todo.txt-focused editor
 brew "todo-txt"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
 # SDK
 brew "dart-lang/dart/dart"
 # High-performance, schema-free, document-oriented database
