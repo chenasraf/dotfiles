@@ -42,8 +42,6 @@ brew "libyaml"
 brew "make"
 # HTTP/2 C Library
 brew "nghttp2"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Minimal, todo.txt-focused editor
 brew "todo-txt"
 # SDK

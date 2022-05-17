@@ -23,6 +23,8 @@ alias python="python3"
 alias -g G="| grep -i"
 alias brew-dump="brew bundle dump --describe"
 alias epwd="echo $(pwd)"
+alias arm="arch -arm64"
+alias x86="arch -x86_64"
 
 # Functions
 mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
