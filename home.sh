@@ -47,8 +47,26 @@ __home_do_install() {
   case "$reply" in
   y*)
     echo "Installing oh-my-zsh plugins..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+    if [[ -d $zsh_autosuggestions_path || -d $zsh_syntax_highlighting_path ]]; then
+      echo "Directories already exists, update? (y/N) "
+      read reply
+      case "$reply" in
+      y*)
+        cd $zsh_autosuggestions_path
+        git pull origin master
+        cd $zsh_syntax_highlighting_path
+        git pull origin master
+        cd $cwd
+        ;;
+      esac
+    else
+      git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
+      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
+    fi
+
     echo "Done"
     ;;
   *) ;;
