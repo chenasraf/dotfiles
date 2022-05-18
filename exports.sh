@@ -1,4 +1,22 @@
 #!/usr/bin/env bash
+
+export ANDROID_SDK_ROOT="/opt/homebrew/bin"
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+export DOTFILES="$HOME/.dotfiles"
+export MANPATH="$HOME/.dotfiles/man:$MANPATH"
+export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export GO_BIN="$HOME/go/bin"
+
+# Ruby User Install (for CocoaPods)
+export GEM_HOME="$HOME/.gem"
+export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -11,19 +29,5 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/flex/bin:$PATH"
 export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="$GO_BIN:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-export ANDROID_SDK_ROOT="/opt/homebrew/bin"
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-export DOTFILES="$HOME/.dotfiles"
-export MANPATH="$HOME/.dotfiles/man:$MANPATH"
-export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-
-# Ruby User Install (for CocoaPods)
-export GEM_HOME="$HOME/.gem"
-export PATH="$GEM_HOME/bin:$PATH"
-export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
