@@ -44,10 +44,10 @@ __home_do_install() {
   zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-  echo "Installing oh-my-zsh plugins..."
+  echo_cyan "Installing oh-my-zsh plugins..."
 
   if [[ -d $zsh_autosuggestions_path || -d $zsh_syntax_highlighting_path ]]; then
-    echo "Update oh-my-zsh plugins? (Y/n) "
+    echo_yellow "Update oh-my-zsh plugins? (Y/n) "
     read reply
     case "$reply" in
     n*) ;;
@@ -60,7 +60,7 @@ __home_do_install() {
       ;;
     esac
   else
-    echo "Install oh-my-zsh plugins? (Y/n) "
+    echo_yellow "Install oh-my-zsh plugins? (Y/n) "
     read reply
     case "$reply" in
     n*) ;;
@@ -70,7 +70,7 @@ __home_do_install() {
       ;;
     esac
 
-    echo "Done"
+    echo_cyan "Done"
   fi
 
   __home_revert_dir
@@ -130,11 +130,11 @@ home() {
       git push
       __home_revert_dir
       ;;
-    reload | rl)
+    reload | rz)
       reload-zsh
       return 0
       ;;
-    refresh | rr)
+    refresh | rh)
       source ./home.sh
       return 0
       ;;
