@@ -44,35 +44,20 @@ __home_do_install() {
   zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-  echo_cyan "Installing oh-my-zsh plugins..."
-
   if [[ -d $zsh_autosuggestions_path || -d $zsh_syntax_highlighting_path ]]; then
-    echo_yellow "Update oh-my-zsh plugins? (Y/n) "
-    read reply
-    case "$reply" in
-    n*) ;;
-    *)
-      cd $zsh_autosuggestions_path
-      git pull origin master
-      cd $zsh_syntax_highlighting_path
-      git pull origin master
-      cd $cwd
-      ;;
-    esac
+    echo_cyan "Updating oh-my-zsh plugins..."
+    cd $zsh_autosuggestions_path
+    git pull origin master
+    cd $zsh_syntax_highlighting_path
+    git pull origin master
+    cd $cwd
   else
-    echo_yellow "Install oh-my-zsh plugins? (Y/n) "
-    read reply
-    case "$reply" in
-    n*) ;;
-    *)
-      git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
-      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
-      ;;
-    esac
-
-    echo_cyan "Done"
+    echo_cyan "Installing oh-my-zsh plugins..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
   fi
 
+  echo_cyan "Done"
   __home_revert_dir
 }
 
