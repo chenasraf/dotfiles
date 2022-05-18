@@ -44,7 +44,7 @@ __home_do_install() {
   zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-  if [[ -d $zsh_autosuggestions_path || -d $zsh_syntax_highlighting_path ]]; then
+  if [[ -d $zsh_autosuggestions_path && -d $zsh_syntax_highlighting_path ]]; then
     echo_cyan "Updating oh-my-zsh plugins..."
     cd $zsh_autosuggestions_path
     git pull origin master
@@ -53,6 +53,9 @@ __home_do_install() {
     cd $cwd
   else
     echo_cyan "Installing oh-my-zsh plugins..."
+    rm -rf $zsh_autosuggestions_path
+    rm -rf $zsh_syntax_highlighting_path
+
     git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
   fi
