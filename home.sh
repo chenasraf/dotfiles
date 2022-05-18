@@ -41,37 +41,37 @@ __home_do_install() {
     rm -f $man_out_dir/$man_file
   done
 
-  echo "Install oh-my-zsh plugins? (y/N) "
-  read reply
+  zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-  case "$reply" in
-  y*)
-    echo "Installing oh-my-zsh plugins..."
-    zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  echo "Installing oh-my-zsh plugins..."
 
-    if [[ -d $zsh_autosuggestions_path || -d $zsh_syntax_highlighting_path ]]; then
-      echo "Directories already exists, update? (y/N) "
-      read reply
-      case "$reply" in
-      y*)
-        cd $zsh_autosuggestions_path
-        git pull origin master
-        cd $zsh_syntax_highlighting_path
-        git pull origin master
-        cd $cwd
-        ;;
-      esac
-    else
+  if [[ -d $zsh_autosuggestions_path || -d $zsh_syntax_highlighting_path ]]; then
+    echo "Update oh-my-zsh plugins? (Y/n) "
+    read reply
+    case "$reply" in
+    n*) ;;
+    *)
+      cd $zsh_autosuggestions_path
+      git pull origin master
+      cd $zsh_syntax_highlighting_path
+      git pull origin master
+      cd $cwd
+      ;;
+    esac
+  else
+    echo "Install oh-my-zsh plugins? (Y/n) "
+    read reply
+    case "$reply" in
+    n*) ;;
+    *)
       git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
       git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
-    fi
+      ;;
+    esac
 
     echo "Done"
-    ;;
-  *) ;;
-
-  esac
+  fi
 
   __home_revert_dir
 }
