@@ -89,8 +89,8 @@ __home_print_help() {
 }
 
 rhome() {
-  echo "Reloading zsh"
-  home reload
+  # echo "Reloading zsh"
+  # home reload
   echo "Reloading home"
   home refresh
   if [[ $# -gt 0 ]]; then
