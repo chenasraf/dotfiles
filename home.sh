@@ -41,6 +41,8 @@ __home_do_install() {
     rm -f $man_out_dir/$man_file
   done
 
+  # OhMyZsh Plugins
+
   zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
@@ -59,6 +61,13 @@ __home_do_install() {
     git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
   fi
+
+  # gi_gen
+  echo_cyan "Downloading gi_gen..."
+  gi_ver=0.3.3
+  mkdir bin
+  curl -L https://github.com/chenasraf/gi_gen/releases/download/v$gi_ver/gi_gen-v$gi_ver-macos-arm -o bin/gi_gen
+  chmod +x bin/gi_gen
 
   echo_cyan "Done"
   __home_revert_dir
