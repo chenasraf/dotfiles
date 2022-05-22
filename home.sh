@@ -123,7 +123,7 @@ home() {
       return 0
       ;;
     refresh | rh)
-      source ./home.sh
+      source $DOTFILES/home.sh
       return 0
       ;;
     install | i)
