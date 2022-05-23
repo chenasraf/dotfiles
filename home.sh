@@ -63,10 +63,11 @@ __home_do_install() {
   fi
 
   # gi_gen
-  echo_cyan "Downloading gi_gen..."
-  gi_ver=0.3.4
+  echo_cyan "Getting gi_gen latest version..."
+  gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
+  echo_cyan "Downloading gi_gen $gi_ver..."
   mkdir -p $DOTBIN
-  curl -L https://github.com/chenasraf/gi_gen/releases/download/v$gi_ver/gi_gen-v$gi_ver-macos-arm -o $DOTBIN/gi_gen
+  curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
   chmod +x $DOTBIN/gi_gen
 
   echo_cyan "Done"
