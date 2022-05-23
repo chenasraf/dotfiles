@@ -64,10 +64,10 @@ __home_do_install() {
 
   # gi_gen
   echo_cyan "Downloading gi_gen..."
-  gi_ver=0.3.3
-  mkdir bin
-  curl -L https://github.com/chenasraf/gi_gen/releases/download/v$gi_ver/gi_gen-v$gi_ver-macos-arm -o bin/gi_gen
-  chmod +x bin/gi_gen
+  gi_ver=0.3.4
+  mkdir -p $DOTBIN
+  curl -L https://github.com/chenasraf/gi_gen/releases/download/v$gi_ver/gi_gen-v$gi_ver-macos-arm -o $DOTBIN/gi_gen
+  chmod +x $DOTBIN/gi_gen
 
   echo_cyan "Done"
   __home_revert_dir
