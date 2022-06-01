@@ -30,6 +30,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>58C6F3C2-DCFC-4162-85D7-BD5E55EFDD65</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>genius</string>
+			<key>text</key>
+			<string>Genius</string>
+			<key>url</key>
+			<string>https://genius.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>76B9DF04-402A-4AA1-A0E2-9020FF5A1F0F</key>
 		<dict>
 			<key>enabled</key>
