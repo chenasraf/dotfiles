@@ -8,6 +8,12 @@ tap "homebrew/services"
 tap "mongodb/brew"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# GNU database manager
+brew "gdbm"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Parser generator
 brew "bison"
 # Fast Lexical Analyzer, generates Scanners (tokenizers)
@@ -16,16 +22,10 @@ brew "flex"
 brew "fzf"
 # GNU compiler collection
 brew "gcc"
-# GNU database manager
-brew "gdbm"
 # Git extension for versioning large files
 brew "git-lfs"
 # Render markdown on the CLI
 brew "glow"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
 # Validating, recursive, caching DNS resolver
@@ -34,8 +34,6 @@ brew "unbound"
 brew "gnutls"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # YAML Parser
@@ -44,16 +42,20 @@ brew "libyaml"
 brew "make"
 # HTTP/2 C Library
 brew "nghttp2"
+# General-purpose scripting language
+brew "php"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Minimal, todo.txt-focused editor
 brew "todo-txt"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
-# SDK
-brew "dart-lang/dart/dart"
-# High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community"
 # Android SDK component
 cask "android-platform-tools"
 cask "android-sdk"
