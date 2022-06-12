@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.say2</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>016D2588-21CB-48DC-9F4B-36690AECCCED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5551365-81AF-4143-9DC7-529F92C5E4DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>407B6C7C-6329-4D2B-A4F2-3662538A4853</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FBE5409C-3A79-401D-8740-FD3234B69929</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9740D2E0-33CF-4EEA-B56A-AAE50A724361</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>407B6C7C-6329-4D2B-A4F2-3662538A4853</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>BaksiLi</string>
+	<key>description</key>
+	<string>Read something out and surprise your friends</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Say command!</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>say</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Say {query}</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>016D2588-21CB-48DC-9F4B-36690AECCCED</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*
+import os
+import sys
+
+
+def is_anagram(word1, word2):
+    if len(word1.lower()) != len(word2.lower()):
+        return False
+    return sorted(word1.lower()) == sorted(word2.lower())
+
+
+# ---
+
+# Settings
+voice_default = 'en'
+voices = {
+    'en': 'Daniel',
+    'jp': 'Kyoko',
+    'ch': 'Mei-jia',
+    'fr': 'Thomas',
+    'kr': 'Yuna'
+}  # dic of voices
+replace_words = {
+    '’': "'",
+    '`': "'",
+    'fuck': 'beee'
+}  # dict of words to replace
+
+# Read query
+query = sys.argv[1]
+
+# Replace words
+for word in replace_words:
+    if word in query:
+        query = query.replace(word, replace_words[word])
+
+# Text processing
+recog = query[:2]  # the first two letters
+for voice in voices:
+    if is_anagram(recog, voice):
+        recog = voice
+        query = query[2:]
+if recog not in voices:
+    recog = voice_default  # if failed, use the `default voice'
+
+says = '-v ' + voices[recog] + ' "' + query + '"'
+
+if query == '?':  # Easter Egg!
+    says = 'I am your assistant.'
+
+# Run command
+os.system('say ' + says)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D5551365-81AF-4143-9DC7-529F92C5E4DE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/python
+# -*- coding: utf-8 -*
+import json
+import sys
+import requests
+
+
+# Set up the api
+app_id = 'xxxxxxxxx'  # replace your application id here
+app_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'  # replace your application key here
+url_base = 'https://od-api.oxforddictionaries.com/api/v2'
+language = 'en-gb'
+
+# request entry
+word_id = sys.argv[1]
+fields = 'pronunciations'
+
+url = url_base + '/entries/' + language + '/' + word_id.lower() \
+        + '?fields=' + fields + '&amp;strictMatch=false'
+req = requests.get(url, headers={'app_id': app_id, 'app_key': app_key})
+
+if req.status_code == 200:
+    result = json.loads(req.content)
+    audio_file = result['results'][0]['lexicalEntries'][0]['pronunciations'][0]['audioFile']
+else:
+    audio_file = 'http://audio.oxforddictionaries.com/en/mp3/error_gb_1.mp3'
+
+# pass the argv
+sys.stdout.write(audio_file)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>407B6C7C-6329-4D2B-A4F2-3662538A4853</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pronounce</string>
+				<key>subtext</key>
+				<string>in Oxford English Dictionary</string>
+				<key>text</key>
+				<string>Pronounce {query}</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9740D2E0-33CF-4EEA-B56A-AAE50A724361</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd $TMPDIR
+curl -sS -o temp.mp3 "{query}"
+afplay temp.mp3
+rm temp.mp3</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FBE5409C-3A79-401D-8740-FD3234B69929</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>016D2588-21CB-48DC-9F4B-36690AECCCED</key>
+		<dict>
+			<key>xpos</key>
+			<integer>225</integer>
+			<key>ypos</key>
+			<integer>145</integer>
+		</dict>
+		<key>407B6C7C-6329-4D2B-A4F2-3662538A4853</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>9740D2E0-33CF-4EEA-B56A-AAE50A724361</key>
+		<dict>
+			<key>xpos</key>
+			<integer>225</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>D5551365-81AF-4143-9DC7-529F92C5E4DE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>145</integer>
+		</dict>
+		<key>FBE5409C-3A79-401D-8740-FD3234B69929</key>
+		<dict>
+			<key>xpos</key>
+			<integer>535</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.6_alfred</string>
+	<key>webaddress</key>
+	<string>https://github.com/BaksiLi/AlfredWorkflows/tree/master/Index/say-workflow</string>
+</dict>
+</plist>

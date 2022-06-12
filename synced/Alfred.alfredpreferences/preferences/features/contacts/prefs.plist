@@ -2,9 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ejectType</key>
-	<integer>0</integer>
-	<key>forcequitKeyword</key>
-	<string>fq</string>
+	<key>mapURL</key>
+	<string>https://maps.google.com/?q={query}</string>
 </dict>
 </plist>
