@@ -4,7 +4,7 @@ __home_prepare_dir() {
   cwd="$(pwd)"
   cd "$HOME/.dotfiles"
   if [[ "$1" != "-q" ]]; then
-    echo_cyan "Changed directory to: $HOME/.dotfiles"
+    echo_cyan "Changed directory to: $HOME/.dotfiles (was: $cwd)"
   fi
 }
 
