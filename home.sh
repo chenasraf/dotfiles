@@ -1,4 +1,4 @@
-cwd=""
+cwd="${cwd}"
 
 __home_prepare_dir() {
   cwd="$(pwd)"
