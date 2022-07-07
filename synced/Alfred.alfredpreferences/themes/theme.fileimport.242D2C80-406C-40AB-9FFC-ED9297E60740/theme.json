@@ -1,0 +1,65 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 6,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#FFFFFFB2",
+        "font" : "System",
+        "color" : "#444547B2"
+      },
+      "shortcut" : {
+        "size" : 14,
+        "colorSelected" : "#FEFFFEFF",
+        "font" : "System",
+        "color" : "#E35C9CB2"
+      },
+      "backgroundSelected" : "#F64F9DFF",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#444547FF"
+      },
+      "iconPaddingHorizontal" : 8,
+      "roundness" : 4,
+      "paddingVertical" : 6,
+      "iconSize" : 32
+    },
+    "search" : {
+      "backgroundSelected" : "#F3CCE1FF",
+      "paddingHorizontal" : 8,
+      "spacing" : 10,
+      "text" : {
+        "size" : 24,
+        "colorSelected" : "#050605FF",
+        "font" : "System Light",
+        "color" : "#444547FF"
+      },
+      "background" : "#FEFFFE00",
+      "roundness" : 10,
+      "paddingVertical" : 5
+    },
+    "window" : {
+      "color" : "#FFFFFFB2",
+      "paddingHorizontal" : 10,
+      "width" : 568,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 0,
+      "roundness" : 10,
+      "paddingVertical" : 10
+    },
+    "credit" : "Chris Messina",
+    "visualEffectMode" : 1,
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#4C4D4C7F",
+      "thickness" : 7
+    },
+    "name" : "Monterey Pink (Light)"
+  }
+}

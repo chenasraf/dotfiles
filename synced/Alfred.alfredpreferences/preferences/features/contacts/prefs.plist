@@ -4,5 +4,7 @@
 <dict>
 	<key>mapURL</key>
 	<string>https://maps.google.com/?q={query}</string>
+	<key>openInAlfred</key>
+	<false/>
 </dict>
 </plist>
