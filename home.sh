@@ -117,6 +117,11 @@ home() {
       reload-zsh
       __home_revert_dir
       ;;
+    status)
+      __home_prepare_dir
+      git status
+      __home_revert_dir
+      ;;
     push)
       __home_prepare_dir
       git add .
