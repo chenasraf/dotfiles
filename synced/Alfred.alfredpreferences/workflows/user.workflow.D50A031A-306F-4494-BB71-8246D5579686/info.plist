@@ -17,6 +17,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -25,6 +27,8 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Copy to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>FE056F58-F81C-4FE2-9A7B-F9C09AF16AAA</key>
@@ -36,6 +40,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -52,6 +58,14 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -72,7 +86,11 @@
 				<string>from entities import Entities
 
 en = Entities("{query}")
-print en.results()</string>
+print(en.results())</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>Displays entities looking similar to provided keyword</string>
 				<key>title</key>
@@ -87,7 +105,7 @@ print en.results()</string>
 			<key>uid</key>
 			<string>FE056F58-F81C-4FE2-9A7B-F9C09AF16AAA</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -98,6 +116,10 @@ print en.results()</string>
 				<integer>127</integer>
 				<key>script</key>
 				<string>tell application "Alfred 2" to search "entity {query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>type</key>
 				<integer>6</integer>
 			</dict>
@@ -106,7 +128,7 @@ print en.results()</string>
 			<key>uid</key>
 			<string>117AF8DB-2760-487B-B384-B912296A4C47</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -115,17 +137,29 @@ print en.results()</string>
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>67B5320E-570E-4F58-89DD-A0871338A29F</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -145,7 +179,11 @@ print en.results()</string>
 				<key>script</key>
 				<string>from entities import Entities
 
-print Entities.details("{query}")</string>
+print(Entities.details("{query}"))</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>Displays details ov given entity</string>
 				<key>title</key>
@@ -160,7 +198,7 @@ print Entities.details("{query}")</string>
 			<key>uid</key>
 			<string>BA61D2A7-CDC5-4DF6-A597-28B586FD82C4</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -169,13 +207,17 @@ print Entities.details("{query}")</string>
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>CD3C162D-3B96-4E16-A55A-43CB9FC86CC9</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -184,30 +226,42 @@ print Entities.details("{query}")</string>
 	<dict>
 		<key>117AF8DB-2760-487B-B384-B912296A4C47</key>
 		<dict>
+			<key>xpos</key>
+			<real>500</real>
 			<key>ypos</key>
-			<real>10</real>
+			<real>15</real>
 		</dict>
 		<key>67B5320E-570E-4F58-89DD-A0871338A29F</key>
 		<dict>
+			<key>xpos</key>
+			<real>700</real>
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
 		<key>BA61D2A7-CDC5-4DF6-A597-28B586FD82C4</key>
 		<dict>
+			<key>xpos</key>
+			<real>300</real>
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
 		<key>CD3C162D-3B96-4E16-A55A-43CB9FC86CC9</key>
 		<dict>
+			<key>xpos</key>
+			<real>700</real>
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
 		<key>FE056F58-F81C-4FE2-9A7B-F9C09AF16AAA</key>
 		<dict>
+			<key>xpos</key>
+			<real>300</real>
 			<key>ypos</key>
-			<real>10</real>
+			<real>15</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>webaddress</key>
 	<string>https://github.com/ajgon/alfred2-html-entity-lookup</string>
 </dict>
