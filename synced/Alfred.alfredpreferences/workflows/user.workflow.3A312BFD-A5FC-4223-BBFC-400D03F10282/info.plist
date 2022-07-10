@@ -47,6 +47,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2F689C29-73B9-47DD-8DAF-066DA770822C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3695395D-88FA-4847-82DF-108EB654FBF1</key>
 		<array>
 			<dict>
@@ -60,24 +73,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>58DD496E-CAE5-41B7-824B-CF66B4471916</key>
+		<key>5FADF381-6928-484A-9162-DE351E7822A2</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5EAA025A-A267-432E-9089-0608B2CBE4D3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>DE855189-B739-4E1D-8C2A-C1E474929C75</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -112,37 +112,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>85B31B09-7486-435A-A0A7-2A83BEE74B85</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>58DD496E-CAE5-41B7-824B-CF66B4471916</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>85B7F9A2-9EE2-4B60-99D7-131F8937EC99</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>7482EBE2-FF2B-4BA5-ADF5-4EBB4DA91A51</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>DE855189-B739-4E1D-8C2A-C1E474929C75</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -303,40 +277,74 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
 				<key>keyword</key>
 				<string>heb</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...</string>
+				<key>script</key>
+				<string>echo $(./heb_flip.py heb {query})</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
-				<string>Flip '{query}' to Hebrew</string>
-				<key>text</key>
-				<string>Flip To Hebrew</string>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>85B31B09-7486-435A-A0A7-2A83BEE74B85</string>
+			<string>2F689C29-73B9-47DD-8DAF-066DA770822C</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>heb {query}</string>
-				<key>passthroughargument</key>
+				<key>concurrently</key>
 				<false/>
-				<key>variables</key>
-				<dict/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>echo $(./heb_flip.py {query})</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>58DD496E-CAE5-41B7-824B-CF66B4471916</string>
+			<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -356,29 +364,6 @@
 			<string>109B59F0-6256-4E7D-A5E8-EA2A14EAD771</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>./heb_flip.py {query}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -404,40 +389,51 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
 				<key>keyword</key>
 				<string>eng</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...</string>
+				<key>script</key>
+				<string>echo $(./heb_flip.py eng {query})</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
-				<string>Flip '{query}' to English</string>
-				<key>text</key>
-				<string>Flip To English</string>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>5EAA025A-A267-432E-9089-0608B2CBE4D3</string>
+			<string>5FADF381-6928-484A-9162-DE351E7822A2</string>
 			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>eng {query}</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>DE855189-B739-4E1D-8C2A-C1E474929C75</string>
-			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -447,95 +443,83 @@
 		<key>077E1BE2-CA93-4F8B-9564-DC9CCFDACC60</key>
 		<dict>
 			<key>xpos</key>
-			<integer>475</integer>
+			<real>475</real>
 			<key>ypos</key>
-			<integer>55</integer>
+			<real>55</real>
 		</dict>
 		<key>109B59F0-6256-4E7D-A5E8-EA2A14EAD771</key>
 		<dict>
 			<key>xpos</key>
-			<integer>635</integer>
+			<real>765</real>
 			<key>ypos</key>
-			<integer>370</integer>
+			<real>370</real>
 		</dict>
 		<key>23A8633E-D968-4643-91AE-DFCF1EDECD6D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>880</integer>
+			<real>880</real>
 			<key>ypos</key>
-			<integer>105</integer>
+			<real>105</real>
 		</dict>
 		<key>264B96B1-A47C-491E-972F-53804A38DC68</key>
 		<dict>
 			<key>xpos</key>
-			<integer>475</integer>
+			<real>475</real>
 			<key>ypos</key>
-			<integer>175</integer>
+			<real>175</real>
+		</dict>
+		<key>2F689C29-73B9-47DD-8DAF-066DA770822C</key>
+		<dict>
+			<key>xpos</key>
+			<real>330</real>
+			<key>ypos</key>
+			<real>280</real>
 		</dict>
 		<key>3695395D-88FA-4847-82DF-108EB654FBF1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>635</integer>
+			<real>635</real>
 			<key>ypos</key>
-			<integer>230</integer>
+			<real>230</real>
 		</dict>
-		<key>58DD496E-CAE5-41B7-824B-CF66B4471916</key>
+		<key>5FADF381-6928-484A-9162-DE351E7822A2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>315</integer>
+			<real>350</real>
 			<key>ypos</key>
-			<integer>325</integer>
-		</dict>
-		<key>5EAA025A-A267-432E-9089-0608B2CBE4D3</key>
-		<dict>
-			<key>xpos</key>
-			<integer>145</integer>
-			<key>ypos</key>
-			<integer>450</integer>
+			<real>430</real>
 		</dict>
 		<key>7482EBE2-FF2B-4BA5-ADF5-4EBB4DA91A51</key>
 		<dict>
 			<key>xpos</key>
-			<integer>720</integer>
+			<real>720</real>
 			<key>ypos</key>
-			<integer>105</integer>
+			<real>105</real>
 		</dict>
 		<key>78273A8C-8846-4074-B3A3-7DEB09AA83E4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>800</integer>
+			<real>930</real>
 			<key>ypos</key>
-			<integer>370</integer>
+			<real>370</real>
 		</dict>
 		<key>80259FED-3596-44D8-9895-609284FAC0F9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>450</integer>
+			<real>570</real>
 			<key>ypos</key>
-			<integer>370</integer>
-		</dict>
-		<key>85B31B09-7486-435A-A0A7-2A83BEE74B85</key>
-		<dict>
-			<key>xpos</key>
-			<integer>145</integer>
-			<key>ypos</key>
-			<integer>290</integer>
+			<real>340</real>
 		</dict>
 		<key>85B7F9A2-9EE2-4B60-99D7-131F8937EC99</key>
 		<dict>
 			<key>xpos</key>
-			<integer>630</integer>
+			<real>630</real>
 			<key>ypos</key>
-			<integer>70</integer>
-		</dict>
-		<key>DE855189-B739-4E1D-8C2A-C1E474929C75</key>
-		<dict>
-			<key>xpos</key>
-			<integer>320</integer>
-			<key>ypos</key>
-			<integer>485</integer>
+			<real>70</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>webaddress</key>
 	<string>https://casraf.blog</string>
 </dict>
