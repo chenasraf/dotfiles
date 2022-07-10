@@ -49,9 +49,9 @@ brew "mongosh"
 # HTTP/2 C Library
 brew "nghttp2"
 # Platform built on V8 to build network applications
-brew "node", link: false
+brew "node"
 # General-purpose scripting language
-brew "php", restart_service: true, link: false
+brew "php", restart_service: true
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
