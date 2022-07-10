@@ -2,3 +2,4 @@ man/
 bin/
 _local.sh
 .DS_Store
+*.pyc

@@ -172,7 +172,7 @@
 	<key>createdby</key>
 	<string>Chen Asraf</string>
 	<key>description</key>
-	<string>Flip Hebrew and english letters in selected text</string>
+	<string>Flip Hebrew and english letters when you mess it up</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -559,9 +559,9 @@
 		<key>2F689C29-73B9-47DD-8DAF-066DA770822C</key>
 		<dict>
 			<key>xpos</key>
-			<real>220</real>
+			<real>255</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>480</real>
 		</dict>
 		<key>3695395D-88FA-4847-82DF-108EB654FBF1</key>
 		<dict>
@@ -601,7 +601,7 @@
 		<key>865BAB3E-842D-4C3B-90BE-B01556A80D71</key>
 		<dict>
 			<key>xpos</key>
-			<real>250</real>
+			<real>255</real>
 			<key>ypos</key>
 			<real>330</real>
 		</dict>
@@ -615,6 +615,8 @@
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
+	<key>version</key>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://casraf.blog</string>
 </dict>
