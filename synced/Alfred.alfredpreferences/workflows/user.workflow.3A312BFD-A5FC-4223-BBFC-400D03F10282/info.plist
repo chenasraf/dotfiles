@@ -51,11 +51,21 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
+				<string>109B59F0-6256-4E7D-A5E8-EA2A14EAD771</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ECC37026-A91B-46A6-8279-EE3309A6A4EE</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Paste '{query}' to foremost app</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -77,11 +87,21 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
+				<string>109B59F0-6256-4E7D-A5E8-EA2A14EAD771</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ECC37026-A91B-46A6-8279-EE3309A6A4EE</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Paste '{query}' to foremost app</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -99,7 +119,20 @@
 				<false/>
 			</dict>
 		</array>
-		<key>80259FED-3596-44D8-9895-609284FAC0F9</key>
+		<key>85B7F9A2-9EE2-4B60-99D7-131F8937EC99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7482EBE2-FF2B-4BA5-ADF5-4EBB4DA91A51</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>865BAB3E-842D-4C3B-90BE-B01556A80D71</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -111,12 +144,22 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ECC37026-A91B-46A6-8279-EE3309A6A4EE</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Paste '{query}' to foremost app</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
-		<key>85B7F9A2-9EE2-4B60-99D7-131F8937EC99</key>
+		<key>ECC37026-A91B-46A6-8279-EE3309A6A4EE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7482EBE2-FF2B-4BA5-ADF5-4EBB4DA91A51</string>
+				<string>78273A8C-8846-4074-B3A3-7DEB09AA83E4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -290,7 +333,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>heb</string>
+				<string>flip</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -302,7 +345,7 @@
 				<key>runningsubtext</key>
 				<string>...</string>
 				<key>script</key>
-				<string>echo $(./heb_flip.py heb {query})</string>
+				<string>echo $(./heb_flip.py "" {query})</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -319,32 +362,9 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>2F689C29-73B9-47DD-8DAF-066DA770822C</string>
+			<string>865BAB3E-842D-4C3B-90BE-B01556A80D71</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>echo $(./heb_flip.py {query})</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>80259FED-3596-44D8-9895-609284FAC0F9</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -385,6 +405,74 @@
 			<string>78273A8C-8846-4074-B3A3-7DEB09AA83E4</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>heb</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...</string>
+				<key>script</key>
+				<string>echo $(./heb_flip.py heb {query})</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2F689C29-73B9-47DD-8DAF-066DA770822C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>ECC37026-A91B-46A6-8279-EE3309A6A4EE</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -443,79 +531,86 @@
 		<key>077E1BE2-CA93-4F8B-9564-DC9CCFDACC60</key>
 		<dict>
 			<key>xpos</key>
-			<real>475</real>
+			<real>440</real>
 			<key>ypos</key>
-			<real>55</real>
+			<real>130</real>
 		</dict>
 		<key>109B59F0-6256-4E7D-A5E8-EA2A14EAD771</key>
 		<dict>
 			<key>xpos</key>
-			<real>765</real>
+			<real>830</real>
 			<key>ypos</key>
-			<real>370</real>
+			<real>470</real>
 		</dict>
 		<key>23A8633E-D968-4643-91AE-DFCF1EDECD6D</key>
 		<dict>
 			<key>xpos</key>
-			<real>880</real>
+			<real>845</real>
 			<key>ypos</key>
-			<real>105</real>
+			<real>180</real>
 		</dict>
 		<key>264B96B1-A47C-491E-972F-53804A38DC68</key>
 		<dict>
 			<key>xpos</key>
-			<real>475</real>
+			<real>440</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>250</real>
 		</dict>
 		<key>2F689C29-73B9-47DD-8DAF-066DA770822C</key>
 		<dict>
 			<key>xpos</key>
-			<real>330</real>
+			<real>220</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>475</real>
 		</dict>
 		<key>3695395D-88FA-4847-82DF-108EB654FBF1</key>
 		<dict>
 			<key>xpos</key>
-			<real>635</real>
+			<real>600</real>
 			<key>ypos</key>
-			<real>230</real>
+			<real>305</real>
 		</dict>
 		<key>5FADF381-6928-484A-9162-DE351E7822A2</key>
 		<dict>
 			<key>xpos</key>
-			<real>350</real>
+			<real>255</real>
 			<key>ypos</key>
-			<real>430</real>
+			<real>630</real>
 		</dict>
 		<key>7482EBE2-FF2B-4BA5-ADF5-4EBB4DA91A51</key>
 		<dict>
 			<key>xpos</key>
-			<real>720</real>
+			<real>685</real>
 			<key>ypos</key>
-			<real>105</real>
+			<real>180</real>
 		</dict>
 		<key>78273A8C-8846-4074-B3A3-7DEB09AA83E4</key>
 		<dict>
 			<key>xpos</key>
-			<real>930</real>
+			<real>995</real>
 			<key>ypos</key>
-			<real>370</real>
-		</dict>
-		<key>80259FED-3596-44D8-9895-609284FAC0F9</key>
-		<dict>
-			<key>xpos</key>
-			<real>570</real>
-			<key>ypos</key>
-			<real>340</real>
+			<real>470</real>
 		</dict>
 		<key>85B7F9A2-9EE2-4B60-99D7-131F8937EC99</key>
 		<dict>
 			<key>xpos</key>
-			<real>630</real>
+			<real>595</real>
 			<key>ypos</key>
-			<real>70</real>
+			<real>145</real>
+		</dict>
+		<key>865BAB3E-842D-4C3B-90BE-B01556A80D71</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>ECC37026-A91B-46A6-8279-EE3309A6A4EE</key>
+		<dict>
+			<key>xpos</key>
+			<real>815</real>
+			<key>ypos</key>
+			<real>620</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

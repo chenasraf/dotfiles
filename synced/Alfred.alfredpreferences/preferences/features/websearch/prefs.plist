@@ -48,15 +48,24 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>r</string>
+			<string>rr</string>
 			<key>spaces</key>
 			<string>_</string>
 			<key>text</key>
 			<string>Open {query} Subreddit</string>
 			<key>url</key>
 			<string>https://reddit.com/r/{query}</string>
-			<key>utf8</key>
+		</dict>
+		<key>87149E42-E8B8-4194-9AD1-C07E8C3C487E</key>
+		<dict>
+			<key>enabled</key>
 			<true/>
+			<key>keyword</key>
+			<string>pub</string>
+			<key>text</key>
+			<string>Search Dart Pub for '{query}'</string>
+			<key>url</key>
+			<string>https://pub.dev/packages?q={query}</string>
 		</dict>
 		<key>9A36BFD7-BB62-4140-ABF6-99D89528EC79</key>
 		<dict>
@@ -76,13 +85,11 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>pub</string>
+			<string>pubp</string>
 			<key>text</key>
-			<string>Dart Pub</string>
+			<string>Open Dart Pub Package '{query}'</string>
 			<key>url</key>
 			<string>https://pub.dev/packages/{query}</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>C1BCFFD3-2DB3-4E34-B817-B0796528B12B</key>
 		<dict>
