@@ -47,6 +47,12 @@ home() {
     install | i)
       __home_do_install
       ;;
+    workflows | w)
+      shift
+      __home_prepare_dir
+      __home_workflows $@
+      __home_revert_dir
+      ;;
     brew | b)
       shift
       sub="$1"
@@ -170,6 +176,57 @@ __home_print_help() {
   fi
 
   __home_revert_dir -q
+}
+
+__home_workflows() {
+  workflow_dirs=(
+    "$HOME/Dev/heb-flip-alfred-workflow"
+  )
+  workflow_sources=(
+    "https://github.com/chenasraf/heb-flip-alfred-workflow.git"
+  )
+  workflows_ids=(
+    "3A312BFD-A5FC-4223-BBFC-400D03F10282"
+  )
+  case "$1" in
+  push | p)
+    shift
+
+    for i in ${#workflow_dirs}; do
+      wf_dir="${workflow_dirs[$i]}"
+      wf_src="${workflow_sources[$i]}"
+      wf_id="${workflows_ids[$i]}"
+
+      echo_cyan "Updating workflow: $wf_id ($wf_src) into $wf_dir..."
+
+      if [[ ! -d "$wf_dir" ]]; then
+        git clone "$wf_src" "$wf_dir"
+      fi
+
+      cp -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/" "$wf_dir/"
+      echo git -C "$wf_dir" add .
+      echo git -C "$wf_dir" commit -m "Update workflow"
+      echo git -C "$wf_dir" push origin master
+    done
+    ;;
+  pull | l)
+    shift
+
+    for i in ${#workflow_dirs}; do
+      wf_dir="${workflow_dirs[$i]}"
+      wf_src="${workflow_sources[$i]}"
+      wf_id="${workflows_ids[$i]}"
+
+      echo_cyan "Pulling workflow: $wf_id ($wf_src) into $DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/..."
+
+      if [[ ! -d "$wf_dir" ]]; then
+        git clone "$wf_src" "$wf_dir"
+      fi
+
+      cp -rf "$wf_dir/" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/"
+    done
+    ;;
+  esac
 }
 
 rhome() {
