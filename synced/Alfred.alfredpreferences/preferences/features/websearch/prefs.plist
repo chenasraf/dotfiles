@@ -11,11 +11,9 @@
 			<key>keyword</key>
 			<string>ff</string>
 			<key>text</key>
-			<string>GamerEscape (FFXIV)</string>
+			<string>Search GamerEscape (FFXIV) for '{query}'</string>
 			<key>url</key>
 			<string>https://ffxiv.gamerescape.com/w/index.php?search={query}&amp;title=Special%3ASearch</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>1E5B4124-C193-4FEC-8E63-D3A01ADB23D1</key>
 		<dict>
@@ -37,11 +35,9 @@
 			<key>keyword</key>
 			<string>genius</string>
 			<key>text</key>
-			<string>Genius</string>
+			<string>Search Genius for '{query}'</string>
 			<key>url</key>
 			<string>https://genius.com/search?q={query}</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>76B9DF04-402A-4AA1-A0E2-9020FF5A1F0F</key>
 		<dict>
@@ -52,7 +48,7 @@
 			<key>spaces</key>
 			<string>_</string>
 			<key>text</key>
-			<string>Open {query} Subreddit</string>
+			<string>Open '{query}' Subreddit</string>
 			<key>url</key>
 			<string>https://reddit.com/r/{query}</string>
 		</dict>
@@ -74,11 +70,9 @@
 			<key>keyword</key>
 			<string>mdn</string>
 			<key>text</key>
-			<string>MDN</string>
+			<string>Search MDN for '{query}'</string>
 			<key>url</key>
 			<string>https://developer.mozilla.org/en-US/search?q={query}</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>B1A2715A-0717-4F2D-986E-8F416752F73C</key>
 		<dict>
@@ -111,11 +105,9 @@
 			<key>keyword</key>
 			<string>p5</string>
 			<key>text</key>
-			<string>p5.js</string>
+			<string>Search p5.js docs for '{query}'</string>
 			<key>url</key>
 			<string>https://p5js.org/reference/#/p5/{query}</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>F952C90D-522B-4CB5-A6CF-0D0424BF02A6</key>
 		<dict>
