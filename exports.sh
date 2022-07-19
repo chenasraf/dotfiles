@@ -5,6 +5,8 @@ export ANDROID_SDK_ROOT="/opt/homebrew/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Misc
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 export DOTFILES="$HOME/.dotfiles"
 export MANPATH="$HOME/.dotfiles/man:$MANPATH"
 export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
@@ -18,7 +20,7 @@ export GEM_HOME="$HOME/.gem"
 export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
 
-# If you come from bash you might have to change your $PATH.
+# PATH updates
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.flutter-src/bin:$PATH"
@@ -34,4 +36,4 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$GOBIN:$PATH"
 export PATH="$DOTBIN:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
+export PATH="$PATH:/$HOME/.local/bin"

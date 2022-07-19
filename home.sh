@@ -3,14 +3,14 @@ cwd="${cwd}"
 __home_prepare_dir() {
   cwd="$(pwd)"
   cd "$HOME/.dotfiles"
-  if [[ "$1" != "-q" ]]; then
+  if [[ "$1" == "-v" ]]; then
     echo_cyan "Changed directory to: $HOME/.dotfiles (was: $cwd)"
   fi
 }
 
 __home_revert_dir() {
   cd "$cwd"
-  if [[ "$1" != "-q" ]]; then
+  if [[ "$1" == "-v" ]]; then
     echo_cyan "Returned to previous directory: $cwd"
   fi
 }
@@ -23,8 +23,8 @@ __home_do_install() {
   __home_prepare_dir
 
   # iTerm dynamic profile
-  echo_cyan "Linking Profiles.json..."
-  ln -f ./synced/Profiles.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/Profiles.json"
+  # echo_cyan "Linking Profiles.json..."
+  # ln -f ./synced/Profiles.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/Profiles.json"
 
   # Manfile
   man_out_dir="./man/man7"
@@ -105,24 +105,18 @@ home() {
 
   if [[ $# -gt 0 ]]; then
     case "$1" in
-    git)
+    git | g)
       __home_prepare_dir
       shift
       git $@
       __home_revert_dir
       ;;
-    pull)
-      __home_prepare_dir
-      git pull
-      reload-zsh
-      __home_revert_dir
-      ;;
-    status)
+    status | s)
       __home_prepare_dir
       git status
       __home_revert_dir
       ;;
-    push)
+    push | p)
       __home_prepare_dir
       git add .
       if [[ $# -lt 2 ]]; then
@@ -131,6 +125,12 @@ home() {
         git commit -m "$2"
       fi
       git push
+      __home_revert_dir
+      ;;
+    pull | l)
+      __home_prepare_dir
+      git pull
+      reload-zsh
       __home_revert_dir
       ;;
     reload | rz)
@@ -144,7 +144,7 @@ home() {
     install | i)
       __home_do_install
       ;;
-    brew)
+    brew | b)
       shift
       sub="$1"
       case $sub in
@@ -161,7 +161,8 @@ home() {
       esac
       ;;
     help | -h | h)
-      __home_print_help
+      shift
+      __home_print_help $@
       return 0
       ;;
     *) # unknown option

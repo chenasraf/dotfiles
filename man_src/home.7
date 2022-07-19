@@ -15,21 +15,23 @@ before running the supplied command
 .SH OPTIONS
 home takes one command:
 
-    git             Run arbitrary git commands from .dotfiles directory
+    git, g          Run arbitrary git commands from .dotfiles directory
 
-    brew            Subcommands: dump, install.
+    brew, b         Subcommands: dump, install.
                     Use brew bundle to load or dump currently installed packages. 
                     Will read/write from Brewfile in .dotfiles directory
 
-    push            Add all files, commit and push updates to git
+    status, s       See git status for dotfiles directory
 
-    pull            Pull updates from git and reload
+    push, p         Add all files, commit and push updates to git
+
+    pull, l         Pull updates from git and reload
 
     reload, rz      Reload (source) the current shell
 
     refresh, rh     Refresh (source) only the home script
 
-    install         Install all settings files to their appropriate locations 
+    install, i      Install all settings files to their appropriate locations 
                     (e.g. iTerm profiles file, MAN pages)
 
     help, -h        Dislpay help file
