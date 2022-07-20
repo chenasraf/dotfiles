@@ -205,7 +205,9 @@ __home_workflows() {
 
       cp -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/" "$wf_dir/"
       git -C "$wf_dir" add .
-      git -C "$wf_dir" commit -m "Update workflow"
+      auto_commit_flag="'Update workflow'"
+      commit_flag="-m ${1:-$auto_commit_flag}"
+      eval "git -C '$wf_dir' commit $commit_flag"
       git -C "$wf_dir" push origin master
     done
     ;;

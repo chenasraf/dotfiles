@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "dotfiles"
-    ]
+    ],
+    "python.linting.enabled": true
 }

@@ -70,3 +70,8 @@ to_eng_map = {
     "ץ": ".",
     "ת": ",",
 }
+
+lang_maps = {
+    "heb": to_heb_map,
+    "eng": to_eng_map,
+}
