@@ -204,9 +204,9 @@ __home_workflows() {
       fi
 
       cp -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/" "$wf_dir/"
-      echo git -C "$wf_dir" add .
-      echo git -C "$wf_dir" commit -m "Update workflow"
-      echo git -C "$wf_dir" push origin master
+      git -C "$wf_dir" add .
+      git -C "$wf_dir" commit -m "Update workflow"
+      git -C "$wf_dir" push origin master
     done
     ;;
   pull | l)
@@ -224,6 +224,7 @@ __home_workflows() {
       fi
 
       cp -rf "$wf_dir/" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/"
+      rm -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/.git"
     done
     ;;
   esac
