@@ -14,6 +14,8 @@ brew "python@3.10"
 brew "awscli"
 # Parser generator
 brew "bison"
+# Open source suite of directory software
+brew "openldap"
 # Fast Lexical Analyzer, generates Scanners (tokenizers)
 brew "flex"
 # Command-line fuzzy finder written in Go
@@ -55,9 +57,11 @@ brew "php", restart_service: true
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.9", link: false
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
+brew "python@3.9"
+# Install various Ruby versions and implementations
+brew "ruby-build"
+# Ruby version manager
+brew "rbenv"
 # Minimal, todo.txt-focused editor
 brew "todo-txt"
 # Display directories as trees (with optional color/HTML output)

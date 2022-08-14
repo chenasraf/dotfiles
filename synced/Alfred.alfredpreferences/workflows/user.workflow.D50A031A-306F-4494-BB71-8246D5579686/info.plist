@@ -96,7 +96,7 @@ print(en.results())</string>
 				<key>title</key>
 				<string>HTML Entity Lookup</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>9</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -189,7 +189,7 @@ print(Entities.details("{query}"))</string>
 				<key>title</key>
 				<string>HTML Entity Lookup</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>9</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
