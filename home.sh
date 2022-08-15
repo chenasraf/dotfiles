@@ -155,12 +155,20 @@ __home_do_install() {
   fi
 
   # gi_gen
-  echo_cyan "Getting gi_gen latest version..."
+  echo_cyan "Downloading gi_gen latest version..."
   gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
-  echo_cyan "Downloading gi_gen $gi_ver..."
-  mkdir -p $DOTBIN
-  curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
-  chmod +x $DOTBIN/gi_gen
+  ver_file="$DOTBIN/.gi_gen_version"
+  touch $ver_file
+  existing_ver=$(cat $ver_file)
+  if [[ "$existing_ver" != "$gi_ver" ]]; then
+    echo_cyan "Downloading gi_gen $gi_ver..."
+    mkdir -p $DOTBIN
+    curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
+    chmod +x $DOTBIN/gi_gen
+    echo $gi_ver >$ver_file
+  else
+    echo_cyan "Latest gi_gen version already installed."
+  fi
 
   echo_cyan "Done"
   __home_revert_dir
