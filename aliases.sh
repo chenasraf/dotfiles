@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 source $HOME/.dotfiles/colors.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,

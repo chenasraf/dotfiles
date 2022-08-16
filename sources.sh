@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 if [[ -f "$HOME/.dotfiles/_local.sh" ]]; then source "$HOME/.dotfiles/_local.sh"; fi
 if [[ -f "$HOME/.iterm2_shell_integration.zsh" ]]; then source "$HOME/.iterm2_shell_integration.zsh"; fi
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi

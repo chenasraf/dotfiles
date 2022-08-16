@@ -187,12 +187,17 @@ __home_print_help() {
 }
 
 __home_workflows() {
+  # The following array values must be in the same order to be matches
+
+  # Dev directory of workflow to use as git source directory
   workflow_dirs=(
     "$HOME/Dev/heb-flip-alfred-workflow"
   )
+  # Repository of workflow to clone from (if dev directory is missing)
   workflow_sources=(
     "https://github.com/chenasraf/heb-flip-alfred-workflow.git"
   )
+  # IDs of workflows to use (same as in Alfred prefs directory)
   workflows_ids=(
     "3A312BFD-A5FC-4223-BBFC-400D03F10282"
   )
