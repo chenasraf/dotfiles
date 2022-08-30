@@ -154,6 +154,9 @@ __home_do_install() {
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
   fi
 
+  echo_cyan "Installing theme..."
+  zi theme git@github.com:halfo/lambda-mod-zsh-theme.git lambda-mod
+
   # gi_gen
   echo_cyan "Downloading gi_gen latest version..."
   gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')

@@ -4,3 +4,4 @@ source $HOME/.dotfiles/aliases.sh
 source $HOME/.dotfiles/sources.sh
 source $HOME/.dotfiles/home.sh
 source $HOME/.dotfiles/scripts/java.sh
+source $HOME/.dotfiles/scripts/zi.sh
