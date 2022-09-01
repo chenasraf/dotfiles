@@ -1,7 +1,7 @@
 import React from 'react'
 import Box, { BoxProps } from '@mui/material/Box'
-import { sxc } from '../../core/utils/object_utils'
-import { CustomComponent } from '../../core/types'
+import { sxc } from '../nextjs/core/utils/object_utils'
+import { CustomComponent } from '../nextjs/core/types'
 
 export interface {{pascalCase name}}Props extends CustomComponent<BoxProps> {
   //

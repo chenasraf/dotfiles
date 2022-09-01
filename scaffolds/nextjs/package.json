@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen:page": "npx -y simple-scaffold@latest -t templates/page -s false -o pages ",
-    "gen:component": "npx -y simple-scaffold@latest -t templates/component -s false -o components/atoms",
+    "gen:page": "npx -y simple-scaffold@latest -t scaffolds/page -s false -o pages ",
+    "gen:component": "npx -y simple-scaffold@latest -t scaffolds/component -s false -o components/atoms",
     "build:docker": "docker build -t nextjs-docker .",
     "start:docker": "docker run -p 3100:3000 nextjs-docker"
   },

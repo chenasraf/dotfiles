@@ -2,6 +2,9 @@
 color() {
   echo -e "\033[0;$1m$2\033[0m"
 }
+echo_gray() {
+  color 30 "$1"
+}
 echo_red() {
   color 31 "$1"
 }
