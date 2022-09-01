@@ -8,6 +8,7 @@ zi() {
   case $sub in
   t | theme)
     shift
+    echo_cyan "Installing theme $2..."
     rm -rf $THEMES_DIR/$2
     git clone -n --depth 1 $1 $THEMES_DIR/$2
     git -C $THEMES_DIR/$2 checkout HEAD $2.zsh-theme
@@ -16,7 +17,14 @@ zi() {
     ;;
   p | plugin)
     shift
-    git clone $1 $PLUGINS_DIR/$2
+    if [[ -d "$PLUGINS_DIR/$2" ]]; then
+      echo_cyan "Updating plugin $2..."
+      cd "$PLUGINS_DIR/$2"
+      git pull
+    else
+      echo_cyan "Installing plugin $2..."
+      git clone $1 "$PLUGINS_DIR/$2"
+    fi
     ;;
   *)
     echo "Unknown command: $sub"

@@ -69,8 +69,19 @@ HIST_STAMPS="%d/%m/%Y %I:%M:%S"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting # significally slows zsh boot time
+  zsh-syntax-highlighting #    significally slows zsh boot time
+  # bat                   #    fancy `less` with syntax highlighting, git status, etc. Use `ccat` for `cat` behavior
   1password
+  colored-man-pages
+  colorize #                   `ccat`, `cless` for syntax-highlighting
+  compleat #                   autocompletes from man pages
+  copyfile #                   copy file contents
+  copypath #                   copy abs path of current dir or <dir/file>
+  dotenv
+  man #                        ESC+man to man last command
+  themes
+  sudo       #                 ESC twice to sudo last command
+  dirhistory #                 Alt+Left - prev, Alt+Right - next, Alt+Up - up one level, Alt+Down go to first dir in alphabetical order
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -134,28 +134,48 @@ __home_do_install() {
   done
 
   # OhMyZsh Plugins
+  plugin_src=(
+    "git@github.com:zsh-users/zsh-autosuggestions.git"
+    "git@github.com:zsh-users/zsh-syntax-highlighting.git"
+    # "git@github.com:sharkdp/bat.git"
+  )
 
-  zsh_autosuggestions_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  zsh_syntax_highlighting_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  plugin_dirnames=(
+    "zsh-autosuggestions"
+    "zsh-syntax-highlighting"
+    # "bat"
+  )
 
-  if [[ -d $zsh_autosuggestions_path && -d $zsh_syntax_highlighting_path ]]; then
-    echo_cyan "Updating oh-my-zsh plugins..."
-    cd $zsh_autosuggestions_path
-    git pull origin master
-    cd $zsh_syntax_highlighting_path
-    git pull origin master
-    cd $cwd
-  else
-    echo_cyan "Installing oh-my-zsh plugins..."
-    rm -rf $zsh_autosuggestions_path
-    rm -rf $zsh_syntax_highlighting_path
+  plugins_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
 
-    git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions_path
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_path
-  fi
+  echo_cyan "Installing plugins..."
 
-  echo_cyan "Installing theme..."
-  zi theme git@github.com:halfo/lambda-mod-zsh-theme.git lambda-mod
+  for ((i = 1; i <= $#plugin_src; i++)); do
+    zi plugin "${plugin_src[$i]}" "${plugin_dirnames[$i]}"
+  done
+
+  echo_cyan "Done"
+
+  cd $cwd
+
+  # OhMyZsh Themes
+  theme_src=(
+    "git@github.com:halfo/lambda-mod-zsh-theme.git"
+  )
+
+  theme_dirnames=(
+    "lambda-mod"
+  )
+
+  themes_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes"
+
+  echo_cyan "Installing themes..."
+
+  for ((i = 1; i <= $#theme_src; i++)); do
+    zi theme "${theme_src[$i]}" "${theme_dirnames[$i]}"
+  done
+
+  echo_cyan "Done"
 
   # gi_gen
   echo_cyan "Downloading gi_gen latest version..."
@@ -209,7 +229,7 @@ __home_workflows() {
   push | p)
     shift
 
-    for i in ${#workflow_dirs}; do
+    for ((i = 1; i <= $#workflow_dirs; i++)); do
       wf_dir="${workflow_dirs[$i]}"
       wf_src="${workflow_sources[$i]}"
       wf_id="${workflows_ids[$i]}"
@@ -231,7 +251,7 @@ __home_workflows() {
   pull | l)
     shift
 
-    for i in ${#workflow_dirs}; do
+    for ((i = 1; i <= $#workflow_dirs; i++)); do
       wf_dir="${workflow_dirs[$i]}"
       wf_src="${workflow_sources[$i]}"
       wf_id="${workflows_ids[$i]}"
