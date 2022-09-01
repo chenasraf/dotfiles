@@ -13,31 +13,57 @@ rhome is a complementary command that runs
 .I "home reload"
 before running the supplied command
 .SH OPTIONS
+
 home takes one command:
 
-    git, g          Run arbitrary git commands from .dotfiles directory
+git, g          Run arbitrary git commands from .dotfiles directory
 
-    worflows, w     Manage custom workflows for Alfred. 
-                    Sub commands available: push, pull
+worflows, w     Manage custom workflows for Alfred. 
+                Sub commands available: push, pull
 
-    brew, b         Subcommands: dump, install.
-                    Use brew bundle to load or dump currently installed packages. 
-                    Will read/write from Brewfile in .dotfiles directory
+brew, b         Subcommands: dump, install.
+                Use brew bundle to load or dump currently installed packages. 
+                Will read/write from Brewfile in .dotfiles directory
 
-    status, s       See git status for dotfiles directory
+status, s       See git status for dotfiles directory
 
-    push, p         Add all files, commit and push updates to git
+push, p         Add all files, commit and push updates to git
 
-    pull, l         Pull updates from git and reload
+pull, l         Pull updates from git and reload
 
-    reload, rz      Reload (source) the current shell
+reload, rz      Reload (source) the current shell
 
-    refresh, rh     Refresh (source) only the home script
+refresh, rh     Refresh (source) only the home script
 
-    install, i      Install all settings files to their appropriate locations 
-                    (e.g. iTerm profiles file, MAN pages)
+install, i      Install all settings files to their appropriate locations 
+                (e.g. iTerm profiles file, MAN pages)
 
-    help, -h        Dislpay help file
+help, -h        Dislpay help file
+
+.SH CUSTOM ALIASES
+
+tpl                     Generate custom templates. See `tpl -h` for list
+
+arm                     Run executable as ARM architecture
+
+x86                     Run executable as x86 architecture
+
+listening [port]        Check if [port] is being listened and by what process.
+                        If no port is specified, all are listed.
+
+.SH SHORTCUTS & ESCAPE SEQUENCES
+
+ESC+man         Read MAN page of last command
+
+ESC+ESC         Prepend sudo to last command
+
+ALT+UP          Up one directory
+
+ALT+DOWN        Open first alphabetical directory in current
+
+ALT+LEFT        Previous directory
+
+ALT+RIGHT       Next directory
 
 .\" .SH BUGS
 .\" See https://github.com/chenasraf/dotfiles/issues

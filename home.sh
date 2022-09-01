@@ -119,19 +119,8 @@ __home_do_install() {
   fi
 
   # Manfile
-  man_out_dir="./man/man7"
-  man_src_dir="./man_src"
-  man_files=$(ls $man_src_dir)
 
-  echo_cyan "Copying MAN page..."
-  mkdir -p $man_out_dir
-
-  for man_file in $man_files; do
-    rm -f $man_out_dir/$man_file.gz
-    cp $man_src_dir/$man_file $man_out_dir/$man_file
-    gzip $man_out_dir/$man_file
-    rm -f $man_out_dir/$man_file
-  done
+  man_install
 
   # OhMyZsh Plugins
   plugin_src=(
