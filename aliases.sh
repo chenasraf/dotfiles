@@ -29,7 +29,6 @@ alias dgi_gen="$GOBIN/gi_gen"
 alias ggi_gen="$DOTBIN/gi_gen"
 # go [i]nstall & run gi_gen
 alias igi_gen="go install && dgi_gen"
-alias tsfiles="yes | npx simple-scaffold@latest -t '$DOTFILES/scaffolds/tsfiles' -o . -"
 
 # Functions
 mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }

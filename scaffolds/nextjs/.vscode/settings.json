@@ -1,0 +1,16 @@
+{
+  "cSpell.words": [
+    "{{ hyphenCase name }}",
+    "MAPBOX",
+    "mapboxgl",
+    "stylis",
+    "Unmatch"
+  ],
+  "i18n-ally.localesPaths": [
+    "public/locales"
+  ],
+  "i18n-ally.sourceLanguage": "he",
+  "i18n-ally.displayLanguage": "he",
+  "i18next.i18nPaths": "/Users/chen/Dev/nestify-web/public/locales",
+  "i18n-ally.keystyle": "nested",
+}

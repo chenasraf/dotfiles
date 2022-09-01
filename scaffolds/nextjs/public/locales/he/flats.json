@@ -1,0 +1,77 @@
+{
+  "floor": "קומה",
+  "rooms": "חדרים",
+  "rooms_one": "חדר",
+  "rooms_other": "חדרים",
+  "sqm": "מ\"ר",
+  "city": "עיר",
+  "neighborhood": "שכונה",
+  "street": "רחוב",
+  "apt_number": "מספר דירה",
+  "apt_type": "סוג הדירה",
+  "freetext_placeholder": "הכנס תיאור של הנכס",
+  "apt_type_values": {
+    "apartment": "דירה",
+    "condo": "קונדורה",
+    "house": "בית",
+    "studio": "סטודיו",
+    "townhouse": "דירת עיר",
+    "villa": "בית וילה",
+    "penthouse": "פנטהאוס"
+  },
+  "price": "מחיר",
+  "extras": {
+    "parking": "חניה",
+    "elevator": "מעלית",
+    "balcony": "מרפסת",
+    "renovated": "משופץ",
+    "pets": "חיות",
+    "roommates": "שותפים",
+    "handicappedAccessibility": "גישה לנכים",
+    "furnished": "מרוהטת",
+    "secureRoom": "ממ\"ד"
+  },
+  "my": {
+    "title": "פרטי הדירה שלי",
+    "extras_title": "מה עוד יש לדירה להציע",
+    "photos_title": "העלו עד 6 תמונות",
+    "description_title": "ספר לנו על הדירה שלך",
+    "next": "הבא",
+    "save": "שמור",
+    "required_error": "שדה חובה"
+  },
+  "view": {
+    "freetext_title": "תיאור הנכס"
+  },
+  "view_switcher": {
+    "card": "הצג ככרטיסיות",
+    "list": "הצג כרשימה"
+  },
+  "matched": {
+    "title": "התאמות"
+  },
+  "potential": {
+    "title": "תוצאות"
+  },
+  "liked": {
+    "title": "דירות שאהבתי"
+  },
+  "disliked": {
+    "title": "דירות שלא אהבתי"
+  },
+  "search_preferences": {
+    "title": "מה אני מחפש/ת",
+    "neighborhoods": "שכונות",
+    "selected_neighborhoods": "שכונות שנבחרו",
+    "property_types": "סוגי הדירה",
+    "selected_property_types": "סוגי הדירה שנבחרו",
+    "minPrice": "מחיר מינימלי",
+    "maxPrice": "מחיר מקסימלי",
+    "minRooms": "מס' חדרים מינימלי",
+    "maxRooms": "מס' חדרים מקסימלי",
+    "minSqm": "מגודל (מ\"ר)",
+    "maxSqm": "עד גודל (מ\"ר)",
+    "minFloor": "מקומה",
+    "maxFloor": "עד קומה"
+  }
+}

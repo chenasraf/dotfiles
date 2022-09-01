@@ -3,5 +3,8 @@ source $HOME/.dotfiles/zsh_init.sh
 source $HOME/.dotfiles/aliases.sh
 source $HOME/.dotfiles/sources.sh
 source $HOME/.dotfiles/home.sh
-source $HOME/.dotfiles/scripts/java.sh
-source $HOME/.dotfiles/scripts/zi.sh
+
+# source all files in scripts dir
+for file in $HOME/.dotfiles/scripts/*.sh; do
+  source $file
+done
