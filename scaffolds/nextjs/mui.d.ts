@@ -4,11 +4,7 @@ declare module '@mui/material/styles/createTheme' {
   type Shadows =
     | 'input'
     | 'card'
-    | 'likedCard'
-    | 'dislikedCard'
-    | 'mutualCard'
-    | 'matchButton'
-    | 'avatar'
+    
   interface ThemeOptions {
     boxShadows: Record<Shadows, string>
   }
