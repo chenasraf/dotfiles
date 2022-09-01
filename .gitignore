@@ -3,3 +3,4 @@ bin/
 _local.sh
 .DS_Store
 *.pyc
+.bin/
