@@ -1,16 +1,16 @@
 import React from 'react'
-import Box from '@material-ui/core/Box'
-import Image from '@material-ui/core/Image'
-import Typography from '@material-ui/core/Typography'
-import Link from '@material-ui/core/Link'
+import Box from '@mui/material/Box'
+import Image from '{{ imageImport }}'
+import Typography from '@mui/material/Typography'
+import Link from '@mui/material/Link'
 import logo from './logo.svg'
 
 function App() {
   return (
-    <Box sx={{ textAlign: 'center' }}>
+    <Box sx={ { textAlign: 'center' } }>
       <Box 
         component="header" 
-        sx={{
+        sx={ {
           backgroundColor: "#282c34",
           minHeight: "100vh",
           display: "flex",
@@ -19,11 +19,11 @@ function App() {
           justifyContent: "center",
           fontSize: "calc(10px + 2vmin)",
           color: "white",
-        }}>
+        } }>
         <Image
           src={logo}
           alt="logo"
-          sx={{
+          sx={ {
             height: "40vmin",
             pointerEvents: "none",
             animation: "App-logo-spin infinite 20s linear",
@@ -35,12 +35,12 @@ function App() {
                 transform: "rotate(360deg)",
               }
             }
-          }} />
+          } } />
         <Typography>
           Edit <code>src/App.tsx</code> and save to reload.
         </Typography>
         <Link
-          sx={{ color: "#61dafb" }}
+          sx={ { color: "#61dafb" } }
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"

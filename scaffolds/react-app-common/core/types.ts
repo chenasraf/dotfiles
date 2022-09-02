@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface HTMLComponent<T extends HTMLElement>
-  extends React.PropsWithChildren<React.DetailedHTMLProps<React.HTMLAttributes<T>, T>>,
+  extends React.PropsWithChildren<React.HTMLProps<T>>,
     CustomComponent {
   //
 }

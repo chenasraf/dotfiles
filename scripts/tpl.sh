@@ -11,7 +11,7 @@ tpl() {
       yarn create next-app --typescript .
       ;;
     cra)
-      tpl_data='{"imageImport":"@mui/material/Image"}'
+      tpl_data='{"imageImport":"components/atoms/Image"}'
       yarn create react-app --template typescript .
       yes | rm -rf ./src/
       ;;
@@ -23,7 +23,9 @@ tpl() {
     echo_gray "Copying sub scaffolds..."
     mkdir -p ./scaffolds
     cp -R $SCAFFOLDS_DIR/_subs/$tpl_name/ ./scaffolds/
+    tpl editorfiles
     yarn install
+    prettier -w "**/*.{js,jsx,ts,tsx,json,html}"
     echo_gray "Done"
     ;;
   editorfiles)
