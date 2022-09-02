@@ -24,4 +24,6 @@
 
 ## TO DO
 
-- [ ] Make next template incremental (`yarn create next-app` + copy rest of tpl)
+- [x] Make next template incremental (`yarn create next-app` + copy rest of tpl)
+- [x] Make CRA template (same)
+- [ ] Improve generic user store/api login flow in template
