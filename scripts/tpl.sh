@@ -7,12 +7,12 @@ tpl() {
     shift
     case $tpl_name in
     nextjs)
-      tpl_data='{"imageImport":"next/image"}'
+      tpl_data='{"imageImport":"next/image","pageWrapperHead":true}'
       src_dir="./"
       yarn create next-app --typescript .
       ;;
     cra)
-      tpl_data='{"imageImport":"components/atoms/Image"}'
+      tpl_data='{"imageImport":"components/atoms/Image","pageWrapperHead":false}'
       src_dir="./src"
       yarn create react-app --template typescript .
       yes | rm -rf ./src/

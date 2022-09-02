@@ -47,17 +47,9 @@ export const MainAppBar: React.FC = React.memo(function MainAppBar() {
       </AppBar>
 
       <Menu anchorEl={menuRef} open={!!menuRef} onClose={handleMenuClose}>
-        <MenuItem onClick={() => goTo(Routes.PotentialFlatsList)}>
-          {t('app_bar.menu.results')}
+        <MenuItem onClick={() => goTo(Routes.Home)}>
+          {t('app_bar.menu.home')}
         </MenuItem>
-        <MenuItem onClick={() => goTo(Routes.MatchedFlatsList)}>
-          {t('app_bar.menu.matches')}
-        </MenuItem>
-        <MenuItem onClick={() => goTo(Routes.LikedFlatsList)}>{t('app_bar.menu.liked')}</MenuItem>
-        <MenuItem onClick={() => goTo(Routes.DislikedFlatsList)}>
-          {t('app_bar.menu.disliked')}
-        </MenuItem>
-        <MenuItem onClick={() => goTo(Routes.Profile)}>{t('app_bar.menu.profile')}</MenuItem>
       </Menu>
     </>
   )
