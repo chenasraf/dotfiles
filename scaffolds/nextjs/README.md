@@ -17,12 +17,7 @@ static serving.
 2. Add `.env.local` file to the repository root folder, and fill it with the correct env variables:
 
    ```shell
-   NEXT_PUBLIC_API_BASE=
-   NEXT_PUBLIC_MAPBOX_API_KEY=
-   NEXT_PUBLIC_FACEBOOK_APP_ID=
-   # to use test social app login instead of prod one in backend
-   # (optional, automatically true in dev mode)
-   # NEXT_PUBLIC_API_TEST=true
+   ENV_VAR=
    ```
 
 3. Run in development mode with hot reload: `yarn dev`

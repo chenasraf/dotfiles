@@ -1,5 +1,7 @@
 # .dotfiles
 
+## How to install
+
 1. Install [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
 2. Clone this repository into `~/.dotfiles`:
 
@@ -19,3 +21,7 @@
    home install
    home reload
    ```
+
+## TO DO
+
+- [ ] Make next template incremental (`yarn create next-app` + copy rest of tpl)

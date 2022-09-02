@@ -1,20 +1,16 @@
+import React from 'react'
 import type { AppProps } from 'next/app'
 import CssBaseline from '@mui/material/CssBaseline'
 import ThemeProvider from '@mui/material/styles/ThemeProvider'
-import { lightTheme, themeDir } from '../core/theme'
+import { lightTheme, themeDir } from '../../common/core/theme'
 import { CacheProvider, EmotionCache } from '@emotion/react'
-import { createEmotionCache } from '../core/emotion'
+import { createEmotionCache } from '../../common/core/emotion'
 import { enableStaticRendering } from 'mobx-react-lite'
 import { appWithTranslation, useTranslation } from 'next-i18next'
 import nextI18nConfig from '../next-i18next.config'
 import { QueryClientProvider, QueryClient } from 'react-query'
-import React from 'react'
-import 'mapbox-gl/dist/mapbox-gl.css'
-import mapboxgl from 'mapbox-gl'
-import { ENV } from '../core/env'
-import { useSilentLoginFlow } from '../core/stores/user_store'
-
-mapboxgl.accessToken = ENV.MAPBOX_API_KEY
+import { ENV } from 'core/env'
+import { useSilentLoginFlow } from 'core/stores/user_store'
 
 export interface {{ pascalCase name }}AppProps extends AppProps {
   emotionCache?: EmotionCache
