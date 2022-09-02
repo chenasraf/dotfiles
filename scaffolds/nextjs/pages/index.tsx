@@ -1,7 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Routes, usePushRoute } from '../../common/core/routes'
+import { Routes, usePushRoute } from 'core/routes'
 
 const Home: NextPage = () => {
   const goTo = usePushRoute()
