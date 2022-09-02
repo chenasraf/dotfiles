@@ -6,7 +6,7 @@ import { MainAppBar, TOOLBAR_HEIGHT } from './MainAppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { PageLoader } from './PageLoader'
 import Typography from '@mui/material/Typography'
-{{#if pageWrapperHead}}
+{{#if nextComponents}}
 import Head from 'next/head'
 {{/if}}
 
@@ -14,7 +14,7 @@ export interface PageWrapperProps extends CustomComponent<BoxProps> {
   fixedMaxWidth?: boolean
   loading?: boolean
   pageTitle?: React.ReactNode
-  {{#if pageWrapperHead}}
+  {{#if nextComponents}}
   htmlTitle?: string
   htmlDescription?: string
   {{/if}}
@@ -27,7 +27,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
     children,
     loading,
     fixedMaxWidth = true,
-    {{#if pageWrapperHead}}
+    {{#if nextComponents}}
     htmlTitle,
     htmlDescription,
     {{/if}}
@@ -47,7 +47,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
         sx,
       )}
     >
-      {{#if pageWrapperHead}}
+      {{#if nextComponents}}
       {htmlTitle || htmlDescription ? (
         <Head>
           <title>{htmlTitle}</title>

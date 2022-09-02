@@ -18,8 +18,13 @@ export function useWindowSize({
   const hKey: keyof Window = React.useMemo(() => `${type}Height` as keyof Window, [type])
 
   const [windowSize, setWindowSize] = React.useState({
+    {{#if nextComponents}}
     width: ENV.BROWSER_LOADED ? window[wKey] : 0,
     height: ENV.BROWSER_LOADED ? window[hKey] : 0,
+    {{else}}
+    width: window[wKey],
+    height: window[hKey],
+    {{/if}}
   })
 
   const handleResize = useDebounce(

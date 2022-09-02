@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import Image from '{{ imageImport }}'
+import Image from '{{#if nextComponents}}next/image{{else}}components/atoms/Image{{/if}}'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import logo from './logo.svg'

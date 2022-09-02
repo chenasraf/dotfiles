@@ -2,7 +2,7 @@ import React from 'react'
 import Box, { BoxProps } from '@mui/material/Box'
 import { sxc } from 'core/utils/object_utils'
 import { CustomComponent } from 'core/types'
-import Image from '{{ imageImport }}'
+import Image from '{{#if nextComponents}}next/image{{else}}components/atoms/Image{{/if}}'
 import { apiFallbackImageUrl } from 'core/utils/image_utils'
 
 export interface AvatarProps extends CustomComponent<BoxProps> {
@@ -36,7 +36,9 @@ export const Avatar: React.FC<AvatarProps> = ({ sx, size = 160, src, padding = 8
       >
         <Image
           src={apiFallbackImageUrl(src)}
+          {{#if nextComponents}}
           objectFit="cover"
+          {{/if}}
           width={size}
           height={size}
           alt={src}

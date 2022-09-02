@@ -7,12 +7,12 @@ tpl() {
     shift
     case $tpl_name in
     nextjs)
-      tpl_data='{"imageImport":"next/image","pageWrapperHead":true}'
+      tpl_data='{"nextComponents":true}'
       src_dir="./"
       yarn create next-app --typescript .
       ;;
     cra)
-      tpl_data='{"imageImport":"components/atoms/Image","pageWrapperHead":false}'
+      tpl_data='{"nextComponents":false}'
       src_dir="./src"
       yarn create react-app --template typescript .
       yes | rm -rf ./src/
@@ -27,7 +27,9 @@ tpl() {
     mkdir -p ./scaffolds
     cp -R $SCAFFOLDS_DIR/_subs/$tpl_name/ ./scaffolds/
     tpl editorfiles
+    echo_gray "Installing additional dependencies..."
     yarn install
+    echo_gray "Prettifying files..."
     prettier -w "**/*.{js,jsx,ts,tsx,json,html}"
     echo_gray "Done"
     ;;

@@ -1,39 +1,24 @@
-import { useRouter } from 'next/router'
+import { {{#unless nextComponents}}useNavigate as {{/unless}}useRouter } from '{{#if nextComponents}}next/router{{else}}react-router{{/if}}'
 import React from 'react'
-
-const _signup = '/signup'
-const _flats = '/flats'
-const _user = '/user'
 
 export const Routes = {
   Home: '/',
-
-  // Signup
-  Signup: _signup,
-  SignupUserDetails: `${_signup}/user-details`,
-
-  // User
-  Profile: `${_user}/profile`,
-  UserDetails: `${_user}/details`,
-  Preferences: `${_user}/preferences`,
-  Notifications: `${_user}/notifications`,
-
-  // Flats
-  MyFlat: `${_flats}/my`,
-  MatchedFlatsList: `${_flats}/matches`,
-  PotentialFlatsList: `${_flats}/potential`,
-  LikedFlatsList: `${_flats}/liked`,
-  DislikedFlatsList: `${_flats}/disliked`,
-  ViewFlat: `${_flats}/:id`,
+  Register: '/register',
+  Login: '/login',
 }
 
-type RoutePush = (route: string, params?: { [key: string]: string }) => Promise<boolean>
+type RoutePush = (route: string, params?: { [key: string]: string }) => {{#if nextComponents}}Promise<boolean>{{else}}void{{/if}}
 
 export function usePushRoute(): RoutePush {
   const router = useRouter()
   const goTo = React.useCallback(
     (route: string, params?: { [key: string]: string }) =>
+      {{#if nextComponents}}
       router.push(buildRoute(route, params ?? {})),
+      {{else}}
+      router(buildRoute(route, params ?? {})),
+      {{/if}}
+      
     [router],
   )
   return goTo

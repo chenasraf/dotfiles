@@ -3,7 +3,7 @@ import { User } from '../models/user'
 import userApi, { UserLoginParams, UserRegisterResponse } from '../api/user.api'
 import { ENV } from '../env'
 import { Routes, usePushRoute } from '../routes'
-import { useRouter } from 'next/router'
+import { {{#unless nextComponents}}useLocation as {{/unless}}useRouter } from '{{#if nextComponents}}next/router{{else}}react-router{{/if}}'
 
 export type ProviderType = 'facebook' | 'google'
 
@@ -26,10 +26,11 @@ class UserStore {
 
   constructor() {
     makeAutoObservable(this)
-    if (ENV.BROWSER_LOADED && localStorage.getItem('idToken')) {
+    
+    if ({{#if nextComponents}}ENV.BROWSER_LOADED && {{/if}}localStorage.getItem('idToken')) {
       this.getStoredIdToken()
     }
-    if (ENV.BROWSER_LOADED && localStorage.getItem('accessToken')) {
+    if ({{#if nextComponents}}ENV.BROWSER_LOADED && {{/if}}localStorage.getItem('accessToken')) {
       this.getStoredAccessToken()
     }
   }
@@ -87,19 +88,19 @@ class UserStore {
 
   /** Token used to login to {{ hyphenCase name }} only - sourced from social login */
   private setAccessToken(provider: ProviderType, accessToken: string) {
-    if (ENV.BROWSER_LOADED) {
+    {{#if nextComponents}} if (ENV.BROWSER_LOADED) { {{/if}}
       localStorage.setItem('accessToken', accessToken)
       localStorage.setItem('tokenProvider', provider)
-    }
+    {{#if nextComponents}} } {{/if}}
     this.accessToken = accessToken
     this.provider = provider
   }
 
   /** Token used to auth inside {{ hyphenCase name }} - sourced from `/login` endpoint */
   private setIdToken(idToken: string) {
-    if (ENV.BROWSER_LOADED) {
+    {{#if nextComponents}} if (ENV.BROWSER_LOADED) { {{/if}}
       localStorage.setItem('idToken', idToken)
-    }
+    {{#if nextComponents}} } {{/if}}
     this.idToken = idToken
     userApi.setAuthHeaders(idToken)
   }
@@ -127,9 +128,9 @@ function _useLoginRedirect(force?: boolean): (registered: boolean) => void {
     }
     if (registered || force) {
       // TODO use [Routes.Home] once redirect is removed
-      goTo(Routes.PotentialFlatsList)
+      goTo(Routes.Home)
     } else {
-      goTo(Routes.SignupUserDetails)
+      goTo(Routes.Register)
     }
   }
 }
@@ -147,6 +148,7 @@ export function useLoginFlow(forceRedirect?: boolean): (details: UserLoginParams
 export function useSilentLoginFlow(forceRedirect?: boolean): () => Promise<void> {
   const store = useUserStore()
   const redirect = _useLoginRedirect(forceRedirect)
+  const goTo = usePushRoute()
   const router = useRouter()
 
   return async () => {
@@ -155,13 +157,13 @@ export function useSilentLoginFlow(forceRedirect?: boolean): () => Promise<void>
       if (!resp) {
         // TODO check public route permission instead of directly checking against [Routes.Home]
         if (!store.isLoggedIn && router.pathname !== Routes.Home) {
-          router.push(Routes.Signup)
+          goTo(Routes.Register)
         }
         return
       }
       redirect(resp.registered)
     } catch (e) {
-      router.push(Routes.Signup)
+      goTo(Routes.Register)
     }
   }
 }

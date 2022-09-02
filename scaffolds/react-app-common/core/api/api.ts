@@ -3,7 +3,6 @@ import { ENV } from '../env'
 
 const client = axios.create({
   baseURL: ENV.API_BASE + '/api/v1',
-  headers: ENV.API_TEST ? { Test: 'true' } : undefined,
 })
 
 export class ApiCollection {

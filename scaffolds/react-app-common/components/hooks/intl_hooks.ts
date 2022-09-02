@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from '{{#if nextComponents}}next-i18next{{else}}react-i18next{{/if}}';
 import React from 'react'
 
 export function useNumberFormatter(options?: Intl.NumberFormatOptions): Intl.NumberFormat {
