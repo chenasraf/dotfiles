@@ -5,6 +5,6 @@ source $HOME/.dotfiles/sources.sh
 source $HOME/.dotfiles/home.sh
 
 # source all files in scripts dir
-for file in $HOME/.dotfiles/scripts/*.sh; do
-  source $file
+for file in $HOME/.dotfiles/scripts/*; do
+  [[ -d "$file" ]] && source $file
 done
