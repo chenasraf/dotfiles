@@ -1,3 +1,4 @@
+#/usr/bin/env zsh
 # install zsh themes/plugins
 
 THEMES_DIR="$ZSH_CUSTOM/themes"

@@ -1,3 +1,5 @@
+#/usr/bin/env zsh
+
 man_install() {
   man_out_dir="$DOTFILES/man/man7"
   man_src_dir="$DOTFILES/man_src"
