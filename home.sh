@@ -183,6 +183,9 @@ __home_do_install() {
     echo_cyan "Latest gi_gen version already installed."
   fi
 
+  echo_cyan "Downloading global npm packages..."
+  yarn global add typescript tldr@latest simple-scaffold@latest
+
   echo_cyan "Done"
   __home_revert_dir
 }
