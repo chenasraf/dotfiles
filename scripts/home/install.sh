@@ -112,6 +112,8 @@ done
 if [[ $#install_npm_final -gt 0 ]]; then
   echo_cyan "Installing npm packages ($install_npm_final)..."
   npm install -g $install_npm_final
+else
+  echo_cyan "All npm packages already installed."
 fi
 
 echo_cyan "Done"
