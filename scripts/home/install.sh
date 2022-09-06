@@ -104,7 +104,6 @@ for ((i = 1; i <= $#install_npm; i++)); do
   which $check_npm[$i] >/dev/null 2>&1
   exit_code=$?
   if [[ $exit_code -ne 0 ]]; then
-    echo_red "exit code for ${install_npm[$i]}: $exit_code"
     install_npm_final+=("${install_npm[$i]}")
   fi
 done
