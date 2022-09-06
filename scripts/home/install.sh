@@ -38,7 +38,7 @@ plugin_dirnames=(
 
 plugins_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
 
-echo_cyan "Installing plugins..."
+echo_cyan "Installing shell plugins..."
 
 for ((i = 1; i <= $#plugin_src; i++)); do
   zi plugin "${plugin_src[$i]}" "${plugin_dirnames[$i]}"
@@ -59,7 +59,7 @@ theme_dirnames=(
 
 themes_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes"
 
-echo_cyan "Installing themes..."
+echo_cyan "Installing shell themes..."
 
 for ((i = 1; i <= $#theme_src; i++)); do
   zi theme "${theme_src[$i]}" "${theme_dirnames[$i]}"
