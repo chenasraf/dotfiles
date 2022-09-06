@@ -8,12 +8,16 @@ tap "homebrew/services"
 tap "mongodb/brew"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# GNU database manager
+brew "gdbm"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Parser generator
 brew "bison"
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
 # Open source suite of directory software
 brew "openldap"
 # Fast Lexical Analyzer, generates Scanners (tokenizers)
@@ -26,12 +30,12 @@ brew "gcc"
 brew "git-lfs"
 # Render markdown on the CLI
 brew "glow"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -56,6 +60,8 @@ brew "node"
 brew "php", restart_service: true
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Generic syntax highlighter
+brew "pygments"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Install various Ruby versions and implementations
