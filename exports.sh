@@ -5,13 +5,11 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Misc
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
-export DOTFILES="$HOME/.dotfiles"
 export MANPATH="$HOME/.dotfiles/man:$MANPATH"
 export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export GOBIN="$HOME/go/bin"
-export DOTBIN="$DOTFILES/bin"
 
 # Ruby User Install (for CocoaPods)
 export GEM_HOME="$HOME/.gem"

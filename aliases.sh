@@ -39,7 +39,24 @@ alias ggi_gen="$DOTBIN/gi_gen"
 alias igi_gen="go install && dgi_gen"
 alias filearg "$DOTFILES/scripts/filearg/filearg.sh"
 
+# from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
+alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
+alias ip6="curl -6 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv6: '"
+alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
+alias ip="iplocal; ip4; ip6"
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias gundo="git push -f origin HEAD^:master"
+alias unq="sudo xattr -rd com.apple.quarantine"
+docker-bash() {
+  docker exec -ti $1 /bin/bash
+}
+
 # Functions
+
+# show all man entries under a specific section
+# e.g. mansect 7
 mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
 
 # TODO not working with custom commands...
@@ -52,6 +69,11 @@ tcd() {
   cd $OLDPWD
 }
 
+# mkdir -p then navigate to said directory
+mkcd() {
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
+
 listening() {
   if [[ $# -eq 0 ]]; then
     lsof -iTCP -sTCP:LISTEN -n -P
@@ -60,4 +82,10 @@ listening() {
   else
     echo "Usage: listening [pattern]"
   fi
+}
+
+# example echo '1' | prepend 'result: '
+prepend() {
+  echo -n "$@"
+  cat -
 }

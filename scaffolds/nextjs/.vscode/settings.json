@@ -11,6 +11,6 @@
   ],
   "i18n-ally.sourceLanguage": "he",
   "i18n-ally.displayLanguage": "he",
-  "i18next.i18nPaths": "/Users/chen/Dev/nestify-web/public/locales",
+  "i18next.i18nPaths": "public/locales",
   "i18n-ally.keystyle": "nested",
 }
