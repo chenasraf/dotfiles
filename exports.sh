@@ -18,7 +18,9 @@ export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
 
 # PATH updates
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$(npm get prefix -g)/bin:$PATH"
 export PATH="$HOME/.flutter-src/bin:$PATH"
 export PATH="$HOME/.flutter-src/bin/cache/dart-sdk/bin:$PATH"
 export PATH="$HOME/.pub-cache/bin:$PATH"
