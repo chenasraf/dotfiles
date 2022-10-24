@@ -362,7 +362,8 @@ fi</string>
 
 - Chromium
 - Google Chrome
-- Brave and Brave Dev(Chromium)
+- Brave and Brave beta (Chromium)
+- MS Edge
 - Vivaldi
 - Opera
 - Sidekick
@@ -497,7 +498,7 @@ Search Bookmarks with keyword: `bm`</string>
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Brave Developer</string>
+				<string>Brave Beta</string>
 			</dict>
 			<key>description</key>
 			<string></string>
@@ -506,7 +507,7 @@ Search Bookmarks with keyword: `bm`</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
-			<string>brave_dev</string>
+			<string>brave_beta</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -557,13 +558,32 @@ Search Bookmarks with keyword: `bm`</string>
 				<string>Vivaldi</string>
 			</dict>
 			<key>description</key>
-			<string>Browsers to be included into history and bookmark search</string>
+			<string></string>
 			<key>label</key>
 			<string></string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
 			<string>vivaldi</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Edge</string>
+			</dict>
+			<key>description</key>
+			<string>Browsers to be included into history and bookmark search</string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>edge</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -621,7 +641,7 @@ Search Bookmarks with keyword: `bm`</string>
 				</array>
 			</dict>
 			<key>description</key>
-			<string>history entries will be sorted based on recent visitis OR number of visits</string>
+			<string>History entries will be sorted based on recent visits OR number of visits</string>
 			<key>label</key>
 			<string>Sort history search results</string>
 			<key>type</key>
@@ -654,8 +674,8 @@ Search Bookmarks with keyword: `bm`</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.0.0</string>
+	<string>3.0.6</string>
 	<key>webaddress</key>
-	<string>https://github.com/Acidham/chromium-history</string>
+	<string>https://github.com/Acidham/chromium-hist-bookmarks</string>
 </dict>
 </plist>

@@ -14,12 +14,13 @@ from Favicon import Icons
 
 BOOKMARS_MAP = {
     "brave": '/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks',
-    "brave_dev": '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/Bookmarks',
+    "brave_beta": '/Library/Application Support/BraveSoftware/Brave-Browser-Beta/Default/Bookmarks',
     "chrome": '/Library/Application Support/Google/Chrome/Default/Bookmarks',
     "chromium": '/Library/Application Support/Chromium/Default/Bookmarks',
     "opera": '/Library/Application Support/com.operasoftware.Opera/Bookmarks',
     "sidekick": '/Library/Application Support/Sidekick/Default/Bookmarks',
-    "vivaldi": '/Library/Application Support/Vivaldi/Default/Bookmarks'
+    "vivaldi": '/Library/Application Support/Vivaldi/Default/Bookmarks',
+    "edge": '/Library/Application Support/Microsoft Edge/Default/Bookmarks'
 }
 
 # Show favicon in results or default wf icon

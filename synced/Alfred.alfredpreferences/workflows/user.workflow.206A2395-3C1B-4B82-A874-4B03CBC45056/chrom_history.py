@@ -16,12 +16,13 @@ from Favicon import Icons
 
 HISTORY_MAP = {
     "brave": "/Library/Application Support/BraveSoftware/Brave-Browser/Default/History",
-    "brave_dev": "/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/History",
+    "brave_beta": "/Library/Application Support/BraveSoftware/Brave-Browser-Beta/Default/History",
     "chromium": "/Library/Application Support/Chromium/Default/History",
     "chrome": "/Library/Application Support/Google/Chrome/Default/History",
     "opera": "/Library/Application Support/com.operasoftware.Opera/History",
     "sidekick": '/Library/Application Support/Sidekick/Default/History',
-    "vivaldi": "/Library/Application Support/Vivaldi/Default/History"
+    "vivaldi": "/Library/Application Support/Vivaldi/Default/History",
+    "edge": "/Library/Application Support/Microsoft Edge/Default/History"
 }
 
 # Get Browser Histories to load per env (true/false)
