@@ -49,6 +49,9 @@ alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; np
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias gundo="git push -f origin HEAD^:master"
 alias unq="sudo xattr -rd com.apple.quarantine"
+alias h="home"
+alias rh="rhome"
+
 docker-bash() {
   docker exec -ti $1 /bin/bash
 }
