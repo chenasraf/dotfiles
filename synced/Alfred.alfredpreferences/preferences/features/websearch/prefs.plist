@@ -109,6 +109,17 @@
 			<key>url</key>
 			<string>https://p5js.org/reference/#/p5/{query}</string>
 		</dict>
+		<key>F077E1BF-9BFF-401C-A689-7D2A43F2E8C7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>bp</string>
+			<key>text</key>
+			<string>Open Bulbapedia page for '{query}'</string>
+			<key>url</key>
+			<string>https://bulbapedia.bulbagarden.net/wiki/{query}</string>
+		</dict>
 		<key>F952C90D-522B-4CB5-A6CF-0D0424BF02A6</key>
 		<dict>
 			<key>enabled</key>

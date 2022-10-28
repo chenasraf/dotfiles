@@ -37,8 +37,13 @@ tpl() {
     shift
     npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/editorfiles" -o . - $@
     ;;
+  fl | flutter | flutter-app)
+    shift
+    flutter create $@
+    flutter pub get firebase_core cloud_firestore firebase_crashlytics firebase_remote_config firebase_auth provider shared_preferences google_sign_in sign_in_with_apple dynamic_themes cached_network_image wakelock intl intl_generator
+    ;;
   *)
-    echo_red "Usage: tpl [nextjs|cra|editorfiles]"
+    echo_red "Usage: tpl [nextjs|cra|editorfiles|flutter-app]]"
     ;;
   esac
 }
