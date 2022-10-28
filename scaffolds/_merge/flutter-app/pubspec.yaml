@@ -9,7 +9,7 @@ script_runner:
       cmd: dart scripts/get_name.dart
       suppress_header_output: true
     - push: 'version=$(get-version); name=$(get-name); echo "Pushing ${name}-$version.apk"; adb push build/app/outputs/flutter-apk/app-release.apk /sdcard/Download/${name}-${version}.apk'
-    - install: adb install build/app/outputs/flutter-apk/app-release.apk
+    - install: adb install -r build/app/outputs/flutter-apk/app-release.apk
     - to-device: build:apk && push && install
     - auto-fix: dart fix --apply
     - format: flutter format -l 100 --fix lib/ test/
