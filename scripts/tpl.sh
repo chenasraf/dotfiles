@@ -1,10 +1,11 @@
 SCAFFOLDS_DIR="$DOTFILES/scaffolds"
 tpl() {
-  case $1 in
+  tpl_name="$1"
+  shift
+
+  case $tpl_name in
   nextjs | cra)
-    tpl_name="$1"
     tpl_data=""
-    shift
     case $tpl_name in
     nextjs)
       tpl_data='{"nextComponents":true}'
@@ -33,17 +34,26 @@ tpl() {
     prettier -w "**/*.{js,jsx,ts,tsx,json,html}"
     echo_gray "Done"
     ;;
-  editorfiles)
-    shift
+  ef | editorfiles)
+    tpl_name="editorfiles"
     npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/editorfiles" -o . - $@
     ;;
   fl | flutter | flutter-app)
-    shift
+    tpl_name="flutter-app"
+    echo_cyan "Creating app '$@'..."
     flutter create $@
-    flutter pub get firebase_core cloud_firestore firebase_crashlytics firebase_remote_config firebase_auth provider shared_preferences google_sign_in sign_in_with_apple dynamic_themes cached_network_image wakelock intl intl_generator
+    cd $1
+    echo_cyan "Installing packages..."
+    flutter pub add firebase_core cloud_firestore firebase_crashlytics firebase_remote_config firebase_auth provider shared_preferences google_sign_in sign_in_with_apple dynamic_themes cached_network_image wakelock intl intl_generator
+    echo_cyan "Copying files..."
+    npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/$tpl_name" -o ./ $@
+    cp -R $SCAFFOLDS_DIR/_subs/$tpl_name/ ./
+    echo_cyan "Updating pubspec.yaml..."
+    echo "$(cat $SCAFFOLDS_DIR/_merge/$tpl_name/pubspec.yaml)" >>./pubspec.yaml
+    echo_cyan "Done"
     ;;
   *)
-    echo_red "Usage: tpl [nextjs|cra|editorfiles|flutter-app]]"
+    echo_red "Usage: tpl [nextjs|cra|editorfiles|flutter-app]"
     ;;
   esac
 }
