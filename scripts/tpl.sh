@@ -5,7 +5,12 @@ tpl() {
 
   case $tpl_name in
   nextjs | cra)
+    app_name="$1"
+    shift
     tpl_data=""
+    mkdir $app_name
+    cd $app_name
+    echo "Creating '$tpl_name' app in directory: '$(pwd)'"
     case $tpl_name in
     nextjs)
       tpl_data='{"nextComponents":true}'
@@ -19,8 +24,8 @@ tpl() {
       yes | rm -rf ./src/
       ;;
     esac
-    npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/$tpl_name" -w 1 -o . -d $tpl_data $@
-    npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/react-app-common" -w 1 -o $src_dir -d $tpl_data $@
+    npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/$tpl_name" -w 1 -o . -d $tpl_data $app_name
+    npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/react-app-common" -w 1 -o $src_dir -d $tpl_data $app_name
     echo_gray "Merging package.json..."
     jq 'reduce inputs as $s (.; .*$s)' ./package.json $SCAFFOLDS_DIR/_merge/$tpl_name/package.json >./package.json.tmp
     mv -f ./package.json.tmp ./package.json && rm -f ./package.json.tmp

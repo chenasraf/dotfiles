@@ -21,7 +21,7 @@
     "body": [
       "export async function getStaticProps({ locale }: NextPageContext) {",
       "  return {",
-      "    props: await getI18nProps(locale ?? 'he', ['${1:{{ hyphenCase name }}}']),",
+      "    props: await getI18nProps(locale ?? 'he', ['${1:{{ hyphenCase name }} }']),",
       "  }",
       "}",
     ],

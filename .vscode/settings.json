@@ -2,5 +2,6 @@
   "cSpell.words": [
     "dotfiles"
   ],
-  "python.linting.enabled": true
+  "python.linting.enabled": true,
+  "i18next.i18nPaths": "/Users/chen/.dotfiles/scaffolds/nextjs/public/locales"
 }
