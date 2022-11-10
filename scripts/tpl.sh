@@ -8,7 +8,7 @@ tpl() {
     app_name="$1"
     shift
     tpl_data=""
-    mkdir $app_name
+    mkdir -p $app_name
     cd $app_name
     echo "Creating '$tpl_name' app in directory: '$(pwd)'"
     case $tpl_name in
