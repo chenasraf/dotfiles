@@ -1,68 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>application</key>
-	<integer>1</integer>
-	<key>custom</key>
-	<string>-- For the latest version:
--- https://github.com/vitorgalvao/custom-alfred-iterm-scripts
+  <dict>
+    <key>application</key>
+    <integer>1</integer>
+    <key>custom</key>
+    <string>-- For the latest version:
+-- https://gist.github.com/parterburn/e832b9090ee35eb830529de8bd978b82
 
 -- Set this property to true to always open in a new window
 property open_in_new_window : false
 
+-- Set this property to false to reuse the current tab
+property open_in_new_tab : true
+
 -- Handlers
 on new_window()
-	tell application "iTerm" to create window with default profile
+	tell application "System Events"
+		tell process "Warp"
+			keystroke "n" using command down
+		end tell
+	end tell  
 end new_window
 
 on new_tab()
-	tell application "iTerm" to tell the first window to create tab with default profile
+	tell application "System Events"
+		tell process "Warp"
+			keystroke "t" using command down
+		end tell
+	end tell
 end new_tab
 
 on call_forward()
-	tell application "iTerm" to activate
+  tell application "Warp" to activate
 end call_forward
 
-on is_running()
-	application "iTerm" is running
-end is_running
-
-on has_windows()
-	if not is_running() then return false
-	if windows of application "iTerm" is {} then return false
-	true
-end has_windows
-
 on send_text(custom_text)
-	tell application "iTerm" to tell the first window to tell current session to write text custom_text
+	tell application "System Events"
+		tell process "Warp"
+			delay 0.5
+			keystroke custom_text
+			delay 2
+			key code 36
+		end tell
+	end tell  
 end send_text
 
 -- Main
 on alfred_script(query)
-	if has_windows() then
-		if open_in_new_window then
-			new_window()
-		else
-			new_tab()
-		end if
-	else
-		-- If iTerm is not running and we tell it to create a new window, we get two
-		-- One from opening the application, and the other from the command
-		if is_running() then
-			new_window()
-		else
-			call_forward()
-		end if
-	end if
+  call_forward()
 
-	-- Make sure a window exists before we continue, or the write may fail
-	repeat until has_windows()
-		delay 0.01
-	end repeat
+  if open_in_new_window then
+    new_window()
+  else if open_in_new_tab then
+    new_tab()
+  else
+    -- Reuse the current tab
+  end if
 
-	send_text(query)
-	call_forward()
+  call_forward()
+  send_text(query)
 end alfred_script</string>
-</dict>
+  </dict>
 </plist>
