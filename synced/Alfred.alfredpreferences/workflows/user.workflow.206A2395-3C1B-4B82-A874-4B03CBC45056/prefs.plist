@@ -4,5 +4,7 @@
 <dict>
 	<key>brave</key>
 	<true/>
+	<key>show_favicon</key>
+	<true/>
 </dict>
 </plist>

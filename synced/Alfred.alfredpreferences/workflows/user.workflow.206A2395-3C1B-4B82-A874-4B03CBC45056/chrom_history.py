@@ -8,28 +8,27 @@ import time
 import uuid
 from multiprocessing.pool import ThreadPool as Pool
 from unicodedata import normalize
-from urllib.parse import urlparse
 
 from Alfred3 import Items as Items
 from Alfred3 import Tools as Tools
 from Favicon import Icons
 
 HISTORY_MAP = {
-    "brave": "/Library/Application Support/BraveSoftware/Brave-Browser/Default/History",
-    "brave_beta": "/Library/Application Support/BraveSoftware/Brave-Browser-Beta/Default/History",
-    "chromium": "/Library/Application Support/Chromium/Default/History",
-    "chrome": "/Library/Application Support/Google/Chrome/Default/History",
-    "opera": "/Library/Application Support/com.operasoftware.Opera/History",
-    "sidekick": '/Library/Application Support/Sidekick/Default/History',
-    "vivaldi": "/Library/Application Support/Vivaldi/Default/History",
-    "edge": "/Library/Application Support/Microsoft Edge/Default/History"
+    "brave": "Library/Application Support/BraveSoftware/Brave-Browser/Default/History",
+    "brave_beta": "Library/Application Support/BraveSoftware/Brave-Browser-Beta/Default/History",
+    "chromium": "Library/Application Support/Chromium/Default/History",
+    "chrome": "Library/Application Support/Google/Chrome/Default/History",
+    "opera": "Library/Application Support/com.operasoftware.Opera/History",
+    "sidekick": 'Library/Application Support/Sidekick/Default/History',
+    "vivaldi": "Library/Application Support/Vivaldi/Default/History",
+    "edge": "Library/Application Support/Microsoft Edge/Default/History",
+    "safari": "Library/Safari/History.db"
 }
 
 # Get Browser Histories to load per env (true/false)
 HISTORIES = list()
 for k in HISTORY_MAP.keys():
-    is_set = Tools.getEnvBool(k)
-    if is_set:
+    if Tools.getEnvBool(k):
         HISTORIES.append(HISTORY_MAP.get(k))
 
 # Get ignored Domains settings
@@ -55,7 +54,8 @@ def history_paths() -> list:
         list: available paths of history files
     """
     user_dir = os.path.expanduser("~")
-    hists = [f"{user_dir}{h}" for h in HISTORIES]
+    hists = [os.path.join(user_dir, h) for h in HISTORIES]
+
     valid_hists = list()
     # write log if history db was found or not
     for h in hists:
@@ -141,19 +141,32 @@ def sql(db: str) -> list:
         shutil.copy2(db, history_db)
         with sqlite3.connect(history_db) as c:
             cursor = c.cursor()
-            select_statement = f"""
-            SELECT DISTINCT urls.url, urls.title, urls.visit_count, (urls.last_visit_time/1000000 + (strftime('%s', '1601-01-01')))
-            FROM urls, visits
-            WHERE urls.id = visits.url AND
-            urls.title IS NOT NULL AND
-            urls.title != '' order by last_visit_time DESC; """
+            # SQL satement for Safari
+            if "Safari" in db:
+                select_statement = f"""
+                    SELECT history_items.url, history_visits.title, history_items.visit_count,(history_visits.visit_time + 978307200)
+                    FROM history_items
+                        INNER JOIN history_visits
+                        ON history_visits.history_item = history_items.id
+                    WHERE history_items.url IS NOT NULL AND
+						history_visits.TITLE IS NOT NULL AND
+						history_items.url != '' order by visit_time DESC
+                """
+            # SQL statement for Chromium Brothers
+            else:
+                select_statement = f"""
+                    SELECT DISTINCT urls.url, urls.title, urls.visit_count, (urls.last_visit_time/1000000 + (strftime('%s', '1601-01-01')))
+                    FROM urls, visits
+                    WHERE urls.id = visits.url AND
+                    urls.title IS NOT NULL AND
+                    urls.title != '' order by last_visit_time DESC; """
             Tools.log(select_statement)
             cursor.execute(select_statement)
             r = cursor.fetchall()
             res.extend(r)
         os.remove(history_db)  # Delete History file in /tmp
     except sqlite3.Error as e:
-        Tools.log(f"SQL Error{e}")
+        Tools.log(f"SQL Error: {e}")
         sys.exit(1)
     return res
 
@@ -249,13 +262,16 @@ def formatTimeStamp(time_ms: int, fmt: str = '%d. %B %Y') -> str:
 
 
 def main():
-    # Get wf cached directory for writing into log
+    # Get wf cached directory for writing into debugger
     wf_cache_dir = Tools.getCacheDir()
+    # Get wf data directory for writing into debugger
+    wf_data_dir = Tools.getDataDir()
     # Check and write python version
     Tools.log(f"Cache Dir: {wf_cache_dir}")
+    Tools.log(f'Data Dir: {wf_data_dir}')
     Tools.log("PYTHON VERSION:", sys.version)
     if sys.version_info < (3, 7):
-        print("Python version 3.7.0 or higher required!")
+        Tools.log("Python version 3.7.0 or higher required!")
         sys.exit(0)
 
     # Create Workflow items object
@@ -284,28 +300,30 @@ def main():
         ico = Icons(results)
         for i in results:
             url = i[0]
-            domain = Tools.strJoin(urlparse(url).scheme, "://", urlparse(url).netloc)
             title = i[1]
             visits = i[2]
             last_visit = formatTimeStamp(i[3], fmt=DATE_FMT)
             favicon = ico.get_favion_path(url)
             wf.setItem(
                 title=title,
-                subtitle=f"Last visit: {last_visit} (Visits: {visits})",
+                subtitle=f"Last visit: {last_visit}(Visits: {visits})",
                 arg=url,
                 quicklookurl=url
             )
             if show_favicon and favicon:
-                wf.setIcon(favicon, "image")
+                wf.setIcon(
+                    favicon,
+                    "image"
+                )
             wf.addMod(
                 key='cmd',
-                subtitle=f"{i[0]} → copy to Clipboard",
-                arg=f'{i[0]}'
+                subtitle="Other Actions...",
+                arg=url
             )
             wf.addMod(
-                key='alt',
-                subtitle=f'Open domain: {domain}',
-                arg=domain
+                key="alt",
+                subtitle=url,
+                arg=url
             )
             wf.addItem()
     if wf.getItemsLengths() == 0:
