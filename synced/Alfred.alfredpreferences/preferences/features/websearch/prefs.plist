@@ -109,6 +109,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>DADA75BE-E0B4-48DD-86ED-8D17B0F1E467</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>isup</string>
+			<key>text</key>
+			<string>Is "{query}" down for everyone or just me?</string>
+			<key>url</key>
+			<string>https://downfor.io/{query}</string>
+		</dict>
 		<key>E8ABA2E3-2815-463D-BB81-1B8D4643EBB6</key>
 		<dict>
 			<key>enabled</key>
