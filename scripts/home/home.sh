@@ -48,6 +48,30 @@ home() {
     install | i)
       source $DOTFILES/scripts/home/install.sh
       ;;
+    dropzone | dz)
+      shift
+
+      sub="$1"
+      case $sub in
+      dump)
+        __home_prepare_dir
+
+        echo_cyan "Copying Dropzone data..."
+        target="$DOTFILES/synced/Dropzone"
+        src="$HOME/Library/Application Support/Dropzone"
+        rm -rf $target
+        mkdir -p $target
+        cp -r $src/* $target
+
+        __home_revert_dir
+        ;;
+      *) # unknown option
+        echo_red "No command or invalid command supplied."
+        __home_print_help 0
+        return 1
+        ;;
+      esac
+      ;;
     workflows | w)
       shift
       __home_prepare_dir

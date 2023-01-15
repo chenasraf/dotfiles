@@ -115,5 +115,11 @@ else
   echo_cyan "All npm packages already installed."
 fi
 
+echo_cyan "Copying Dropzone data..."
+src="$DOTFILES/synced/Dropzone"
+target="$HOME/Library/Application Support/Dropzone"
+mkdir -p $target
+cp -r $src/* $target
+
 echo_cyan "Done"
 __home_revert_dir
