@@ -50,15 +50,28 @@ home() {
       ;;
     dropzone | dz)
       shift
-
+      dz_lib="$HOME/Library/Application Support/Dropzone"
+      dz_bak="$DOTFILES/synced/Dropzone"
       sub="$1"
+
       case $sub in
+      restore)
+        __home_prepare_dir
+
+        echo_cyan "Restoring Dropzone backup..."
+        src="$dz_bak"
+        target="$dz"
+        mkdir -p $target
+        cp -r $src/* $target
+
+        __home_revert_dir
+        ;;
       dump)
         __home_prepare_dir
 
-        echo_cyan "Copying Dropzone data..."
-        target="$DOTFILES/synced/Dropzone"
-        src="$HOME/Library/Application Support/Dropzone"
+        echo_cyan "Creating Dropzone backup..."
+        target="$dz_bak"
+        src="$dz"
         rm -rf $target
         mkdir -p $target
         cp -r $src/* $target
