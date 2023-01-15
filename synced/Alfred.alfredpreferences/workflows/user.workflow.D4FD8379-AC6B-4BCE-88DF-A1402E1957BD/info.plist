@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>net.deanishe.alfred-fakeum</string>
 	<key>category</key>
-	<string>Tools</string>
+	<string>Developer</string>
 	<key>connections</key>
 	<dict>
 		<key>03F09777-FA2A-45F3-A8A8-49AA079FFC61</key>
@@ -438,6 +438,8 @@ vars={allvars}
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>fake</string>
 			</dict>
@@ -489,6 +491,8 @@ vars={allvars}
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>locales</string>
 			</dict>
@@ -707,12 +711,14 @@ python3 config.py settings "$1"</string>
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -743,6 +749,8 @@ python3 config.py settings "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>config</string>
 			</dict>
@@ -815,6 +823,8 @@ python3 config.py settings "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>notify</string>
 			</dict>
@@ -1092,6 +1102,8 @@ python3 config.py settings "$1"</string>
 			<integer>880</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>LIPSUM_SENTENCES</key>

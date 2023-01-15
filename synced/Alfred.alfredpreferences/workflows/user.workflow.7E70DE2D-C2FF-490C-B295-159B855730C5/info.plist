@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>com.alfredapp.say2</string>
 	<key>category</key>
-	<string>Tools</string>
+	<string>Fun</string>
 	<key>connections</key>
 	<dict>
 		<key>016D2588-21CB-48DC-9F4B-36690AECCCED</key>
@@ -293,6 +293,8 @@ rm temp.mp3</string>
 			<integer>280</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>

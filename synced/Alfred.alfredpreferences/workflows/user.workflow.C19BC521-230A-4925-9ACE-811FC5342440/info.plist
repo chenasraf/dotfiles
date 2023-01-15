@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>com.apple.alfred.workflow.alfdir</string>
 	<key>category</key>
-	<string>Tools</string>
+	<string>Developer</string>
 	<key>connections</key>
 	<dict>
 		<key>08A82670-9DF2-4DDD-844F-115438000923</key>

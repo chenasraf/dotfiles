@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>com.vitorgalvao.alfred.uploadfile</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>3444071E-B0B8-4C12-9699-210912A13E67</key>

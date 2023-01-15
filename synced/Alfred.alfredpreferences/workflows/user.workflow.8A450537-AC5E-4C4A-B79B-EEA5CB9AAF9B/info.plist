@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>de.gh01.alfred.github</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Developer</string>
 	<key>connections</key>
 	<dict>
 		<key>14CA19E2-6328-4201-905E-A751E2BA47B5</key>
@@ -674,6 +674,8 @@ Version 1.1 – 2015-01-10
 			<integer>40</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>hotkey</key>

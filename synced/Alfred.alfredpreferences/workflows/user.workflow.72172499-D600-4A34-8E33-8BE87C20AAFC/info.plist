@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>com.alexchantastic.loremipsum</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Developer</string>
 	<key>connections</key>
 	<dict>
 		<key>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</key>
@@ -153,6 +153,8 @@
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -161,7 +163,7 @@
 			<key>uid</key>
 			<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -385,6 +387,8 @@
 			<integer>10</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>version</key>
 	<string>2.2.0</string>
 	<key>webaddress</key>

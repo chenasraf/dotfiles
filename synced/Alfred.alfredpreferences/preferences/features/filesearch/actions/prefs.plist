@@ -11,8 +11,14 @@
 		<key>string</key>
 		<string>A</string>
 	</dict>
+	<key>showWithCtrl</key>
+	<false/>
+	<key>showWithFn</key>
+	<false/>
 	<key>showWithRightArrow</key>
 	<false/>
+	<key>showWithTab</key>
+	<true/>
 	<key>sortByUsage</key>
 	<true/>
 </dict>

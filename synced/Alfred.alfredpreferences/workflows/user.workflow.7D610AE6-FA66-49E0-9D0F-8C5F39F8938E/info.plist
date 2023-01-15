@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string>dev.casraf.alfred-process-killer</string>
 	<key>category</key>
-	<string>Tools</string>
+	<string>Developer</string>
 	<key>connections</key>
 	<dict>
 		<key>2A751056-87B7-4408-90D6-B868021760CE</key>
@@ -206,6 +206,33 @@ puts xmlString</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>set $1
+echo "'$1' '$2' '${1{:1}'" &gt; /tmp/test.log
+
+kill -9 $1
+open -a $2 --hide</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DF359FBB-0553-41DD-918E-C30E08743BEE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -305,33 +332,6 @@ puts xmlString</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>set $1
-echo "'$1' '$2' '${1{:1}'" &gt; /tmp/test.log
-
-kill -9 $1
-open -a $2 --hide</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>DF359FBB-0553-41DD-918E-C30E08743BEE</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>#Description
@@ -411,6 +411,8 @@ The ruby script that powers Kill Process is `script.rb`. For testing, add a valu
 			<integer>510</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>webaddress</key>
 	<string>https://github.com/nathangreenstein/alfred-process-killer</string>
 </dict>
