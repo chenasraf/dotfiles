@@ -56,27 +56,19 @@ home() {
 
       case $sub in
       restore)
-        __home_prepare_dir
-
         echo_cyan "Restoring Dropzone backup..."
         src="$dz_bak"
         target="$dz"
         mkdir -p $target
         cp -r $src/* $target
-
-        __home_revert_dir
         ;;
       dump)
-        __home_prepare_dir
-
         echo_cyan "Creating Dropzone backup..."
         target="$dz_bak"
         src="$dz"
         rm -rf $target
         mkdir -p $target
         cp -r $src/* $target
-
-        __home_revert_dir
         ;;
       *) # unknown option
         echo_red "No command or invalid command supplied."
@@ -104,6 +96,26 @@ home() {
         __home_prepare_dir
         brew bundle
         __home_revert_dir
+        ;;
+      esac
+      ;;
+    motd | m)
+      shift
+      sub="$1"
+      case $sub in
+      edit | e)
+        vim $DOTFILES/synced/motd && home motd restore
+        ;;
+      dump | d)
+        echo_cyan "Creating motd backup..."
+        cat /etc/motd >$DOTFILES/synced/motd
+        ;;
+      restore | r)
+        echo_cyan "Restoring motd backup... Needs root password"
+        sudo cat $DOTFILES/synced/motd >/etc/motd
+        ;;
+      *)
+        cat /etc/motd
         ;;
       esac
       ;;

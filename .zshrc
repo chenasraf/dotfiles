@@ -11,3 +11,5 @@ source $DOTFILES/scripts/home/home.sh
 for file in $DOTFILES/scripts/*; do
   [[ -f "$file" ]] && source $file
 done
+
+if [[ -f /etc/motd ]]; then cat /etc/motd; fi

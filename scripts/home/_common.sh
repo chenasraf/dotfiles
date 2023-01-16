@@ -25,7 +25,7 @@ __home_print_help() {
   __home_prepare_dir -q
 
   if [[ "$1" == "0" ]]; then
-    man -P cat ./man_src/home.7
+    man -P less ./man_src/home.7
   else
     man ./man_src/home.7
   fi
