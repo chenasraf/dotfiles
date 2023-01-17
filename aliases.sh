@@ -53,6 +53,11 @@ alias h="home"
 alias rh="rhome"
 alias spider="ssh root@spider.casraf.dev"
 
+motd() {
+  if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi
+  if [[ -f /etc/motd ]]; then cat /etc/motd; fi
+}
+
 docker-bash() {
   docker exec -ti $1 /bin/bash
 }
