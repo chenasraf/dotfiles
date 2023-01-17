@@ -111,9 +111,13 @@ home() {
         cat /etc/motd >$DOTFILES/synced/motd
         ;;
       restore | r)
-        echo_cyan "Restoring motd backup... Needs root password"
-        sudo cat $DOTFILES/synced/motd >/etc/motd
-        scp /etc/motd root@spider.casraf.dev:/etc/motd
+        echo_cyan "Restoring motd backup..."
+        cat $DOTFILES/synced/motd >/etc/motd
+        if [[ "$?" -ne 0 ]]; then
+          echo_red "Failed to restore motd. Trying to fix permissions... needs root access"
+          sudo chmod 0766 /etc/motd
+        fi
+        scp -P 420 /etc/motd root@spider.casraf.dev:/etc/motd
         ;;
       *)
         cat /etc/motd

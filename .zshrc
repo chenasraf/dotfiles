@@ -12,4 +12,6 @@ for file in $DOTFILES/scripts/*; do
   [[ -f "$file" ]] && source $file
 done
 
-if [[ -f /etc/motd ]]; then cat /etc/motd; fi
+if [[ -f /etc/motd ]]; then
+  if [[ $(which lolcat) ]]; then lolcat /etc/motd; else cat /etc/motd; fi
+fi
