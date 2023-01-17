@@ -113,6 +113,7 @@ home() {
       restore | r)
         echo_cyan "Restoring motd backup... Needs root password"
         sudo cat $DOTFILES/synced/motd >/etc/motd
+        scp /etc/motd root@spider.casraf.dev:/etc/motd
         ;;
       *)
         cat /etc/motd
