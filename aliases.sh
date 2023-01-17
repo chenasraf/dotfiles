@@ -55,6 +55,7 @@ alias spider="ssh root@spider.casraf.dev"
 
 motd() {
   if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi
+  uname -a
   if [[ -f /etc/motd ]]; then cat /etc/motd; fi
 }
 
