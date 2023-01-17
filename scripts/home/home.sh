@@ -104,22 +104,34 @@ home() {
       sub="$1"
       case $sub in
       edit | e)
-        vim $DOTFILES/synced/motd && home motd restore
+        if [[ "$2" == "head" ]]; then
+          vim $DOTFILES/synced/motd/motd.head && home motd restore
+          return 0
+        else
+          vim $DOTFILES/synced/motd/motd && home motd restore
+        fi
         ;;
       dump | d)
         echo_cyan "Creating motd backup..."
-        cat /etc/motd >$DOTFILES/synced/motd
+        cat /etc/motd.head >$DOTFILES/synced/motd/motd.head
+        cat /etc/motd >$DOTFILES/synced/motd/motd
         ;;
       restore | r)
         echo_cyan "Restoring motd backup..."
-        cat $DOTFILES/synced/motd >/etc/motd
+        cat $DOTFILES/synced/motd/motd >/etc/motd
+        cat $DOTFILES/synced/motd/motd.head >/etc/motd.head
         if [[ "$?" -ne 0 ]]; then
           echo_red "Failed to restore motd. Trying to fix permissions... needs root access"
           sudo chmod 0766 /etc/motd
+          sudo chmod 0766 /etc/motd.head
         fi
-        scp -P 420 /etc/motd root@spider.casraf.dev:/etc/motd
+        scp $DOTFILES/synced/motd/09-head root@spider.casraf.dev:/etc/update-motd.d/09-head
+        ssh root@spider.casraf.dev "chmod 0755 /etc/update-motd.d/09-head"
+        scp /etc/motd.head root@spider.casraf.dev:/etc/motd.head
+        scp /etc/motd root@spider.casraf.dev:/etc/motd
         ;;
       *)
+        lolcat /etc/motd.head
         cat /etc/motd
         ;;
       esac

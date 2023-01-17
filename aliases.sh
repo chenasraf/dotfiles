@@ -51,7 +51,7 @@ alias gundo="git push -f origin HEAD^:master"
 alias unq="sudo xattr -rd com.apple.quarantine"
 alias h="home"
 alias rh="rhome"
-alias spider="ssh -p 420 root@spider.casraf.dev"
+alias spider="ssh root@spider.casraf.dev"
 
 docker-bash() {
   docker exec -ti $1 /bin/bash
