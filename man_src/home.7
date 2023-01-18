@@ -16,36 +16,36 @@ before running the supplied command
 
 home takes one command:
 
-git, g          Run arbitrary git commands from .dotfiles directory
+git, g              Run arbitrary git commands from .dotfiles directory
 
-worflows, w     Manage custom workflows for Alfred, keeping them in sync between dotfiles and external repository
-                (if applicable).
-                - Sub commands available: push, pull
+worflows, w         Manage custom workflows for Alfred, keeping them in sync between dotfiles and external repository
+                    (if applicable).
+                    - Sub commands available: push, pull
 
-motd, m         Manage syncd MOTD (Message of the Day)
-                - Sub commands available: restore, backup, edit, show
+motd, m             Manage syncd MOTD (Message of the Day)
+                    - Sub commands available: restore, backup, edit, show
 
-brew, b         Use brew bundle to load or dump currently installed packages. 
-                Will read/write from Brewfile in .dotfiles directory
-                - Subcommands: dump, restore.
+brew, b             Use brew bundle to load or dump currently installed packages. 
+                    Will read/write from Brewfile in .dotfiles directory
+                    - Subcommands: dump, restore.
 
-brew, b         Manage data for Dropzone installation.
-                - Subcommands: dump, restore.
+brew, b             Manage data for Dropzone installation.
+                    - Subcommands: dump, restore.
 
-status, s       See git status for dotfiles directory
+status, s           See git status for dotfiles directory
 
-push, p         Add all files, commit and push updates to git. Supply commit msg as first arg or it will ask
-                interactively.
+push, p             Add all files, commit and push updates to git. Supply commit msg as first arg or it will ask
+                    interactively.
 
-pull, l         Pull updates from git and reload home
+pull, l             Pull updates from git and reload home
 
-reload, rz      Reload (source) the current ZSH shell. Incrementally slower as you use it in same terminal.
+reload-term, rt     Reload (source) the current ZSH shell. Incrementally slower as you use it in same terminal.
 
-refresh, rh     Refresh (source) only the home script and tools. Faster than reload.
+reload-home, rh     Reload (source) only the home script and tools. Faster than reload-term.
 
-install, i      Install all settings files to their appropriate locations (e.g. MAN page, plugins, themes, bins, etc)
+install, i          Install all settings files to their appropriate locations (e.g. MAN page, plugins, themes, bins, etc)
 
-help, -h        Dislpay help file
+help, -h            Dislpay help file
 
 .SH CUSTOM ALIASES
 

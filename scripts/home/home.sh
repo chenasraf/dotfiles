@@ -37,11 +37,11 @@ home() {
       reload-zsh
       __home_revert_dir
       ;;
-    reload | rz)
+    reload-term | rt)
       reload-zsh
       return 0
       ;;
-    refresh | rh)
+    reload-home | rh)
       source $DOTFILES/scripts/home/home.sh
       return 0
       ;;
