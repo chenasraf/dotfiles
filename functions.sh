@@ -3,6 +3,8 @@ source $HOME/.dotfiles/colors.sh
 motd() {
   if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi
   uname -a
+  echo
+  df -h /System/Volumes/Data
   if [[ -f /etc/motd ]]; then cat /etc/motd; fi
 }
 
