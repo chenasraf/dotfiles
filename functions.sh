@@ -4,7 +4,7 @@ motd() {
   if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi
   uname -a
   echo
-  df -h /System/Volumes/Data
+  df -h /System/Volumes/Data 2&>/dev/null
   if [[ -f /etc/motd ]]; then cat /etc/motd; fi
 }
 
