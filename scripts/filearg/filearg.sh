@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 source "$DOTFILES/colors.sh"
 
 # dir=$(dirname $0)

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 source $DOTFILES/colors.sh
 source $DOTFILES/exports.sh
 source $DOTFILES/scripts/zi.sh

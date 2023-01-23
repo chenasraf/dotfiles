@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 export ANDROID_SDK_ROOT="/opt/homebrew/bin"
 
 # Path to your oh-my-zsh installation.

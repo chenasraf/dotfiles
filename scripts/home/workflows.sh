@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 source $DOTFILES/scripts/home/_common.sh
 
 # The following array values must be in the same order to be matches

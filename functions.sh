@@ -1,10 +1,12 @@
+#!/usr/bin/env zsh
+
 source $HOME/.dotfiles/colors.sh
 
 motd() {
   if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi
   uname -a
   echo
-  df -h /System/Volumes/Data 2&>/dev/null
+  df -h /System/Volumes/Data 2 &>/dev/null
   if [[ -f /etc/motd ]]; then cat /etc/motd; fi
 }
 
@@ -71,4 +73,11 @@ is_mac() {
 
 is_linux() {
   int_res "uname -s" "linux"
+}
+
+rc() {
+  if [[ -f "$DOTFILES/$1.sh" ]]; then
+    vi "$DOTFILES/$1.sh"
+    source "$DOTFILES/$1.sh"
+  fi
 }

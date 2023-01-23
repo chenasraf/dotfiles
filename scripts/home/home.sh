@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 cwd="${cwd}"
 source $DOTFILES/scripts/home/_common.sh
 

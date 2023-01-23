@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # OSX defaults overrides
 
 __write_default() {

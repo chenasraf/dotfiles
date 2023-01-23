@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # colors
 color() {
   echo -e "\033[0;$1m$2\033[0m"
