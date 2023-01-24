@@ -53,5 +53,5 @@ alias h="home"
 alias rh="rhome"
 alias spider="ssh root@spider.casraf.dev"
 if [[ $(is_linux) ]]; then
-  alis md5="md5sum"
+  alias md5="md5sum"
 fi
