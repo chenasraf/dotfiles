@@ -82,6 +82,8 @@ plugins=(
   themes
   sudo       #                 ESC twice to sudo last command
   dirhistory #                 Alt+Left - prev, Alt+Right - next, Alt+Up - up one level, Alt+Down go to first dir in alphabetical order
+  wd
+  
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -97,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 export VISUAL="$EDITOR"

@@ -235,7 +235,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>./heb_flip.py {query}</string>
+				<string>./heb_flip.py -o {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -531,86 +531,86 @@
 		<key>077E1BE2-CA93-4F8B-9564-DC9CCFDACC60</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>130</real>
+			<real>165</real>
 		</dict>
 		<key>109B59F0-6256-4E7D-A5E8-EA2A14EAD771</key>
 		<dict>
 			<key>xpos</key>
-			<real>830</real>
+			<real>710</real>
 			<key>ypos</key>
-			<real>470</real>
+			<real>505</real>
 		</dict>
 		<key>23A8633E-D968-4643-91AE-DFCF1EDECD6D</key>
 		<dict>
 			<key>xpos</key>
-			<real>845</real>
+			<real>970</real>
 			<key>ypos</key>
-			<real>180</real>
+			<real>215</real>
 		</dict>
 		<key>264B96B1-A47C-491E-972F-53804A38DC68</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>250</real>
+			<real>285</real>
 		</dict>
 		<key>2F689C29-73B9-47DD-8DAF-066DA770822C</key>
 		<dict>
 			<key>xpos</key>
-			<real>255</real>
+			<real>135</real>
 			<key>ypos</key>
-			<real>480</real>
+			<real>515</real>
 		</dict>
 		<key>3695395D-88FA-4847-82DF-108EB654FBF1</key>
 		<dict>
 			<key>xpos</key>
-			<real>600</real>
+			<real>480</real>
 			<key>ypos</key>
-			<real>305</real>
+			<real>340</real>
 		</dict>
 		<key>5FADF381-6928-484A-9162-DE351E7822A2</key>
 		<dict>
 			<key>xpos</key>
-			<real>255</real>
+			<real>135</real>
 			<key>ypos</key>
-			<real>630</real>
+			<real>665</real>
 		</dict>
 		<key>7482EBE2-FF2B-4BA5-ADF5-4EBB4DA91A51</key>
 		<dict>
 			<key>xpos</key>
-			<real>685</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>180</real>
+			<real>215</real>
 		</dict>
 		<key>78273A8C-8846-4074-B3A3-7DEB09AA83E4</key>
 		<dict>
 			<key>xpos</key>
-			<real>995</real>
+			<real>875</real>
 			<key>ypos</key>
-			<real>470</real>
+			<real>505</real>
 		</dict>
 		<key>85B7F9A2-9EE2-4B60-99D7-131F8937EC99</key>
 		<dict>
 			<key>xpos</key>
-			<real>595</real>
+			<real>475</real>
 			<key>ypos</key>
-			<real>145</real>
+			<real>180</real>
 		</dict>
 		<key>865BAB3E-842D-4C3B-90BE-B01556A80D71</key>
 		<dict>
 			<key>xpos</key>
-			<real>255</real>
+			<real>135</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>365</real>
 		</dict>
 		<key>ECC37026-A91B-46A6-8279-EE3309A6A4EE</key>
 		<dict>
 			<key>xpos</key>
-			<real>815</real>
+			<real>695</real>
 			<key>ypos</key>
-			<real>620</real>
+			<real>655</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

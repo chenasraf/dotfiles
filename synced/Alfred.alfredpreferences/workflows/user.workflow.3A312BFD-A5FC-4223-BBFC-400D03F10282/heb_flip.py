@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+
 import json
 import re
+
 # -*- coding: utf-8 -*-
 
 import sys
@@ -8,6 +10,9 @@ from maps import *
 
 
 args = sys.argv[1:]
+direct_output = True if "-o" in args else False
+if "-o" in args[:-1]:
+    args.remove("-o")
 lang = args[0]
 query = " ".join(args[1:])
 
@@ -47,14 +52,15 @@ all_langs = lang_maps.keys()
 out = {"items": []}
 
 if lang != "":
-    out['items'] = [make_res_item(lang, run(lang, query))]
+    out["items"] = [make_res_item(lang, run(lang, query))]
 else:
-    out['items'] = [
-        make_res_item(l, run(l, query)) for l in all_langs
-    ]
+    out["items"] = [make_res_item(l, run(l, query)) for l in all_langs]
 
-if re.match(r'[a-z]', query):
-    out['items'] = out['items'][::-1]
+if re.match(r"[a-z]", query):
+    out["items"] = out["items"][::-1]
 
+res = json.dumps(out)
+if direct_output:
+    res = " ".join(out["items"][0]["arg"])
 
-sys.stdout.write(json.dumps(out))
+sys.stdout.write(res)

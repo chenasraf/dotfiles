@@ -76,8 +76,17 @@ is_linux() {
 }
 
 rc() {
-  if [[ -f "$DOTFILES/$1.sh" ]]; then
-    vi "$DOTFILES/$1.sh"
-    source "$DOTFILES/$1.sh"
+  file="$DOTFILES/$1.sh"
+  if [[ -f $file ]]; then
+    hash=$(md5 $file)
+    vi $file
+    newhash=$(md5 $file)
+
+    if [[ $? -eq 0 && $hash != $newhash ]]; then
+      echo "Reloading $DOTFILES/$1.sh..."
+      source "$DOTFILES/$1.sh"
+    fi
+    return 0
   fi
+  return 1
 }
