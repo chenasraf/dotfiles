@@ -50,7 +50,7 @@ cd $cwd
 
 # OhMyZsh Themes
 theme_src=(
-  "git@github.com:halfo/lambda-mod-zsh-theme.git"
+  "git@github.com:chenasraf/lambda-mod-zsh-theme.git"
 )
 
 theme_dirnames=(
