@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.casraf.hebflip</string>
+	<string>dev.casraf.hebflip</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -525,7 +525,30 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Realized you were typing in the wrong language all along? Flips your Hebrew/English texts around
+using Alfred 4 workflows.
+
+Or: הפוך על הפוך for Alfred ;)
+
+Hebrew:
+
+- Use "heb" keyword to switch **English &amp;rarr; Hebrew**. Copies the text to clipboard.
+
+  Original: akuo -&gt; Fixed: שלום
+
+- Shortcut: ⌘ cmd + ⇧ shift + H
+
+  Use shortcut anywhere to switch English -&gt; Hebrew in place. Immediately replaces the selected text with the translation.
+
+English:
+
+- Use "eng" to switch Hebrew -&gt; English. Copies the text to clipboard.
+
+  Original: יקךךם -&gt; Fixed: hello
+
+- Shortcut: ⌘ cmd + ⇧ shift + E
+
+  Use shortcut anywhere to switch Hebrew -&gt; English in place. Immediately replaces the selected text with the translation.</string>
 	<key>uidata</key>
 	<dict>
 		<key>077E1BE2-CA93-4F8B-9564-DC9CCFDACC60</key>
@@ -615,9 +638,11 @@
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.1.1</string>
 	<key>webaddress</key>
-	<string>https://casraf.blog</string>
+	<string>https://casraf.dev</string>
 </dict>
 </plist>
