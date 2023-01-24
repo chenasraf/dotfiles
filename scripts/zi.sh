@@ -32,8 +32,10 @@ zi() {
     fi
     ;;
   clear)
-    rm -rf $THEMES_DIR/*
-    rm -rf $PLUGINS_DIR/*
+    rm -rf $THEMES_DIR
+    mkdir -p $THEMES_DIR
+    rm -rf $PLUGINS_DIR
+    mkdir -p $PLUGINS_DIR
     ;;
   *)
     echo "Unknown command: $sub"
