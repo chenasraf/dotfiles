@@ -71,6 +71,7 @@ echo_cyan "Done"
 echo_cyan "Downloading gi_gen latest version..."
 gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
 ver_file="$DOTFILES/.bin/.gi_gen_version"
+mkdir -p $(dirname $ver_file)
 touch $ver_file
 existing_ver=$(cat $ver_file)
 if [[ "$existing_ver" != "$gi_ver" ]]; then
