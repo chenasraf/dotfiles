@@ -1,2 +1,0 @@
-#!/bin/bash
-if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi

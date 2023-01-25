@@ -3,11 +3,7 @@
 source $HOME/.dotfiles/colors.sh
 
 motd() {
-  if [[ -f /etc/motd.head ]]; then lolcat -f /etc/motd.head; fi
-  uname -a
-  echo
-  df -h /System/Volumes/Data 2 &>/dev/null
-  if [[ -f /etc/motd ]]; then cat /etc/motd; fi
+  run-parts $DOTFILES/synced/motd
 }
 
 docker-bash() {
@@ -75,6 +71,9 @@ is_linux() {
   int_res "uname -s" "linux"
 }
 
+export -f is_mac
+export -f is_linux
+
 rc() {
   file="$DOTFILES/$1.sh"
   if [[ -f $file ]]; then
@@ -90,3 +89,27 @@ rc() {
   fi
   return 1
 }
+
+# same as run-parts from debian, but for osx
+if [[ $(is_mac) == 0 ]]; then
+  run-parts() {
+    if [[ $# -eq 0 ]]; then
+      echo "Usage: run-parts <dir>"
+      return 1
+    fi
+    if [[ $1 == "-v" ]]; then
+      verbose=1
+      shift
+    fi
+    out=""
+    for f in $1/*; do
+      if [[ -x $f ]]; then
+        if [[ $verbose == 1 ]]; then
+          echo "Running $f..."
+        fi
+        source $f
+        echo
+      fi
+    done
+  }
+fi

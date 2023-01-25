@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+if [[ $(is_mac) == 0 ]]; then
+  df -h /System/Volumes/Data 2 &>/dev/null
+else
+  df -h /dev/sda
+fi
