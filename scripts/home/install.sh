@@ -78,7 +78,7 @@ if [[ "$existing_ver" != "$gi_ver" ]]; then
   echo_cyan "Downloading gi_gen $gi_ver..."
   mkdir -p $DOTBIN
   mkdir -p $DOTFILES/.bin
-  if [[ $(is_mac) == 1 ]]; then
+  if [[ $(is_mac) == 0 ]]; then
     curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
   else
     curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-linux-amd -o $DOTBIN/gi_gen
