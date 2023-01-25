@@ -86,7 +86,7 @@ home() {
       __home_revert_dir
       ;;
     brew | b)
-      if [[ $(is_linux) ]]; then
+      if [[ $(is_linux) == 1 ]]; then
         echo_red "Brew is not supported on Linux"
         return 1
       fi
