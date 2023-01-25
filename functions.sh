@@ -71,9 +71,6 @@ is_linux() {
   int_res "uname -s" "linux"
 }
 
-export -f is_mac >/dev/null
-export -f is_linux >/dev/null
-
 rc() {
   file="$DOTFILES/$1.sh"
   if [[ -f $file ]]; then

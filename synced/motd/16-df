@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source ~/.dotfiles/functions.sh
+
 if [[ $(is_mac) == 0 ]]; then
   df -h /System/Volumes/Data 2 &>/dev/null
 else
