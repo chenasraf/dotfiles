@@ -94,6 +94,7 @@ check_npm=(
   "tldr"
   "simple-scaffold"
   "firebase"
+  "prettier"
 )
 
 install_npm=(
@@ -101,6 +102,7 @@ install_npm=(
   "tldr@latest"
   "simple-scaffold@latest"
   "firebase-tools@latest"
+  "prettier@latest"
 )
 
 install_npm_final=()
@@ -120,7 +122,9 @@ else
   echo_cyan "All npm packages already installed."
 fi
 
-echo "dotfiles:$DOTFILES\ndv:~/Dev\ndt:~/Desktop\ndl:~/Downloads" >~/.warprc
+if [[ ! -f ~/.warprc ]]; then
+  echo "dotfiles:$DOTFILES\n" >~/.warprc
+fi
 
 echo_cyan "Done"
 

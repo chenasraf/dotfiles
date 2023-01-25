@@ -38,6 +38,7 @@ alias ggi_gen="$DOTBIN/gi_gen"
 # go [i]nstall & run gi_gen
 alias igi_gen="go install && dgi_gen"
 alias filearg "$DOTFILES/scripts/filearg/filearg.sh"
+alias gdiff="git diff"
 
 # from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
 alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
