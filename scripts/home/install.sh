@@ -120,5 +120,8 @@ else
   echo_cyan "All npm packages already installed."
 fi
 
+echo "dotfiles:$DOTFILES\ndv:~/Dev\ndt:~/Desktop\ndl:~/Downloads" >~/.warprc
+
 echo_cyan "Done"
+
 __home_revert_dir

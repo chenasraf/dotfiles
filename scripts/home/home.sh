@@ -160,7 +160,7 @@ rhome() {
   # echo "Reloading zsh"
   # home reload
   echo "Reloading home"
-  home refresh
+  home rh
   if [[ $# -gt 0 ]]; then
     echo "Running \`home $@\`"
     home $@
