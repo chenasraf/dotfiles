@@ -57,9 +57,9 @@ int_res() {
   out="$(lcase $(bash -c "${@:1:$c}"))"
   check="$(lcase ${@: -1})"
   if [[ $out =~ $check ]]; then
-    echo 0
-  else
     echo 1
+  else
+    echo 0
   fi
 }
 
@@ -79,16 +79,51 @@ rc() {
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      echo "Reloading $DOTFILES/$1.sh..."
-      source "$DOTFILES/$1.sh"
+      src $1
     fi
     return 0
   fi
   return 1
 }
 
+src() {
+  file="$DOTFILES/$1.sh"
+  if [[ -f $file ]]; then
+      echo "Reloading $DOTFILES/$1.sh..."
+      source "$DOTFILES/$1.sh"
+      return 0
+  fi
+  return 1
+}
+
+# select random number between min and max
+rand() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: rand [min = 0] <max>"
+    return 1
+  fi
+  if [[ $# -eq 1 ]]; then
+    min=$((0))
+    max=$(($1))
+  else
+    min=$(($1))
+    max=$(($2))
+  fi
+  echo $(($RANDOM % ($max - $min + 1) + $min))
+}
+
+# select random element from arguments
+randarg() {
+  echo "${${@}[$RANDOM % $# + 1]}"
+}
+
+# select random element from list
+randline() {
+  echo $(($RANDOM % $(wc -l <$1) + 1))
+}
+
 # same as run-parts from debian, but for osx
-if [[ $(is_mac) == 0 ]]; then
+if [[ $(is_mac) == 1 ]]; then
   run-parts() {
     if [[ $# -eq 0 ]]; then
       echo "Usage: run-parts <dir>"

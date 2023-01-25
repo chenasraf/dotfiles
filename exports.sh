@@ -3,7 +3,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-if [[ $(is_mac) == 0 ]]; then
+if [[ $(is_mac) == 1 ]]; then
   export ANDROID_SDK_ROOT="/opt/homebrew/bin"
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
