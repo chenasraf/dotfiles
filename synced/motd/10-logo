@@ -13,3 +13,4 @@ logo='
 
 echo "$(tput bold)$(echo $logo)$(tput sgr0)" | lolcat -f
 echo
+echo

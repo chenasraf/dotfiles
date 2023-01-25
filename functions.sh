@@ -71,8 +71,8 @@ is_linux() {
   int_res "uname -s" "linux"
 }
 
-export -f is_mac
-export -f is_linux
+export -f is_mac >/dev/null
+export -f is_linux >/dev/null
 
 rc() {
   file="$DOTFILES/$1.sh"
@@ -108,7 +108,6 @@ if [[ $(is_mac) == 0 ]]; then
           echo "Running $f..."
         fi
         source $f
-        echo
       fi
     done
   }

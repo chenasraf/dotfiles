@@ -5,3 +5,4 @@ if [[ $(is_mac) == 0 ]]; then
 else
   df -h /dev/sda
 fi
+echo
