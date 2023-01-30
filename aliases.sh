@@ -11,9 +11,6 @@ source $HOME/.dotfiles/colors.sh
 
 # Aliases
 alias reload-zsh="source $HOME/.zshrc"
-alias dv="cd $HOME/Dev"
-alias dt="cd $HOME/Desktop"
-alias dl="cd $HOME/Downloads"
 alias serve="python3 -m http.server ${PORT:-3001}"
 # alias python2="PYTHONPATH=$(pwd):$PYTHONPATH $(whence python)"
 # alias python3="PYTHONPATH=$(pwd):$PYTHONPATH $(whence python3)"
@@ -39,9 +36,6 @@ alias ggi_gen="$DOTBIN/gi_gen"
 alias igi_gen="go install && dgi_gen"
 alias filearg "$DOTFILES/scripts/filearg/filearg.sh"
 alias gdiff="git diff"
-alias hst="home status"
-alias hp="home push"
-alias hl="home pull"
 
 # from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
 alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
@@ -55,10 +49,15 @@ alias gundo="git reset --soft HEAD~1"
 alias unq="sudo xattr -rd com.apple.quarantine"
 alias h="home"
 alias rh="rhome"
+alias rt="home rt"
+alias hst="home status"
+alias hf="home git fetch"
+alias hp="home push"
+alias hl="home pull"
 alias spider="ssh root@spider.casraf.dev"
 alias sf="search-file"
 alias fnu="find-up"
 
-if [[ $(is_linux) == 0 ]]; then
+if is_linux; then
   alias md5="md5sum"
 fi

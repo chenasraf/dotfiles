@@ -57,10 +57,8 @@ int_res() {
   out="$(lcase $(bash -c "${@:1:$c}"))"
   check="$(lcase ${@: -1})"
   if [[ $out =~ $check ]]; then
-    echo 0
     return 0
   else
-    echo 1
     return 1
   fi
 }
@@ -127,7 +125,7 @@ randline() {
 }
 
 # same as run-parts from debian, but for osx
-if [[ $(is_mac) == 0 ]]; then
+if is_mac; then
   run-parts() {
     verbose=0
     if [[ $# -eq 0 ]]; then

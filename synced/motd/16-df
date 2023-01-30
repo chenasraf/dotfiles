@@ -2,7 +2,7 @@
 
 source ~/.dotfiles/functions.sh
 
-if [[ $(is_mac) == 0 ]]; then
+if is_mac; then
   df -h /System/Volumes/Data
 else
   df -h /dev/sda
