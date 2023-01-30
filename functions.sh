@@ -58,17 +58,21 @@ int_res() {
   check="$(lcase ${@: -1})"
   if [[ $out =~ $check ]]; then
     echo 0
+    return 0
   else
     echo 1
+    return 1
   fi
 }
 
 is_mac() {
   int_res "uname -s" "darwin"
+  return $?
 }
 
 is_linux() {
   int_res "uname -s" "linux"
+  return $?
 }
 
 rc() {
