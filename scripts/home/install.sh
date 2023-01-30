@@ -123,7 +123,11 @@ else
 fi
 
 if [[ ! -f ~/.warprc ]]; then
-  echo "dotfiles:$DOTFILES\n" >~/.warprc
+  cp $DOTFILES/.warprc ~/.warprc
+fi
+
+if [[ ! -f ~/.vimrc ]]; then
+  cp $DOTFILES/.vimrc ~/.vimrc
 fi
 
 echo_cyan "Done"
