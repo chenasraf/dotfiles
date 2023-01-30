@@ -3,7 +3,7 @@
 # OSX defaults overrides
 
 __write_default() {
-  if [[ $(is_mac) == "1" ]]; then
+  if ! is_mac; then
     return 0
   fi
 
