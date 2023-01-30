@@ -3,8 +3,8 @@
 source ~/.dotfiles/functions.sh
 
 if is_mac; then
-  df -h /System/Volumes/Data
+  df -h /System/Volumes/Data NE
 else
-  df -h /dev/sda
+  df -h /dev/sda NE
 fi
 echo
