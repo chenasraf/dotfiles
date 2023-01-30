@@ -56,6 +56,9 @@ alias unq="sudo xattr -rd com.apple.quarantine"
 alias h="home"
 alias rh="rhome"
 alias spider="ssh root@spider.casraf.dev"
-if [[ $(is_linux) == 1 ]]; then
+alias sf="search-file"
+alias fnu="find-up"
+
+if [[ $(is_linux) == 0 ]]; then
   alias md5="md5sum"
 fi

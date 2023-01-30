@@ -57,9 +57,9 @@ int_res() {
   out="$(lcase $(bash -c "${@:1:$c}"))"
   check="$(lcase ${@: -1})"
   if [[ $out =~ $check ]]; then
-    echo 1
-  else
     echo 0
+  else
+    echo 1
   fi
 }
 
@@ -123,8 +123,9 @@ randline() {
 }
 
 # same as run-parts from debian, but for osx
-if [[ $(is_mac) == 1 ]]; then
+if [[ $(is_mac) == 0 ]]; then
   run-parts() {
+    verbose=0
     if [[ $# -eq 0 ]]; then
       echo "Usage: run-parts <dir>"
       return 1
@@ -144,3 +145,36 @@ if [[ $(is_mac) == 1 ]]; then
     done
   }
 fi
+
+search-file() {
+  if [[ $# -eq 0 ]]; then
+    echo "Usage: find-file [dir] <file>"
+    return 1
+  fi
+  if [[ $# -eq 1 ]]; then
+    dir=$(pwd)
+    file=$1
+  else
+    dir=$1
+    file=$2
+  fi
+  find $dir -name $file 2>/dev/null
+  return $?
+}
+
+find-up() {
+  if [[ $# -eq 0 ]]; then
+    echo "Usage: find-up <file>"
+    return 1
+  fi
+  file=$1
+  dir=$(pwd)
+  while [[ $dir != "/" ]]; do
+    if [[ -f $dir/$file ]]; then
+      echo $dir/$file
+      return 0
+    fi
+    dir=$(dirname $dir)
+  done
+  return 1
+}

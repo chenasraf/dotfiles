@@ -3,7 +3,7 @@
 source ~/.dotfiles/functions.sh
 
 if [[ $(is_mac) == 0 ]]; then
-  df -h /System/Volumes/Data 2 &>/dev/null
+  df -h /System/Volumes/Data
 else
   df -h /dev/sda
 fi
