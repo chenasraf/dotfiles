@@ -74,6 +74,11 @@ is_linux() {
 }
 
 rc() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: rc <dotfile>"
+    return 1
+  fi
+
   file="$DOTFILES/$1.sh"
   if [[ -f $file ]]; then
     hash=$(md5 $file)
@@ -82,23 +87,29 @@ rc() {
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      echo "Reloading $file..."
-      src $file
+      src $1
     else
       echo "No changes made"
     fi
     return 0
   fi
+  echo_red "File not found: $file"
   return 1
 }
 
 src() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: src <dotfile>"
+    return 1
+  fi
+
   file="$DOTFILES/$1.sh"
   if [[ -f $file ]]; then
       echo "Reloading $DOTFILES/$1.sh..."
       source "$DOTFILES/$1.sh"
       return 0
   fi
+  echo_red "File not found: $file"
   return 1
 }
 
