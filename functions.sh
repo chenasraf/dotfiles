@@ -77,11 +77,15 @@ rc() {
   file="$DOTFILES/$1.sh"
   if [[ -f $file ]]; then
     hash=$(md5 $file)
+    echo "Opening $file..."
     vi $file
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      src $1
+      echo "Reloading $file..."
+      src $file
+    else
+      echo "No changes made"
     fi
     return 0
   fi
