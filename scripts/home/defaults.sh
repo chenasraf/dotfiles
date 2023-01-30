@@ -18,4 +18,6 @@ __write_default() {
 __write_default "defaults write -g PMPrintingExpandedStateForPrint -bool TRUE"
 __write_default "defaults write -g NSScrollViewRubberbanding -bool FALSE"
 
+# shopt -s direxpand
+
 unset __write_default

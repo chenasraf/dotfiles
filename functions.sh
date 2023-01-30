@@ -79,7 +79,15 @@ rc() {
     return 1
   fi
 
+  no_src=0
+
+  if [[ $1 == '-n' ]]; then
+    no_src=1
+    shift
+  fi
+
   file="$DOTFILES/$1.sh"
+
   if [[ -f $file ]]; then
     hash=$(md5 $file)
     echo "Opening $file..."
@@ -87,7 +95,8 @@ rc() {
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      src $1
+      echo "no_src=$no_src"
+      if [[ $no_src -ne 1 ]]; then src $1; fi
     else
       echo "No changes made"
     fi
@@ -105,9 +114,9 @@ src() {
 
   file="$DOTFILES/$1.sh"
   if [[ -f $file ]]; then
-      echo "Reloading $DOTFILES/$1.sh..."
-      source "$DOTFILES/$1.sh"
-      return 0
+    echo "Reloading $DOTFILES/$1.sh..."
+    source "$DOTFILES/$1.sh"
+    return 0
   fi
   echo_red "File not found: $file"
   return 1
@@ -129,10 +138,8 @@ rand() {
   echo $(($RANDOM % ($max - $min + 1) + $min))
 }
 
-# select random element from arguments
-randarg() {
-  echo "${${@}[$RANDOM % $# + 1]}"
-}
+# need to source because VS Code raises error on the function
+source $DOTFILES/scripts/randrag.sh
 
 # select random element from list
 randline() {
