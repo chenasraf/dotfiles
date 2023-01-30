@@ -22,6 +22,8 @@ brew "blueutil"
 brew "openldap"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
 # Fast Lexical Analyzer, generates Scanners (tokenizers)
 brew "flex"
 # Libraries to talk to Microsoft SQL Server and Sybase databases

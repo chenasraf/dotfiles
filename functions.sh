@@ -139,7 +139,7 @@ rand() {
 }
 
 # need to source because VS Code raises error on the function
-source $DOTFILES/scripts/randrag.sh
+source $DOTFILES/scripts/randarg.sh
 
 # select random element from list
 randline() {

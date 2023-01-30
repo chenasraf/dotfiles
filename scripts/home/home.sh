@@ -57,14 +57,14 @@ home() {
       sub="$1"
 
       case $sub in
-      restore)
+      r | restore)
         echo_cyan "Restoring Dropzone backup..."
         src="$dz_bak"
         target="$dz"
         mkdir -p $target
         cp -r $src/* $target
         ;;
-      dump)
+      d | dump)
         echo_cyan "Creating Dropzone backup..."
         target="$dz_bak"
         src="$dz"
@@ -93,12 +93,12 @@ home() {
       shift
       sub="$1"
       case $sub in
-      dump)
+      d | dump)
         __home_prepare_dir
         brew bundle dump -f --describe
         __home_revert_dir
         ;;
-      restore)
+      r | restore)
         __home_prepare_dir
         brew bundle
         __home_revert_dir

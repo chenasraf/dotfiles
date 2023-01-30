@@ -59,6 +59,7 @@ alias hl="home pull"
 alias spider="ssh root@spider.casraf.dev"
 alias sf="search-file"
 alias fnu="find-up"
+alias ascii-text=". $DOTFILES/scripts/ascii_font/ascii_font.sh"
 
 if is_linux; then
   alias md5="md5sum"
