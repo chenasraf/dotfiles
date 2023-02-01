@@ -79,8 +79,6 @@ rc() {
     return 1
   fi
 
-  no_src=0
-
   if [[ $1 == '-n' ]]; then
     no_src=1
     shift
@@ -95,7 +93,6 @@ rc() {
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      echo "no_src=$no_src"
       if [[ $no_src -ne 1 ]]; then src $1; fi
     else
       echo "No changes made"
