@@ -61,6 +61,27 @@ alias sf="search-file"
 alias fnu="find-up"
 alias ascii-text=". $DOTFILES/scripts/ascii_font/ascii_font.sh"
 
+alias de="docker-exec"
+alias dlog="docker-log"
+alias dbash="docker-bash"
+alias dsh="docker-sh"
+
+docker-log() {
+  docker logs --follow "$1_1"
+}
+
+docker-exec() {
+  docker exec -ti "$1_1" $2
+}
+
+docker-bash() {
+  docker-exec "$1" /bin/bash
+}
+
+docker-sh() {
+  docker-exec "$1" /bin/sh
+}
+
 if is_linux; then
   alias md5="md5sum"
 fi
