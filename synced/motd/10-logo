@@ -17,6 +17,17 @@ source $DOTFILES/aliases.sh
 # echo
 # echo
 
-text=$([[ $(hostname) == 'spider.casraf.dev' ]] && echo '@spider' || echo 'casraf')
+if [[ $(hostname) == 'spider.casraf.dev' ]]; then
+  text='@spider'
+  extra_echo=1
+else
+  text='casraf'
+fi
 
 ascii-text -B -c rainbow $text
+
+if [[ ! -z $extra_echo ]]; then
+  echo
+  echo
+fi
+
