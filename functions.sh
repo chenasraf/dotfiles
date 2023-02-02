@@ -8,10 +8,6 @@ motd() {
   echo $out
 }
 
-docker-bash() {
-  docker exec -ti $1 /bin/bash
-}
-
 # Functions
 
 # show all man entries under a specific section
@@ -77,7 +73,7 @@ is_linux() {
 
 rc() {
   if [[ $# -eq 0 ]]; then
-    echo_red "Usage: rc <dotfile>"
+    echo_red "Usage: rc [-n] <dotfile>"
     return 1
   fi
 
@@ -213,17 +209,30 @@ prj() {
 }
 
 docker-log() {
-  docker logs --follow "$1"
+  image="$1"
+  shift
+  docker logs --follow $@ "$image"
 }
 
 docker-exec() {
-  docker exec -ti "$1" "$2"
+  image="$1"
+  executable="$2"
+  shift 2
+  rest=$@
+  docker exec -ti $rest "$image" "$executable"
 }
 
 docker-bash() {
-  docker-exec "$1" /bin/bash
+  image="$1"
+  shift
+  docker-exec "$image" /bin/bash $@
 }
 
 docker-sh() {
-  docker-exec "$1" /bin/sh
+  image="$1"
+  shift
+  docker-exec "$image" /bin/sh $@
 }
+
+autoload _docker_completions
+
