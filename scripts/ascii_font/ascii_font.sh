@@ -10,7 +10,11 @@ reset="$(tput sgr0)"
 while [ $# -gt 0 ]; do
   case "$1" in
   -f | --font)
-    font="$2"
+    if [[ -f "$dir/fonts/$2.flf" ]]; then
+      font="$dir/fonts/$2"
+    else
+      font="$2"
+    fi
     shift 2
     ;;
   -s | --size)
@@ -33,10 +37,16 @@ while [ $# -gt 0 ]; do
     bold="$(tput bold)"
     shift
     ;;
-  # -l | --list)
-  #   # figlet -l
-  #   return 0
-  #   ;;
+  -l | --list)
+    echo "Available fonts:"
+    echo
+    figlist | tail --lines=+4
+    return 0
+    ;;
+  --show-fonts)
+    showfigfonts | less
+    return 0
+    ;;
   -v | --version)
     echo "ascii-font 1.0.0"
     echo "Written by Chen Asraf <casraf@pm.me>"
@@ -70,7 +80,35 @@ while [ $# -gt 0 ]; do
 done
 
 if [[ ! -f $(which figlet) ]]; then
-  brew install figlet
+  echo "figlet not found. Install? [y/N] "
+  read -r install
+
+  if [[ $install != "y" ]]; then
+    echo_red "figlet not installed. Aborting"
+    return 1
+  fi
+
+  if is_mac; then
+    brew install figlet
+  else
+    apt install figlet
+  fi
+fi
+
+if [[ ! -f $(which lolcat) ]]; then
+  echo "lolcat not found. Install? [y/N] "
+  read -r install
+
+  if [[ $install != "y" ]]; then
+    echo_red "lolcat not installed. Aborting"
+    return 1
+  fi
+
+  if is_mac; then
+    brew install lolcat
+  else
+    apt install lolcat
+  fi
 fi
 
 if [[ $color != "rainbow" ]]; then
