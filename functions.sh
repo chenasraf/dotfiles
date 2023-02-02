@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-source $HOME/.dotfiles/colors.sh
+source $DOTFILES/autoload_completions.sh
+source $DOTFILES/colors.sh
 
 motd() {
   run-parts $DOTFILES/synced/motd

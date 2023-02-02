@@ -1,12 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export DOTBIN="$DOTFILES/bin"
 
-# autoload completions
-autoload bashcompinit
-bashcompinit
-autoload -Uz compinit
-compinit
-
 source $DOTFILES/functions.sh
 source $DOTFILES/exports.sh # must run before zsh_init
 source $DOTFILES/aliases.sh
