@@ -226,18 +226,3 @@ docker-bash() {
 docker-sh() {
   docker-exec "$1" /bin/sh
 }
-
-_docker_completions() {
-  local out=$(docker ps --format "table {{.Names}}" | tail --lines=+2)
-  if [[ -z $out ]]; then
-    return 1
-  fi
-  for i in $out; do
-    COMPREPLY+=($i)
-  done
-}
-
-complete -F _docker_completions docker-exec
-complete -F _docker_completions docker-bash
-complete -F _docker_completions docker-sh
-complete -F _docker_completions docker-log
