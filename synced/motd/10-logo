@@ -24,6 +24,11 @@ else
   text='casraf'
 fi
 
+if [[ ! -z $extra_echo ]]; then
+  echo
+  echo
+fi
+
 ascii-text -B -c rainbow $text
 
 if [[ ! -z $extra_echo ]]; then
