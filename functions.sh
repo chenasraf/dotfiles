@@ -199,3 +199,44 @@ find-up() {
   done
   return 1
 }
+
+prj() {
+  dv=$(wd path dv)
+  if [[ -z $dv ]]; then
+    echo_red "Project base path not found. Navigate to directory and run \`wd path dv\`."
+    return 1
+  fi
+
+  cd "$dv/$@"
+}
+
+docker-log() {
+  docker logs --follow "$1"
+}
+
+docker-exec() {
+  docker exec -ti "$1" "$2"
+}
+
+docker-bash() {
+  docker-exec "$1" /bin/bash
+}
+
+docker-sh() {
+  docker-exec "$1" /bin/sh
+}
+
+_docker_completions() {
+  local out=$(docker ps --format "table {{.Names}}" | tail --lines=+2)
+  if [[ -z $out ]]; then
+    return 1
+  fi
+  for i in $out; do
+    COMPREPLY+=($i)
+  done
+}
+
+complete -F _docker_completions docker-exec
+complete -F _docker_completions docker-bash
+complete -F _docker_completions docker-sh
+complete -F _docker_completions docker-log
