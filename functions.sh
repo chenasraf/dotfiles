@@ -82,7 +82,11 @@ rc() {
     shift
   fi
 
-  file="$DOTFILES/$1.sh"
+  if [[ -f "$DOTFILES/$1.sh" ]]; then
+    file="$DOTFILES/$1.sh"
+  else
+    file="$DOTFILES/$1"
+  fi
 
   if [[ -f $file ]]; then
     hash=$(md5 $file)
