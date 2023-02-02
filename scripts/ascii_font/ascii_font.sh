@@ -76,6 +76,6 @@ fi
 if [[ $color != "rainbow" ]]; then
   echo "$bold$color$bg$(figlet -f $font -w $(tput cols) -c "$@")$reset"
 else
-  echo "$bold$bg$(figlet -f $font -w $(tput cols) -c "$@")$reset" | lolcat
+  echo "$bold$bg$(figlet -f $font -w $(tput cols) -c "$@" | lolcat -f)$reset"
 fi
 # }

@@ -4,7 +4,8 @@ source $DOTFILES/autoload_completions.sh
 source $DOTFILES/colors.sh
 
 motd() {
-  run-parts $DOTFILES/synced/motd
+  out=$(run-parts $DOTFILES/synced/motd)
+  echo $out
 }
 
 docker-bash() {
