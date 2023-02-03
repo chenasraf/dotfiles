@@ -49,6 +49,11 @@ lcase() {
   echo "$@" | tr '[:upper:]' '[:lower:]'
 }
 
+ucase() {
+  echo "$@" | tr '[:lower:]' '[:upper:]'
+}
+
+
 int_res() {
   # get all but last
   c=$(($# - 1))
