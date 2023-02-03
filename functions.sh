@@ -111,10 +111,15 @@ src() {
     return 1
   fi
 
-  file="$DOTFILES/$1.sh"
+  if [[ -f "$DOTFILES/$1.sh" ]]; then
+    file="$DOTFILES/$1.sh"
+  else
+    file="$DOTFILES/$1"
+  fi
+
   if [[ -f $file ]]; then
-    echo "Reloading $DOTFILES/$1.sh..."
-    source "$DOTFILES/$1.sh"
+    echo "Reloading $file..."
+    source "$file"
     return 0
   fi
   echo_red "File not found: $file"
@@ -238,4 +243,17 @@ docker-sh() {
   docker-exec "$image" /bin/sh $@
 }
 
-autoload _docker_completions
+docker-volume-path() {
+  image="$1"
+  shift
+  docker volume inspect "$image" | jq -r '.[0].Mountpoint'
+}
+
+docker-volume-cd() {
+  image="$1"
+  shift
+  cd $(docker-volume-path "$image")
+}
+
+autoload _docker-exec
+autoload _docker-volume-path

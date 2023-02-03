@@ -67,6 +67,10 @@ alias dlog="docker-log"
 alias dbash="docker-bash"
 alias db="docker-bash"
 alias dsh="docker-sh"
+alias dvolc="docker-volume-cd"
+alias dvc="docker-volume-cd"
+alias dvolp="docker-volume-path"
+alias dvp="docker-volume-path"
 
 if is_linux; then
   alias md5="md5sum"

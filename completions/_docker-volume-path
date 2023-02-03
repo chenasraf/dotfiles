@@ -1,0 +1,15 @@
+#compdef docker-volume-path docker-volume-cd
+
+names=($(docker volume ls | tail --line=+2 | awk '{ print $2 }'))
+
+if [[ -z $names ]]; then
+  return 1
+fi
+
+out=()
+
+for i in $names; do
+  out+=("$i")
+done
+
+_describe 'volume' out
