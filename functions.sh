@@ -53,7 +53,6 @@ ucase() {
   echo "$@" | tr '[:lower:]' '[:upper:]'
 }
 
-
 int_res() {
   # get all but last
   c=$(($# - 1))
@@ -262,3 +261,5 @@ docker-volume-cd() {
 
 autoload _docker-exec
 autoload _docker-volume-path
+autoload _prj
+autoload _src

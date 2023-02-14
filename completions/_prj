@@ -1,0 +1,15 @@
+#compdef prj
+prjpath="$(wd path dv)"
+names=($(ls $prjpath))
+
+if [[ -z $names ]]; then
+  return 1
+fi
+
+out=()
+
+for i in $names; do
+  out+=("$i:$prjpath/$i")
+done
+
+_describe 'project' out
