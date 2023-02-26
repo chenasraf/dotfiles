@@ -96,6 +96,18 @@
 						<key>words</key>
 						<true/>
 					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemTextContent</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
 				</array>
 				<key>includesystem</key>
 				<false/>
@@ -112,9 +124,9 @@
 				<key>sortmode</key>
 				<integer>0</integer>
 				<key>subtext</key>
-				<string></string>
+				<string>Add a file or directory name (or part)</string>
 				<key>title</key>
-				<string>Find '{query}' in NextCloud directories/files</string>
+				<string>Find in NextCloud</string>
 				<key>types</key>
 				<array/>
 				<key>withspace</key>
@@ -129,7 +141,16 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>NextCloud File/Dir Search
+=========================
+
+This is a simple scoped search for the NextCloud directory, allowing you to quickly search for a file or folder inside your NextCloud directory.
+
+Usage:
+
+nc &lt;pattern&gt;
+
+If you have your NextCloud directory set to another location than ~/NextCloud (the default), please change the file filter's scope accordingly.</string>
 	<key>uidata</key>
 	<dict>
 		<key>B4236E7D-E746-4A79-9292-2B44013E0E8E</key>
@@ -149,6 +170,8 @@
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://casraf.dev</string>
 </dict>
