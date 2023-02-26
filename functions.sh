@@ -151,7 +151,37 @@ source $DOTFILES/scripts/randarg.sh
 
 # select random element from list
 randline() {
-  echo $(($RANDOM % $(wc -l <$1) + 1))
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: randline <file>"
+    return 1
+  fi
+  linenum=$(($RANDOM % $(wc -l <$1) + 1))
+  echo $(cat $1 | head -n $linenum | tail -n 1)
+}
+
+find-replace() {
+  if [[ $# -ne 3 || $1 == '-h' ]]; then
+    echo_red "Find and replace text from file and output the result. Does not modify the file."
+    echo_red "Usage: find-replace <find> <replace> <file>"
+    return 1
+  fi
+  find=$1
+  replace=$2
+  file=$3
+  cat $file | sed "s/$find/$replace/g"
+}
+
+find-replace-file() {
+  if [[ $# -lt 3 || $1 == '-h' ]]; then
+    echo_red "Find and replace text in file. Modifies the file."
+    echo_red "Usage: find-replace-file <find> <replace> <file> [file]..."
+    return 1
+  fi
+
+  for file in $3; do
+    out=$(find-replace $1 $2 $file)
+    echo $out >$file
+  done
 }
 
 # same as run-parts from debian, but for osx
