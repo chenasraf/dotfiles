@@ -109,6 +109,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>D8679EE8-C9F6-40D0-B88B-FBF82D6FB8F6</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pl</string>
+			<key>spaces</key>
+			<string>-</string>
+			<key>text</key>
+			<string>Open Planck Project '{query}'</string>
+			<key>url</key>
+			<string>https://gitlab.com/planckdata/capabilities/{query}</string>
+		</dict>
 		<key>DADA75BE-E0B4-48DD-86ED-8D17B0F1E467</key>
 		<dict>
 			<key>enabled</key>
