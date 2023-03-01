@@ -138,7 +138,7 @@ function getItems(userID, excludedVaults) {
         uid: item["id"],
         title: item["title"],
         subtitle: `${displayURL} 𐄁 ${vaultName} 𐄁 ${accountURL}`,
-        match: `${item["title"]} ${displayURL}`,
+        match: `${item["title"]} ${displayURL} ${item["category"]} ${item["tags"]?.join(" ")}`,
         variables: {
           accountID: account["account_uuid"],
           vaultID: vaultID,
@@ -239,7 +239,8 @@ function prependDataUpdate(filePath) {
 
   sfObject["items"].unshift({
     title: "Update items",
-    arg: "update_items"
+    arg: "update_items",
+    icon: {path: "composite_icon.png"}
   })
 
   writeJSON(filePath, sfObject)
@@ -318,6 +319,7 @@ function run(argv) {
     .concat({
       title: "Update items",
       arg: "update_items",
+      icon: {path: "composite_icon.png"},
       variables: {excluded: false, userID: false} // Avoid "undefined" errors in fuctions which interact with users file
     })
 
@@ -348,6 +350,7 @@ function run(argv) {
         .concat({
           title: "Update items",
           arg: "update_items",
+          icon: {path: "composite_icon.png"},
           variables: {excluded: false, vaultID: false} // Avoid "undefined" errors in fuctions which interact with vaults file
         })
 

@@ -10,10 +10,18 @@
 		<string>Fun</string>
 	</array>
 	<key>defaultBundleId</key>
-	<string>com.casraf.</string>
+	<string>dev.casraf.</string>
 	<key>defaultCreatedBy</key>
 	<string>Chen Asraf</string>
+	<key>defaultReadme</key>
+	<string># Workflow
+
+## How to use
+
+## Requirememts
+
+## Troubleshooting</string>
 	<key>defaultWebsite</key>
-	<string>https://casraf.blog</string>
+	<string>https://casraf.dev</string>
 </dict>
 </plist>

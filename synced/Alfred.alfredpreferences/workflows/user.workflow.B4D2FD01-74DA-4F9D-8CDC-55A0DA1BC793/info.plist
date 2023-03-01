@@ -3,11 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.casraf.planckproj</string>
+	<string>dev.casraf.gitlabprj</string>
 	<key>category</key>
 	<string>Developer</string>
 	<key>connections</key>
 	<dict>
+		<key>68384675-A803-4284-AF7C-3DD6C5247385</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>68BDA5DE-FA2B-4338-8786-9A1167BCBC86</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>84D57ED7-762D-448D-955C-BFA624773CD0</key>
 		<array>
 			<dict>
@@ -21,17 +34,51 @@
 				<false/>
 			</dict>
 		</array>
+		<key>DF1BF021-B6B5-469A-95A2-8AFB81FE7DBD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B24CB1B9-17E0-4F30-A5B7-8F9FF8636539</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Chen Asraf</string>
 	<key>description</key>
-	<string>Open Planck Projects on GitLab by searching</string>
+	<string>Open Projects on GitLab by searching</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>GitLab Planck Projects</string>
+	<string>GitLab Projects</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E46BCCD4-D93C-4BC2-9FE6-061C83306607</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -48,7 +95,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>pl</string>
+				<string>gl</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -58,23 +105,9 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Loading...</string>
+				<string>Searching...</string>
 				<key>script</key>
-				<string>query=$1
-hash=$(echo $query | md5 -q)
-
-if [[ ! -d ".cache" ]]; then
-  mkdir .cache
-fi
-
-fl=".cache/projects-$hash.json"
-
-if [[ ! -f $fl ]]; then
-  url="https://gitlab.com/api/v4/groups/planckdata/projects?private_token=$TOKEN&amp;include_subgroups=true&amp;per_page=20&amp;search=$query"
-  curl $url &gt; $fl
-fi
-
-./jq 'map({title: ["Open Project: ",.path] | join(""), subtitle: .path_with_namespace, arg:.web_url}) | {items:.}' $fl</string>
+				<string>./search $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -82,7 +115,7 @@ fi
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search for Planck Project</string>
+				<string>Search for GitLab Project</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -112,9 +145,58 @@ fi
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>E46BCCD4-D93C-4BC2-9FE6-061C83306607</string>
+			<string>68BDA5DE-FA2B-4338-8786-9A1167BCBC86</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>gp</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./search $1 "pipelines" "Pipeline"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search for GitLab Project</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>68384675-A803-4284-AF7C-3DD6C5247385</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -137,19 +219,103 @@ fi
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>rm -rf .cache</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B24CB1B9-17E0-4F30-A5B7-8F9FF8636539</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>.glc</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>echo '{"items":[{"title": "Clear project cache", "subtitle": "Use this if there are new projects that do not appear in results, or scoping has changed.", "arg": "true"}]}'</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DF1BF021-B6B5-469A-95A2-8AFB81FE7DBD</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string># GitLab Planck Projects
+	<string># GitLab Projects Search Alfred Workflow
 
 ## How to use
 
-Type 'pl' and then the name of a project (2 chars min).
+Use these commands with your search query as the arguments (min 3 chars for search):
+
+- `gl &lt;search&gt;` - open a project overview
+- `gp &lt;search&gt;` - open project pipelines page
 
 Confirm a result to open it on your default browser.
 
+## Troubleshooting
+
+Use `.glc` command (no arguments) to clear all the result caches.
+
+Use this if there are new projects that do not appear in results, or user/group scoping has changed.
+
 ## Requirements
 
-Needs a [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) to work</string>
+- Needs a
+  [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
+  to work
+- Needs [jq](https://stedolan.github.io/jq/download/) to be installed</string>
 	<key>uidata</key>
 	<dict>
 		<key>37095F59-E46C-4BB6-A6C9-5545F50E5F82</key>
@@ -159,19 +325,47 @@ Needs a [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/p
 			<key>ypos</key>
 			<real>300</real>
 		</dict>
+		<key>68384675-A803-4284-AF7C-3DD6C5247385</key>
+		<dict>
+			<key>xpos</key>
+			<real>285</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>68BDA5DE-FA2B-4338-8786-9A1167BCBC86</key>
+		<dict>
+			<key>xpos</key>
+			<real>545</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
 		<key>84D57ED7-762D-448D-955C-BFA624773CD0</key>
 		<dict>
 			<key>xpos</key>
 			<real>285</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>60</real>
+		</dict>
+		<key>B24CB1B9-17E0-4F30-A5B7-8F9FF8636539</key>
+		<dict>
+			<key>xpos</key>
+			<real>545</real>
+			<key>ypos</key>
+			<real>470</real>
+		</dict>
+		<key>DF1BF021-B6B5-469A-95A2-8AFB81FE7DBD</key>
+		<dict>
+			<key>xpos</key>
+			<real>285</real>
+			<key>ypos</key>
+			<real>470</real>
 		</dict>
 		<key>E46BCCD4-D93C-4BC2-9FE6-061C83306607</key>
 		<dict>
 			<key>xpos</key>
 			<real>545</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>60</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -197,9 +391,32 @@ Needs a [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/p
 			<key>variable</key>
 			<string>TOKEN</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>If specified, will show projects of the given group on GitLab. If omitted, will show your user's projects instead.</string>
+			<key>label</key>
+			<string>GitLab Group Scope</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>GROUP</string>
+		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://casraf.dev</string>
 </dict>

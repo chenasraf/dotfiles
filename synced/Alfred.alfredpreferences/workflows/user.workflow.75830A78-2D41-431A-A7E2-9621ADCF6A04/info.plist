@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>1B2A19CF-D4AD-4191-BB1F-B8C6CC6A89C4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B44E847A-33CA-4C6B-A772-F769CF142A75</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>200F326D-0329-4F35-A754-3BA8C9875C25</key>
 		<array>
 			<dict>
@@ -34,7 +47,32 @@
 				<false/>
 			</dict>
 		</array>
-		<key>2989DB38-0EA7-4518-9295-F44265E7A353</key>
+		<key>2FED0F63-4697-484D-9E49-4250A05CC2BB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3FC67A11-8C2B-4732-9018-245FF04EDA42</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8886D7DA-A8E7-4731-A16C-549E6CA42F85</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5A18DEFE-4C1A-4FFF-B9E4-3804DDCECAE2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3FC67A11-8C2B-4732-9018-245FF04EDA42</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -47,15 +85,29 @@
 				<false/>
 			</dict>
 		</array>
-		<key>2A2EA53F-6723-4B5E-893A-1D0A58DFBA0F</key>
+		<key>40C50347-DCC2-4BE0-82C2-F9AFEA1BF7D6</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5AA1A9FD-1039-4E9A-B393-BD824984DBCF</string>
+				<string>2FED0F63-4697-484D-9E49-4250A05CC2BB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8805CC47-CFAC-473F-A6A9-C53213F80E03</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6A03EB99-8330-4B98-A809-1735BFD06469</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8A747169-3DDC-401F-BED6-B918E32FEEE2</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -73,6 +125,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4CF5E047-F30C-44E6-9C25-59F738289DE1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>478188EC-E7D2-4275-AED2-EB781CB4E0A7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>572ADDBB-50A0-408E-B679-7C32E1B60E42</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>561445B8-E5D6-4AB5-9C0E-0C5B828580F8</key>
 		<array>
 			<dict>
@@ -86,11 +153,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5AA1A9FD-1039-4E9A-B393-BD824984DBCF</key>
+		<key>5A18DEFE-4C1A-4FFF-B9E4-3804DDCECAE2</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2989DB38-0EA7-4518-9295-F44265E7A353</string>
+				<string>B6583D85-5633-4CEA-9A73-9F69F57CF04A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -103,6 +170,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>4CF5E047-F30C-44E6-9C25-59F738289DE1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>4A4AC872-88D0-439A-9B51-F463348654EA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -112,11 +189,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>69A56460-BCA0-4E7C-AC44-5B55E9640FEA</key>
+		<key>6A03EB99-8330-4B98-A809-1735BFD06469</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2A2EA53F-6723-4B5E-893A-1D0A58DFBA0F</string>
+				<string>2FED0F63-4697-484D-9E49-4250A05CC2BB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -153,7 +230,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>69A56460-BCA0-4E7C-AC44-5B55E9640FEA</string>
+				<string>7F8FF9BF-CEE5-46ED-9F9F-A06FC427AA4A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -204,6 +281,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>D71FD347-8255-45AE-BD43-76963428AC51</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>89D6F4F3-8160-4625-8437-4EC42EA16433</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>40C50347-DCC2-4BE0-82C2-F9AFEA1BF7D6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -281,6 +371,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>96FF18B1-25F2-4851-B9BC-8E0980B6A1BB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B44E847A-33CA-4C6B-A772-F769CF142A75</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>89D6F4F3-8160-4625-8437-4EC42EA16433</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -400,6 +503,53 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string>/tmp/rsync_log.txt</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>478188EC-E7D2-4275-AED2-EB781CB4E0A7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:show_log}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>show log</string>
+						<key>uid</key>
+						<string>572ADDBB-50A0-408E-B679-7C32E1B60E42</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>4CF5E047-F30C-44E6-9C25-59F738289DE1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -496,27 +646,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query} file(s) transferred</string>
-				<key>title</key>
-				<string>Rsync</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>4A4AC872-88D0-439A-9B51-F463348654EA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -540,46 +669,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>fixedorder</key>
-				<true/>
-				<key>items</key>
-				<string>[{"imagefile":"ff97c1c91535ec0ce514a89771b42cb72a80054d.png","title":"Run","arg":"exec","subtitle":"Run sync setting"},{"imagefile":"6f9260d52d829403a16e01d6b359c4cffdb87011.png","title":"Add","arg":"add","subtitle":"Add sync setting"},{"imagefile":"6f9260d52d829403a16e01d6b359c4cffdb87011.png","title":"Search&amp;Add","arg":"search_add","subtitle":"Search  folder in Alfred and add"},{"imagefile":"39846b126735c587ac31ca23f095119cc81014f9.png","title":"Delete","subtitle":"Delete sync setting"}]</string>
-				<key>keyword</key>
-				<string>rsync</string>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
-				<string>sync Source to Target Folders</string>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query} file(s) transferred</string>
 				<key>title</key>
 				<string>Rsync</string>
-				<key>withspace</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>96FF18B1-25F2-4851-B9BC-8E0980B6A1BB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>*rsync</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>A59377F6-960B-4E5D-BA12-69E3C3FCB139</string>
+			<string>4A4AC872-88D0-439A-9B51-F463348654EA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -646,66 +750,48 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<true/>
+				<key>items</key>
+				<string>[{"imagefile":"ff97c1c91535ec0ce514a89771b42cb72a80054d.png","title":"Run","arg":"exec","subtitle":"Run sync setting"},{"imagefile":"6f9260d52d829403a16e01d6b359c4cffdb87011.png","title":"Add","arg":"add","subtitle":"Add sync setting"},{"imagefile":"6f9260d52d829403a16e01d6b359c4cffdb87011.png","title":"Search&amp;Add","arg":"search_add","subtitle":"Search  folder in Alfred and add"},{"imagefile":"39846b126735c587ac31ca23f095119cc81014f9.png","title":"Delete","subtitle":"Delete sync setting"}]</string>
+				<key>keyword</key>
+				<string>rsync</string>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
 				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
+				<key>subtext</key>
+				<string>sync Source to Target Folders</string>
+				<key>title</key>
+				<string>Rsync</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
-			<string>DE49AD21-9430-4196-B3BA-383061F24A43</string>
+			<string>96FF18B1-25F2-4851-B9BC-8E0980B6A1BB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>availableviaurlhandler</key>
 				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>add_item.py</string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Name</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<false/>
+				<key>triggerid</key>
+				<string>*rsync</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>561445B8-E5D6-4AB5-9C0E-0C5B828580F8</string>
+			<string>A59377F6-960B-4E5D-BA12-69E3C3FCB139</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -877,15 +963,12 @@
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict>
-					<key>source</key>
-					<string>{query}</string>
-				</dict>
+				<dict/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>D71FD347-8255-45AE-BD43-76963428AC51</string>
+			<string>DE49AD21-9430-4196-B3BA-383061F24A43</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -898,14 +981,14 @@
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>target</key>
+					<key>source</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>EA9A65B5-FBD7-4B5D-8A69-0CC9CD2017AD</string>
+			<string>D71FD347-8255-45AE-BD43-76963428AC51</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -933,97 +1016,49 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
-				<key>subtext</key>
-				<string>Add Source Path</string>
-				<key>text</key>
-				<string>Source Path</string>
-				<key>withspace</key>
+				<key>argumenttreatemptyqueryasnil</key>
 				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>2A2EA53F-6723-4B5E-893A-1D0A58DFBA0F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
+				<key>argumenttrimmode</key>
 				<integer>0</integer>
-				<key>subtext</key>
-				<string>Add Target Path</string>
-				<key>text</key>
-				<string>Target Path</string>
-				<key>withspace</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
 				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>2989DB38-0EA7-4518-9295-F44265E7A353</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Rsync</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>9C533762-4B08-4B26-B9A6-B4C0FEEC3513</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>*rsync</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<false/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>A488CAAE-6A5D-4A4B-82B1-81B20558C49A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
 				<string></string>
-				<key>passthroughargument</key>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>add_item.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Name</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
 				<false/>
-				<key>variables</key>
-				<dict/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>69A56460-BCA0-4E7C-AC44-5B55E9640FEA</string>
+			<string>561445B8-E5D6-4AB5-9C0E-0C5B828580F8</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1034,39 +1069,35 @@
 				<false/>
 				<key>variables</key>
 				<dict>
-					<key>source</key>
+					<key>target</key>
 					<string>{query}</string>
 				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>5AA1A9FD-1039-4E9A-B393-BD824984DBCF</string>
+			<string>EA9A65B5-FBD7-4B5D-8A69-0CC9CD2017AD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>externaltriggerid</key>
+				<string>*add_folder</string>
+				<key>passinputasargument</key>
 				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>rsync_config.py</string>
-				<key>type</key>
-				<integer>8</integer>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>F49DACAA-9991-41FC-B17A-2493F92ECB03</string>
+			<string>7F8FF9BF-CEE5-46ED-9F9F-A06FC427AA4A</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1118,6 +1149,50 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Rsync</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9C533762-4B08-4B26-B9A6-B4C0FEEC3513</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>rsync_config.py</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F49DACAA-9991-41FC-B17A-2493F92ECB03</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1164,15 +1239,280 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>*rsync</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>A488CAAE-6A5D-4A4B-82B1-81B20558C49A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>add_path.py</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Add Source Folder</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B44E847A-33CA-4C6B-A772-F769CF142A75</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:path_action1}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3FC67A11-8C2B-4732-9018-245FF04EDA42</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>*add_folder</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>1B2A19CF-D4AD-4191-BB1F-B8C6CC6A89C4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:source}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>source set</string>
+						<key>uid</key>
+						<string>8886D7DA-A8E7-4731-A16C-549E6CA42F85</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>nothing set</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2FED0F63-4697-484D-9E49-4250A05CC2BB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:path_action2}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>add</string>
+						<key>outputlabel</key>
+						<string>add folder</string>
+						<key>uid</key>
+						<string>8805CC47-CFAC-473F-A6A9-C53213F80E03</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:path_action2}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>create</string>
+						<key>outputlabel</key>
+						<string>create folder</string>
+						<key>uid</key>
+						<string>8A747169-3DDC-401F-BED6-B918E32FEEE2</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>40C50347-DCC2-4BE0-82C2-F9AFEA1BF7D6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>|</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>path_action</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>89D6F4F3-8160-4625-8437-4EC42EA16433</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>path=$path_action1
+
+/bin/mkdir $path</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6A03EB99-8330-4B98-A809-1735BFD06469</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>*add_folder</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>B6583D85-5633-4CEA-9A73-9F69F57CF04A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>source</key>
+					<string>{var:path_action1}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5A18DEFE-4C1A-4FFF-B9E4-3804DDCECAE2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Rsync Folders
 
 Syncs Source and target folders from list of pre-defined source/target folder pairs.
 
-## Usage
+## Configure Workflow
 
-* `rsync` execute rsync definitions as well as remove entries</string>
+* `Show rsync log`: If this option is checked, the workflow will open the rsync log after the execution in default text editor
+
+## Usage
+* To add a folder, search for the folder in Alfred and enter into file actions. Search for `Add source folder for rsync`
+* `rsync` execute rsync definitions as well as add/ remove entries</string>
 	<key>uidata</key>
 	<dict>
 		<key>0FFA85AA-DBC9-4C03-86E6-EC2C0C63034F</key>
@@ -1180,190 +1520,266 @@ Syncs Source and target folders from list of pre-defined source/target folder pa
 			<key>xpos</key>
 			<real>645</real>
 			<key>ypos</key>
-			<real>110</real>
+			<real>250</real>
+		</dict>
+		<key>1B2A19CF-D4AD-4191-BB1F-B8C6CC6A89C4</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>1235</real>
 		</dict>
 		<key>200F326D-0329-4F35-A754-3BA8C9875C25</key>
 		<dict>
 			<key>xpos</key>
 			<real>885</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>420</real>
 		</dict>
-		<key>2989DB38-0EA7-4518-9295-F44265E7A353</key>
+		<key>2FED0F63-4697-484D-9E49-4250A05CC2BB</key>
 		<dict>
 			<key>xpos</key>
-			<real>890</real>
+			<real>840</real>
 			<key>ypos</key>
-			<real>560</real>
+			<real>1240</real>
 		</dict>
-		<key>2A2EA53F-6723-4B5E-893A-1D0A58DFBA0F</key>
+		<key>3FC67A11-8C2B-4732-9018-245FF04EDA42</key>
 		<dict>
 			<key>xpos</key>
-			<real>640</real>
+			<real>990</real>
 			<key>ypos</key>
-			<real>555</real>
+			<real>1235</real>
+		</dict>
+		<key>40C50347-DCC2-4BE0-82C2-F9AFEA1BF7D6</key>
+		<dict>
+			<key>xpos</key>
+			<real>455</real>
+			<key>ypos</key>
+			<real>1255</real>
 		</dict>
 		<key>430DC473-DF94-4B22-BA7D-85F2749148E4</key>
 		<dict>
 			<key>xpos</key>
 			<real>645</real>
 			<key>ypos</key>
-			<real>415</real>
+			<real>555</real>
+		</dict>
+		<key>478188EC-E7D2-4275-AED2-EB781CB4E0A7</key>
+		<dict>
+			<key>xpos</key>
+			<real>1380</real>
+			<key>ypos</key>
+			<real>160</real>
 		</dict>
 		<key>4A4AC872-88D0-439A-9B51-F463348654EA</key>
 		<dict>
 			<key>xpos</key>
 			<real>1150</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>300</real>
+		</dict>
+		<key>4CF5E047-F30C-44E6-9C25-59F738289DE1</key>
+		<dict>
+			<key>xpos</key>
+			<real>1185</real>
+			<key>ypos</key>
+			<real>190</real>
 		</dict>
 		<key>561445B8-E5D6-4AB5-9C0E-0C5B828580F8</key>
 		<dict>
 			<key>xpos</key>
-			<real>1150</real>
+			<real>1220</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>635</real>
 		</dict>
-		<key>5AA1A9FD-1039-4E9A-B393-BD824984DBCF</key>
+		<key>5A18DEFE-4C1A-4FFF-B9E4-3804DDCECAE2</key>
 		<dict>
 			<key>xpos</key>
-			<real>820</real>
+			<real>990</real>
 			<key>ypos</key>
-			<real>590</real>
+			<real>1390</real>
 		</dict>
 		<key>6026C421-22D8-41D8-B3FA-41BC9CB1E077</key>
 		<dict>
 			<key>xpos</key>
-			<real>1845</real>
+			<real>1145</real>
 			<key>ypos</key>
-			<real>95</real>
+			<real>65</real>
 		</dict>
 		<key>67518518-A5CF-43A5-B141-81106FDB7B29</key>
 		<dict>
 			<key>xpos</key>
 			<real>885</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>300</real>
 		</dict>
-		<key>69A56460-BCA0-4E7C-AC44-5B55E9640FEA</key>
+		<key>6A03EB99-8330-4B98-A809-1735BFD06469</key>
 		<dict>
 			<key>xpos</key>
-			<real>540</real>
+			<real>645</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>1355</real>
 		</dict>
 		<key>7645B3DA-583E-47C2-83BA-DC4FD8432EEB</key>
 		<dict>
 			<key>xpos</key>
 			<real>375</real>
 			<key>ypos</key>
-			<real>215</real>
+			<real>355</real>
 		</dict>
 		<key>78A4CA56-EB82-49E5-B864-B7785F302268</key>
 		<dict>
 			<key>xpos</key>
-			<real>820</real>
+			<real>815</real>
 			<key>ypos</key>
-			<real>130</real>
+			<real>270</real>
 		</dict>
 		<key>7F3CBA92-478D-4B9C-BBFF-8D43AD6006EF</key>
 		<dict>
 			<key>xpos</key>
 			<real>645</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>420</real>
+		</dict>
+		<key>7F8FF9BF-CEE5-46ED-9F9F-A06FC427AA4A</key>
+		<dict>
+			<key>xpos</key>
+			<real>645</real>
+			<key>ypos</key>
+			<real>695</real>
+		</dict>
+		<key>89D6F4F3-8160-4625-8437-4EC42EA16433</key>
+		<dict>
+			<key>xpos</key>
+			<real>370</real>
+			<key>ypos</key>
+			<real>1265</real>
 		</dict>
 		<key>8FFAC222-2EF0-40E5-93E7-EA7DAD8A2819</key>
 		<dict>
 			<key>xpos</key>
-			<real>540</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>140</real>
+			<real>280</real>
 		</dict>
 		<key>96FF18B1-25F2-4851-B9BC-8E0980B6A1BB</key>
 		<dict>
 			<key>xpos</key>
 			<real>185</real>
 			<key>ypos</key>
-			<real>210</real>
+			<real>365</real>
 		</dict>
 		<key>9C533762-4B08-4B26-B9A6-B4C0FEEC3513</key>
 		<dict>
 			<key>xpos</key>
-			<real>1690</real>
+			<real>1705</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>845</real>
 		</dict>
 		<key>A3B353DA-0C9D-4832-B0ED-8333ADDCA841</key>
 		<dict>
 			<key>xpos</key>
-			<real>805</real>
+			<real>815</real>
 			<key>ypos</key>
-			<real>700</real>
+			<real>850</real>
 		</dict>
 		<key>A488CAAE-6A5D-4A4B-82B1-81B20558C49A</key>
 		<dict>
 			<key>xpos</key>
 			<real>1855</real>
 			<key>ypos</key>
-			<real>565</real>
+			<real>1045</real>
 		</dict>
 		<key>A59377F6-960B-4E5D-BA12-69E3C3FCB139</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>210</real>
+			<real>365</real>
+		</dict>
+		<key>B44E847A-33CA-4C6B-A772-F769CF142A75</key>
+		<dict>
+			<key>xpos</key>
+			<real>180</real>
+			<key>ypos</key>
+			<real>1235</real>
+		</dict>
+		<key>B6583D85-5633-4CEA-9A73-9F69F57CF04A</key>
+		<dict>
+			<key>xpos</key>
+			<real>1215</real>
+			<key>ypos</key>
+			<real>1360</real>
 		</dict>
 		<key>B7553D66-32BA-4C0F-B449-8DA562FF1A56</key>
 		<dict>
 			<key>xpos</key>
 			<real>645</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>830</real>
 		</dict>
 		<key>CD4553E6-DF4D-4EBC-A37A-137DF801D01C</key>
 		<dict>
 			<key>xpos</key>
-			<real>545</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>710</real>
+			<real>860</real>
 		</dict>
 		<key>D71FD347-8255-45AE-BD43-76963428AC51</key>
 		<dict>
 			<key>xpos</key>
-			<real>820</real>
+			<real>815</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>450</real>
 		</dict>
 		<key>DE49AD21-9430-4196-B3BA-383061F24A43</key>
 		<dict>
 			<key>xpos</key>
-			<real>540</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>265</real>
+			<real>450</real>
 		</dict>
 		<key>EA9A65B5-FBD7-4B5D-8A69-0CC9CD2017AD</key>
 		<dict>
 			<key>xpos</key>
-			<real>1075</real>
+			<real>1130</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>665</real>
 		</dict>
 		<key>F49DACAA-9991-41FC-B17A-2493F92ECB03</key>
 		<dict>
 			<key>xpos</key>
-			<real>1500</real>
+			<real>1520</real>
 			<key>ypos</key>
-			<real>680</real>
+			<real>845</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Show rsync log</string>
+			</dict>
+			<key>description</key>
+			<string>Show rsync log once finished</string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>show_log</string>
+		</dict>
+	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.5.0</string>
+	<string>1.6.5</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

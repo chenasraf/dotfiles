@@ -354,6 +354,27 @@
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>en</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Language used when searching movies and TV shows.</string>
+			<key>label</key>
+			<string>Search Language</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>search_language</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<true/>
 				<key>required</key>
 				<false/>
@@ -409,7 +430,7 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2.14.0</string>
+	<string>2.15.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/tmcknight/Movie-and-TV-Show-Search-Alfred-Workflow</string>
 </dict>
