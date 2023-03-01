@@ -21,6 +21,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>76AC787D-916F-4C1D-A539-E8E67AEDAEA0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3CCFBEE5-B75D-4E77-A6D3-013A232472A4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>84D57ED7-762D-448D-955C-BFA624773CD0</key>
 		<array>
 			<dict>
@@ -115,7 +128,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search for GitLab Project</string>
+				<string>Open GitLab Project</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -165,7 +178,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>gp</string>
+				<string>glp</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -185,7 +198,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search for GitLab Project</string>
+				<string>Open Pipelines for GitLab Project</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -201,21 +214,70 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>json</key>
-				<string>{
-  "alfredworkflow" : {
-    "arg" : "{query}",
-    "config" : {
-    },
-    "variables" : {
-    }
-  }
-}</string>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>glm</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./search $1 "merge_requests" "Merge Requests"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Open MRs for GitLab Project</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.json</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>37095F59-E46C-4BB6-A6C9-5545F50E5F82</string>
+			<string>76AC787D-916F-4C1D-A539-E8E67AEDAEA0</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3CCFBEE5-B75D-4E77-A6D3-013A232472A4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -299,8 +361,9 @@
 
 Use these commands with your search query as the arguments (min 3 chars for search):
 
-- `gl &lt;search&gt;` - open a project overview
-- `gp &lt;search&gt;` - open project pipelines page
+- `gl &lt;search&gt;` - open a project's overview
+- `glp &lt;search&gt;` - open project's Pipelines page
+- `glm &lt;search&gt;` - open project's MRs page
 
 Confirm a result to open it on your default browser.
 
@@ -318,12 +381,12 @@ Use this if there are new projects that do not appear in results, or user/group 
 - Needs [jq](https://stedolan.github.io/jq/download/) to be installed</string>
 	<key>uidata</key>
 	<dict>
-		<key>37095F59-E46C-4BB6-A6C9-5545F50E5F82</key>
+		<key>3CCFBEE5-B75D-4E77-A6D3-013A232472A4</key>
 		<dict>
 			<key>xpos</key>
-			<real>890</real>
+			<real>545</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>295</real>
 		</dict>
 		<key>68384675-A803-4284-AF7C-3DD6C5247385</key>
 		<dict>
@@ -338,6 +401,13 @@ Use this if there are new projects that do not appear in results, or user/group 
 			<real>545</real>
 			<key>ypos</key>
 			<real>175</real>
+		</dict>
+		<key>76AC787D-916F-4C1D-A539-E8E67AEDAEA0</key>
+		<dict>
+			<key>xpos</key>
+			<real>285</real>
+			<key>ypos</key>
+			<real>295</real>
 		</dict>
 		<key>84D57ED7-762D-448D-955C-BFA624773CD0</key>
 		<dict>
@@ -416,7 +486,7 @@ Use this if there are new projects that do not appear in results, or user/group 
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
 	<string>https://casraf.dev</string>
 </dict>

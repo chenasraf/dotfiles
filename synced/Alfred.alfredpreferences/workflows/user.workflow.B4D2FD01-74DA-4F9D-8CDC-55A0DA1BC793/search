@@ -1,35 +1,56 @@
 #!/usr/bin/env bash
 
 API_BASE="https://gitlab.com/api/v4"
+# scope can be users or groups
 SCOPE="groups"
+# group id - if users, is user id, if groups, is group name
 ID="$GROUP"
-SUB="$2"
-SUB_DESC="${3:-Project}"
+# suffix of url to open
+SUFFIX="$2"
+# description of url to open
+URL_DESC="${3:-Project}"
 
 if [[ -z "$GROUP" ]]; then
   SCOPE="users"
-  ID=$(curl "$API_BASE/user" | jq '.id')
+  # user id cache file location
+  idfile=".cache/userid"
+  if [[ ! -f $idfile ]]; then
+    # get user id and cache to file
+    curl "$API_BASE/user" | jq '.id' >$idfile
+  fi
+  ID=$(cat $idfile)
 fi
 
 if [[ -z $(which jq) ]]; then
+  # jq is not installed
   echo '{"items":[{"title":"Please install jq","subtitle":"Select this to open instructions","arg":"https://stedolan.github.io/jq/download/"}]}'
 else
   if [[ ! -d ".cache" ]]; then
     mkdir .cache
   fi
 
+  # remove files older than 1 week
+  find .cache -type f -mtime +7 -name '*.json' -exec rm {} \;
+
   query=$1
   hash=$(echo $query | md5 -q)
 
+  # cache file location
   fl=".cache/projects-$hash.json"
 
   if [[ ! -f $fl ]]; then
+    # project endpoint url
     url="$API_BASE/$SCOPE/$ID/projects?private_token=$TOKEN&include_subgroups=true&per_page=20&search=$query"
+    # get and cache to file
     curl $url >$fl
   fi
 
-  url_build=$([[ -z "$SUB" ]] && echo ".web_url" || echo '([.web_url, "/-/'$SUB'"] | join(""))')
-  jquery='map({title: (["Open '$SUB_DESC': ",.path] | join("")), subtitle: .path_with_namespace, arg:'$url_build'}) | {items:.}'
+  # build url from args and jq result
+  url_build=$([[ -z "$SUFFIX" ]] && echo ".web_url" || echo '([.web_url, "/-/'$SUFFIX'"] | join(""))')
 
+  # jq query
+  jquery='map({title: (["Open '$URL_DESC': ",.path] | join("")), subtitle: .path_with_namespace, arg:'$url_build'}) | {items:.}'
+
+  # output items to alfred
   jq "$jquery" $fl
 fi
