@@ -486,7 +486,7 @@ Use this if there are new projects that do not appear in results, or user/group 
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.2.1</string>
 	<key>webaddress</key>
 	<string>https://casraf.dev</string>
 </dict>
