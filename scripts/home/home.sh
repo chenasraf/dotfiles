@@ -12,32 +12,29 @@ home() {
   if [[ $# -gt 0 ]]; then
     case "$1" in
     git | g)
-      __home_prepare_dir
       shift
-      git $@
-      __home_revert_dir
+      git -C "$DOTFILES" $@
       ;;
     status | s)
-      __home_prepare_dir
-      git status
-      __home_revert_dir
+      git -C "$DOTFILES" status
+      ;;
+    fetch | f)
+      git -C "$DOTFILES" fetch
       ;;
     push | p)
-      __home_prepare_dir
-      git add .
+      git -C "$DOTFILES" add .
       if [[ $# -lt 2 ]]; then
-        git commit
+        git -C "$DOTFILES" commit
       else
-        git commit -m "$2"
+        git -C "$DOTFILES" commit -m "$2"
       fi
-      git push
-      __home_revert_dir
+      git -C "$DOTFILES" push
       ;;
     pull | l)
-      __home_prepare_dir
-      git pull
-      reload-zsh
-      __home_revert_dir
+      git -C "$DOTFILES" pull
+      if [[ $? -eq 0 ]]; then
+        reload-zsh
+      fi
       ;;
     reload-term | rt)
       reload-zsh
