@@ -15,6 +15,7 @@ if is_mac; then
   export PATH="$HOME/Library/Python/3.8/bin:$PATH"
   export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+  export PATH="$HOME/.surrealdb:$PATH"
 fi
 
 # Misc
@@ -70,3 +71,15 @@ fi
 if [[ ! -z $DOTBIN ]]; then
   export PATH="$DOTBIN:$PATH"
 fi
+
+if [[ -f "$HOME/.cargo/env" ]]; then
+  . "$HOME/.cargo/env"
+fi
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
