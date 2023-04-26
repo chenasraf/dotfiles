@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-
 source $DOTFILES/scripts/home/_common.sh
 source $DOTFILES/scripts/man.sh
 
