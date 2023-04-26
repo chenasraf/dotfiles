@@ -13,6 +13,14 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
+  require('telescope').setup{
+    defaults = {
+      file_ignore_patterns = {
+        "node_modules"
+      }
+    }
+  }
+
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   require('rose-pine').setup({
     --- @usage 'auto'|'main'|'moon'|'dawn'
