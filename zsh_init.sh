@@ -95,11 +95,21 @@ HIST_STAMPS="%d/%m/%Y %I:%M:%S"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+source ~/.zplug/init.zsh
+
+zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
+zplug romkatv/powerlevel10k, as:theme, depth:1 
+zplug zsh-users/zsh-autosuggestions
+
+source "$HOME/.dotfiles/plugins/git.plugin.zsh"
+
+zplug load
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 export VISUAL="$EDITOR"

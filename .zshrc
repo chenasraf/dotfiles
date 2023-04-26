@@ -1,10 +1,21 @@
 export DOTFILES="$HOME/.dotfiles"
 export DOTBIN="$DOTFILES/bin"
 
-export fpath=("$DOTFILES/completions" $fpath)
-
 # echo 'Loading '$DOTFILES/functions.sh
 source $DOTFILES/functions.sh
+
+motd
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export fpath=("$DOTFILES/completions" $fpath)
+
+
 # echo 'Loading '$DOTFILES/exports.sh
 source $DOTFILES/exports.sh # must run before zsh_init
 # echo 'Loading '$DOTFILES/aliases.sh
@@ -21,4 +32,3 @@ for file in $DOTFILES/scripts/*; do
   [[ -f "$file" ]] && source $file
 done
 
-motd

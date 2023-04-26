@@ -123,11 +123,12 @@ else
 fi
 
 if [[ ! -f ~/.warprc ]]; then
-  cp $DOTFILES/.warprc ~/.warprc
+  ln -s $DOTFILES/.warprc ~/.warprc
 fi
 
-if [[ ! -f ~/.vimrc ]]; then
-  cp $DOTFILES/.vimrc ~/.vimrc
+if [[ ! -f ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
+  echo_cyan "Installing packer.nvim..."
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
 
 echo_cyan "Done"

@@ -11,6 +11,8 @@ source $HOME/.dotfiles/functions.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
+alias vi="nvim"
+alias vim="nvim"
 alias reload-zsh="source $HOME/.zshrc"
 alias serve="python3 -m http.server ${PORT:-3001}"
 # alias python2="PYTHONPATH=$(pwd):$PYTHONPATH $(whence python)"
@@ -71,6 +73,15 @@ alias dvolc="docker-volume-cd"
 alias dvc="docker-volume-cd"
 alias dvolp="docker-volume-path"
 alias dvp="docker-volume-path"
+
+alias tn="tmux new"
+alias tns="tmux new -s"
+alias ta="tmux attach"
+alias tas="tmux attach -s"
+alias tls="tmux list-sessions"
+alias tlw="tmux list-windows"
+alias trl="tmux source-file ~/.tmux.conf"
+
 
 if is_linux; then
   alias md5="md5sum"
