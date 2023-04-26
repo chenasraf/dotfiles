@@ -11,6 +11,11 @@ source $HOME/.dotfiles/functions.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
+alias ".."="cd .."
+alias "..."="cd ../.."
+alias ll="ls -l"
+alias la="ls -la"
+alias l="ls -A"
 alias vi="nvim"
 alias vim="nvim"
 alias reload-zsh="source $HOME/.zshrc"
@@ -82,6 +87,7 @@ alias tls="tmux list-sessions"
 alias tlw="tmux list-windows"
 alias trl="tmux source-file ~/.config/.tmux.conf"
 
+alias sync-config="rsync -vtr $DOTFILES/.config/ $HOME/.config/"
 
 if is_linux; then
   alias md5="md5sum"

@@ -31,7 +31,7 @@ push | p)
       git clone "$wf_src" "$wf_dir"
     fi
 
-    cp -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/" "$wf_dir/"
+    rsync -tvr --exclude-dir=".git" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/" "$wf_dir/"
     git -C "$wf_dir" add .
     auto_commit_flag="'Update workflow'"
     commit_flag="-m ${1:-$auto_commit_flag}"
@@ -53,7 +53,7 @@ pull | l)
       git clone "$wf_src" "$wf_dir"
     fi
 
-    cp -rf "$wf_dir/" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/"
+    rsync -tvr --exclude-dir=".git" "$wf_dir/" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/"
     rm -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/.git"
   done
   ;;

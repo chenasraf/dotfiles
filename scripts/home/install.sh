@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+
 source $DOTFILES/scripts/home/_common.sh
 source $DOTFILES/scripts/man.sh
 
@@ -24,48 +25,48 @@ fi
 man_install
 
 # OhMyZsh Plugins
-plugin_src=(
-  "git@github.com:zsh-users/zsh-autosuggestions.git"
-  "git@github.com:zsh-users/zsh-syntax-highlighting.git"
-  # "git@github.com:sharkdp/bat.git"
-)
-
-plugin_dirnames=(
-  "zsh-autosuggestions"
-  "zsh-syntax-highlighting"
-  # "bat"
-)
-
-plugins_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
-
-echo_cyan "Installing shell plugins..."
-
-for ((i = 1; i <= $#plugin_src; i++)); do
-  zi plugin "${plugin_src[$i]}" "${plugin_dirnames[$i]}"
-done
-
-echo_cyan "Done"
+# plugin_src=(
+#   "git@github.com:zsh-users/zsh-autosuggestions.git"
+#   "git@github.com:zsh-users/zsh-syntax-highlighting.git"
+#   # "git@github.com:sharkdp/bat.git"
+# )
+# 
+# plugin_dirnames=(
+#   "zsh-autosuggestions"
+#   "zsh-syntax-highlighting"
+#   # "bat"
+# )
+# 
+# plugins_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
+# 
+# echo_cyan "Installing shell plugins..."
+# 
+# for ((i = 1; i <= $#plugin_src; i++)); do
+#   zi plugin "${plugin_src[$i]}" "${plugin_dirnames[$i]}"
+# done
+# 
+# echo_cyan "Done"
 
 cd $cwd
 
 # OhMyZsh Themes
-theme_src=(
-  "git@github.com:chenasraf/lambda-mod-zsh-theme.git"
-)
-
-theme_dirnames=(
-  "lambda-mod"
-)
-
-themes_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes"
-
-echo_cyan "Installing shell themes..."
-
-for ((i = 1; i <= $#theme_src; i++)); do
-  zi theme "${theme_src[$i]}" "${theme_dirnames[$i]}"
-done
-
-echo_cyan "Done"
+# theme_src=(
+#   "git@github.com:chenasraf/lambda-mod-zsh-theme.git"
+# )
+# 
+# theme_dirnames=(
+#   "lambda-mod"
+# )
+# 
+# themes_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes"
+# 
+# echo_cyan "Installing shell themes..."
+# 
+# for ((i = 1; i <= $#theme_src; i++)); do
+#   zi theme "${theme_src[$i]}" "${theme_dirnames[$i]}"
+# done
+# 
+# echo_cyan "Done"
 
 # gi_gen
 echo_cyan "Downloading gi_gen latest version..."
@@ -122,14 +123,13 @@ else
   echo_cyan "All npm packages already installed."
 fi
 
-if [[ ! -f ~/.warprc ]]; then
-  ln -s $DOTFILES/.warprc ~/.warprc
-fi
-
 if [[ ! -f ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
   echo_cyan "Installing packer.nvim..."
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
+
+echo_cyan "Copying .config..."
+rsync -vtr $DOTFILES/.config/ $HOME/.config/
 
 echo_cyan "Done"
 
