@@ -80,7 +80,7 @@ alias ta="tmux attach"
 alias tas="tmux attach -s"
 alias tls="tmux list-sessions"
 alias tlw="tmux list-windows"
-alias trl="tmux source-file ~/.tmux.conf"
+alias trl="tmux source-file ~/.config/.tmux.conf"
 
 
 if is_linux; then
