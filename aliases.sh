@@ -83,10 +83,11 @@ alias tmux="tmux -f ~/.config/.tmux.conf"
 alias tn="tmux new"
 alias tns="tmux new -s"
 alias ta="tmux attach"
-alias tas="tmux attach -s"
+alias tas="tmux attach -t"
 alias tls="tmux list-sessions"
 alias tlw="tmux list-windows"
 alias trl="tmux source-file ~/.config/.tmux.conf"
+alias trn="tmux rename-session -t"
 
 alias sync-config="rsync -vtr $DOTFILES/.config/ $HOME/.config/"
 
