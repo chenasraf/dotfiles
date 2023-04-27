@@ -241,7 +241,7 @@ find-up() {
   return 1
 }
 
-prj() {
+prjd() {
   dv=$(wd path dv)
   if [[ -z $dv ]]; then
     echo_red "Project base path not found. Navigate to directory and run \`wd path dv\`."
@@ -249,6 +249,11 @@ prj() {
   fi
 
   cd "$dv/$@"
+}
+
+prj() {
+  prjd $@
+  vi .
 }
 
 docker-log() {
