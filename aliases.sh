@@ -79,6 +79,7 @@ alias dvc="docker-volume-cd"
 alias dvolp="docker-volume-path"
 alias dvp="docker-volume-path"
 
+alias tmux="tmux -f ~/.config/.tmux.conf"
 alias tn="tmux new"
 alias tns="tmux new -s"
 alias ta="tmux attach"
