@@ -14,7 +14,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export fpath=("$DOTFILES/completions" $fpath)
-
+zstyle ':completion:*:*:*:*:*' menu select
 
 # echo 'Loading '$DOTFILES/exports.sh
 source $DOTFILES/exports.sh # must run before zsh_init
