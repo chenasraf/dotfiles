@@ -86,4 +86,6 @@ return require('packer').startup(function(use)
       }
     end
   }
+
+  use 'eandrju/cellular-automaton.nvim'
 end)
