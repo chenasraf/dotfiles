@@ -1,6 +1,6 @@
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
-local casraf_Fugitive = vim.api.nvim_create_augroup("casraf_Fugitive", {})
+local casraf_Fugitive = vim.api.nvim_create_augroup("casraf_fugitive", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWinEnter", {

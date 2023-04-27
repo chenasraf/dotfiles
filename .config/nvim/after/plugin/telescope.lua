@@ -6,5 +6,5 @@ vim.keymap.set('n', '<leader>pi', function()
   if term == '' then
     return
   end
-  builtin.grep_string({ search = term })
+  builtin.grep_string({ search = term, use_regex = true })
 end)
