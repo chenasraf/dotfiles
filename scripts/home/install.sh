@@ -129,6 +129,7 @@ fi
 
 echo_cyan "Copying .config..."
 rsync -vtr $DOTFILES/.config/ $HOME/.config/
+rsync -vtr $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
 
 echo_cyan "Done"
 
