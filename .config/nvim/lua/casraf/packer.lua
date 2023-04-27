@@ -13,15 +13,15 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  require('telescope').setup{
+  require('telescope').setup {
+    pickers = {
+      find_files = {
+        find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules'},
+      },
+    },
     defaults = {
       file_ignore_patterns = {
         "node_modules"
-      },
-      pickers = {
-        find_files = {
-          find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
-        },
       }
     }
   }
