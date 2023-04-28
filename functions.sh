@@ -298,3 +298,15 @@ autoload _docker-exec
 autoload _docker-volume-path
 autoload _prj
 autoload _src
+
+tn-general () {
+    # Use -d to allow the rest of the function to run
+    tmux new-session -d -s general
+    tmux new-window -n general
+    # -d to prevent current window from changing
+    tmux new-window -d -n dotfiles -c "$DOTFILES"
+    tmux new-window -d
+    # -d to detach any other client (which there shouldn't be,
+    # since you just created the session).
+    tmux attach-session -d -t general
+}
