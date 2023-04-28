@@ -1,10 +1,10 @@
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
-local casraf_Fugitive = vim.api.nvim_create_augroup("casraf_fugitive", {})
+local casraf_fugitive = vim.api.nvim_create_augroup("casraf_fugitive", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWinEnter", {
-    group = casraf_Fugitive,
+    group = casraf_fugitive,
     pattern = "*",
     callback = function()
         -- print("help", vim.bo.ft)

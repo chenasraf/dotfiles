@@ -102,4 +102,8 @@ return require('packer').startup(function(use)
   use 'eandrju/cellular-automaton.nvim'
 
   use {'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons'}
+
+  use('neovim/nvim-lspconfig')
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 end)
