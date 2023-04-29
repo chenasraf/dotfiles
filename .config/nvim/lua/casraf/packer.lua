@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   require('telescope').setup {
     pickers = {
       find_files = {
-        find_command = {'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules'},
+        find_command = { 'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' },
       },
     },
     defaults = {
@@ -59,7 +59,7 @@ return require('packer').startup(function(use)
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
       {
-                                 -- Optional
+        -- Optional
         'williamboman/mason.nvim',
         run = function()
           -- pcall(vim.cmd, 'MasonUpdate')
@@ -69,9 +69,9 @@ return require('packer').startup(function(use)
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/nvim-cmp' },     -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'L3MON4D3/LuaSnip' },     -- Required
     }
   }
 
@@ -82,7 +82,7 @@ return require('packer').startup(function(use)
       require("todo-comments").setup {
         -- your configuration comes here
         -- or leave it empty to use the default settings
-        -- refer to the configuration https://github.com/folke/todo-comments.nvim 
+        -- refer to the configuration https://github.com/folke/todo-comments.nvim
       }
     end
   }
@@ -101,9 +101,11 @@ return require('packer').startup(function(use)
 
   use 'eandrju/cellular-automaton.nvim'
 
-  use {'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons'}
+  use { 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' }
 
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
+
+  use('neoclide/coc.nvim', { branch = 'release' })
 end)

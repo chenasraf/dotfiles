@@ -128,8 +128,7 @@ if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
 fi
 
 echo_cyan "Copying .config..."
-rsync -vtr $DOTFILES/.config/ $HOME/.config/
-rsync -vtr $DOTFILES/.p10k.zsh $HOME/.p10k.zsh
+rsync -vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
 
 echo_cyan "Done"
 

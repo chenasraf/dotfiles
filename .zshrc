@@ -32,3 +32,6 @@ for file in $DOTFILES/scripts/*; do
   [[ -f "$file" ]] && source $file
 done
 
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+

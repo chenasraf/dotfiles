@@ -95,7 +95,7 @@ rc() {
   if [[ -f $file ]]; then
     hash=$(md5 $file)
     echo "Opening $file..."
-    vi $file
+    nvim $file
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
@@ -253,7 +253,7 @@ prjd() {
 
 prj() {
   prjd $@
-  vi .
+  nvim .
 }
 
 docker-log() {

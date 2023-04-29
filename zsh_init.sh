@@ -113,3 +113,5 @@ else
 fi
 
 export VISUAL="$EDITOR"
+
+[[ ! -f ~/.config/.p10k.zsh ]] || source ~/.config/.p10k.zsh
