@@ -51,6 +51,7 @@ vim.keymap.set("n", "<leader>dv", "<cmd>lua require('dap.ui.variables').visual_h
   { noremap = true, silent = true, desc = "Debugger: Visual hover" })
 vim.keymap.set("n", "<leader>dt", "<cmd>lua require('dap.ui.variables').hover()<CR>",
   { noremap = true, silent = true, desc = "Debugger: Hover" })
+-- vim.keymap.set("n", "<leader>d1", 
 -- TODO: clean up?
 vim.keymap.set("n", "<leader>de", "<cmd>lua require('dap.ui.widgets').sidebar(require('dap.ui.widgets').scopes).open()<CR>",
   { noremap = true, silent = true, desc = "Debugger: Evaluate" })
