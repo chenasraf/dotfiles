@@ -9,7 +9,7 @@ fi
 out=()
 
 for i in $names; do
-  out+=("$i:$prjpath/$i")
+  out+=("$i")
 done
 
 _describe 'project' out

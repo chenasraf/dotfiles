@@ -108,4 +108,6 @@ return require('packer').startup(function(use)
   use('MunifTanjim/prettier.nvim')
 
   use('neoclide/coc.nvim', { branch = 'release' })
+
+  use('mfussenegger/nvim-dap')
 end)
