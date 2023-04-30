@@ -101,8 +101,8 @@ vim.diagnostic.config({
 
 -- dart
 
-local nvim_lsp = require 'nvim_lsp'
-local configs = require 'nvim_lsp/configs'
+local nvim_lsp = require 'lspconfig'
+local configs = require 'lspconfig/configs'
 
 local server_name = "dartls"
 local bin_name = "dart"

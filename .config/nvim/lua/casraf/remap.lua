@@ -74,3 +74,9 @@ end, { desc = "Source current file" })
 vim.keymap.set("n", "<leader>w", function()
   vim.cmd.write()
 end, { desc = "Save file" })
+
+vim.keymap.set("n", "<leader>srv", function()
+  local cmd = "python3 -m http.server 5500"
+  vim.cmd(":silent !open http://localhost:5500")
+  vim.cmd("split | terminal " .. cmd)
+end, { desc = "Serve working directory" })
