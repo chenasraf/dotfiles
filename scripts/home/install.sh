@@ -122,6 +122,10 @@ else
   echo_cyan "All npm packages already installed."
 fi
 
+if [[ ! -d $HOME/.zplug ]]; then
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
+
 if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
   echo_cyan "Installing packer.nvim..."
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim

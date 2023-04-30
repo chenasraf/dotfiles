@@ -310,3 +310,4 @@ tn-general () {
     # since you just created the session).
     tmux attach-session -d -t general
 }
+

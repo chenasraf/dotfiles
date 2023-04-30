@@ -113,4 +113,6 @@ return require('packer').startup(function(use)
   use('neoclide/coc.nvim', { branch = 'release' })
 
   use('mfussenegger/nvim-dap')
+  use('github/copilot.vim')
+  use('nvim-tree/nvim-tree.lua')
 end)

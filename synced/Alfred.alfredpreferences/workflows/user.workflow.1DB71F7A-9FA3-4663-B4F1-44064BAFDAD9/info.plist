@@ -8,6 +8,32 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>1BD6325A-1219-4F0A-B4EE-DC9C96450986</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4040E349-B23C-4B4A-A496-72D33F51E2B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4040E349-B23C-4B4A-A496-72D33F51E2B2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B0199F8A-B91F-4A44-86AF-F910CC94EF82</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>58619DEC-D6A7-4344-B557-5617B39F12DF</key>
 		<array/>
 		<key>6079855E-22E9-4B4C-8DD5-919CB258064A</key>
@@ -32,6 +58,33 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B0199F8A-B91F-4A44-86AF-F910CC94EF82</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90677662-35FF-41CB-93F4-6758357932B1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3A6D3743-A6D3-4E6F-9250-65C6BFFA34E8</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8455555-F05D-4969-83C9-5DE09914B79D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>63D8D915-7251-4C96-93B5-C3F997C3CB12</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -89,29 +142,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>python3 openurls.py -u="${1}"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>58619DEC-D6A7-4344-B557-5617B39F12DF</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -157,6 +187,124 @@
 			<string>90677662-35FF-41CB-93F4-6758357932B1</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>mtvID</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>1BD6325A-1219-4F0A-B4EE-DC9C96450986</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>python3 openurls.py -u="${1}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>58619DEC-D6A7-4344-B557-5617B39F12DF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:split1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>m</string>
+						<key>outputlabel</key>
+						<string>movie</string>
+						<key>uid</key>
+						<string>3A6D3743-A6D3-4E6F-9250-65C6BFFA34E8</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:split1}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>t</string>
+						<key>outputlabel</key>
+						<string>tv</string>
+						<key>uid</key>
+						<string>63D8D915-7251-4C96-93B5-C3F997C3CB12</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>B0199F8A-B91F-4A44-86AF-F910CC94EF82</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>:</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>split</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.split</string>
+			<key>uid</key>
+			<string>4040E349-B23C-4B4A-A496-72D33F51E2B2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>text</key>
+				<string>Search tv shows for '{query}'</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.fallback</string>
+			<key>uid</key>
+			<string>FA1D6F95-2A45-46E1-A83E-9C93D722AB02</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -207,19 +355,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>text</key>
-				<string>Search tv shows for '{query}'</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.fallback</string>
-			<key>uid</key>
-			<string>FA1D6F95-2A45-46E1-A83E-9C93D722AB02</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Run the Movie Search Keyword (default: `movie`) or TV Search Keyword (default: `tv`) to search for movies and TV shows, respectively. Press ↩ to get details and ratings.
@@ -228,40 +363,61 @@
 ![](img/about/walle-details.png)</string>
 	<key>uidata</key>
 	<dict>
+		<key>1BD6325A-1219-4F0A-B4EE-DC9C96450986</key>
+		<dict>
+			<key>xpos</key>
+			<real>110</real>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
+		<key>4040E349-B23C-4B4A-A496-72D33F51E2B2</key>
+		<dict>
+			<key>xpos</key>
+			<real>260</real>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
 		<key>58619DEC-D6A7-4344-B557-5617B39F12DF</key>
 		<dict>
 			<key>xpos</key>
-			<real>500</real>
+			<real>660</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>275</real>
 		</dict>
 		<key>6079855E-22E9-4B4C-8DD5-919CB258064A</key>
 		<dict>
 			<key>xpos</key>
-			<real>100</real>
+			<real>110</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>140</real>
 		</dict>
 		<key>90677662-35FF-41CB-93F4-6758357932B1</key>
 		<dict>
 			<key>xpos</key>
-			<real>300</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>140</real>
+		</dict>
+		<key>B0199F8A-B91F-4A44-86AF-F910CC94EF82</key>
+		<dict>
+			<key>xpos</key>
+			<real>330</real>
+			<key>ypos</key>
+			<real>290</real>
 		</dict>
 		<key>B8455555-F05D-4969-83C9-5DE09914B79D</key>
 		<dict>
 			<key>xpos</key>
-			<real>300</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>405</real>
 		</dict>
 		<key>FA1D6F95-2A45-46E1-A83E-9C93D722AB02</key>
 		<dict>
 			<key>xpos</key>
-			<real>100</real>
+			<real>110</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>405</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -430,7 +586,7 @@
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2.15.1</string>
+	<string>2.16.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/tmcknight/Movie-and-TV-Show-Search-Alfred-Workflow</string>
 </dict>
