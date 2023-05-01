@@ -82,6 +82,8 @@ alias dvc="docker-volume-cd"
 alias dvolp="docker-volume-path"
 alias dvp="docker-volume-path"
 
+alias scriptls="cat $(find-up package.json) | jq '.scripts'"
+
 alias tmux="tmux -f ~/.config/.tmux.conf"
 alias tn="tmux new"
 alias tns="tmux new -s"

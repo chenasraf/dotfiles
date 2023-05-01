@@ -8,6 +8,9 @@ end, { desc = "Save and file explorer" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
+-- vim.keymap.set({"v", "n"}, "<C-.>", "<C-o>", { desc = "Go to previous cursor location" })
+-- vim.keymap.set({"v", "n"}, "<C-,>", "<C-i>", { desc = "Go to next cursor location" })
+
 -- join line - stay on current column
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
@@ -71,11 +74,10 @@ vim.keymap.set("n", "<leader><leader>", function()
 end, { desc = "Source current file" })
 
 -- save file
-vim.keymap.set("n", "<leader>w", function()
-  vim.cmd.write()
-end, { desc = "Save file" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
+vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Save all buffers" })
 
-vim.keymap.set("n", "<leader>srv", function()
+vim.keymap.set("n", "<leader>Srv", function()
   local cmd = "python3 -m http.server 5500"
   vim.cmd(":silent !open http://localhost:5500")
   vim.cmd("split | terminal " .. cmd)

@@ -3,6 +3,8 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+vim.cmd('command Ps :PackerSync')
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -115,4 +117,6 @@ return require('packer').startup(function(use)
   use('mfussenegger/nvim-dap')
   use('github/copilot.vim')
   use('nvim-tree/nvim-tree.lua')
+
+  use("terrortylor/nvim-comment")
 end)

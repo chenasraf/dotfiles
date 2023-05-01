@@ -168,7 +168,7 @@ find-replace() {
   find=$1
   replace=$2
   file=$3
-  cat $file | sed "s/$find/$replace/g"
+  sed "s/$find/$replace/g" $file
 }
 
 find-replace-file() {
@@ -178,8 +178,13 @@ find-replace-file() {
     return 1
   fi
 
-  for file in $3; do
-    out=$(find-replace $1 $2 $file)
+  files=( "${@:3}" )
+  find=$1
+  replace=$2
+
+  for file in $files; do
+    echo "Replacing $find with $replace in $file..."
+    out=$(find-replace $find $replace $file)
     echo $out >$file
   done
 }
@@ -309,5 +314,36 @@ tn-general () {
     # -d to detach any other client (which there shouldn't be,
     # since you just created the session).
     tmux attach-session -d -t general
+}
+
+tn-custom () {
+    winname=$1
+    shift
+    # Use -d to allow the rest of the function to run
+    tmux new-session -d -s $winname
+    # tmux new-window -n $winname
+
+    # set as array from argv
+    dirs=("$@")
+    # -d to prevent current window from changing
+
+    for dir in ${dirs[@]}; do
+      tabname=$(basename $dir)
+      echo "tabname=$tabname"
+      sleep 0.1
+      tmux new-window -d -n $tabname -c "$dir"
+      echo "tmux new-window -d -n $tabname -c $dir"
+      sleep 0.1
+      tmux send-keys -t $winname:$tabname "v ." Enter
+      echo "tmux send-keys -t $winname:$tabname v . Enter"
+      sleep 0.1
+      echo "tmux split-pane -d -h -t $winname:$tabname -c $dir"
+      tmux split-pane -d -h -t $winname:$tabname -c "$dir"
+    done
+    sleep 1
+    # -d to detach any other client (which there shouldn't be,
+    # since you just created the session).
+    echo "tmux attach-session -d -t $winname"
+    tmux attach-session -d -t $winname
 }
 
