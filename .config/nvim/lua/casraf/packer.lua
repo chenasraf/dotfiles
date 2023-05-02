@@ -129,4 +129,5 @@ return require('packer').startup(function(use)
 
   use('nvim-lua/popup.nvim')
   use('nvim-telescope/telescope-media-files.nvim')
+  use('karb94/neoscroll.nvim')
 end)
