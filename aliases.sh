@@ -54,7 +54,7 @@ alias ip6="curl -6 simpip.com --max-time 2 --proto-default https --silent | prep
 alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
 alias ip="iplocal; ip4; ip6"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
+alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo g em update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias gundo="git reset --soft HEAD~1"
 alias unq="sudo xattr -rd com.apple.quarantine"
@@ -93,8 +93,13 @@ alias tls="tmux list-sessions"
 alias tlw="tmux list-windows"
 alias trl="tmux source-file ~/.config/.tmux.conf"
 alias trn="tmux rename-session -t"
-
+alias trm="tmux kill-session -t"
 alias sync-config="rsync -vtr $DOTFILES/.config/ $HOME/.config/"
+
+# alias tn-simple-scaffold="tn-custom -d $HOME/Dev/simple-scaffold ."
+alias tn-df="tn-custom -d $DOTFILES -s dotfiles ."
+alias tn-simple-scaffold="tn-prj simple-scaffold"
+alias tn-acroasis="tn-custom -d $HOME/Dev/acroasis -s acroasis front server shared landing"
 
 if is_linux; then
   alias md5="md5sum"

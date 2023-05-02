@@ -1,4 +1,4 @@
-#compdef prj prjd
+#compdef prj prjd tn-prj
 prjpath="$(wd path dv)"
 names=($(ls $prjpath))
 

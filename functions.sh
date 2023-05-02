@@ -317,33 +317,61 @@ tn-general () {
 }
 
 tn-custom () {
-    winname=$1
-    shift
-    # Use -d to allow the rest of the function to run
-    tmux new-session -d -s $winname
-    # tmux new-window -n $winname
+    parent="."
+    for arg in "$@"; do
+        case "$1" in
+            -d)
+              parent="$2"
+              winname=$(basename $parent)
+              shift 2
+              ;;
+            -s)
+              winname="$2"
+              shift 2
+              ;;
+        esac
+    done
+    tmux has-session -t $winname 2>/dev/null
+    if [[ "$?" == "0" ]]; then
+      tmux attach-session -t $winname
+      return 0
+    fi
 
-    # set as array from argv
     dirs=("$@")
-    # -d to prevent current window from changing
+
+    echo "Creating new session $winname on $parent with dirs: $dirs"
+    tmux new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do
+      dir="$parent/$dir"
       tabname=$(basename $dir)
-      echo "tabname=$tabname"
-      sleep 0.1
-      tmux new-window -d -n $tabname -c "$dir"
-      echo "tmux new-window -d -n $tabname -c $dir"
-      sleep 0.1
-      tmux send-keys -t $winname:$tabname "v ." Enter
-      echo "tmux send-keys -t $winname:$tabname v . Enter"
-      sleep 0.1
-      echo "tmux split-pane -d -h -t $winname:$tabname -c $dir"
-      tmux split-pane -d -h -t $winname:$tabname -c "$dir"
+      if [[ $tabname == "." ]]; then
+        tabname="$winname"
+      fi
+
+      # sleep 0.1
+      # echo new-window -n $tabname -c $dir
+      tmux new-window -n $tabname -c $dir
+      # echo
+
+      # sleep 0.1
+      # echo send-keys -t $winname:$tabname v . Enter
+      tmux send-keys -t $winname:$tabname v Enter
+      # echo
+
+      # sleep 0.1
+      # echo split-window -h -t $winname:$tabname -c $dir
+      tmux split-window -h -t $winname:$tabname -c $dir
+      # echo
     done
-    sleep 1
-    # -d to detach any other client (which there shouldn't be,
-    # since you just created the session).
-    echo "tmux attach-session -d -t $winname"
-    tmux attach-session -d -t $winname
+
+    tmux select-window -t $winname:0
+    tmux attach -t $winname
+}
+
+tn-prj() {
+    prj="$1"
+    shift
+    tn-custom -d "$HOME/Dev/$prj" -s "$prj" . $@
 }
 

@@ -35,6 +35,11 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection, keep 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
+-- surround with parens
+-- vim.keymap.set("v", "(", "(<C-r>\"<Esc>", { desc = "Surround selection with parens" })
+
+-- comment line
+vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { desc = "Comment line" })
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete selection to void register" })
 
