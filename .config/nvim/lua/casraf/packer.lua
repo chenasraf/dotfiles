@@ -3,7 +3,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-vim.cmd('command Ps :PackerSync')
+vim.cmd('command! Ps :PackerSync')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -37,6 +37,13 @@ return require('packer').startup(function(use)
         '-g', '!.git',
         '-g', '!node_modules'
       },
+    },
+    extensions = {
+      media_files = {
+        filetypes = { "png", "webp", "jpg", "jpeg", "svg", "gif", "mp4", "webm", "pdf" },
+        -- find command (defaults to `fd`)
+        find_cmd = "rg"
+      }
     }
   }
 
@@ -84,11 +91,11 @@ return require('packer').startup(function(use)
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration https://github.com/folke/todo-comments.nvim
-      }
+      -- require("todo-comments").setup {
+      --   -- your configuration comes here
+      --   -- or leave it empty to use the default settings
+      --   -- refer to the configuration https://github.com/folke/todo-comments.nvim
+      -- }
     end
   }
 
@@ -119,4 +126,7 @@ return require('packer').startup(function(use)
   use('nvim-tree/nvim-tree.lua')
 
   use("terrortylor/nvim-comment")
+
+  use('nvim-lua/popup.nvim')
+  use('nvim-telescope/telescope-media-files.nvim')
 end)

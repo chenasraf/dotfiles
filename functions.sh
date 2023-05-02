@@ -39,6 +39,14 @@ listening() {
   fi
 }
 
+kill-listening() {
+  if [[ $# -eq 0 ]]; then
+    echo "Usage: kill-listening <port>"
+    return 1
+  fi
+  listening $1 | awk '{print $2}' | xargs kill
+}
+
 # example echo '1' | prepend 'result: '
 prepend() {
   echo -n "$@"

@@ -13,7 +13,7 @@ vim.opt.undofile = true
 
 vim.opt.wrap = false
 
--- vim.opt.hlsearch = false -- highlight search terms
+vim.opt.hlsearch = false -- highlight search terms
 vim.opt.incsearch = true -- incremental search
 
 vim.opt.termguicolors = true
