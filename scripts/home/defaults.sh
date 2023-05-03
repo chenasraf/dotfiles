@@ -10,7 +10,7 @@ __write_default() {
   cmd=$1
   shift
   args=($@)
-  echo "$cmd $args"
+  # echo "$cmd $args"
   eval "$cmd $args"
   return $?
 }

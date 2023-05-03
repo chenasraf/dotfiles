@@ -2,7 +2,6 @@
 
 source $DOTFILES/colors.sh
 source $DOTFILES/exports.sh
-source $DOTFILES/scripts/zi.sh
 
 __home_prepare_dir() {
   cwd="$(pwd)"

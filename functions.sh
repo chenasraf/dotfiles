@@ -61,6 +61,11 @@ ucase() {
   echo "$@" | tr '[:lower:]' '[:upper:]'
 }
 
+# select random element from arguments
+randarg() {
+  echo "${${@}[$RANDOM % $# + 1]}"
+}
+
 int_res() {
   # get all but last
   c=$(($# - 1))
