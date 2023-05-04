@@ -25,7 +25,7 @@ vim.keymap.set('n', 'π', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 vim.keymap.set('n', 'ç', '<Cmd>BufferClose<CR>', opts)
 -- Close all but current
-vim.keymap.set('n', '<C-†>', '<Cmd>BufferCloseAllButCurrent<CR>', opts)
+vim.keymap.set('n', 'Ç', '<Cmd>BufferCloseAllButCurrent<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
