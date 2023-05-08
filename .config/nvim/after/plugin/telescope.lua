@@ -1,6 +1,7 @@
 local builtin = require('telescope.builtin')
 
 require('telescope').load_extension('media_files')
+require('telescope').load_extension('harpoon')
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>pg', builtin.git_files, { desc = 'Git files' })
