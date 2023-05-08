@@ -59,7 +59,7 @@ if [[ -f $(which ruby) ]]; then
   export PATH="$GEM_HOME/bin:$PATH"
   export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
 fi
-if [[ -f $(which flutter) ]]; then
+if [[ ! -f $(which flutter) ]]; then
   export PATH="$HOME/.flutter-src/bin:$PATH"
   export PATH="$HOME/.flutter-src/bin/cache/dart-sdk/bin:$PATH"
 fi
