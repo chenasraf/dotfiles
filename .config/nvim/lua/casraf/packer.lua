@@ -119,7 +119,7 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
 
-  use('neoclide/coc.nvim', { branch = 'release' })
+  -- use('neoclide/coc.nvim', { branch = 'release' })
 
   use('mfussenegger/nvim-dap')
   use('github/copilot.vim')
@@ -130,4 +130,12 @@ return require('packer').startup(function(use)
   use('nvim-lua/popup.nvim')
   use('nvim-telescope/telescope-media-files.nvim')
   use('karb94/neoscroll.nvim')
+
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+    },
+  }
 end)
