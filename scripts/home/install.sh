@@ -19,7 +19,7 @@ fi
 
 man_install
 
-cd $pwd
+cd $cwd
 
 # gi_gen
 echo_cyan "Downloading gi_gen latest version..."
@@ -86,6 +86,16 @@ fi
 if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
   echo_cyan "Installing packer.nvim..."
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+fi
+
+if [[ ! -f $(which tblf) ]]; then
+  echo_cyan "Installing tblf..."
+  file=$(mktemp -d)
+  git clone https://github.com/chenasraf/tblf --depth=1 $file/tblf
+  cd $file/tblf
+  make build && make install
+  cd $cwd
+  rm -rf $file
 fi
 
 # .config

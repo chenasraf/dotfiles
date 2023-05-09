@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
-tmux list-sessions
+header="Name # Windows Date    "
+out=$(tmux list-sessions | sed s/:// | sed s/\(created// | sed s/\)//)
+echo "$header\n$out" | tblf
 
 echo
