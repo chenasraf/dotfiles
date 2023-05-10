@@ -925,6 +925,8 @@ key_bindings:
   - { chars: "\x02_", key: D, mods: Command|Shift }
   # Split the current pane into two, top and bottom.
   - { chars: "\x02|", key: D, mods: Command }
+  # move to pane above - neovim
+  # - { chars: "\e\ewk\n", key: Up, mods: Command|Alt }
   # Type <escape>:w<enter> to save neovim
   - { chars: "\e:w\n", key: S, mods: Command }
   # Type <escape>:wa<enter> to save all neovim files in nvim window
