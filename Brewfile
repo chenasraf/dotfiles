@@ -13,8 +13,6 @@ brew "apr-util"
 brew "automake"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
-# Text processing system for reStructuredText
-brew "docutils"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -23,10 +21,12 @@ brew "bash"
 brew "bison"
 # Get/set bluetooth power and discoverable state
 brew "blueutil"
-# Open source suite of directory software
-brew "openldap"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
+# Console Matrix
+brew "cmatrix"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # Validating, recursive, caching DNS resolver
@@ -45,8 +45,12 @@ brew "freetds"
 brew "fzf"
 # GNU compiler collection
 brew "gcc"
+# GNU database manager
+brew "gdbm"
 # Git extension for versioning large files
 brew "git-lfs"
+# Open-source GitLab command-line tool
+brew "glab"
 # Render markdown on the CLI
 brew "glow"
 # GNU Pretty Good Privacy (PGP) package
@@ -59,16 +63,18 @@ brew "pkg-config"
 brew "guile"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Network authentication protocol
+brew "krb5"
 # Portable Foreign Function Interface library
 brew "libffi"
-# Postgres C API library
-brew "libpq"
 # YAML Parser
 brew "libyaml"
 # Rainbows and unicorns in your console!
 brew "lolcat"
 # Utility for directing compilation
 brew "make"
+# Platform built on V8 to build network applications
+brew "node@16"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -83,6 +89,8 @@ brew "nvm"
 brew "php", restart_service: true, link: false
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Python version management
+brew "pyenv"
 # Generic syntax highlighter
 brew "pygments"
 # Interpreted, interactive, object-oriented programming language
@@ -105,6 +113,8 @@ brew "tree"
 brew "trunk"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# SDK
+brew "dart-lang/dart/dart", link: false
 # Beta SDK
 brew "dart-lang/dart/dart-beta"
 # High-performance, schema-free, document-oriented database
@@ -115,3 +125,5 @@ cask "android-platform-tools"
 cask "android-sdk"
 # Simple application that will prevent iTunes or Apple Music from launching
 cask "notunes"
+# QuickLook plugin for plaintext files without an extension
+cask "qlstephen"

@@ -8,7 +8,11 @@ null_ls.setup({
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.keymap.set("n", "<Leader>f", function()
-        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+        if vim.bo.filetype == "dart" then
+          vim.cmd("silent !dart format --line-length 120 %:p")
+        else
+          vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+        end
       end, { buffer = bufnr, desc = "[lsp] format" })
 
       -- format on save

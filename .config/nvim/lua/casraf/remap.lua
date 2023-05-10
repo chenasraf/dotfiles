@@ -18,7 +18,7 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
 -- insert newlines without insert mode
 vim.keymap.set("n", "<S-CR>", "m`o<Esc>k``", { desc = "Insert newline below" })
-vim.keymap.set("n", "<CR>",   "m`O<Esc>j``", { desc = "Insert newline above" })
+vim.keymap.set("n", "<CR>", "m`O<Esc>j``", { desc = "Insert newline above" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -45,10 +45,13 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection, keep 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
 -- surround with parens
-vim.keymap.set("v", "<leader>(", [[:s/\%V\(.*\)\%V/\(\1\)/g<Left><Left><CR>]], { desc = "Surround selection with parens" })
-vim.keymap.set("v", "<leader>[[", [[:s/\%V\(.*\)\%V/\[\1\]/g<Left><Left><CR>]], { desc = "Surround selection with brackets" })
+vim.keymap.set("v", "<leader>(", [[:s/\%V\(.*\)\%V/\(\1\)/g<Left><Left><CR>]],
+  { desc = "Surround selection with parens" })
+vim.keymap.set("v", "<leader>[[", [[:s/\%V\(.*\)\%V/\[\1\]/g<Left><Left><CR>]],
+  { desc = "Surround selection with brackets" })
 vim.keymap.set("v", "<leader>{", [[:s/\%V\(.*\)\%V/{\1}/g<Left><Left><CR>]], { desc = "Surround selection with braces" })
-vim.keymap.set("v", "<leader><", [[:s/\%V\(.*\)\%V/<\1>/g<Left><Left><CR>]], { desc = "Surround selection with angle brackets" })
+vim.keymap.set("v", "<leader><", [[:s/\%V\(.*\)\%V/<\1>/g<Left><Left><CR>]],
+  { desc = "Surround selection with angle brackets" })
 
 -- comment line
 vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { desc = "Comment line" })
@@ -64,6 +67,7 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 -- file formatting
 -- TODO: move to lsp.lua?
 vim.keymap.set("n", "<leader>f", function()
+  -- print(vim.bo.filetype)
   if vim.bo.filetype == "dart" then
     vim.cmd("silent !dart format --line-length 120 %:p")
   else
@@ -81,8 +85,13 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Previous quickfix" })
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location list" })
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Previous location list" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+-- search and replace current word
+vim.keymap.set( "n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search and replace current word" })
+-- search and replace current selection
+vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
+{ desc = "Search and replace current selection" })
+
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
 vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { silent = true, desc = "Make file not executable" })
 
