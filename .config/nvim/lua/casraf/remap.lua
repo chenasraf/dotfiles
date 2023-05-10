@@ -16,6 +16,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 -- join line - stay on current column
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
+-- insert newlines without insert mode
+vim.keymap.set("n", "<S-CR>", "m`o<Esc>k``", { desc = "Insert newline below" })
+vim.keymap.set("n", "<CR>",   "m`O<Esc>j``", { desc = "Insert newline above" })
+
+-- redo
+vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
+
 -- page up/down
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page up" })
