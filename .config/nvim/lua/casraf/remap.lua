@@ -17,8 +17,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
 -- insert newlines without insert mode
-vim.keymap.set("n", "<S-CR>", "m`o<Esc>k``", { desc = "Insert newline below" })
-vim.keymap.set("n", "<CR>", "m`O<Esc>j``", { desc = "Insert newline above" })
+vim.keymap.set("n", "<CR>", "m`o<Esc>k``", { desc = "Insert newline below" })
+vim.keymap.set("n", "<M-Enter>", "m`O<Esc>j``", { desc = "Insert newline above" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -53,6 +53,81 @@ vim.keymap.set("v", "<leader>{", [[:s/\%V\(.*\)\%V/{\1}/g<Left><Left><CR>]], { d
 vim.keymap.set("v", "<leader><", [[:s/\%V\(.*\)\%V/<\1>/g<Left><Left><CR>]],
   { desc = "Surround selection with angle brackets" })
 
+vim.keymap.set("n", "<leader>'", ":ToggleQuotes", { desc = "Toggle nearest quote" })
+
+-- replace nearest quote with double quote
+-- vim.keymap.set("n", "<leader>'", function()
+--     -- save original position
+--     local orig_pos = vim.fn.getpos(".")
+--     local orig_line = orig_pos[2]
+--
+--     -- look for nearest quote before, iterate lines until match found
+--     local line = vim.fn.line(".")
+--     local col = vim.fn.col(".")
+--     local found = false
+--     local quote_type = ""
+--     -- print("line", line, "col", col)
+--     while line > 0 do
+--       local line_text = vim.fn.getline(line)
+--       local quote_col = string.match(line_text, [['"`]])
+--       print("quote_col", quote_col, "line", line, "col", col)
+--       -- print("line_text", line_text)
+--       -- print("line", line, "col", col)
+--       if quote_col ~= -1 then
+--         vim.fn.setpos(".", { 0, line, quote_col + 1, 0 })
+--         vim.cmd([["+normal ci"]])
+--         found = true
+--         break
+--       end
+--       line = line - 1
+--     end
+--     -- replace ' with ", " with `, and ` with ' on the found line
+--     if found then
+--       local line_text = vim.fn.getline(".")
+--       -- save the quote type
+--       quote_type = string.find(line_text, [['"`]])
+--       local new_text = string.gsub(line_text, [['"`]], {
+--         ["'"] = [["]],
+--         ['"'] = [[`]],
+--         ["`"] = [[']],
+--       })
+--       -- print("new_text", new_text)
+--       vim.fn.setline(".", new_text)
+--     end
+--
+--     -- look for nearest quote of same type after, iterate lines until match found
+--     -- local end_line = vim.fn.line(".")
+--     -- local end_col = vim.fn.col(".")
+--     -- local end_found = false
+--     -- while end_line < vim.fn.line("$") do
+--     --   local line_text = vim.fn.getline(end_line)
+--     --   local quote_col = vim.fn.match(line_text, quote_type, end_col)
+--     --   if quote_col ~= -1 then
+--     --     vim.fn.setpos(".", { 0, end_line, quote_col + 1, 0 })
+--     --     vim.cmd([["+normal ci"]])
+--     --     end_found = true
+--     --     break
+--     --   end
+--     --   end_line = end_line + 1
+--     -- end
+--     -- replace ' with ", " with `, and ` with ' on the found line
+--     -- if end_found and end_line ~= orig_line then
+--     --   local line_text = vim.fn.getline(".")
+--     --   local new_text = string.gsub(line_text, [['"`]], {
+--     --     ["'"] = [["]],
+--     --     ['"'] = [[`]],
+--     --     ["`"] = [[']],
+--     --   })
+--     --   vim.fn.setline(".", new_text)
+--     -- end
+--
+--     -- return to original position
+--     vim.fn.setpos(".", orig_pos)
+--     -- print("switched quote types")
+--   end,
+--   { desc = "Switch between quote types" })
+
+
 -- comment line
 vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { desc = "Comment line" })
 
@@ -86,11 +161,11 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location lis
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Previous location list" })
 
 -- search and replace current word
-vim.keymap.set( "n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search and replace current word" })
 -- search and replace current selection
 vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
-{ desc = "Search and replace current selection" })
+  { desc = "Search and replace current selection" })
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
 vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { silent = true, desc = "Make file not executable" })

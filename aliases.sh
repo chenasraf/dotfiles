@@ -1,5 +1,7 @@
-source $HOME/.dotfiles/colors.sh
-source $HOME/.dotfiles/functions.sh
+#!/usr/bin/env zsh
+
+source "$HOME/.dotfiles/colors.sh"
+source "$HOME/.dotfiles/functions.sh"
 
 # Aliases
 alias ".."="cd .."
@@ -13,7 +15,7 @@ alias l="ls -A"
 alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
-alias serve="open http://localhost:${PORT:-3001} & python3 -m http.server ${PORT:-3001}"
+alias serve="open http://localhost:\${PORT:-3001} & python3 -m http.server \${PORT:-3001}"
 
 # output pipes
 alias -g H="| head"
@@ -30,31 +32,31 @@ alias -g P="2>&1| pygmentize -l pytb"
 alias arm="arch -arm64"
 alias x86="arch -x86_64"
 # [d]ev gi_gen
-alias dgi_gen="$GOBIN/gi_gen"
+alias dgi_gen="\$GOBIN/gi_gen"
 # [g]lobal gi_gen
-alias ggi_gen="$DOTBIN/gi_gen"
+alias ggi_gen="\$DOTBIN/gi_gen"
 # go [i]nstall & run gi_gen
 alias igi_gen="go install && dgi_gen"
 
 alias gdiff="git diff"
 alias gpa="ga . && gc && gp"
 
-# geneal
+# general
 # from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
 alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
 alias ip6="curl -6 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv6: '"
 alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
 alias ip="iplocal; ip4; ip6"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo g em update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
+# alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo g em update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias gundo="git reset --soft HEAD~1"
 alias unq="sudo xattr -rd com.apple.quarantine"
 alias scriptls="cat \$(find-up package.json) | jq '.scripts'"
-alias sync-config="rsync -vtr $DOTFILES/.config/ $HOME/.config/"
+alias sync-config="rsync -vtr \$DOTFILES/.config/ \$HOME/.config/"
 alias sf="search-file"
 alias fnu="find-up"
-alias ascii-text=". $DOTFILES/scripts/ascii_font/ascii_font.sh"
+alias ascii-text=". \$DOTFILES/scripts/ascii_font/ascii_font.sh"
 
 # home
 alias h="home"
@@ -93,10 +95,10 @@ alias trn="tmux rename-session -t"
 alias trm="tmux kill-session -t"
 
 # tmux - workspaces
-alias tn-general="tn-custom $HOME/Dev -s general"
-alias tn-df="tn-custom -d $DOTFILES -s dotfiles ."
+alias tn-general="tn-custom \$HOME/Dev -s general"
+alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 alias tn-simple-scaffold="tn-prj simple-scaffold"
-alias tn-acroasis="tn-custom -d $HOME/Dev/acroasis -s acroasis front server shared landing"
+alias tn-acroasis="tn-custom -d \$HOME/Dev/acroasis -s acroasis front server shared landing"
 
 if is_linux; then
   alias md5="md5sum"

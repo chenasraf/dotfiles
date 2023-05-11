@@ -101,6 +101,7 @@ zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS
 zplug romkatv/powerlevel10k, as:theme, depth:1 
 zplug zsh-users/zsh-autosuggestions
 
+# TODO: use zplug?
 source "$HOME/.dotfiles/plugins/git.plugin.zsh"
 
 zplug load
