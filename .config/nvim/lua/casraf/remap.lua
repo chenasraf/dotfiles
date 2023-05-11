@@ -56,7 +56,7 @@ vim.keymap.set("v", "<leader><", [[:s/\%V\(.*\)\%V/<\1>/g<Left><Left><CR>]],
 vim.keymap.set("n", "<leader>'", ":ToggleQuotes<CR>", { desc = "Toggle nearest quote" })
 
 -- comment line
-vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { desc = "Comment line" })
+-- vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { desc = "Comment line" })
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete selection to void register" })
 
@@ -105,17 +105,14 @@ vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>", { 
 vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Game of life" });
 
 -- source file
-vim.keymap.set("n", "<leader><leader>", function()
-  -- vim.cmd.write()
-  vim.cmd("so")
-end, { desc = "Source current file" })
+vim.keymap.set("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
 
 -- save file
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Save all buffers" })
 
 vim.keymap.set("n", "<leader>Srv", function()
-  local cmd = "python3 -m http.server 5500"
+  local cmd = "http-server -p 5500"
   vim.cmd(":silent !open http://localhost:5500")
-  vim.cmd("split | terminal " .. cmd)
+  vim.cmd("belowright split | terminal " .. cmd)
 end, { desc = "Serve working directory" })

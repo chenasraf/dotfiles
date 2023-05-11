@@ -50,6 +50,7 @@ check_npm=(
   "simple-scaffold"
   "firebase"
   "prettier"
+  "http-server"
 )
 
 install_npm=(
@@ -58,6 +59,7 @@ install_npm=(
   "simple-scaffold@latest"
   "firebase-tools@latest"
   "prettier@latest"
+  "http-server"
 )
 
 install_npm_final=()
@@ -71,10 +73,10 @@ for ((i = 1; i <= $#install_npm; i++)); do
 done
 
 if [[ $#install_npm_final -gt 0 ]]; then
-  echo_cyan "Installing npm packages ($install_npm_final)..."
-  npm install -g $install_npm_final
+  echo_cyan "Installing pnpm packages ($install_npm_final)..."
+  pnpm install -g $install_npm_final
 else
-  echo_cyan "All npm packages already installed."
+  echo_cyan "All pnpm packages already installed."
 fi
 
 # zplug

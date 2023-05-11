@@ -15,7 +15,7 @@ alias l="ls -A"
 alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
-alias serve="open http://localhost:\${PORT:-3001} & python3 -m http.server \${PORT:-3001}"
+alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 
 # output pipes
 alias -g H="| head"
