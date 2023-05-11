@@ -93,6 +93,7 @@ alias trn="tmux rename-session -t"
 alias trm="tmux kill-session -t"
 
 # tmux - workspaces
+alias tn-general="tn-custom $HOME/Dev -s general"
 alias tn-df="tn-custom -d $DOTFILES -s dotfiles ."
 alias tn-simple-scaffold="tn-prj simple-scaffold"
 alias tn-acroasis="tn-custom -d $HOME/Dev/acroasis -s acroasis front server shared landing"

@@ -317,19 +317,8 @@ autoload _docker-volume-path
 autoload _prj
 autoload _src
 
-tn-general () {
-    # Use -d to allow the rest of the function to run
-    tmux new-session -d -s general
-    tmux new-window -n general
-    # -d to prevent current window from changing
-    tmux new-window -d -n dotfiles -c "$DOTFILES"
-    tmux new-window -d
-    # -d to detach any other client (which there shouldn't be,
-    # since you just created the session).
-    tmux attach-session -d -t general
-}
-
 tn-custom () {
+    alias _tmux="tmux -f ~/.config/.tmux.conf"
     parent="."
     for arg in "$@"; do
         case "$1" in
@@ -353,7 +342,7 @@ tn-custom () {
     dirs=("$@")
 
     echo "Creating new session $winname on $parent with dirs: $dirs"
-    tmux new-session -d -s $winname -n general -c $parent
+    _tmux new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do
       dir="$parent/$dir"
