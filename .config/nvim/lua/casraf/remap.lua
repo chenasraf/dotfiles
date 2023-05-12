@@ -31,13 +31,6 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "Next find buffer" })
 -- previous find buffer
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous find buffer" })
 
--- vim.keymap.set("n", "<leader>vwm", function()
---   require("vim-with-me").StartVimWithMe()
--- end)
--- vim.keymap.set("n", "<leader>svwm", function()
---   require("vim-with-me").StopVimWithMe()
--- end)
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection, keep current yank" })
 
