@@ -37,7 +37,7 @@ home() {
       fi
       ;;
     reload-term | rt)
-      reload-zsh
+      source $DOTFILES/.zshrc
       return 0
       ;;
     reload-home | rh)
@@ -45,37 +45,37 @@ home() {
       return 0
       ;;
     install | i)
-      source $DOTFILES/scripts/home/install.sh
+      source $DOTFILES/install.sh
       ;;
-    dropzone | dz)
-      shift
-      dz_lib="$HOME/Library/Application Support/Dropzone"
-      dz_bak="$DOTFILES/synced/Dropzone"
-      sub="$1"
+    # dropzone | dz)
+    #   shift
+    #   dz_lib="$HOME/Library/Application Support/Dropzone"
+    #   dz_bak="$DOTFILES/synced/Dropzone"
+    #   sub="$1"
 
-      case $sub in
-      r | restore)
-        echo_cyan "Restoring Dropzone backup..."
-        src="$dz_bak"
-        target="$dz"
-        mkdir -p $target
-        cp -r $src/* $target
-        ;;
-      d | dump)
-        echo_cyan "Creating Dropzone backup..."
-        target="$dz_bak"
-        src="$dz"
-        rm -rf $target
-        mkdir -p $target
-        cp -r $src/* $target
-        ;;
-      *) # unknown option
-        echo_red "No command or invalid command supplied."
-        __home_print_help 0
-        return 1
-        ;;
-      esac
-      ;;
+    #   case $sub in
+    #   r | restore)
+    #     echo_cyan "Restoring Dropzone backup..."
+    #     src="$dz_bak"
+    #     target="$dz"
+    #     mkdir -p $target
+    #     cp -r $src/* $target
+    #     ;;
+    #   d | dump)
+    #     echo_cyan "Creating Dropzone backup..."
+    #     target="$dz_bak"
+    #     src="$dz"
+    #     rm -rf $target
+    #     mkdir -p $target
+    #     cp -r $src/* $target
+    #     ;;
+    #   *) # unknown option
+    #     echo_red "No command or invalid command supplied."
+    #     __home_print_help 0
+    #     return 1
+    #     ;;
+    #   esac
+    #   ;;
     workflows | w)
       shift
       __home_prepare_dir
@@ -99,6 +99,11 @@ home() {
         __home_prepare_dir
         brew bundle
         __home_revert_dir
+        ;;
+      *) # unknown option
+        echo_red "No command or invalid command supplied."
+        __home_print_help 0
+        return 1
         ;;
       esac
       ;;
