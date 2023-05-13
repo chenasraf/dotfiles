@@ -90,6 +90,12 @@ if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
   git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
 
+# tmux themepack
+if [[ ! -d ~/.tmux-themepack ]]; then
+  echo_cyan "Installing tmux themepack..."
+  git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+fi
+
 if [[ ! -f $(which tblf) ]]; then
   echo_cyan "Installing tblf..."
   file=$(mktemp -d)
@@ -103,6 +109,9 @@ fi
 # .config
 echo_cyan "Copying .config..."
 rsync -vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
+
+echo_cyan "Reloading tmux..."
+tmux source-file ~/.config/.tmux.conf
 
 echo_cyan "Done"
 
