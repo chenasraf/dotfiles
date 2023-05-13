@@ -318,7 +318,6 @@ autoload _prj
 autoload _src
 
 tn-custom () {
-    alias _tmux="tmux -f ~/.config/.tmux.conf"
     parent="."
     for arg in "$@"; do
         case "$1" in
@@ -342,7 +341,7 @@ tn-custom () {
     dirs=("$@")
 
     echo "Creating new session $winname on $parent with dirs: $dirs"
-    _tmux new-session -d -s $winname -n general -c $parent
+    tmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do
       dir="$parent/$dir"
