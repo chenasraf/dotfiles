@@ -363,6 +363,8 @@ tn-custom () {
       # sleep 0.1
       # echo split-window -h -t $winname:$tabname -c $dir
       tmux split-window -h -t $winname:$tabname -c $dir
+
+      tmux select-pane -t 0
       # echo
     done
 
