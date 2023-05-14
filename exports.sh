@@ -32,10 +32,13 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 # export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 export PATH="$PATH:/$HOME/.local/bin"
 
-# guile (?)
-# export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
-# export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
-# export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
+# pnpm start
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 # yamllint
 export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
