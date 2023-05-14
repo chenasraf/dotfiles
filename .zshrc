@@ -1,5 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
-export DOTBIN="$DOTFILES/.config/bin"
+export CFG="$DOTFILES/.config"
+export DOTBIN="$CFG/bin"
 
 # echo 'Loading '$DOTFILES/functions.sh
 source $DOTFILES/functions.sh
