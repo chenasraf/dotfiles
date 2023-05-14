@@ -93,6 +93,7 @@ alias tlw="tmux list-windows"
 alias trl="tmux source-file ~/.config/.tmux.conf"
 alias trn="tmux rename-session -t"
 alias trm="tmux kill-session -t"
+alias tks="tmux kill-server"
 
 # tmux - workspaces
 alias tn-general="tn-custom \$HOME/Dev -s general"

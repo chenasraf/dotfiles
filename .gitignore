@@ -1,7 +1,7 @@
-man/
-bin/
-_local.sh
 .DS_Store
-*.pyc
+man/
 .bin/
+bin/
 *.swp
+*.pyc
+_local.sh
