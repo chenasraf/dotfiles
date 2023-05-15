@@ -26,10 +26,8 @@ fi
 # Ruby User Install (for CocoaPods)
 export GEM_HOME="$HOME/.gem"
 
-# PATH updates
+# local bin
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-# export PATH="$HOME/.gem/ruby/3.1.0/bin:$PATH"
-# export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 export PATH="$PATH:/$HOME/.local/bin"
 
 # pnpm start

@@ -52,7 +52,6 @@ window:
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
-
   # Window decorations
   #
   # Values for `decorations`:
@@ -62,66 +61,63 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  # decorations: transparent
+  decorations: full
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.95
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  # startup_mode: Maximized
+  # Window title
+  #title: Alacritty
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-#opacity: 1.0
+  # Allow terminal applications to change Alacritty's window title.
+  #dynamic_title: true
 
-# Startup Mode (changes require restart)
-#
-# Values for `startup_mode`:
-#   - Windowed
-#   - Maximized
-#   - Fullscreen
-#
-# Values for `startup_mode` (macOS only):
-#   - SimpleFullscreen
-#startup_mode: Windowed
+  # Window class (Linux/BSD only):
+  #class:
+  # Application instance name
+  #instance: Alacritty
+  # General application class
+  #general: Alacritty
 
-# Window title
-#title: Alacritty
+  # Decorations theme variant
+  #
+  # Override the variant of the System theme/GTK theme/Wayland client side
+  # decorations. Commonly supported values are `Dark`, `Light`, and `None` for
+  # auto pick-up. Set this to `None` to use the default theme variant.
+  #decorations_theme_variant: None
 
-# Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+  # Resize increments
+  #
+  # Prefer resizing window by discrete steps equal to cell dimensions.
+  #resize_increments: false
 
-# Window class (Linux/BSD only):
-#class:
-# Application instance name
-#instance: Alacritty
-# General application class
-#general: Alacritty
+  # Make `Option` key behave as `Alt` (macOS only):
+  #   - OnlyLeft
+  #   - OnlyRight
+  #   - Both
+  #   - None (default)
+  #option_as_alt: None
 
-# Decorations theme variant
-#
-# Override the variant of the System theme/GTK theme/Wayland client side
-# decorations. Commonly supported values are `Dark`, `Light`, and `None` for
-# auto pick-up. Set this to `None` to use the default theme variant.
-#decorations_theme_variant: None
+  #scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  #history: 10000
 
-# Resize increments
-#
-# Prefer resizing window by discrete steps equal to cell dimensions.
-#resize_increments: false
+  # Scrolling distance multiplier.
+  #multiplier: 3
 
-# Make `Option` key behave as `Alt` (macOS only):
-#   - OnlyLeft
-#   - OnlyRight
-#   - Both
-#   - None (default)
-#option_as_alt: None
-
-#scrolling:
-# Maximum number of lines in the scrollback buffer.
-# Specifying '0' will disable scrolling.
-#history: 10000
-
-# Scrolling distance multiplier.
-#multiplier: 3
-
-# Font configuration
+  # Font configuration
 font:
   # Normal (roman) font face
   normal:
@@ -134,44 +130,43 @@ font:
     #family: 'Cascadia Mono'
     # Download this font from: https://github.com/romkatv/powerlevel10k#manual-font-installation
     family: 'MesloLGS NF'
-
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
-  # Bold font face
-  #bold:
-  # Font family
-  #
-  # If the bold family is not specified, it will fall back to the
-  # value specified for the normal font.
-  #family: monospace
+    # Bold font face
+    #bold:
+    # Font family
+    #
+    # If the bold family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: monospace
 
-  # The `style` can be specified to pick a specific face.
-  #style: Bold
+    # The `style` can be specified to pick a specific face.
+    #style: Bold
 
-  # Italic font face
-  #italic:
-  # Font family
-  #
-  # If the italic family is not specified, it will fall back to the
-  # value specified for the normal font.
-  #family: monospace
+    # Italic font face
+    #italic:
+    # Font family
+    #
+    # If the italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: monospace
 
-  # The `style` can be specified to pick a specific face.
-  #style: Italic
+    # The `style` can be specified to pick a specific face.
+    #style: Italic
 
-  # Bold italic font face
-  #bold_italic:
-  # Font family
-  #
-  # If the bold italic family is not specified, it will fall back to the
-  # value specified for the normal font.
-  #family: monospace
+    # Bold italic font face
+    #bold_italic:
+    # Font family
+    #
+    # If the bold italic family is not specified, it will fall back to the
+    # value specified for the normal font.
+    #family: monospace
 
-  # The `style` can be specified to pick a specific face.
-  #style: Bold Italic
+    # The `style` can be specified to pick a specific face.
+    #style: Bold Italic
 
-  # Point size
+    # Point size
   size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
@@ -525,8 +520,7 @@ hints:
         enabled: true
         mods: None
       post_processing: true
-      regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-        [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\0-\x1f-<>\"\\s{-}\\^⟨⟩`]+"
 
 # Mouse bindings
 #
@@ -936,7 +930,9 @@ key_bindings:
   # Break the current tmux pane out of the tmux window
   - { chars: "\x02!", key: T, mods: Command|Shift }
   # Kill the current tmux pane (and window if last pane)
-  - { chars: "\x04", key: W, mods: Command }
+  - { chars: "\x04", key: W, mods: Command|Shift }
+  # Detach from session
+  - { chars: "\x02d", key: W, mods: Command|Shift }
   # Toggle the zoom state of the current tmux pane
   - { chars: "\x02z", key: Z, mods: Command }
   - { chars: "\e[1;9D", key: Right, mods: Command|Shift }
