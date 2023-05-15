@@ -140,4 +140,6 @@ return require('packer').startup(function(use)
       'stevearc/dressing.nvim',   -- optional for vim.ui.select
     },
   }
+  use({ 'chenasraf/text-transform.nvim', tag = "*" })
+  require('text-transform').setup()
 end)

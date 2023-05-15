@@ -22,7 +22,7 @@ man_install
 cd $cwd
 
 # gi_gen
-echo_cyan "Downloading gi_gen latest version..."
+echo_cyan "Fetching gi_gen latest version..."
 gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
 ver_file="$HOME/.config/.bin/.gi_gen_version"
 mkdir -p $(dirname $ver_file)
@@ -40,7 +40,7 @@ if [[ "$existing_ver" != "$gi_ver" ]]; then
   chmod +x $DOTBIN/gi_gen
   echo $gi_ver >$ver_file
 else
-  echo_cyan "Latest gi_gen version already installed."
+  echo_cyan "Latest gi_gen version ($gi_ver) already installed."
 fi
 
 # npm packages

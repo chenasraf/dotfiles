@@ -1,7 +1,7 @@
 export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
 export DOTBIN="$CFG/bin"
-git config --global core.excludesfile ~/.gitignore
+git config --global core.excludesfile ~/.config/.gitignore
 
 # echo 'Loading '$DOTFILES/functions.sh
 source $DOTFILES/functions.sh
@@ -21,7 +21,7 @@ zstyle ':completion:*:*:*:*:*' menu select
 # Use ESC to edit the current command line:
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '\033' edit-command-line
+bindkey '\033\033' edit-command-line
 
 # echo 'Loading '$DOTFILES/exports.sh
 source $DOTFILES/exports.sh # must run before zsh_init

@@ -324,10 +324,11 @@ tn-custom () {
             -d)
               parent="$2"
               winname=$(basename $parent)
+              winname="${winname%.*}"
               shift 2
               ;;
             -s)
-              winname="$2"
+              winname="${2%.*}"
               shift 2
               ;;
         esac
