@@ -17,8 +17,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
 -- insert newlines without insert mode
-vim.keymap.set("n", "<CR>", "m`o<Esc>k``", { desc = "Insert newline below" })
-vim.keymap.set("n", "<leader><CR>", "m`O<Esc>j``", { desc = "Insert newline above" })
+vim.keymap.set("n", "<leader>o", "m`o<Esc>k``", { desc = "Insert newline below" })
+vim.keymap.set("n", "<leader>O", "m`O<Esc>j``", { desc = "Insert newline above" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
