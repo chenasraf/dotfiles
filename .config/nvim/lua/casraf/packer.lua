@@ -7,15 +7,15 @@ vim.cmd('command! Ps :PackerSync')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use('wbthomason/packer.nvim')
 
-  use {
+  use({
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     -- or                            , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+  })
 
-  require('telescope').setup {
+  require('telescope').setup({
     pickers = {
       find_files = {
         find_command = { 'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' },
@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
         find_cmd = "rg"
       }
     }
-  }
+  })
 
   -- use({ 'rose-pine/neovim', as = 'rose-pine' })
   -- require('rose-pine').setup({
@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
 
   use('neovim/nvim-lsp')
 
-  use {
+  use({
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     requires = {
@@ -87,9 +87,9 @@ return require('packer').startup(function(use)
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
       { 'L3MON4D3/LuaSnip' },     -- Required
     }
-  }
+  })
 
-  use {
+  use({
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
     config = function()
@@ -99,9 +99,9 @@ return require('packer').startup(function(use)
       --   -- refer to the configuration https://github.com/folke/todo-comments.nvim
       -- }
     end
-  }
+  })
 
-  use {
+  use({
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
@@ -111,11 +111,11 @@ return require('packer').startup(function(use)
         -- refer to the configuration section below
       }
     end
-  }
+  })
 
-  use 'eandrju/cellular-automaton.nvim'
+  use('eandrju/cellular-automaton.nvim')
 
-  use { 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+  use({ 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' })
 
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')
@@ -133,13 +133,15 @@ return require('packer').startup(function(use)
   use('nvim-telescope/telescope-media-files.nvim')
   use('karb94/neoscroll.nvim')
 
-  use {
+  use({
     'akinsho/flutter-tools.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',   -- optional for vim.ui.select
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
-  }
-  use({ 'chenasraf/text-transform.nvim', tag = "*" })
-  require('text-transform').setup()
+  })
+  use({ 'chenasraf/text-transform.nvim', branch = "develop" })
+  require('text-transform').setup({
+    debug = true
+  })
 end)
