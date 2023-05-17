@@ -10,7 +10,8 @@ return require('packer').startup(function(use)
   use('wbthomason/packer.nvim')
 
   use({
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
     -- or                            , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   })
@@ -140,8 +141,23 @@ return require('packer').startup(function(use)
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   })
-  use({ 'chenasraf/text-transform.nvim', branch = "develop" })
+  use({
+    'chenasraf/text-transform.nvim',
+    branch = "develop",
+    -- config = function()
+    --   require('text-transform').setup({
+    --     debug = true
+    --   })
+    -- end,
+  })
   require('text-transform').setup({
     debug = true
+  })
+  use({
+    'sQVe/sort.nvim',
+    -- Optional setup for overriding defaults.
+    config = function()
+      require("sort").setup({})
+    end
   })
 end)
