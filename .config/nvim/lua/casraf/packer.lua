@@ -141,23 +141,10 @@ return require('packer').startup(function(use)
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   })
-  use({
-    'chenasraf/text-transform.nvim',
-    branch = "develop",
-    -- config = function()
-    --   require('text-transform').setup({
-    --     debug = true
-    --   })
-    -- end,
-  })
+  use({ 'chenasraf/text-transform.nvim', branch = "develop" })
   require('text-transform').setup({
     debug = true
   })
-  use({
-    'sQVe/sort.nvim',
-    -- Optional setup for overriding defaults.
-    config = function()
-      require("sort").setup({})
-    end
-  })
+  use({ 'sQVe/sort.nvim' })
+  require("sort").setup({})
 end)
