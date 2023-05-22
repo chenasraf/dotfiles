@@ -33,11 +33,11 @@ home() {
     pull | l)
       git -C "$DOTFILES" pull
       if [[ $? -eq 0 ]]; then
-        source $DOTFILES/scripts/home/home.sh
+        reload-zsh
       fi
       ;;
     reload-term | rt)
-      source $DOTFILES/.zshrc
+      reload-zsh
       return 0
       ;;
     reload-home | rh)

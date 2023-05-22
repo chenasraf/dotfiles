@@ -379,3 +379,7 @@ tn-prj() {
     tn-custom -d "$HOME/Dev/$prj" -s "$prj" . $@
 }
 
+reload-zsh() {
+  source $HOME/.zshrc
+}
+
