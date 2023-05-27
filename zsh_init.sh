@@ -11,13 +11,11 @@ HIST_STAMPS="%d/%m/%Y %I:%M:%S"
 
 source ~/.zplug/init.zsh
 
+zplug "$DOTFILES/plugins", from:local
+
 zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 zplug romkatv/powerlevel10k, as:theme, depth:1 
 zplug zsh-users/zsh-autosuggestions
-
-# TODO zplug from:local doesn't work
-source "$HOME/.dotfiles/plugins/git.plugin.zsh"
-source "$HOME/.dotfiles/plugins/dotenv.plugin.zsh"
 
 zplug load
 
