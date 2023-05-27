@@ -15,8 +15,9 @@ zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS
 zplug romkatv/powerlevel10k, as:theme, depth:1 
 zplug zsh-users/zsh-autosuggestions
 
-zplug "$HOME/.dotfiles/plugins/git.plugin.zsh", from:local
-zplug "$HOME/.dotfiles/plugins/dotenv.plugin.zsh", from:local
+# TODO zplug from:local doesn't work
+source "$HOME/.dotfiles/plugins/git.plugin.zsh"
+source "$HOME/.dotfiles/plugins/dotenv.plugin.zsh"
 
 zplug load
 
