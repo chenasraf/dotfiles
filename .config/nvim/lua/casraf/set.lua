@@ -37,10 +37,17 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- column markers
-vim.opt.colorcolumn = {"100", "120"}
+vim.opt.colorcolumn = { "100", "120" }
 
 -- nvim-tree
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- vim.g.netrw_banner = 0
+-- vim.g.netrw_liststyle = 3
+-- vim.g.netrw_browse_split = 4
+-- vim.g.netrw_altv = 1
+-- vim.g.netrw_winsize = 25
+-- vim.api.nvim_create_autogroup("ProjectDrawer")
+-- vim.api.nvim_create_autocmd("VimEnter", { pattern = "", group = "ProjectDrawer", command = ":Vexplore" })

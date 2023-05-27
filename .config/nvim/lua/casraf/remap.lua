@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
 vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "File explorer" })
+vim.keymap.set("n", "-", require("oil").open, { desc = "File explorer" })
 vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.write()
   vim.cmd.Ex()
@@ -82,10 +83,10 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location lis
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Previous location list" })
 
 -- search and replace current word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search and replace current word" })
 -- search and replace current selection
-vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
+vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
   { desc = "Search and replace current selection" })
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
@@ -95,11 +96,11 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/p
   { desc = "Edit packer config" });
 vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/remap.lua<CR>",
   { desc = "Edit remaps" });
-vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" });
-vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Game of life" });
+-- vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" });
+-- vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Game of life" });
 
 -- source file
-vim.keymap.set("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
+-- vim.keymap.set("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
 
 -- save file
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
