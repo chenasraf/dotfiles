@@ -114,7 +114,7 @@ return require('packer').startup(function(use)
     end
   })
 
-  use('eandrju/cellular-automaton.nvim')
+  -- use('eandrju/cellular-automaton.nvim')
 
   use({ 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' })
 
@@ -147,4 +147,10 @@ return require('packer').startup(function(use)
   })
   use({ 'sQVe/sort.nvim' })
   require("sort").setup({})
+  require('packer').startup(function()
+    use {
+      'stevearc/oil.nvim',
+      config = function() require('oil').setup() end
+    }
+  end)
 end)

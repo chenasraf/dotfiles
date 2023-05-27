@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
+vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "File explorer" })
 vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.write()
   vim.cmd.Ex()

@@ -50,6 +50,11 @@ local function get_lines(bufnr, range)
 end
 
 local function replace_range(bufnr, range, text)
+  local start_line = range.row
+  local start_col = range.col
+  local end_line = range.end_row
+  local end_col = range.end_col
+
   local lines = get_lines(bufnr, range)
   lines[1] = lines[1]:sub(1, start_col) .. text .. lines[1]:sub(end_col + 1)
   vim.api.nvim_buf_set_lines(bufnr, start_line, end_line, false, lines)
@@ -58,9 +63,10 @@ end
 local i18next = {
   method = nls.methods.CODE_ACTION,
   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  root_dir = vim.fs.dirname(vim.fs.find({"package.json"}, { upward = true })[1]),
   generator = {
     fn = function(ctx)
-      local is_range = ctx.params.range and vim.tbl_islist(ctx.params.range)
+      local is_range = ctx.range and vim.tbl_islist(ctx.range)
       if is_range then
         return {
           title = "Extract i18n key",
@@ -72,6 +78,36 @@ local i18next = {
             -- use jq to add to en-US.json
             local jq = vim.fn.executable("jq")
             jq "'. + {"' .. key .. '": "' .. range_text .. '"}' en-US.json > en-US.json"
+          end
+        }
+      else
+        return {
+          title = "Extract i18n key",
+          action = function()
+            local key = vim.fn.input("JSON path: ")
+            local text = vim.fn.input("Text: ")
+            -- get surrounding quotes from cursor and get the range of the text inside it
+            local cursor_pos = vim.api.nvim_win_get_cursor(0)
+            -- get the positions of the surrounding quotes
+            local start_pos = vim.fn.searchpos("'", "bcn", cursor_pos)
+            local end_pos = vim.fn.searchpos("'", "ecn", cursor_pos)
+            -- get the range of the text inside the quotes
+            local start_line = start_pos[1]
+            local start_col = start_pos[2]
+            local end_line = end_pos[1]
+            local end_col = end_pos[2]
+
+            local range = {
+              row = start_line,
+              col = start_col,
+              end_row = end_line,
+              end_col = end_col,
+            }
+
+            local replaced = replace_range(ctx.bufnr, range, "t('" .. key .. "')")
+            -- use jq to add to en-US.json
+            local jq = vim.fn.executable("jq")
+            jq "'. + {"' .. key .. '": "' .. text .. '"}' en-US.json > en-US.json"
           end
         }
       end
