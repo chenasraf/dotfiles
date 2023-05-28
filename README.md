@@ -2,7 +2,7 @@
 
 ## How to install
 
-1. Install [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
+1. Install zsh
 2. Clone this repository into `~/.dotfiles`:
 
    ```bash
@@ -19,12 +19,5 @@
 
    ```bash
    home install
-   home reload
+   home reload-terminal
    ```
-
-## TO DO
-
-- [x] Make next template incremental (`yarn create next-app` + copy rest of tpl)
-- [x] Make CRA template (same)
-- [ ] Improve generic user store/api login flow in template
-- [ ] Nvim Tree - use Ctrl-E to run `:NvimTreeFindFile` only in appropriate panes
