@@ -90,39 +90,22 @@ return require('packer').startup(function(use)
     }
   })
 
-  use({
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      -- require("todo-comments").setup {
-      --   -- your configuration comes here
-      --   -- or leave it empty to use the default settings
-      --   -- refer to the configuration https://github.com/folke/todo-comments.nvim
-      -- }
-    end
-  })
+  use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
   use({
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
     config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("trouble").setup({})
     end
   })
 
-  -- use('eandrju/cellular-automaton.nvim')
 
   use({ 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' })
 
   use('neovim/nvim-lspconfig')
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
-
-  -- use('neoclide/coc.nvim', { branch = 'release' })
 
   use('mfussenegger/nvim-dap')
   use('github/copilot.vim')

@@ -2,10 +2,39 @@ local lsp = require('lsp-zero').preset("recommended")
 local lspconfig = require('lspconfig')
 
 lsp.ensure_installed({
-  -- 'lua-language-server',
-  'tsserver',
+  'bash-debug-adapter',
+  'bashls',
+  'black',
+  'buildifier',
+  'chrome-debug-adapter',
+  'commitlint',
+  'cspell',
+  'cssls',
+  'docker_compose_language_service',
+  'dockerls',
   'eslint',
-  'rust_analyzer'
+  'gh',
+  'gitui',
+  'html',
+  'jq',
+  'jsonls',
+  'jsonlint',
+  'lua_ls',
+  'markdown-toc',
+  'markdownlint',
+  'prettier',
+  'prettierd',
+  'ruby_ls',
+  'rust_analyzer',
+  'rustfmt',
+  'shellcheck',
+  'shfmt',
+  'stylua',
+  'tsserver',
+  'vimls',
+  'yamlls',
+  'yamlfmt',
+  'yamllint',
 })
 
 -- Fix Undefined global 'vim'
@@ -17,7 +46,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  -- TODO: either change this or change the mapping for tmux
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -112,4 +140,3 @@ vim.diagnostic.config({
 })
 
 require("flutter-tools").setup({})
-
