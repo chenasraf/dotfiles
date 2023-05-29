@@ -152,4 +152,5 @@ return require('packer').startup(function(use)
     config = function() require('oil').setup() end
   })
   use({ 'mg979/vim-visual-multi', branch = 'master' })
+  use('Shatur/neovim-session-manager')
 end)
