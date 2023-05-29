@@ -9,6 +9,9 @@ end, { desc = "Save and file explorer" })
 
 vim.keymap.set("n", "<leader>q", "<C-w>c", { desc = "Close pane" })
 
+vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location" })
+vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location" })
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 

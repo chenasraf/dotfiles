@@ -1,3 +1,4 @@
+-- Shatur/neovim-session-manager
 local session_manager = require('session_manager')
 local config = require('session_manager.config')
 
@@ -11,15 +12,14 @@ vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   group = config_group,
   callback = function()
     if vim.bo.filetype ~= 'git'
-        and not vim.bo.filetype ~= 'gitcommit'
-        and not vim.bo.filetype ~= 'gitrebase'
+        and vim.bo.filetype ~= 'gitcommit'
+        and vim.bo.filetype ~= 'gitrebase'
     then
       session_manager.autosave_session()
     end
   end
 })
 
--- auto load session on vim startup:
 vim.api.nvim_create_autocmd({ 'VimEnter' }, {
   group = config_group,
   callback = function()
@@ -27,7 +27,6 @@ vim.api.nvim_create_autocmd({ 'VimEnter' }, {
         and vim.bo.filetype ~= 'gitcommit'
         and vim.bo.filetype ~= 'gitrebase'
     then
-      -- print("filetype: " .. vim.bo.filetype)
       session_manager.load_current_dir_session()
     end
   end
