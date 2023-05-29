@@ -51,6 +51,7 @@ check_npm=(
   "firebase"
   "prettier"
   "http-server"
+  "licenseg"
 )
 
 install_npm=(
@@ -60,6 +61,7 @@ install_npm=(
   "firebase-tools@latest"
   "prettier@latest"
   "http-server"
+  "licenseg"
 )
 
 install_npm_final=()
