@@ -40,8 +40,10 @@ alias ggi_gen="\$DOTBIN/gi_gen"
 # go [i]nstall & run gi_gen
 alias igi_gen="go install && dgi_gen"
 
+# git
 alias gdiff="git diff"
 alias gpa="ga . && gc && gp"
+grac() { git remote add origin "https://github.com/chenasraf/$1.git"; }
 
 # general
 # from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
@@ -71,6 +73,7 @@ alias hf="home fetch"
 alias hp="home push"
 alias hl="home pull"
 alias hlog="home git log"
+alias hiv="home install; vim ."
 alias spider="ssh root@spider.casraf.dev"
 
 # docker

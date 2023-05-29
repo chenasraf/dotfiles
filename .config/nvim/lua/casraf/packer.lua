@@ -151,4 +151,5 @@ return require('packer').startup(function(use)
     'stevearc/oil.nvim',
     config = function() require('oil').setup() end
   })
+  use({ 'mg979/vim-visual-multi', branch = 'master' })
 end)
