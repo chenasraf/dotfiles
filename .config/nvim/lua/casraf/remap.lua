@@ -24,8 +24,8 @@ vim.keymap.set("i", "<A-Backspace>", "<Esc>dbi", { desc = "Delete word backwards
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
 -- insert newlines without insert mode
-vim.keymap.set("n", "<leader>o", "m`o<Esc>k``", { desc = "Insert newline below" })
-vim.keymap.set("n", "<leader>O", "m`O<Esc>j``", { desc = "Insert newline above" })
+vim.keymap.set("n", "<leader>o", "m`o<Esc>k``j", { desc = "Insert newline below" })
+vim.keymap.set("n", "<leader>O", "m`O<Esc>j``k", { desc = "Insert newline above" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })

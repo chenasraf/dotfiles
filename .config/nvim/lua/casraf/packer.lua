@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('nvim-lua/plenary.nvim')
-  use('ThePrimeagen/harpoon')
+  use('dormunis/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
@@ -136,4 +136,15 @@ return require('packer').startup(function(use)
   })
   use({ 'mg979/vim-visual-multi', branch = 'master' })
   use('Shatur/neovim-session-manager')
+  use('feline-nvim/feline.nvim')
+  require('feline').setup()
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 end)
