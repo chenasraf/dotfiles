@@ -28,8 +28,7 @@ autocmd("BufWinEnter", {
             vim.cmd [[ Git add . ]]
         end, opts)
 
-        -- NOTE: It allows me to easily set the branch i am pushing and any tracking
-        -- needed if i did not set the branch up correctly
+        -- push with upstream
         vim.keymap.set("n", "<leader>gup", ":Git push -u origin ", opts);
     end,
 })
