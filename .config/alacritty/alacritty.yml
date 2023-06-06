@@ -930,7 +930,7 @@ key_bindings:
   # Break the current tmux pane out of the tmux window
   - { chars: "\x02!", key: T, mods: Command|Shift }
   # Kill the current tmux pane (and window if last pane)
-  - { chars: "\x04", key: W, mods: Command|Shift }
+  - { chars: "\e^D", key: W, mods: Command }
   # Detach from session
   - { chars: "\x02d", key: W, mods: Command|Shift }
   # Toggle the zoom state of the current tmux pane

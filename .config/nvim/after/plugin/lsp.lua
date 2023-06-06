@@ -70,7 +70,7 @@ lsp.on_attach(function(client, bufnr)
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+  vim.keymap.set({ "n", "v" }, "<leader>vca", function() vim.lsp.buf.code_action() end,
     {
       desc = "Code action",
       buffer = bufnr,
@@ -112,4 +112,3 @@ vim.diagnostic.config({
 })
 
 require("flutter-tools").setup({})
-

@@ -1,5 +1,5 @@
 function ColorMyPencils(scheme)
-  scheme = scheme or "tokyonight-storm"
+  scheme = scheme or "catppuccin"
   vim.cmd.colorscheme(scheme)
 
   -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

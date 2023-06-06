@@ -9,12 +9,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
-  use({
-    'nvim-telescope/telescope.nvim',
-    -- tag = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  })
+  use({ 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } })
 
   require('telescope').setup({
     pickers = {
@@ -48,14 +43,20 @@ return require('packer').startup(function(use)
     }
   })
 
-  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
-  -- require('rose-pine').setup({
-  --   --- @usage 'auto'|'main'|'moon'|'dawn'
-  --   variant = 'moon'
-  -- })
-  -- vim.cmd('colorscheme rose-pine')
-  use('folke/tokyonight.nvim')
-  vim.cmd('colorscheme tokyonight-storm')
+  -- use('folke/tokyonight.nvim')
+  -- vim.cmd('colorscheme tokyonight-storm')
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  require("catppuccin").setup({
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      nvimtree = true,
+      telescope = true,
+      notify = false,
+      mini = false,
+    }
+  })
+  vim.cmd('colorscheme catppuccin-mocha')
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
@@ -92,14 +93,8 @@ return require('packer').startup(function(use)
 
   use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
-  use({
-    "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("trouble").setup({})
-    end
-  })
-
+  use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
+  require("trouble").setup({})
 
   use({ 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' })
 
@@ -111,7 +106,7 @@ return require('packer').startup(function(use)
   use('github/copilot.vim')
   use('nvim-tree/nvim-tree.lua')
 
-  use("terrortylor/nvim-comment")
+  use('terrortylor/nvim-comment')
 
   use('nvim-lua/popup.nvim')
   use('nvim-telescope/telescope-media-files.nvim')
@@ -124,27 +119,23 @@ return require('packer').startup(function(use)
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   })
+
   use({ 'chenasraf/text-transform.nvim', branch = "develop" })
-  require('text-transform').setup({
-    debug = true
-  })
+  require('text-transform').setup({ debug = true })
+
   use({ 'sQVe/sort.nvim' })
   require("sort").setup({})
-  use({
-    'stevearc/oil.nvim',
-    config = function() require('oil').setup() end
-  })
+
+  use({ 'stevearc/oil.nvim' })
+  require('oil').setup()
+
   use({ 'mg979/vim-visual-multi', branch = 'master' })
+
   use('Shatur/neovim-session-manager')
+
   use('feline-nvim/feline.nvim')
   require('feline').setup()
-  use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  })
+
+  use({ 'kylechui/nvim-surround', branch = "main" })
+  require('nvim-surround').setup({})
 end)
