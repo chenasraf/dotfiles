@@ -1,7 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
 export DOTBIN="$CFG/bin"
-git config --global core.excludesfile ~/.config/.gitignore
 
 # echo 'Loading '$DOTFILES/functions.sh
 source $DOTFILES/functions.sh

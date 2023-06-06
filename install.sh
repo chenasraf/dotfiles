@@ -8,6 +8,7 @@ __home_prepare_dir
 
 echo_cyan "Setting default settings..."
 source $DOTFILES/scripts/home/defaults.sh
+git config --global core.excludesfile ~/.config/.gitignore
 
 if [[ $? -ne 0 ]]; then
   echo_red "Failed to set default settings."

@@ -24,7 +24,7 @@ autocmd("BufWinEnter", {
             vim.cmd [[ Git pull --rebase ]]
         end, opts)
 
-        vim.keymap.set("n", "<leader>ga.", function()
+        vim.keymap.set("n", "<leader>gaa", function()
             vim.cmd [[ Git add . ]]
         end, opts)
 
