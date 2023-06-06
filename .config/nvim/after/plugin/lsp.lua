@@ -55,7 +55,7 @@ lsp.on_attach(function(client, bufnr)
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "gd", function() vim.diagnostic.open_float() end, {
+  vim.keymap.set("n", "gD", function() vim.diagnostic.open_float() end, {
     desc = "Open diagnostics",
     buffer = bufnr,
     remap = false
