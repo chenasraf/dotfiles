@@ -21,7 +21,10 @@ zstyle ':completion:*:*:*:*:*' menu select
 autoload -U edit-command-line
 zle -N edit-command-line
 # bindkey '\033\033' edit-command-line
-bindkey -M vicmd v edit-command-line
+bindkey -M vicmd V edit-command-line
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 
 # echo 'Loading '$DOTFILES/exports.sh
 source $DOTFILES/exports.sh # must run before zsh_init
@@ -38,7 +41,4 @@ source $DOTFILES/zsh_init.sh
 for file in $DOTFILES/scripts/*; do
   [[ -f "$file" ]] && source $file
 done
-
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
 
