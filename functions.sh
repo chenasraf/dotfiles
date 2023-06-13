@@ -159,9 +159,6 @@ rand() {
   echo $(($RANDOM % ($max - $min + 1) + $min))
 }
 
-# need to source because VS Code raises error on the function
-source $DOTFILES/scripts/randarg.sh
-
 # select random element from list
 randline() {
   if [[ $# -eq 0 ]]; then
@@ -335,13 +332,14 @@ tn-custom () {
     done
     tmux has-session -t $winname 2>/dev/null
     if [[ "$?" == "0" ]]; then
+      echo_cyan "Attaching to existing session $winname"
       tmux attach-session -t $winname
       return 0
     fi
 
     dirs=("$@")
 
-    echo "Creating new session $winname on $parent with dirs: $dirs"
+    echo_cyan "Creating new session $winname on $parent with dirs: $dirs"
     tmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do

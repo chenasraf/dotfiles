@@ -26,7 +26,7 @@ hints:
     - binding:
         key: U
         mods: Control|Shift
-      command: xdg-open
+      command: open
       hyperlinks: true
       mouse:
         enabled: true

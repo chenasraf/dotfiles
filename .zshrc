@@ -37,8 +37,3 @@ source $DOTFILES/scripts/home/home.sh
 # echo 'Loading '$DOTFILES/zsh_init.sh
 source $DOTFILES/zsh_init.sh
 
-# source all files in scripts dir
-for file in $DOTFILES/scripts/*; do
-  [[ -f "$file" ]] && source $file
-done
-

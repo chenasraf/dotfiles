@@ -138,4 +138,11 @@ return require('packer').startup(function(use)
 
   use({ 'kylechui/nvim-surround', branch = "main" })
   require('nvim-surround').setup({})
+
+  use('windwp/nvim-autopairs')
+  require('nvim-autopairs').setup({
+    enable_check_bracket_line = false
+  })
+
+  use('windwp/nvim-ts-autotag')
 end)
