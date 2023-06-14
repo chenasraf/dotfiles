@@ -349,25 +349,29 @@ tn-custom () {
         tabname="$winname"
       fi
 
-      # sleep 0.1
-      # echo new-window -n $tabname -c $dir
+      # create new window
       tmux new-window -n $tabname -c $dir
-      # echo
 
-      # sleep 0.1
-      # echo send-keys -t $winname:$tabname v . Enter
+      # open vim on main pane
       tmux send-keys -t $winname:$tabname v Enter
-      # echo
 
-      # sleep 0.1
-      # echo split-window -h -t $winname:$tabname -c $dir
+      # split window horizontally
       tmux split-window -h -t $winname:$tabname -c $dir
 
+      # resize pane
+      tmux resize-pane -t 0 -x 90
+
+      # auto-select main pane
       tmux select-pane -t 0
-      # echo
+
+      # zoom into main pane
+      tmux resize-pane -Z
     done
 
-    tmux select-window -t $winname:0
+    # select first non-general window
+    tmux select-window -t $winname:1
+
+    # attach to session
     tmux attach -t $winname
 }
 

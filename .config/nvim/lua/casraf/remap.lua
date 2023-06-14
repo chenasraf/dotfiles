@@ -116,3 +116,6 @@ vim.keymap.set("n", "<leader>Srv", function()
   vim.cmd(":silent !open http://localhost:5500")
   vim.cmd("belowright split | terminal " .. cmd)
 end, { desc = "Serve working directory" })
+
+vim.cmd("command! Pwd :echo expand('%:p:h')<CR>")
+vim.cmd("command! Pwf :echo expand('%:p')<CR>")

@@ -8,8 +8,8 @@ if is_mac; then
   # export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
   export PATH="/opt/homebrew/opt/flex/bin:$PATH"
   export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
-  export PATH="$HOME/Library/Python/3.10/bin:$PATH"
-  export PATH="$HOME/Library/Python/3.8/bin:$PATH"
+  # export PATH="$HOME/Library/Python/3.10/bin:$PATH"
+  # export PATH="$HOME/Library/Python/3.8/bin:$PATH"
   export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   export PATH="$HOME/.surrealdb:$PATH"
@@ -80,3 +80,8 @@ fi
 if [[ -f "$HOME/.cargo/env" ]]; then
   . "$HOME/.cargo/env"
 fi
+
+if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
+if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then source /opt/homebrew/opt/chruby/share/chruby/chruby.sh; fi
+if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
+if [[ -f "$HOME/.dotfiles/_local.sh" ]]; then source "$HOME/.dotfiles/_local.sh"; fi
