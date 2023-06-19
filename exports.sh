@@ -85,3 +85,5 @@ if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
 if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then source /opt/homebrew/opt/chruby/share/chruby/chruby.sh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
 if [[ -f "$HOME/.dotfiles/_local.sh" ]]; then source "$HOME/.dotfiles/_local.sh"; fi
+
+export SHELLCHECK_OPTS='--shell=bash'

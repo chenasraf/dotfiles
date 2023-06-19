@@ -101,7 +101,7 @@ alias trm="tmux kill-session -t"
 alias tks="tmux kill-server"
 
 # tmux - workspaces
-alias tn-general="tn-custom \$HOME/Dev -s general"
+alias tn-general="tn-custom -d \$HOME/Dev -s general"
 alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 alias tn-tt="tn-custom -d \$HOME/.local/share/nvim/site/pack/packer/start/text-transform.nvim -s text-transform ."
 alias tn-simple-scaffold="tn-prj simple-scaffold"
