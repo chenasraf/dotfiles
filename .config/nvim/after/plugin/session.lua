@@ -8,6 +8,8 @@ session_manager.setup({
 
 local config_group = vim.api.nvim_create_augroup('casraf_session', {})
 
+local autoload = false
+
 local function isnt_special(saving)
   return vim.bo.filetype ~= 'git'
       and vim.bo.filetype ~= 'gitcommit'
@@ -15,20 +17,22 @@ local function isnt_special(saving)
       and (not saving or vim.fn.stridx(vim.fn.expand('%'), 'oil://') == -1)
 end
 
-vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-  group = config_group,
-  callback = function()
-    if isnt_special(true) then
-      session_manager.autosave_session()
+if autoload then
+  vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+    group = config_group,
+    callback = function()
+      if isnt_special(true) then
+        session_manager.autosave_session()
+      end
     end
-  end
-})
+  })
 
-vim.api.nvim_create_autocmd({ 'VimEnter' }, {
-  group = config_group,
-  callback = function()
-    if isnt_special(false) then
-      session_manager.load_current_dir_session()
+  vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+    group = config_group,
+    callback = function()
+      if isnt_special(false) then
+        session_manager.load_current_dir_session()
+      end
     end
-  end
-})
+  })
+end
