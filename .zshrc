@@ -19,7 +19,8 @@ zstyle ':completion:*:*:*:*:*' menu select
 
 # Use ESC to edit the current command line:
 # check if edit-command-line not already loaded
-if [[ ! -n "$(bindkey -L | grep edit-command-line)" ]]; then
+which edit-command-line &>/dev/null
+if [[ $? -ne 0 ]]; then
   autoload -U edit-command-line
   zle -N edit-command-line
   bindkey -M vicmd V edit-command-line
