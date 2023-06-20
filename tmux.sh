@@ -46,11 +46,7 @@ tn-custom () {
 }
 
 tn-prj() {
-    prj="$HOME/Dev/$1"
-    winname=$(basename $prj)
-    shift
-
-    parent="$prj"
+    parent="."
     for arg in "$@"; do
         case "$1" in
             -d)
@@ -63,6 +59,13 @@ tn-prj() {
               winname="${2%.*}"
               shift 2
               ;;
+            *)
+              if [[ -z "$prj" ]]; then
+                prj="$HOME/Dev/$1"
+              fi
+              if [[ -z "$winname" ]]; then
+                winname=$(basename $prj)
+              fi
         esac
     done
 
