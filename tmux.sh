@@ -46,10 +46,11 @@ tn-custom () {
 }
 
 tn-prj() {
-    prj="$1"
+    prj="$HOME/Dev/$1"
+    winname=$(basename $prj)
     shift
 
-    parent="."
+    parent="$prj"
     for arg in "$@"; do
         case "$1" in
             -d)
@@ -109,3 +110,4 @@ tn-prj() {
     # attach to session
     tmux attach -t $winname
 }
+

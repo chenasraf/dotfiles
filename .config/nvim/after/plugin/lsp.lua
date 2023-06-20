@@ -111,6 +111,16 @@ lspconfig.yamlls.setup({
   }
 })
 
+-- lspconfig.bashls.setup({
+--   filetypes = { "sh", "zsh" }
+-- })
+
+-- require('filetype').setup({
+--   shebang = {
+--     zsh = "sh"
+--   }
+-- })
+
 lsp.setup()
 
 vim.diagnostic.config({

@@ -106,7 +106,7 @@ alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 alias tn-tt="tn-custom -d \$HOME/.local/share/nvim/site/pack/packer/start/text-transform.nvim -s text-transform ."
 alias tn-simple-scaffold="tn-prj simple-scaffold"
 alias tn-dungeon-paper="tn-prj dungeon_paper"
-alias tn-acroasis="tn-custom -d \$HOME/Dev/acroasis -s acroasis . front server shared landing"
+alias tn-acroasis="tn-prj acroasis . apps/front functions/backend packages/shared apps/landing"
 
 if is_linux; then
   alias md5="md5sum"
