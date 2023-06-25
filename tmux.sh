@@ -47,12 +47,15 @@ tn-custom () {
 
 tn-prj() {
     parent="."
+    winname=""
     for arg in "$@"; do
         case "$1" in
             -d)
               parent="$2"
-              winname=$(basename $parent)
-              winname="${winname%.*}"
+              if [[ -z "$winname" ]]; then
+                winname=$(basename $parent)
+                winname="${winname%.*}"
+              fi
               shift 2
               ;;
             -s)
@@ -60,11 +63,11 @@ tn-prj() {
               shift 2
               ;;
             *)
-              if [[ -z "$prj" ]]; then
-                prj="$HOME/Dev/$1"
+              if [[ -z "$parent" ]]; then
+                parent="$HOME/Dev/$1"
               fi
-              if [[ -z "$winname" ]]; then
-                winname=$(basename $prj)
+              if [[ -z "$winname" && ! -z "$parent" ]]; then
+                winname=$(basename $parent)
               fi
         esac
     done
@@ -77,8 +80,13 @@ tn-prj() {
     fi
 
     dirs=("$@")
+    full_dirs=()
+    for dir in ${dirs[@]}; do
+      dir="$parent/$dir"
+      full_dirs+=("$dir")
+    done
 
-    echo_cyan "Creating new session $winname on $parent with dirs: $dirs"
+    echo_cyan "Creating new session $winname on $parent with dirs: $full_dirs"
     tmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do

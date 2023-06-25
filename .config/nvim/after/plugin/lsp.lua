@@ -100,6 +100,19 @@ lsp.on_attach(function(client, bufnr)
   })
 end)
 
+lspconfig.tailwindcss.setup({
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        classRegex = {
+          { "cva\\(([^)]*)\\)",
+           "[\"'`]([^\"'`]*).*?[\"'`]" },
+        },
+      },
+    },
+  },
+})
+
 lspconfig.yamlls.setup({
   settings = {
     yaml = {
