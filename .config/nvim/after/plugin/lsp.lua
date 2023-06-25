@@ -111,9 +111,18 @@ lspconfig.yamlls.setup({
   }
 })
 
--- lspconfig.bashls.setup({
---   filetypes = { "sh", "zsh" }
--- })
+lspconfig.bashls.setup({
+  filetypes = { "sh", "zsh" },
+  settings = {
+    allowlist = {
+      "sh",
+      "zsh"
+    },
+    bash = {
+      filetypes = { "sh", "zsh" }
+    }
+  }
+})
 
 -- require('filetype').setup({
 --   shebang = {

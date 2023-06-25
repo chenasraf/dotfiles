@@ -67,16 +67,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 
 -- file formatting
--- TODO: move to lsp.lua?
-vim.keymap.set("n", "<leader>f", function()
-  -- print(vim.bo.filetype)
-  if vim.bo.filetype == "dart" then
-    vim.cmd("silent !dart format --line-length 120 %:p")
-  else
-    vim.lsp.buf.format()
-  end
-end, { desc = "Format file" })
-
 vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "New buffer below" })
 vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "New buffer above" })
 vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "New buffer left" })

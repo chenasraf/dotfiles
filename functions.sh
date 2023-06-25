@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 source $DOTFILES/autoload_completions.sh
 source $DOTFILES/colors.sh
