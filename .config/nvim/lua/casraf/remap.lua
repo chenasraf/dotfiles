@@ -109,3 +109,22 @@ end, { desc = "Serve working directory" })
 
 vim.cmd("command! Pwd :echo expand('%:p:h')<CR>")
 vim.cmd("command! Pwf :echo expand('%:p')<CR>")
+
+function RemoveQF()
+  local curqfidx = vim.fn.line(".") - 1
+  local qfall = vim.fn.getqflist()
+  table.remove(qfall, curqfidx)
+  vim.fn.setqflist(qfall, "r")
+  vim.cmd(tostring(curqfidx + 1) .. "cfirst")
+  vim.cmd("copen")
+end
+
+vim.cmd("command! RemoveQFItem :lua RemoveQF()")
+
+-- autocmd FileType qf map <buffer> dd :RemoveQFItem<CR>
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.keymap.set("n", "dd", ":RemoveQFItem<CR>", { buffer = true, desc = "Remove quickfix item" })
+  end,
+})

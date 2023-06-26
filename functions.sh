@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 source $DOTFILES/autoload_completions.sh
 source $DOTFILES/colors.sh
@@ -319,3 +319,13 @@ reload-zsh() {
   source $HOME/.zshrc
 }
 
+bench() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: bench <command>"
+    return 1
+  fi
+  command=$1
+  shift
+  echo "Benchmarking $command..."
+  /usr/bin/time -v $command $@
+}
