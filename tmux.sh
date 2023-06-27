@@ -2,8 +2,20 @@
 
 tn-custom () {
     parent="."
+    dryrun=0
+    verbose=0
     for arg in $@; do
-        case "$1" in
+        case "$arg" in
+            -D)
+              dryrun=1
+              echo_cyan "Dry run: not executing tmux commands"
+              shift
+              ;;
+            -v)
+              verbose=1
+              echo_cyan "Verbose: printing tmux commands"
+              shift
+              ;;
             -d)
               parent="$2"
               winname=$(basename $parent)
@@ -14,21 +26,42 @@ tn-custom () {
               winname="${2%.*}"
               shift 2
               ;;
-            *)
-              ;;
         esac
     done
+
+    debuglog() {
+      if [[ "$verbose" == "1" ]]; then
+        echo_cyan $@
+      fi
+    }
+
+    atmux() {
+      if [[ "$verbose" == "1" ]]; then
+        echo tmux $@
+      fi
+      if [[ "$dryrun" == "1" ]]; then
+        return 0
+      fi
+      tmux $@
+    }
+
     tmux has-session -t $winname 2>/dev/null
+
     if [[ "$?" == "0" ]]; then
       echo_cyan "Attaching to existing session $winname"
-      tmux attach-session -t $winname
+      atmux attach-session -t $winname
       return 0
     fi
 
     dirs=("$@")
 
-    echo_cyan "Creating new session $winname on $parent with dirs: $dirs"
-    tmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
+    echo_cyan "Creating new session $winname on $parent with dirs:"
+    for dir in ${dirs[@]}; do
+      dir="$parent/$dir"
+      echo_cyan "  $dir"
+    done
+
+    atmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do
       dir="$parent/$dir"
@@ -38,21 +71,37 @@ tn-custom () {
       fi
 
       # create new window
-      tmux new-window -n $tabname -c $dir
+      atmux new-window -n $tabname -c $dir
     done
 
     # attach to session
-    tmux attach -t $winname
+    atmux attach -t $winname
+
+    unset -f atmux debuglog
 }
 
 tn-prj() {
-    parent="."
+    parent=""
     winname=""
+    dryrun=0
+    verbose=0
     for arg in "$@"; do
-        case "$1" in
+        case "$arg" in
+            -D)
+              dryrun=1
+              echo_cyan "Dry run: not executing tmux commands"
+              shift
+              ;;
+            -v)
+              verbose=1
+              echo_cyan "Verbose: printing tmux commands"
+              shift
+              ;;
             -d)
               parent="$2"
+              echo_cyan "Setting parent to $parent"
               if [[ -z "$winname" ]]; then
+                echo_cyan "Setting winname to basename of $parent"
                 winname=$(basename $parent)
                 winname="${winname%.*}"
               fi
@@ -65,29 +114,57 @@ tn-prj() {
             *)
               if [[ -z "$parent" ]]; then
                 parent="$HOME/Dev/$1"
+                echo_cyan "Setting parent to $parent"
+                shift
               fi
-              if [[ -z "$winname" && ! -z "$parent" ]]; then
-                winname=$(basename $parent)
-              fi
+              ;;
         esac
     done
+
+    debuglog() {
+      if [[ "$verbose" == "1" ]]; then
+        echo_yellow $@
+      fi
+    }
+
+    if [[ -z "$winname" && ! -z "$parent" ]]; then
+      debuglog "Setting winname to basename of $parent"
+      winname=$(basename $parent)
+      winname="${winname%.*}"
+    fi
+
+    atmux() {
+      if [[ "$verbose" == "1" ]]; then
+        echo_yellow tmux $@
+      fi
+      if [[ "$dryrun" == "1" ]]; then
+        return 0
+      fi
+      tmux $@
+    }
 
     tmux has-session -t $winname 2>/dev/null
     if [[ "$?" == "0" ]]; then
       echo_cyan "Attaching to existing session $winname"
-      tmux attach-session -t $winname
+      atmux attach-session -t $winname
       return 0
     fi
 
-    dirs=("$@")
-    full_dirs=()
+    if [[ $# -eq 0 && ! -z "$parent" ]]; then
+      echo_cyan "No dirs specified, using $parent"
+      dirs=(".")
+    else
+      dirs=("$@")
+    fi
+
+    echo_cyan "Creating new session $winname on $parent with dirs:"
+
     for dir in ${dirs[@]}; do
       dir="$parent/$dir"
-      full_dirs+=("$dir")
+      echo_cyan "  $dir"
     done
 
-    echo_cyan "Creating new session $winname on $parent with dirs: $full_dirs"
-    tmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
+    atmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
 
     for dir in ${dirs[@]}; do
       dir="$parent/$dir"
@@ -97,28 +174,30 @@ tn-prj() {
       fi
 
       # create new window
-      tmux new-window -n $tabname -c $dir
+      atmux new-window -n $tabname -c $dir
 
       # open vim on main pane
-      tmux send-keys -t $winname:$tabname v Enter
+      atmux send-keys -t $winname:$tabname v Enter
 
       # split window horizontally
-      tmux split-window -h -t $winname:$tabname -c $dir
+      atmux split-window -h -t $winname:$tabname -c $dir
 
       # resize pane
-      tmux resize-pane -t 0 -x 90
+      atmux resize-pane -t 0 -x 90
 
       # auto-select main pane
-      tmux select-pane -t 0
+      atmux select-pane -t 0
 
       # zoom into main pane
-      tmux resize-pane -Z
+      atmux resize-pane -Z
     done
 
     # select first non-general window
-    tmux select-window -t $winname:1
+    atmux select-window -t $winname:1
 
     # attach to session
-    tmux attach -t $winname
+    atmux attach -t $winname
+
+    unset -f atmux debuglog
 }
 
