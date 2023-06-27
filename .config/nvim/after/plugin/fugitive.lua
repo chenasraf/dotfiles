@@ -15,9 +15,7 @@ autocmd("BufWinEnter", {
     local bufnr = vim.api.nvim_get_current_buf()
     local opts = { buffer = bufnr, remap = false }
     -- print("great success", vim.bo.ft, bufnr, vim.inspect(opts))
-    vim.keymap.set("n", "<leader>gp", function()
-      vim.cmd [[ Git push ]]
-    end, opts)
+    vim.keymap.set("n", "gp", "]]k", opts)
 
     -- rebase always
     vim.keymap.set("n", "<leader>gl", function()
