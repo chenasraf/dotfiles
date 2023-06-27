@@ -1,85 +1,5 @@
 #!/usr/bin/env zsh
 
-tn-custom () {
-    parent="."
-    dryrun=0
-    verbose=0
-    for arg in $@; do
-        case "$arg" in
-            -D)
-              dryrun=1
-              echo_cyan "Dry run: not executing tmux commands"
-              shift
-              ;;
-            -v)
-              verbose=1
-              echo_cyan "Verbose: printing tmux commands"
-              shift
-              ;;
-            -d)
-              parent="$2"
-              winname=$(basename $parent)
-              winname="${winname%.*}"
-              shift 2
-              ;;
-            -s)
-              winname="${2%.*}"
-              shift 2
-              ;;
-        esac
-    done
-
-    debuglog() {
-      if [[ "$verbose" == "1" ]]; then
-        echo_cyan $@
-      fi
-    }
-
-    atmux() {
-      if [[ "$verbose" == "1" ]]; then
-        echo tmux $@
-      fi
-      if [[ "$dryrun" == "1" ]]; then
-        return 0
-      fi
-      tmux $@
-    }
-
-    tmux has-session -t $winname 2>/dev/null
-
-    if [[ "$?" == "0" ]]; then
-      echo_cyan "Attaching to existing session $winname"
-      atmux attach-session -t $winname
-      return 0
-    fi
-
-    dirs=("$@")
-
-    echo_cyan "Creating new session $winname on $parent with dirs:"
-    for dir in ${dirs[@]}; do
-      dir="$parent/$dir"
-      echo_cyan "  $dir"
-    done
-
-    atmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
-
-    for dir in ${dirs[@]}; do
-      dir="$parent/$dir"
-      tabname=$(basename $dir)
-      if [[ $tabname == "." ]]; then
-        tabname="$winname"
-      fi
-
-      # create new window
-      atmux new-window -n $tabname -c $dir
-    done
-
-    # attach to session
-    atmux attach -t $winname
-
-    unset -f atmux debuglog
-}
-
 tn-prj() {
     parent=""
     winname=""
@@ -194,6 +114,86 @@ tn-prj() {
 
     # select first non-general window
     atmux select-window -t $winname:1
+
+    # attach to session
+    atmux attach -t $winname
+
+    unset -f atmux debuglog
+}
+
+tn-custom () {
+    parent="."
+    dryrun=0
+    verbose=0
+    for arg in $@; do
+        case "$arg" in
+            -D)
+              dryrun=1
+              echo_cyan "Dry run: not executing tmux commands"
+              shift
+              ;;
+            -v)
+              verbose=1
+              echo_cyan "Verbose: printing tmux commands"
+              shift
+              ;;
+            -d)
+              parent="$2"
+              winname=$(basename $parent)
+              winname="${winname%.*}"
+              shift 2
+              ;;
+            -s)
+              winname="${2%.*}"
+              shift 2
+              ;;
+        esac
+    done
+
+    debuglog() {
+      if [[ "$verbose" == "1" ]]; then
+        echo_cyan $@
+      fi
+    }
+
+    atmux() {
+      if [[ "$verbose" == "1" ]]; then
+        echo tmux $@
+      fi
+      if [[ "$dryrun" == "1" ]]; then
+        return 0
+      fi
+      tmux $@
+    }
+
+    tmux has-session -t $winname 2>/dev/null
+
+    if [[ "$?" == "0" ]]; then
+      echo_cyan "Attaching to existing session $winname"
+      atmux attach-session -t $winname
+      return 0
+    fi
+
+    dirs=("$@")
+
+    echo_cyan "Creating new session $winname on $parent with dirs:"
+    for dir in ${dirs[@]}; do
+      dir="$parent/$dir"
+      echo_cyan "  $dir"
+    done
+
+    atmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
+
+    for dir in ${dirs[@]}; do
+      dir="$parent/$dir"
+      tabname=$(basename $dir)
+      if [[ $tabname == "." ]]; then
+        tabname="$winname"
+      fi
+
+      # create new window
+      atmux new-window -n $tabname -c $dir
+    done
 
     # attach to session
     atmux attach -t $winname
