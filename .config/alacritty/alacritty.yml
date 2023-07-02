@@ -54,6 +54,7 @@ key_bindings:
   - { chars: "\x17k", key: Up, mods: Command }
   - { chars: "\x17l", key: Right, mods: Command }
   - { chars: "\x17h", key: Left, mods: Command }
+  - { chars: "\eggVG", key: A, mods: Command }
   # Delete entire row
   - { chars: "\x15", key: Back, mods: Command }
   # Delete entire word
