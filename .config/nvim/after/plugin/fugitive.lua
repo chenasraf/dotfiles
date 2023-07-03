@@ -32,8 +32,12 @@ autocmd("BufWinEnter", {
 
       local cmd = ":Git push -u origin " .. current_branch
 
-      vim.fn.inputsave()
-      vim.fn.input(cmd)
+      -- vim.fn.inputsave()
+      -- vim.fn.input(cmd)
+      -- vim.fn.inputrestoRe()
+
+      -- prefill input line
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, true, true), "n", true)
     end, opts);
   end,
 })
