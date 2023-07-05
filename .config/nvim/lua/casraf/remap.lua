@@ -128,3 +128,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "dd", ":RemoveQFItem<CR>", { buffer = true, desc = "Remove quickfix item" })
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "dart",
+  callback = function()
+    vim.keymap.set("n", "<F5>", ":Telescope flutter commands<CR>", { buffer = true, desc = "Flutter commands" })
+  end,
+})
