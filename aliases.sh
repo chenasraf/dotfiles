@@ -110,6 +110,7 @@ alias tn-tt="tn-custom -d \$HOME/.local/share/nvim/site/pack/packer/start/text-t
 alias tn-simple-scaffold="tn-prj simple-scaffold"
 alias tn-dungeon-paper="tn-prj dungeon_paper"
 alias tn-acroasis="tn-prj acroasis . apps/front functions/backend packages/shared apps/landing"
+alias tn-pokedex="tn-prj pokedex . ../pokemon_api"
 
 if is_linux; then
   alias md5="md5sum"
