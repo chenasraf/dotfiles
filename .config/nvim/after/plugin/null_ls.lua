@@ -7,8 +7,8 @@ local async = event == "BufWritePost"
 local function external_format_stdin(filetype, format_cmd)
   if vim.bo.filetype == filetype then
     local buftxt = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
-    buftxt = buftxt:gsub("%\"", "\\\""):gsub("%$", "\\$")
-    local command = "echo -e \"" .. buftxt .. "\" | " .. format_cmd
+    buftxt = buftxt:gsub('%"', '\\"'):gsub('%$', '\\$'):gsub('%\n', '\\\\n')
+    local command = [[ echo -e " ]] .. buftxt .. [[ " | ]] .. format_cmd
 
     local output = vim.fn.system(command)
     local err = vim.v.shell_error
