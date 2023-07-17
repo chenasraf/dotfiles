@@ -54,7 +54,13 @@ return require('packer').startup(function(use)
       telescope = true,
       notify = false,
       mini = false,
-    }
+      harpoon = true,
+      barbar = true,
+      mason = true,
+    },
+    dim_inactive = {
+      enabled = true,
+    },
   })
   vim.cmd('colorscheme catppuccin-mocha')
 
