@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
   -- vim.cmd('colorscheme tokyonight-storm')
   use({ "catppuccin/nvim", as = "catppuccin" })
   require("catppuccin").setup({
+    transparent_background = true,
     integrations = {
       cmp = true,
       gitsigns = true,
@@ -58,9 +59,11 @@ return require('packer').startup(function(use)
       barbar = true,
       mason = true,
     },
-    dim_inactive = {
-      enabled = true,
-    },
+    -- dim_inactive = {
+    --   enabled = true,
+    --   shade = "#333333",
+    --   percentage = 0.1,
+    -- },
   })
   vim.cmd('colorscheme catppuccin-mocha')
 
