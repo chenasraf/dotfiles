@@ -94,6 +94,8 @@ key_bindings:
   - { chars: "\e:w\n", key: S, mods: Command }
   # Type <escape>:wa<enter> to save all neovim files in nvim window
   - { chars: "\e:wa\n", key: S, mods: Command|Shift }
+  # Type <escape>ZZ to save and quit current pane
+  - { chars: "\eZZ", key: S, mods: Command|Alt }
   # Create a new tmux window
   - { chars: "\x02c", key: T, mods: Command }
   # Break the current tmux pane out of the tmux window
