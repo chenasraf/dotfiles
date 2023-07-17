@@ -6,12 +6,12 @@ source $DOTFILES/scripts/man.sh
 cwd="$(pwd)"
 __home_prepare_dir
 
-echo_cyan "Setting default settings..."
+echo_cyan "Setting defaults..."
 source $DOTFILES/scripts/home/defaults.sh
 git config --global core.excludesfile ~/.config/.gitignore
 
 if [[ $? -ne 0 ]]; then
-  echo_red "Failed to set default settings."
+  echo_red "Failed to set defaults."
   __home_revert_dir
   return 1
 fi
