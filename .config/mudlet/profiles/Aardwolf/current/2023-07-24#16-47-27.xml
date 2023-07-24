@@ -4780,6 +4780,438 @@ end</script>
 	</AliasPackage>
 	<ActionPackage>
 		<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+			<name>mudlet</name>
+			<packageName>mudlet</packageName>
+			<script></script>
+			<css></css>
+			<commandButtonUp></commandButtonUp>
+			<commandButtonDown></commandButtonDown>
+			<icon></icon>
+			<orientation>0</orientation>
+			<location>0</location>
+			<posX>0</posX>
+			<posY>0</posY>
+			<mButtonState>1</mButtonState>
+			<sizeX>0</sizeX>
+			<sizeY>0</sizeY>
+			<buttonColumn>1</buttonColumn>
+			<buttonRotation>0</buttonRotation>
+			<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<name>Move</name>
+				<packageName></packageName>
+				<script></script>
+				<css></css>
+				<commandButtonUp></commandButtonUp>
+				<commandButtonDown></commandButtonDown>
+				<icon></icon>
+				<orientation>0</orientation>
+				<location>0</location>
+				<posX>0</posX>
+				<posY>0</posY>
+				<mButtonState>1</mButtonState>
+				<sizeX>0</sizeX>
+				<sizeY>0</sizeY>
+				<buttonColumn>1</buttonColumn>
+				<buttonRotation>0</buttonRotation>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⬅</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: green; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>w</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⬇</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: red; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>s</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⬆</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: red; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>n</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>➡</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: green; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>w</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>↗</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: blue; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>u</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>↙</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: blue; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>d</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+			</ActionGroup>
+			<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<name>Spells</name>
+				<packageName></packageName>
+				<script></script>
+				<css></css>
+				<commandButtonUp></commandButtonUp>
+				<commandButtonDown></commandButtonDown>
+				<icon></icon>
+				<orientation>0</orientation>
+				<location>0</location>
+				<posX>0</posX>
+				<posY>0</posY>
+				<mButtonState>1</mButtonState>
+				<sizeX>0</sizeX>
+				<sizeY>0</sizeY>
+				<buttonColumn>1</buttonColumn>
+				<buttonRotation>0</buttonRotation>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Attack</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 0 10px 0 20px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Magic Missile</name>
+					<packageName></packageName>
+					<script>send("ca ma " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Chill Touch</name>
+					<packageName></packageName>
+					<script>send("ca chill " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Burning Hands</name>
+					<packageName></packageName>
+					<script>send("ca burn " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Poison</name>
+					<packageName></packageName>
+					<script>send("ca poison " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Shocking Grasp</name>
+					<packageName></packageName>
+					<script>send("ca shock " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Wither</name>
+					<packageName></packageName>
+					<script>send("ca wither " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Prismatic Spray</name>
+					<packageName></packageName>
+					<script>send("ca prismatic " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Rune of ix</name>
+					<packageName></packageName>
+					<script>send("ca rune " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Debuff</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 0 10px 0 20px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Blindness</name>
+					<packageName></packageName>
+					<script>send("ca blindness " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Spook</name>
+					<packageName></packageName>
+					<script>send("ca spook " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Utility</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 0 10px 0 20px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Night Vision</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca night</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Unlock</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca knock</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+			</ActionGroup>
+		</ActionGroup>
+		<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 			<name>mudlet-profile</name>
 			<packageName>mudlet-profile</packageName>
 			<script></script>

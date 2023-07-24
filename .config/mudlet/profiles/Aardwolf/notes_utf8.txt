@@ -9,3 +9,17 @@ found crios - in zodiac -> enter emerald
 find ex for swim, then abyss
 
 should be nearby
+
+sendhia - servant
+
+# STATS - 
+Mage
+* Intelligence is by far the most important stat for a mage to focus on. 
+  Int will allow the mage to do far more damage with their combat spells.
+* Wisdom is also important for a mage; it helps spells' damage and will
+  help protect you from offensive spells.  The higher Wis also helps with
+  the increased healing and protection you will need.
+* As always, Luck affects everything, including spell success and damage.
+* Melee combat is still important as a spellcaster.  Try to keep your
+  Strength, Dexterity, and Constitution high to make better use of your
+  physical attacks between spellcasting and when mana runs low.
