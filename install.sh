@@ -99,6 +99,12 @@ if [[ ! -d ~/.tmux-themepack ]]; then
   git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 fi
 
+# tmux-power
+if [[ ! -d ~/.tmux-power ]]; then
+  echo_cyan "Installing tmux-power..."
+  git clone git@github.com:wfxr/tmux-power.git ~/.tmux-power
+fi
+
 if [[ ! -f $(which tblf) ]]; then
   echo_cyan "Installing tblf..."
   file=$(mktemp -d)
