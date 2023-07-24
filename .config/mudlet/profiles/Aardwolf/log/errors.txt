@@ -1,0 +1,220 @@
+########################## Pre-Map loading(3) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-01#20-46-55map.dat".
+[ INFO ]  - Successfully read the map file (0.00s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.00s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(3) at 2021-04-01T20:48:22 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-01#20-46-55map.dat".
+[ INFO ]  - Successfully read the map file (0.00s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.00s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(3) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-01#20-59-31map.dat".
+[ INFO ]  - Successfully read the map file (0.00s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.00s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(3) at 2021-04-17T15:43:45 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-01#20-59-31map.dat".
+[ INFO ]  - Successfully read the map file (0.00s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.00s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2021-04-17T15:54:13 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-17#15-54-09map.dat".
+[ INFO ]  - Successfully read the map file (0.00s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.00s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(1) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-17#15-54-09map.dat".
+[ INFO ]  - Successfully read the map file (0.00s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.00s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapStarter.dat" at 2021-04-17T15:54:13 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:18) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapStarter.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.17s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2021-04-17T15:54:26 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map (format version:20) file: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-17#15-54-23map.dat".
+[ INFO ]  - Successfully read the map file (0.07s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.16s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-17#16-00-57map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.20s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-18T10:34:40 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2021-04-17#16-00-57map.dat".
+[ INFO ]  - Successfully read the map file (0.16s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.19s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.19s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-18T16:09:36 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.10s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.19s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-18T21:18:16 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.16s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-18T23:11:19 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.17s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-19#03-11-17map.dat".
+[ INFO ]  - Successfully read the map file (0.15s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-19T14:01:57 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-19#03-11-17map.dat".
+[ INFO ]  - Successfully read the map file (0.13s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.33s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-19#14-40-02map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-19T14:44:58 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-19#14-40-02map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.17s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-19#14-45-34map.dat".
+[ INFO ]  - Successfully read the map file (0.12s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.19s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-07-24T16:16:55 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-19#14-45-34map.dat".
+[ INFO ]  - Successfully read the map file (0.10s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.17s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################

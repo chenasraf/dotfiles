@@ -1,0 +1,5 @@
+return {{[ [[ignore_patterns]] ] = {2},[ [[prompt_pattern]] ] = {3},[ [[recall]] ] = {4},},
+{},
+{[ [[]] ] = [=[^%[.*%]]=],},
+{},
+}
