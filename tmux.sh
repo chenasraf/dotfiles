@@ -201,7 +201,7 @@ tn-custom () {
     unset -f atmux debuglog
 }
 
-tls() {
+tls () {
   tmux has-session
   if [[ "$?" == "0" ]]; then
     echo "Name # Windows DDD MMM DD HH:MM:SS YYYY *  \n$(tmux list-sessions | sed s/:// | sed s/\(created// | sed s/\)//)" | tblf
