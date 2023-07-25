@@ -225,61 +225,54 @@ echo("\n")</script>
 				<regex>`echo (.+)</regex>
 			</Alias>
 		</AliasGroup>
-		<AliasGroup isActive="yes" isFolder="yes">
-			<name>casraf</name>
-			<script></script>
+		<Alias isActive="yes" isFolder="no">
+			<name>get target</name>
+			<script>send("echo Target is currently: " .. target, false)</script>
 			<command></command>
 			<packageName></packageName>
-			<regex></regex>
-			<Alias isActive="yes" isFolder="no">
-				<name>look</name>
-				<script></script>
-				<command>look; exits</command>
-				<packageName></packageName>
-				<regex>^le$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>set targetN</name>
-				<script>targetN = tonumber(matches[3]) or 1
-send("echo New target number: " .. targetN, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(ntarget|ntgt)\s([0-9]+)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>next target</name>
-				<script>targetN = tonumber(targetN) or 1
-targetN = targetN + 1
-send("echo New target number: " .. targetN, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(ntarget|ntgt)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>targetN</name>
-				<script>targetN = targetN or 0
-send("echo Target number is: " .. targetN, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(targetn|tgtn)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>set target</name>
-				<script>target = matches[2]
+			<regex>^tgt$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>set target</name>
+			<script>target = matches[2]
 targetN = 1
 send("echo Target for spells is now: " .. target, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^tgt\s([a-z]+)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>get target</name>
-				<script>send("echo Target is currently: " .. target, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^tgt$</regex>
-			</Alias>
-		</AliasGroup>
+			<command></command>
+			<packageName></packageName>
+			<regex>^tgt\s([a-z]+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>targetN</name>
+			<script>targetN = targetN or 0
+send("echo Target number is: " .. targetN, false)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^(targetn|tgtn)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>next target</name>
+			<script>targetN = tonumber(targetN) or 1
+targetN = targetN + 1
+send("echo New target number: " .. targetN, false)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^(ntarget|ntgt)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>set targetN</name>
+			<script>targetN = tonumber(matches[3]) or 1
+send("echo New target number: " .. targetN, false)</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^(ntarget|ntgt)\s([0-9]+)$</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>look</name>
+			<script></script>
+			<command>look; exits</command>
+			<packageName></packageName>
+			<regex>^le$</regex>
+		</Alias>
 	</AliasPackage>
 	<ActionPackage>
 		<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
@@ -894,15 +887,15 @@ end
 	<VariablePackage>
 		<HiddenVariables />
 		<Variable>
-			<name>targetN</name>
+			<name>target</name>
 			<keyType>4</keyType>
-			<value>1</value>
+			<value>wyrm</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
-			<name>target</name>
+			<name>targetN</name>
 			<keyType>4</keyType>
-			<value>seagull</value>
+			<value>1</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

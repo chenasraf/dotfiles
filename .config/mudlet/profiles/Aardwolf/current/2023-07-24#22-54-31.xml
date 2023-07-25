@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="yes" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="yes" mRoomSize="0.5" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="yes" mShowRoomIDs="no" mShowPanel="no" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Dark-Dracula" mEditorThemeFile="Dark-Dracula.tmTheme" mThemePreviewItemID="5" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="no" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="120" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="yes" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="yes" mRoomSize="0.5" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="no" mShowPanel="no" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Dark-Dracula" mEditorThemeFile="Dark-Dracula.tmTheme" mThemePreviewItemID="5" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="no" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="120" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>deleteOldProfiles</string>
@@ -225,61 +225,21 @@ echo("\n")</script>
 				<regex>`echo (.+)</regex>
 			</Alias>
 		</AliasGroup>
-		<AliasGroup isActive="yes" isFolder="yes">
-			<name>casraf</name>
-			<script></script>
+		<Alias isActive="yes" isFolder="no">
+			<name>target</name>
+			<script>target = matches[3]
+send("echo Target for spells is now: " .. target, false)</script>
 			<command></command>
 			<packageName></packageName>
-			<regex></regex>
-			<Alias isActive="yes" isFolder="no">
-				<name>look</name>
-				<script></script>
-				<command>look; exits</command>
-				<packageName></packageName>
-				<regex>^le$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>set targetN</name>
-				<script>targetN = tonumber(matches[3]) or 1
-send("echo New target number: " .. targetN, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(ntarget|ntgt)\s([0-9]+)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>next target</name>
-				<script>targetN = tonumber(targetN) or 1
-targetN = targetN + 1
-send("echo New target number: " .. targetN, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(ntarget|ntgt)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>targetN</name>
-				<script>targetN = targetN or 0
-send("echo Target number is: " .. targetN, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(targetn|tgtn)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>set target</name>
-				<script>target = matches[2]
-targetN = 1
-send("echo Target for spells is now: " .. target, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^tgt\s([a-z]+)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>get target</name>
-				<script>send("echo Target is currently: " .. target, false)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^tgt$</regex>
-			</Alias>
-		</AliasGroup>
+			<regex>^(target|tgt)\s([a-z]+)</regex>
+		</Alias>
+		<Alias isActive="yes" isFolder="no">
+			<name>look</name>
+			<script></script>
+			<command>look; exits</command>
+			<packageName></packageName>
+			<regex>^le$</regex>
+		</Alias>
 	</AliasPackage>
 	<ActionPackage>
 		<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
@@ -416,8 +376,8 @@ send("echo Target for spells is now: " .. target, false)</script>
 			<commandButtonUp></commandButtonUp>
 			<commandButtonDown></commandButtonDown>
 			<icon></icon>
-			<orientation>1</orientation>
-			<location>2</location>
+			<orientation>0</orientation>
+			<location>0</location>
 			<posX>0</posX>
 			<posY>0</posY>
 			<mButtonState>1</mButtonState>
@@ -695,116 +655,6 @@ send("echo Target for spells is now: " .. target, false)</script>
 				<buttonColumn>1</buttonColumn>
 				<buttonRotation>0</buttonRotation>
 			</Action>
-			<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-				<name>Find</name>
-				<packageName></packageName>
-				<script></script>
-				<css>border: none; background: none; margin: 0 10px 0 20px;</css>
-				<commandButtonUp></commandButtonUp>
-				<commandButtonDown></commandButtonDown>
-				<icon></icon>
-				<orientation>1</orientation>
-				<location>0</location>
-				<posX>0</posX>
-				<posY>0</posY>
-				<mButtonState>1</mButtonState>
-				<sizeX>0</sizeX>
-				<sizeY>0</sizeY>
-				<buttonColumn>1</buttonColumn>
-				<buttonRotation>0</buttonRotation>
-			</Action>
-			<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-				<name>Where</name>
-				<packageName></packageName>
-				<script>send("where " .. targetN .. "." .. target)</script>
-				<css></css>
-				<commandButtonUp></commandButtonUp>
-				<commandButtonDown></commandButtonDown>
-				<icon></icon>
-				<orientation>1</orientation>
-				<location>0</location>
-				<posX>0</posX>
-				<posY>0</posY>
-				<mButtonState>1</mButtonState>
-				<sizeX>0</sizeX>
-				<sizeY>0</sizeY>
-				<buttonColumn>1</buttonColumn>
-				<buttonRotation>0</buttonRotation>
-			</Action>
-			<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-				<name>Where Next</name>
-				<packageName></packageName>
-				<script>send("ntarget", false)
-send("where " .. targetN .. "." .. target)</script>
-				<css></css>
-				<commandButtonUp></commandButtonUp>
-				<commandButtonDown></commandButtonDown>
-				<icon></icon>
-				<orientation>1</orientation>
-				<location>0</location>
-				<posX>0</posX>
-				<posY>0</posY>
-				<mButtonState>1</mButtonState>
-				<sizeX>0</sizeX>
-				<sizeY>0</sizeY>
-				<buttonColumn>1</buttonColumn>
-				<buttonRotation>0</buttonRotation>
-			</Action>
-			<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-				<name>Next Target</name>
-				<packageName></packageName>
-				<script>send("narget")</script>
-				<css></css>
-				<commandButtonUp></commandButtonUp>
-				<commandButtonDown></commandButtonDown>
-				<icon></icon>
-				<orientation>1</orientation>
-				<location>0</location>
-				<posX>0</posX>
-				<posY>0</posY>
-				<mButtonState>1</mButtonState>
-				<sizeX>0</sizeX>
-				<sizeY>0</sizeY>
-				<buttonColumn>1</buttonColumn>
-				<buttonRotation>0</buttonRotation>
-			</Action>
-			<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-				<name>Hunt</name>
-				<packageName></packageName>
-				<script>send("hunt " .. targetN .. "." .. target)</script>
-				<css></css>
-				<commandButtonUp></commandButtonUp>
-				<commandButtonDown></commandButtonDown>
-				<icon></icon>
-				<orientation>1</orientation>
-				<location>0</location>
-				<posX>0</posX>
-				<posY>0</posY>
-				<mButtonState>1</mButtonState>
-				<sizeX>0</sizeX>
-				<sizeY>0</sizeY>
-				<buttonColumn>1</buttonColumn>
-				<buttonRotation>0</buttonRotation>
-			</Action>
-			<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-				<name>Hunt Next</name>
-				<packageName></packageName>
-				<script>send("ntarget", false)
-send("hunt " .. targetN .. "." .. target)</script>
-				<css></css>
-				<commandButtonUp></commandButtonUp>
-				<commandButtonDown></commandButtonDown>
-				<icon></icon>
-				<orientation>1</orientation>
-				<location>0</location>
-				<posX>0</posX>
-				<posY>0</posY>
-				<mButtonState>1</mButtonState>
-				<sizeX>0</sizeX>
-				<sizeY>0</sizeY>
-				<buttonColumn>1</buttonColumn>
-				<buttonRotation>0</buttonRotation>
-			</Action>
 		</ActionGroup>
 	</ActionPackage>
 	<ScriptPackage>
@@ -894,15 +744,9 @@ end
 	<VariablePackage>
 		<HiddenVariables />
 		<Variable>
-			<name>targetN</name>
-			<keyType>4</keyType>
-			<value>1</value>
-			<valueType>4</valueType>
-		</Variable>
-		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>seagull</value>
+			<value>inc</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
