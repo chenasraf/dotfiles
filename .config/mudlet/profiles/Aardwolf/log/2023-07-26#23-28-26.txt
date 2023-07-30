@@ -19173,3 +19173,44 @@ quests are no longer available.
 Lv 35  G 95871 | Medical lounge (E[D])
 >>  
 
+
+You can no longer avoid some attacks.
+
+Global Quest: Global quest # 6801 for levels 29 to 40 has now started.
+
+Your force shield shimmers then fades away.
+
+help tick
+----------------------------------------------------------------------------
+Help Keywords : TICK REPOP.
+Help Category : Information.
+Related Helps : Autotick.
+Last Updated  : 2012-04-16 18:12:13.
+----------------------------------------------------------------------------
+Many of the game actions (including combat, most autonomous monster 
+actions, hp/mana/move regeneration, weather, and area resetting) are based
+upon interval timers.  Of these timers, the hp/mana/move regeneration timer
+is popularly called the 'tick'.  Ticks on this mud average around 30 
+seconds of real time. This represents about an hour of game time.
+
+Area resetting depends on the area, but for most areas is somewhere between
+5 and 10 minutes each reset. Items in the room will repop regardless of 
+whether or not a player is in the room.  Players in an area no longer have
+an impact on the time an area takes to repop.
+----------------------------------------------------------------------------
+
+730/730 HP  999/999 MP  1022/1022 mv  866tnl
+Lv 35  G 95871 | Medical lounge (E[D])
+>>  
+
+Global Quest: Global Quest # 6801 has been won by Castiel - 1281st win.
+Global Quest: Global Quest # 6801 will go into extended time for 5 more minutes.
+
+
+You no longer see in the dark.
+
+You are no longer blurred.
+
+Your battle sense has faded.
+
+Log session ending at 00:29:15 on Thursday, 27 July 2023.

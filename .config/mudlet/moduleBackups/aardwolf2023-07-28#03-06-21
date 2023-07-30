@@ -4116,10 +4116,6 @@ decho("  &lt;51,102,255&gt;- &lt;192,192,192&gt;Speak alerts instead of sounds: 
 echoLink(aard.config["speak"], "printCmdLine'vconfig speak '", "Click to override audio alerts with speech.", true)
 echo("\n")
 
-decho("  &lt;51,102,255&gt;- &lt;192,192,192&gt;Spellup: ") setFgColor(51,102,255)
-echoLink(aard.config["spellup"], "printCmdLine'vconfig spellup '", "Click to set spellup.", true)
-echo("\n")
-
 setFgColor(192,192,192)
 echo("\n")</script>
 				<command></command>
