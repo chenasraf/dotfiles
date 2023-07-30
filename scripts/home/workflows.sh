@@ -7,14 +7,17 @@ source $DOTFILES/scripts/home/_common.sh
 # Dev directory of workflow to use as git source directory
 workflow_dirs=(
   "$HOME/Dev/heb-flip-alfred-workflow"
+  "$HOME/Dev/gaardian-alfred-workflow"
 )
 # Repository of workflow to clone from (if dev directory is missing)
 workflow_sources=(
   "https://github.com/chenasraf/heb-flip-alfred-workflow.git"
+  "https://github.com/chenasraf/gaardian-alfred-workflow.git"
 )
 # IDs of workflows to use (same as in Alfred prefs directory)
 workflows_ids=(
   "3A312BFD-A5FC-4223-BBFC-400D03F10282"
+  "55E2EF57-AB9F-45D9-AF04-B505E0D32238"
 )
 case "$1" in
 push | p)
@@ -31,7 +34,7 @@ push | p)
       git clone "$wf_src" "$wf_dir"
     fi
 
-    rsync -tvr --exclude-dir=".git" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/" "$wf_dir/"
+    rsync -tvr --exclude=".git" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id" "$wf_dir"
     git -C "$wf_dir" add .
     auto_commit_flag="'Update workflow'"
     commit_flag="-m ${1:-$auto_commit_flag}"
@@ -53,7 +56,7 @@ pull | l)
       git clone "$wf_src" "$wf_dir"
     fi
 
-    rsync -tvr --exclude-dir=".git" "$wf_dir/" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/"
+    rsync -tvr --exclude=".git" "$wf_dir" "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id"
     rm -rf "$DOTFILES/synced/Alfred.alfredpreferences/workflows/user.workflow.$wf_id/.git"
   done
   ;;
