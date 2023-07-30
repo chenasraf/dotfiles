@@ -1,0 +1,149 @@
+Log session starting at 10:43:15 on Sunday, 30 July 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-07-30#10-42-56map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.08s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 185         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+
+There are few things in this world as breathtaking as the Aylorian skyline at dawn.
+
+Someone scans all directions, looking for signs of life.
+
+You feel yourself moving more quickly.
+
+Someone touches you and your eyes glow red.
+
+You fade out of existence.
+
+You are surrounded by Someone's force shield.
+
+Someone makes your appearance look blurred.
+
+You feel a strong magical force surround your body.
+
+You feel gills growing on your neck!
+
+You feel your body harden.
+
+Global Quest: Global Quest # 7737 has been won by Myth - 10780th win.
+
+Character autosaved at Sun Jul 30 03:52:58 2023.
+
+Global Quest: Global Quest # 7739 has been won by Dartan - 159th win.
+Global Quest: Global Quest # 7739 will go into extended time for 5 more minutes.
+
+You no longer absorb magical attacks.
+
+help
+----------------------------------------------------------------------------
+Help Keywords : Help.
+Help Category : Information.
+Related Helps : Contents, Index.
+Last Updated  : 2013-01-31 22:18:28.
+----------------------------------------------------------------------------
+Syntax: help <keyword>           : Display help on given keyword.
+        help search <keyword(s)> : List all help files containing keyword.
+
+Aardwolf has an extensive list of help files available (over 1100 total).
+These cover all topics- command syntax, policies/rules, history, husband, 
+wife, work, and many more.
+
+To access a help file, simply type 'help <keyword>' (for example, 'help
+kick' or 'help magic missile'). The MUD will attempt to guess what help you
+are looking for and display it if there is only one, or display a list of
+options if several possibilities exist.
+
+You may use the 'contents' command to see a list of all helpfiles based on
+a particular topic.  Type 'contents' with no argument to see a list of
+available categories.  Type 'contents <categoryname>' to see all help
+files in that category.
+
+You may also use the 'index' command to see all help files that begin with
+a certain letter or letters, as well as a short description for each.  See
+'help index' for more information.  Similarly, you may use 'help search
+<keyword(s)>' to list help files which contain the given string ('help
+search cure', etc.).
+
+If you are a new player trying to figure out where to start, please read
+'help newhelp'.  If you have any questions, don't hesitate to ask on the
+newbie channel (see 'help newbietalk') or other channels ('help channels').
+
+(Note- some help files have additional, unlisted keywords.  This makes help
+files more accessible while reducing clutter, and is intentional.)
+----------------------------------------------------------------------------
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+guiload
+Unknown command. Please check the helpfiles.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+
+There are few things in this world as breathtaking as the Aylorian skyline at dawn.
+
+Global Quest: Lexicon has completed Global Quest # 7739.
+Global Quest: No active players remaining. Global Quest # 7739 is now over.
+
+You are no longer able to breathe underwater.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:15:09.590

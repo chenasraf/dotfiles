@@ -359,7 +359,8 @@ end</script>
   set_tgt_n(matches[2])
 else
   next_tgt_n()
-end</script>
+end
+echo_tgt_switch()</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^ntgt\s?([0-9]+)?</regex>
@@ -1032,7 +1033,8 @@ send("ca with " .. target)</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Next Target</name>
 					<packageName></packageName>
-					<script>next_target_n()</script>
+					<script>next_tgt_n()
+echo_tgt_switch()</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1050,7 +1052,8 @@ send("ca with " .. target)</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Where Next</name>
 					<packageName></packageName>
-					<script>next_target_n()
+					<script>next_tgt_n()
+echo_tgt_switch()
 send("where " .. get_tgt())</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
@@ -1069,7 +1072,8 @@ send("where " .. get_tgt())</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Hunt Next</name>
 					<packageName></packageName>
-					<script>next_target_n()
+					<script>next_tgt_n()
+echo_tgt_switch()
 send("hunt " .. get_tgt())</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
@@ -1575,7 +1579,7 @@ end</script>
 		<Variable>
 			<name>target_n</name>
 			<keyType>4</keyType>
-			<value>2</value>
+			<value>11</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>

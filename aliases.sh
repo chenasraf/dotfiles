@@ -114,6 +114,7 @@ alias tn-acroasis="tn-prj acroasis . apps/front functions/backend packages/share
 alias tn-pokedex="tn-prj pokedex . ../pokemon_api"
 
 alias dr="dotenv run"
+alias lua="luajit"
 
 if is_linux; then
   alias md5="md5sum"

@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="0.5" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="yes" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="no" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="5" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="120" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="0.5" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="yes" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="no" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="5" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="120" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -14,8 +14,8 @@
 			</mInstalledPackages>
 			<mInstalledModules>
 				<key>aardwolf</key>
-				<filepath>/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
-				<globalSave>0</globalSave>
+				<filepath>/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
+				<globalSave>1</globalSave>
 				<priority>0</priority>
 			</mInstalledModules>
 			<url>aardmud.org</url>
@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>754</borderRightWidth>
+			<borderRightWidth>480</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -78,7 +78,6 @@
 			<mLineSize>10.0</mLineSize>
 			<mRoomSize>0.5</mRoomSize>
 			<mapInfoContributor>Short</mapInfoContributor>
-			<mapInfoContributor>Full</mapInfoContributor>
 			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
 			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
 			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
@@ -94,84 +93,7 @@
 			<stopwatches />
 		</Host>
 	</HostPackage>
-	<TriggerPackage>
-		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-			<name>casraf</name>
-			<script></script>
-			<triggerType>0</triggerType>
-			<conditonLineDelta>0</conditonLineDelta>
-			<mStayOpen>0</mStayOpen>
-			<mCommand></mCommand>
-			<packageName></packageName>
-			<mFgColor>#ff0000</mFgColor>
-			<mBgColor>#ffff00</mBgColor>
-			<mSoundFile></mSoundFile>
-			<colorTriggerFgColor>#000000</colorTriggerFgColor>
-			<colorTriggerBgColor>#000000</colorTriggerBgColor>
-			<regexCodeList />
-			<regexCodePropertyList />
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>Failed spells</name>
-				<script></script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand></mCommand>
-				<packageName></packageName>
-				<mFgColor>#fd8008</mFgColor>
-				<mBgColor>#252525</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>You lost your concentration while trying to cast (.+)</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>Stay invis</name>
-				<script></script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand>ca invis</mCommand>
-				<packageName></packageName>
-				<mFgColor>#fd8008</mFgColor>
-				<mBgColor>#252525</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>You are no longer invisible</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>Campaign mob done - Check Campaign</name>
-				<script></script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand>cp ch</mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>Congratulations, that was one of your CAMPAIGN mobs!</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-		</TriggerGroup>
-	</TriggerPackage>
+	<TriggerPackage />
 	<TimerPackage />
 	<AliasPackage>
 		<AliasGroup isActive="yes" isFolder="yes">
@@ -343,22 +265,25 @@ installPackage"https://github.com/tspivey/mudlet-reader/releases/latest/download
   if matches[2] == "n" or matches[2] == "n " then
     send("echo Are you trying to use ntgt?", false)
   else
-    set_tgt(matches[2])
-    echo_tgt_switch()
+    target = matches[2]
+    target_n = 1
+    send("echo Target switched to: " .. get_tgt(), false)
   end
 else
   send("echo Target is: " .. get_tgt(), false)
 end</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^tgt\s?([a-zA-Z'" -]+)?</regex>
+					<regex>^tgt\s?([a-zA-Z'" ]+)?</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>next target</name>
 					<script>if matches[2] then
-  set_tgt_n(matches[2])
+  target_n = matches[2]
+  send("echo Target switched to: " .. get_tgt(), false)
 else
-  next_tgt_n()
+  target_n = (target_n or 1) + 1
+  send("echo Target switched to: " .. get_tgt(), false)
 end</script>
 					<command></command>
 					<packageName></packageName>
@@ -434,50 +359,12 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Start Battle 🎯️</name>
+					<name>🚀 Magic Missile 🎯️</name>
 					<packageName></packageName>
-					<script>send("ca fireball " .. target)
-send("ca pois " .. target)
-send("ca with " .. target)</script>
+					<script>send("ca ma " .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🧛🏼‍ Vampiric Touch</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca vampiric</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🔥 Fireball</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca fireball</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -496,6 +383,24 @@ send("ca with " .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca chill</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🔥 Burning Hands</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca burn</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -582,7 +487,7 @@ send("ca with " .. target)</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>send("ca with " .. target .. "; ca pois " .. target)</script>
+					<script>send("ca with " .. target .. "; ca pois")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca poison</commandButtonDown>
@@ -796,24 +701,6 @@ send("ca with " .. target)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Campaign</name>
-					<packageName></packageName>
-					<script></script>
-					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Campaign Check</name>
 					<packageName></packageName>
 					<script></script>
@@ -996,7 +883,7 @@ send("ca with " .. target)</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Where</name>
 					<packageName></packageName>
-					<script>send("where " .. get_tgt())</script>
+					<script>send("where " .. target_n .. "." .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1014,25 +901,7 @@ send("ca with " .. target)</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Hunt</name>
 					<packageName></packageName>
-					<script>send("hunt " .. get_tgt())</script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Next Target</name>
-					<packageName></packageName>
-					<script>next_target_n()</script>
+					<script>send("hunt " .. target_n .. "." .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1050,8 +919,26 @@ send("ca with " .. target)</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Where Next</name>
 					<packageName></packageName>
-					<script>next_target_n()
-send("where " .. get_tgt())</script>
+					<script>send("ntgt", false)
+send("where " .. target_n .. "." .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Next Target</name>
+					<packageName></packageName>
+					<script>send("ntgt")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1069,8 +956,8 @@ send("where " .. get_tgt())</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Hunt Next</name>
 					<packageName></packageName>
-					<script>next_target_n()
-send("hunt " .. get_tgt())</script>
+					<script>send("ntgt", false)
+send("hunt " .. target_n .. "." .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1247,24 +1134,6 @@ send("hunt " .. get_tgt())</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Academy Recall</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>hold portal; enter; hold disk; d</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
 			</ActionGroup>
 		</ActionGroup>
 	</ActionPackage>
@@ -1361,30 +1230,8 @@ end
 				<script>target = target or ""
 target_n = target_n or 1
 
-function echo_tgt_switch()
-  send("echo Target switched to: " .. get_tgt(), false)
-end
-
-function set_tgt(tgt, log)
-  target = tgt
-  target_n = 1
-end
-
 function get_tgt()
   return target_n .. "." .. target
-end
-
-function next_tgt_n(log)
-  set_tgt_n((target_n or 1) + 1, log)
-end
-
-function set_tgt_n(n, log)
-  target_n = n
-  log = log or true
-end
-
-function reset_tgt_n(log)
-  set_tgt_n(0, log)
 end</script>
 				<eventHandlerList />
 			</Script>
@@ -1575,19 +1422,19 @@ end</script>
 		<Variable>
 			<name>target_n</name>
 			<keyType>4</keyType>
-			<value>2</value>
+			<value>1</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
 			<name>goal</name>
 			<keyType>4</keyType>
-			<value>dsr</value>
+			<value>melody</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>grof</value>
+			<value>owl</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
