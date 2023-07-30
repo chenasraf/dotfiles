@@ -285,18 +285,6 @@ end</script>
 					<packageName></packageName>
 					<regex>^ntgt\s?([0-9]+)?</regex>
 				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>get/set goal</name>
-					<script>if matches[2] then
-  goal = matches[2]
-  send("echo Goal switched to: " .. goal, false)
-else
-  send("echo Goal is: " .. goal, false)
-end</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^gl\s?([a-zA-Z"']+)?</regex>
-				</Alias>
 			</AliasGroup>
 		</AliasGroup>
 	</AliasPackage>
@@ -588,24 +576,6 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Quench (Canteen)</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>gulp can; gulp can;</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Quest</name>
 					<packageName></packageName>
 					<script></script>
@@ -666,24 +636,6 @@ end</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>recall; rt quest; quest complete</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Tasks</name>
-					<packageName></packageName>
-					<script>send("tasks " .. goal .. " all")</script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1146,7 +1098,7 @@ end</script>
 				<script>-----------------------
 -- User Config - BACKUP settings here to notepad prior to upgrading to new version.
 -----------------------
-aard.config = {
+aard.configDefault = {
 ["hpot"]="elixir",
 ["mpot"]="moonlight",
 ["vpot"]="refreshing",
@@ -1162,7 +1114,7 @@ aard.config = {
 ["group"]=1,
 ["tdiff"]=-3,
 ["speak"]="false", -- Stringly typed because of user input in vconfig
-["spellup"]="spellup int;spellup wis;spellup luck;spellup stats;spellup"
+["spellup"]="sspellup"
 }
 
 --Automatically toggle noexp once your TNL is less than this amount on CP level +1
@@ -1333,7 +1285,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>centaur</value>
+			<value>bones</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

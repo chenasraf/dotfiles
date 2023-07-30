@@ -8371,7 +8371,7 @@ end</script>
 			<script></script>
 			<command></command>
 			<keyCode>-1</keyCode>
-			<keyModifier>0</keyModifier>
+			<keyModifier>4294967295</keyModifier>
 			<Key isActive="yes" isFolder="no">
 				<name>/ health potion</name>
 				<packageName></packageName>

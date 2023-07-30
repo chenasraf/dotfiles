@@ -285,18 +285,6 @@ end</script>
 					<packageName></packageName>
 					<regex>^ntgt\s?([0-9]+)?</regex>
 				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>get/set goal</name>
-					<script>if matches[2] then
-  goal = matches[2]
-  send("echo Goal switched to: " .. goal, false)
-else
-  send("echo Goal is: " .. goal, false)
-end</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^gl\s?([a-zA-Z"']+)?</regex>
-				</Alias>
 			</AliasGroup>
 		</AliasGroup>
 	</AliasPackage>
@@ -666,24 +654,6 @@ end</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>recall; rt quest; quest complete</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Tasks</name>
-					<packageName></packageName>
-					<script>send("tasks " .. goal .. " all")</script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>

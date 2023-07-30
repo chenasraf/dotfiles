@@ -113,6 +113,8 @@ alias tn-dungeon-paper="tn-prj dungeon_paper"
 alias tn-acroasis="tn-prj acroasis . apps/front functions/backend packages/shared apps/landing"
 alias tn-pokedex="tn-prj pokedex . ../pokemon_api"
 
+alias dr="dotenv run"
+
 if is_linux; then
   alias md5="md5sum"
 fi

@@ -4443,7 +4443,7 @@ end
 --t = table.removeKey(t, "domain")</script>
 				<eventHandlerList />
 			</Script>
-			<Script isActive="no" isFolder="no">
+			<Script isActive="yes" isFolder="no">
 				<name>config</name>
 				<packageName></packageName>
 				<script>-----------------------
@@ -8371,7 +8371,7 @@ end</script>
 			<script></script>
 			<command></command>
 			<keyCode>-1</keyCode>
-			<keyModifier>0</keyModifier>
+			<keyModifier>-1</keyModifier>
 			<Key isActive="yes" isFolder="no">
 				<name>/ health potion</name>
 				<packageName></packageName>
@@ -8428,7 +8428,7 @@ Moves:setValue(aard.mv, aard.maxmv,"&lt;b&gt; &amp;nbsp; "..aard.mv.."mv | "..st
 				<keyCode>45</keyCode>
 				<keyModifier>536870912</keyModifier>
 			</Key>
-			<Key isActive="no" isFolder="no">
+			<Key isActive="yes" isFolder="no">
 				<name>+ spellup / attack spell</name>
 				<packageName></packageName>
 				<script>if aard.state == 8 then
@@ -8448,7 +8448,7 @@ end</script>
 				<keyCode>43</keyCode>
 				<keyModifier>570425344</keyModifier>
 			</Key>
-			<Key isActive="no" isFolder="no">
+			<Key isActive="yes" isFolder="no">
 				<name>. scan / debuff</name>
 				<packageName></packageName>
 				<script>if aard.state == 8 then
@@ -8472,7 +8472,7 @@ end</script>
 				<keyCode>55</keyCode>
 				<keyModifier>536870912</keyModifier>
 			</Key>
-			<Key isActive="no" isFolder="no">
+			<Key isActive="yes" isFolder="no">
 				<name>1 portal</name>
 				<packageName></packageName>
 				<script>send(aard.config["port"])</script>
@@ -8480,7 +8480,7 @@ end</script>
 				<keyCode>49</keyCode>
 				<keyModifier>536870912</keyModifier>
 			</Key>
-			<Key isActive="no" isFolder="no">
+			<Key isActive="yes" isFolder="no">
 				<name>5 Look</name>
 				<packageName></packageName>
 				<script></script>

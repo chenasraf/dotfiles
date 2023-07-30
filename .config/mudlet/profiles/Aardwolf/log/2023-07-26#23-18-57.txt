@@ -1,0 +1,3594 @@
+Log session starting at 23:18:57 on Wednesday, 26 July 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-26#17-52-56map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.08s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-26#17-52-56map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.16s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 1572    
+
+[::(info): Your existing map has 15142 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 233         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  
+
+Tag option map turned ON
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  You do not see a bag here.
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  
+You received your last daily blessing at 25 Jul 2023 18:57:50.
+
+You can receive a new daily blessing in 1 hour, 38 minutes and 45 seconds.
+
+You have 1 daily blessing reset available.
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  
+daily bless
+Syntax: daily            - Check current timers.
+        daily prayer     - Receive todays blessing, if available.
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  
+daily blessing
+You received your last daily blessing at 25 Jul 2023 18:57:50.
+
+You can receive a new daily blessing in 1 hour, 38 minutes and 32 seconds.
+
+You have 1 daily blessing reset available.
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  
+rt quest
+Running to: Among the Philosophes
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  Whitewind Avenue (G) (1022)
+
+Phoenix Square (G) (1022)
+
+Whitewind Avenue (G) (1022)
+
+North of the Grand Plaza (G) (1022)
+
+The Grand Plaza (G) (1022)
+
+Meridian Square (G) (1022)
+
+The Grand Plaza (G) (1022)
+
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | Among the Philosophes (NESU)
+>>  
+
+A sweltering, light wind blows from the northeast.
+The clouds disperse, leaving a clear night sky.
+
+quest req
+You ask Questor for a quest.
+Questor tells you 'Thank you, brave KumoGami!'
+Questor tells you 'An enemy of mine, a red dragon whelp, is making vile'
+Questor tells you 'threats against Ayla! This threat must be eliminated!'
+Questor tells you 'Seek a red dragon whelp out somewhere in the vicinity'
+Questor tells you 'of Proving Ground which is in the general area'
+Questor tells you 'of Hatchling Aerie.'
+
+Questor tells you 'Good luck, KumoGami. Return safely!'
+Questor tells you 'You have 47 minutes to complete your quest.'
+
+730/730 HP  999/999 MP  1022/1022 mv  972tnl
+Lv 35  G 85016 | Among the Philosophes (NESU)
+>>  
+recall; rt hatchling
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+(Player) (White Aura) (OPK) Forma not formatted.
+
+730/730 HP  999/999 MP  511/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  Skipping run prefix - already at Aylor recall.
+Running to: Hatchling Aerie
+
+730/730 HP  999/999 MP  511/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  Whitewind Avenue (G) (511)
+
+Phoenix Square (G) (511)
+
+Starlight Way - West (G) (511)
+
+Starlight Way - West (G) (511)
+
+Starlight Way - West (G) (511)
+
+Starlight Way - West (G) (511)
+
+Starlight Way - West (511)
+
+Starlight Way - West (G) (511)
+
+Western Entrance - Starlight Way (G) (511)
+
+Western High Road (511)
+
+Sprouting Field (510)
+
+Port-o-Ditch (509)
+
+Barren Fields (508)
+
+Barren Fields (507)
+
+Barren Fields (506)
+
+Barren Fields (505)
+
+The Ngleanntan Tuir (504)
+
+The Ngleanntan Tuir (503)
+
+The Ngleanntan Tuir (502)
+
+The Ngleanntan Tuir (501)
+
+The Ngleanntan Tuir (500)
+
+The Ngleanntan Tuir (499)
+
+The Ngleanntan Tuir (498)
+
+The Ngleanntan Tuir (497)
+
+The Ngleanntan Tuir (496)
+
+The Ngleanntan Tuir (495)
+
+The Ngleanntan Tuir (494)
+
+The Ngleanntan Tuir (493)
+
+River Angor (492)
+
+The Ngleanntan Tuir (491)
+
+The Ngleanntan Tuir (490)
+
+Before A Vast Prairie
+  This is a continuation of the prairie you just left.  Something is
+different here though.  There is a mist that hangs over the ground obscuring
+the brown, wheat-like grass.  The wind is still, yet the fog swirls as if
+there is something hidden in the mist.  Off in the distance, even in this
+foggy setting, dark shapes rise from the flat prairie.  
+
+[ Exits: north south ]
+
+730/730 HP  999/999 MP  489/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+
+
+gl
++--------------------------------------------------------------+
+|                      system statistics                       |
++--------------------------------------------------------------+
+
+GMCP events:
+{
+  char = {
+    base = {
+      clan = "outcast",
+      class = "Mage",
+      classes = "0",
+      level = 35,
+      name = "KumoGami",
+      perlevel = 1000,
+      pretitle = "",
+      pups = 0,
+      race = "Half-griffon",
+      redos = 0,
+      remorts = 1,
+      subclass = "Enchanter",
+      tier = 0,
+      totpups = 0
+    },
+    maxstats = {
+      maxcon = 20,
+      maxdex = 16,
+      maxhp = 730,
+      maxint = 63,
+      maxluck = 59,
+      maxmana = 999,
+      maxmoves = 1022,
+      maxstr = 18,
+      maxwis = 57
+    },
+    stats = {
+      con = 41,
+      dex = 51,
+      dr = 97,
+      hr = 155,
+      int = 101,
+      luck = 94,
+      saves = 0,
+      str = 52,
+      wis = 87
+    },
+    status = {
+      align = 1955,
+      enemy = "",
+      hunger = 87,
+      level = 35,
+      pos = "Standing",
+      state = 3,
+      thirst = 87,
+      tnl = 972
+    },
+    vitals = {
+      hp = 730,
+      mana = 999,
+      moves = 534
+    },
+    worth = {
+      bank = 4444991,
+      gold = 85016,
+      pracs = 97,
+      qp = 315,
+      qpearned = 1215,
+      tp = 20,
+      trains = 56
+    }
+  },
+  comm = {
+    quest = {
+      action = "start",
+      area = "Hatchling Aerie",
+      room = "Proving Ground",
+      targ = "a red dragon whelp",
+      timer = 47
+    },
+    tick = {
+      ctime = 1690402827,
+      time = "16:20:27 - Wednesday 26 Jul, 2023"
+    }
+  },
+  room = {
+    info = {
+      coord = {
+        cont = 0,
+        id = 0,
+        x = 10,
+        y = 23
+      },
+      details = "",
+      exits = {
+        n = 34644,
+        s = 12885
+      },
+      name = "Before A Vast Prairie",
+      num = 34652,
+      outside = 1,
+      terrain = "field",
+      zone = "hatchling"
+    },
+    sectors = {
+      sectors = { {
+          color = 7,
+          id = 1,
+          name = "inside"
+        }, {
+          color = 7,
+          id = 2,
+          name = "city"
+        }, {
+          color = 2,
+          id = 3,
+          name = "field"
+        }, {
+          color = 10,
+          id = 4,
+          name = "forest"
+        }, {
+          color = 2,
+          id = 5,
+          name = "hills"
+        }, {
+          color = 3,
+          id = 6,
+          name = "mountain"
+        }, {
+          color = 12,
+          id = 7,
+          name = "waterswim"
+        }, {
+          color = 12,
+          id = 8,
+          name = "waternoswim"
+        }, {
+          color = 7,
+          id = 9,
+          name = "unused"
+        }, {
+          color = 14,
+          id = 10,
+          name = "air"
+        }, {
+          color = 11,
+          id = 11,
+          name = "desert"
+        }, {
+          color = 4,
+          id = 12,
+          name = "ocean"
+        }, {
+          color = 3,
+          id = 13,
+          name = "quicksand"
+        }, {
+          color = 4,
+          id = 14,
+          name = "underwater"
+        }, {
+          color = 15,
+          id = 15,
+          name = "ice"
+        }, {
+          color = 4,
+          id = 16,
+          name = "underground"
+        }, {
+          color = 7,
+          id = 17,
+          name = "road_eastwest"
+        }, {
+          color = 7,
+          id = 18,
+          name = "road"
+        }, {
+          color = 4,
+          id = 19,
+          name = "river"
+        }, {
+          color = 9,
+          id = 20,
+          name = "volcano"
+        }, {
+          color = 4,
+          id = 21,
+          name = "cave"
+        }, {
+          color = 8,
+          id = 22,
+          name = "dungeon"
+        }, {
+          color = 7,
+          id = 23,
+          name = "road_crossroads"
+        }, {
+          color = 7,
+          id = 24,
+          name = "Mudschool"
+        }, {
+          color = 5,
+          id = 25,
+          name = "areaexit"
+        }, {
+          color = 9,
+          id = 26,
+          name = "hellinside"
+        }, {
+          color = 9,
+          id = 27,
+          name = "hellfountain"
+        }, {
+          color = 9,
+          id = 28,
+          name = "hell1"
+        }, {
+          color = 9,
+          id = 29,
+          name = "hell2"
+        }, {
+          color = 9,
+          id = 30,
+          name = "hell3"
+        }, {
+          color = 15,
+          id = 31,
+          name = "insideice"
+        }, {
+          color = 9,
+          id = 32,
+          name = "hellhall"
+        }, {
+          color = 9,
+          id = 33,
+          name = "hell4"
+        }, {
+          color = 7,
+          id = 34,
+          name = "smallroad"
+        }, {
+          color = 7,
+          id = 35,
+          name = "smallroad_ew"
+        }, {
+          color = 3,
+          id = 36,
+          name = "trail_ew"
+        }, {
+          color = 3,
+          id = 37,
+          name = "beach"
+        }, {
+          color = 6,
+          id = 38,
+          name = "shore"
+        }, {
+          color = 2,
+          id = 39,
+          name = "jungle"
+        }, {
+          color = 2,
+          id = 40,
+          name = "swamp"
+        }, {
+          color = 7,
+          id = 41,
+          name = "bridge"
+        }, {
+          color = 3,
+          id = 42,
+          name = "plain"
+        }, {
+          color = 12,
+          id = 43,
+          name = "ocean2"
+        }, {
+          color = 12,
+          id = 44,
+          name = "ocean3"
+        }, {
+          color = 12,
+          id = 45,
+          name = "ocean4"
+        }, {
+          color = 2,
+          id = 46,
+          name = "field3"
+        }, {
+          color = 2,
+          id = 47,
+          name = "field2"
+        }, {
+          color = 2,
+          id = 48,
+          name = "field4"
+        }, {
+          color = 3,
+          id = 49,
+          name = "rocks"
+        }, {
+          color = 15,
+          id = 50,
+          name = "snow"
+        }, {
+          color = 15,
+          id = 51,
+          name = "icemount"
+        }, {
+          color = 15,
+          id = 52,
+          name = "icehills"
+        }, {
+          color = 8,
+          id = 53,
+          name = "space1"
+        }, {
+          color = 8,
+          id = 54,
+          name = "space2"
+        }, {
+          color = 8,
+          id = 55,
+          name = "space3"
+        }, {
+          color = 8,
+          id = 56,
+          name = "space4"
+        }, {
+          color = 7,
+          id = 57,
+          name = "castle"
+        }, {
+          color = 7,
+          id = 58,
+          name = "pillar"
+        }, {
+          color = 8,
+          id = 59,
+          name = "dark"
+        }, {
+          color = 7,
+          id = 60,
+          name = "crossroad_nw"
+        }, {
+          color = 7,
+          id = 61,
+          name = "crossroad_se"
+        }, {
+          color = 7,
+          id = 62,
+          name = "crossroad_ews"
+        }, {
+          color = 6,
+          id = 63,
+          name = "mountain_cyan"
+        }, {
+          color = 4,
+          id = 64,
+          name = "moon"
+        }, {
+          color = 7,
+          id = 65,
+          name = "temple"
+        }, {
+          color = 2,
+          id = 66,
+          name = "shop"
+        }, {
+          color = 7,
+          id = 67,
+          name = "clanexit"
+        }, {
+          color = 4,
+          id = 68,
+          name = "chessblack"
+        }, {
+          color = 15,
+          id = 69,
+          name = "chesswhite"
+        }, {
+          color = 7,
+          id = 70,
+          name = "lottery"
+        }, {
+          color = 8,
+          id = 71,
+          name = "alley"
+        }, {
+          color = 6,
+          id = 72,
+          name = "fountain"
+        }, {
+          color = 7,
+          id = 73,
+          name = "archive"
+        }, {
+          color = 7,
+          id = 74,
+          name = "bookshelves"
+        }, {
+          color = 7,
+          id = 75,
+          name = "bookshelves_ns"
+        }, {
+          color = 5,
+          id = 76,
+          name = "office"
+        }, {
+          color = 7,
+          id = 77,
+          name = "electric"
+        }, {
+          color = 7,
+          id = 78,
+          name = "well"
+        }, {
+          color = 9,
+          id = 79,
+          name = "bloodyhall"
+        }, {
+          color = 9,
+          id = 80,
+          name = "bloodyroom"
+        }, {
+          color = 3,
+          id = 81,
+          name = "dead_forest"
+        }, {
+          color = 3,
+          id = 82,
+          name = "dead_field"
+        }, {
+          color = 8,
+          id = 83,
+          name = "graveyard"
+        }, {
+          color = 7,
+          id = 84,
+          name = "palace_room"
+        }, {
+          color = 4,
+          id = 85,
+          name = "crypt"
+        }, {
+          color = 3,
+          id = 86,
+          name = "dead_jungle"
+        }, {
+          color = 7,
+          id = 87,
+          name = "ship"
+        }, {
+          color = 7,
+          id = 88,
+          name = "chaos_sea"
+        }, {
+          color = 7,
+          id = 89,
+          name = "hut"
+        }, {
+          color = 9,
+          id = 90,
+          name = "redcarpet"
+        }, {
+          color = 8,
+          id = 91,
+          name = "city_underground"
+        }, {
+          color = 8,
+          id = 92,
+          name = "mist"
+        }, {
+          color = 3,
+          id = 93,
+          name = "ashen_field"
+        }, {
+          color = 7,
+          id = 94,
+          name = "cabin"
+        }, {
+          color = 7,
+          id = 95,
+          name = "hallway"
+        }, {
+          color = 7,
+          id = 97,
+          name = "afountain"
+        }, {
+          color = 7,
+          id = 98,
+          name = "flowers1"
+        }, {
+          color = 7,
+          id = 99,
+          name = "flowers2"
+        }, {
+          color = 7,
+          id = 100,
+          name = "stairs"
+        }, {
+          color = 7,
+          id = 101,
+          name = "aylorcity"
+        }, {
+          color = 7,
+          id = 102,
+          name = "ruins"
+        }, {
+          color = 8,
+          id = 103,
+          name = "tornado"
+        }, {
+          color = 7,
+          id = 104,
+          name = "dustdevil"
+        }, {
+          color = 7,
+          id = 105,
+          name = "wind1"
+        }, {
+          color = 7,
+          id = 106,
+          name = "wind2"
+        }, {
+          color = 7,
+          id = 107,
+          name = "lightning"
+        }, {
+          color = 8,
+          id = 108,
+          name = "rain"
+        }, {
+          color = 11,
+          id = 109,
+          name = "sun"
+        }, {
+          color = 7,
+          id = 110,
+          name = "cloud1"
+        }, {
+          color = 8,
+          id = 111,
+          name = "cloud2"
+        }, {
+          color = 7,
+          id = 112,
+          name = "cloud3"
+        }, {
+          color = 14,
+          id = 113,
+          name = "rainbow"
+        }, {
+          color = 7,
+          id = 114,
+          name = "fiery_cave"
+        }, {
+          color = 7,
+          id = 115,
+          name = "tunnel"
+        }, {
+          color = 7,
+          id = 116,
+          name = "vertical_shaft"
+        }, {
+          color = 7,
+          id = 117,
+          name = "interestpoint"
+        }, {
+          color = 7,
+          id = 118,
+          name = "redtemple"
+        }, {
+          color = 7,
+          id = 119,
+          name = "redgateway"
+        }, {
+          color = 7,
+          id = 120,
+          name = "slashone"
+        }, {
+          color = 7,
+          id = 121,
+          name = "slashtwo"
+        }, {
+          color = 7,
+          id = 122,
+          name = "slashthree"
+        }, {
+          color = 7,
+          id = 123,
+          name = "slashfour"
+        }, {
+          color = 7,
+          id = 124,
+          name = "crater"
+        }, {
+          color = 10,
+          id = 125,
+          name = "forest2"
+        }, {
+          color = 9,
+          id = 126,
+          name = "xspot"
+        }, {
+          color = 1,
+          id = 127,
+          name = "spacered"
+        }, {
+          color = 1,
+          id = 128,
+          name = "redcircle"
+        }, {
+          color = 7,
+          id = 129,
+          name = "bluecircle"
+        }, {
+          color = 8,
+          id = 130,
+          name = "darkspace"
+        }, {
+          color = 7,
+          id = 131,
+          name = "whitespace"
+        }, {
+          color = 9,
+          id = 132,
+          name = "rose"
+        }, {
+          color = 13,
+          id = 133,
+          name = "peony"
+        }, {
+          color = 11,
+          id = 134,
+          name = "vine"
+        }, {
+          color = 5,
+          id = 135,
+          name = "violet"
+        } }
+    }
+  }
+}
+
+Channel102 events:
+{
+  [100] = 3,
+  [101] = 1
+}
+
+Trigger Report:
+triggers current total: 156
+tempTriggers current total: 0
+active triggers: 154
+trigger patterns total: 175
+active patterns total: 174
+
+Timer Report:
+Timers current total: 12
+tempTimers current total: 12
+active Timers: 1
+
+Alias Report:
+Aliases current total: 34
+tempAliases current total: 0
+active Aliases: 34
+
+Keybinding Report:
+Keys current total: 30
+tempKeys current total: 0
+active Keys: 25
+
+Script Report:
+Scripts current total: 41
+tempScripts current total: 0
+active Scripts: 39
+
++--------------------------------------------------------------+
+You see the black moon rising in the east.
+
+Eggteeth are heard tapping as the hatchlings rise again!
+
+gl
+Goal is: ""
+
+730/730 HP  999/999 MP  624/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+gl hatchling
+Goal switched to: hatchling
+
+730/730 HP  999/999 MP  624/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+tasklist
+
+                         Open Task Listing
+
+Goal         Task                                              
+~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Labyrinth    Find someone recently exiled from the Queen's court.        
+Hatchling    Rid the aerie of the elder wyrms who prey upon the young!   
+Sandcastle   Find a way to defeat Mage Madigan.                          
+Sandcastle   Do something about Mad Mage Madigan!                        
+Zodiac       Retrieve all 4 sword fragments to the Keeper.               
+Zodiac       Talk to Crios.                                              
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+730/730 HP  999/999 MP  624/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+
+You feel yourself slow down.
+
+You no longer move at the speed of light.
+
+Character autosaved at Wed Jul 26 16:21:57 2023.
+
+gl sandcastle
+Goal switched to: sandcastle
+
+730/730 HP  999/999 MP  669/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+
+You are no longer invisible.
+
+quest info
+You are on a quest to slay a red dragon whelp!
+A red dragon whelp can be found in the vicinity of Proving Ground which
+is in the general area of Hatchling Aerie.
+
+730/730 HP  999/999 MP  669/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+tgt 'red dragon'
+Target switched to: 1.'red dragon'
+
+730/730 HP  999/999 MP  669/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+
+
+where 1.'red dragon'
+There is no 1.'red dragon' around here.
+
+730/730 HP  999/999 MP  714/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+tgt dragon
+Target switched to: 1.dragon
+
+730/730 HP  999/999 MP  714/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+where 1.dragon
+a red dragon hatchling         The Path Continues
+
+730/730 HP  999/999 MP  714/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+hunt 1.dragon
+You have no idea what you're doing, but maybe a red dragon hatchling is south?
+
+730/730 HP  999/999 MP  711/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  999/999 MP  710/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+scan
+Right here you see:
+     - A cute, fuzzy bunny
+     - A cute, fuzzy bunny
+     - A fox
+East from here you see:
+     - A traveling mage
+     - A cute, fuzzy bunny
+2 East from here you see:
+     - A bear
+     - A fox
+     - A fox
+     - A fox
+3 East from here you see:
+     - (Player) KumoGami
+     - A cute, fuzzy bunny
+     - A cute, fuzzy bunny
+     - A fox
+West from here you see:
+     - A bear
+     - A fox
+     - A fox
+     - A fox
+2 West from here you see:
+     - A traveling mage
+     - A cute, fuzzy bunny
+3 West from here you see:
+     - (Player) KumoGami
+     - A cute, fuzzy bunny
+     - A cute, fuzzy bunny
+     - A fox
+
+730/730 HP  999/999 MP  710/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+
+
+A bear lopes in from the west.
+
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  999/999 MP  754/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  753/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+n
+>>  
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from
+an occasional breeze.  The creatures here seem to take no notice of
+your presence and wander about, blissfully unaware of the danger that
+lurks in the mountains above.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  752/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+scan
+Right here you see:
+     - A traveling mage
+     - A traveling mage
+     - A traveling mage
+     - A bear
+North from here you see:
+     - A traveling mage
+     - A cute, fuzzy bunny
+2 North from here you see:
+     - A traveling mage
+     - A cute, fuzzy bunny
+3 North from here you see:
+     - (Player) KumoGami
+     - A traveling mage
+     - A traveling mage
+     - A traveling mage
+     - A bear
+East from here you see:
+     - A bear
+     - A traveling mage
+     - A cute, fuzzy bunny
+3 East from here you see:
+     - (Player) KumoGami
+     - A traveling mage
+     - A traveling mage
+     - A traveling mage
+     - A bear
+South from here you see:
+     - A traveling mage
+     - A cute, fuzzy bunny
+2 South from here you see:
+     - A traveling mage
+     - A cute, fuzzy bunny
+3 South from here you see:
+     - (Player) KumoGami
+     - A traveling mage
+     - A traveling mage
+     - A traveling mage
+     - A bear
+2 West from here you see:
+     - A bear
+     - A traveling mage
+     - A cute, fuzzy bunny
+3 West from here you see:
+     - (Player) KumoGami
+     - A traveling mage
+     - A traveling mage
+     - A traveling mage
+     - A bear
+
+730/730 HP  999/999 MP  752/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  751/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+where 1.dragon
+a red dragon hatchling         The Path Continues
+
+730/730 HP  999/999 MP  751/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  750/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from
+an occasional breeze.  The creatures here seem to take no notice of
+your presence and wander about, blissfully unaware of the danger that
+lurks in the mountains above.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  749/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  748/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  747/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  999/999 MP  746/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+w
+>>  
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  745/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  999/999 MP  744/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  743/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+n
+>>  
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from
+an occasional breeze.  The creatures here seem to take no notice of
+your presence and wander about, blissfully unaware of the danger that
+lurks in the mountains above.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  787/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+w
+>>  Sacred Mountains Of The Dragon
+  The peaks above you stretch far into the clouds, and you can almost make
+out the shapes of some creatures spiralling through the sky on currents of
+air.  The air here has taken a noticeable chill and ahead of you there seems
+to be a huge tunnel carved into the base of the mountain, it appears to run
+off in two separate directions.  
+
+[ Exits: east south west up down ]
+
+730/730 HP  999/999 MP  786/1022 mv  972tnl
+Lv 35  G 85016 | Sacred Mountains Of The Dragon (ESWUD)
+>>  
+e
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from
+an occasional breeze.  The creatures here seem to take no notice of
+your presence and wander about, blissfully unaware of the danger that
+lurks in the mountains above.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  783/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+e
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from an
+occasional breeze.  The creatures here seem to take no notice of your
+presence and wander about, blissfully unaware of the danger that lurks in
+the mountains above.  
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  782/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+s
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  781/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  999/999 MP  780/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+e
+>>  
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  779/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+s
+>>  
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  778/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  999/999 MP  777/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+
+INFO: Shader has entered open PK (OPK) mode!
+
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  776/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  775/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  999/999 MP  774/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+s
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  999/999 MP  773/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+s
+Before A Vast Prairie
+  This is a continuation of the prairie you just left.  Something is
+different here though.  There is a mist that hangs over the ground obscuring
+the brown, wheat-like grass.  The wind is still, yet the fog swirls as if
+there is something hidden in the mist.  Off in the distance, even in this
+foggy setting, dark shapes rise from the flat prairie.  
+
+[ Exits: north south ]
+
+730/730 HP  999/999 MP  772/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  999/999 MP  771/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  999/999 MP  770/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+s
+>>  
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from an
+occasional breeze.  The creatures here seem to take no notice of your
+presence and wander about, blissfully unaware of the danger that lurks in
+the mountains above.  
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  769/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+s
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  999/999 MP  768/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+
+
+s
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  999/999 MP  812/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+s
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from an
+occasional breeze.  The creatures here seem to take no notice of your
+presence and wander about, blissfully unaware of the danger that lurks in
+the mountains above.  
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  999/999 MP  811/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+e
+Sacred Mountains Of The Dragon
+  The peaks above you stretch far into the clouds, and you can almost make
+out the shapes of some creatures spiralling through the sky on currents of
+air.  The air here has taken a noticeable chill and ahead of you there seems
+to be a huge tunnel carved into the base of the mountain, it appears to run
+off in two separate directions.  
+
+[ Exits: east south west up down ]
+
+730/730 HP  999/999 MP  810/1022 mv  972tnl
+Lv 35  G 85016 | Sacred Mountains Of The Dragon (ESWUD)
+>>  
+u
+Egg dropoff point
+  Large dragons soar past you on eddies of air, carrying objects roughly the 
+size of a human head in their claws. They seem to be delivering them to some 
+gnomes, who then rush off in a northerly direction carrying them slung on 
+poles.
+
+[ Exits: north down ]
+A gnome scurries by, carrying a large egg on a sling.
+A gnome scurries by, carrying a large egg on a sling.
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  999/999 MP  807/1022 mv  972tnl
+Lv 35  G 85016 | Egg dropoff point (ND)
+>>  
+n
+Broad underground tunnel
+  Gnomes scurry down this corridor, carrying objects which on closer
+inspection prove to be draconian eggs.  Each egg has a faint hue which seems
+to give a clue as to the species it will hatch into, and these are being
+sorted and segregated with some care.  One stray egg with a faint reddish
+hue is being bundled off rapidly through a tiny gnomish tunnel to a
+different section of the mountain.  
+
+[ Exits: north (east) south (west) ]
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  999/999 MP  806/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (N[E]S[W])
+>>  
+n
+Freshly hatched dragons
+  Small dragons are being gently herded out of the surrounding rooms by
+halflings and dwarves.  Mostly they seem to be guiding the dragons by
+leading them with small scraps of raw meat, which the hatchlings are
+constantly snapping at, almost taking one slightly slow halfling's fingers,
+too.  
+
+[ Exits: (north) (east) south (west) ]
+A silver hatchling wanders around dejectedly, looking puny.
+A very hungry mercury hatchling nips over-enthusiastically at a halfling's fingers.
+A halfling winces as a hatchling almost nips off his finger.
+A silver hatchling wanders around dejectedly, looking puny.
+
+730/730 HP  999/999 MP  805/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons ([N][E]S[W])
+>>  
+op e
+e
+You open the hatchery.
+
+730/730 HP  999/999 MP  805/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons ([N]ES[W])
+>>  Egg incubation room 3
+  Large tables line this room, each with a rather large dent which is
+clearly intended to prevent the eggs laid on the surface from rolling onto
+the floor.  Some gnomes scurry about, checking various arcane instruments
+and occasionally turning an egg.  
+
+[ Exits: west ]
+     A table with indentations around the size of a Human head runs the length of this room.
+A silver hatchling wanders around dejectedly, looking puny.
+Aww, how cute, a freshly hatched gold dragon.
+Aww, how cute, a freshly hatched gold dragon.
+An egg of quicksilver hue glows in the torchlight, almost seeming to flow like liquid metal.
+A brass hued egg lies here, reflecting the torchlight.
+A silvery dragon egg lies here, rocking slightly.
+
+730/730 HP  999/999 MP  804/1022 mv  972tnl
+Lv 35  G 85016 | Egg incubation room 3 (W)
+>>  
+w
+Freshly hatched dragons
+  Small dragons are being gently herded out of the surrounding rooms by
+halflings and dwarves.  Mostly they seem to be guiding the dragons by
+leading them with small scraps of raw meat, which the hatchlings are
+constantly snapping at, almost taking one slightly slow halfling's fingers,
+too.  
+
+[ Exits: (north) east south (west) ]
+A silver hatchling wanders around dejectedly, looking puny.
+A very hungry mercury hatchling nips over-enthusiastically at a halfling's fingers.
+A halfling winces as a hatchling almost nips off his finger.
+A silver hatchling wanders around dejectedly, looking puny.
+
+730/730 HP  999/999 MP  803/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons ([N]ES[W])
+op w
+w
+>>  
+You open the hatchery.
+
+730/730 HP  999/999 MP  803/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons ([N]ESW)
+>>  Egg incubation room 4
+  Eggs in this room seem to be less well cared for, and are piled in a much
+more haphazard fashion than the other rooms that are lying off this
+immediate stretch of corridor.  A dwarf leans against the inside of the
+door, holding a gold hatchling by the foot and using his tiny breath of fire
+as a spark to light some noxious smelling cigarette he seems to have rolled
+earlier.  The room is filled with clouds of noxious smoke, and at first the
+origin of this, given that you are in a dragon hatchery, is unclear, though
+it certainly appears to have a source nearby.  
+
+[ Exits: east ]
+     A table with indentations around the size of a Human head runs the length of this room.
+Kuckru the dwarf skulks in a corner here, smoking a cigarette.
+An egg of quicksilver hue glows in the torchlight, almost seeming to flow like liquid metal.
+A brass hued egg lies here, reflecting the torchlight.
+A brass hued egg lies here, reflecting the torchlight.
+A silvery dragon egg lies here, rocking slightly.
+
+730/730 HP  999/999 MP  802/1022 mv  972tnl
+Lv 35  G 85016 | Egg incubation room 4 (E)
+>>  
+e
+s
+Freshly hatched dragons
+  Small dragons are being gently herded out of the surrounding rooms by
+halflings and dwarves.  Mostly they seem to be guiding the dragons by
+leading them with small scraps of raw meat, which the hatchlings are
+constantly snapping at, almost taking one slightly slow halfling's fingers,
+too.  
+
+[ Exits: (north) east south west ]
+A silver hatchling wanders around dejectedly, looking puny.
+A very hungry mercury hatchling nips over-enthusiastically at a halfling's fingers.
+A halfling winces as a hatchling almost nips off his finger.
+A silver hatchling wanders around dejectedly, looking puny.
+
+730/730 HP  999/999 MP  801/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons ([N]ESW)
+>>  Broad underground tunnel
+  Gnomes scurry down this corridor, carrying objects which on closer
+inspection prove to be draconian eggs.  Each egg has a faint hue which seems
+to give a clue as to the species it will hatch into, and these are being
+sorted and segregated with some care.  One stray egg with a faint reddish
+hue is being bundled off rapidly through a tiny gnomish tunnel to a
+different section of the mountain.  
+
+[ Exits: north (east) south (west) ]
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  999/999 MP  800/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (N[E]S[W])
+s
+>>  
+Egg dropoff point
+  Large dragons soar past you on eddies of air, carrying objects roughly the 
+size of a human head in their claws. They seem to be delivering them to some 
+gnomes, who then rush off in a northerly direction carrying them slung on 
+poles.
+
+[ Exits: north down ]
+A gnome scurries by, carrying a large egg on a sling.
+A gnome scurries by, carrying a large egg on a sling.
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  999/999 MP  799/1022 mv  972tnl
+Lv 35  G 85016 | Egg dropoff point (ND)
+>>  
+d
+Sacred Mountains Of The Dragon
+  The peaks above you stretch far into the clouds, and you can almost make
+out the shapes of some creatures spiralling through the sky on currents of
+air.  The air here has taken a noticeable chill and ahead of you there seems
+to be a huge tunnel carved into the base of the mountain, it appears to run
+off in two separate directions.  
+
+[ Exits: east south west up down ]
+
+730/730 HP  999/999 MP  798/1022 mv  972tnl
+Lv 35  G 85016 | Sacred Mountains Of The Dragon (ESWUD)
+>>  
+d
+A Dark Tunnel
+  This is a huge tunnel heading down at such a steep angle that it
+seems nearly vertical.  The faint whiff of sulfur catches your
+attention, and it seems that the air around you is being drawn
+downwards.  It may not be safe to continue further.   
+
+[ Exits: up down ]
+     This backpack has been dropped more than once.
+     (Glow) A golden scimitar.
+     A canteen is sitting here in a puddle of water.
+An undead explorer snarls and attacks!
+
+730/730 HP  999/999 MP  795/1022 mv  972tnl
+Lv 35  G 85016 | A Dark Tunnel (UD)
+>>  
+d
+Into The Murky Depths
+  Heading down that tunnel might not have been a wise decision. The tunnel is 
+too steep to climb back up, and the only way out now seems to be a thin trail
+which is barely visible running south along the edge of a massive cliff. The 
+unmistakable odor of smoke and sulfur drifts southwards on a nearly 
+imperceptible current of air.
+
+[ Exits: south ]
+
+730/730 HP  999/999 MP  794/1022 mv  972tnl
+Lv 35  G 85016 | Into The Murky Depths (S)
+>>  
+s
+Along A Lava Tube
+  The cliff wall here is nearly vertical, with seemingly no limit to the
+space above.  Below is a river of lava, glowing a violent orange.  The air
+is thick with smoke and sulfur, limiting visibility and making it difficult
+to breathe.  
+
+[ Exits: north south ]
+     A finger of smoke curls up into the air.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+
+730/730 HP  999/999 MP  788/1022 mv  972tnl
+Lv 35  G 85016 | Along A Lava Tube (NS)
+>>  
+s
+Nearing The End Of A Lava Tube
+  There is almost no doubt that this trail has descended deep
+underground.   The air has grown thicker and warmer the farther the
+trail has continued.   Sporadic eruptions from the river of lava
+threaten to engulf the trail, which may make it impossible to travel
+further.  The idea of being trapped here in the murky gloom is not a
+pleasant one at all.   
+
+[ Exits: north south ]
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+
+730/730 HP  999/999 MP  782/1022 mv  972tnl
+Lv 35  G 85016 | Nearing The End Of A Lava Tube (NS)
+s
+>>  
+The End Of A Lava Tube
+  The trail has come to an abrupt end here.  The lava below plunges
+straight into the face of the rock leaving no alternative but to try and
+navigate the trail back up along the cliff face.  A sudden puff of stale,
+sulphury air sucks some of the tendrils of smoke into a crack in the rocks
+to the west and in the gloom a large fissure is barely visible.   
+
+[ Exits: north ]
+     A finger of smoke curls up into the air.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+
+730/730 HP  999/999 MP  776/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+n
+n
+Nearing The End Of A Lava Tube
+  There is almost no doubt that this trail has descended deep
+underground.   The air has grown thicker and warmer the farther the
+trail has continued.   Sporadic eruptions from the river of lava
+threaten to engulf the trail, which may make it impossible to travel
+further.  The idea of being trapped here in the murky gloom is not a
+pleasant one at all.   
+
+[ Exits: north south ]
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+
+730/730 HP  999/999 MP  815/1022 mv  972tnl
+Lv 35  G 85016 | Nearing The End Of A Lava Tube (NS)
+>>  Along A Lava Tube
+  The cliff wall here is nearly vertical, with seemingly no limit to the
+space above.  Below is a river of lava, glowing a violent orange.  The air
+is thick with smoke and sulfur, limiting visibility and making it difficult
+to breathe.  
+
+[ Exits: north south ]
+     A finger of smoke curls up into the air.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+
+730/730 HP  999/999 MP  809/1022 mv  972tnl
+Lv 35  G 85016 | Along A Lava Tube (NS)
+>>  
+n
+Into The Murky Depths
+  Heading down that tunnel might not have been a wise decision. The tunnel is 
+too steep to climb back up, and the only way out now seems to be a thin trail
+which is barely visible running south along the edge of a massive cliff. The 
+unmistakable odor of smoke and sulfur drifts southwards on a nearly 
+imperceptible current of air.
+
+[ Exits: south ]
+
+730/730 HP  999/999 MP  803/1022 mv  972tnl
+Lv 35  G 85016 | Into The Murky Depths (S)
+u
+>>  
+Alas, you cannot go that way.
+
+730/730 HP  999/999 MP  803/1022 mv  972tnl
+Lv 35  G 85016 | Into The Murky Depths (S)
+>>  
+s
+Along A Lava Tube
+  The cliff wall here is nearly vertical, with seemingly no limit to the
+space above.  Below is a river of lava, glowing a violent orange.  The air
+is thick with smoke and sulfur, limiting visibility and making it difficult
+to breathe.  
+
+[ Exits: north south ]
+     A finger of smoke curls up into the air.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+(Translucent) A wisp of smoke rises into the darkness.
+
+730/730 HP  999/999 MP  797/1022 mv  972tnl
+Lv 35  G 85016 | Along A Lava Tube (NS)
+>>  
+s
+Nearing The End Of A Lava Tube
+  There is almost no doubt that this trail has descended deep
+underground.   The air has grown thicker and warmer the farther the
+trail has continued.   Sporadic eruptions from the river of lava
+threaten to engulf the trail, which may make it impossible to travel
+further.  The idea of being trapped here in the murky gloom is not a
+pleasant one at all.   
+
+[ Exits: north south ]
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+A plume of lava erupts upward.
+
+730/730 HP  999/999 MP  791/1022 mv  972tnl
+Lv 35  G 85016 | Nearing The End Of A Lava Tube (NS)
+>>  
+s
+The End Of A Lava Tube
+  The trail has come to an abrupt end here.  The lava below plunges
+straight into the face of the rock leaving no alternative but to try and
+navigate the trail back up along the cliff face.  A sudden puff of stale,
+sulphury air sucks some of the tendrils of smoke into a crack in the rocks
+to the west and in the gloom a large fissure is barely visible.   
+
+[ Exits: north ]
+     A finger of smoke curls up into the air.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+get 'refreshing' bag;quaf 'refreshing'
+You do not see a bag here.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  You don't have that potion.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+spellup int;spellup wis;spellup luck;spellup stats;spellup
+No spells or skills cast.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  No spells or skills cast.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  No spells or skills cast.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  Queueing spell : mystic might.
+Queueing spell : harden body.
+
+730/730 HP  999/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  You feel your body surge with extra power.
+
+730/730 HP  969/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You feel your body harden.
+
+730/730 HP  939/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+Queueing spell : detect hidden.
+Queueing spell : detect invis.
+Queueing spell : detect magic.
+Queueing spell : invis.
+Queueing spell : shield.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : sense anger.
+Queueing spell : underwater breathing.
+
+730/730 HP  939/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  Your eyes are more focused.
+
+730/730 HP  924/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+Your eyes tingle.
+
+730/730 HP  909/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+Your eyes glow blue.
+
+730/730 HP  899/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You fade out of existence.
+
+730/730 HP  874/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You are surrounded by a force shield.
+
+730/730 HP  869/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You now possess magical powers of avoidance.
+
+730/730 HP  844/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You make your appearance look blurred.
+
+730/730 HP  829/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You can now sense anger in your immediate area.
+
+730/730 HP  789/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+You feel gills growing on your neck!
+
+730/730 HP  774/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+l;ex
+The End Of A Lava Tube
+  The trail has come to an abrupt end here.  The lava below plunges
+straight into the face of the rock leaving no alternative but to try and
+navigate the trail back up along the cliff face.  A sudden puff of stale,
+sulphury air sucks some of the tendrils of smoke into a crack in the rocks
+to the west and in the gloom a large fissure is barely visible.   
+
+[ Exits: north ]
+     A finger of smoke curls up into the air.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+A surge of lava threatens to engulf the trail.
+
+730/730 HP  774/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  Obvious exits from [ The End Of A Lava Tube ]:
+ North          : Nearing The End Of A Lava Tube 
+
+730/730 HP  774/999 MP  785/1022 mv  972tnl
+Lv 35  G 85016 | The End Of A Lava Tube (N)
+>>  
+
+
+recall;rt hatchling
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) Relek of the past!.
+(Player) (White Aura) WeaponGuy is dead, trying to retreive his corpse..
+(Player) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+(Player) (White Aura) (OPK) Forma not formatted.
+
+730/730 HP  797/999 MP  415/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  Skipping run prefix - already at Aylor recall.
+Running to: Hatchling Aerie
+
+730/730 HP  797/999 MP  415/1022 mv  972tnl
+Lv 35  G 85016 | The Grand City of Aylor (NESWUD)
+>>  Whitewind Avenue (G) (415)
+
+Phoenix Square (G) (415)
+
+Starlight Way - West (G) (415)
+
+Starlight Way - West (G) (415)
+
+Starlight Way - West (G) (415)
+
+Starlight Way - West (G) (415)
+
+Starlight Way - West (415)
+
+Starlight Way - West (G) (415)
+
+Western Entrance - Starlight Way (G) (415)
+
+Western High Road (415)
+
+Sprouting Field (414)
+
+Port-o-Ditch (413)
+
+Barren Fields (412)
+
+Barren Fields (411)
+
+Barren Fields (410)
+
+Barren Fields (409)
+
+The Ngleanntan Tuir (408)
+
+The Ngleanntan Tuir (407)
+
+The Ngleanntan Tuir (406)
+
+The Ngleanntan Tuir (405)
+
+The Ngleanntan Tuir (404)
+
+The Ngleanntan Tuir (403)
+
+The Ngleanntan Tuir (402)
+
+The Ngleanntan Tuir (401)
+
+The Ngleanntan Tuir (400)
+
+The Ngleanntan Tuir (399)
+
+The Ngleanntan Tuir (398)
+
+The Ngleanntan Tuir (397)
+
+River Angor (396)
+
+The Ngleanntan Tuir (395)
+
+The Ngleanntan Tuir (394)
+
+Before A Vast Prairie
+  This is a continuation of the prairie you just left.  Something is
+different here though.  There is a mist that hangs over the ground obscuring
+the brown, wheat-like grass.  The wind is still, yet the fog swirls as if
+there is something hidden in the mist.  Off in the distance, even in this
+foggy setting, dark shapes rise from the flat prairie.  
+
+[ Exits: north south ]
+
+730/730 HP  797/999 MP  393/1022 mv  972tnl
+Lv 35  G 85016 | Before A Vast Prairie (NS)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  797/999 MP  392/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  797/999 MP  391/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+e
+>>  
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  797/999 MP  390/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A fox darts through the grass.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  797/999 MP  389/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  797/999 MP  388/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  797/999 MP  387/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A fox darts through the grass.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  797/999 MP  386/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  797/999 MP  385/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+Sacred Mountains Of The Dragon
+  The peaks above you stretch far into the clouds, and you can almost make
+out the shapes of some creatures spiralling through the sky on currents of
+air.  The air here has taken a noticeable chill and ahead of you there seems
+to be a huge tunnel carved into the base of the mountain, it appears to run
+off in two separate directions.  
+
+[ Exits: east south west up down ]
+
+730/730 HP  797/999 MP  384/1022 mv  972tnl
+Lv 35  G 85016 | Sacred Mountains Of The Dragon (ESWUD)
+>>  
+n
+Alas, you cannot go that way.
+
+730/730 HP  797/999 MP  384/1022 mv  972tnl
+Lv 35  G 85016 | Sacred Mountains Of The Dragon (ESWUD)
+>>  
+e
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from
+an occasional breeze.  The creatures here seem to take no notice of
+your presence and wander about, blissfully unaware of the danger that
+lurks in the mountains above.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  797/999 MP  381/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+e
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from an
+occasional breeze.  The creatures here seem to take no notice of your
+presence and wander about, blissfully unaware of the danger that lurks in
+the mountains above.  
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  797/999 MP  380/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+s
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A fox darts through the grass.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  797/999 MP  379/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  797/999 MP  378/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+s
+>>  
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  797/999 MP  377/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+
+
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  421/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+e
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  420/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  419/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  418/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  417/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  416/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  415/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  414/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  413/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  412/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+     A dark hued flower basks in the sunlight.
+A fox darts through the grass.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  411/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  410/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A bear wanders around in search of food.
+A floppy eared rabbit lopes through the field.
+A floppy eared rabbit lopes through the field.
+A fox darts through the grass.
+
+730/730 HP  826/999 MP  409/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  826/999 MP  408/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A fox darts through the grass.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  826/999 MP  407/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  406/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+
+730/730 HP  826/999 MP  405/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A fox darts through the grass.
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  826/999 MP  404/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+w
+A Vast Prairie
+  This vast prairie seems to stretch on forever.  The abundance of
+wildlife here is astonishing and you can't help but notice the jagged
+mountain range off in the distance.  It dominates the horizon and seems
+to cast an ominous pall on this otherwise tranquil place.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A mage is here, gathering herbs for his craft.
+A floppy eared rabbit lopes through the field.
+
+730/730 HP  826/999 MP  403/1022 mv  972tnl
+Lv 35  G 85016 | A Vast Prairie (NESW)
+>>  
+n
+A Forest At The Foot Of The Mountains
+  This tranquil forest is disturbed only by the rustle of leaves from
+an occasional breeze.  The creatures here seem to take no notice of
+your presence and wander about, blissfully unaware of the danger that
+lurks in the mountains above.   
+
+[ Exits: north east south west ]
+A mage is here, gathering herbs for his craft.
+A bear wanders around in search of food.
+
+730/730 HP  826/999 MP  402/1022 mv  972tnl
+Lv 35  G 85016 | A Forest At The Foot Of The Mountains (NESW)
+>>  
+w
+Sacred Mountains Of The Dragon
+  The peaks above you stretch far into the clouds, and you can almost make
+out the shapes of some creatures spiralling through the sky on currents of
+air.  The air here has taken a noticeable chill and ahead of you there seems
+to be a huge tunnel carved into the base of the mountain, it appears to run
+off in two separate directions.  
+
+[ Exits: east south west up down ]
+
+730/730 HP  826/999 MP  401/1022 mv  972tnl
+Lv 35  G 85016 | Sacred Mountains Of The Dragon (ESWUD)
+>>  
+u
+Egg dropoff point
+  Large dragons soar past you on eddies of air, carrying objects roughly the 
+size of a human head in their claws. They seem to be delivering them to some 
+gnomes, who then rush off in a northerly direction carrying them slung on 
+poles.
+
+[ Exits: north down ]
+A gnome scurries by, carrying a large egg on a sling.
+A gnome scurries by, carrying a large egg on a sling.
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  826/999 MP  398/1022 mv  972tnl
+Lv 35  G 85016 | Egg dropoff point (ND)
+>>  
+n
+Broad underground tunnel
+  Gnomes scurry down this corridor, carrying objects which on closer
+inspection prove to be draconian eggs.  Each egg has a faint hue which seems
+to give a clue as to the species it will hatch into, and these are being
+sorted and segregated with some care.  One stray egg with a faint reddish
+hue is being bundled off rapidly through a tiny gnomish tunnel to a
+different section of the mountain.  
+
+[ Exits: north (east) south (west) ]
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  826/999 MP  397/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (N[E]S[W])
+>>  
+op e
+e
+
+
+You open the hatchery.
+
+730/730 HP  851/999 MP  442/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (NES[W])
+>>  
+Egg incubation room 1
+  Eggs are piled neatly here on long tables which seem designed
+specifically to hold them, but there appears to be a pile of shards and some
+yolk on the floor.  Scurrying around this are some halflings with mops and
+buckets, rapidly clearing up the mess and trying to avoid the eye of a
+supervising elf in one corner.  
+
+[ Exits: west ]
+     A table with indentations around the size of a Human head runs the length of this room.
+A brass hued egg lies here, reflecting the torchlight.
+A golden dragon egg sits here, emitting faint tapping sounds.
+Aww, how cute, a freshly hatched gold dragon.
+A silvery dragon egg lies here, rocking slightly.
+A halfling janitor is here, cleaning up the broken egg.
+An egg of quicksilver hue glows in the torchlight, almost seeming to flow like liquid metal.
+A gnomish egg attendant scurries around, checking the eggs and occasionally turning one.
+A silvery dragon egg lies here, rocking slightly.
+A golden dragon egg sits here, emitting faint tapping sounds.
+An elf supervisor watches the proceedings here, ensuring the eggs are well cared for.
+A brass hued egg lies here, reflecting the torchlight.
+A golden dragon egg sits here, emitting faint tapping sounds.
+
+730/730 HP  851/999 MP  441/1022 mv  972tnl
+Lv 35  G 85016 | Egg incubation room 1 (W)
+>>  
+w
+Broad underground tunnel
+  Gnomes scurry down this corridor, carrying objects which on closer
+inspection prove to be draconian eggs.  Each egg has a faint hue which seems
+to give a clue as to the species it will hatch into, and these are being
+sorted and segregated with some care.  One stray egg with a faint reddish
+hue is being bundled off rapidly through a tiny gnomish tunnel to a
+different section of the mountain.  
+
+[ Exits: north east south (west) ]
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  851/999 MP  440/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (NES[W])
+>>  
+op w
+w
+You open the hatchery.
+
+730/730 HP  851/999 MP  440/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (NESW)
+>>  Egg incubation room 2
+  This room seems very orderly and quiet, with no sound aside from the tapping 
+emanating from an egg. The egg from which this sound emanates seems to be 
+surrounded by gnomes who are ready to help the new arrival out from the 
+hatchery and north to the nursery area which can be seen faintly from the 
+main corridor.
+
+[ Exits: east ]
+     A table with indentations around the size of a Human head runs the length of this room.
+A silvery dragon egg lies here, rocking slightly.
+An egg of quicksilver hue glows in the torchlight, almost seeming to flow like liquid metal.
+An egg of quicksilver hue glows in the torchlight, almost seeming to flow like liquid metal.
+A brass hued egg lies here, reflecting the torchlight.
+A silvery dragon egg lies here, rocking slightly.
+A golden dragon egg sits here, emitting faint tapping sounds.
+A golden dragon egg sits here, emitting faint tapping sounds.
+A golden dragon egg sits here, emitting faint tapping sounds.
+
+730/730 HP  851/999 MP  439/1022 mv  972tnl
+Lv 35  G 85016 | Egg incubation room 2 (E)
+>>  
+e
+Broad underground tunnel
+  Gnomes scurry down this corridor, carrying objects which on closer
+inspection prove to be draconian eggs.  Each egg has a faint hue which seems
+to give a clue as to the species it will hatch into, and these are being
+sorted and segregated with some care.  One stray egg with a faint reddish
+hue is being bundled off rapidly through a tiny gnomish tunnel to a
+different section of the mountain.  
+
+[ Exits: north east south west ]
+A gnome scurries by, carrying a large egg on a sling.
+
+730/730 HP  851/999 MP  438/1022 mv  972tnl
+Lv 35  G 85016 | Broad underground tunnel (NESW)
+n
+>>  
+Freshly hatched dragons
+  Small dragons are being gently herded out of the surrounding rooms by
+halflings and dwarves.  Mostly they seem to be guiding the dragons by
+leading them with small scraps of raw meat, which the hatchlings are
+constantly snapping at, almost taking one slightly slow halfling's fingers,
+too.  
+
+[ Exits: (north) east south west ]
+A silver hatchling wanders around dejectedly, looking puny.
+A very hungry mercury hatchling nips over-enthusiastically at a halfling's fingers.
+A halfling winces as a hatchling almost nips off his finger.
+A silver hatchling wanders around dejectedly, looking puny.
+
+730/730 HP  851/999 MP  437/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons ([N]ESW)
+op n
+n
+>>  
+You open the door.
+
+730/730 HP  851/999 MP  437/1022 mv  972tnl
+Lv 35  G 85016 | Freshly hatched dragons (NESW)
+>>  Dragon nursery
+  This appears to be a large open plan nursery environment, where
+hatchlings of all metallic hues seem to intermingle at will under the
+supervision of some other races who appear to be responsible for their
+well-being.  Some of the hatchlings seem to be able to smell the fresh air
+blowing in from the tunnel to the south, and are constantly making bids for
+freedom in that direction, only to be gently discouraged by an elf, who
+picks them up, pets them for a while, then pushes them north.  
+
+[ Exits: north east south west ]
+A silver hatchling wanders around dejectedly, looking puny.
+An elven minder is here, caring for the metallic hatchlings.
+Aww, how cute, a freshly hatched gold dragon.
+
+730/730 HP  851/999 MP  436/1022 mv  972tnl
+Lv 35  G 85016 | Dragon nursery (NESW)
+>>  
+n
+Centre of the nursery
+  In the centre of this open-planned cavern, the cheeping and squeaklike roars 
+of the hatchlings are almost deafening. Distant corners of the cavern are 
+occasionally lit by a hatchling's breath, which most closely resembles a 
+matchflare in the distance at night. Some of the hatchlings tumble around at 
+your feet, and an occasional overexcited one leaps into the air and attempts 
+to flap its wings and fly. As yet, none of these beasts have the requisite 
+wingspan, so they tumble to the floor and squeak in pain, then get up and 
+dust themselves off and go back to playing.
+
+[ Exits: north east south west ]
+A dwarven minder stomps around, grunting and occasionally petting a dragon in a perfunctory way.
+A bronze hatchling is here, flapping his wings and trying to fly.
+A bronze hatchling is here, flapping his wings and trying to fly.
+
+730/730 HP  851/999 MP  435/1022 mv  972tnl
+Lv 35  G 85016 | Centre of the nursery (NESW)
+>>  
+n
+A cave opening
+  A vast natural cavern which seems to have been worked into a more
+convenient shape for a nursery, judging by some dwarven toolmarks on the
+walls, stretches out in a large open plan area to the south, west, and east.
+Scattered liberally throughout this open plan area are various hues of
+metallic hatchling and their minders.  
+
+[ Exits: north east south west ]
+A gnome scurries by, carrying a large egg on a sling.
+A dwarven minder stomps around, grunting and occasionally petting a dragon in a perfunctory way.
+
+730/730 HP  851/999 MP  434/1022 mv  972tnl
+Lv 35  G 85016 | A cave opening (NESW)
+>>  
+n
+Overlooking a kindergarten
+  Some of the larger hatchlings from the large open plan nursery area to the 
+south are being carried or gently herded through this narrow cave and pushed 
+off to the west. Some of them seem a little recalcitrant about the idea, and 
+are constantly trying to dodge between the legs of the elves and dwarves 
+herding them and waddle off back to the south.
+
+[ Exits: south west ]
+
+730/730 HP  851/999 MP  433/1022 mv  972tnl
+Lv 35  G 85016 | Overlooking a kindergarten (SW)
+>>  
+w
+Entry to a vast cavern
+  You have stumbled into a vast cavern lit by little faerie lights
+which hang midair illuminating the area in a dull glow. Ahead of
+you you can see a long rocky pathway that leads to a large rocky
+outcrop.
+ 
+After waiting for a few moments for your eyes to adjust you see what
+looks to be a large mass moving in a chaotic fashion right along the
+pathway ahead of you.
+ 
+
+[ Exits: east west ]
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Entry to a vast cavern (EW)
+>>  
+w
+Rocky pathway through the cavern
+  You gasp as you finally recognise the large shape as dragon whelps!
+There must be hundreds of them hurrying around trying to get to their
+destination on time which causes this chaotic mass to look like one
+large shape from a distance.
+ 
+You look around and see the many looks of these whelps as you carefully
+pick your way through the crowd.
+ 
+Whelps enter rocky openings to either side of the path here.
+
+[ Exits: north east south west ]
+A sapphire dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+A crystal dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+An emerald dragon whelp is wandering the path.
+A crystal dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Rocky pathway through the cavern (NESW)
+>>  
+n
+Glittering Room
+  Entering the room you are blinded by what appears to be sunlight, but that is
+impossible this far underground. As your eyes adjust to the brightness, you 
+see a room full of whelps glaring at you threateningly. You begin to realise 
+what all this light is after further inspection. Small piles of gold, with 
+many different colors of gems mixed in. They are being hoarded and sat upon 
+by these whelps. Is this the 'how to hoard' class?
+
+[ Exits: south ]
+     A torn piece of paper rests here, someone made a note on it.
+     A leather jerkin has been crafted and marked with a 'G'.
+A secretive dragon is here talking in whispers.
+(Angry) A green dragon in the midst of a feeding frenzy!
+A red dragon whelp is set ready to fight!
+A black dragon is here casting powerful magics!
+A secretive dragon is here talking in whispers.
+A secretive dragon is here talking in whispers.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Glittering Room (S)
+>>  
+s
+Rocky pathway through the cavern
+  You gasp as you finally recognise the large shape as dragon whelps!
+There must be hundreds of them hurrying around trying to get to their
+destination on time which causes this chaotic mass to look like one
+large shape from a distance.
+ 
+You look around and see the many looks of these whelps as you carefully
+pick your way through the crowd.
+ 
+Whelps enter rocky openings to either side of the path here.
+
+[ Exits: north east south west ]
+A sapphire dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+A crystal dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+An emerald dragon whelp is wandering the path.
+A crystal dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Rocky pathway through the cavern (NESW)
+w
+>>  
+Pathway before the rocky outcrop
+  You wander through the large throng of whelps keeping an eye out for any 
+threatening movement. A noticeable quietness has crept over the crowd as you 
+walk closer to the rocky outcrop. Looking up towards the rocky outcrop you 
+realize the reason why it is much quieter here then further down the pathway.
+A large dragon can be seen watching over the whelps. Has this dragon seen 
+you??
+
+[ Exits: north east south west ]
+An emerald dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Pathway before the rocky outcrop (NESW)
+>>  
+w
+Rocky outcrop
+  As you get closer to the outcrop you see the dragon scolding any whelp
+that comes close.  This dragon is preaching the virtues of schooling
+and learning the ways of a dragon, before lesser races with their fears
+and ineptness try to hunt and kill them.
+ 
+This dragon, with a flick of his claw, creates the sounds and image of
+a charging knight moving down the rocky pathway, causing whelps to jump 
+out of the way and quickly hurry on to their respective destinations.
+
+[ Exits: north east south west up ]
+An amethyst dragon whelp is wandering the path.
+This dragon keeps a watchful eye on his students.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Rocky outcrop (NESWU)
+e
+>>  
+Pathway before the rocky outcrop
+  You wander through the large throng of whelps keeping an eye out for any 
+threatening movement. A noticeable quietness has crept over the crowd as you 
+walk closer to the rocky outcrop. Looking up towards the rocky outcrop you 
+realize the reason why it is much quieter here then further down the pathway.
+A large dragon can be seen watching over the whelps. Has this dragon seen 
+you??
+
+[ Exits: north east south west ]
+An emerald dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Pathway before the rocky outcrop (NESW)
+>>  
+w
+Rocky outcrop
+  As you get closer to the outcrop you see the dragon scolding any whelp
+that comes close.  This dragon is preaching the virtues of schooling
+and learning the ways of a dragon, before lesser races with their fears
+and ineptness try to hunt and kill them.
+ 
+This dragon, with a flick of his claw, creates the sounds and image of
+a charging knight moving down the rocky pathway, causing whelps to jump 
+out of the way and quickly hurry on to their respective destinations.
+
+[ Exits: north east south west up ]
+An amethyst dragon whelp is wandering the path.
+This dragon keeps a watchful eye on his students.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Rocky outcrop (NESWU)
+w
+>>  
+Pathway before the rocky outcrop
+  As you proceed past the halfway point - the rocky outcrop - it's hard
+to pick up the whelps' chatter as they are still talking in hushed
+tones.  The shadow of the overseer is still very large and imposing.
+ 
+More then one whelp has scars as proof of how viscious his wrath
+can be under that calm exterior he puts forth.
+ 
+The whelps are scared of suffering the wrath of the overseer by 
+talking too loudly. They move along to their next class trying not to 
+draw attention to themselves.  
+
+[ Exits: north east south west ]
+An emerald dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+An emerald dragon whelp is wandering the path.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Pathway before the rocky outcrop (NESW)
+>>  
+n
+Feeding Room
+  You stumble across a room full of whelps in a feeding frenzy.  They 
+don't even look up to see who has entered the room as they rip open
+their next meal with their talons.
+
+[ Exits: south ]
+(Angry) A green dragon in the midst of a feeding frenzy!
+(Angry) A green dragon in the midst of a feeding frenzy!
+(Angry) A green dragon in the midst of a feeding frenzy!
+(Angry) A green dragon in the midst of a feeding frenzy!
+(Angry) A green dragon in the midst of a feeding frenzy!
+(Angry) A green dragon in the midst of a feeding frenzy!
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Feeding Room (S)
+>>  
+s
+Pathway before the rocky outcrop
+  As you proceed past the halfway point - the rocky outcrop - it's hard
+to pick up the whelps' chatter as they are still talking in hushed
+tones.  The shadow of the overseer is still very large and imposing.
+ 
+More then one whelp has scars as proof of how viscious his wrath
+can be under that calm exterior he puts forth.
+ 
+The whelps are scared of suffering the wrath of the overseer by 
+talking too loudly. They move along to their next class trying not to 
+draw attention to themselves.  
+
+[ Exits: north east south west ]
+An emerald dragon whelp is wandering the path.
+A sapphire dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+An amethyst dragon whelp is wandering the path.
+An emerald dragon whelp is wandering the path.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Pathway before the rocky outcrop (NESW)
+e
+>>  Rocky outcrop
+  As you get closer to the outcrop you see the dragon scolding any whelp
+that comes close.  This dragon is preaching the virtues of schooling
+and learning the ways of a dragon, before lesser races with their fears
+and ineptness try to hunt and kill them.
+ 
+This dragon, with a flick of his claw, creates the sounds and image of
+a charging knight moving down the rocky pathway, causing whelps to jump 
+out of the way and quickly hurry on to their respective destinations.
+
+[ Exits: north east south west up ]
+An amethyst dragon whelp is wandering the path.
+This dragon keeps a watchful eye on his students.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Rocky outcrop (NESWU)
+n
+>>  
+Proving Ground
+  The smell of death and decay permeates this room.  Bloody smears
+on the ground, scorch marks and the occasional limb litter the floor.
+Some serious battles have occurred here over time.
+ 
+Tales told late in the evening after a few ales at your local tavern
+say that Bahumat once learned how to fight here.
+
+[ Exits: south ]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Proving Ground (S)
+>>  
+s
+Rocky outcrop
+  As you get closer to the outcrop you see the dragon scolding any whelp
+that comes close.  This dragon is preaching the virtues of schooling
+and learning the ways of a dragon, before lesser races with their fears
+and ineptness try to hunt and kill them.
+ 
+This dragon, with a flick of his claw, creates the sounds and image of
+a charging knight moving down the rocky pathway, causing whelps to jump 
+out of the way and quickly hurry on to their respective destinations.
+
+[ Exits: north east south west up ]
+An amethyst dragon whelp is wandering the path.
+This dragon keeps a watchful eye on his students.
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Rocky outcrop (NESWU)
+>>  
+n
+Proving Ground
+  The smell of death and decay permeates this room.  Bloody smears
+on the ground, scorch marks and the occasional limb litter the floor.
+Some serious battles have occurred here over time.
+ 
+Tales told late in the evening after a few ales at your local tavern
+say that Bahumat once learned how to fight here.
+
+[ Exits: south ]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+A red dragon whelp is set ready to fight! [QUEST]
+
+730/730 HP  851/999 MP  432/1022 mv  972tnl
+Lv 35  G 85016 | Proving Ground (S)
+>>  
+
+
+ca ma dragon
+You fade into existence.
+Your magic missile RENDS A red dragon whelp! [80]
+Your magic missile - BLASTS - A red dragon whelp! [83]
+A red dragon whelp is bleeding lightly.
+
+FIGHTING!
+730/730 HP  885/999 MP  477/1022 mv  972tnl
+ Enemy: 75% HP (mob) >>  
+ca poison
+A red dragon whelp looks very ill.
+Your pierce -=- VAPORIZES -=- A red dragon whelp! [112]
+You blink out of existence and avoid A red dragon whelp's attack.
+A red dragon whelp is showing a few battle scars.
+
+FIGHTING!
+730/730 HP  865/999 MP  477/1022 mv  972tnl
+ca wither
+ Enemy: 58% HP (mob) >>  
+ca chill
+Your strength-draining touch <*><*> LIQUIDATES <*><*> A red dragon whelp! [162]
+Your strength-draining touch <-=-> SUNDERS <-=-> A red dragon whelp! [184]
+Your pierce ***** PULVERIZES ***** A red dragon whelp! [103]
+A red dragon whelp is slain by a final deadly stab!!
+You receive 2 experience points.
+QUEST: You have almost completed your QUEST!
+Return to the questmaster before your time runs out.
+You get 45 gold coins from the perforated corpse of A red dragon whelp.
+Ayla gives you 13 gold coins for the perforated corpse of A red dragon whelp.
+
+730/730 HP  835/999 MP  477/1022 mv  970tnl
+Lv 35  G 85074 | Proving Ground (S)
+>>  
+Cast chill touch on whom?
+
+730/730 HP  835/999 MP  477/1022 mv  970tnl
+Lv 35  G 85074 | Proving Ground (S)
+>>  
+recall; rt quest; quest complete
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) (White Aura) WeaponGuy is dead, trying to retreive his corpse..
+(Player) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+(Player) (White Aura) (OPK) Forma not formatted.
+
+730/730 HP  835/999 MP  239/1022 mv  970tnl
+Lv 35  G 85074 | The Grand City of Aylor (NESWUD)
+>>  Running to: Among the Philosophes
+
+730/730 HP  835/999 MP  239/1022 mv  970tnl
+Lv 35  G 85074 | The Grand City of Aylor (NESWUD)
+>>  Whitewind Avenue (G) (239)
+
+Phoenix Square (G) (239)
+
+Whitewind Avenue (G) (239)
+
+North of the Grand Plaza (G) (239)
+
+The Grand Plaza (G) (239)
+
+Meridian Square (G) (239)
+
+The Grand Plaza (G) (239)
+
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+[AFK] (Player) (Linkdead) (OPK) Haluk the Avenger.
+(Player) (White Aura) Beri the Warrior.
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+730/730 HP  835/999 MP  239/1022 mv  970tnl
+Lv 35  G 85074 | Among the Philosophes (NESU)
+>>  You inform Questor that you have completed your quest.
+Questor tells you 'Congratulations, KumoGami, on completing your quest!'
+Questor tells you 'As a reward, I am giving you 20 quest points and 2936 gold.'
+You gain an extra 2 quest points 'MCCP Bonus'.
+
+730/730 HP  835/999 MP  239/1022 mv  970tnl
+Lv 35  G 88010 | Among the Philosophes (NESU)
+>>  
+
+You notice the black moon falling to the west.
+
+score
++-------------------------------------------------------------------------+
+|                  KumoGami the Enchanting God of Spiders                 |
++-------------------------+--------------------+--------------------------+
+| Strength    : [ 53/18 ]+| Race  : Half-griff | Practices    : [     97] |
+| Intelligence: [101/63 ] | Class : Mage       | Trains       : [     56] |
+| Wisdom      : [ 87/57 ] | Sub   : Enchanter  | Trivia       : [     20] |
+| Dexterity   : [ 49/16 ] | Gender: Male       | Quest points : [    337] |
+| Constitution: [ 45/20 ] | Level : 35         | Quest time   : [     30] |
+| Luck        : [ 94/59 ]+|                    | Goals done   : [     11] |
++------------------------++--------------------+--------------------------+
+| Hit    : [  730/730  ] | Hitroll  : [  155 ] | Weight :   259 of 547    |
+| Mana   : [  863/999  ] | Damroll  : [   97 ] | Items  :   121 of 164    |
+| Moves  : [  284/1022 ] | Wimpy    : [   30 ] | Align  : 1959            |
+| Gold   : [      88010] |                     | Status : Standing        |
+| To Lvl : [       970 ] | Age      : [   13 ] | Hunger : 82  Bloated     |
+|                        | Hours    : [   178] | Thirst : 82  Bloated     |
++------------------------+---------------------+--------------------------+
+| Resistances:                                                            |
+| Pierce:  170 (Well Armored      ) [############------------------------]|
+| Bash  :  -26 (Defenseless       ) [------------------------------------]|
+| Slash :  164 (Well Armored      ) [###########-------------------------]|
++-------------------------------------------------------------------------+
+ Type 'aff' for affects, 'attr' for stats only and 'whois' for other info.
+ Type 'resists' for detailed resistance stats.
+
+730/730 HP  863/999 MP  284/1022 mv  970tnl
+Lv 35  G 88010 | Among the Philosophes (NESU)
+>>  
+recall; rt wish
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) (White Aura) WeaponGuy is dead, trying to retreive his corpse..
+(Player) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+(Player) (White Aura) (OPK) Forma not formatted.
+
+730/730 HP  863/999 MP  142/1022 mv  970tnl
+Lv 35  G 88010 | The Grand City of Aylor (NESWUD)
+>>  Skipping run prefix - already at Aylor recall.
+Running to: A Genie's Last Wish
+
+730/730 HP  863/999 MP  142/1022 mv  970tnl
+Lv 35  G 88010 | The Grand City of Aylor (NESWUD)
+>>  Whitewind Avenue (G) (142)
+
+Phoenix Square (G) (142)
+
+Starlight Way - West (G) (142)
+
+Starlight Way - West (G) (142)
+
+Starlight Way - West (G) (142)
+
+Starlight Way - West (G) (142)
+
+Starlight Way - West (142)
+
+Starlight Way - West (G) (142)
+
+Western Entrance - Starlight Way (G) (142)
+
+Western High Road (142)
+
+In the Fields Surrounding Aylor (G) (141)
+
+In the Fields Surrounding Aylor (140)
+
+In the Fields Surrounding Aylor (139)
+
+In the Fields Surrounding Aylor (138)
+
+In the Fields Surrounding Aylor (137)
+
+In the Fields Surrounding Aylor (136)
+
+A Stand of Trees (135)
+
+Ocean of Grass (134)
+
+Ocean of Grass (133)
+
+Ocean of Grass (132)
+
+[******** Minimum Level For A Genie's Last Wish is 200 ********]
+
+Ocean of Grass
+  An endless ocean of grass stretches out in every direction, dipping and
+swaying as the prarie wind blows.  The sun is gentle on the land, filling it
+with a profusion of life.  Little creatures and birds move invisibly in the
+grass, with little trace of their passage left behind.  
+
+[ Exits: north east south west up ]
+
+730/730 HP  863/999 MP  131/1022 mv  970tnl
+Lv 35  G 88010 | Ocean of Grass (NESWU)
+>>  
+
+
+l;ex
+Ocean of Grass
+  An endless ocean of grass stretches out in every direction, dipping and
+swaying as the prarie wind blows.  The sun is gentle on the land, filling it
+with a profusion of life.  Little creatures and birds move invisibly in the
+grass, with little trace of their passage left behind.  
+
+[ Exits: north east south west up ]
+
+730/730 HP  887/999 MP  176/1022 mv  970tnl
+Lv 35  G 88010 | Ocean of Grass (NESWU)
+>>  Obvious exits from [ Ocean of Grass ]:
+ North          : Ocean of Grass 
+ East           : Ocean of Grass 
+ South          : Ocean of Grass 
+ West           : Ocean of Grass 
+ Up             : An Icy Mountain 
+
+730/730 HP  887/999 MP  176/1022 mv  970tnl
+Lv 35  G 88010 | Ocean of Grass (NESWU)
+>>  
+recall
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) (White Aura) WeaponGuy is dead, trying to retreive his corpse..
+(Player) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+(Player) (White Aura) (OPK) Forma not formatted.
+
+730/730 HP  887/999 MP  88/1022 mv  970tnl
+Lv 35  G 88010 | The Grand City of Aylor (NESWUD)
+>>  
+find wish
+The path to Vira from here is: run 4nu
+
+730/730 HP  887/999 MP  88/1022 mv  970tnl
+Lv 35  G 88010 | The Grand City of Aylor (NESWUD)
+>>  
+find all
+Points of interest in The Grand City of Aylor.
+Keyword      Description                               
+------------ --------------------------------------------------
+Armory       Gueldar's Armory                                  
+Bakery       The Aylorian Eatery                               
+Bank         The Aylorian Bank of Ivar                         
+Blackjack    Ivar's Casino - multiple dealers                  
+Blacksmith   Blacksmith - Keep and Bond Items                  
+Boats        Adventurer's Travel Company - Buy boats and canoes
+Campaign     Commander Barcett's Campaign Room                 
+Catering     Gourmet Food Delivery                             
+Chapel       Aylor chapel - marriage etc                       
+Cleric       Cleric Guild                                      
+Damage       Forge - Modify Weapon Damage Type                 
+Elementalist Elemental - Modify Items Weight                   
+Enchanter    Enchanter - Modify Weapon Flags                   
+Fido         Gno-Go Express, send items to others              
+Flowers      Send Flowers to others, include a message         
+Forge        Forge - Modify Weapon Types                       
+Groceries    Grizrol's Grocery Store                           
+Healer       Aylorian Temple Healer                            
+Identify     Identify items, for a price                       
+Library      Bookworm's Haven - Guides                         
+Lottery      Aardwolf Lottery HQ - Buy Lottery Tickets         
+Mage         Mage Guild                                        
+Paladin      Paladin Guild                                     
+Pets         Pets - Adopt a companion                          
+Potions      Aeleron's Alchemy Supplies - buy potions          
+Psi          Psi Guild                                         
+Questor      Main questmaster in Aylor                         
+Ranger       Ranger Guild                                      
+Ravi         Ravi Enterprises - Trivia spend location          
+Recall       The Grand City of Aylor                           
+Remodel      Remodeling - Set flags on items                   
+Remort       Remort / Retier Chamber                           
+Scrolls      Mayvor's Mystic Mastery - buy scrolls and wands   
+Ivar         Ivar's Pub, hang out and chat.                    
+Aylorarena   Aylor Arena - settle your differences the old way 
+Thief        Thief Guild                                       
+Warrior      Warrior Guild                                     
+Weapons      Xena's Weapon Parlor                              
+Wishes       Vira's wish repository                            
+Wtype        Ivar's Weapon Forge                               
+
+Use 'find [keyword]' to see directions from your current room.
+
+730/730 HP  887/999 MP  88/1022 mv  970tnl
+Lv 35  G 88010 | The Grand City of Aylor (NESWUD)
+>>  
+
+
+rt wishes
+Running to: Vira's Wish Repository
+
+730/730 HP  908/999 MP  133/1022 mv  970tnl
+Lv 35  G 88010 | The Grand City of Aylor (NESWUD)
+>>  The Aylorian Temple of Ivar (G) (133)
+
+In the Back of the Aylorian Temple (G) (133)
+
+An Intersection in the Temple (G) (133)
+
+Upon the Pulpit (G) (133)
+
+Vira's Wish Repository (G)
+  You stand on an oversized mezzanine overlooking the church.  It's really
+quite a nice sight; everything is part of the pattern, part of the whole. 
+Each candle, each window, each pew helps to create a marvelous picture. 
+It's surprising; from the little you know about Ivar, you wouldn't have
+thought that he cared about the layout of the temple and the city to this
+degree.  The mezzanine itself is carved out of black marble which is
+highlighted by blood-red candles.  Vira is here, of course, as are numerous
+pillows upon which she rests.  
+
+[ Exits: down ]
+(White Aura) Vira sits here waiting to grant your wishes. 
+
+730/730 HP  908/999 MP  133/1022 mv  970tnl
+Lv 35  G 88010 | Vira's Wish Repository (D)
+>>  
+list
+There is no shopkeeper here.
+
+730/730 HP  908/999 MP  133/1022 mv  970tnl
+Lv 35  G 88010 | Vira's Wish Repository (D)
+>>  
+Log session ending at 23:28:24 on Wednesday, 26 July 2023.

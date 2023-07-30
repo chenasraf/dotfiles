@@ -1,0 +1,907 @@
+Log session starting at 16:56:12 on Wednesday, 26 July 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-26#12-20-20map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.08s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.17s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-26#12-20-20map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.08s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.20s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 615    
+
+[::(info): Your existing map has 15142 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 222         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.211.228 (147.235.211.228) at Wed Jul 26 05:54:54 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+A Corridor in the Labyrinth
+  
+The labyrinth ends.
+ 
+*blink*
+ 
+Yep, this is the center of the maze. It's here that the Queen's magic is
+strongest. The ground is bare rock without even a dusting of soil to
+cushion footsteps, and every inch of the hedge walls are crowded with spiky
+thorns. It's painfully bright here, enough to make one shade one's eyes,
+though the source of the light is a mystery. In the very center of this
+denuded patch of stone, a tall stake has been thrust deep into the ground.
+Around it grows a special breed of deathberry bush, in the form of climbing
+ivy that's a lot tougher than it looks. It also grows around the victim
+chained to the pole, inflicting just enough poison to torture the poor man.
+
+[ Exits: north ]
+     A book bound in blood-dyed leather rests here.
+A half-orc maiden gives you a shy, fanged smile.
+(White Aura) The poor farmboy Yelsem is chained to the deadly deathberry bushes.
+There are 223 players on, the most on this reboot was 257.
+There are 220 players using compression.
+
+INFO: Double experience is running in honor of Fafhrd reaching superhero. - 8 minutes left.
+
+LOTTERY : Current lottery jackpot is at 215,767,000 gold.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+Tag option map turned ON
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+quest info
+You do not have to wait to go on another quest.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+
+You notice the grey moon falling to the west.
+
+A half-orc maiden leaves north.
+
+INFO: 5 minutes of bonus experience remaining.
+
+You no longer see in the dark.
+
+INFO: The player rankings have been updated.
+
+Character autosaved at Wed Jul 26 10:01:10 2023.
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+A balmy, light wind blows from the northwest.
+Clouds start to form in the night sky.
+
+INFO: 1 minute of bonus experience remaining.
+
+Yelsem the poor farmboy chants the phrase 'waga mniseas'.
+
+You see the black moon rising in the east.
+INFO: Bonus experience has now expired.
+
+There is a loud scream and a flare of light shoots towards the sky.
+Below the flare, you hear Chewik scream 'HEAR ME, FOR I HAVE CONQUERED!'
+As the light fades you realize a new superhero has been born.
+For the next 15 minutes experience is doubled in honor of the new superhero.
+
+## You start to feel hungry.
+## You start to feel thirsty.
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+gl labyrinth
+Goal switched to: labyrinth
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+A half-orc maiden arrives from the north.
+
+tasks labyrinth
+
+       Labyrinth : Quest to free Yelsem.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 2  : Find someone recently exiled from the Queen's court.
+
+'You seek the cruel gaoler, keeper of keys, sunderer of love, servant to the
+queen. Seek out one, recent of the court. Take this tome, a manifesto to 
+truth. Speak first of love, perhaps truth will out.' 
+
+A sphinx smiles sheepishly.
+A sphinx says, "Sorry, but it's my job as a sphinx to try to be as
+ obscure as possible."
+You receive a leather-bound book from a sphinx.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use 'tasklist' to see a short summary of all open tasks.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+
+INFO: Chewik has been reborn as a Vampire Warrior.
+
+INFO: Chewik has entered open PK (OPK) mode!
+
+Someone vanishes before you!
+
+Someone chants the phrase 'mgefes lin'.
+
+Someone chants the phrase 'mfitothin diid'.
+
+Someone chants the phrase 'oberocoge regiil'.
+Someone has given himself an adrenaline rush!
+
+Someone chants the phrase 'agremem ldeogrn'.
+Someone enhances his strength.
+
+Someone chants the phrase 'upihias norror'.
+An inertial barrier forms around Someone.
+
+Someone chants the phrase 'mbrantar mbebar'.
+Someone erects a mental barrier around himself.
+
+Someone chants the phrase 'gour ran'.
+Someone creates a thought shield around himself.
+
+Someone chants the phrase 'sense anger'.
+
+Someone chants the phrase 'underwater breathing'.
+Someone grows gills on the side of his neck!
+
+Someone chants the phrase 'mgagran lohyanci'.
+Someone's mental abilities are now more balanced.
+
+Someone vanishes before you!
+
+spellup int;spellup wis;spellup luck;spellup stats;spellup
+No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  Queueing spell : mystic might.
+Queueing spell : harden body.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  You feel your body surge with extra power.
+
+730/730 HP  969/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You feel your body harden.
+
+730/730 HP  939/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+Queueing spell : detect hidden.
+Queueing spell : detect invis.
+Queueing spell : detect magic.
+Queueing spell : night vision.
+Queueing spell : invis.
+Queueing spell : shield.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : sense anger.
+Queueing spell : underwater breathing.
+
+730/730 HP  939/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  Your eyes are more focused.
+
+730/730 HP  924/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+Your eyes tingle.
+
+730/730 HP  909/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+Your eyes glow blue.
+
+730/730 HP  899/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You lost your concentration while trying to cast night vision.
+
+730/730 HP  892/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You fade out of existence.
+
+730/730 HP  867/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+Your magic is blessed with the luck of Ayla!
+You are surrounded by a force shield.
+
+730/730 HP  862/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You now possess magical powers of avoidance.
+
+730/730 HP  837/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You make your appearance look blurred.
+
+730/730 HP  822/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You can now sense anger in your immediate area.
+
+730/730 HP  782/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You feel gills growing on your neck!
+
+730/730 HP  767/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+tasks labyrinth all
+
+       Labyrinth : Quest to free Yelsem.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1  : Retrieve information from the Sphinx! (Completed)
+
+Princess Zanya exclaims, "My mother has shackled and abandoned my love, my
+ poor Yelsem, somewhere in this maze.  He will die of exposure if someone
+ doesn't find the key to his shackles and free him soon!"
+
+Princess Zanya sits down and thinks deeply. 
+Princess Zanya says, "If there is anyone in the labyrinth who can help you
+ find the key, it is the Sphinx.  If I only knew where he was, I would ask
+ him myself!  If you find him, please give him this,as a token of my
+ respect."
+You receive a heart-shaped locket from Princess Zanya.
+
+Task 2  : Find someone recently exiled from the Queen's court.
+
+'You seek the cruel gaoler, keeper of keys, sunderer of love, servant to the
+queen. Seek out one, recent of the court. Take this tome, a manifesto to 
+truth. Speak first of love, perhaps truth will out.' 
+
+A sphinx smiles sheepishly.
+A sphinx says, "Sorry, but it's my job as a sphinx to try to be as
+ obscure as possible."
+You receive a leather-bound book from a sphinx.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use 'tasklist' to see a short summary of all open tasks.
+
+730/730 HP  767/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+Muzmuz just sent you a tell.
+
+tell Muzmuz hehe :) what can I say, I think spiders a cool
+You tell Muzmuz 'hehe :) what can I say, I think spiders a cool'
+Muzmuz is catching tells.
+
+730/730 HP  793/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+You see the grey moon rising in the east.
+
+INFO: Lions and tigers and bears, OH MY! Roronoa has made his way over the Rainbow.
+
+You notice the black moon falling to the west.
+## You are very hungry; your healing is reduced.
+## You are very thirsty; your healing is reduced.
+
+gulp can; gulp can;
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+730/730 HP  880/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+730/730 HP  880/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+
+You see the white moon rising in the west.
+
+Muzmuz just sent you a tell.
+
+score
++-------------------------------------------------------------------------+
+|                  KumoGami the Enchanting God of Spiders                 |
++-------------------------+--------------------+--------------------------+
+| Strength    : [ 29/18 ] | Race  : Half-griff | Practices    : [     97] |
+| Intelligence: [ 84/64 ] | Class : Mage       | Trains       : [     56] |
+| Wisdom      : [ 65/57 ] | Sub   : Enchanter  | Trivia       : [     20] |
+| Dexterity   : [ 27/16 ] | Gender: Male       | Quest points : [    315] |
+| Constitution: [ 33/20 ] | Level : 35         | Quest time   : [      0] |
+| Luck        : [ 67/59 ] |                    | Goals done   : [     11] |
++------------------------++--------------------+--------------------------+
+| Hit    : [  730/730  ] | Hitroll  : [   53 ] | Weight :   311 of 325    |
+| Mana   : [  965/999  ] | Damroll  : [   64 ] | Items  :   118 of 129    |
+| Moves  : [ 1022/1022 ] | Wimpy    : [   30 ] | Align  : 2216            |
+| Gold   : [      84722] |                     | Status : Standing        |
+| To Lvl : [       887 ] | Age      : [   13 ] | Hunger : 97  Full        |
+|                        | Hours    : [   175] | Thirst : 97  Full        |
++------------------------+---------------------+--------------------------+
+| Resistances:                                                            |
+| Pierce:  126 (Armored           ) [#########---------------------------]|
+| Bash  :  -97 (Defenseless       ) [------------------------------------]|
+| Slash :  128 (Armored           ) [#########---------------------------]|
++-------------------------------------------------------------------------+
+ Type 'aff' for affects, 'attr' for stats only and 'whois' for other info.
+ Type 'resists' for detailed resistance stats.
+
+730/730 HP  965/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+
+A half-orc maiden leaves north.
+
+You notice the grey moon falling to the west.
+
+bio
+Unknown command. Please check the helpfiles.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+You are no longer able to breathe underwater.
+
+descr
+You have no description set. Use 'desc edit' to edit your description.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+help description
+----------------------------------------------------------------------------
+Help Keywords : Description 'Desc Editor'.
+Help Category : Utility.
+Related Helps : Showdesc, Whois.
+Last Updated  : 2017-08-04 23:32:59.
+----------------------------------------------------------------------------
+
+Syntax: description 
+        description edit
+
+Typing 'description' will show your current description if you have one. 
+
+Descriptions are seen when looking at a player, as well as in 'whois' (if
+the 'autodesc' toggle is turned on) or with the 'showdesc' command.  To
+help prevent trigger abuse, descriptions will show with a pipe in front of
+them unless turned off via the 'noprefix' config toggle.
+
+To change your description, use 'desc edit'.  This will place you in the
+description editor, similar to the note editor, where you can change your
+description.  Type .h in the editor to get a list of commands available.
+(zMUD users, see below.)
+
+The editor may not be used in the warzone or lasertag area or in PK or
+combat maze rooms.
+
+
+zMUD users:  By default, zMUD interprets . at the beginning of a line as an
+internal zMUD command.  To use .commands in the description editor, either
+prefix the command with a tilde (~.h, etc.) or turn off parsing either with
+ctrl-R or clicking the computer icon to the right of the input line).  
+Other clients may have a similar issue; check your command prefixes for a
+'literal character' to prefix the .command .
+
+
+----------------------------------------------------------------------------
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+
+An assassin chants the phrase 'mfehan'.
+
+A moderate wind blows from the northeast.
+Rain starts to fall from the dark night sky.
+
+INFO: 5 minutes of bonus experience remaining.
+
+desc edit
+You are now in AFK mode.
+==========================================================================
+Begin editing. .q on a new line to quit, .a to abort, .h for help         
+==========================================================================
+> 
+.h
+
+---------------- Editor Command Menu ----------------------------
+.sr                 : Show current description with color codes
+.h                  : Display editor commands
+.f                  : Formats your text into a paragraph
+.sn                 : Show current description with line numbers
+.size               : Show current description size and max.
+.d                  : Delete last line
+.s                  : Show description
+.c                  : Clear description
+.r   'a' 'b'        : Replace first occurrence of 'a' with 'b'
+.q                  : Quit editor and save changes
+.lr  <line#> <txt>  : Sets the text at the specified line to the new text
+.a                  : Quit editor and don't save
+.ld  <line#>        : Delete line with the specified number
+.ra  'a' 'b'        : Replace all occurrences of 'a' with 'b'
+.li  <line#> <txt>  : Insert new text before line 
+-----------------------------------------------------------
+> 
+.sr
+> 
+.a
+Editor aborted.
+You are back in the game.
+You have 2 tells. Type 'replay' to see them.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+replay
+26 Jul 10:08:55 - Muzmuz tells you 'funny name!'
+26 Jul 10:12:17 - Muzmuz tells you 'woot woot!'
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+l;ex
+A Corridor in the Labyrinth
+  
+The labyrinth ends.
+ 
+*blink*
+ 
+Yep, this is the center of the maze. It's here that the Queen's magic is
+strongest. The ground is bare rock without even a dusting of soil to
+cushion footsteps, and every inch of the hedge walls are crowded with spiky
+thorns. It's painfully bright here, enough to make one shade one's eyes,
+though the source of the light is a mystery. In the very center of this
+denuded patch of stone, a tall stake has been thrust deep into the ground.
+Around it grows a special breed of deathberry bush, in the form of climbing
+ivy that's a lot tougher than it looks. It also grows around the victim
+chained to the pole, inflicting just enough poison to torture the poor man.
+
+[ Exits: north ]
+     (Magic) A book bound in blood-dyed leather rests here.
+An assassin skulks through the labyrinth, sulking about their fate.
+(White Aura) The poor farmboy Yelsem is chained to the deadly deathberry bushes.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  Obvious exits from [ A Corridor in the Labyrinth ]:
+ North          : Too dark to see.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+n
+A Dome in the Labyrinth
+  The labyrinth continues.  This is, in fact, the largest part of the maze.
+Instead of a long corridor, though, the hedges form a sqarish, domed chamber
+easily twice the width of any other passageway in the labyrinth.  The soft
+grass has been trampled flat, testament to the high number of creatures that
+pass through here every day.  Or is it night?  In any case, four large
+archways, to the north, east, south and west, lead further into the maze.  
+
+[ Exits: north east south west ]
+A half-orc maiden gives you a shy, fanged smile.
+A white-skinned mephit melts through the air.
+
+730/730 HP  999/999 MP  1021/1022 mv  887tnl
+Lv 35  G 84722 | A Dome in the Labyrinth (NESW)
+>>  
+e
+A Dead End in the Labyrinth
+  The labyrinth suddenly ends again, forming a quiet little cul-de-sac.  A
+community of dog-like creatures have set up their home here.  Grass from
+other parts of the maze has been gathered and painstakingly woven into
+little round beds and a fallen log partially blocks off this section from
+the rest of the maze.  You can still head back to the west if you wish,
+though.  
+
+[ Exits: west ]
+An assassin skulks through the labyrinth, sulking about their fate.
+(Hidden) A formian warrior patrols for intruders near its nest.
+A snoozing kobold twitches in dreams of darkness.
+A snoozing kobold twitches in dreams of darkness.
+A snoozing kobold twitches in dreams of darkness.
+A snoozing kobold twitches in dreams of darkness.
+
+730/730 HP  999/999 MP  1020/1022 mv  887tnl
+Lv 35  G 84722 | A Dead End in the Labyrinth (W)
+>>  
+
+
+w
+A Dome in the Labyrinth
+  The labyrinth continues.  This is, in fact, the largest part of the maze.
+Instead of a long corridor, though, the hedges form a sqarish, domed chamber
+easily twice the width of any other passageway in the labyrinth.  The soft
+grass has been trampled flat, testament to the high number of creatures that
+pass through here every day.  Or is it night?  In any case, four large
+archways, to the north, east, south and west, lead further into the maze.  
+
+[ Exits: north east south west ]
+A half-orc maiden gives you a shy, fanged smile.
+A white-skinned mephit melts through the air.
+
+730/730 HP  999/999 MP  1021/1022 mv  887tnl
+Lv 35  G 84722 | A Dome in the Labyrinth (NESW)
+>>  
+s
+A Corridor in the Labyrinth
+  
+The labyrinth ends.
+ 
+*blink*
+ 
+Yep, this is the center of the maze. It's here that the Queen's magic is
+strongest. The ground is bare rock without even a dusting of soil to
+cushion footsteps, and every inch of the hedge walls are crowded with spiky
+thorns. It's painfully bright here, enough to make one shade one's eyes,
+though the source of the light is a mystery. In the very center of this
+denuded patch of stone, a tall stake has been thrust deep into the ground.
+Around it grows a special breed of deathberry bush, in the form of climbing
+ivy that's a lot tougher than it looks. It also grows around the victim
+chained to the pole, inflicting just enough poison to torture the poor man.
+
+[ Exits: north ]
+     (Magic) A book bound in blood-dyed leather rests here.
+An assassin skulks through the labyrinth, sulking about their fate.
+(White Aura) The poor farmboy Yelsem is chained to the deadly deathberry bushes.
+
+730/730 HP  999/999 MP  1020/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+You can no longer sense anger.
+
+Character autosaved at Wed Jul 26 10:16:13 2023.
+
+You can no longer avoid some attacks.
+
+INFO: 1 minute of bonus experience remaining.
+
+INFO: Bonus experience has now expired.
+
+You notice the white moon falling to the east.
+
+Your force shield shimmers then fades away.
+
+A tepid, moderate wind blows from the north.
+A storm begins to form.
+
+You are no longer blurred.
+
+A half-orc maiden arrives from the north.
+
+Global Quest: Global Quest # 6720 has been won by Marauder - 943rd win.
+Global Quest: Global Quest # 6720 will go into extended time for 5 more minutes.
+
+INFO: Fafhrd has been reborn as a Shadow Paladin.
+
+l;ex
+A Corridor in the Labyrinth
+  
+The labyrinth ends.
+ 
+*blink*
+ 
+Yep, this is the center of the maze. It's here that the Queen's magic is
+strongest. The ground is bare rock without even a dusting of soil to
+cushion footsteps, and every inch of the hedge walls are crowded with spiky
+thorns. It's painfully bright here, enough to make one shade one's eyes,
+though the source of the light is a mystery. In the very center of this
+denuded patch of stone, a tall stake has been thrust deep into the ground.
+Around it grows a special breed of deathberry bush, in the form of climbing
+ivy that's a lot tougher than it looks. It also grows around the victim
+chained to the pole, inflicting just enough poison to torture the poor man.
+
+[ Exits: north ]
+     (Magic) A book bound in blood-dyed leather rests here.
+A half-orc maiden gives you a shy, fanged smile.
+(White Aura) The poor farmboy Yelsem is chained to the deadly deathberry bushes.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  Obvious exits from [ A Corridor in the Labyrinth ]:
+ North          : Too dark to see.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+spellup int;spellup wis;spellup luck;spellup stats;spellup
+No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  No spells or skills cast.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  Queueing spell : night vision.
+Queueing spell : shield.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : sense anger.
+Queueing spell : underwater breathing.
+
+730/730 HP  999/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  Your eyes glow red.
+
+730/730 HP  984/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You are surrounded by a force shield.
+
+730/730 HP  979/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You now possess magical powers of avoidance.
+
+730/730 HP  954/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You make your appearance look blurred.
+
+730/730 HP  939/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You can now sense anger in your immediate area.
+
+730/730 HP  899/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+You feel gills growing on your neck!
+
+730/730 HP  884/999 MP  1022/1022 mv  887tnl
+Lv 35  G 84722 | A Corridor in the Labyrinth (N)
+>>  
+
+Your mystic might fades away.
+
+Your body softens.
+
+Global Quest: Dartan has completed Global Quest # 6720.
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+Global Quest: Chewik has completed Global Quest # 6720.
+Global Quest: No active players remaining. Global Quest # 6720 is now over.
+
+You see the grey moon rising in the east.
+
+You feel less aware of your surroundings.
+You no longer detect invisibility.
+
+The detect magic wears off.
+
+Yelsem the poor farmboy chants the phrase 'losmahog ebrir'.
+
+You are no longer able to breathe underwater.
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+You notice the grey moon falling to the west.
+
+INFO: All please welcome Zepthion, Aardwolf's newest Eldar Necromancer!
+
+[Newbie] (Helper) Alison: Hey Zepthion, welcome to Aard!
+
+You can no longer sense anger.
+
+Ratel questions 'need help cr at slaughterhouse am in area again'
+
+You see the black moon rising in the east.
+
+Ani answers 'alright'
+
+Character autosaved at Wed Jul 26 10:31:16 2023.
+
+[Newbie] (Advisor) Guinness: Hello, Zepthion!! Welcome to Aardwolf! :)
+
+You are no longer invisible.
+
+Ratel questions 'thanks alot'
+
+Your force shield shimmers then fades away.
+
+You can no longer avoid some attacks.
+
+A fiery, gentle breeze blows from the west.
+The sun rises into the clear blue sky.
+
+You are no longer blurred.
+
+A troglodyte arrives from the north.
+
+You notice the black moon falling to the west.
+
+Global Quest: Global Quest # 6721 has been won by Eake - 15th win.
+
+Global Quest: Global Quest # 6723 has been won by Athlau - 259th win.
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+Your eyes glaze over.
+
+A half-orc maiden chants the phrase 'gar ntigs'.
+A half-orc maiden's muscles surge with heightened power!
+
+You see the grey moon rising in the east.
+
+You notice the grey moon falling to the west.
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+You see the white moon rising in the west.
+
+Character autosaved at Wed Jul 26 10:46:19 2023.
+
+A troglodyte chants the phrase 'agin'.
+
+Feast questions 'I'm considering classchange to rebuild my instinct and mastery - not that it really
+matters much at my level, but also planning future purchases. '
+
+Kazul answers 'prolly best to wait till SH but you do you :)'
+
+Someone chants the phrase 'zgeblod'.
+
+Feast questions 'Just curious, how come? I ended up with 1000-some banked trains somehow. '
+
+Kazul answers 'oh you mean stay the same class but redo mast and inst?'
+
+Global Quest: Global Quest # 6724 has been won by Robbe - 13th win.
+
+Feast questions 'If I rebuild several low level masteries or instincts into a single higher level
+one, I will be charged the difference it would've cost to buy it outright?'
+
+INFO: Raaigar has been reborn as a Vampire Cleric.
+
+INFO: Raaigar has entered (HARDCORE) mode!
+
+Kazul answers 'yeah like you may not be able to buy as many as you have in a single one because of
+the increasing cost'
+
+Feast answers 'Aye, I want to stay barbarian but curious about purchasing additional instinct '
+
+Global Quest: Global Quest # 6725 has been won by Pringle - 902nd win.
+Global Quest: Global Quest # 6725 will go into extended time for 5 more minutes.
+
+Global Quest: Athlau has completed Global Quest # 6725.
+
+Feast answers 'That's what I figured, but at least it sounds like I don't have to think about it too
+hard ir micromanage it '
+
+Kazul answers 'personally at your tier i wouldnt worry about instinct/mastery purchases yet'
+
+Defcon gossips 'thanks for the aardword that i can resell later :)'
+
+Defcon questions 'what do aardwords do anyways?'
+
+You hear the Queen's echoing cackle gloating over your predicament.
+
+A tepid, moderate wind blows from the east.
+A storm begins to form.
+
+You notice the white moon falling to the east.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:56:40.592

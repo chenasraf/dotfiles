@@ -136,7 +136,7 @@
 		<key>DD729E55-89F3-422C-9EEF-B65F48ACE7B5</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>gaard</string>
 			<key>text</key>
