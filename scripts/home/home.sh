@@ -47,6 +47,25 @@ home() {
     install | i)
       source $DOTFILES/install.sh
       ;;
+    m | mudlet)
+      shift
+
+      sub="$1"
+
+      case $sub in
+        backup | b)
+          rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $HOME/.config/mudlet $DOTFILES/.config/
+          ;;
+        restore | r)
+          rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
+          ;;
+        *)
+          echo_red "No command or invalid command supplied."
+          __home_print_help 0
+          return 1
+          ;;
+      esac
+      ;;
     dropzone | dz)
       shift
       dz_lib="$HOME/Library/Application Support/Dropzone"

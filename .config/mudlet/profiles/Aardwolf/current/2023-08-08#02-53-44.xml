@@ -1254,7 +1254,7 @@ echo_tgt_switch()</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>recall</commandButtonDown>
+					<commandButtonDown>cast 'word of recall'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
