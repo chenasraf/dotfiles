@@ -22443,3 +22443,3760 @@ while you're there.
 [ ALERT ] - Socket got disconnected.
             Reason: The remote host closed the connection
 [ INFO ]  - Connection time: 01:32:29.489
+                
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 200         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Mon Aug  7 19:47:05 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+On the Nidavellir Layer of Gladsheim
+  You are on the third layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north south west up down ]
+There are 201 players on, the most on this reboot was 262.
+There are 198 players using compression.
+
+INFO: Double experience is running in honor of Athlau reaching superhero. - 5 minutes left.
+
+PERSONAL: You have 1 unread personal note.
+
+LOTTERY : Current lottery jackpot is at 40,000,000 gold.
+
+1381/1381 HP  1275/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NSWUD)
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+>>    
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+
+Tag option map turned ON
+
+1381/1381 HP  1275/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NSWUD)
+>>    
+
+1381/1381 HP  1275/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NSWUD)
+>>    The [Recruit] Leather Backpack contains:
+     (K) an Aylorian Hammer
+     (K) a sticky green flyswatter
+     (K) (Invis) (Magic) -=< Clasp of the Keeper >=-
+     (K) (Magic) a tiny wooden boat
+( 2) (K) (Magic) (Glow) (Hum) elixir of protection
+     (K) (Magic) a leather-bound book
+     (K) (Magic) a fishing permit
+     (K) a fishing pole
+     (K) (Magic) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+1381/1381 HP  1275/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NSWUD)
+>>    
+You have the following daily blessing active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 54 mobs killed will reward double experience              02:52:06     
+
+You received your last daily blessing at 07 Aug 2023 11:29:49.
+
+You can receive a new daily blessing in 7 hours, 52 minutes and 6 seconds.
+
+You have 2 daily blessing resets available.
+
+1381/1381 HP  1275/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NSWUD)
+>>    
+
+Character autosaved at Tue Aug  8 02:37:47 2023.
+
+s
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Nidavellir Layer of Gladsheim
+  You are on the third layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north east south west down ]
+     A single gold coin.
+(Golden Aura) (White Aura) A gigantic titan stands here towering over you.
+
+1381/1381 HP  1328/1711 MP  1118/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+hunt 1.moon dog
+No one in this area by the name '1.moon dog'.
+
+1381/1381 HP  1328/1711 MP  1118/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+where 1.moon dog
+There is no 1.moon dog around here.
+
+1381/1381 HP  1328/1711 MP  1118/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+
+
+You see the grey moon rising in the east.
+
+where 1.moon dog
+There is no 1.moon dog around here.
+
+1381/1381 HP  1417/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+
+You notice the white moon falling to the east.
+
+cp ch
+* a moon dog (The Upper Planes)
+* a shadowy vision (Tilule Rehabilitation Clinic)
+
+You have 6 days, 8 hours and 50 minutes left to finish this campaign.
+You may take a campaign at this level.
+
+1381/1381 HP  1469/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+
+
+INFO: 1 minute of bonus experience remaining.
+
+You no longer absorb magical attacks.
+
+A titan leaves down.
+
+You notice the grey moon falling to the west.
+INFO: Bonus experience has now expired.
+
+A tepid, moderate wind blows from the south.
+It starts to rain a little.
+
+A titan arrives from the south.
+
+A titan leaves north.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+1381/1381 HP  1696/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+
+
+The magics of the Lower Planes renew.
+
+A tepid, gentle breeze blows from the southeast.
+The sun rises into the clear blue sky.
+
+You can no longer sense anger.
+
+You see the black moon rising in the east.
+
+Your skin feels soft again.
+
+Kinjin questions 'bout how many tp does it take to max tpenchant a t9 weapon?'
+
+A bariaur arrives from the east.
+
+You can no longer avoid some attacks.
+
+A titan arrives from the east.
+
+A bariaur leaves west.
+
+INFO: All please welcome Qyy, Aardwolf's newest Elf Elementalist!
+
+Your force shield shimmers then fades away.
+
+Ospario answers 'wouldnt it be potentially up to 145? or does the hr/dr already on it coult against
+half weapon level? or am i misremembering the formula?'
+
+You feel yourself slow down.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+1381/1381 HP  1696/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESWD)
+>>    
+
+
+Ospario answers 'count*'
+
+A titan arrives from the east.
+
+Character autosaved at Tue Aug  8 02:52:49 2023.
+
+Ospario answers 'oops 290'
+
+You are no longer blurred.
+
+The magics of the Lower Planes renew.
+
+You see the grey moon rising in the east.
+
+A thief einheriar chants the phrase 'rafris'.
+
+A cleric einheriar arrives from the west.
+
+A moderate wind blows from the west.
+It starts to rain a little.
+
+You notice the black moon falling to the west.
+
+A titan leaves east.
+
+Ospario answers 'i guess it should be less than but up to 232, sorry a non t9 is answering but i
+think final answer is accurate'
+
+Global Quest: Global Quest # 129 has been won by Cooler - 5364th win.
+
+You feel almost blind at the loss of your magical sight.
+
+You notice the grey moon falling to the west.
+
+You feel less perceptive.
+
+Your mystic might fades away.
+
+Your body softens.
+
+Your pulse slows to a normal rate.
+
+A titan leaves north.
+
+Kinjin answers 'thanks'
+
+A bitter, strong wind blows from the east.
+A blizzard starts to beat down on you.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+1381/1381 HP  1696/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESUD)
+>>    
+
+
+INFO: The player rankings have been updated.
+
+[Newbie] Qyy: Hi, I am doing the academy
+
+where 1.moon dog
+There is no 1.moon dog around here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESUD)
+>>    
+
+
+[Newbie] Qyy: Is this game fun?
+
+You are no longer invisible.
+ca invis
+
+You fade out of existence.
+
+1381/1381 HP  1686/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESUD)
+>>    
+
+
+## Aardwolf moves into the Season of Suffering. ##
+
+clist
+
+Clan name                                 Short    Members  Active Level Nopk
+-------------------------------------- ----------- -------  ------ ----- ----
+The Wolf Administration                wolf             11      11   200    N
+The Lone Adventurers                   loner            52       4     0    Y
+The Outcast Clan of Shame              outcast        1133      23     0    N
+The Fellowship of the Twin Lobes       twinlobe         56      15    10    N
+The Watchmen of Aardwolf               watchmen        128      36     1    N
+The Seekers                            seekers          25       9   201    Y
+The Emerald Knights                    emerald         210      48   201    N
+The Order of Light                     light           204      63     1    N
+The Children of Baalzamon              baal            151      41   201    N
+The Hook Clan                          hook            159      50     1    N
+Order of the Bard                      bard             39       8    15    Y
+Crusaders of the Nameless One          crusader         58      15    15    Y
+The Xunti Cult                         xunti            36      14    15    N
+Clan Imperium                          imperium         62       8   200    N
+The Crimson Horde                      crimson         148      27     1    N
+Retribution                            retribution      84      20   201    N
+The Great Circle of Druids             druid            65      11     1    N
+The Tribes of the Amazon               amazon           61      15   200    Y
+The Soul Pyre                          pyre             53      16   150    N
+Masaki Clan                            masaki          108      46   200    N
+Dark Templars of Rhabdo Rana           rhabdo           60      14   201    N
+Knights of Perdition                   perdition        29      11     0    N
+Loqui                                  loqui           141      38   201    N
+The Midgaardian Publishing Group       gaardian         33      14   100    Y
+The Creation of Tao                    tao              36      14   201    Y
+House of Touchstone                    touchstone       71      18   100    Y
+Boot Camp                              boot            301     144    15    Y
+
+For more information on each clan, use : 'Claninfo {short name}'
+Default inactive days is 90. Use 'clist <days>' for other settings.
+For clan membership listings, see 'Help Roster'
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NESUD)
+>>    
+
+The magics of the Lower Planes renew.
+
+You see the white moon rising in the west.
+
+help dark templars
+There is no help with that keyword.
+Try looking at 'help search <text>' to find helpfiles. For example if you were
+looking for help on scan, 'help search scan' would show the keywords.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+help rhabdo
+----------------------------------------------------------------------------
+Help Keywords : Rhabdo.
+Help Category : Clans.
+Related Helps : Clan.
+Last Updated  : 2009-09-17 21:51:41.
+----------------------------------------------------------------------------
+In another dimension, the battle for the world was not won by the forces
+of good and the demon spawn ravaged the world for centuries until every
+source of life was extinguished. As the demons fed upon each other, one of
+them rose to the top, Zhamet, deemed himself Lord of the globe, and turned
+it into an Inferno as he waged war upon those who could challenge him. But
+soon Zhamet ruled upon a shell of a planet, a black lifeless husk where the
+only forms of life were his legions of the Damned. He needed a new toy.
+Reaching across the infinite choices of time, the Demon King found
+Aardwolf and stretched forth a claw to touch the planet.
+
+The followers of Zhamet were spreading like plague on Aardwolf, bringing
+his name and bloodshed along. They fought insanely, they slaughtered their
+enemies without mercy, they died quickly too. Over the years it was all
+the same. Some of the templar began to feel uneasy about that and among
+them Cho-Manno. He spent years in the temple library looking for a way to
+stop this madness. And he found it. Long time ago, during the war of
+demons, Zhamet defeated an opposing spirit called Ramos, who was fighting
+for the good and banished him to a dimension he could not leave. Secretly
+Cho-Manno gathered templars with similar opinion on Zhamet's acting and
+they performed a ritual to summon Ramos and succeeded. Zhamet was so
+focused on conquering more and more for his own that he haven't noticed the
+threat rising in his ranks. Ramos taught his followers skills that would
+help them against the dark minions and finally they launched a massive
+attack on Zhamet's fortress amidst the planes. Zhamet called his minions
+and soon the dark templar emerged from the warp gates and a large battle
+began. The rebels were heavily outnumbered, so they summoned Ramos himself
+to fight Zhamet and bring victory to their side. And so Ramos attacked
+Zhamet himself. After a long fight Zhamet managed to hit Ramos with a
+deadly blow and all seemed lost for the rebel Templar. But Ramos channeled
+all his remaining powers through his body and threw them at Zhamet. The
+godly essences fought in Zhamet's body, melted together killing both Zhamet
+and Ramos, and formed a new god, Dak'kon.
+
+When their gods disappeared the templar stopped without breath. But soon
+the fight started again. Seeing this Dak'kon unleashed his unspeakable
+powers and all warriors froze at once. And he spoke to them with a voice of
+authority. He showed them that both holy fury and evil power lead only to
+death. He showed them that he is BOTH Zhamet and Ramos and that their kind
+will only survive if they fight together. He told them that it is only
+their faith that can keep him alive and their kind strong. He told them
+that he'll bring a new blood, heroes and villains, those that will help
+them restore their order. And so they started a new life. Shadow Wardens,
+Lightbringers and the Keepers of balance existed together, growing strong
+in faith to Dak'kon, performing rituals to his name and fighting those who
+dared to oppose them. And they grew more strong than ever before.
+
+Dak'kon's Web Temple contains more info about the templars and their ways
+(url in 'claninfo rhabdo').
+----------------------------------------------------------------------------
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+A titan arrives from the north.
+
+claninfo rhabdo
+
+    Clan Name: [ Dark Templars of Rhabdo Rana ]
+------------------------------------------------------------------
+Leaders  : [ Asterax      ] [ Grae         ]  Members  : [  60 ]
+           [ Alessandrew  ] [ Stormlord    ]  Tax Rate : [   0 ] 
+           [ Cooler       ]                   Min Level: [ 201 ] 
+Deity    : [ Dak'kon                       ]
+------------------------------------------------------------------
+        Male Rankings                    Female Rankings
+  [ Dark Zealot          ]          [ Dusk Ranter          ]
+  [ Somber Liege         ]          [ Sable Ardent         ]
+  [ Obscure Fiend        ]          [ Ebon Serpent         ]
+  [ Death Knight         ]          [ Twilight Templar     ]
+  [ Solemn Augur         ]          [ Tainted Siren        ]
+  [ Dread Guardian       ]          [ Haze Succubus        ]
+  [ Eclipse Lord         ]          [ Shaded Mistress      ]
+------------------------------------------------------------------
+Clan Recall?       : [Y]     Clan Donate Room? : [N]
+Clan Death Recall? : [Y]     Clan Jail?        : [N]
+Clan Morgue?       : [Y]     Clan Skill?       : [Demonform]
+                                                 [Rage of Insanity]
+
+Web Page   : https://rhabdo.ghaan.net
+Public Hall: [No way]
+------------------------------------------------------------------
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+
+Someone leaves west.
+
+A bariaur arrives from below.
+
+nb Hi Qyy
+[Newbie]: Hi Qyy
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+
+nb I am enjoying it myself, give it a try and decide if you like it
+[Newbie]: I am enjoying it myself, give it a try and decide if you like it
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+
+A tepid, strong wind blows from the northeast.
+A storm begins to form.
+
+nb Feel free to ask questions and help here
+[Newbie]: Feel free to ask questions and help here
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+
+frie
+You are friends with : 
+  1) - Gorsk        (Offline)
+  2) - Shravani     (Offline)
+  3) - Yerald       (Online)        (Invis)               
+
+'Friend wannabe' will show people who want to be your friend.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+ft *wave
+(Friend): You wave.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+1381/1381 HP  1696/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NEWUD)
+>>    
+
+
+e
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Nidavellir Layer of Gladsheim
+  You are on the third layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north south west up down ]
+(White Aura) A strange centaur like creature is here.
+
+1381/1381 HP  1711/1711 MP  1118/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (NSWUD)
+>>    
+d
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Muspelheim Layer of Gladsheim
+  You are on the second layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north east south west up down ]
+
+1381/1381 HP  1711/1711 MP  1117/1119 mv  817tnl  
+Lv 62  G 324178 | On the Muspelheim Layer of Gladsheim (NESWUD)
+>>    
+e
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Muspelheim Layer of Gladsheim
+  You are on the second layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north east south west up down ]
+(White Aura) A magically endowed mage stands here eyeing you.
+(White Aura) A gigantic titan stands here towering over you.
+
+1381/1381 HP  1711/1711 MP  1116/1119 mv  817tnl  
+Lv 62  G 324178 | On the Muspelheim Layer of Gladsheim (NESWUD)
+>>    
+[Newbie] Qyy: thank you 
+
+u
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Nidavellir Layer of Gladsheim
+  You are on the third layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: east south west up down ]
+
+1381/1381 HP  1711/1711 MP  1115/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (ESWUD)
+>>    
+where 1.moon dog
+There is no 1.moon dog around here.
+
+1381/1381 HP  1711/1711 MP  1115/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (ESWUD)
+>>    
+cp ch
+* a moon dog (The Upper Planes)
+* a shadowy vision (Tilule Rehabilitation Clinic)
+
+You have 6 days, 8 hours and 22 minutes left to finish this campaign.
+You may take a campaign at this level.
+
+1381/1381 HP  1711/1711 MP  1115/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (ESWUD)
+>>    
+
+Character autosaved at Tue Aug  8 03:07:52 2023.
+
+crc; rt upper
+cast 'word of recall'
+You cannot recall from this room.
+
+1381/1381 HP  1681/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (ESWUD)
+>>    
+You cannot run to The Upper Planes.
+Note: Use the Amulet of the Planes.
+
+1381/1381 HP  1681/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Nidavellir Layer of Gladsheim (ESWUD)
+>>    
+d
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Muspelheim Layer of Gladsheim
+  You are on the second layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north east south west up down ]
+(White Aura) A magically endowed mage stands here eyeing you.
+(White Aura) A gigantic titan stands here towering over you.
+
+1381/1381 HP  1681/1711 MP  1118/1119 mv  817tnl  
+Lv 62  G 324178 | On the Muspelheim Layer of Gladsheim (NESWUD)
+>>    
+d
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+[::(error): Unable to create room - no room id given by mud ::]
+On the Asgardian Layer of Gladsheim (G)
+  You are on the first layer of Gladsheim.  You are in a realm built upon
+giant shifting rivers of earth that form vast arches through empty space.  
+
+[ Exits: north east south west up ]
+(White Aura) A per stands on guard here looking for evil to vanquish!
+(Charmed) A cute, playful kitten is sleeping here.
+
+1381/1381 HP  1681/1711 MP  1117/1119 mv  817tnl  
+Lv 62  G 324178 | On the Asgardian Layer of Gladsheim (NESWU)
+>>    
+crc; rt upper
+cast 'word of recall'
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru (showdesc
+fiendish).
+
+1381/1381 HP  1651/1711 MP  1117/1119 mv  817tnl  
+Lv 62  G 324178 | The Grand City of Aylor (NESWUD)
+>>    
+You cannot run to The Upper Planes.
+Note: Use the Amulet of the Planes.
+
+1381/1381 HP  1651/1711 MP  1117/1119 mv  817tnl  
+Lv 62  G 324178 | The Grand City of Aylor (NESWUD)
+>>    
+
+
+hold 'amulet planes'; enter; hold brush
+You stop holding something.
+You hold the amulet of the planes in your hand.
+
+1381/1381 HP  1686/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Grand City of Aylor (NESWUD)
+>>    WHOOOOOOOOOOOOSH!
+The Lower Astral Plane (G)
+  There is a note here, listing the destination of each of the pools. 
+Perhaps you should read it?  
+
+[ Exits: east ]
+     YOU CAN ONLY ESCAPE AN ASTRAL PLANE FROM THE FIRST ROOM YOU ENTER!
+
+1381/1381 HP  1686/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (E)
+>>    You do not have that item.
+
+1381/1381 HP  1686/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (E)
+>>    
+read graffiti
+> 1:Gladsheim  2:Pendemonium  3:Hades  4:Gehenna  5:Acheron  6:Twin Paradises  7:Arcadia  8:Seven
+Heavens  9:Swordbreaker's Hoard  10:Elysium  11:Beastlands  12:Realm of the Zodiac  13:Thandeld's 
+Conflict  14:Nine hells.
+ 
+     - Sietske, Sun Mar 12 15:39:33 2006.
+
+1381/1381 HP  1686/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (E)
+>>    
+
+
+hunt 1.moon dog
+No one in this area by the name '1.moon dog'.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (E)
+>>    
+where 1.moon dog
+There is no 1.moon dog around here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (E)
+>>    
+
+
+e
+The Lower Astral Plane (G)
+  This pool leads to Gladsheim, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to Pandemonium, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to Hades, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    The Lower Astral Plane (G)
+  This pool leads to Gehenna, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Acheron, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to the Twin Paradises, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Arcadia, an upper plane.
+
+[ Exits: east west ]
+( 2) A small cap sits on the floor.
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to the Seven Heavens, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to Swordbreaker's Hoard.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+w
+The Lower Astral Plane (G)
+  This pool leads to the Seven Heavens, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+w
+w
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Arcadia, an upper plane.
+
+[ Exits: east west ]
+( 2) A small cap sits on the floor.
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    The Lower Astral Plane (G)
+  This pool leads to the Twin Paradises, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+w
+w
+>>    The Lower Astral Plane (G)
+  This pool leads to Acheron, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+w
+>>    The Lower Astral Plane (G)
+  This pool leads to Gehenna, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+w
+>>    The Lower Astral Plane (G)
+  This pool leads to Hades, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    The Lower Astral Plane (G)
+  This pool leads to Pandemonium, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+w
+>>    The Lower Astral Plane (G)
+  This pool leads to Gladsheim, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+w
+The Lower Astral Plane (G)
+  There is a note here, listing the destination of each of the pools. 
+Perhaps you should read it?  
+
+[ Exits: east ]
+     YOU CAN ONLY ESCAPE AN ASTRAL PLANE FROM THE FIRST ROOM YOU ENTER!
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (E)
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to Gladsheim, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to Pandemonium, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Hades, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Gehenna, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Acheron, a lower plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to the Twin Paradises, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    The Lower Astral Plane (G)
+  This pool leads to Arcadia, an upper plane.
+
+[ Exits: east west ]
+( 2) A small cap sits on the floor.
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to the Seven Heavens, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+e
+The Lower Astral Plane (G)
+  This pool leads to Swordbreaker's Hoard.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+e
+>>    
+The Lower Astral Plane (G)
+  This pool leads to Elysium, an upper plane.
+
+[ Exits: east west ]
+     (Glow) A pool of water lies on the ground here.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | The Lower Astral Plane (EW)
+>>    
+Global Quest: Global Quest # 132 has been won by Tryllus - 1141st win.
+
+
+enter pool
+"pool"
+You step into an astral pool and arrive in...
+On the Amoria layer of the Elysium (G)
+  You are on the first layer of the Elysium.  All of the Elysium is
+bordered along the banks of the mighty river, Oceanus.  The land on both
+sides of the wide river is filled with pines and sweet-smelling flowering
+trees.  
+
+[ Exits: north east south west up ]
+A strange-looking, man-sized dog walks about here sniffing the air.
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  817tnl  
+Lv 62  G 324178 | On the Amoria layer of the Elysium (NESWU)
+>>    
+
+
+ca 'flame arrow' 'moon dog'
+ca pois 'moon dog'
+ca with 'moon dog'
+You fade into existence.
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a moon dog! [322]
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a moon dog! [303]
+Your flaming arrow <*><-:-><*> SLAUGHTERS <*><-:-><*> a moon dog! [341]
+A moon dog is showing a few battle scars.
+
+FIGHTING!
+1381/1381 HP  1671/1711 MP  1119/1119 mv  817tnl
+ Enemy: 55%HP (mob) | 100% HP (you) >> 
+ca 'flame arrow'
+
+A moon dog dodges your attack.
+You blink out of existence and avoid a moon dog's attack.
+You blink out of existence and avoid a moon dog's attack.
+You blink out of existence and avoid a moon dog's attack.
+A moon dog's trip misses you. [0]
+
+FIGHTING!
+1381/1381 HP  1671/1711 MP  1119/1119 mv  817tnl
+ Enemy: 55%HP (mob) | 100% HP (you) >> 
+A moon dog looks very ill.
+
+FIGHTING!
+1381/1381 HP  1651/1711 MP  1119/1119 mv  817tnl
+ Enemy: 55%HP (mob) | 100% HP (you) >> 
+ca 'flame arrow'
+
+Your blast -=- VAPORIZES -=- a moon dog! [119]
+You blink out of existence and avoid a moon dog's attack.
+You blink out of existence and avoid a moon dog's attack.
+A moon dog's pound OBLITERATES you. [42]
+A moon dog has quite a few wounds.
+
+FIGHTING!
+1339/1381 HP  1651/1711 MP  1119/1119 mv  817tnl
+ Enemy: 50%HP (mob) | 96% HP (you) >> 
+Your strength-draining touch <->*<=> WASTES <=>*<-> a moon dog! [202]
+Your strength-draining touch <->*<=> WASTES <=>*<-> a moon dog! [214]
+A moon dog has some very nasty wounds.
+
+FIGHTING!
+1339/1381 HP  1621/1711 MP  1119/1119 mv  817tnl
+ Enemy: 31%HP (mob) | 96% HP (you) >> 
+ca 'flame arrow'
+
+Your blast <-==-> ATOMIZES <-==-> a moon dog! [121]
+You dodge a moon dog's attack.
+A moon dog's pound OBLITERATES you. [44]
+A moon dog has some very nasty wounds.
+
+FIGHTING!
+1295/1381 HP  1621/1711 MP  1119/1119 mv  817tnl
+ Enemy: 25%HP (mob) | 93% HP (you) >> 
+ca 'flame arrow'
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a moon dog! [307]
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a moon dog! [330]
+A flaming spear of fire blasts a moon dog out of existence!! It is DEAD!
+You receive 41 experience points.
+You receive 41 bonus experience points from your daily blessing.
+You have 53 daily blessing bonus experience kills remaining.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+You get 1,439 gold coins from the flamed corpse of a moon dog.
+Ayla gives you 29 gold coins for the flamed corpse of a moon dog.
+
+1295/1381 HP  1581/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | On the Amoria layer of the Elysium (NESWU)
+>>    
+Cast flame arrow on whom?
+
+1295/1381 HP  1581/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | On the Amoria layer of the Elysium (NESWU)
+>>    Cast flame arrow on whom?
+
+1295/1381 HP  1581/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | On the Amoria layer of the Elysium (NESWU)
+>>    Cast flame arrow on whom?
+
+1295/1381 HP  1581/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | On the Amoria layer of the Elysium (NESWU)
+>>    You still have to kill * a shadowy vision (Tilule Rehabilitation Clinic)
+
+You have 6 days, 8 hours and 19 minutes left to finish this campaign.
+You may take a campaign at this level.
+
+1295/1381 HP  1581/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | On the Amoria layer of the Elysium (NESWU)
+>>    
+tgt shadowy vision
+Target switched to: 1.shadowy vision
+
+1295/1381 HP  1581/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | On the Amoria layer of the Elysium (NESWU)
+>>    
+crc; rt Tilule
+cast 'word of recall'
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+[AFK] (Player) (Translucent) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru (showdesc
+fiendish).
+
+1295/1381 HP  1551/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | The Grand City of Aylor (NESWUD)
+>>    
+Skipping run prefix - already at Aylor recall.
+Running to: Tilule Rehabilitation Clinic
+
+1295/1381 HP  1551/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | The Grand City of Aylor (NESWUD)
+>>    Whitewind Avenue (G) (1119)
+
+Phoenix Square (G) (1119)
+
+Starlight Way - East (G) (1119)
+
+Starlight Way - East (1119)
+
+Starlight Way - East (G) (1119)
+
+Starlight Way - East (G) (1119)
+
+Starlight Way - East (1119)
+
+Starlight Way - East (1119)
+
+Eastern Entrance - Starlight Way (1119)
+
+Eastern High Road (1119)
+
+Eastern High Road (1118)
+
+Eastern High Road (1117)
+
+A bridge over the Dragon River (1116)
+
+Eastern High Road (1115)
+
+The citizens of the world awaken to a new day.
+Eastern High Road (1114)
+
+Eastern High Road (1113)
+
+Eastern High Road (1112)
+
+Eastern High Road (1111)
+
+The Tothmeer Trail (G) (1110)
+
+Mesolarian Grassland (1109)
+
+Mesolarian Grassland (1108)
+
+Mesolarian Grassland (1118)
+
+Mesolarian Grassland (1117)
+
+The Tothmeer Trail (1116)
+
+The Tothmeer Trail (1115)
+
+The Tothmeer Trail (1114)
+
+A Cluster of Tall Trees (1113)
+
+The Tothmeer Trail (1112)
+
+The Tothmeer Trail (1111)
+
+The Tothmeer Trail (1110)
+
+The Tothmeer Trail (1109)
+
+The Ancient Reman Road (1108)
+
+The Tothmeer Trail (1107)
+
+The Tothmeer Trail (1106)
+
+The Tothmeer Trail (1105)
+
+The Tothmeer Trail (1104)
+
+The Dragon River (1103)
+
+The Tothmeer Trail (1102)
+
+The Tothmeer Trail (1101)
+
+The Tothmeer Trail (1100)
+
+Mesolarian Grassland (1099)
+
+A Field of Wild Flowers (1098)
+
+Approaching a large clinic
+  You are standing before a large building to the north. It appears to have 
+been carefully constructed with large bricks and steel on the corners.
+Perhaps the builders had in mind that this establishment must withstand some 
+significant weather events. Occasionally, people rush by, heading towards the
+building. The exits west, east and south head back to the continent of 
+Mesolar.
+
+[ Exits: north east south west ]
+     A large metal sign has been posted here for visitors to read.
+
+1315/1381 HP  1603/1711 MP  1097/1119 mv  735tnl  
+Lv 62  G 325646 | Approaching a large clinic (NESW)
+>>    
+n
+Standing before double doors
+  To the north lies a large, brick building. A pair of large, glass double 
+doors are the main entryway into the building. The sign hanging above the 
+double doors reads "Tilule Rehabilitation Clinic", and clearly indicates the 
+purpose for the structure. The exit to the south leads back to the world of 
+Andolor.
+
+[ Exits: (north) south ]
+     A small cap has been tossed aside here.
+An assistant stands here, ready to help new arrivals.
+An assistant stands here, ready to help new arrivals.
+
+1315/1381 HP  1603/1711 MP  1096/1119 mv  735tnl  
+Lv 62  G 325646 | Standing before double doors ([N]S)
+>>    
+
+A wave of wounded and injured patients arrive at the clinic, ready for treatment.
+
+hunt 1.shadowy vision
+You seem unable to hunt that target for some reason.
+
+1315/1381 HP  1603/1711 MP  1096/1119 mv  735tnl  
+Lv 62  G 325646 | Standing before double doors ([N]S)
+>>    
+where 1.shadowy vision
+a shadowy vision               Entering another dimension
+
+1315/1381 HP  1603/1711 MP  1096/1119 mv  735tnl  
+Lv 62  G 325646 | Standing before double doors ([N]S)
+>>    
+
+You notice the white moon falling to the east.
+
+op n
+n
+You open the door.
+
+1345/1381 HP  1648/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | Standing before double doors (NS)
+>>    The Reception Area
+  As you enter the clinic, you first encounter the reception area. There's a 
+large wooden desk in the center of the room. On top of the desk sits a few 
+stacks of papers and various writing utensils. There are large double doors 
+to the south and waiting areas to the north and west.
+
+[ Exits: north south west ]
+     A large, wooden receptionist's desk is in the center of the room.
+     There's a directory hanging on the front of the desk.
+The clinic's receptionist stands behind the desk.
+Earshda the receptionist says, "We are currently at maximum capacity."
+Earshda the receptionist says, "Please have a seat and we will let you
+ know when a room is available."
+Earshda the receptionist stamps your hand which reads: Patient #8905
+
+1345/1381 HP  1648/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | The Reception Area (NSW)
+>>    
+
+
+n
+The Waiting Room
+  You are now standing in the northeastern section of the waiting room area.
+You can hear various noises on the other side of the eastern and northern 
+walls, but are unable to pin exactly who or what is making those noises. The 
+waiting room continues west, while the reception area lies to the south. A 
+door stands to the north, leading to the main clinic hallway.
+
+[ Exits: (north) south west ]
+     A row of plastic benches is for waiting visitors.
+
+1365/1381 HP  1688/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | The Waiting Room ([N]SW)
+>>    
+op n
+n
+You open the door.
+
+1365/1381 HP  1688/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | The Waiting Room (NSW)
+>>    A shiny hallway
+  The light that is reflecting from the walls and floor is almost overwhelming 
+to your senses. There is a door to the south with a small sign above it 
+labeled "Waiting Area". A jaunty tune can be heard in the distance as the 
+sound waves bounce through the halls. There's an intersection of hallways to 
+the east, and this hallway continues to the west.
+
+[ Exits: east south west ]
+A clinical janitor ensures the hallways remain spotless and shiny.
+
+1365/1381 HP  1688/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | A shiny hallway (ESW)
+>>    
+e
+An intersection of hallways
+  Two different hallways come to an intersection here. Due to the sufficient 
+lighting, you can see nearly to the end of each hallway. A janitor or a 
+doctor occasionally passes by, on their way to an unknown destination. The 
+noises here are loud, since the intersection funnels them to this single 
+point. The hallways continue in all directions. There is a small door in the 
+floor beneath your feet, and a stairwell that leads upwards to the second 
+floor of the clinic.
+
+[ Exits: north east south west up (down) ]
+     A first floor directory has been posted on the wall.
+A nurse roams the hallways, ensuring medications are taken on time.
+This clinical nurse makes sure everything is kept in stock.
+
+1365/1381 HP  1688/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWU[D])
+>>    
+op down
+d
+You do not have a key for the door.
+
+1365/1381 HP  1688/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWU[D])
+>>    The door is closed.
+
+1365/1381 HP  1688/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWU[D])
+>>    
+op d;d
+You do not have a key for the door.
+
+1365/1381 HP  1688/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWU[D])
+>>    The door is closed.
+
+1365/1381 HP  1688/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWU[D])
+>>    
+ca kn d
+*Click*, the door opens.
+
+1365/1381 HP  1618/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWUD)
+>>    
+op down
+d
+The door is already open.
+
+1365/1381 HP  1618/1711 MP  1118/1119 mv  735tnl  
+Lv 62  G 325646 | An intersection of hallways (NESWUD)
+>>    Entering the clinic basement
+  Upon entering the basement of the clinic, you begin hearing strange noises 
+almost immediately. You are unable to pinpoint exactly where the noises are 
+coming from, or who is making them. They sound unnatural, and very close to 
+your body; possibly in the same room. There's a ladder leading up to the main
+clinic corridor, and exits to the north and south leading deeper into the 
+basement.
+
+[ Exits: north south up (down) ]
+     A basement sign has been posted at the bottom of the stairwell.
+Someone asks, "Have you seen anything out of the ordinary down here?"
+Someone exclaims, "Don't be scared, I'm here to save the day!"
+
+1365/1381 HP  1618/1711 MP  1117/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSU[D])
+>>    
+n
+The clinic basement
+  The floor of the basement appears to be a very hard, packed dirt. Although 
+there are no people down here at the moment, it is obvious there has been in 
+the past. It is possible they come down here occasionally to store something,
+get something, or deal with some other sort of business.
+
+[ Exits: east south west ]
+     A small light hangs from the ceiling.
+
+1365/1381 HP  1618/1711 MP  1114/1119 mv  735tnl  
+Lv 62  G 325646 | The clinic basement (ESW)
+>>    
+s
+Entering the clinic basement
+  Upon entering the basement of the clinic, you begin hearing strange noises 
+almost immediately. You are unable to pinpoint exactly where the noises are 
+coming from, or who is making them. They sound unnatural, and very close to 
+your body; possibly in the same room. There's a ladder leading up to the main
+clinic corridor, and exits to the north and south leading deeper into the 
+basement.
+
+[ Exits: north south up (down) ]
+     A basement sign has been posted at the bottom of the stairwell.
+Someone asks, "Have you seen anything out of the ordinary down here?"
+Someone exclaims, "Don't be scared, I'm here to save the day!"
+
+1365/1381 HP  1618/1711 MP  1111/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSU[D])
+>>    
+
+## You start to feel hungry.
+## You start to feel thirsty.
+
+Someone chants the phrase 'detect hidden'.
+
+op down
+d
+You open the hidden trapdoor.
+
+1381/1381 HP  1652/1711 MP  1119/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSUD)
+>>    Entering a hidden lab
+  You have entered a hidden area of the clinic that sits directly below the 
+basement. It appears to be some sort of lab that the clinic uses. The rickety
+stairwell leading back up to the basement is very questionable and unsafe.
+There are very few light sources down here, making it very dark and tough to 
+see around, but you are able to see exits in all directions.
+
+[ Exits: north east south west up ]
+     A set of multi-colored vials sits on top a lab table.
+Someone acks at you!
+Someone asks, "How did you get down here?"
+Someone says, "I'll have to let the owner know."
+
+1381/1381 HP  1652/1711 MP  1116/1119 mv  735tnl  
+Lv 62  G 325646 | Entering a hidden lab (NESWU)
+>>    
+u
+Entering the clinic basement
+  Upon entering the basement of the clinic, you begin hearing strange noises 
+almost immediately. You are unable to pinpoint exactly where the noises are 
+coming from, or who is making them. They sound unnatural, and very close to 
+your body; possibly in the same room. There's a ladder leading up to the main
+clinic corridor, and exits to the north and south leading deeper into the 
+basement.
+
+[ Exits: north south up down ]
+     A basement sign has been posted at the bottom of the stairwell.
+
+1381/1381 HP  1652/1711 MP  1115/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSUD)
+>>    
+e
+Alas, you cannot go that way.
+
+1381/1381 HP  1652/1711 MP  1115/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSUD)
+s
+>>    
+The clinic basement
+  The floor of the basement appears to be a very hard, packed dirt. Although 
+there are no people down here at the moment, it is obvious there has been in 
+the past. It is possible they come down here occasionally to store something,
+get something, or deal with some other sort of business.
+
+[ Exits: north east west ]
+     A small light hangs from the ceiling.
+Someone asks, "Have you seen anything out of the ordinary down here?"
+Someone exclaims, "Don't be scared, I'm here to save the day!"
+
+1381/1381 HP  1652/1711 MP  1112/1119 mv  735tnl  
+Lv 62  G 325646 | The clinic basement (NEW)
+>>    
+n
+Entering the clinic basement
+  Upon entering the basement of the clinic, you begin hearing strange noises 
+almost immediately. You are unable to pinpoint exactly where the noises are 
+coming from, or who is making them. They sound unnatural, and very close to 
+your body; possibly in the same room. There's a ladder leading up to the main
+clinic corridor, and exits to the north and south leading deeper into the 
+basement.
+
+[ Exits: north south up down ]
+     A basement sign has been posted at the bottom of the stairwell.
+
+1381/1381 HP  1652/1711 MP  1109/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSUD)
+e
+>>    
+Alas, you cannot go that way.
+
+1381/1381 HP  1652/1711 MP  1109/1119 mv  735tnl  
+Lv 62  G 325646 | Entering the clinic basement (NSUD)
+>>    
+s
+e
+The clinic basement
+  The floor of the basement appears to be a very hard, packed dirt. Although 
+there are no people down here at the moment, it is obvious there has been in 
+the past. It is possible they come down here occasionally to store something,
+get something, or deal with some other sort of business.
+
+[ Exits: north east west ]
+     A small light hangs from the ceiling.
+
+1381/1381 HP  1652/1711 MP  1106/1119 mv  735tnl  
+Lv 62  G 325646 | The clinic basement (NEW)
+>>    Southeastern clinic basement
+  You are standing in a corner of the clinic's basement. It is fairly dark down
+here. There are no windows since the basement of the clinic is located below 
+ground level. You can hear some strange noises coming from all around you.
+What could be living down here?
+
+[ Exits: north west ]
+     (Glow) (Hum) A black portal appears to be swirling about the basement.
+     A large stack of boxes is completely sealed shut.
+Hmm. You could swear Someone has been here just a second ago. You wonder where it went ...
+
+1381/1381 HP  1652/1711 MP  1103/1119 mv  735tnl  
+Lv 62  G 325646 | Southeastern clinic basement (NW)
+>>    
+enter portal
+"portal"
+You step into a swirling black portal and arrive in...
+Entering another dimension
+  Upon entering the portal, you have landed in some sort of other dimension you
+have never seen. There's not much to be seen here. The air is very humid with
+swirls of mist in every direction. It is dark and damp here; you can barely 
+see what is in the room with you. There are exits in all directions.
+
+[ Exits: north east south west ]
+     Swirling blue mist makes it difficult to navigate here.
+     (Glow) (Hum) You manage to make out a black portal swirling about here.
+(Translucent) A haunt is here, floating around in the mist.
+(Translucent) You think you see a vision in the mist.
+(Translucent) A haunt is here, floating around in the mist.
+(Translucent) A haunt is here, floating around in the mist.
+
+1381/1381 HP  1652/1711 MP  1103/1119 mv  735tnl  
+Lv 62  G 325646 | Entering another dimension (NESW)
+>>    
+hunt 1.shadowy vision
+A shadowy vision is here!
+
+1381/1381 HP  1652/1711 MP  1103/1119 mv  735tnl  
+Lv 62  G 325646 | Entering another dimension (NESW)
+>>    
+
+
+ca 'flame arrow' 'shadowy vision'
+ca pois 'shadowy vision'
+ca with 'shadowy vision'
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a shadowy vision! [321]
+Your flaming arrow <-><-=-><-> EXTERMINATES <-><-=-><-> a shadowy vision! [293]
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a shadowy vision! [327]
+A shadowy vision has quite a few wounds.
+
+FIGHTING!
+1381/1381 HP  1666/1711 MP  1119/1119 mv  735tnl
+ Enemy: 54%HP (mob) | 100% HP (you) >> 
+
+Your blast ***** PULVERIZES ***** a shadowy vision! [109]
+You blink out of existence and avoid a shadowy vision's attack.
+You blink out of existence and avoid a shadowy vision's attack.
+A shadowy vision has quite a few wounds.
+
+FIGHTING!
+1381/1381 HP  1666/1711 MP  1119/1119 mv  735tnl
+ca 'flame arrow'
+ Enemy: 49%HP (mob) | 100% HP (you) >> 
+A shadowy vision looks very ill.
+
+FIGHTING!
+1381/1381 HP  1646/1711 MP  1119/1119 mv  735tnl
+ Enemy: 49%HP (mob) | 100% HP (you) >> 
+
+Your blast ***** PULVERIZES ***** a shadowy vision! [108]
+You blink out of existence and avoid a shadowy vision's attack.
+You dodge a shadowy vision's attack.
+A shadowy vision chants the phrase 'rogeol'.
+A shadowy vision's condemning force EXTIRPATES you. [49]
+A shadowy vision has some big nasty wounds and scratches.
+
+FIGHTING!
+1332/1381 HP  1646/1711 MP  1119/1119 mv  735tnl
+ Enemy: 44%HP (mob) | 96% HP (you) >> 
+ca 'flame arrow'
+Your strength-draining touch <*><*><*> EVAPORATES <*><*><*> a shadowy vision! [178]
+Your strength-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> a shadowy vision! [199]
+A shadowy vision has some very nasty wounds.
+
+FIGHTING!
+1332/1381 HP  1616/1711 MP  1119/1119 mv  735tnl
+ Enemy: 26%HP (mob) | 96% HP (you) >> 
+
+Your blast ***** PULVERIZES ***** a shadowy vision! [110]
+You blink out of existence and avoid a shadowy vision's attack.
+You blink out of existence and avoid a shadowy vision's attack.
+A shadowy vision needs a hospital.
+
+FIGHTING!
+1332/1381 HP  1616/1711 MP  1119/1119 mv  735tnl
+ Enemy: 21%HP (mob) | 96% HP (you) >> 
+ca 'flame arrow'
+noexp
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> a shadowy vision! [327]
+Your flaming arrow <-><-=-><-> EXTERMINATES <-><-=-><-> a shadowy vision! [300]
+A flaming spear of fire blasts a shadowy vision out of existence!! They are DEAD!
+You receive 70 experience points.
+You receive 70 bonus experience points from your daily blessing.
+You have 52 daily blessing bonus experience kills remaining.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+
+--------------------------------------------------------------
+CONGRATULATIONS! You have completed your campaign.
+                 Reward of 32 quest points added.
+                 Reward of 1 trivia point added.
+                 Reward of 62445 gold coins added.
+You may take a campaign at this level.
+--------------------------------------------------------------
+You receive 11 quest points bonus for your first campaign completed today.
+You get 868 gold coins from the flamed corpse of a shadowy vision.
+Ayla gives you 31 gold coins for the flamed corpse of a shadowy vision.
+
+1332/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    
+Cast flame arrow on whom?
+
+1332/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    Cast flame arrow on whom?
+
+1332/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    You will no longer receive experience. Happy questing!
+
+1332/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* You are not currently on a campaign.
+You have completed 1 campaign today.
+You may take a campaign at this level.
+
+1332/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+
+A haunt chants the phrase 'ciss'.
+
+A haunt floats east.
+
+spells
+           Spell name                 Mana  Learned  Spell#
+---------- -------------------------- ----  -------  ------
+Level 1  : Fly                          30     100%      48
+           Magic missile                 5      93%      62
+Level 3  : Shield                        5      98%      72
+Level 4  : Chill touch                  10     100%      16
+Level 5  : Continual light               5      86%      18
+Level 7  : Sleep                        15      85%      74
+           Underwater breathing         15     100%     333
+Level 8  : Night vision                 15      94%      57
+Level 9  : Blur                         15     100%     171
+           Burning hands                15      99%       7
+           Spook                        15      85%     186
+-----------------------------------------------------------
+Level 11 : Rune of ix                   20      86%      43
+Level 15 : Avoidance                    25      94%     168
+Level 16 : Banshee wail                 20      85%     170
+Level 17 : Weaken                       15      86%      81
+Level 18 : Word of recall               30     100%      82
+-----------------------------------------------------------
+Level 21 : Mystic might                 30      92%     421
+           Poison                       20     100%      66
+Level 22 : Identify                     25      90%      56
+Level 23 : Knock                        70      85%     411
+Level 24 : Shocking grasp               20      89%      73
+Level 25 : Invis                        25      96%      58
+Level 26 : Sense anger                  40      93%     235
+Level 27 : Blindness                    10      85%       6
+Level 29 : Colour spray                 25      85%      17
+-----------------------------------------------------------
+Level 30 : Dispel magic                 35      85%      38
+Level 31 : Ventriloquate                 5      85%      80
+           Wither                       30      93%     187
+Level 32 : Harden body                  30      97%     422
+           Minor creation               50      86%     176
+Level 34 : Prismatic spray              30      85%     177
+Level 35 : Haste                        20      87%      53
+Level 38 : Fireball                     30     100%      45
+-----------------------------------------------------------
+Level 40 : Cancellation                 25      85%      10
+Level 41 : Magical rush                 30      93%     428
+Level 42 : Vampiric touch               40     100%     179
+Level 44 : Charm person                 25      85%      15
+Level 46 : Teleport behind              35      85%      79
+Level 47 : Scry                        150      85%     236
+Level 48 : Absorb                       65      88%     317
+-----------------------------------------------------------
+Level 50 : Enchant weapon              100      85%      41
+Level 51 : Perception                   50      92%     427
+           Web                          75      85%     237
+Level 52 : Lightning bolt               40      88%      60
+Level 53 : Enchant armor               100      85%      40
+Level 55 : True seeing                  70      86%     178
+Level 58 : Flame arrow                  40      94%     173
+Level 59 : Locate object                50      85%      61
+-----------------------------------------------------------
+Level 60 : Stone skin                   50      85%      76
+Level 62 : Acid blast                   40       1%       3
+-----------------------------------------------------------
+You have 5 abilities forgotten.
+To see all skills/spells for your class, use 'allspells <class>'
+
+1366/1381 HP  1621/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+
+A haunt goes ooOOooOOoo.
+
+help acid blast
+----------------------------------------------------------------------------
+Help Keywords : 'Acid Blast'.
+Help Category : Attack Spell.
+Related Helps : Acid Stream.
+Last Updated  : 2017-08-18 19:56:09.
+----------------------------------------------------------------------------
+
+Syntax: cast 'acid blast' <target>
+Damage: acid
+Spell Number: 3
+
+Premise:
+By drawing upon the aggressive side of the water element, the proficient
+spellcaster can create a single stream of very corrosive magical acid that
+will injure their foes.  This spell works against a single foe.
+
+Spell available only to the Primary Class Mages.
+
+Primary stat: Intelligence.
+Affected by : Luck.
+
+
+----------------------------------------------------------------------------
+
+1366/1381 HP  1621/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+
+
+A haunt goes ooOOooOOoo.
+
+help search spell strength
+No helpfiles matched requested search.
+
+1381/1381 HP  1672/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+help search spell power
+No helpfiles matched requested search.
+
+1381/1381 HP  1672/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+help search spell attack
+
+1 help file contains the phrase or keyword 'spell attack'.
+Burning Hands       : Hands of fire with which to strike an enemy.           
+
+1381/1381 HP  1672/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+help burning hands
+----------------------------------------------------------------------------
+Help Keywords : 'Burning Hands'.
+Help Category : Attack Spell.
+Related Helps : Chill Touch.
+Last Updated  : 2017-07-19 23:48:06.
+----------------------------------------------------------------------------
+Syntax: Cast 'burning hands' <victim>
+Damage: fire
+Spell Number: 7
+
+This spell calls upon the power of Elemental Fire, and sends it
+streaming from the caster's hands to strike an enemy, inflicting
+damage and burning.  This spell attacks only one target.
+
+Primary stat: Intelligence.
+Affected by : Luck.
+----------------------------------------------------------------------------
+
+1381/1381 HP  1672/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Entering another dimension (NESW)
+>>    *[NOEXP]* 
+
+
+cast 'word of recall'
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru (showdesc
+fiendish).
+
+1381/1381 HP  1677/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* 
+precall; rt quest; quest request
+hold 'academy portal';enter;hold brush;d
+You stop holding the amulet of the planes.
+You hold Aylorian Academy portal in your hand.
+
+1381/1381 HP  1677/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* WHOOOOOOOOOOOOSH!
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+(Player) (Linkdead) Agathon the Wretched is sleeping here.
+
+1381/1381 HP  1677/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Outside the Aylorian Academy (NSD)
+>>    *[NOEXP]* You do not have that item.
+
+1381/1381 HP  1677/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Outside the Aylorian Academy (NSD)
+>>    *[NOEXP]* The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (White Aura) Xzx walks on black & white; does grey exist?.
+(Player) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru (showdesc
+fiendish).
+
+1381/1381 HP  1677/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* Running to: Among the Philosophes
+
+1381/1381 HP  1677/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* Whitewind Avenue (G) (1118)
+
+Phoenix Square (G) (1118)
+
+Whitewind Avenue (G) (1118)
+
+North of the Grand Plaza (G) (1118)
+
+The Grand Plaza (G) (1118)
+
+Meridian Square (G) (1118)
+
+The Grand Plaza (G) (1118)
+
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+1381/1381 HP  1677/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    *[NOEXP]* You ask Questor for a quest.
+Questor tells you 'Thank you, brave KumoGami!'
+Questor tells you 'An enemy of mine, Baron Liavango, is making vile'
+Questor tells you 'threats against Ayla! This threat must be eliminated!'
+Questor tells you 'Seek Baron Liavango out somewhere in the vicinity'
+Questor tells you 'of Baron Liavango's Balcony which is in the general area'
+Questor tells you 'of The Darkside of the Fractured Lands.'
+
+Questor tells you 'Good luck, KumoGami. Return safely!'
+Questor tells you 'You have 57 minutes to complete your quest.'
+
+1381/1381 HP  1677/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    *[NOEXP]* 
+cp req
+Questor tells you 'I have selected 13 targets for you to hunt, KumoGami.'
+Questor tells you 'Type 'campaign info' to see what you must kill.'
+Questor tells you 'Good luck in your campaign!'
+noexp
+
+1381/1381 HP  1677/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    *[NOEXP]* 
+You will now receive experience. Happy leveling!
+
+1381/1381 HP  1677/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+1381/1381 HP  1662/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    
+q inf
+You are on a quest to slay Baron Liavango!
+Baron Liavango can be found in the vicinity of Baron Liavango's Balcony which
+is in the general area of The Darkside of the Fractured Lands.
+
+1381/1381 HP  1662/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    
+score
++-------------------------------------------------------------------------+
+|                  KumoGami the Enchanting God of Spiders                 |
++-------------------------+--------------------+--------------------------+
+| Strength    : [ 37/24 ] | Race  : Half-griff | Practices    : [    212] |
+| Intelligence: [137/90 ] | Class : Mage       | Trains       : [    146] |
+| Wisdom      : [ 72/68 ] | Sub   : Enchanter  | Trivia       : [     48] |
+| Dexterity   : [ 32/19 ] | Gender: Male       | Quest points : [    272] |
+| Constitution: [ 36/23 ] | Level : 62         | Quest time   : [     57] |
+| Luck        : [ 93/86 ] |                    | Goals done   : [     16] |
++------------------------++--------------------+--------------------------+
+| Hit    : [ 1381/1381 ] | Hitroll  : [   68 ] | Weight :   248 of 432    |
+| Mana   : [ 1662/1711 ] | Damroll  : [  123 ] | Items  :    56 of 140    |
+| Moves  : [ 1118/1119 ] | Wimpy    : [  100 ] | Align  : 2310            |
+| Gold   : [     388990] |                     | Status : Standing        |
+| To Lvl : [       595 ] | Age      : [   14 ] | Hunger : 17  Hungry      |
+|                        | Hours    : [   295] | Thirst : 17  Thirsty     |
++------------------------+---------------------+--------------------------+
+| Resistances:                                                            |
+| Pierce:  148 (Armored           ) [##########--------------------------]|
+| Bash  :  -80 (Defenseless       ) [------------------------------------]|
+| Slash :  148 (Armored           ) [##########--------------------------]|
++-------------------------------------------------------------------------+
+ Type 'aff' for affects, 'attr' for stats only and 'whois' for other info.
+ Type 'resists' for detailed resistance stats.
+
+1381/1381 HP  1662/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    
+
+tgt Baron Liavango
+Target switched to: 1.Baron Liavango
+
+1381/1381 HP  1692/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    
+
+A sweltering, gentle breeze blows from the east.
+The clouds disperse, leaving a clear night sky.
+
+rt recall; rt darkside
+Running to: The Grand City of Aylor
+
+1381/1381 HP  1692/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Among the Philosophes (NESU)
+>>    The Grand Plaza (G) (1119)
+
+Meridian Square (G) (1119)
+
+The Grand Plaza (G) (1119)
+
+North of the Grand Plaza (G) (1119)
+
+Whitewind Avenue (G) (1119)
+
+Phoenix Square (G) (1119)
+
+Whitewind Avenue (G) (1119)
+
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru (showdesc
+fiendish).
+
+1381/1381 HP  1692/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Grand City of Aylor (NESWUD)
+>>    Skipping run prefix - already at Aylor recall.
+Running to: The Darkside of the Fractured Lands
+
+1381/1381 HP  1692/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Grand City of Aylor (NESWUD)
+>>    The Aylorian Temple of Ivar (G) (1119)
+
+In the Back of the Aylorian Temple (G) (1119)
+
+An Intersection in the Temple (G) (1119)
+
+Upon the Pulpit (G) (1119)
+
+East of the Aylorian Church Altar
+  You stand on the east side of the altar in the grand Aylorian Church.  To
+the north is a large wooden door that leads out to the Templar's Road of
+Andolar.  To the east is a small nook with golden curtains cascading from
+ceiling to floor.  A large mithril throne stands in the middle of the room
+on which sits a man dressed head to toe in leather armor.  Women to his left
+and right fawn over him, cooing and giggling like school girls.  
+
+[ Exits: (north) east west ]
+     Golden candlesticks holding several blood-red pillar candles trim the doorway.
+(Translucent) A luscious, translucent maiden in opaque robes busies herself maintaining the temple.
+
+1381/1381 HP  1692/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | East of the Aylorian Church Altar ([N]EW)
+>>    You open the door.
+
+1381/1381 HP  1692/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | East of the Aylorian Church Altar (NEW)
+>>    Before the Aylorian Church (1119)
+
+The Templar's Road of Andolor (1119)
+
+The Templar's Road of Andolor (1119)
+
+The Templar's Road of Andolor (1119)
+
+The Templar's Road of Andolor (1119)
+
+Northern Entrance - The Templar's Road of Andolor (G) (1119)
+
+The Blessed Aylorian Highway (1119)
+
+The Blessed Aylorian Highway (1118)
+
+The Blessed Aylorian Highway (1117)
+
+The Blessed Aylorian Highway (1116)
+
+The Blessed Aylorian Highway (1115)
+
+The Blessed Aylorian Highway (1114)
+
+The Blessed Aylorian Highway (1113)
+
+Mesolarian Grassland (1112)
+
+A field of grain (1111)
+
+A field of grain (1110)
+
+Fields near Dragon's Eye Forest (1109)
+
+Fields near Dragon's Eye Forest (1108)
+
+Mesolarian Grassland (1107)
+
+A Field of Wild Flowers (1106)
+
+Mesolarian Grassland (1105)
+
+Entrance to the Fractured Lands
+  You stand at the beginning of an old, overgrown forest path.  Nearby,
+there is a large plate embedded in the trunk of a tree.  To the north, 
+in the distance, you can see a glade of shimmering colors.
+
+[ Exits: north south ]
+
+1381/1381 HP  1692/1711 MP  1104/1119 mv  595tnl  
+Lv 62  G 388990 | Entrance to the Fractured Lands (NS)
+>>    Old Forest Path (1103)
+
+The Sage of the Fractured Lands asks, "Please, KumoGami, will you help
+ unite The Fractured Lands?"
+The Portal Glade (G)
+  You are standing in a glade full of colorful portals.  The portals are 
+arranged in a circle around the perimeter of the glade. You may want to 
+examine the 'portals' to find out more about them.
+
+[ Exits: south ]
+     The jet portal is embedded in a stump here.
+     The pearl portal is embedded in a stump here.
+     The emerald portal is embedded in a stump here.
+     The sapphire portal is embedded in a stump here.
+     The ruby portal is embedded in a stump here.
+
+1381/1381 HP  1692/1711 MP  1102/1119 mv  595tnl  
+Lv 62  G 388990 | The Portal Glade (S)
+>>    You step into the Jet Portal and arrive in...
+Edge of Megawl Swamp (G)
+  You are standing on the edge of the Megawl swamp.  To your south, you can
+see the boggy water spread out as far as your eyes can see into the ever
+growing darkness that haunts this land.  
+
+[ Exits: north south ]
+A small black imp sits on a branch here.
+A small black imp sits on a branch here.
+A small fuzzy gremlin runs about here causing mischief.
+A small fuzzy gremlin runs about here causing mischief.
+
+1381/1381 HP  1692/1711 MP  1102/1119 mv  595tnl  
+Lv 62  G 388990 | Edge of Megawl Swamp (NS)
+>>    Path through Nasty Woods
+  You have entered the darkest woods you have ever seen. The trees are so
+closely crammed together that they block out any light trying to filter in. 
+Worse is the fact that it's cold here. The trees don't seem to keep the heat
+in very well. You have the strangest feeling that someone knows you are here.
+
+[ Exits: north south ]
+     A BIG sign is here. READ IT!
+
+1381/1381 HP  1692/1711 MP  1100/1119 mv  595tnl  
+Lv 62  G 388990 | Path through Nasty Woods (NS)
+>>    
+
+
+hunt 1.Baron Liavango
+You have no idea what you're doing, but maybe Baron Liavango is south?
+
+1381/1381 HP  1711/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | Path through Nasty Woods (NS)
+>>    
+where 1.Baron Liavango
+Baron Liavango                 Baron Liavango's Balcony
+
+1381/1381 HP  1711/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | Path through Nasty Woods (NS)
+>>    
+rf balcony
+
+ You know the following relevant rooms:
+  Balcony (30542) in bard. > Show path   > Show recall path
+  Balcony Overlooking Waterfalls (31152) in crusaders. > Show path   > Show recall path
+  Stairs to the Balcony (1865) in mayhem. > Show path   > Show recall path
+  3 rooms found.
+
+
+s
+Edge of Megawl Swamp (G)
+  You are standing on the edge of the Megawl swamp.  To your south, you can
+see the boggy water spread out as far as your eyes can see into the ever
+growing darkness that haunts this land.  
+
+[ Exits: north south ]
+A small black imp sits on a branch here.
+A small black imp sits on a branch here.
+A small fuzzy gremlin runs about here causing mischief.
+A small fuzzy gremlin runs about here causing mischief.
+
+1381/1381 HP  1711/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Edge of Megawl Swamp (NS)
+>>    
+n
+Path through Nasty Woods
+  You have entered the darkest woods you have ever seen. The trees are so
+closely crammed together that they block out any light trying to filter in. 
+Worse is the fact that it's cold here. The trees don't seem to keep the heat
+in very well. You have the strangest feeling that someone knows you are here.
+
+[ Exits: north south ]
+     A BIG sign is here. READ IT!
+
+1381/1381 HP  1711/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | Path through Nasty Woods (NS)
+>>    
+s
+Edge of Megawl Swamp (G)
+  You are standing on the edge of the Megawl swamp.  To your south, you can
+see the boggy water spread out as far as your eyes can see into the ever
+growing darkness that haunts this land.  
+
+[ Exits: north south ]
+A small black imp sits on a branch here.
+A small black imp sits on a branch here.
+A small fuzzy gremlin runs about here causing mischief.
+A small fuzzy gremlin runs about here causing mischief.
+
+1381/1381 HP  1711/1711 MP  1115/1119 mv  595tnl  
+Lv 62  G 388990 | Edge of Megawl Swamp (NS)
+>>    
+n
+Path through Nasty Woods
+  You have entered the darkest woods you have ever seen. The trees are so
+closely crammed together that they block out any light trying to filter in. 
+Worse is the fact that it's cold here. The trees don't seem to keep the heat
+in very well. You have the strangest feeling that someone knows you are here.
+
+[ Exits: north south ]
+     A BIG sign is here. READ IT!
+
+1381/1381 HP  1711/1711 MP  1113/1119 mv  595tnl  
+Lv 62  G 388990 | Path through Nasty Woods (NS)
+>>    
+n
+Along the Nasty Woods
+  You have walked deep into the woods. There is a barely visible trail heading
+north. The shiftless, glowing eyes in the shadows continue their ever-present
+vigilance. Somewhere off in the distance, a wolf howls its mating call. The
+trees thin out to the south.
+
+[ Exits: north south ]
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+
+1381/1381 HP  1711/1711 MP  1112/1119 mv  595tnl  
+Lv 62  G 388990 | Along the Nasty Woods (NS)
+>>    
+n
+Deep in the Woods
+  You have pushed yet deeper into this foreboding wood. Your clothes are soaked
+from the ever-present mist, and you think that you are coming down with a 
+cold. Wonderful. You barely notice the absence of the eyes that had been 
+watching you. Only the feel of gravel on your feet brings you out of your 
+self-brooding. The smell of overgrown moss is thick in the air, and yet there
+is something more... It smells like smoke. You glance around looking for a 
+fire, but you only catch the ghostly form of woodsmoke to your west. If not 
+for the smoke, you probably never would have noticed this thin trail. You can
+go down it if you wish, although the path widens to the north.
+
+[ Exits: north south west ]
+A large grey wolf is snarling at you.
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+A pair of glowing, red eyes is hovering here.
+A bat with long fangs is here.
+
+1381/1381 HP  1711/1711 MP  1111/1119 mv  595tnl  
+Lv 62  G 388990 | Deep in the Woods (NSW)
+>>    
+n
+At the Gates
+  Out of the mist in front of you, appears a set of huge iron gates. They tower
+over 20 feet tall and appear to be securely locked. You try hacking and
+sawing at it for over an half an hour, but to no avail. They appear to be
+magically warded. Boy, where's a security guard to kill when you need one?
+
+[ Exits: (north) south ]
+A large grey wolf is snarling at you.
+A large grey wolf is snarling at you.
+A large grey wolf is snarling at you.
+A strange half-wolf, half-man creature is here.
+
+1381/1381 HP  1711/1711 MP  1110/1119 mv  595tnl  
+Lv 62  G 388990 | At the Gates ([N]S)
+>>    
+
+
+s
+Deep in the Woods
+  You have pushed yet deeper into this foreboding wood. Your clothes are soaked
+from the ever-present mist, and you think that you are coming down with a 
+cold. Wonderful. You barely notice the absence of the eyes that had been 
+watching you. Only the feel of gravel on your feet brings you out of your 
+self-brooding. The smell of overgrown moss is thick in the air, and yet there
+is something more... It smells like smoke. You glance around looking for a 
+fire, but you only catch the ghostly form of woodsmoke to your west. If not 
+for the smoke, you probably never would have noticed this thin trail. You can
+go down it if you wish, although the path widens to the north.
+
+[ Exits: north south west ]
+A large grey wolf is snarling at you.
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+A pair of glowing, red eyes is hovering here.
+A bat with long fangs is here.
+
+1381/1381 HP  1711/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Deep in the Woods (NSW)
+>>    
+w
+Outside the Cabin
+  You had followed the trail and it led you to this odd little cabin. Who would
+live out here in a place like this? The cabin is made from fallen timbers.
+Probably not cut, though there are a few axe marks in the grain. Smoke 
+filters out through a chimney on the top of the flat roof. The door stands 
+closed to the west.
+
+[ Exits: east (west) ]
+A bat with long fangs is here.
+A bat with long fangs is here.
+A bat with long fangs is here.
+
+1381/1381 HP  1711/1711 MP  1117/1119 mv  595tnl  
+Lv 62  G 388990 | Outside the Cabin (E[W])
+>>    
+e
+Deep in the Woods
+  You have pushed yet deeper into this foreboding wood. Your clothes are soaked
+from the ever-present mist, and you think that you are coming down with a 
+cold. Wonderful. You barely notice the absence of the eyes that had been 
+watching you. Only the feel of gravel on your feet brings you out of your 
+self-brooding. The smell of overgrown moss is thick in the air, and yet there
+is something more... It smells like smoke. You glance around looking for a 
+fire, but you only catch the ghostly form of woodsmoke to your west. If not 
+for the smoke, you probably never would have noticed this thin trail. You can
+go down it if you wish, although the path widens to the north.
+
+[ Exits: north south west ]
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+A pair of glowing, red eyes is hovering here.
+A bat with long fangs is here.
+
+1381/1381 HP  1711/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | Deep in the Woods (NSW)
+>>    
+w
+Outside the Cabin
+  You had followed the trail and it led you to this odd little cabin. Who would
+live out here in a place like this? The cabin is made from fallen timbers.
+Probably not cut, though there are a few axe marks in the grain. Smoke 
+filters out through a chimney on the top of the flat roof. The door stands 
+closed to the west.
+
+[ Exits: east (west) ]
+A bat with long fangs is here.
+A bat with long fangs is here.
+A bat with long fangs is here.
+
+1381/1381 HP  1711/1711 MP  1115/1119 mv  595tnl  
+Lv 62  G 388990 | Outside the Cabin (E[W])
+>>    
+
+## You are very hungry; your healing is reduced.
+## You are very thirsty; your healing is reduced.
+Global Quest: Global quest # 135 has been declared for levels 61 to 72.
+Global Quest: The quest will start in 4 ticks and will last for 81 ticks.
+Global Quest: See 'Help Global Quests', or, type 'Gquest Join 135' to take part.
+
+
+A Liavango bat chants the phrase 'detect hidden'.
+
+where 1.Baron Liavango
+Baron Liavango                 Baron Liavango's Balcony
+
+1381/1381 HP  1711/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Outside the Cabin (E[W])
+>>    
+
+There is a flash of lightning in the sky, as the magics of the Fractured Lands renew.
+
+e
+n
+Deep in the Woods
+  You have pushed yet deeper into this foreboding wood. Your clothes are soaked
+from the ever-present mist, and you think that you are coming down with a 
+cold. Wonderful. You barely notice the absence of the eyes that had been 
+watching you. Only the feel of gravel on your feet brings you out of your 
+self-brooding. The smell of overgrown moss is thick in the air, and yet there
+is something more... It smells like smoke. You glance around looking for a 
+fire, but you only catch the ghostly form of woodsmoke to your west. If not 
+for the smoke, you probably never would have noticed this thin trail. You can
+go down it if you wish, although the path widens to the north.
+
+[ Exits: north south west ]
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+A pair of glowing, red eyes is hovering here.
+
+1381/1381 HP  1711/1711 MP  1118/1119 mv  595tnl  
+Lv 62  G 388990 | Deep in the Woods (NSW)
+>>    At the Gates
+  Out of the mist in front of you, appears a set of huge iron gates. They tower
+over 20 feet tall and appear to be securely locked. You try hacking and
+sawing at it for over an half an hour, but to no avail. They appear to be
+magically warded. Boy, where's a security guard to kill when you need one?
+
+[ Exits: (north) south ]
+A bat with long fangs is here.
+A large grey wolf is snarling at you.
+A large grey wolf is snarling at you.
+A large grey wolf is snarling at you.
+A strange half-wolf, half-man creature is here.
+
+1381/1381 HP  1711/1711 MP  1117/1119 mv  595tnl  
+Lv 62  G 388990 | At the Gates ([N]S)
+>>    
+op n
+n
+You do not have a key for the gate.
+
+1381/1381 HP  1711/1711 MP  1117/1119 mv  595tnl  
+Lv 62  G 388990 | At the Gates ([N]S)
+>>    The gate is closed.
+
+1381/1381 HP  1711/1711 MP  1117/1119 mv  595tnl  
+Lv 62  G 388990 | At the Gates ([N]S)
+>>    
+ca kn n
+*Click*, the gate opens.
+
+1381/1381 HP  1641/1711 MP  1117/1119 mv  595tnl  
+Lv 62  G 388990 | At the Gates (NS)
+>>    
+op n
+n
+The gate is already open.
+
+1381/1381 HP  1641/1711 MP  1117/1119 mv  595tnl  
+Lv 62  G 388990 | At the Gates (NS)
+>>    The Castle Doors
+  You are standing in front of a pair of huge doors, forming the entrance to
+the castle. They appear to be made from hard-wrought steel and could stand
+up to an even greater assualt than the gates. You put your hand on the doors
+tentatively. There is a sharp pain and you pull your hand back quickly. It's
+as cold as ice! You look closer at the place where you had put your hand. 
+There appears to be a small hole there now. You shake your hand a little to
+get the feeling back. In the distance, thunder rumbles. The mist  seems to
+roll in to hide your eyes from your surroundings. You once again have the 
+feeling that you are being watched.
+
+[ Exits: (north) south ]
+A small man is here running errands for the despot.
+A small man is here running errands for the despot.
+A small man is here running errands for the despot.
+
+1381/1381 HP  1641/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | The Castle Doors ([N]S)
+>>    
+op n
+n
+You do not have a key for the door.
+
+1381/1381 HP  1641/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | The Castle Doors ([N]S)
+>>    The door is closed.
+
+1381/1381 HP  1641/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | The Castle Doors ([N]S)
+>>    
+ca kn n
+*Click*, the door opens.
+
+1381/1381 HP  1571/1711 MP  1116/1119 mv  595tnl  
+Lv 62  G 388990 | The Castle Doors (NS)
+>>    
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+op n
+n
+The door is already open.
+
+1381/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Castle Doors (NS)
+>>    Inside Castle Liavango
+  This is the main room of Castle Liavango. You are actually quite shocked at 
+how warm it is inside. In contrast with its exterior ugliness, it's actually 
+quite beautiful inside. Large tapestries depicting some of The Fractured 
+Land's greatest heroes line the walls. Their art work and representations are
+exquisite. Another few paintings also line the walls. One however, catches 
+your attention. It is a fine, oil painting of a VERY old woman. She has many 
+deep wrinkles in her face. There is a plaque beneath it which reads, "Our 
+Great- Grandmother Liavango. May she always be remembered." You look around 
+and also notice the several exits from this room. There is a stairway in the 
+far right corner leading up. Two hallways extend north and west, 
+respectively.
+
+[ Exits: north south west up ]
+A bald vampire is here looking for victims.
+
+1381/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Inside Castle Liavango (NSWU)
+>>    
+u
+Up the Tower
+  You are at the base of a large tower.  The stonework here is far beyond
+the works of any of the stone-mason of today.  Each stone is perfectly
+shaped, yet retains the strength of its natural state.  There is not a trace
+of mortar in the seems of any two stones.  It almost seems as if the stone
+itself is alive, breathing slowly like one asleep.  The stairs themselves
+are made of stone, a pure, white marble that resonates your every footstep
+throughout the tower, carrying it upward.  From here you can go down to the
+main room, or you can follow the winding path of the stairs up further into
+the tower.  
+
+[ Exits: up down ]
+( 2) A small curved dagger lies here.
+A small man is here running errands for the despot.
+A small man is here running errands for the despot.
+
+1381/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+spellup int;spellup wis;spellup luck;spellup stats;spellup
+Queueing spell : perception.
+
+1381/1381 HP  1576/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    You feel your concentration increase.
+
+1381/1381 HP  1526/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+No spells or skills cast.
+
+1381/1381 HP  1526/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    No spells or skills cast.
+
+1381/1381 HP  1526/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    Queueing spell : haste.
+Queueing spell : mystic might.
+Queueing spell : harden body.
+Queueing spell : magical rush.
+
+1381/1381 HP  1526/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    You feel yourself moving more quickly.
+
+1381/1381 HP  1506/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+Your magic is blessed with the luck of Ayla!
+You feel your body surge with extra power.
+
+1381/1381 HP  1476/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+You feel your body harden.
+
+1381/1381 HP  1446/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+You feel your adrenaline pump as your body speeds up.
+
+1381/1381 HP  1416/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+Queueing spell : invis.
+Queueing spell : shield.
+Queueing spell : stone skin.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : true seeing.
+Queueing spell : sense anger.
+Queueing spell : absorb.
+
+1381/1381 HP  1416/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    You fade out of existence.
+
+1381/1381 HP  1391/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+Your magic is blessed with the luck of Ayla!
+You are surrounded by a force shield.
+
+1381/1381 HP  1386/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+Your skin turns to stone.
+
+1381/1381 HP  1336/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+Your magic is blessed with the luck of Ayla!
+You now possess magical powers of avoidance.
+
+1381/1381 HP  1311/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+You make your appearance look blurred.
+
+1381/1381 HP  1296/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+You now detect the presence of those hidden.
+You now detect the presence of those invisible.
+You now sense magical properties held within artifacts.
+You now detect the presence of those who walk in shadow.
+You now detect the presence of those who walk in the light.
+You now have true sight.
+
+1381/1381 HP  1226/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+You can now sense anger in your immediate area.
+
+1381/1381 HP  1186/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+You feel a strong magical force surround your body.
+
+1381/1381 HP  1121/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Up the Tower (UD)
+>>    
+u
+Top of the Stairs
+  You have finally reached the top of the stairs. You hadn't realized just how 
+many stairs you climbed until you look down, and find the floor far below 
+you. A spike of vertigo seizes you, and you decide to stay as close to the 
+wall as possible. Above you is the ceiling and you can just make out the 
+outline of a trapdoor above you. The stairs spiral back down to the bottom of
+the tower.
+
+[ Exits: (up) down ]
+( 6) A small curved dagger lies here.
+(Red Aura) (Angry) A bald vampire is here looking for victims.
+
+1381/1381 HP  1121/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Top of the Stairs ([U]D)
+>>    
+op up
+u
+You open the trapdoor.
+
+1381/1381 HP  1121/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Top of the Stairs (UD)
+>>    The Baron's Lab
+  This room contrasts sharply with the niceties of the other rooms in the 
+castle. A look around makes your face pale, and a fit of nausea comes over 
+you. You fall to your knees and retch for several minutes, until your stomach
+is empty. Weakly, you regain your footing. A wave of dizziness comes, but it 
+soon passes. You take a deep breath and look about you better. The first 
+thing you had noticed was a large metal contraption in the middle of the 
+room. Some lifeless body is strapped hand and foot to it. You cannot tell if 
+the subject was male or female as the body has been completely drained. Near 
+the foot of the torture device, there is a large wooden bucket. It seems that
+the blood was drained from the victim drop by drop. It ran down a channel cut
+into the device's wooden base, and into the bucket. It must have been a very 
+cold and slow death. It appears that special tools were used to keep the 
+wounds cut into the body from closing. You feel yourself begin to retch 
+again, and decide it's about time to get some fresh air. There is a door to 
+the east, seeming to lead out onto a balcony.
+
+[ Exits: (east) down ]
+A small man is here running errands for the despot.
+A small man is here running errands for the despot.
+A small man is here running errands for the despot.
+A small man is here running errands for the despot.
+(Red Aura) A bat with long fangs is here.
+(Red Aura) A bat with long fangs is here.
+A small man is here running errands for the despot.
+(Red Aura) A bat with long fangs is here.
+
+1381/1381 HP  1121/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Baron's Lab ([E]D)
+>>    
+op e
+e
+You open the door.
+
+1381/1381 HP  1121/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | The Baron's Lab (ED)
+>>    Baron Liavango's Balcony
+  This is Baron Liavango's balcony.  From here you can see several miles
+away.  Through the dense trees, you manage to catch a sight of Koskun falls
+in the distance.  It is here that the baron directs his army of vampires
+against the Autumn Willow and her allies.  There's really no where to go
+from here, and you don't really feel like going back through the lab/torture
+chamber.  Maybe you should try to jump off the balcony to the courtyard
+below and make good your escape.  
+
+[ Exits: west down ]
+(Red Aura) A tall vampire is here. It appears that he is holding the moon! [QUEST]
+(Red Aura) A bat with long fangs is here.
+
+1381/1381 HP  1121/1711 MP  1119/1119 mv  595tnl  
+Lv 62  G 388990 | Baron Liavango's Balcony (WD)
+>>    
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+ca 'flame arrow' 'Baron Liavango'
+ca pois 'Baron Liavango'
+ca with 'Baron Liavango'
+You fade into existence.
+Your flaming arrow <*><-:-><*> SLAUGHTERS <*><-:-><*> Baron Liavango! [341]
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> Baron Liavango! [328]
+Baron Liavango is bleeding lightly.
+
+FIGHTING!
+1381/1381 HP  1087/1711 MP  1119/1119 mv  595tnl
+ Enemy: 76%HP (mob) | 100% HP (you) >> 
+ca 'flame arrow'
+
+Your blast -=- VAPORIZES -=- Baron Liavango! [119]
+Your blast -=- VAPORIZES -=- Baron Liavango! [115]
+Your blast -=- VAPORIZES -=- Baron Liavango! [116]
+You dodge Baron Liavango's attack.
+Baron Liavango's slash OBLITERATES you. [45]
+Baron Liavango is showing a few battle scars.
+
+FIGHTING!
+1336/1381 HP  1087/1711 MP  1119/1119 mv  595tnl
+ Enemy: 64%HP (mob) | 96% HP (you) >> Baron Liavango turns slightly green, but it passes.
+
+FIGHTING!
+1336/1381 HP  1067/1711 MP  1119/1119 mv  595tnl
+ Enemy: 64%HP (mob) | 96% HP (you) >> 
+ca 'flame arrow'
+
+Baron Liavango dodges your attack.
+Your blast -=- VAPORIZES -=- Baron Liavango! [119]
+Your blast -=- VAPORIZES -=- Baron Liavango! [119]
+You blink out of existence and avoid Baron Liavango's attack.
+You blink out of existence and avoid Baron Liavango's attack.
+Baron Liavango's slash OBLITERATES you. [45]
+Baron Liavango is showing a few battle scars.
+
+FIGHTING!
+1291/1381 HP  1067/1711 MP  1119/1119 mv  595tnl
+ Enemy: 55%HP (mob) | 93% HP (you) >> Your strength-draining touch <=-=><=-=> TEARS INTO <=-=><=-=>
+Baron Liavango! [193]
+Your strength-draining touch <-+-><-*-> CREMATES <-*-><-+-> Baron Liavango! [221]
+Baron Liavango has some big nasty wounds and scratches.
+
+FIGHTING!
+1291/1381 HP  1037/1711 MP  1119/1119 mv  595tnl
+ Enemy: 41%HP (mob) | 93% HP (you) >> 
+ca 'flame arrow'
+
+Your blast -=- VAPORIZES -=- Baron Liavango! [120]
+Your blast -=- VAPORIZES -=- Baron Liavango! [118]
+Your blast -=- VAPORIZES -=- Baron Liavango! [117]
+You dodge Baron Liavango's attack.
+You blink out of existence and avoid Baron Liavango's attack.
+You blink out of existence and avoid Baron Liavango's attack.
+Baron Liavango tries to disarm you, but fails.
+Baron Liavango has some very nasty wounds.
+
+FIGHTING!
+1291/1381 HP  1037/1711 MP  1119/1119 mv  595tnl
+ Enemy: 29%HP (mob) | 93% HP (you) >> Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> Baron
+Liavango! [322]
+Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> Baron Liavango! [308]
+Baron Liavango is gravely injured.
+
+FIGHTING!
+1291/1381 HP  997/1711 MP  1119/1119 mv  595tnl
+ Enemy: 6%HP (mob) | 93% HP (you) >> 
+ca 'flame arrow'
+
+Baron Liavango dodges your attack.
+Your blast -=- VAPORIZES -=- Baron Liavango! [118]
+Your blast misses Baron Liavango. [0]
+You blink out of existence and avoid Baron Liavango's attack.
+*Baron Liavango's slash DISEMBOWELS you! [62]
+Baron Liavango's slash OBLITERATES you. [44]
+Baron Liavango is at death's door.
+
+FIGHTING!
+1185/1381 HP  997/1711 MP  1119/1119 mv  595tnl
+ Enemy: 2%HP (mob) | 85% HP (you) >> Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> Baron
+Liavango! [323]
+A flaming spear of fire blasts Baron Liavango out of existence!! He is DEAD!
+You receive 35 experience points.
+You receive 35 bonus experience points from your daily blessing.
+You have 51 daily blessing bonus experience kills remaining.
+QUEST: You have almost completed your QUEST!
+Return to the questmaster before your time runs out.
+You get 505 gold coins from the flamed corpse of Baron Liavango.
+You get a moon wand from the flamed corpse of Baron Liavango.
+You get The Jewelled Platemail of the Darkside of the Fractured Lands from the flamed corpse of
+Baron Liavango.
+You get Longsword of the Baron from the flamed corpse of Baron Liavango.
+Ayla gives you 29 gold coins for the flamed corpse of Baron Liavango.
+
+1185/1381 HP  957/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Baron Liavango's Balcony (WD)
+>>    
+cp ch
+Cast flame arrow on whom?
+
+1185/1381 HP  957/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Baron Liavango's Balcony (WD)
+>>    Cast flame arrow on whom?
+
+1185/1381 HP  957/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Baron Liavango's Balcony (WD)
+>>    You still have to kill * demon cook (Castle Vlad-Shamir)
+* a demon berserker (Castle Vlad-Shamir) 15970
+* the cell keeper (Castle Vlad-Shamir) 15970
+* a researcher (Diamond Soul Revelation) 30029
+* a ladybug (Hedgehogs' Paradise) 15146
+* a dragonfly (Hedgehogs' Paradise) 15146
+* a playing hedgehog (Hedgehogs' Paradise) 15146
+* Lieutenant Lirat (Paradise Lost) 29585
+* a treant (Realm of Deneria) 35005
+* Beleth, princess of nightmares (The Flying Citadel) 14960
+* a sneaky squirrel (The Land of Oz) 510
+* a large vole (The Silver Volcano) 6087
+* an air sentinel (The Upper Planes)
+
+You have 6 days, 23 hours and 55 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+1185/1381 HP  957/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Baron Liavango's Balcony (WD)
+>>    
+crc
+cast 'word of recall'
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Red Aura) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (Golden Aura) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru
+(showdesc fiendish).
+
+1185/1381 HP  927/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | The Grand City of Aylor (NESWUD)
+>>    
+precall; rt quest; quest complete
+hold 'academy portal';enter;hold brush;d
+You do not have that item.
+
+1185/1381 HP  927/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | The Grand City of Aylor (NESWUD)
+>>    WHOOOOOOOOOOOOSH!
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+1185/1381 HP  927/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Outside the Aylorian Academy (NSD)
+>>    You stop holding Aylorian Academy portal.
+You hold Apprentice's Scrub Brush in your hand.
+
+1185/1381 HP  927/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Outside the Aylorian Academy (NSD)
+>>    The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Red Aura) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (Golden Aura) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru
+(showdesc fiendish).
+
+1185/1381 HP  927/1711 MP  1118/1119 mv  525tnl  
+Lv 62  G 389524 | The Grand City of Aylor (NESWUD)
+>>    Running to: Among the Philosophes
+
+1185/1381 HP  927/1711 MP  1118/1119 mv  525tnl  
+Lv 62  G 389524 | The Grand City of Aylor (NESWUD)
+>>    Whitewind Avenue (G) (1118)
+
+Phoenix Square (G) (1118)
+
+You notice the black moon falling to the west.
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+Whitewind Avenue (G) (1119)
+
+North of the Grand Plaza (G) (1119)
+
+The Grand Plaza (G) (1119)
+
+Meridian Square (G) (1119)
+
+The Grand Plaza (G) (1119)
+
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+1188/1381 HP  933/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 389524 | Among the Philosophes (NESU)
+>>    You inform Questor that you have completed your quest.
+Questor tells you 'Congratulations, KumoGami, on completing your quest!'
+Questor tells you 'As a reward, I am giving you 17 quest points and 3333 gold.'
+You gain an extra 2 quest points 'MCCP Bonus'.
+
+1188/1381 HP  933/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | Among the Philosophes (NESU)
+>>    
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+Global Quest: Global quest # 135 for levels 61 to 72 has now started.
+
+
+cp ch
+* demon cook (Castle Vlad-Shamir) 15970
+* a demon berserker (Castle Vlad-Shamir) 15970
+* the cell keeper (Castle Vlad-Shamir) 15970
+* a researcher (Diamond Soul Revelation) 30029
+* a ladybug (Hedgehogs' Paradise) 15146
+* a dragonfly (Hedgehogs' Paradise) 15146
+* a playing hedgehog (Hedgehogs' Paradise) 15146
+* Lieutenant Lirat (Paradise Lost) 29585
+* a treant (Realm of Deneria) 35005
+* Beleth, princess of nightmares (The Flying Citadel) 14960
+* a sneaky squirrel (The Land of Oz) 510
+* a large vole (The Silver Volcano) 6087
+* an air sentinel (The Upper Planes)
+
+You have 6 days, 23 hours and 54 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+1190/1381 HP  937/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | Among the Philosophes (NESU)
+>>    
+tgt demon cook
+Target switched to: 1.demon cook
+
+1190/1381 HP  937/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | Among the Philosophes (NESU)
+>>    
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+rt recall; rt vlad
+Running to: The Grand City of Aylor
+
+1192/1381 HP  943/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | Among the Philosophes (NESU)
+>>    The Grand Plaza (G) (1119)
+
+Meridian Square (G) (1119)
+
+The Grand Plaza (G) (1119)
+
+North of the Grand Plaza (G) (1119)
+
+Whitewind Avenue (G) (1119)
+
+Phoenix Square (G) (1119)
+
+Whitewind Avenue (G) (1119)
+
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Golden Aura) Lepdar is here.
+(Player) (Red Aura) (White Aura) (OPK) Forma not formatted.
+[AFK] (Player) (Translucent) (Golden Aura) (White Aura) (OPK) (TRAITOR) Fiendish the MUSHclient guru
+(showdesc fiendish).
+
+1192/1381 HP  943/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | The Grand City of Aylor (NESWUD)
+>>    Skipping run prefix - already at Aylor recall.
+Running to: Castle Vlad-Shamir
+
+1192/1381 HP  943/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | The Grand City of Aylor (NESWUD)
+>>    Whitewind Avenue (G) (1119)
+
+Phoenix Square (G) (1119)
+
+Starlight Way - East (G) (1119)
+
+Starlight Way - East (1119)
+
+Starlight Way - East (G) (1119)
+
+Starlight Way - East (G) (1119)
+
+Starlight Way - East (1119)
+
+Starlight Way - East (1119)
+
+Eastern Entrance - Starlight Way (1119)
+
+Eastern High Road (1119)
+
+Eastern High Road (1118)
+
+Eastern High Road (1117)
+
+A bridge over the Dragon River (1116)
+
+Eastern High Road (1115)
+
+Eastern High Road (1114)
+
+Eastern High Road (1113)
+
+Eastern High Road (1112)
+
+Eastern High Road (1111)
+
+The Tothmeer Trail (G) (1110)
+
+Mesolarian Grassland (1109)
+
+Mesolarian Grassland (1108)
+
+Mesolarian Grassland (1107)
+
+Mesolarian Grassland (1106)
+
+The Tothmeer Trail (1105)
+
+The Tothmeer Trail (1104)
+
+Trampled Ground (1103)
+
+Mesolarian Grassland (1102)
+
+Mesolarian Grassland (1101)
+
+Forest path (1100)
+
+Silverwind Forest (1099)
+
+Silverwind Forest (1098)
+
+Silverwind Forest (1097)
+
+Silverwind Forest (1096)
+
+Silverwind Forest (1095)
+
+On a Dull Forest Trail (1094)
+
+Rugged Mesolarian Grassland (1093)
+
+Imperial Bay (1092)
+
+Aphasia (1091)
+
+Aphasia (1090)
+
+Aphasia (1089)
+
+Aphasia (1088)
+
+Aphasia (1087)
+
+Andunande (1086)
+
+Andunande (1085)
+
+Andunande (1084)
+
+Nightlands of Kherashin (1083)
+
+Nightlands of Kherashin (1082)
+
+Nightlands of Kherashin (1081)
+
+Nightlands of Kherashin (1080)
+
+Nightlands of Kherashin (1079)
+
+Demon's Halo Mountains (1078)
+
+Demon's Halo Mountains (1077)
+
+Demon's Halo Mountains (1076)
+
+Demon's Halo Mountains (1075)
+
+The Haunted Land (1074)
+
+Land of Living Rock (1073)
+
+Demon's Halo Mountains (1072)
+
+Demon's Halo Mountains (1071)
+
+Demon's Halo Mountains (1070)
+
+The Great Eastern Desert (1069)
+
+The Great Eastern Desert (1068)
+
+The Great Eastern Desert (1067)
+
+The Great Eastern Desert (1066)
+
+Demon's Halo Mountains (1065)
+
+Demon's Halo Mountains (1064)
+
+Alagh, the Blood Lands (1063)
+
+Alagh, the Blood Lands (1062)
+
+Alagh, the Blood Lands (1061)
+
+Alagh, the Blood Lands (1060)
+
+The Blood Swamps (1059)
+
+The Blood Swamps (1058)
+
+The Blood Swamps (1057)
+
+In a Misty Swamp
+  The air is heavy with a thick oppressiveness that permeates through the swamp.
+Moss hangs heavy from the canopy of trees which block any light, leaving the
+swamp in a constant atmosphere of dreary, depressing darkness.  A thick layer
+of mist shrouds the waters and dank moss-coated lands.  Your skin feels clammy,
+and the trickles of moisture sliding down your face feel eerily alive.  The
+constant buzzing of blood-seeking mosquitoes do nothing to drown out the other
+sounds of the swamp...  The sounds of life...  and death.  
+
+[ Exits: north east south west ]
+(Red Aura) (Angry) A small winged imp dives towards you from above.
+
+1192/1381 HP  943/1711 MP  1056/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    
+mapsave
+That is not a command. Type 'Commands' for a complete list.
+
+1192/1381 HP  943/1711 MP  1056/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    
+savemap
+Sorry KumoGami, you can't do that.
+
+1192/1381 HP  943/1711 MP  1056/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+savemap map
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+gulp can; gulp can;
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+
+1197/1381 HP  955/1711 MP  1076/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+1197/1381 HP  955/1711 MP  1076/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    
+hunt 1.demon cook
+You seem unable to hunt that target for some reason.
+
+1197/1381 HP  955/1711 MP  1076/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    
+where 1.demon cook
+demon cook                     In the Main Castle Kitchen
+
+1197/1381 HP  955/1711 MP  1076/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NESW)
+>>    
+rf castle kitchen
+
+ You have no recollection of any room with that name.
+
+
+n
+In a Misty Swamp (G)
+  Standing knee-deep in the murkish water, you feel the curious sensation
+of unseen creatures slithering against you.  The soft ripples trailing
+across the water are rythmically entrancing, but you blink back to reality
+when you see the reptilian creature which forms the ripples.  With a shiver,
+you move on, wanting to be out of the mist-laden swamp.  
+
+[ Exits: north east west ]
+(Red Aura) The creepy swamp fiend roams about the swamp here.
+(Red Aura) (Angry) A small winged imp dives towards you from above.
+(Red Aura) (Angry) A small winged imp dives towards you from above.
+
+1228/1381 HP  997/1711 MP  1117/1119 mv  525tnl  
+Lv 62  G 392857 | In a Misty Swamp (NEW)
+>>    
+n
+Before the Grand Gates of Castle Vlad-Shamir (G)
+  Before you, rising up out of the swamp, is a forbidding edifice.  Huge,
+imposing walls, hewn from the very bones of the earth, tower into the sky
+above you, reminding you of the puny, insignificant mortal that you are. 
+Cold, black marble absorbs all light into it's inky blackness, as if night
+itself were contained within these unhallowed walls.  Above the cold,
+uncaring marble, towers stretch up, still further, scraping and mocking the
+heavens.  Roofed in blood red slate, they stand like an accusatory finger,
+challenging the Gods themselves.  Set into these impossibly immutable walls,
+a double set of gates, cast from a red metal from deep within the earth bear
+down on you with their presence.  Intricate scrollwork, alien yet perfect
+craftsmanship, crawls spider-like along the metal, forming wards and runes
+of power.  As you stand here, it is as if the place itself reaches out, and
+begins to tear at your soul, for surely the demons within will consume it
+all...  For a second, you consider stepping back, to face the perils of the
+swamp.  Well, this is your choice, mortal, dare you go forward, to face the
+corruption within?.....  
+
+[ Exits: (north) south ]
+     (Magic) (Glow) A potion of swirling mist-like substance is here.
+(Invis) (Hidden) (Red Aura) (Angry) A silent and deadly mist demon fades out of the mist and
+attacks.
+(Red Aura) A member of the castle patrol guard is here trying to keep the peace.
+(Red Aura) A member of the castle patrol guard is here trying to keep the peace.
+(Red Aura) A member of the castle patrol guard is here trying to keep the peace.
+(Red Aura) A member of the castle patrol guard is here trying to keep the peace.
+(Red Aura) A member of the castle patrol guard is here trying to keep the peace.
+(Red Aura) A member of the castle patrol guard is here trying to keep the peace.
+
+1228/1381 HP  997/1711 MP  1115/1119 mv  525tnl  
+Lv 62  G 392857 | Before the Grand Gates of Castle Vlad-Shamir ([N]S)
+>>    
+op n
+n
+You unlock the door with a misty potion.
+You open the door.
+
+1228/1381 HP  997/1711 MP  1115/1119 mv  525tnl  
+Lv 62  G 392857 | Before the Grand Gates of Castle Vlad-Shamir (NS)
+>>    Inside the Main Courtyard of the Castle
+  Dread magics have warped and twisted the stone, shaping the slabs into
+horrific monuments to deities worshipped as gods by these foul creatures. 
+It appears that no form is too corrupt, no evil too twisted for these vile
+abominations to use it to their own ends.  All about you, soldiers practice
+with their weapons, paying you little heed, focused as they are on hacking
+apart practice dummies.  Dummies which bear a striking resemblance to people
+you have known...  
+
+[ Exits: north east south west ]
+(Red Aura) A tough looking demon grunt is here waiting for a fight.
+(Red Aura) A large, demonic looking rat gnaws at a bone here.
+
+1228/1381 HP  997/1711 MP  1114/1119 mv  525tnl  
+Lv 62  G 392857 | Inside the Main Courtyard of the Castle (NESW)
+>>    
+n
+Inside the Main Courtyard of the Castle
+  The courtyard continues further into the castle.  The flagstones
+themselves are quarried from a black stone, polished by the passing of time
+and booted feet into an inky sheen.  All around the courtyard, demons roam,
+going about their business, talking in their guttural rasping tongue.  All
+manner of dread abomination walks, slithers and crawls; their forms a
+corruption of many different creatures, twisted together into a mocking
+semblance of their former lives.  All around the edges of the courtyard,
+large archways vault upwards, calling you into their maw.  
+
+[ Exits: north east south west ]
+(Red Aura) A high-ranking demon officer is here on business from Valkur.
+
+1228/1381 HP  997/1711 MP  1113/1119 mv  525tnl  
+Lv 62  G 392857 | Inside the Main Courtyard of the Castle (NESW)
+e
+>>    
+Inside the Main Courtyard of the Castle
+  The courtyard continues further into the castle.  The flagstones
+themselves are quarried from a black stone, polished by the passing of time
+and booted feet into an inky sheen.  All around the courtyard, demons roam,
+going about their business, talking in their guttural rasping tongue.  All
+manner of dread abomination walks, slithers and crawls; their forms a
+corruption of many different creatures, twisted together into a mocking
+semblance of their former lives.  All around the edges of the courtyard,
+large archways vault upwards, calling you into their maw.  
+
+[ Exits: north (east) south west ]
+(Red Aura) A tough looking demon grunt is here waiting for a fight.
+
+1228/1381 HP  997/1711 MP  1112/1119 mv  525tnl  
+Lv 62  G 392857 | Inside the Main Courtyard of the Castle (N[E]SW)
+>>    
+op e
+e
+You open the door.
+
+1228/1381 HP  997/1711 MP  1112/1119 mv  525tnl  
+Lv 62  G 392857 | Inside the Main Courtyard of the Castle (NESW)
+>>    In the Main Dining Hall
+  Harried servants, backs bent double under the weight of dirty dishes
+shuffle through the dining hall.  With the constant influx of diners, their
+work is seldom finished.  The diners take little notice of the servants as
+they attempt to keep some order about the tables, usually taking no more
+notice of the poor creatures other than to shove them out of their way... 
+The poor shoved creature more often than not ending up on the floor under a
+mass of broken dishes and leftovers.  
+
+[ Exits: north east west ]
+(Red Aura) A mortal slave is here serving food to her master.
+(Red Aura) A small female demon child runs about here.
+
+1228/1381 HP  997/1711 MP  1111/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Dining Hall (NEW)
+>>    
+e
+In the Main Dining Hall
+  Raucous laughter, the clanking of utensils, the sounds of grunting,
+chewing, spitting men at table fills the room.  The tables are rough-hewn,
+covered by dirty and stained tablecovers.  Half of the chairs are
+overturned, and piles of filthy plates and utensils are scattered throughout
+the room on the tables and the floor as well.  The floor has a greasy
+appearance, and you step carefully to avoid half-eaten bits of food cast
+about on the floor.  
+
+[ Exits: north west ]
+
+1228/1381 HP  997/1711 MP  1111/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Dining Hall (NW)
+>>    
+n
+
+You are no longer able to breathe underwater.
+ca underwater
+
+In the Main Dining Hall
+  Raucous laughter, the clanking of utensils, the sounds of grunting,
+chewing, spitting men at table fills the room.  The tables are rough-hewn,
+covered by dirty and stained tablecovers.  Half of the chairs are
+overturned, and piles of filthy plates and utensils are scattered throughout
+the room on the tables and the floor as well.  The floor has a greasy
+appearance, and you step carefully to avoid half-eaten bits of food cast
+about on the floor.  
+
+[ Exits: south west ]
+
+1228/1381 HP  997/1711 MP  1111/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Dining Hall (SW)
+>>    You feel gills growing on your neck!
+
+1228/1381 HP  982/1711 MP  1111/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Dining Hall (SW)
+>>    
+
+Character autosaved at Tue Aug  8 03:22:55 2023.
+
+w
+In the Main Dining Hall
+  Harried servants, backs bent double under the weight of dirty dishes
+shuffle through the dining hall.  With the constant influx of diners, their
+work is seldom finished.  The diners take little notice of the servants as
+they attempt to keep some order about the tables, usually taking no more
+notice of the poor creatures other than to shove them out of their way... 
+The poor shoved creature more often than not ending up on the floor under a
+mass of broken dishes and leftovers.  
+
+[ Exits: north east south ]
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Dining Hall (NES)
+n
+>>    
+Heading Towards the Kitchen
+  You are passing from the raucous atmosphere of the dining hall, into the
+raucous atmosphere of the kitchen.  Unpleasant smells waft out, causing your
+nose to shrivel, and your stomach to turn.  Heaven know what they are
+cooking in there, but do you REALLY want to find out?  Demons bustle past
+you, back and forth, carrying plates full of disgusting muck, surely they
+can't be about to eat THAT??  
+
+[ Exits: (north) south ]
+(Red Aura) A young male child of some demon runs about with a sharp rock.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | Heading Towards the Kitchen ([N]S)
+op n
+n
+>>    
+You open the door.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | Heading Towards the Kitchen (NS)
+>>    In the Main Castle Kitchen
+  You feel bile rise in your throat as you enter the castle kitchen.  What
+ungodly thing the chefs are preparing, you are not sure that you want to
+know.  Everywhere on the floor, you can see piles of bones, some freshly
+gnawed, and pools of damp, sticky blood.  From just around the corner, you
+hear a blood curdling shriek, abruptly cut off with a heft 'THWACK!  - They
+must be preparing the main course...  
+
+[ Exits: east south west ]
+(Red Aura) The greatest demon chef is here making eyeball stew.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen (ESW)
+>>    
+ca 'flame arrow' 'demon cook'
+ca pois 'demon cook'
+ca with 'demon cook'
+They aren't here.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen (ESW)
+>>    
+They aren't here.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen (ESW)
+>>    
+They aren't here.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen (ESW)
+>>    
+e
+In the Main Castle Kitchen
+  You feel bile rise in your throat as you enter the castle kitchen.  What
+ungodly thing the chefs are preparing, you are not sure that you want to
+know.  Everywhere on the floor, you can see piles of bones, some freshly
+gnawed, and pools of damp, sticky blood.  From just around the corner, you
+hear a blood curdling shriek, abruptly cut off with a heft 'THWACK!  - They
+must be preparing the main course...  
+
+[ Exits: west ]
+(Red Aura) A young male child of some demon runs about with a sharp rock.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen (W)
+>>    
+w
+In the Main Castle Kitchen
+  You feel bile rise in your throat as you enter the castle kitchen.  What
+ungodly thing the chefs are preparing, you are not sure that you want to
+know.  Everywhere on the floor, you can see piles of bones, some freshly
+gnawed, and pools of damp, sticky blood.  From just around the corner, you
+hear a blood curdling shriek, abruptly cut off with a heft 'THWACK!  - They
+must be preparing the main course...  
+
+[ Exits: east south west ]
+(Red Aura) The greatest demon chef is here making eyeball stew.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen (ESW)
+w
+>>    In the Main Castle Kitchen
+  You feel bile rise in your throat as you enter the castle kitchen.  What
+ungodly thing the chefs are preparing, you are not sure that you want to
+know.  Everywhere on the floor, you can see piles of bones, some freshly
+gnawed, and pools of damp, sticky blood.  From just around the corner, you
+hear a blood curdling shriek, abruptly cut off with a heft 'THWACK!  - They
+must be preparing the main course...  
+
+[ Exits: (north) east ]
+(Red Aura) A mortal slave is here serving food to her master.
+(Red Aura) The castle cook is here preparing some good demon grub.
+
+1250/1381 HP  1013/1711 MP  1119/1119 mv  525tnl  
+Lv 62  G 392857 | In the Main Castle Kitchen ([N]E)
+>>    
+ca 'flame arrow' 'demon cook'
+ca pois 'demon cook'
+ca with 'demon cook'
+Your flaming arrow <-><-=-><-> EXTERMINATES <-><-=-><-> demon cook! [284]
+Demon cook is showing a few grazes.
+
+FIGHTING!
+1250/1381 HP  973/1711 MP  1119/1119 mv  525tnl
+ Enemy: 88%HP (mob) | 90% HP (you) >> 
+ca 'flame arrow'
+
+Demon cook dodges your attack.
+Your blast -=- VAPORIZES -=- demon cook! [120]
+Your blast -=- VAPORIZES -=- demon cook! [119]
+You dodge demon cook's attack.
+You blink out of existence and avoid demon cook's attack.
+Demon cook is bleeding lightly.
+
+FIGHTING!
+1250/1381 HP  973/1711 MP  1119/1119 mv  525tnl
+ Enemy: 78%HP (mob) | 90% HP (you) >> 
+Demon cook turns slightly green, but it passes.
+
+FIGHTING!
+1250/1381 HP  953/1711 MP  1119/1119 mv  525tnl
+ Enemy: 78%HP (mob) | 90% HP (you) >> 
+ca 'flame arrow'
+
+Your blast misses demon cook. [0]
+Your blast misses demon cook. [0]
+Your blast -=- VAPORIZES -=- demon cook! [118]
+You blink out of existence and avoid demon cook's attack.
+You blink out of existence and avoid demon cook's attack.
+Demon cook has some small wounds and bruises.
+
+FIGHTING!
+1250/1381 HP  953/1711 MP  1119/1119 mv  525tnl
+ Enemy: 74%HP (mob) | 90% HP (you) >> Your strength-draining touch <->*<=> WASTES <=>*<-> demon
+cook! [203]
+Demon cook has some small wounds and bruises.
+
+FIGHTING!
+1250/1381 HP  923/1711 MP  1119/1119 mv  525tnl
+ Enemy: 65%HP (mob) | 90% HP (you) >> 
+ca 'flame arrow'
+
+Your blast misses demon cook. [0]
+Your blast -=- VAPORIZES -=- demon cook! [117]
+Your blast -=- VAPORIZES -=- demon cook! [119]
+You blink out of existence and avoid demon cook's attack.
+You blink out of existence and avoid demon cook's attack.
+Demon cook is showing a few battle scars.
+
+FIGHTING!
+1250/1381 HP  923/1711 MP  1119/1119 mv  525tnl
+ Enemy: 56%HP (mob) | 90% HP (you) >> Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> demon
+cook! [308]
+Demon cook has some big nasty wounds and scratches.
+
+FIGHTING!
+1250/1381 HP  883/1711 MP  1119/1119 mv  525tnl
+ Enemy: 43%HP (mob) | 90% HP (you) >> 
+
+Your blast -=- VAPORIZES -=- demon cook! [117]
+Your blast misses demon cook. [0]
+Your blast -=- VAPORIZES -=- demon cook! [119]
+You blink out of existence and avoid demon cook's attack.
+Demon cook has some big nasty wounds and scratches.
+
+FIGHTING!
+1276/1381 HP  915/1711 MP  1119/1119 mv  525tnl
+ Enemy: 35%HP (mob) | 92% HP (you) >> 
+Your flaming arrow <-><-=-><-> EXTERMINATES <-><-=-><-> demon cook! [290]
+Your flaming arrow <--*--><--*--> IMPLODES <--*--><--*--> demon cook! [276]
+Demon cook is gravely injured.
+
+FIGHTING!
+1276/1381 HP  875/1711 MP  1119/1119 mv  525tnl
+ Enemy: 12%HP (mob) | 92% HP (you) >> 
+
+Demon cook parries your attack.
+Your blast misses demon cook. [0]
+Your blast misses demon cook. [0]
+*Demon cook's slash MUTILATES you! [58]
+Demon cook is gravely injured.
+
+FIGHTING!
+1218/1381 HP  875/1711 MP  1119/1119 mv  525tnl
+ Enemy: 12%HP (mob) | 88% HP (you) >> Your flaming arrow <-==-><-==-> SHATTERS <-==-><-==-> demon
+cook! [304]
+Your flaming arrow <--*--><--*--> IMPLODES <--*--><--*--> demon cook! [279]
+A flaming spear of fire blasts demon cook out of existence!! It is DEAD!
+You receive 117 experience points.
+You receive 26 'rare kill' experience bonus.
+You receive 143 bonus experience points from your daily blessing.
+You have 50 daily blessing bonus experience kills remaining.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+You get 863 gold coins from the flamed corpse of demon cook.
+Ayla gives you 33 gold coins for the flamed corpse of demon cook.
+
+1218/1381 HP  835/1711 MP  1119/1119 mv  239tnl  
+Lv 62  G 393753 | In the Main Castle Kitchen ([N]E)
+>>    
+* a demon berserker (Castle Vlad-Shamir) 15970
+* the cell keeper (Castle Vlad-Shamir) 15970
+* a researcher (Diamond Soul Revelation) 30029
+* a ladybug (Hedgehogs' Paradise) 15146
+* a dragonfly (Hedgehogs' Paradise) 15146
+* a playing hedgehog (Hedgehogs' Paradise) 15146
+* Lieutenant Lirat (Paradise Lost) 29585
+* a treant (Realm of Deneria) 35005
+* Beleth, princess of nightmares (The Flying Citadel) 14960
+* a sneaky squirrel (The Land of Oz) 510
+* a large vole (The Silver Volcano) 6087
+* an air sentinel (The Upper Planes)
+Note: Dead means that the target is dead, not that you have killed it.
+
+You have 6 days, 23 hours and 51 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+1218/1381 HP  835/1711 MP  1119/1119 mv  239tnl  
+Lv 62  G 393753 | In the Main Castle Kitchen ([N]E)
+>>    
+score
++-------------------------------------------------------------------------+
+|                  KumoGami the Enchanting God of Spiders                 |
++-------------------------+--------------------+--------------------------+
+| Strength    : [ 42/24 ] | Race  : Half-griff | Practices    : [    212] |
+| Intelligence: [141/90 ] | Class : Mage       | Trains       : [    146] |
+| Wisdom      : [ 72/68 ] | Sub   : Enchanter  | Trivia       : [     48] |
+| Dexterity   : [ 45/19 ] | Gender: Male       | Quest points : [    291] |
+| Constitution: [ 38/23 ] | Level : 62         | Quest time   : [     26] |
+| Luck        : [ 93/86 ] |                    | Goals done   : [     16] |
++------------------------++--------------------+--------------------------+
+| Hit    : [ 1218/1381 ] | Hitroll  : [   76 ] | Weight :   280 of 482    |
+| Mana   : [  835/1711 ] | Damroll  : [  130 ] | Items  :    59 of 151    |
+| Moves  : [ 1119/1119 ] | Wimpy    : [  100 ] | Align  : 2500            |
+| Gold   : [     393753] |                     | Status : Standing        |
+| To Lvl : [       239 ] | Age      : [   14 ] | Hunger : 98  Full        |
+|                        | Hours    : [   295] | Thirst : 98  Full        |
++------------------------+---------------------+--------------------------+
+| Resistances:                                                            |
+| Pierce:  179 (Well Armored      ) [############------------------------]|
+| Bash  :  -26 (Defenseless       ) [------------------------------------]|
+| Slash :  179 (Well Armored      ) [############------------------------]|
++-------------------------------------------------------------------------+
+ Type 'aff' for affects, 'attr' for stats only and 'whois' for other info.
+ Type 'resists' for detailed resistance stats.
+
+1218/1381 HP  835/1711 MP  1119/1119 mv  239tnl  
+Lv 62  G 393753 | In the Main Castle Kitchen ([N]E)
+>>    
+quit quit
+
+-----------------------------------------------------------------------------
+We hope you have enjoyed playing Aardwolf and will return soon. Please check
+out our web site at www.aardwolf.com and maybe even drop in a vote for us
+while you're there.
+-----------------------------------------------------------------------------
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: The remote host closed the connection
+[ INFO ]  - Connection time: 00:46:13.713
