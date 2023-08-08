@@ -31,10 +31,11 @@ home() {
       git -C "$DOTFILES" push
       ;;
     pull | l)
+      shift
       git -C "$DOTFILES" pull
-      if [[ $? -eq 0 ]]; then
-        reload-zsh
-      fi
+      # if [[ $? -eq 0 ]]; then
+      #   reload-zsh
+      # fi
       ;;
     reload-term(inal)? | rt)
       reload-zsh
