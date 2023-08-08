@@ -470,9 +470,29 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Primary Spell 🎯️</name>
+					<name>Start Battle 🎯️</name>
 					<packageName></packageName>
-					<script>send(aard.config["attack1"] .. " '" .. target .. "'")</script>
+					<script>send("ca 'flame arrow' '" .. target .. "'")
+send("ca pois '" .. target .. "'")
+send("ca with '" .. target .. "'")</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Start Battle</name>
+					<packageName></packageName>
+					<script>send("ca 'flame arrow';ca pois;ca with")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -511,7 +531,7 @@ end</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'acid blast'</commandButtonDown>
+					<commandButtonDown>ca fireball</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -580,7 +600,7 @@ end</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>send(aard.config["debuff1"] " '" .. target .. "'; " .. aard.config["debuff1"] .. "  '" .. target .. "'")</script>
+					<script>send("ca with " .. target .. "; ca pois " .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca poison</commandButtonDown>
@@ -746,24 +766,6 @@ end</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>gulp can; gulp can;</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Rest Outside 🔥️</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>gulp can; gulp can; fire; sleep</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1508,7 +1510,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>playing Hedgehog</value>
+			<value>researcher</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

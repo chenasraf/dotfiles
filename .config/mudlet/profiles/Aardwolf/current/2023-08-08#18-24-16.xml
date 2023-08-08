@@ -1508,7 +1508,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>playing Hedgehog</value>
+			<value>gelatinous cube</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>649</borderRightWidth>
+			<borderRightWidth>539</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -77,8 +77,8 @@
 			<mSpellDic>en_US</mSpellDic>
 			<mLineSize>10.0</mLineSize>
 			<mRoomSize>1.0</mRoomSize>
-			<mapInfoContributor>Full</mapInfoContributor>
 			<mapInfoContributor>Short</mapInfoContributor>
+			<mapInfoContributor>Full</mapInfoContributor>
 			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
 			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
 			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
@@ -470,9 +470,29 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Primary Spell 🎯️</name>
+					<name>Start Battle 🎯️</name>
 					<packageName></packageName>
-					<script>send(aard.config["attack1"] .. " '" .. target .. "'")</script>
+					<script>send("ca 'flame arrow' '" .. target .. "'")
+send("ca pois '" .. target .. "'")
+send("ca with '" .. target .. "'")</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Start Battle</name>
+					<packageName></packageName>
+					<script>send("ca 'flame arrow';ca pois;ca with")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -506,12 +526,12 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🤢️ Acid Blast</name>
+					<name>🔥 Fireball</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'acid blast'</commandButtonDown>
+					<commandButtonDown>ca fireball</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -580,7 +600,7 @@ end</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>send(aard.config["debuff1"] " '" .. target .. "'; " .. aard.config["debuff1"] .. "  '" .. target .. "'")</script>
+					<script>send("ca with " .. target .. "; ca pois " .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca poison</commandButtonDown>
@@ -746,24 +766,6 @@ end</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>gulp can; gulp can;</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Rest Outside 🔥️</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>gulp can; gulp can; fire; sleep</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1413,8 +1415,8 @@ end</script>
   ["mpot"]="moonlight",
   ["vpot"]="refreshing",
   ["pbag"]="bag",
-  ["wield"]="flute",
-  ["dual"]="flute",
+  ["wield"]="razor",
+  ["dual"]="razor",
   ["port"]="hold 'academy portal';enter;hold brush;d",
   ["attack1"]="ca 'flame arrow'",
   ["debuff1"]="ca poison",
@@ -1508,7 +1510,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>playing Hedgehog</value>
+			<value>demon cook</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

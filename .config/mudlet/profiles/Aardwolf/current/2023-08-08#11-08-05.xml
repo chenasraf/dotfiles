@@ -511,7 +511,7 @@ end</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'acid blast'</commandButtonDown>
+					<commandButtonDown>ca fireball</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -746,24 +746,6 @@ end</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>gulp can; gulp can;</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Rest Outside 🔥️</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>gulp can; gulp can; fire; sleep</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1508,7 +1490,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>playing Hedgehog</value>
+			<value>researcher</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
