@@ -21,6 +21,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
@@ -50,39 +56,39 @@ lsp.on_attach(function(client, bufnr)
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, {
+  vim.keymap.set("n", "gws", function() vim.lsp.buf.workspace_symbol() end, {
     desc = "Workspace symbol",
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, {
+  vim.keymap.set("n", "gD", function() vim.diagnostic.open_float() end, {
     desc = "Open diagnostics",
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, {
+  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, {
     desc = "Go to next diagnostic",
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, {
+  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, {
     desc = "Go to previous diagnostic",
     buffer = bufnr,
     remap = false
   })
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end,
+  vim.keymap.set({ "n", "v" }, "ga", function() vim.lsp.buf.code_action() end,
     {
       desc = "Code action",
       buffer = bufnr,
       remap = false
     })
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end,
+  vim.keymap.set("n", "grr", function() vim.lsp.buf.references() end,
     {
       desc = "References",
       buffer = bufnr,
       remap = false
     })
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, {
+  vim.keymap.set("n", "grn", function() vim.lsp.buf.rename() end, {
     desc = "Rename symbol",
     buffer = bufnr,
     remap = false
@@ -92,7 +98,30 @@ lsp.on_attach(function(client, bufnr)
     buffer = bufnr,
     remap = false
   })
+  vim.api.nvim_create_autocmd("FileType", {
+    callback = function()
+        local gr_bufnr = vim.fn.bufnr('%')
+        vim.keymap.set("n", "e", function()
+            vim.api.nvim_command([[execute "normal! \<cr>"]])
+            vim.api.nvim_command(gr_bufnr .. 'bd')
+        end, { buffer = gr_bufnr })
+    end,
+    pattern = "qf",
+})
 end)
+
+lspconfig.tailwindcss.setup({
+  settings = {
+    tailwindCSS = {
+      experimental = {
+        classRegex = {
+          { "cva\\(([^)]*)\\)",
+           "[\"'`]([^\"'`]*).*?[\"'`]" },
+        },
+      },
+    },
+  },
+})
 
 lspconfig.yamlls.setup({
   settings = {
@@ -105,6 +134,25 @@ lspconfig.yamlls.setup({
   }
 })
 
+lspconfig.bashls.setup({
+  filetypes = { "sh", "zsh" },
+  settings = {
+    allowlist = {
+      "sh",
+      "zsh"
+    },
+    bash = {
+      filetypes = { "sh", "zsh" }
+    }
+  }
+})
+
+-- require('filetype').setup({
+--   shebang = {
+--     zsh = "sh"
+--   }
+-- })
+
 lsp.setup()
 
 vim.diagnostic.config({
@@ -112,4 +160,4 @@ vim.diagnostic.config({
 })
 
 require("flutter-tools").setup({})
-
+require("telescope").load_extension("flutter")

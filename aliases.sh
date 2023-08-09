@@ -40,8 +40,10 @@ alias ggi_gen="\$DOTBIN/gi_gen"
 # go [i]nstall & run gi_gen
 alias igi_gen="go install && dgi_gen"
 
+# git
 alias gdiff="git diff"
 alias gpa="ga . && gc && gp"
+grac() { git remote add origin "https://github.com/chenasraf/$1.git"; }
 
 # general
 # from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
@@ -55,6 +57,9 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 alias gundo="git reset --soft HEAD~1"
 alias unq="sudo xattr -rd com.apple.quarantine"
 alias scriptls="cat \$(find-up package.json) | jq '.scripts'"
+alias depls="cat \$(find-up package.json) | jq '.dependencies'"
+alias devdepls="cat \$(find-up package.json) | jq '.devDependencies'"
+alias peerdepls="cat \$(find-up package.json) | jq '.peerDependencies'"
 alias sync-config="rsync -vtr \$DOTFILES/.config/ \$HOME/.config/"
 alias sf="search-file"
 alias fnu="find-up"
@@ -71,6 +76,8 @@ alias hf="home fetch"
 alias hp="home push"
 alias hl="home pull"
 alias hlog="home git log"
+alias hiv="home install; vim ."
+alias hv="prev=$(pwd); wd df; v; cd $prev"
 alias spider="ssh root@spider.casraf.dev"
 
 # docker
@@ -90,20 +97,24 @@ alias tn="tmux new"
 alias tns="tmux new -s"
 alias ta="tmux attach"
 alias tas="tmux attach -t"
-alias tls="echo \"Name # Windows Date   \n\$(tmux list-sessions | sed s/:// | sed s/\(created// | sed s/\)//)\" | tblf"
 alias tlw="tmux list-windows"
 alias trl="tmux source-file ~/.config/.tmux.conf"
 alias trn="tmux rename-session -t"
 alias trm="tmux kill-session -t"
+alias tk="trm"
 alias tks="tmux kill-server"
 
 # tmux - workspaces
-alias tn-general="tn-custom \$HOME/Dev -s general"
+alias tn-general="tn-custom -d \$HOME/Dev -s general"
 alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 alias tn-tt="tn-custom -d \$HOME/.local/share/nvim/site/pack/packer/start/text-transform.nvim -s text-transform ."
 alias tn-simple-scaffold="tn-prj simple-scaffold"
 alias tn-dungeon-paper="tn-prj dungeon_paper"
-alias tn-acroasis="tn-custom -d \$HOME/Dev/acroasis -s acroasis front server shared landing"
+alias tn-acroasis="tn-prj acroasis . apps/front functions/backend packages/shared apps/landing"
+alias tn-pokedex="tn-prj pokedex . ../pokemon_api"
+
+alias dr="dotenv run"
+alias lua="luajit"
 
 if is_linux; then
   alias md5="md5sum"

@@ -9,12 +9,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use('wbthomason/packer.nvim')
 
-  use({
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  })
+  use({ 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } })
 
   require('telescope').setup({
     pickers = {
@@ -48,19 +43,34 @@ return require('packer').startup(function(use)
     }
   })
 
-  -- use({ 'rose-pine/neovim', as = 'rose-pine' })
-  -- require('rose-pine').setup({
-  --   --- @usage 'auto'|'main'|'moon'|'dawn'
-  --   variant = 'moon'
-  -- })
-  -- vim.cmd('colorscheme rose-pine')
-  use('folke/tokyonight.nvim')
-  vim.cmd('colorscheme tokyonight-storm')
+  -- use('folke/tokyonight.nvim')
+  -- vim.cmd('colorscheme tokyonight-storm')
+  use({ "catppuccin/nvim", as = "catppuccin" })
+  require("catppuccin").setup({
+    transparent_background = true,
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      nvimtree = true,
+      telescope = true,
+      notify = false,
+      mini = false,
+      harpoon = true,
+      barbar = true,
+      mason = true,
+    },
+    -- dim_inactive = {
+    --   enabled = true,
+    --   shade = "#333333",
+    --   percentage = 0.1,
+    -- },
+  })
+  vim.cmd('colorscheme catppuccin-mocha')
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('nvim-lua/plenary.nvim')
-  use('ThePrimeagen/harpoon')
+  use('dormunis/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
@@ -90,31 +100,10 @@ return require('packer').startup(function(use)
     }
   })
 
-  use({
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      -- require("todo-comments").setup {
-      --   -- your configuration comes here
-      --   -- or leave it empty to use the default settings
-      --   -- refer to the configuration https://github.com/folke/todo-comments.nvim
-      -- }
-    end
-  })
+  use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 
-  use({
-    "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  })
-
-  -- use('eandrju/cellular-automaton.nvim')
+  use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
+  require("trouble").setup({})
 
   use({ 'romgrk/barbar.nvim', requires = 'nvim-tree/nvim-web-devicons' })
 
@@ -122,13 +111,11 @@ return require('packer').startup(function(use)
   use('jose-elias-alvarez/null-ls.nvim')
   use('MunifTanjim/prettier.nvim')
 
-  -- use('neoclide/coc.nvim', { branch = 'release' })
-
   use('mfussenegger/nvim-dap')
   use('github/copilot.vim')
   use('nvim-tree/nvim-tree.lua')
 
-  use("terrortylor/nvim-comment")
+  use('terrortylor/nvim-comment')
 
   use('nvim-lua/popup.nvim')
   use('nvim-telescope/telescope-media-files.nvim')
@@ -141,16 +128,32 @@ return require('packer').startup(function(use)
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
   })
+
   use({ 'chenasraf/text-transform.nvim', branch = "develop" })
-  require('text-transform').setup({
-    debug = true
-  })
+  require('text-transform').setup({ debug = true })
+
   use({ 'sQVe/sort.nvim' })
   require("sort").setup({})
-  require('packer').startup(function()
-    use {
-      'stevearc/oil.nvim',
-      config = function() require('oil').setup() end
-    }
-  end)
+
+  use({ 'stevearc/oil.nvim' })
+  require('oil').setup()
+
+  use({ 'mg979/vim-visual-multi', branch = 'master' })
+
+  use('Shatur/neovim-session-manager')
+
+  use('feline-nvim/feline.nvim')
+  require('feline').setup()
+
+  use({ 'kylechui/nvim-surround', branch = "main" })
+  require('nvim-surround').setup({})
+
+  use('windwp/nvim-autopairs')
+  require('nvim-autopairs').setup({
+    enable_check_bracket_line = false
+  })
+
+  use('windwp/nvim-ts-autotag')
+
+  -- use('nathom/filetype.nvim')
 end)

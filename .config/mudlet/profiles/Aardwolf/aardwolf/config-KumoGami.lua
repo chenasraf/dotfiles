@@ -1,0 +1,2 @@
+return {{[ [[spellup]] ] = [[spellup int;spellup wis;spellup luck;spellup stats;spellup]],[ [[dual]] ] = [[flute]],[ [[cplvl]] ] = 150,[ [[vpot]] ] = [[refreshing]],[ [[attack1]] ] = [[ca 'flame arrow']],[ [[pbag]] ] = [[bag]],[ [[debuff2]] ] = [[ca wither]],[ [[tdiff]] ] = -3,[ [[wield]] ] = [[flute]],[ [[port]] ] = [[hold 'academy portal';enter;hold brush;d]],[ [[mpot]] ] = [[moonlight]],[ [[group]] ] = 1,[ [[debuff1]] ] = [[ca poison]],[ [[hpot]] ] = [[breakfast]],[ [[cpexp]] ] = 700,[ [[speak]] ] = [[false]],},
+}

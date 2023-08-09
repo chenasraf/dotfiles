@@ -1,0 +1,1635 @@
+Log session starting at 10:59:18 on Sunday, 30 July 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-07-30#10-59-13map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.08s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-07-30#10-59-13map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.08s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.17s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+MainWindowSize: 615    
+
+[::(info): Your existing map has 16245 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 188         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+Tag option map turned ON
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* You do not see a bag here.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+You have the following daily blessing active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 2 quests completed will reward double quest points        06:47:21     
+
+You received your last daily blessing at 29 Jul 2023 16:46:46.
+
+You can receive a new daily blessing in 11 hours, 47 minutes and 21 seconds.
+
+You have 1 daily blessing reset available.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+
+friend
+You are friends with : 
+  1) - Mondaine     (Offline)
+  2) - Shravani     (Online)        (Invis)               
+  3) - Tatya        (Offline)
+
+'Friend wannabe' will show people who want to be your friend.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+ftalk yo
+You tell your friends: 'yo'
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+cp ch
+You are not currently on a campaign.
+You have completed 0 campaigns today.
+You may take a campaign at this level.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+w
+w
+Grandmarket Boulevard
+  As you push your way through the hordes, you notice in the not-so-distant
+south that the crowds cease and a small road clears off, leading its way
+away from the boulevard.  Underfoot, a small wooble begs your pardon as you
+nearly kick it down the paved street.  Boy, you thought you had it bad!  
+
+[ Exits: north east south west ]
+A gnome child rushes past you, amazement in her eyes.
+A stout dwarf, Wesnir, walks slowly, admiring the views of Aylor.
+An elven child walks by, hoping to find someone to play with.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Grandmarket Boulevard (NESW)
+w
+>>   *[NOEXP]* Aeleron's Alchemy Supplies (G)
+  This small stand is surrounded by an average sized fence, which has
+only three openings to let customers into the shop.  The small fence
+contains a vast number of cauldrons boiling and bubbling with liquids of
+reds, blues, magentas, and greens.  Many signs sit everywhere, saying,
+"Do not touch!",  "Leave it alone!",  and "Hands to Yourself!".
+A small, old gnome stands on a step stool, busily pouring a bubbling gel
+into a small flask.
+
+[ Exits: north east west ]
+(White Aura) A gray-haired, old gnome is enveloped in smoke as an attempt to bottle 'immolation'
+goes awry.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aeleron's Alchemy Supplies (NEW)
+>>   *[NOEXP]* Grandmarket Boulevard
+  People, creatures, specters, animals.  The streets are overloaded with
+everything capable of motion.  Handheld carts and men on horses push blindly
+through the crowd with little sympathy for those in their way.  What could
+possibly be found here worth all this hassle?  Do you dare give up looking
+before you find out?
+
+[ Exits: north east west ]
+A large werewolf by the name of Lord Lupris, heads to visit Yvan.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Grandmarket Boulevard (NEW)
+>>   *[NOEXP]* 
+w
+n
+The Aylorian Bank of Ivar (G)
+  Many rumors surround the Bank of Ivar.  Older adventurers remember the
+primitive bank location and large vault where money was stored.  This bank
+consists of a single eldar standing behind a large wooden desk.  He wears
+only a simple brown robe and a pair of gloves that provide coverage up to
+his shoulders.  The desk houses a single large hole that leads to places
+unknown.  Many people have ventured to guess the location of where it leads,
+but no one knows for sure.
+
+You watch as the eldar reaches into the hole to pull out pouch after
+pouch of perfectly counted gold coins.  The only greater mystery here is how
+the eldar is able to manipulate the hole, since any hand that reaches into
+the hole pulls back nothing but a bloody stub.  
+
+[ Exits: north east south west ]
+(White Aura) The local banker, Phreshnar, sits behind a table with a hole in the center.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | The Aylorian Bank of Ivar (NESW)
+>>   *[NOEXP]* Welcome to Grandmarket Boulevard! (G)
+  All throughout Andolor, the Grand City of Aylor is known for three things.
+The first is of course, the mighty, the generous, the magnificent Ivar.  The
+second is its impressive architecture.  The third, but not the least
+important, is its shopping.  It is said that if there's anything to be
+found, somebody is already selling it on the streets of Aylor.  As you look
+around the insanely hectic Grandmarket Boulevard, you don't doubt it for one
+moment.  
+
+[ Exits: north east south west ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* 
+
+INFO: The player rankings have been updated.
+
+Global Quest: Global Quest # 7741 has been won by Kers - 3402nd win.
+
+*Smiling at you, Shravani greets you warmly.
+
+You feel yourself slow down.
+
+cp ch
+You are not currently on a campaign.
+You have completed 0 campaigns today.
+You may take a campaign at this level.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* 
+
+Your force shield shimmers then fades away.
+
+l;ex
+Welcome to Grandmarket Boulevard! (G)
+  All throughout Andolor, the Grand City of Aylor is known for three things.
+The first is of course, the mighty, the generous, the magnificent Ivar.  The
+second is its impressive architecture.  The third, but not the least
+important, is its shopping.  It is said that if there's anything to be
+found, somebody is already selling it on the streets of Aylor.  As you look
+around the insanely hectic Grandmarket Boulevard, you don't doubt it for one
+moment.  
+
+[ Exits: north east south west ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* Obvious exits from [ Welcome to Grandmarket Boulevard! ]:
+ North          : Whitewind Avenue 
+ East           : Aylorian Pets and Companions 
+ South          : The Aylorian Bank of Ivar 
+ West           : Adventurer's Travel Company 
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* 
+ftalk *smile Shravani
+You cannot find Shravani.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* 
+ftalk *smile
+(Friend): You smile happily.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* 
+
+
+cp ch
+You are not currently on a campaign.
+You have completed 0 campaigns today.
+You may take a campaign at this level.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Welcome to Grandmarket Boulevard! (NESW)
+>>   *[NOEXP]* 
+
+
+n
+n
+Whitewind Avenue (G)
+  You stand amidst a very crowded portion of Whitewind Avenue.  To the
+north is a large mass of people who are waiting in line to speak with
+Aylor's great and noble quest master.  To the south even more crowds
+gather to find the treasures of Grandmarket Boulevard.  
+
+[ Exits: north south ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Whitewind Avenue (NS)
+n
+>>   *[NOEXP]* Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+On constant guard, this dignified elf patrols Aylor.
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   *[NOEXP]* The Grand Plaza (G)
+  The south end of the plaza is traditionally home to salesmen of a more
+refined sort.  The proximity of the Mage and Psionicist Guilds to the east
+and the Stoa to the south guarantee that the sellers of rare books and
+antiquities that gather here always have business.  Snatches of excited
+conversation about this or that rare edition float about on the air, and
+occasionally a voice will be raised to accuse some dishonest peddler of
+pushing forgeries.  The Plaza Guards are more numerous here to guarantee the
+security of the valuable goods for sale, as well as the safety of the
+well-laden coin purses that dangle from the all-too-numerous belts.  
+
+[ Exits: north east south west ]
+A tiny red imp runs around collecting litter.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | The Grand Plaza (NESW)
+n
+>>   *[NOEXP]* 
+Meridian Square (G)
+  The focal point of the Grand Plaza of Aylor is Meridian Square, built not
+to honor the sun, but rather the city itself.  In this place, the heart of
+Aylor, the city's glory is always at its zenith.  The square honors the
+spirit of defiance that made the founders of Aylor build a city so great
+that its brightness would rival the sun's, its mighty towers so tall as to
+scrape the clouds as they pass overhead.  The foremost feature of Meridian
+Square is the memorial fountain, which pumps crystal clear water into the
+sky year round.  A detachment of city guards known as the Honor Guard keep
+watch over the fountain day and night.  The practical reason is to prevent
+any defacement, but myth-lovers claim that they protect the massive marble
+bier at the center of the fountain which is said to hold a container of the
+Water of Life.  
+
+[ Exits: north east south west up down ]
+     (Glow) (Hum) A fountain dedicated to the ancient Builders of Andolor flows with pure water.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Meridian Square (NESWUD)
+n
+>>   *[NOEXP]* The Grand Plaza (G)
+  Day or night, people can be found in the Grand Plaza of Aylor. 
+Merchants, both honest and otherwise, hock their wares, mercenaries offer
+their services, and, once the sun sets, a bit of "company" is only an alley
+away.  Plaza Guards mill through the crowd, keeping a weather eye out for
+pickpockets, cutpurses, and other ne'er-do-wells.  The vast expanse of the
+square is packed with all manner of booths and tables, but in the end most
+eyes are drawn to the far corners of the plaza and to the Guild towers that
+dominate them-each unique, and each magnificent.  The plaza is a place to
+see and be seen, to buy and to sell, each according to his own agenda.
+
+[ Exits: north east south west ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | The Grand Plaza (NESW)
+n
+>>   *[NOEXP]* 
+n
+North of the Grand Plaza (G)
+  The sounds of the city echo between the buildings that line the sides of
+this broad street.  Standing here, the oppressive size of the city is fully
+evident.  The northern sky is dominated by the elegant spires of the Grand
+Aylorian Temple, while the southern horizon is punctuated by glimpses of the
+Guild towers.  A queer building rises up on the eastern side of the street,
+though it seems to have developed a slight list to one side.  The door to
+the building is boarded over and bears a sign reading: "Out of Order!!!! 
+Decapitation Hazard!!  --Tinker's Guild Safety Committee."  In its place,
+a complex series of pulleys operates a bucket that carries visitors up to a
+second floor window.  Ominous explosions, thuds, and various other sounds of
+mass destruction escape the building at random intervals.  In an alley
+beside the slanting structure, a giant, clockwork machine of some sort
+occasionally belches out clouds of smoke and fire.  A series of crudely
+hammered metal chutes leading down from the upper stories of the structure
+rains trash down into the incinerator.  A large sign in the alley reads:
+"Posted: Hard Hat Zone."  
+
+[ Exits: north south west other ]
+A sad-looking silver-haired gnome walks slowly past you.
+A gnomish incinerator bot is here, belching smoke and fire.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | North of the Grand Plaza (NSW*)
+>>   *[NOEXP]* Whitewind Avenue (G)
+  You stand on Whitewind Avenue just south of a large intersection with a
+large statue and numerous people.  The city around you is incredible, with
+amazing architecture, breathtaking horizons, and finely crafted roadwork. 
+Beneath your feet, the road is a white, translucent stone, likely quartz,
+that sparkles in the sunlight.  Traveling south will take you to the world
+famous Meridian Square.  
+
+[ Exits: north south down ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Whitewind Avenue (NSD)
+>>   *[NOEXP]* 
+n
+Phoenix Square (G)
+  At this, the main intersection of the Grand City of Aylor, the road is
+shiny and black as if paved with ebony.  The road extends east and west,
+reaching across the entire city.  In the center of this large square stands
+a black and pink alabaster statue.  Beneath the statue, many solicitors try
+to grab the attention of passersby.  To the north is the white marble temple. 
+To the south, you gaze upon a large plaza with eight silver spires piercing
+the sky.  
+
+[ Exits: north east south west up ]
+     A large black and pink statue sprays streams of water into the air.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Phoenix Square (NESWU)
+n
+>>   *[NOEXP]* 
+Whitewind Avenue (G)
+  You stand on Whitewind Avenue before a large intersection with a massive
+statue and numerous people.  The city around you is incredible, with amazing
+architecture, breathtaking horizons, and finely crafted roadwork.  Beneath
+your feet, the road is made of a white translucent stone, likely quartz,
+that sparkles in the sunlight.  To the north, the grand Aylorian Temple
+stands high above the city.  
+
+[ Exits: north east south west up down ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Whitewind Avenue (NESWUD)
+>>   *[NOEXP]* 
+n
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | The Grand City of Aylor (NESWUD)
+>>   *[NOEXP]* 
+rt quest
+Running to: Among the Philosophes
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | The Grand City of Aylor (NESWUD)
+>>   *[NOEXP]* Whitewind Avenue (G) (1224)
+
+Phoenix Square (G) (1224)
+
+Whitewind Avenue (G) (1224)
+
+North of the Grand Plaza (G) (1224)
+
+The Grand Plaza (G) (1224)
+
+Meridian Square (G) (1224)
+
+The Grand Plaza (G) (1224)
+
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+On constant guard, this dignified elf patrols Aylor.
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   *[NOEXP]* 
+cp req
+Questor tells you 'I have selected 14 targets for you to hunt, KumoGami.'
+Questor tells you 'Type 'campaign info' to see what you must kill.'
+Questor tells you 'Good luck in your campaign!'
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   *[NOEXP]* 
+
+
+cp ch
+* a swordsman (Cradlebrook) 11302
+* the half-eaten person (Descent to Hell) 30981
+* an adept temple keeper (Keep of the Kobaloi) 10782
+* Rodney the Rogue (Kingdom of Ahner) 30129
+* Kenneth the Demented (Kingdom of Ahner) 30129
+* a guard dog (Onyx Bazaar) 34451
+* a group of boys (Onyx Bazaar) 34451
+* an impatient patron (Onyx Bazaar) 34451
+* a mahasher (Raganatittu) 19861
+* the Roman Equite (Realm of the Zodiac) 15857
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* the xaren (The UnderDark) 27333
+* the cloaker (The UnderDark) 27333
+* a grof (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 23 hours and 59 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   *[NOEXP]* 
+noexp
+You will now receive experience. Happy leveling!
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+
+You are no longer blurred.
+
+Patrolling elf plods south.
+
+A sweltering, gentle breeze blows from the south.
+The clouds disperse, leaving a clear night sky.
+
+Someone has arrived through a spellgate.
+
+You feel yourself moving more quickly.
+
+You are surrounded by Someone's force shield.
+
+Someone makes your appearance look blurred.
+
+You feel a strong magical force surround your body.
+
+You feel gills growing on your neck!
+
+You feel as if you are being watched.
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+
+Character autosaved at Sun Jul 30 04:08:01 2023.
+
+l;ex
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   Obvious exits from [ Among the Philosophes ]:
+ North          : The Grand Plaza 
+ East           : The Road Not Taken 
+ South          : Whitewind Avenue 
+ Up             : Hallway of Champions 
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+spellup int; spellup wis; spellup luck; spellup stats; spellup
+No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   Queueing spell : mystic might.
+Queueing spell : magical rush.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   You feel your body surge with extra power.
+You have become better at mystic might! (89%)
+You feel as if you are being watched.
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+PK!!
+
+940/940 HP  1287/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+You feel your adrenaline pump as your body speeds up.
+
+940/940 HP  1257/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+Queueing spell : detect hidden.
+Queueing spell : detect invis.
+Queueing spell : detect magic.
+Queueing spell : avoidance.
+Queueing spell : sense anger.
+
+940/940 HP  1257/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   You lost your concentration while trying to cast detect hidden.
+
+940/940 HP  1250/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+Your eyes tingle.
+
+940/940 HP  1235/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+Your eyes glow blue.
+
+940/940 HP  1225/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+Your magic is blessed with the luck of Ayla!
+You now possess magical powers of avoidance.
+
+940/940 HP  1200/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+You can now sense anger in your immediate area.
+
+940/940 HP  1160/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+spellup int; spellup wis; spellup luck; spellup stats; spellup
+No spells or skills cast.
+
+940/940 HP  1160/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   No spells or skills cast.
+
+940/940 HP  1160/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   No spells or skills cast.
+
+940/940 HP  1160/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   No spells or skills cast.
+
+940/940 HP  1160/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   Queueing spell : detect hidden.
+
+940/940 HP  1160/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   Your eyes are more focused.
+
+940/940 HP  1145/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+l;ex
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+940/940 HP  1145/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   Obvious exits from [ Among the Philosophes ]:
+ North          : The Grand Plaza 
+ East           : The Road Not Taken 
+ South          : Whitewind Avenue 
+ Up             : Hallway of Champions 
+
+940/940 HP  1145/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+s
+Whitewind Avenue (G)
+  You stand amidst a very crowded portion of Whitewind Avenue.  To the
+north is a large mass of people who are waiting in line to speak with
+Aylor's great and noble quest master.  To the south even more crowds
+gather to find the treasures of Grandmarket Boulevard.  
+
+[ Exits: north south ]
+On constant guard, this dignified elf patrols Aylor.
+
+940/940 HP  1145/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Whitewind Avenue (NS)
+>>   
+n
+Among the Philosophes (G)
+  To the south of the Grand Plaza is a magnificent Stoa built entirely of
+white marble.  A series of steps lead into the body proper of the building,
+which is encircled by peristyle ionic columns and decorated in the ionic
+style.  The greatest minds of all Andolor congregate here to debate matters
+of philosophy, or just to think great thoughts in the same corridors where
+thinkers past have done so.  The most sought-out magister of them all is
+Questor, who dispenses worldly knowledge and experience by giving
+assignments to those who ask.  Those who yearn for knowledge and
+understanding flock to the Stoa, and they are never disappointed.  Any time
+of day or night, conversations can be heard on subjects as lofty as the
+meaning of life and the nature of death and the hereafter.  
+
+[ Exits: north east south up ]
+The world famous Master Questor of Aylor hands out quests to adventurers.
+
+940/940 HP  1145/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Among the Philosophes (NESU)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+Trachx gossips '<<|Count the tpyos|>> crumbles into 100,000 gold pieces.'
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+There are few things in this world as breathtaking as the Aylorian skyline at dawn.
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+n
+n
+The Grand Plaza (G)
+  The south end of the plaza is traditionally home to salesmen of a more
+refined sort.  The proximity of the Mage and Psionicist Guilds to the east
+and the Stoa to the south guarantee that the sellers of rare books and
+antiquities that gather here always have business.  Snatches of excited
+conversation about this or that rare edition float about on the air, and
+occasionally a voice will be raised to accuse some dishonest peddler of
+pushing forgeries.  The Plaza Guards are more numerous here to guarantee the
+security of the valuable goods for sale, as well as the safety of the
+well-laden coin purses that dangle from the all-too-numerous belts.  
+
+[ Exits: north east south west ]
+A tiny red imp runs around collecting litter.
+
+940/940 HP  1152/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | The Grand Plaza (NESW)
+>>   Meridian Square (G)
+  The focal point of the Grand Plaza of Aylor is Meridian Square, built not
+to honor the sun, but rather the city itself.  In this place, the heart of
+Aylor, the city's glory is always at its zenith.  The square honors the
+spirit of defiance that made the founders of Aylor build a city so great
+that its brightness would rival the sun's, its mighty towers so tall as to
+scrape the clouds as they pass overhead.  The foremost feature of Meridian
+Square is the memorial fountain, which pumps crystal clear water into the
+sky year round.  A detachment of city guards known as the Honor Guard keep
+watch over the fountain day and night.  The practical reason is to prevent
+any defacement, but myth-lovers claim that they protect the massive marble
+bier at the center of the fountain which is said to hold a container of the
+Water of Life.  
+
+[ Exits: north east south west up down ]
+     (Magic) (Glow) (Hum) A fountain dedicated to the ancient Builders of Andolor flows with pure
+water.
+
+940/940 HP  1152/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Meridian Square (NESWUD)
+n
+n
+>>   The Grand Plaza (G)
+  Day or night, people can be found in the Grand Plaza of Aylor. 
+Merchants, both honest and otherwise, hock their wares, mercenaries offer
+their services, and, once the sun sets, a bit of "company" is only an alley
+away.  Plaza Guards mill through the crowd, keeping a weather eye out for
+pickpockets, cutpurses, and other ne'er-do-wells.  The vast expanse of the
+square is packed with all manner of booths and tables, but in the end most
+eyes are drawn to the far corners of the plaza and to the Guild towers that
+dominate them-each unique, and each magnificent.  The plaza is a place to
+see and be seen, to buy and to sell, each according to his own agenda.
+
+[ Exits: north east south west ]
+
+940/940 HP  1152/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | The Grand Plaza (NESW)
+n
+>>   North of the Grand Plaza (G)
+  The sounds of the city echo between the buildings that line the sides of
+this broad street.  Standing here, the oppressive size of the city is fully
+evident.  The northern sky is dominated by the elegant spires of the Grand
+Aylorian Temple, while the southern horizon is punctuated by glimpses of the
+Guild towers.  A queer building rises up on the eastern side of the street,
+though it seems to have developed a slight list to one side.  The door to
+the building is boarded over and bears a sign reading: "Out of Order!!!! 
+Decapitation Hazard!!  --Tinker's Guild Safety Committee."  In its place,
+a complex series of pulleys operates a bucket that carries visitors up to a
+second floor window.  Ominous explosions, thuds, and various other sounds of
+mass destruction escape the building at random intervals.  In an alley
+beside the slanting structure, a giant, clockwork machine of some sort
+occasionally belches out clouds of smoke and fire.  A series of crudely
+hammered metal chutes leading down from the upper stories of the structure
+rains trash down into the incinerator.  A large sign in the alley reads:
+"Posted: Hard Hat Zone."  
+
+[ Exits: north south west other ]
+A sad-looking silver-haired gnome walks slowly past you.
+A gnomish incinerator bot is here, belching smoke and fire.
+
+940/940 HP  1152/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | North of the Grand Plaza (NSW*)
+>>   Whitewind Avenue (G)
+  You stand on Whitewind Avenue just south of a large intersection with a
+large statue and numerous people.  The city around you is incredible, with
+amazing architecture, breathtaking horizons, and finely crafted roadwork. 
+Beneath your feet, the road is a white, translucent stone, likely quartz,
+that sparkles in the sunlight.  Traveling south will take you to the world
+famous Meridian Square.  
+
+[ Exits: north south down ]
+
+940/940 HP  1152/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Whitewind Avenue (NSD)
+n
+>>   
+n
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+Phoenix Square (G)
+  At this, the main intersection of the Grand City of Aylor, the road is
+shiny and black as if paved with ebony.  The road extends east and west,
+reaching across the entire city.  In the center of this large square stands
+a black and pink alabaster statue.  Beneath the statue, many solicitors try
+to grab the attention of passersby.  To the north is the white marble temple. 
+To the south, you gaze upon a large plaza with eight silver spires piercing
+the sky.  
+
+[ Exits: north east south west up ]
+     A large black and pink statue sprays streams of water into the air.
+
+940/940 HP  1154/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Phoenix Square (NESWU)
+>>   Whitewind Avenue (G)
+  You stand on Whitewind Avenue before a large intersection with a massive
+statue and numerous people.  The city around you is incredible, with amazing
+architecture, breathtaking horizons, and finely crafted roadwork.  Beneath
+your feet, the road is made of a white translucent stone, likely quartz,
+that sparkles in the sunlight.  To the north, the grand Aylorian Temple
+stands high above the city.  
+
+[ Exits: north east south west up down ]
+
+940/940 HP  1154/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Whitewind Avenue (NESWUD)
+>>   
+n
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Invis) Shravani the Sorcerer.
+(Player) (White Aura) (OPK) Forma not formatted.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Scarratt is here.
+
+940/940 HP  1154/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | The Grand City of Aylor (NESWUD)
+d
+>>   
+Donation Room - General Supply (G)
+  Many artifacts have found their way into this room.  Piles of 'things'
+fill the corners and clutter the shelves against the walls.  All of these
+objects, having been donated for the use of others, are free to anybody who
+wants them.  If you find anything you like, help yourself!  This
+donation room brought to you by Ivar Enterprises!  
+
+[ Exits: north east west up ]
+
+940/940 HP  1154/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Donation Room - General Supply (NEWU)
+>>   
+u
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Invis) Shravani the Sorcerer.
+(Player) (White Aura) (OPK) Forma not formatted.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Scarratt is here.
+
+940/940 HP  1154/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | The Grand City of Aylor (NESWUD)
+u
+>>   
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+940/940 HP  1154/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Outside the Aylorian Academy (NSD)
+>>   
+s
+w
+Boot Clan Public Hall (G)
+  You have wandered out of the Academy and into Boot Camps clanhall. 
+Clans are a special thing on aardwolf allowing like minded people to 
+come together. Read help clans for more information. Boot Camp is a 
+clan designed to help new players learn more about the game and we 
+enjoy doing it. Read help boot and help newbieclan to learn more. 
+This area is not a part of the Academy and the first thing you should 
+do on Aardwolf is complete the Academy goal. We offer newbie starter 
+kits to all new players. If you would like one please send a member a 
+tell. You can type who boot to see who is online. If they do not 
+respond then they are most likely afk. All items in our newbie kits 
+are also sold in this shop. Type list if you would like to take a look 
+at them. To return to the Academy type north.
+
+[ Exits: north east south west ]
+A commissary shopkeeper stands here, begging you to type 'list'.
+
+940/940 HP  1154/1317 MP  1223/1224 mv  700tnl  
+Lv 45  G 10000 | Boot Clan Public Hall (NESW)
+w
+>>   Recreation Room (G)
+  Walking into the room, you notice there is a relaxed, friendly atmosphere and
+almost everyone is in military uniform. A jukebox is playing a lively tune 
+and some of the patrons are having fun dancing to the music. The sound of 
+laughter coming from one end of the bar, as someone has just delivered the 
+punch line of a good joke. Plush, comfortable looking, couches are scattered 
+around the large room in clusters of two and three, allowing for more 
+intimate gatherings and private conversations. The enlisted and the officers 
+mingle together amicably and everyone is on excellent terms with the 
+bartender.
+
+[ Exits: east south west ]
+An old veteran stands behind the bar, ready to serve you a cool drink.
+
+940/940 HP  1154/1317 MP  1222/1224 mv  700tnl  
+Lv 45  G 10000 | Recreation Room (ESW)
+>>   Mudpits (G)
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+
+[ Exits: east west down ]
+(Player) (Hidden) (Linkdead) Iiamchell the Avenger.
+Gunney Sergeant waits here to train you to exhaustion.
+
+940/940 HP  1154/1317 MP  1221/1224 mv  700tnl  
+Lv 45  G 10000 | Mudpits (EWD)
+w
+w
+>>   Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Hidden) (Translucent) (White Aura) Diafour -=Eternal Newbie=-.
+(Player) (Invis) (Hidden) (White Aura) (OPK) Spublofe is always half AFK.
+(Player) (Hidden) YeeShin NecOccisor.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Drimshade the Navigator.
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+940/940 HP  1154/1317 MP  1220/1224 mv  700tnl  
+Lv 45  G 10000 | Boot Camp Headquarters (NE[S]WUD)
+>>   Medical lounge (G)
+  You stand in a plain looking room, with bunk beds lining both sides. Green 
+wool blankets line the beds with perfect hospital corners. At the end of this 
+seemingly endless room are two doors leading to what you believe is some 
+kind of latrine and shower area. On one wall there is a milk cooler next to a 
+sign that shows a Drill Sergeant pointing to the room. Words are written 
+over his head, "Milk makes for a strong soldier!". There is a Second 
+Lieutenant Pixie with a red cross on her hat here.
+
+[ Exits: east (down) ]
+     (Magic) A refrigerated milk cooler stands ready to serve all.
+     (Magic) Multiple beds line the wall, waiting for people to rest or be treated on them.
+     (Magic) An old electric heater.
+(Player) (Translucent) (White Aura) Lexicon the Navigator.
+[AFK] (Player) (White Aura) Tench the Venomist is sleeping in a trivia sleeping bag.
+[AFK] (Player) Roume wasn't built in a day. is sleeping on Medical beds.
+[AFK] (Player) Davem returning mudder from years ago is sleeping on Medical beds.
+(Player) (White Aura) (OPK) Inix the Hunter is sleeping in a trivia sleeping bag.
+[AFK] (Player) (White Aura) Adarax is just the universe observing itself.
+Lieutenant Pixie smiles up at you as she gets ready to amputate your leg.
+
+940/940 HP  1154/1317 MP  1219/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+fil can milk
+You fill [Recruit] Insulated Canteen with milk.
+
+940/940 HP  1154/1317 MP  1219/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+gulp ilk
+You didn't find that to drink from.
+
+940/940 HP  1154/1317 MP  1219/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+gulp milk
+You gulp down some milk from Milk Cooler.
+You are now full.
+Your thirst is fully quenched.
+
+940/940 HP  1154/1317 MP  1219/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+gulp milk
+You gulp down some milk from Milk Cooler.
+You are now full.
+Your thirst is fully quenched.
+
+940/940 HP  1154/1317 MP  1219/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+
+
+ftalk whatcha up to??
+You tell your friends: 'whatcha up to??'
+
+940/940 HP  1260/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+
+
+Lieutenant Pixie chants the phrase 'blar'.
+
+Your body softens.
+
+(Friend) Shravani: 'leveling'
+
+You no longer absorb magical attacks.
+
+INFO: All please welcome Dagoretth, Aardwolf's newest Human Avenger!
+
+Adarax's eyes glaze over and he appears to be somewhere else.
+
+ftalk. cool. do you do campaigns/quests/goals/something else? 
+Sorry KumoGami, you can't do that.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+
+Adarax has returned from AFK mode.
+
+Adarax has gone AFK. (I am away for several moments. Leave a message if you would like.)
+
+INFO: Gunners has been reborn as a Shadow Thief.
+
+ftalk cool. do you do campaigns/quests/goals/something else? 
+You tell your friends: 'cool. do you do campaigns/quests/goals/something else? '
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+
+(Friend) Shravani: 'yeah'
+
+You can no longer sense anger.
+
+spellup int; spellup wis; spellup luck; spellup stats; spellup
+No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   Queueing spell : harden body.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   You feel your body harden.
+
+940/940 HP  1287/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+Queueing spell : sense anger.
+
+940/940 HP  1287/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   You can now sense anger in your immediate area.
+
+940/940 HP  1247/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+cp ch
+* a swordsman (Cradlebrook) 11302
+* the half-eaten person (Descent to Hell) 31116
+* an adept temple keeper (Keep of the Kobaloi) 10782
+* Rodney the Rogue (Kingdom of Ahner) 30129
+* Kenneth the Demented (Kingdom of Ahner) 30129
+* a guard dog (Onyx Bazaar) 34451
+* a group of boys (Onyx Bazaar) 34451
+* an impatient patron (Onyx Bazaar) 34451
+* a mahasher (Raganatittu) 19861
+* the Roman Equite (Realm of the Zodiac) 15857
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* the xaren (The UnderDark) 27333
+* the cloaker (The UnderDark) 27333
+* a grof (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 23 hours and 48 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+940/940 HP  1247/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+tgt swordman
+Target switched to: 1.swordman
+
+940/940 HP  1247/1317 MP  1224/1224 mv  700tnl  
+Lv 45  G 10000 | Medical lounge (E[D])
+>>   
+"run ed;enter crystal;run 4swndewn4es5e"
+run ed;enter crystal;run 4swndewn4es5e
+Boot Camp Headquarters (G) (1223)
+
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (OPK) Forma not formatted.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Scarratt is here.
+
+940/940 HP  1247/1317 MP  1222/1224 mv  700tnl  
+Lv 45  G 10000 | The Grand City of Aylor (NESWUD)
+>>   You don't see that here.
+
+940/940 HP  1247/1317 MP  1222/1224 mv  700tnl  
+Lv 45  G 10000 | The Grand City of Aylor (NESWUD)
+>>   Whitewind Avenue (G) (1222)
+
+Phoenix Square (G) (1222)
+
+Whitewind Avenue (G) (1222)
+
+North of the Grand Plaza (G) (1222)
+
+Midgaardian Publishing House Reception Area (G) (1222)
+
+Restroom (G) (1221)
+
+Yesterday's News (G) (1221)
+
+The Graveyard Gates (1221)
+
+The Tothmeer Trail (1221)
+
+The Tothmeer Trail (1220)
+
+A boulder-strewn field (1219)
+
+Gently Rolling Plains (1218)
+
+A Small Village (1217)
+
+South of a small town (1216)
+
+Silverwind Forest (1215)
+
+Silverwind Forest (1214)
+
+Silverwind Forest (1213)
+
+An odd field (1212)
+
+On a Dull Forest Trail (1211)
+
+Outside the East Gate
+  You are on a small dirt path outside the east gate of a village.  The
+path seems infrequently used and disappears into the undergrowth ahead.  You
+can hear the sounds of a stream to the west.  The trees in this part of the
+forest seem to be evergreens: pine and spruces and firs.  
+
+[ Exits: east west ]
+
+940/940 HP  1247/1317 MP  1210/1224 mv  700tnl  
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+
+
+You are no longer able to breathe underwater.
+
+You can no longer avoid some attacks.
+
+You feel yourself slow down.
+Your force shield shimmers then fades away.
+
+You see the black moon rising in the east.
+
+INFO: DjVoltron has been reborn as an Eldar Psionicist.
+
+An icy, light wind blows from the north.
+Snow starts to fall softly from the night sky.
+
+Character autosaved at Sun Jul 30 04:23:04 2023.
+
+The trails to Cradlebrook grow wider.
+
+Your mystic might fades away.
+
+Your pulse slows to a normal rate.
+
+You see the white moon rising in the west.
+
+You are no longer blurred.
+
+Flaw chants the phrase 'lofer lirrir'.
+Flaw erects a mental barrier around himself.
+
+You can no longer sense anger.
+
+You see the grey moon rising in the east.
+
+(Friend): Shravani runs over to Vost and gives him a sweet HUGGLE!
+
+Global Quest: Global Quest # 7746 has been won by Kers - 3403rd win.
+Global Quest: Global Quest # 7746 will go into extended time for 5 more minutes.
+
+Calfin flies in from the north.
+
+Calfin jets west.
+
+You notice the black moon falling to the west.
+
+The trails to Cradlebrook grow wider.
+
+A strong wind blows from the southeast.
+A storm begins to form.
+
+INFO: Vnu has graduated from the Aylorian Academy!
+
+Global Quest: Haagen has completed Global Quest # 7746.
+Global Quest: No active players remaining. Global Quest # 7746 is now over.
+
+You notice the grey moon falling to the west.
+
+You no longer detect invisibility.
+The detect magic wears off.
+
+You feel less aware of your surroundings.
+
+Your eyes glaze over.
+
+INFO: Gunners has entered open PK (OPK) mode!
+
+You notice the white moon falling to the east.
+
+Your body softens.
+
+You are no longer invisible.
+
+Character autosaved at Sun Jul 30 04:38:06 2023.
+
+The trails to Cradlebrook grow wider.
+
+Someone has arrived through a spellgate.
+
+A balmy, light wind blows from the south.
+Clouds start to form in the sky.
+
+Someone says 'hi'
+
+Someone scans all directions, looking for signs of life.
+
+Someone chants the phrase 'haste'.
+You feel yourself moving more quickly.
+
+Someone chants the phrase 'invis'.
+You fade out of existence.
+
+Someone chants the phrase 'shield'.
+You are surrounded by Someone's force shield.
+
+Someone chants the phrase 'blur'.
+Someone makes your appearance look blurred.
+
+Someone chants the phrase 'aces'.
+You feel a strong magical force surround your body.
+
+Someone chants the phrase 'underwater breathing'.
+You feel gills growing on your neck!
+
+Someone chants the phrase 'harden body'.
+
+Someone chants the phrase 'harden body'.
+You feel your body harden.
+
+Someone asks 'do you need any help?'
+
+Someone scans all directions, looking for signs of life.
+
+You see the grey moon rising in the east.
+
+Shravani just sent you a tell.
+
+You notice the grey moon falling to the west.
+
+Someone enters into Aylorian Academy portal and disappears.
+
+The trails to Cradlebrook grow wider.
+
+You see the black moon rising in the east.
+
+You no longer absorb magical attacks.
+
+A nippy, light wind blows from the east.
+Snow starts to fall softly from the sky.
+
+replay
+30 Jul 04:43:23 - Shravani tells you 'you there?'
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+reply sorry, was away for a bit
+You tell Shravani 'sorry, was away for a bit'
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+
+Calfin flies in from the north.
+
+Calfin jets west.
+
+Shravani just sent you a tell.
+
+You are no longer able to breathe underwater.
+
+Calfin flies in from the north.
+
+Calfin jets west.
+
+Someone has arrived through a spellgate.
+
+replay wish i could say yes but i'm just squeezing a few mobs here and there during work hehe so i 
+won't be very responsive :< maybe later when work's over
+30 Jul 04:50:46 - Shravani tells you 'its ok'
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+reply wish i could say yes but i'm just squeezing a few mobs here and there during work hehe so i 
+won't be very responsive :< maybe later when work's over
+You tell Shravani 'wish i could say yes but i'm just squeezing a few mobs here and there during work
+hehe so i won't be very responsive :< maybe later when work's over'
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+
+Someone giggles at you.  Hope it's not contagious!
+
+spellup int; spellup wis; spellup luck; spellup stats; spellup
+No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   No spells or skills cast.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   Queueing spell : mystic might.
+Queueing spell : magical rush.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   You feel your body surge with extra power.
+
+940/940 HP  1287/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+e
+You feel your adrenaline pump as your body speeds up.
+
+940/940 HP  1257/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+Queueing spell : detect hidden.
+Queueing spell : detect invis.
+Queueing spell : detect magic.
+Queueing spell : avoidance.
+Queueing spell : sense anger.
+Queueing spell : underwater breathing.
+
+940/940 HP  1257/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   Your eyes are more focused.
+
+940/940 HP  1242/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+Your eyes tingle.
+
+940/940 HP  1227/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+Your eyes glow blue.
+
+940/940 HP  1217/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+You lost your concentration while trying to cast avoidance.
+
+940/940 HP  1205/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+You can now sense anger in your immediate area.
+
+940/940 HP  1165/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+You feel gills growing on your neck!
+
+940/940 HP  1150/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+Cradlebrook forest
+  The serenity of this peaceful forest encompasses you; the occasional
+singing or chirp of birds breaks the silence.  Decades of dead and rotting
+leaves carpet the forest floor making all sounds muted.  
+
+[ Exits: north east south west ]
+
+940/940 HP  1150/1317 MP  1223/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Cradlebrook forest (NESW)
+>>   
+w
+Outside the East Gate
+  You are on a small dirt path outside the east gate of a village.  The
+path seems infrequently used and disappears into the undergrowth ahead.  You
+can hear the sounds of a stream to the west.  The trees in this part of the
+forest seem to be evergreens: pine and spruces and firs.  
+
+[ Exits: east west ]
+(Player) (Invis) Shravani the Sorcerer.
+
+940/940 HP  1150/1317 MP  1222/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+l;ex
+Outside the East Gate
+  You are on a small dirt path outside the east gate of a village.  The
+path seems infrequently used and disappears into the undergrowth ahead.  You
+can hear the sounds of a stream to the west.  The trees in this part of the
+forest seem to be evergreens: pine and spruces and firs.  
+
+[ Exits: east west ]
+(Player) (Invis) Shravani the Sorcerer.
+
+940/940 HP  1150/1317 MP  1222/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   Obvious exits from [ Outside the East Gate ]:
+ East           : Cradlebrook forest 
+ West           : Inside the East Gate 
+
+940/940 HP  1150/1317 MP  1222/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+
+Shravani chants the phrase 'ofof'.
+You feel a strong magical force surround your body.
+
+The trails to Cradlebrook grow wider.
+
+cp ch
+* a swordsman (Cradlebrook) 11302
+* the half-eaten person (Descent to Hell) 30981
+* an adept temple keeper (Keep of the Kobaloi) 10782
+* Rodney the Rogue (Kingdom of Ahner) 30129
+* Kenneth the Demented (Kingdom of Ahner) 30129
+* a guard dog (Onyx Bazaar) 34451
+* a group of boys (Onyx Bazaar) 34451
+* an impatient patron (Onyx Bazaar) 34451
+* a mahasher (Raganatittu) 19861
+* the Roman Equite (Realm of the Zodiac) 15857
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* the xaren (The UnderDark) 27337
+* the cloaker (The UnderDark) 27337
+* a grof (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 23 hours and 12 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+940/940 HP  1150/1317 MP  1222/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+
+
+Shravani enters into Aylorian Academy portal and disappears.
+
+hunt 1.swordman
+No one in this area by the name '1.swordman'.
+
+940/940 HP  1176/1317 MP  1224/1224 mv  700tnl (Reply: Shravani) 
+Lv 45  G 10000 | Outside the East Gate (EW)
+>>   
+
+You notice the black moon falling to the west.
+Character autosaved at Sun Jul 30 04:53:09 2023.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:53:42.606

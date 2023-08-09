@@ -133,6 +133,17 @@
 			<key>url</key>
 			<string>https://downfor.io/{query}</string>
 		</dict>
+		<key>DD729E55-89F3-422C-9EEF-B65F48ACE7B5</key>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>keyword</key>
+			<string>gaard</string>
+			<key>text</key>
+			<string>Search Gaardian for '{query}'</string>
+			<key>url</key>
+			<string>https://www.google.com/search?q={query}+site:maps.gaardian.com</string>
+		</dict>
 		<key>E8ABA2E3-2815-463D-BB81-1B8D4643EBB6</key>
 		<dict>
 			<key>enabled</key>

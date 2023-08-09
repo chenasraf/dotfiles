@@ -6,11 +6,12 @@ source $DOTFILES/scripts/man.sh
 cwd="$(pwd)"
 __home_prepare_dir
 
-echo_cyan "Setting default settings..."
+echo_cyan "Setting defaults..."
 source $DOTFILES/scripts/home/defaults.sh
+git config --global core.excludesfile ~/.config/.gitignore
 
 if [[ $? -ne 0 ]]; then
-  echo_red "Failed to set default settings."
+  echo_red "Failed to set defaults."
   __home_revert_dir
   return 1
 fi
@@ -51,6 +52,7 @@ check_npm=(
   "firebase"
   "prettier"
   "http-server"
+  "licenseg"
 )
 
 install_npm=(
@@ -60,6 +62,7 @@ install_npm=(
   "firebase-tools@latest"
   "prettier@latest"
   "http-server"
+  "licenseg"
 )
 
 install_npm_final=()
@@ -94,6 +97,12 @@ fi
 if [[ ! -d ~/.tmux-themepack ]]; then
   echo_cyan "Installing tmux themepack..."
   git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+fi
+
+# tmux-power
+if [[ ! -d ~/.tmux-power ]]; then
+  echo_cyan "Installing tmux-power..."
+  git clone git@github.com:wfxr/tmux-power.git ~/.tmux-power
 fi
 
 if [[ ! -f $(which tblf) ]]; then

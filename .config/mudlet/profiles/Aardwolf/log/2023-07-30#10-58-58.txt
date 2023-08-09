@@ -1,0 +1,106 @@
+Log session starting at 10:58:58 on Sunday, 30 July 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-07-30#10-58-51map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-07-30#10-58-51map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.20s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+MainWindowSize: 615    
+
+[::(info): Your existing map has 16245 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 189         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+Tag option map turned ON
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* You do not see a bag here.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+You have the following daily blessing active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 2 quests completed will reward double quest points        06:47:42     
+
+You received your last daily blessing at 29 Jul 2023 16:46:46.
+
+You can receive a new daily blessing in 11 hours, 47 minutes and 42 seconds.
+
+You have 1 daily blessing reset available.
+
+940/940 HP  1317/1317 MP  1224/1224 mv  704tnl  
+Lv 45  G 10000 | Aardwolf Lottery Headquarters (NW)
+>>   *[NOEXP]* 
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:00:14.126

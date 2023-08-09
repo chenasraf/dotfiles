@@ -1,15 +1,21 @@
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
 vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "File explorer" })
+vim.keymap.set("n", "-", require("oil").open, { desc = "File explorer" })
 vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.write()
   vim.cmd.Ex()
 end, { desc = "Save and file explorer" })
 
-vim.keymap.set("n", "<leader>Q", "<C-w>c", { desc = "Close pane" })
+vim.keymap.set("n", "<leader>q", "<C-w>c", { desc = "Close pane" })
+
+vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location" })
+vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+
+vim.keymap.set("i", "<A-Backspace>", "<Esc>dbi", { desc = "Delete word backwards" })
 
 -- vim.keymap.set({"v", "n"}, "<C-.>", "<C-o>", { desc = "Go to previous cursor location" })
 -- vim.keymap.set({"v", "n"}, "<C-,>", "<C-i>", { desc = "Go to next cursor location" })
@@ -18,8 +24,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
 -- insert newlines without insert mode
-vim.keymap.set("n", "<leader>o", "m`o<Esc>k``", { desc = "Insert newline below" })
-vim.keymap.set("n", "<leader>O", "m`O<Esc>j``", { desc = "Insert newline above" })
+vim.keymap.set("n", "<leader>o", "m`o<Esc>k``j", { desc = "Insert newline below" })
+vim.keymap.set("n", "<leader>O", "m`O<Esc>j``k", { desc = "Insert newline above" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -61,16 +67,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 
 -- file formatting
--- TODO: move to lsp.lua?
-vim.keymap.set("n", "<leader>f", function()
-  -- print(vim.bo.filetype)
-  if vim.bo.filetype == "dart" then
-    vim.cmd("silent !dart format --line-length 120 %:p")
-  else
-    vim.lsp.buf.format()
-  end
-end, { desc = "Format file" })
-
 vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "New buffer below" })
 vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "New buffer above" })
 vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "New buffer left" })
@@ -82,10 +78,10 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next location lis
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Previous location list" })
 
 -- search and replace current word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search and replace current word" })
 -- search and replace current selection
-vim.keymap.set("v", "<leader>s", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
+vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
   { desc = "Search and replace current selection" })
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
@@ -95,11 +91,11 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/p
   { desc = "Edit packer config" });
 vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/remap.lua<CR>",
   { desc = "Edit remaps" });
-vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" });
-vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Game of life" });
+-- vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" });
+-- vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Game of life" });
 
 -- source file
-vim.keymap.set("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
+-- vim.keymap.set("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
 
 -- save file
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
@@ -110,3 +106,36 @@ vim.keymap.set("n", "<leader>Srv", function()
   vim.cmd(":silent !open http://localhost:5500")
   vim.cmd("belowright split | terminal " .. cmd)
 end, { desc = "Serve working directory" })
+
+vim.cmd("command! Pwd :echo expand('%:p:h')<CR>")
+vim.cmd("command! Pwf :echo expand('%:p')<CR>")
+
+function RemoveQF()
+  local curqfidx = vim.fn.line(".") - 1
+  local qfall = vim.fn.getqflist()
+  table.remove(qfall, curqfidx)
+  vim.fn.setqflist(qfall, "r")
+  vim.cmd(tostring(curqfidx + 1) .. "cfirst")
+  vim.cmd("copen")
+end
+
+vim.cmd("command! RemoveQFItem :lua RemoveQF()")
+
+-- autocmd FileType qf map <buffer> dd :RemoveQFItem<CR>
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.keymap.set("n", "dd", ":RemoveQFItem<CR>", { buffer = true, desc = "Remove quickfix item" })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "dart",
+  callback = function()
+    vim.keymap.set("n", "<F5>", ":Telescope flutter commands<CR>", { buffer = true, desc = "Flutter commands" })
+  end,
+})
+
+vim.keymap.set("n", "<Leader>cp", ":Copilot panel<CR>", { desc = "Open Copilot panel" })
+vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
+

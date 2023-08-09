@@ -1,7 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
 export DOTBIN="$CFG/bin"
-git config --global core.excludesfile ~/.config/.gitignore
 
 # echo 'Loading '$DOTFILES/functions.sh
 source $DOTFILES/functions.sh
@@ -19,26 +18,24 @@ export fpath=("$DOTFILES/completions" $fpath)
 zstyle ':completion:*:*:*:*:*' menu select
 
 # Use ESC to edit the current command line:
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '\033\033' edit-command-line
+# check if edit-command-line not already loaded
+which edit-command-line &>/dev/null
+if [[ $? -ne 0 ]]; then
+  autoload -U edit-command-line
+  zle -N edit-command-line
+  bindkey -M vicmd V edit-command-line
+  # back/forward word
+  bindkey "^[[1;3C" forward-word
+  bindkey "^[[1;3D" backward-word
+fi
+
 
 # echo 'Loading '$DOTFILES/exports.sh
 source $DOTFILES/exports.sh # must run before zsh_init
 # echo 'Loading '$DOTFILES/aliases.sh
 source $DOTFILES/aliases.sh
-# echo 'Loading '$DOTFILES/sources.sh
-source $DOTFILES/sources.sh
 # echo 'Loading '$DOTFILES/scripts/home/home.sh
 source $DOTFILES/scripts/home/home.sh
 # echo 'Loading '$DOTFILES/zsh_init.sh
 source $DOTFILES/zsh_init.sh
-
-# source all files in scripts dir
-for file in $DOTFILES/scripts/*; do
-  [[ -f "$file" ]] && source $file
-done
-
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
 

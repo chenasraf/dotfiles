@@ -31,12 +31,13 @@ home() {
       git -C "$DOTFILES" push
       ;;
     pull | l)
+      shift
       git -C "$DOTFILES" pull
-      if [[ $? -eq 0 ]]; then
-        reload-zsh
-      fi
+      # if [[ $? -eq 0 ]]; then
+      #   reload-zsh
+      # fi
       ;;
-    reload-term | rt)
+    reload-term(inal)? | rt)
       reload-zsh
       return 0
       ;;
@@ -47,35 +48,54 @@ home() {
     install | i)
       source $DOTFILES/install.sh
       ;;
-    # dropzone | dz)
-    #   shift
-    #   dz_lib="$HOME/Library/Application Support/Dropzone"
-    #   dz_bak="$DOTFILES/synced/Dropzone"
-    #   sub="$1"
+    m | mudlet)
+      shift
 
-    #   case $sub in
-    #   r | restore)
-    #     echo_cyan "Restoring Dropzone backup..."
-    #     src="$dz_bak"
-    #     target="$dz"
-    #     mkdir -p $target
-    #     cp -r $src/* $target
-    #     ;;
-    #   d | dump)
-    #     echo_cyan "Creating Dropzone backup..."
-    #     target="$dz_bak"
-    #     src="$dz"
-    #     rm -rf $target
-    #     mkdir -p $target
-    #     cp -r $src/* $target
-    #     ;;
-    #   *) # unknown option
-    #     echo_red "No command or invalid command supplied."
-    #     __home_print_help 0
-    #     return 1
-    #     ;;
-    #   esac
-    #   ;;
+      sub="$1"
+
+      case $sub in
+        backup | b)
+          rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $HOME/.config/mudlet $DOTFILES/.config/
+          ;;
+        restore | r)
+          rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
+          ;;
+        *)
+          echo_red "No command or invalid command supplied."
+          __home_print_help 0
+          return 1
+          ;;
+      esac
+      ;;
+    dropzone | dz)
+      shift
+      dz_lib="$HOME/Library/Application Support/Dropzone"
+      dz_bak="$DOTFILES/synced/Dropzone"
+      sub="$1"
+
+      case $sub in
+      r | restore)
+        echo_cyan "Restoring Dropzone backup..."
+        src="$dz_bak"
+        target="$dz"
+        mkdir -p $target
+        rsync -tvr --exclude ".git" --exclude "node_modules" --no-links $src/* $target
+        ;;
+      d | dump)
+        echo_cyan "Creating Dropzone backup..."
+        target="$dz_bak"
+        src="$dz"
+        rm -rf $target
+        mkdir -p $target
+        rsync -tvr --exclude ".git" --exclude "node_modules" --no-links $src/* $target
+        ;;
+      *) # unknown option
+        echo_red "No command or invalid command supplied."
+        __home_print_help 0
+        return 1
+        ;;
+      esac
+      ;;
     workflows | w)
       shift
       __home_prepare_dir
@@ -104,43 +124,6 @@ home() {
         echo_red "No command or invalid command supplied."
         __home_print_help 0
         return 1
-        ;;
-      esac
-      ;;
-    motd | m)
-      shift
-      sub="$1"
-      case $sub in
-      edit | e)
-        if [[ "$2" == "head" ]]; then
-          vim $DOTFILES/synced/motd/motd.head && home motd restore
-          return 0
-        else
-          vim $DOTFILES/synced/motd/motd && home motd restore
-        fi
-        ;;
-      dump | d)
-        echo_cyan "Creating motd backup..."
-        cat /etc/motd.head >$DOTFILES/synced/motd/motd.head
-        cat /etc/motd >$DOTFILES/synced/motd/motd
-        ;;
-      restore | r)
-        echo_cyan "Restoring motd backup..."
-        cat $DOTFILES/synced/motd/motd >/etc/motd
-        cat $DOTFILES/synced/motd/motd.head >/etc/motd.head
-        if [[ "$?" -ne 0 ]]; then
-          echo_red "Failed to restore motd. Trying to fix permissions... needs root access"
-          sudo chmod 0766 /etc/motd
-          sudo chmod 0766 /etc/motd.head
-        fi
-        scp $DOTFILES/synced/motd/09-head root@spider.casraf.dev:/etc/update-motd.d/09-head
-        ssh root@spider.casraf.dev "chmod 0755 /etc/update-motd.d/09-head"
-        scp /etc/motd.head root@spider.casraf.dev:/etc/motd.head
-        scp /etc/motd root@spider.casraf.dev:/etc/motd
-        ;;
-      *)
-        lolcat /etc/motd.head
-        cat /etc/motd
         ;;
       esac
       ;;

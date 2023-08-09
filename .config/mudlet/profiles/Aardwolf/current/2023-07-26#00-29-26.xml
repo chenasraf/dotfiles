@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<HostPackage>
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="0.5" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="yes" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="no" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="5" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="120" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+			<name>Aardwolf</name>
+			<mInstalledPackages>
+				<string>echo</string>
+				<string>run-lua-code-v4</string>
+				<string>deleteOldProfiles</string>
+				<string>enable-accessibility</string>
+				<string>button-spells</string>
+				<string>button-move</string>
+			</mInstalledPackages>
+			<mInstalledModules>
+				<key>aardwolf</key>
+				<filepath>/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
+				<globalSave>0</globalSave>
+				<priority>0</priority>
+			</mInstalledModules>
+			<url>aardmud.org</url>
+			<serverPackageName>nothing</serverPackageName>
+			<serverPackageVersion>-1</serverPackageVersion>
+			<port>4000</port>
+			<borderTopHeight>55</borderTopHeight>
+			<borderBottomHeight>55</borderBottomHeight>
+			<borderLeftWidth>55</borderLeftWidth>
+			<borderRightWidth>602</borderRightWidth>
+			<wrapAt>100</wrapAt>
+			<wrapIndentCount>0</wrapIndentCount>
+			<mFgColor>#c0c0c0</mFgColor>
+			<mBgColor>#000000</mBgColor>
+			<mCommandFgColor>#717100</mCommandFgColor>
+			<mCommandBgColor>#000000</mCommandBgColor>
+			<mCommandLineFgColor>#808080</mCommandLineFgColor>
+			<mCommandLineBgColor>#000000</mCommandLineBgColor>
+			<mBlack>#000000</mBlack>
+			<mLightBlack>#808080</mLightBlack>
+			<mRed>#800000</mRed>
+			<mLightRed>#ff0000</mLightRed>
+			<mBlue>#000080</mBlue>
+			<mLightBlue>#0000ff</mLightBlue>
+			<mGreen>#008000</mGreen>
+			<mLightGreen>#00ff00</mLightGreen>
+			<mYellow>#808000</mYellow>
+			<mLightYellow>#ffff00</mLightYellow>
+			<mCyan>#008080</mCyan>
+			<mLightCyan>#00ffff</mLightCyan>
+			<mMagenta>#800080</mMagenta>
+			<mLightMagenta>#ff00ff</mLightMagenta>
+			<mWhite>#c0c0c0</mWhite>
+			<mLightWhite>#ffffff</mLightWhite>
+			<mDisplayFont>Bitstream Vera Sans Mono,14,-1,5,50,0,0,0,1,0</mDisplayFont>
+			<mCommandLineFont>Bitstream Vera Sans Mono,14,-1,5,50,0,0,0,0,0</mCommandLineFont>
+			<mCommandSeparator>;</mCommandSeparator>
+			<commandLineMinimumHeight>30</commandLineMinimumHeight>
+			<mFgColor2>#c0c0c0</mFgColor2>
+			<mBgColor2>#000000</mBgColor2>
+			<mRoomBorderColor>#c0c0c0</mRoomBorderColor>
+			<mMapInfoBg alpha="120">#969696</mMapInfoBg>
+			<mBlack2>#000000</mBlack2>
+			<mLightBlack2>#808080</mLightBlack2>
+			<mRed2>#800000</mRed2>
+			<mLightRed2>#ff0000</mLightRed2>
+			<mBlue2>#000080</mBlue2>
+			<mLightBlue2>#0000ff</mLightBlue2>
+			<mGreen2>#008000</mGreen2>
+			<mLightGreen2>#00ff00</mLightGreen2>
+			<mYellow2>#808000</mYellow2>
+			<mLightYellow2>#ffff00</mLightYellow2>
+			<mCyan2>#008080</mCyan2>
+			<mLightCyan2>#00ffff</mLightCyan2>
+			<mMagenta2>#800080</mMagenta2>
+			<mLightMagenta2>#ff00ff</mLightMagenta2>
+			<mWhite2>#c0c0c0</mWhite2>
+			<mLightWhite2>#ffffff</mLightWhite2>
+			<mSpellDic>en_US</mSpellDic>
+			<mLineSize>10.0</mLineSize>
+			<mRoomSize>0.5</mRoomSize>
+			<mapInfoContributor>Short</mapInfoContributor>
+			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
+			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
+			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
+			<profileShortcut key="Preferences">Ctrl+P</profileShortcut>
+			<profileShortcut key="Notepad">Ctrl+N</profileShortcut>
+			<profileShortcut key="Package manager">Ctrl+O</profileShortcut>
+			<profileShortcut key="Module manager">Ctrl+I</profileShortcut>
+			<profileShortcut key="MultiView">Ctrl+Alt+V</profileShortcut>
+			<profileShortcut key="Play">Ctrl+Alt+C</profileShortcut>
+			<profileShortcut key="Disconnect">Ctrl+D</profileShortcut>
+			<profileShortcut key="Reconnect">Ctrl+R</profileShortcut>
+			<profileShortcut key="Close profile">Ctrl+W</profileShortcut>
+			<stopwatches />
+		</Host>
+	</HostPackage>
+	<TriggerPackage />
+	<TimerPackage />
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>echo</name>
+			<script></script>
+			<command></command>
+			<packageName>echo</packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>`echo</name>
+				<script>local s = matches[2]
+
+s = string.gsub(s, "%$", "\n")
+feedTriggers("\n" .. s .. "\n")
+echo("\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>`echo (.+)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>`cecho</name>
+				<script>local s = matches[2]
+
+s = string.gsub(s, "%$", "\n")
+cfeedTriggers("\n" .. s .. "\n")
+echo("\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>`cecho (.+)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>`decho</name>
+				<script>local s = matches[2]
+
+s = string.gsub(s, "%$", "\n")
+dfeedTriggers("\n" .. s .. "\n")
+echo("\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>`decho (.+)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>`hecho</name>
+				<script>local s = matches[2]
+
+s = string.gsub(s, "%$", "\n")
+hfeedTriggers("\n" .. s .. "\n")
+echo("\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>`hecho (.+)</regex>
+			</Alias>
+		</AliasGroup>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>run-lua-code-v4</name>
+			<script></script>
+			<command></command>
+			<packageName>run-lua-code-v4</packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>run lua code</name>
+				<script>local f, e = loadstring("return "..matches[2])
+if not f then
+  f, e = assert(loadstring(matches[2]))
+end
+
+local r =
+  function(...)
+    if not table.is_empty({...}) then
+      display(...)
+    end
+  end
+r(f())</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^lua (.*)$</regex>
+			</Alias>
+		</AliasGroup>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>deleteOldProfiles</name>
+			<script></script>
+			<command></command>
+			<packageName>deleteOldProfiles</packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>delete old profiles</name>
+				<script>deleteOldProfiles(matches[3], matches[2])
+
+--Syntax examples: "delete old profiles"  -&gt; deletes profiles older than 31 days
+--					"delete old maps 10"	-&gt; deletes maps older than 10 days</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^delete old (profiles|maps|modules)(?: (\d+))?$</regex>
+			</Alias>
+		</AliasGroup>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>enable-accessibility</name>
+			<script></script>
+			<command></command>
+			<packageName>enable-accessibility</packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>mudlet accessibility on</name>
+				<script>echo("Welcome to Mudlet!\n")
+echo("Let's adjust a few preferences to improve the visually impaired experience:\n")
+
+setConfig("autoClearInputLine", true)
+echo("Text will now be removed from the input line after it was sent ✓\n")
+setConfig("showSentText", false)
+echo("Text sent to the game will not appear in the main window ✓\n")
+
+setConfig("caretShortcut", "ctrltab")
+echo("Shortcut to switch between input line and main window set to Ctrl+Tab. You can also change it to either Tab or F6 in settings.\n")
+
+if getOS() == "windows" then
+  setConfig("blankLinesBehaviour", "hide")
+  echo("Blank lines will be removed from the output ✓\n")
+end
+
+if getOS() == "mac" then
+  echo("\nYou're on a mac and VoiceOver will skip reading text when there's lots of it coming in. Would you like to install a third-party TTS plugin to alleviate this issue?\n")
+  echo("Type 'mudlet access reader' if so.\n")
+  echo("See https://wiki.mudlet.org/w/Accessibility_on_OSX if you'd like to learn more.\n")
+end
+
+echo("\nThat's all, enjoy Mudlet!\n")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^mudlet access(?:ibility)? on$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>mudlet accessibility reader</name>
+				<script>uninstallPackage"reader"
+installPackage"https://github.com/tspivey/mudlet-reader/releases/latest/download/reader.mpackage"</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^mudlet access(?:ibility)? reader$</regex>
+			</Alias>
+		</AliasGroup>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>casraf</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>restock</name>
+				<script></script>
+				<command>recall; rt boot; run 4w; gulp milk; gulp milk; fill can milk;</command>
+				<packageName></packageName>
+				<regex>^restock</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<ActionPackage>
+		<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+			<name>button-spells</name>
+			<packageName>button-spells</packageName>
+			<script></script>
+			<css></css>
+			<commandButtonUp></commandButtonUp>
+			<commandButtonDown></commandButtonDown>
+			<icon></icon>
+			<orientation>0</orientation>
+			<location>0</location>
+			<posX>0</posX>
+			<posY>0</posY>
+			<mButtonState>1</mButtonState>
+			<sizeX>0</sizeX>
+			<sizeY>0</sizeY>
+			<buttonColumn>1</buttonColumn>
+			<buttonRotation>0</buttonRotation>
+			<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<name>Spells</name>
+				<packageName></packageName>
+				<script></script>
+				<css></css>
+				<commandButtonUp></commandButtonUp>
+				<commandButtonDown></commandButtonDown>
+				<icon></icon>
+				<orientation>1</orientation>
+				<location>2</location>
+				<posX>0</posX>
+				<posY>0</posY>
+				<mButtonState>1</mButtonState>
+				<sizeX>0</sizeX>
+				<sizeY>0</sizeY>
+				<buttonColumn>1</buttonColumn>
+				<buttonRotation>0</buttonRotation>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Attack</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Magic Missile</name>
+					<packageName></packageName>
+					<script>send("ca ma " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Chill Touch</name>
+					<packageName></packageName>
+					<script>send("ca chill " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Burning Hands</name>
+					<packageName></packageName>
+					<script>send("ca burn " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Poison</name>
+					<packageName></packageName>
+					<script>send("ca poison " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Shocking Grasp</name>
+					<packageName></packageName>
+					<script>send("ca shock " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Wither</name>
+					<packageName></packageName>
+					<script>send("ca wither " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Prismatic Spray</name>
+					<packageName></packageName>
+					<script>send("ca prismatic " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Rune of ix</name>
+					<packageName></packageName>
+					<script>send("ca rune " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Debuff</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Blindness</name>
+					<packageName></packageName>
+					<script>send("ca blindness " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Spook</name>
+					<packageName></packageName>
+					<script>send("ca spook " .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Utility</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 0 10px 0 20px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Restock</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>restock</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Quest Request</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>recall; rt quest; quest request</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Quest Complete</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>recall; rt quest; quest complete</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Buff</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Night Vision</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca night</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Breath Underwater</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca under</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Find</name>
+					<packageName></packageName>
+					<script></script>
+					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Where</name>
+					<packageName></packageName>
+					<script>send("where " .. targetN .. "." .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Where Next</name>
+					<packageName></packageName>
+					<script>send("ntarget", false)
+send("where " .. targetN .. "." .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Next Target</name>
+					<packageName></packageName>
+					<script>send("narget")</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Hunt</name>
+					<packageName></packageName>
+					<script>send("hunt " .. targetN .. "." .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Hunt Next</name>
+					<packageName></packageName>
+					<script>send("ntarget", false)
+send("hunt " .. targetN .. "." .. target)</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+			</ActionGroup>
+		</ActionGroup>
+		<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+			<name>button-move</name>
+			<packageName>button-move</packageName>
+			<script></script>
+			<css></css>
+			<commandButtonUp></commandButtonUp>
+			<commandButtonDown></commandButtonDown>
+			<icon></icon>
+			<orientation>0</orientation>
+			<location>0</location>
+			<posX>0</posX>
+			<posY>0</posY>
+			<mButtonState>1</mButtonState>
+			<sizeX>0</sizeX>
+			<sizeY>0</sizeY>
+			<buttonColumn>1</buttonColumn>
+			<buttonRotation>0</buttonRotation>
+			<ActionGroup isActive="yes" isFolder="yes" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<name>Move</name>
+				<packageName></packageName>
+				<script></script>
+				<css></css>
+				<commandButtonUp></commandButtonUp>
+				<commandButtonDown></commandButtonDown>
+				<icon></icon>
+				<orientation>0</orientation>
+				<location>0</location>
+				<posX>0</posX>
+				<posY>0</posY>
+				<mButtonState>1</mButtonState>
+				<sizeX>0</sizeX>
+				<sizeY>0</sizeY>
+				<buttonColumn>1</buttonColumn>
+				<buttonRotation>0</buttonRotation>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⬅</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: green; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>w</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⬇</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: red; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>s</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⬆</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: red; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>n</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>➡</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: green; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>w</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>↗</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: blue; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>u</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>↙</name>
+					<packageName></packageName>
+					<script></script>
+					<css>background-color: blue; max-width: 30px;</css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>d</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+			</ActionGroup>
+		</ActionGroup>
+	</ActionPackage>
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>deleteOldProfiles</name>
+			<packageName>deleteOldProfiles</packageName>
+			<script></script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>deleteOldProfiles script</name>
+				<packageName></packageName>
+				<script>function deleteOldProfiles(keepdays_arg, delete_folder)
+  --[[
+  Deletes old profiles/maps/modules in the "current"/"map"/"moduleBackups" folders of the Mudlet home directory.
+  The following files are NOT deleted:
+  - Files newer than the amount of days specified as an argument to deleteOldProfiles(), or 31 days if not specified.
+  - One file for every month before that. Specifically: The first available file of every month prior to this.
+  Setting the second argument to true will delete maps instead of profiles. (e.g. deleteOldProfiles(10, true))
+  --]]
+
+  -- Ensure correct value is passed for second argument
+  assert(type(delete_folder) == "string", "Wrong type for delete_folder; expected string, got " .. type(delete_folder))
+  assert(table.contains({"profiles", "maps", "modules"}, delete_folder), "delete_folder must be profiles, maps or modules")
+
+  local keepdays = tonumber(keepdays_arg) or 31
+  local profile_table = {}
+  local used_last_mod_months = {}
+  local slash = (string.char(getMudletHomeDir():byte()) == "/") and "/" or "\\"
+  local delnum = 0
+
+  local to_folder = {
+    profiles = "current",
+    maps = "map",
+  }
+
+  local dirpath = delete_folder == "modules"
+    and getMudletHomeDir()..slash..".."..slash..".."..slash.."moduleBackups"
+    or getMudletHomeDir()..slash..to_folder[delete_folder]
+
+  -- Traverse the profiles folder and create a table of files:
+  for filename in lfs.dir(dirpath) do
+    if filename~="." and filename~=".." then
+      profile_table[#profile_table+1] = {
+        name = filename,
+        last_mod = lfs.attributes(dirpath..slash..filename, "modification")
+      }
+    end
+  end
+
+  -- Sort the table according to last modification date from old to new:
+  table.sort(profile_table, function (a,b) return a.last_mod &lt; b.last_mod end)
+
+  echo(string.format(
+    "\nDeleting old %s. Files newer than %d days and one for every month before that will be kept.",
+    delete_folder,
+    keepdays
+  ))
+
+  for i, v in ipairs(profile_table) do
+    local days = math.floor(os.difftime(os.time(), v.last_mod) / 86400)
+    local last_mod_month = os.date("%Y/%m", v.last_mod)
+    if days &gt; keepdays then
+      -- For profiles older than X days, check if we already kept a table for this month:
+      if not table.contains(used_last_mod_months, last_mod_month) then
+        -- If not, do nothing and mark this month as "kept".
+        used_last_mod_months[#used_last_mod_months+1] = last_mod_month
+      else
+        -- Otherwise remove the file:
+        local success, errorstring = os.remove(dirpath..slash..v.name)
+        if success then
+          delnum = delnum + 1
+        else
+          cecho("\n&lt;red&gt;ERROR: "..errorstring)
+        end
+      end
+    end
+  end
+
+  echo(string.format("\nDeletion complete. %d/%d files were removed successfully.", delnum, #profile_table))
+end
+</script>
+				<eventHandlerList />
+			</Script>
+		</ScriptGroup>
+	</ScriptPackage>
+	<KeyPackage>
+		<KeyGroup isActive="yes" isFolder="yes">
+			<name>casraf</name>
+			<packageName></packageName>
+			<script></script>
+			<command></command>
+			<keyCode>33554431</keyCode>
+			<keyModifier>0</keyModifier>
+			<Key isActive="yes" isFolder="no">
+				<name>1 inv</name>
+				<packageName></packageName>
+				<script>send("inv")</script>
+				<command></command>
+				<keyCode>49</keyCode>
+				<keyModifier>536870912</keyModifier>
+			</Key>
+			<Key isActive="yes" isFolder="no">
+				<name>shift + 1 eq</name>
+				<packageName></packageName>
+				<script>send("eq")</script>
+				<command></command>
+				<keyCode>49</keyCode>
+				<keyModifier>570425344</keyModifier>
+			</Key>
+		</KeyGroup>
+	</KeyPackage>
+	<VariablePackage>
+		<HiddenVariables />
+	</VariablePackage>
+</MudletPackage>

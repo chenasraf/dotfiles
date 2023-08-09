@@ -2,6 +2,7 @@
 
 source $DOTFILES/autoload_completions.sh
 source $DOTFILES/colors.sh
+source $DOTFILES/tmux.sh
 
 motd() {
   out=$(run-parts $DOTFILES/synced/motd)
@@ -159,9 +160,6 @@ rand() {
   echo $(($RANDOM % ($max - $min + 1) + $min))
 }
 
-# need to source because VS Code raises error on the function
-source $DOTFILES/scripts/randarg.sh
-
 # select random element from list
 randline() {
   if [[ $# -eq 0 ]]; then
@@ -317,69 +315,17 @@ autoload _docker-volume-path
 autoload _prj
 autoload _src
 
-tn-custom () {
-    parent="."
-    for arg in "$@"; do
-        case "$1" in
-            -d)
-              parent="$2"
-              winname=$(basename $parent)
-              winname="${winname%.*}"
-              shift 2
-              ;;
-            -s)
-              winname="${2%.*}"
-              shift 2
-              ;;
-        esac
-    done
-    tmux has-session -t $winname 2>/dev/null
-    if [[ "$?" == "0" ]]; then
-      tmux attach-session -t $winname
-      return 0
-    fi
-
-    dirs=("$@")
-
-    echo "Creating new session $winname on $parent with dirs: $dirs"
-    tmux -f ~/.config/.tmux.conf new-session -d -s $winname -n general -c $parent
-
-    for dir in ${dirs[@]}; do
-      dir="$parent/$dir"
-      tabname=$(basename $dir)
-      if [[ $tabname == "." ]]; then
-        tabname="$winname"
-      fi
-
-      # sleep 0.1
-      # echo new-window -n $tabname -c $dir
-      tmux new-window -n $tabname -c $dir
-      # echo
-
-      # sleep 0.1
-      # echo send-keys -t $winname:$tabname v . Enter
-      tmux send-keys -t $winname:$tabname v Enter
-      # echo
-
-      # sleep 0.1
-      # echo split-window -h -t $winname:$tabname -c $dir
-      tmux split-window -h -t $winname:$tabname -c $dir
-
-      tmux select-pane -t 0
-      # echo
-    done
-
-    tmux select-window -t $winname:0
-    tmux attach -t $winname
-}
-
-tn-prj() {
-    prj="$1"
-    shift
-    tn-custom -d "$HOME/Dev/$prj" -s "$prj" . $@
-}
-
 reload-zsh() {
   source $HOME/.zshrc
 }
 
+bench() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: bench <command>"
+    return 1
+  fi
+  command=$1
+  shift
+  echo "Benchmarking $command..."
+  /usr/bin/time -v $command $@
+}

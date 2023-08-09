@@ -1,0 +1,4121 @@
+Log session starting at 21:32:14 on Monday, 31 July 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-31#02-12-04map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.10s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.20s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-07-31#02-12-04map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.18s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 619    
+
+[::(info): Your existing map has 16692 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 230         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Sun Jul 30 19:46:58 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+Stone Archway
+  This is an ancient stone archway.  Various faces of demons and other grim
+pictures are painted onto it.  Stone gargoyles and demons glare down at you
+from atop the arch.  There is a bronze plaque above the archway.  
+
+[ Exits: west up ]
+There are 231 players on, the most on this reboot was 257.
+There are 227 players using compression.
+
+LOTTERY : Current lottery jackpot is at 40,000,000 gold.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+
+Tag option map turned ON
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   You do not see a bag here.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+You received your last daily blessing at 30 Jul 2023 16:15:00.
+
+You can receive a new daily blessing in 42 minutes and 20 seconds.
+
+You have 1 daily blessing reset available.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+friend
+You are friends with : 
+  1) - Mondaine     (Offline)
+  2) - Shravani     (Offline)
+  3) - Tatya        (Offline)
+
+'Friend wannabe' will show people who want to be your friend.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+
+
+cp ch
+* maintenance worker (Descent to Hell) 30981
+* a guardian of records (Onyx Bazaar) 34451
+* a small goshawk (Raganatittu) 19861
+* the Mistress of Sharkatan (The Coral Kingdom) 4563
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz) 510
+* some sticky cobwebs (The Temple of Shouggoth) 34087
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 3 hours and 7 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+--------------------------[ YOUR CURRENT CAMPAIGN ]----------------------
+Complete By........: [ 05:41PM on 06 Aug 2023 ]
+Time Left  ........: [ 6 days, 3 hours and 7 minutes ]
+Level Taken........: [    48 ]
+Quest Points.......: [    28 ]
+Gold Coins.........: [ 52147 ]
+----------------------------[ Campaign Victims ]-------------------------
+The targets for this campaign are:
+Find and kill 1 * maintenance worker (Descent to Hell)
+Find and kill 1 * a guardian of records (Onyx Bazaar)
+Find and kill 1 * a small goshawk (Raganatittu)
+Find and kill 1 * the Mistress of Sharkatan (The Coral Kingdom)
+Find and kill 1 * a scaly monitor lizard (The Great Salt Flats)
+Find and kill 1 * a shambling mound (The Labyrinth)
+Find and kill 1 * a treant (The Labyrinth)
+Find and kill 1 * a satyr (The Labyrinth)
+Find and kill 1 * a donkey (The Land of Oz)
+Find and kill 1 * some sticky cobwebs (The Temple of Shouggoth)
+Find and kill 1 * a school of fish (The Wobbly Woes of Woobleville)
+Find and kill 1 * a grot (Zangar's Demonic Grotto)
+--------------------------------------------------------------------------
+Use 'cp check' to see only targets that you still need to kill.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+tgt
+Target is: 1.maintenance worker
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  903tnl  
+Lv 48  G 351394 | Stone Archway (WU)
+>>   
+
+
+w
+Ancient Room
+  You are standing in a large stone room.  Feels like a crypt.  Ancient
+murals of Hell and punishment cover the walls.  In the middle of the room
+are stairs that lead down in to the darkness.  From the stairway you can
+smell brimstone and sulfur.  To the west it looks as if there is a shrine.  
+
+[ Exits: east west down ]
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  903tnl  
+Lv 48  G 351394 | Ancient Room (EWD)
+>>   
+hunt 1.maintenance worker
+You seem unable to hunt that target for some reason.
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  903tnl  
+Lv 48  G 351394 | Ancient Room (EWD)
+>>   
+where 1.maintenance worker
+maintenance worker             Maintenance Walkway
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  903tnl  
+Lv 48  G 351394 | Ancient Room (EWD)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+A demonguard arrives from the west.
+
+Character autosaved at Mon Jul 31 14:35:04 2023.
+
+Hell freezes over - this can't be a good sign.
+
+d
+Dark Stairway
+  You are standing at the bottom of long dark stairway.  The smell of
+brimstone and sulfur choke you.  Screams of pain and terror fill the air. 
+Stone faces carved into the walls seem to laugh at you.  Maybe this is not
+such a good idea after all....  
+
+[ Exits: west up ]
+A damned soul wanders aimlessly here.
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  903tnl  
+Lv 48  G 351394 | Dark Stairway (WU)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+"run w;o w;w;o w;run 4w2des2en2es2ene2ds2wnws4wn2wd3es;o e;run 2en;o e;run 2es2en;o e;run e2s;o 
+s;run 2s"
+run w;o w;w;o w;run 4w2des2en2es2ene2ds2wnws4wn2wd3es;o e;run 2en;o e;run 2es2en;o e;run e2s;o 
+s;run 2s
+Landing (G)
+  This landing has been scorched as if a large brushfire swept through it. 
+Bits of ash and burnt vegetation cover everything.  The walls and floor are
+flawlessly smooth and the ceiling is covered with carved faces and ancient
+symbols.  A large black gate leads to the west.  
+
+[ Exits: east (west) ]
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  903tnl  
+Lv 48  G 351394 | Landing (E[W])
+>>   You open the gate.
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  903tnl  
+Lv 48  G 351394 | Landing (EW)
+>>   Gateway to Hell (G)
+  You stand next to the very gateway of Hell.  You are surrounded by the
+sounds of torture and pain.  Screams pierce the air and rattle your nerves. 
+Displays of the treats of Hell are in all directions.  A large black iron
+gate towers over you to the east.  
+
+[ Exits: north east south west ]
+A skeletal warrior wanders the planes of hell.
+A Guardian of Hell stands here keeping you the hell out.
+A Guardian of Hell stands here keeping you the hell out.
+A damned soul wanders aimlessly here.
+
+1011/1011 HP  1396/1396 MP  1272/1274 mv  903tnl  
+Lv 48  G 351394 | Gateway to Hell (NESW)
+>>   There is no door to the west of here.
+
+1011/1011 HP  1396/1396 MP  1272/1274 mv  903tnl  
+Lv 48  G 351394 | Gateway to Hell (NESW)
+>>   Hall of the Damned (1271)
+
+Hall of the Damned (1270)
+
+Hall of the Damned (1269)
+
+Hall of the Damned (1268)
+
+Bloody Stairway (1267)
+
+Bottom of Stairway (1266)
+
+Stone Hall (1265)
+
+Stone Hall (1264)
+
+Stone Hall (1263)
+
+Stone Hall (1262)
+
+Stone Hall (1261)
+
+Stone Hall (1260)
+
+Stone Hall (1259)
+
+Stone Hall (1258)
+
+Stone Hall (1257)
+
+Stone Hall (1256)
+
+Stone Hall (1255)
+
+Stone Hall (1254)
+
+Hot Stairs (1253)
+
+Fire Mural (1252)
+
+Hot Hall (1251)
+
+Lake of Fire (G) (1250)
+
+Wall of Fire (G) (1249)
+
+Hall of Fire (1248)
+
+Hall of Fire (1247)
+
+Hall of Fire (1246)
+
+Construction Area (G) (1245)
+
+Construction Area (1244)
+
+Construction Area (1243)
+
+Hall of Fire (1242)
+
+Hall of Fire (1241)
+
+Hall of Fire (1240)
+
+Stone Arch (1239)
+
+Cold Stairway (1238)
+
+Icy Landing (1237)
+
+Ice Room (1236)
+
+Ice Room (G) (1235)
+
+Ice Room
+  You are standing in a room of ice.  Icicles of every size hang from the
+ceiling.  Some shake with every sound.  Your reflection off the ice walls
+seems to dance and wiggle as you move about.  To the north and west you see
+more of the frozen room.  To the east you see a freezer door.  
+
+[ Exits: north (east) west ]
+A Greater Ice Devil stands here cheerfully freezing souls.
+
+1011/1011 HP  1396/1396 MP  1234/1274 mv  903tnl  
+Lv 48  G 351394 | Ice Room (N[E]W)
+>>   You open the freezer door.
+
+1011/1011 HP  1396/1396 MP  1234/1274 mv  903tnl  
+Lv 48  G 351394 | Ice Room (NEW)
+>>   Meat Locker (1233)
+
+Meat Locker (1230)
+
+Meat Locker
+  Rows of beef and other meats hang from large steel hooks.  You notice
+that many of the things hanging from the hooks are corpses of people.  They
+reach out to you as you pass them as if to plead for help from their frozen
+mouths.  The meat locker continues to the south.  There is a freezer door to
+the east.  
+
+[ Exits: (east) south west ]
+A half frozen body hangs here on a meat hook.
+
+1011/1011 HP  1396/1396 MP  1227/1274 mv  903tnl  
+Lv 48  G 351394 | Meat Locker ([E]SW)
+>>   You open the freezer door.
+
+1011/1011 HP  1396/1396 MP  1227/1274 mv  903tnl  
+Lv 48  G 351394 | Meat Locker (ESW)
+>>   Penguin Room (G) (1224)
+
+Your journey was broken by the need to defend yourself.
+The killer penguin's pound DEVASTATES you. [35]
+The killer penguin's pound ERADICATES you. [40]
+You dodge the killer penguin's attack.
+The killer penguin's pound DEVASTATES you. [35]
+
+FIGHTING!
+901/1011 HP  1396/1396 MP  1224/1274 mv  903tnl
+89% HP (you) |  Enemy: 100% HP (mob) >>   There is no door to the east of here.
+
+FIGHTING!
+901/1011 HP  1396/1396 MP  1224/1274 mv  903tnl
+89% HP (you) |  Enemy: 100% HP (mob) >>   Not while you are fighting!
+
+FIGHTING!
+901/1011 HP  1396/1396 MP  1224/1274 mv  903tnl
+89% HP (you) |  Enemy: 100% HP (mob) >>   There is no door to the south of here.
+
+FIGHTING!
+901/1011 HP  1396/1396 MP  1224/1274 mv  903tnl
+89% HP (you) |  Enemy: 100% HP (mob) >>   Not while you are fighting!
+
+FIGHTING!
+901/1011 HP  1396/1396 MP  1224/1274 mv  903tnl
+89% HP (you) |  Enemy: 100% HP (mob) >>   
+
+You blink out of existence and avoid the killer penguin's attack.
+You blink out of existence and avoid the killer penguin's attack.
+Your pierce MASSACRES the killer penguin! [68]
+The killer penguin's pound ERADICATES you. [37]
+The killer penguin's pound DEVASTATES you. [31]
+The killer penguin has a few minor scratches.
+
+FIGHTING!
+833/1011 HP  1396/1396 MP  1224/1274 mv  903tnl
+82% HP (you) |  Enemy: 96% HP (mob) >>   
+ca poison
+The killer penguin turns slightly green, but it passes.
+You blink out of existence and avoid the killer penguin's attack.
+The killer penguin's pound ERADICATES you. [37]
+The killer penguin's pound ERADICATES you. [39]
+Your pierce DISMEMBERS the killer penguin! [74]
+The killer penguin's pound DEVASTATES you. [34]
+The killer penguin's pound DEVASTATES you. [35]
+The killer penguin is showing a few grazes.
+
+FIGHTING!
+688/1011 HP  1376/1396 MP  1224/1274 mv  903tnl
+68% HP (you) |  Enemy: 92% HP (mob) >>   
+ca fireball
+ca fireball
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> the killer penguin! [171]
+Your searing ball of flame <-=-> SUNDERS <-=-> the killer penguin! [189]
+You blink out of existence and avoid the killer penguin's attack.
+You blink out of existence and avoid the killer penguin's attack.
+Your pierce misses the killer penguin. [0]
+You blink out of existence and avoid the killer penguin's attack.
+The killer penguin's pound DEVASTATES you. [34]
+The killer penguin's pound DEVASTATES you. [34]
+The killer penguin's trip misses you. [0]
+The killer penguin has some small wounds and bruises.
+
+FIGHTING!
+620/1011 HP  1346/1396 MP  1224/1274 mv  903tnl
+61% HP (you) |  Enemy: 73% HP (mob) >>   
+ca vampiric
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> the killer penguin! [176]
+You blink out of existence and avoid the killer penguin's attack.
+You blink out of existence and avoid the killer penguin's attack.
+Your pierce DISEMBOWELS the killer penguin! [64]
+You blink out of existence and avoid the killer penguin's attack.
+The killer penguin's pound ERADICATES you. [37]
+The killer penguin's pound DEVASTATES you. [34]
+The killer penguin is showing a few battle scars.
+
+FIGHTING!
+549/1011 HP  1316/1396 MP  1224/1274 mv  903tnl
+54% HP (you) |  Enemy: 61% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <*><*><*><*> ANNIHILATES <*><*><*><*> the killer penguin! [242]
+Your life-draining touch <*><*> LIQUIDATES <*><*> the killer penguin! [166]
+Your life-draining touch <-+-><-*-> CREMATES <-*-><-+-> the killer penguin! [234]
+You dodge the killer penguin's attack.
+The killer penguin's pound ERADICATES you. [37]
+*The killer penguin's pound INCINERATES you! [54]
+Your pierce DISEMBOWELS the killer penguin! [64]
+*The killer penguin's pound EXTIRPATES you. [50]
+The killer penguin's pound ERADICATES you. [38]
+The killer penguin's trip misses you. [0]
+The killer penguin needs a hospital.
+
+FIGHTING!
+417/1011 HP  1276/1396 MP  1224/1274 mv  903tnl
+41% HP (you) |  Enemy: 24% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <-+-><-*-> CREMATES <-*-><-+-> the killer penguin! [232]
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> the killer penguin! [192]
+You blink out of existence and avoid the killer penguin's attack.
+You dodge the killer penguin's attack.
+Your pierce RENDS the killer penguin! [76]
+The killer penguin is slain by a final deadly stab!!
+You receive 83 experience points.
+You get 124 gold coins from the perforated corpse of the killer penguin.
+Ayla gives you 25 gold coins for the perforated corpse of the killer penguin.
+The killer penguin's pound DEVASTATES you. [35]
+The killer penguin's pound ERADICATES you. [37]
+The killer penguin is in perfect health.
+
+FIGHTING!
+390/1011 HP  1236/1396 MP  1224/1274 mv  820tnl
+ca vampiric
+38% HP (you) |  Enemy: 100% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <*><*><*><*> ANNIHILATES <*><*><*><*> the killer penguin! [251]
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> the killer penguin! [198]
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+You dodge the killer penguin's attack.
+You blink out of existence and avoid the killer penguin's attack.
+The killer penguin's pound DEVASTATES you. [35]
+Your pierce misses the killer penguin. [0]
+The killer penguin is bleeding lightly.
+
+FIGHTING!
+404/1011 HP  1197/1396 MP  1229/1274 mv  820tnl
+39% HP (you) |  Enemy: 77% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <->*<=> WASTES <=>*<-> the killer penguin! [201]
+Your life-draining touch <-=-> SUNDERS <-=-> the killer penguin! [190]
+You blink out of existence and avoid the killer penguin's attack.
+You blink out of existence and avoid the killer penguin's attack.
+The killer penguin sends you sprawling with a powerful bash!
+The killer penguin's bash OBLITERATES you. [45]
+Your pierce MASSACRES the killer penguin! [67]
+The killer penguin has quite a few wounds.
+
+FIGHTING!
+397/1011 HP  1157/1396 MP  1229/1274 mv  820tnl
+39% HP (you) |  Enemy: 53% HP (mob) >>   
+ca vampiric
+You fail to drain the life away from the killer penguin.
+Your life-draining touch <-=-> SUNDERS <-=-> the killer penguin! [183]
+Your life-draining touch <-=-> SUNDERS <-=-> the killer penguin! [183]
+You dodge the killer penguin's attack.
+You blink out of existence and avoid the killer penguin's attack.
+Your pierce misses the killer penguin. [0]
+The killer penguin has some very nasty wounds.
+
+FIGHTING!
+397/1011 HP  1117/1396 MP  1229/1274 mv  820tnl
+39% HP (you) |  Enemy: 34% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <-=-> SUNDERS <-=-> the killer penguin! [189]
+Your life-draining touch <*><*><*><*> ANNIHILATES <*><*><*><*> the killer penguin! [249]
+You blink out of existence and avoid the killer penguin's attack.
+The killer penguin's pound ERADICATES you. [37]
+The killer penguin's pound DEVASTATES you. [34]
+Your pierce DISMEMBERS the killer penguin! [74]
+The killer penguin is gravely injured.
+
+FIGHTING!
+361/1011 HP  1077/1396 MP  1229/1274 mv  820tnl
+35% HP (you) |  Enemy: 7% HP (mob) >>   
+ca vampiric
+Your life-draining touch <-=-> SUNDERS <-=-> the killer penguin! [186]
+Blood explodes from the killer penguin's every orifice!! It is DEAD!
+You receive 96 experience points.
+You get 97 gold coins from the bloodless corpse of the killer penguin.
+Ayla gives you 25 gold coins for the bloodless corpse of the killer penguin.
+
+361/1011 HP  1037/1396 MP  1229/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+Cast vampiric touch on whom?
+
+361/1011 HP  1037/1396 MP  1229/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   Cast vampiric touch on whom?
+
+361/1011 HP  1037/1396 MP  1229/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+ca inv
+You lost your concentration while trying to cast invis.
+
+361/1011 HP  1025/1396 MP  1229/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+ca inv
+You fade out of existence.
+
+362/1011 HP  1001/1396 MP  1234/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+spellup
+Queueing spell : detect hidden.
+Queueing spell : detect invis.
+Queueing spell : detect magic.
+Queueing spell : haste.
+Queueing spell : night vision.
+Queueing spell : shield.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : sense anger.
+Queueing spell : absorb.
+Queueing spell : underwater breathing.
+Queueing spell : mystic might.
+Queueing spell : harden body.
+Queueing spell : magical rush.
+
+362/1011 HP  1001/1396 MP  1234/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   Your eyes are more focused.
+
+362/1011 HP  986/1396 MP  1234/1274 mv  724tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+Your eyes tingle.
+You have become better at detect invis! (97%)
+
+362/1011 HP  971/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+Your eyes glow blue.
+
+362/1011 HP  961/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You lost your concentration while trying to cast haste.
+
+362/1011 HP  951/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+Your eyes glow red.
+
+362/1011 HP  936/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You are surrounded by a force shield.
+
+362/1011 HP  931/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You now possess magical powers of avoidance.
+
+362/1011 HP  906/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You make your appearance look blurred.
+
+362/1011 HP  891/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You can now sense anger in your immediate area.
+
+362/1011 HP  851/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You lost your concentration while trying to cast absorb.
+
+362/1011 HP  819/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You feel gills growing on your neck!
+
+362/1011 HP  804/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You feel your body surge with extra power.
+
+362/1011 HP  774/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You feel your body harden.
+
+362/1011 HP  744/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You feel your adrenaline pump as your body speeds up.
+
+362/1011 HP  714/1396 MP  1234/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+spellup
+Queueing spell : haste.
+Queueing spell : absorb.
+
+363/1011 HP  716/1396 MP  1239/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   Your magic is blessed with the luck of Ayla!
+You feel yourself moving more quickly.
+
+363/1011 HP  696/1396 MP  1239/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+You lost your concentration while trying to cast absorb.
+
+363/1011 HP  664/1396 MP  1239/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+spellup
+Queueing spell : absorb.
+
+364/1011 HP  666/1396 MP  1244/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   You feel a strong magical force surround your body.
+
+364/1011 HP  601/1396 MP  1244/1274 mv  722tnl  
+Lv 48  G 351665 | Penguin Room (ESW)
+>>   
+"run es2en;o e;run e2s"
+run es2en;o e;run e2s
+Penguin Room (1243)
+
+Penguin Room (G) (1242)
+
+Ice-Creamery (1241)
+
+Ice-Creamery (1238)
+
+Ice-Creamery (G)
+  You appear to be standing in an ice-creamery.  There seems to be a group
+of people here shouting into containers and then quickly covering them.  How
+odd...  The factory continues to the south and west.  There is a steel door
+to the east.  
+
+[ Exits: (east) south west ]
+An Ice Screamer is here yelling into empty cartons.
+
+364/1011 HP  601/1396 MP  1235/1274 mv  722tnl  
+Lv 48  G 351665 | Ice-Creamery ([E]SW)
+>>   You open the steel door.
+
+364/1011 HP  601/1396 MP  1235/1274 mv  722tnl  
+Lv 48  G 351665 | Ice-Creamery (ESW)
+>>   White Marble Hall (1232)
+
+Marble Hall (1231)
+
+Administration of Hell
+  This is the entrance to the Administration offices of Hell.  The
+secretaries desk sits quietly in the middle of the room.  To the south is a
+metal door labeled, 'Authorized Personnel Only' To the west is a large glass
+door.  There is a stairway down on the opposite side of the room.  There is
+a sign posted next to the stairs.  
+
+[ Exits: north (south) (west) down ]
+The Secretary of Hell sits here watching the phones ring.
+
+364/1011 HP  601/1396 MP  1230/1274 mv  722tnl  
+Lv 48  G 351665 | Administration of Hell (N[S][W]D)
+>>   
+"o s;run 2s"
+o s;run 2s
+You open the metal door.
+
+364/1011 HP  601/1396 MP  1230/1274 mv  722tnl  
+Lv 48  G 351665 | Administration of Hell (NS[W]D)
+>>   Maintenance Walkway (1229)
+
+Maintenance Walkway
+  This is a maintenance accessway.  You walk on a metal catwalk hundreds of
+feet above the floor.  The catwalk sways unsteadily as you walk on it.  The
+catwalk continues to the north and west.  
+
+[ Exits: north west ]
+A maintenance worker is here fixing stuff.
+
+364/1011 HP  601/1396 MP  1228/1274 mv  722tnl  
+Lv 48  G 351665 | Maintenance Walkway (NW)
+>>   
+
+Global Quest: Global Quest # 8133 has been won by Gruagach - 96th win.
+Global Quest: Global Quest # 8133 will go into extended time for 5 more minutes.
+
+
+ca fireball 'maintenance worker'
+ca pois 'maintenance worker'
+ca with 'maintenance worker'
+You fade into existence.
+Your searing ball of flame <-+-><-*-> CREMATES <-*-><-+-> maintenance worker! [229]
+Maintenance worker is showing a few grazes.
+
+FIGHTING!
+364/1011 HP  571/1396 MP  1228/1274 mv  722tnl
+36% HP (you) |  Enemy: 87% HP (mob) >>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+Your pierce DISEMBOWELS maintenance worker! [63]
+Your pierce DISEMBOWELS maintenance worker! [62]
+Your pierce DISEMBOWELS maintenance worker! [65]
+Maintenance worker's pound OBLITERATES you. [43]
+Maintenance worker is bleeding lightly.
+
+FIGHTING!
+321/1011 HP  573/1396 MP  1233/1274 mv  722tnl
+ca vampiric
+31% HP (you) |  Enemy: 77% HP (mob) >>   
+You lost your concentration while trying to cast poison.
+
+FIGHTING!
+321/1011 HP  563/1396 MP  1233/1274 mv  722tnl
+31% HP (you) |  Enemy: 77% HP (mob) >>   
+ca vampiric
+
+Your pierce DISMEMBERS maintenance worker! [74]
+Your pierce DISEMBOWELS maintenance worker! [62]
+Your pierce DISEMBOWELS maintenance worker! [64]
+You dodge maintenance worker's attack.
+Maintenance worker has some small wounds and bruises.
+
+FIGHTING!
+321/1011 HP  563/1396 MP  1233/1274 mv  722tnl
+31% HP (you) |  Enemy: 66% HP (mob) >>   
+ca vampiric
+Your strength-draining touch -=- VAPORIZES -=- maintenance worker! [117]
+Maintenance worker is showing a few battle scars.
+
+FIGHTING!
+321/1011 HP  533/1396 MP  1233/1274 mv  722tnl
+31% HP (you) |  Enemy: 60% HP (mob) >>   
+ca vampiric
+
+Your pierce DISEMBOWELS maintenance worker! [64]
+Your pierce MASSACRES maintenance worker! [67]
+Your pierce MASSACRES maintenance worker! [68]
+You dodge maintenance worker's attack.
+Maintenance worker has quite a few wounds.
+
+FIGHTING!
+321/1011 HP  533/1396 MP  1233/1274 mv  722tnl
+31% HP (you) |  Enemy: 48% HP (mob) >>   
+Ahhhh, Fresh Blood!
+Your life-draining touch <-+-><-*-> CREMATES <-*-><-+-> maintenance worker! [238]
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> maintenance worker! [194]
+Maintenance worker needs a hospital.
+
+FIGHTING!
+369/1011 HP  493/1396 MP  1233/1274 mv  722tnl
+36% HP (you) |  Enemy: 24% HP (mob) >>   
+ca vampiric
+ca vampiric
+
+Your pierce MASSACRES maintenance worker! [70]
+Your pierce DISEMBOWELS maintenance worker! [63]
+Your pierce DISEMBOWELS maintenance worker! [65]
+You dodge maintenance worker's attack.
+You dodge maintenance worker's attack.
+Maintenance worker is gravely injured.
+
+FIGHTING!
+369/1011 HP  493/1396 MP  1233/1274 mv  722tnl
+36% HP (you) |  Enemy: 13% HP (mob) >>   
+Ahhhh, Fresh Blood!
+Your life-draining touch <->*<=> WASTES <=>*<-> maintenance worker! [219]
+Your life-draining touch <->*<=> WASTES <=>*<-> maintenance worker! [204]
+Blood explodes from maintenance worker's every orifice!! She is DEAD!
+You receive 72 experience points.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+You get 178 gold coins from the bloodless corpse of maintenance worker.
+You get a yellow jumpsuit from the bloodless corpse of maintenance worker.
+You get an ionic torque wrench from the bloodless corpse of maintenance worker.
+Ayla gives you 25 gold coins for the bloodless corpse of maintenance worker.
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+>>   
+Cast vampiric touch on whom?
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+>>   Cast vampiric touch on whom?
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+>>   
+[Newbie] Vue: what does a mapper do
+Cast vampiric touch on whom?
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+>>   Cast vampiric touch on whom?
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+>>   You still have to kill * a guardian of records (Onyx Bazaar)
+* a small goshawk (Raganatittu) 19861
+* the Mistress of Sharkatan (The Coral Kingdom) 4563
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz) 510
+* some sticky cobwebs (The Temple of Shouggoth) 34087
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 3 hours and 2 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+hold portal; enter; hold disk; d
+>>   
+You stop holding a Disk of Destruction.
+You hold Aylorian Academy portal in your hand.
+
+412/1010 HP  453/1394 MP  1233/1272 mv  650tnl  
+Lv 48  G 351868 | Maintenance Walkway (NW)
+>>   WHOOOOOOOOOOOOSH!
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+(Player) Mistorm the curious.
+
+412/1010 HP  453/1394 MP  1233/1272 mv  650tnl  
+Lv 48  G 351868 | Outside the Aylorian Academy (NSD)
+>>   You stop holding Aylorian Academy portal.
+You hold a Disk of Destruction in your hand.
+
+412/1011 HP  453/1396 MP  1233/1274 mv  650tnl  
+Lv 48  G 351868 | Outside the Aylorian Academy (NSD)
+>>   The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) Draoli the Shaman.
+(Player) Vue the Elementalist.
+(Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) MysticSham the Navigator.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+412/1011 HP  453/1396 MP  1232/1274 mv  650tnl  
+Lv 48  G 351868 | The Grand City of Aylor (NESWUD)
+>>   
+w
+w
+Bard Clan Hall (G)
+  You have entered a tall stone hall, with a well worn marble floor.
+Stylized instruments are carved into the walls, and stone cherubs float on
+marble columns bearing gilded harps.  An amazing variety of figures rush by,
+dressed in bright and colourful cloaks that reflect the sunlight streaming
+in from the slit windows cut deeply into the high walls.  To your south is
+a door through which soft music can be heard. To the west, a tall staircase
+can be seen rising to the second floor. Through the opening to the north one
+may catch glimpses of a bubbling orange juice fountain and a plush, magenta
+bench.  There is a wooden ladder in one corner, leading to an upstairs room.
+ 
+There is a brightly-colored poster here.
+
+[ Exits: north east (south) west up ]
+     [*] A generic voting booth is here
+(Player) (Invis) (White Aura) Myth of Le Nautilia (Cap d'Agde).
+(Player) (Invis) (Hidden) (White Aura) Flaw the Navigator.
+The statue of Calliope overlooks her visitors with a gentle expression.
+
+412/1011 HP  453/1396 MP  1232/1274 mv  650tnl  
+Lv 48  G 351868 | Bard Clan Hall (NE[S]WU)
+>>   The central stairwell (G)
+  This central location in the tower is brightly lit, though you do not
+see any light source. A spiral staircase makes its way up to the landing,
+before continuing up and out of your sight. There is heavy traffic through
+the halls, much of it going to the shops on the next floor. Shadows flicker
+lively on the eastern doorway. You notice a door marked 'Backstage' to the
+south.
+
+[ Exits: north east south west up down ]
+
+412/1011 HP  453/1396 MP  1232/1274 mv  650tnl  
+Lv 48  G 351868 | The central stairwell (NESWUD)
+w
+w
+>>   
+The lobby (G)
+  The sheer size of the theatre's lobby is breathtaking. Tall marble
+columns support the ornately carved dome ceiling, and the walls are adorned
+with playbills from previous and future shows. This is where the crowds
+gather before the show, and where they wait out intermissions with lively
+discussions. The continuous low, humming drone of conversation is 
+occasionally punctuated by loud, boisterous laughter coming from the large
+group of people congregating near the entryway. On the southern side of the
+room stands a towering pair of arched double-doors leading into the
+theatre. Ushers stand ready, programs in hand, to show you to your seat.
+
+[ Exits: east south ]
+
+412/1011 HP  453/1396 MP  1232/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   Alas, you cannot go that way.
+
+412/1011 HP  453/1396 MP  1232/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+sleep bed
+You don't see that here.
+
+412/1011 HP  453/1396 MP  1232/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+wake
+You are already standing.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+gulp milk
+You didn't find that to drink from.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+gulp milk
+You didn't find that to drink from.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+w
+Alas, you cannot go that way.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+w
+>>   
+Alas, you cannot go that way.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+w
+Alas, you cannot go that way.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   
+hold portal; enter; hold disk; d
+You stop holding a Disk of Destruction.
+You hold Aylorian Academy portal in your hand.
+
+415/1010 HP  457/1394 MP  1247/1272 mv  650tnl  
+Lv 48  G 351868 | The lobby (ES)
+>>   WHOOOOOOOOOOOOSH!
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+415/1010 HP  457/1394 MP  1247/1272 mv  650tnl  
+Lv 48  G 351868 | Outside the Aylorian Academy (NSD)
+>>   You stop holding Aylorian Academy portal.
+You hold a Disk of Destruction in your hand.
+
+415/1011 HP  457/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | Outside the Aylorian Academy (NSD)
+>>   The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) (White Aura) (OPK) Gunners the Gooner.
+(Player) Vue the Elementalist.
+(Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) MysticSham the Navigator.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+415/1011 HP  457/1396 MP  1246/1274 mv  650tnl  
+Lv 48  G 351868 | The Grand City of Aylor (NESWUD)
+>>   
+
+## You are starving; your healing is greatly reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+u
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+416/1011 HP  458/1396 MP  1251/1274 mv  650tnl  
+Lv 48  G 351868 | Outside the Aylorian Academy (NSD)
+>>   
+s
+Boot Clan Public Hall (G)
+  You have wandered out of the Academy and into Boot Camps clanhall. 
+Clans are a special thing on aardwolf allowing like minded people to 
+come together. Read help clans for more information. Boot Camp is a 
+clan designed to help new players learn more about the game and we 
+enjoy doing it. Read help boot and help newbieclan to learn more. 
+This area is not a part of the Academy and the first thing you should 
+do on Aardwolf is complete the Academy goal. We offer newbie starter 
+kits to all new players. If you would like one please send a member a 
+tell. You can type who boot to see who is online. If they do not 
+respond then they are most likely afk. All items in our newbie kits 
+are also sold in this shop. Type list if you would like to take a look 
+at them. To return to the Academy type north.
+
+[ Exits: north east south west ]
+A commissary shopkeeper stands here, begging you to type 'list'.
+
+416/1011 HP  458/1396 MP  1250/1274 mv  650tnl  
+Lv 48  G 351868 | Boot Clan Public Hall (NESW)
+>>   
+w
+w
+Recreation Room (G)
+  Walking into the room, you notice there is a relaxed, friendly atmosphere and
+almost everyone is in military uniform. A jukebox is playing a lively tune 
+and some of the patrons are having fun dancing to the music. The sound of 
+laughter coming from one end of the bar, as someone has just delivered the 
+punch line of a good joke. Plush, comfortable looking, couches are scattered 
+around the large room in clusters of two and three, allowing for more 
+intimate gatherings and private conversations. The enlisted and the officers 
+mingle together amicably and everyone is on excellent terms with the 
+bartender.
+
+[ Exits: east south west ]
+An old veteran stands behind the bar, ready to serve you a cool drink.
+
+416/1011 HP  458/1396 MP  1249/1274 mv  650tnl  
+Lv 48  G 351868 | Recreation Room (ESW)
+w
+>>   Mudpits (G)
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+416/1011 HP  458/1396 MP  1248/1274 mv  650tnl  
+Lv 48  G 351868 | Mudpits (EWD)
+w
+>>   Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Invis) (Translucent) Anssett of the Hampton Cheeses.
+(Player) (White Aura) Breathe in, Breathe out..
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+416/1011 HP  458/1396 MP  1247/1274 mv  650tnl  
+Lv 48  G 351868 | Boot Camp Headquarters (NE[S]WUD)
+>>   Medical lounge (G)
+  You stand in a plain looking room, with bunk beds lining both sides. Green 
+wool blankets line the beds with perfect hospital corners. At the end of this 
+seemingly endless room are two doors leading to what you believe is some 
+kind of latrine and shower area. On one wall there is a milk cooler next to a 
+sign that shows a Drill Sergeant pointing to the room. Words are written 
+over his head, "Milk makes for a strong soldier!". There is a Second 
+Lieutenant Pixie with a red cross on her hat here.
+
+[ Exits: east (down) ]
+     (Magic) A refrigerated milk cooler stands ready to serve all.
+     (Magic) Multiple beds line the wall, waiting for people to rest or be treated on them.
+     (Magic) An old electric heater.
+[AFK] (Player) (Invis) (Hidden) (Translucent) Davem returning mudder from years ago is sleeping on
+Medical beds.
+(Player) (White Aura) Tench the Venomist is sleeping in a trivia sleeping bag.
+(Player) (Translucent) Talbor the Enchanter is sleeping in a trivia sleeping bag.
+[AFK] (Player) Roume wasn't built in a day. is sleeping on Medical beds.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Drimshade the Navigator.
+(Player) (White Aura) (OPK) Inix the Hunter is sleeping in a trivia sleeping bag.
+Lieutenant Pixie smiles up at you as she gets ready to amputate your leg.
+
+416/1011 HP  458/1396 MP  1246/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   
+gulp milk
+You gulp down some milk from Milk Cooler.
+You are now full.
+Your thirst is fully quenched.
+
+416/1011 HP  458/1396 MP  1246/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   
+gulp milk
+You gulp down some milk from Milk Cooler.
+You are now full.
+Your thirst is fully quenched.
+
+416/1011 HP  458/1396 MP  1246/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   
+sleep bed
+You sleep on Medical beds.
+
+416/1011 HP  458/1396 MP  1246/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   
+
+
+You no longer absorb magical attacks.
+
+wake
+You wake up on Medical beds, then stand up.
+Medical lounge (G)
+  You stand in a plain looking room, with bunk beds lining both sides. Green 
+wool blankets line the beds with perfect hospital corners. At the end of this 
+seemingly endless room are two doors leading to what you believe is some 
+kind of latrine and shower area. On one wall there is a milk cooler next to a 
+sign that shows a Drill Sergeant pointing to the room. Words are written 
+over his head, "Milk makes for a strong soldier!". There is a Second 
+Lieutenant Pixie with a red cross on her hat here.
+
+[ Exits: east (down) ]
+     (Magic) A refrigerated milk cooler stands ready to serve all.
+     (Magic) Multiple beds line the wall, waiting for people to rest or be treated on them.
+     (Magic) An old electric heater.
+[AFK] (Player) (Invis) (Hidden) (Translucent) Davem returning mudder from years ago is sleeping on
+Medical beds.
+(Player) (White Aura) Tench the Venomist is sleeping in a trivia sleeping bag.
+(Player) (Translucent) Talbor the Enchanter is sleeping in a trivia sleeping bag.
+[AFK] (Player) Roume wasn't built in a day. is sleeping on Medical beds.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Drimshade the Navigator.
+(Player) (White Aura) (OPK) Inix the Hunter is sleeping in a trivia sleeping bag.
+Lieutenant Pixie smiles up at you as she gets ready to amputate your leg.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   
+w
+w
+Alas, you cannot go that way.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   Alas, you cannot go that way.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+w
+>>   
+Alas, you cannot go that way.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | Medical lounge (E[D])
+>>   
+
+You are no longer able to breathe underwater.
+
+INFO: Muzmuz has removed himself from the (OPK) victim pool!
+
+e
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Hidden) (White Aura) Breathe in, Breathe out..
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  650tnl  
+Lv 48  G 351868 | Boot Camp Headquarters (NE[S]WUD)
+>>   
+e
+Mudpits (G)
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+1011/1011 HP  1396/1396 MP  1272/1274 mv  650tnl  
+Lv 48  G 351868 | Mudpits (EWD)
+e
+>>   
+e
+Recreation Room (G)
+  Walking into the room, you notice there is a relaxed, friendly atmosphere and
+almost everyone is in military uniform. A jukebox is playing a lively tune 
+and some of the patrons are having fun dancing to the music. The sound of 
+laughter coming from one end of the bar, as someone has just delivered the 
+punch line of a good joke. Plush, comfortable looking, couches are scattered 
+around the large room in clusters of two and three, allowing for more 
+intimate gatherings and private conversations. The enlisted and the officers 
+mingle together amicably and everyone is on excellent terms with the 
+bartender.
+
+[ Exits: east south west ]
+An old veteran stands behind the bar, ready to serve you a cool drink.
+
+1011/1011 HP  1396/1396 MP  1271/1274 mv  650tnl  
+Lv 48  G 351868 | Recreation Room (ESW)
+>>   Boot Clan Public Hall (G)
+  You have wandered out of the Academy and into Boot Camps clanhall. 
+Clans are a special thing on aardwolf allowing like minded people to 
+come together. Read help clans for more information. Boot Camp is a 
+clan designed to help new players learn more about the game and we 
+enjoy doing it. Read help boot and help newbieclan to learn more. 
+This area is not a part of the Academy and the first thing you should 
+do on Aardwolf is complete the Academy goal. We offer newbie starter 
+kits to all new players. If you would like one please send a member a 
+tell. You can type who boot to see who is online. If they do not 
+respond then they are most likely afk. All items in our newbie kits 
+are also sold in this shop. Type list if you would like to take a look 
+at them. To return to the Academy type north.
+
+[ Exits: north east south west ]
+A commissary shopkeeper stands here, begging you to type 'list'.
+
+1011/1011 HP  1396/1396 MP  1270/1274 mv  650tnl  
+Lv 48  G 351868 | Boot Clan Public Hall (NESW)
+>>   
+
+Cide jets in from the north.
+
+Cide jets west.
+
+n
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+1011/1011 HP  1396/1396 MP  1269/1274 mv  650tnl  
+Lv 48  G 351868 | Outside the Aylorian Academy (NSD)
+>>   
+d
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) Draoli the Shaman.
+(Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) (Linkdead) MysticSham the Navigator.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+1011/1011 HP  1396/1396 MP  1268/1274 mv  650tnl  
+Lv 48  G 351868 | The Grand City of Aylor (NESWUD)
+>>   
+
+There are few things in this world as breathtaking as the Aylorian skyline at dawn.
+
+INFO: Zathrus has fed the hungry Jack!
+
+cp ch
+* a guardian of records (Onyx Bazaar) 34451
+* a small goshawk (Raganatittu) 19861
+* the Mistress of Sharkatan (The Coral Kingdom) 4563
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz) 510
+* some sticky cobwebs (The Temple of Shouggoth - Dead)
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+Note: Dead means that the target is dead, not that you have killed it.
+
+You have 6 days, 2 hours and 56 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | The Grand City of Aylor (NESWUD)
+>>   
+tgt guardian of records
+Target switched to: 1.guardian of records
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | The Grand City of Aylor (NESWUD)
+>>   
+rt onyx
+Skipping run prefix - already at Aylor recall.
+Running to: Onyx Bazaar
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | The Grand City of Aylor (NESWUD)
+>>   Whitewind Avenue (G) (1274)
+
+Phoenix Square (G) (1274)
+
+Starlight Way - East (G) (1274)
+
+Starlight Way - East (1274)
+
+Starlight Way - East (G) (1274)
+
+Starlight Way - East (G) (1274)
+
+Starlight Way - East (1274)
+
+Starlight Way - East (1274)
+
+Eastern Entrance - Starlight Way (1274)
+
+Eastern High Road (1274)
+
+Fields near Aylor (1273)
+
+Fields near a farm (1272)
+
+A small stretch of woodland (1271)
+
+Mesolarian Grassland (1270)
+
+Mesolarian Grassland (1269)
+
+Trampled Ground (1268)
+
+Mesolarian Grassland (1267)
+
+A field of grain (1266)
+
+A field of wild flowers (1265)
+
+Fields near Dragon's Eye Forest (1264)
+
+On the edge of the Dragon's Eye Forest (1263)
+
+Fields Near Dragon's Eye Forest (1262)
+
+A Field of Grain (1261)
+
+Mesolarian Grassland (1260)
+
+Meso Hor Nee (1259)
+
+Mesolarian Grassland (1258)
+
+Mesolarian Grassland (1257)
+
+Mesolarian Grassland (1256)
+
+Mesolarian Grassland (1255)
+
+Plains Near the Ocean (1254)
+
+Rugged Mesolarian Grassland (1253)
+
+Mesolarian Grassland (1252)
+
+Mesolarian Grassland (1251)
+
+Mesolarian Grassland (1250)
+
+Plains Near the Ocean (1249)
+
+Mesolarian Grassland (1248)
+
+Rugged Mesolarian Grassland (1247)
+
+Mesolarian Grassland (1246)
+
+Mesolarian Grassland (1245)
+
+At the Foot of the Ice Mist Peaks (1244)
+
+Climbing through the Ice Mist Peaks (1243)
+
+Climbing through the Ice Mist Peaks (1242)
+
+High Up in the Mountains (1241)
+
+Traveling through the Ice Mist Peaks (1240)
+
+Mountains Near the Ocean (1239)
+
+Vast Corridor (1238)
+
+Vast Corridor (1237)
+
+Vast Corridor (1236)
+
+Vast Corridor (1235)
+
+Before the entrance to the Underdark
+  You stand before a huge door.  The corridor can easily fit fifteen humans
+standing side by side here.  The floor has levelled off and has been worn
+smooth by the dragging feet of the slave flocks.  You stand just before the
+Underdark.  The Underdark is a huge city that rivals its surface
+counterpart, Aylor.  From what you have heard, anything goes in the
+Underdark.  A dangerous place at best, only those who have had at least ten
+levels of experience should venture into it.  On the wall to the north are a
+series of markings that you can't make out at this distance.  A huge door
+stands to the west, the way to the surface is up.  
+
+[ Exits: (west) up ]
+
+1011/1011 HP  1396/1396 MP  1234/1274 mv  650tnl  
+Lv 48  G 351868 | Before the entrance to the Underdark ([W]U)
+>>   You open the door.
+
+1011/1011 HP  1396/1396 MP  1234/1274 mv  650tnl  
+Lv 48  G 351868 | Before the entrance to the Underdark (WU)
+>>   Before the East Entrance (G) (1233)
+
+Slaver's Route (1232)
+
+Slaver's Route (1231)
+
+Slaver's Route (1230)
+
+Slaver's Route Before the Prisons (1229)
+
+Slaver's Route before the Inn (1228)
+
+Slaver's Route at Emerald (1227)
+
+Slaver's Route (1226)
+
+Slaver's Route, Before the Brothel (1225)
+
+Slaver's Route (midtown) (1224)
+
+Slaver's Route (1223)
+
+Slaver's Route (1222)
+
+Slaver's Route (1221)
+
+Slaver's Route (1220)
+
+Slaver's Route (1219)
+
+Slaver's Route (1218)
+
+Slaver's Route (1217)
+
+Slaver's Route (1216)
+
+Slaver's Route (1215)
+
+Slaver's Route (1214)
+
+Stone Archway
+  A chilled breeze rushes through the dark, rough-hewn cavern. The walls are 
+covered in scripts and glyphs, visible through an eerie glow that barely 
+penetrates the darkness. Broken planks and discarded potion bottles litter 
+the floor and a sign of some sort is engraved with a message.
+
+[ Exits: west up ]
+A piece of the cavern ceiling crumbles to the ground startling you.
+
+1011/1011 HP  1396/1396 MP  1213/1274 mv  650tnl  
+Lv 48  G 351868 | Stone Archway (WU)
+>>   
+
+
+w
+Inside the Archway
+  There is no visible light source in the cavern.  Even light brought in
+anticipation of the darkness seems to wither and fail in the curse of this
+place.  With every step, the walls seem to shrink in, making the air thick
+and musty.  The sounds here echo all around with no definite source.  
+ 
+            Sounds echo in your ears.....
+                  Sounds echo in your mind.....
+                        Sounds echo in your imagination.....
+ 
+The ground begins to descend to deeper unseeable depths.
+
+[ Exits: north east down ]
+(Translucent) Within the dark passage, movement briefly catches your eye.
+
+1011/1011 HP  1396/1396 MP  1260/1274 mv  650tnl  
+Lv 48  G 351868 | Inside the Archway (NED)
+>>   
+d
+Descending into the Forlorn Cavern
+  The walls are tight, not even an arm's length of room.  The ceiling has
+sloped low, barely enough room to stand upright.  The air is heavy, thick,
+and the grit of this underground deathtrap hangs heavy in the air.  Sounds
+continue the assault from all directions.  
+
+        It seems as if all light has been sucked from this room.
+
+[ Exits: west up ]
+
+1011/1011 HP  1396/1396 MP  1259/1274 mv  650tnl  
+Lv 48  G 351868 | Descending into the Forlorn Cavern (WU)
+>>   
+
+A blade being sharpened can be heard in the distance as a bell tolls.  The bazaar is open.
+
+hunt 1.guardian of records
+No one in this area by the name '1.guardian of records'.
+
+1011/1011 HP  1396/1396 MP  1259/1274 mv  650tnl  
+Lv 48  G 351868 | Descending into the Forlorn Cavern (WU)
+>>   
+tgt guardian
+Target switched to: 1.guardian
+
+1011/1011 HP  1396/1396 MP  1259/1274 mv  650tnl  
+Lv 48  G 351868 | Descending into the Forlorn Cavern (WU)
+>>   
+hunt guardian
+You seem unable to hunt that target for some reason.
+
+1011/1011 HP  1396/1396 MP  1259/1274 mv  650tnl  
+Lv 48  G 351868 | Descending into the Forlorn Cavern (WU)
+>>   
+
+
+where guardian
+a guardian of records          Office of the Five Families
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  650tnl  
+Lv 48  G 351868 | Descending into the Forlorn Cavern (WU)
+>>   
+
+You can no longer sense anger.
+
+INFO: All please welcome Kikoman, Aardwolf's newest Dwarf Barbarian!
+
+"run 3wnwswnws"
+run 3wnwswnws
+A Widening Passage (1271)
+
+Entrance to the Bazaar (1268)
+
+Gartas exclaims, "I don't know you, and to me you look like trouble!"
+You blink out of existence and avoid Gartas' attack.
+Gartas is in perfect health.
+Your journey was broken by the need to defend yourself.
+
+FIGHTING!
+1011/1011 HP  1396/1396 MP  1268/1274 mv  650tnl
+100% HP (you) |  Enemy: 100% HP (mob) >>   
+ca fireball
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> Gartas! [172]
+Your searing ball of flame <-*-> RAVAGES <-*-> Gartas! [141]
+Gartas is bleeding lightly.
+
+FIGHTING!
+1011/1011 HP  1366/1396 MP  1268/1274 mv  650tnl
+100% HP (you) |  Enemy: 82% HP (mob) >>   
+
+Gartas' slash maims you. [22]
+Gartas dodges your attack.
+Your pierce EXTIRPATES Gartas. [49]
+Your pierce misses Gartas. [0]
+Gartas is bleeding lightly.
+
+FIGHTING!
+989/1011 HP  1396/1396 MP  1274/1274 mv  650tnl
+97% HP (you) |  Enemy: 81% HP (mob) >>   
+ca fireball
+Your searing ball of flame <-:-> ASPHYXIATES <-:-> Gartas! [140]
+Gartas has some small wounds and bruises.
+
+FIGHTING!
+989/1011 HP  1366/1396 MP  1274/1274 mv  650tnl
+97% HP (you) |  Enemy: 73% HP (mob) >>   
+
+You blink out of existence and avoid Gartas' attack.
+Gartas' slash mars you. [25]
+Your pierce MUTILATES Gartas! [59]
+Your pierce EXTIRPATES Gartas. [49]
+Your pierce INCINERATES Gartas! [53]
+Gartas is showing a few battle scars.
+
+FIGHTING!
+964/1011 HP  1366/1396 MP  1274/1274 mv  650tnl
+95% HP (you) |  Enemy: 64% HP (mob) >>   
+ca vampiric
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <-=-> SUNDERS <-=-> Gartas! [189]
+Your life-draining touch <>*<> FISSURES <>*<> Gartas! [154]
+Your life-draining touch <*><*> LIQUIDATES <*><*> Gartas! [167]
+Gartas has some very nasty wounds.
+
+FIGHTING!
+1016/1011 HP  1326/1396 MP  1274/1274 mv  650tnl
+100% HP (you) |  Enemy: 34% HP (mob) >>   
+
+Gartas' slash maims you. [21]
+Gartas dodges your attack.
+Your pierce INCINERATES Gartas! [52]
+Your pierce EXTIRPATES Gartas. [50]
+Gartas has some very nasty wounds.
+
+FIGHTING!
+995/1011 HP  1326/1396 MP  1274/1274 mv  650tnl
+98% HP (you) |  Enemy: 29% HP (mob) >>   
+Purr scans all directions, looking for signs of life.
+
+FIGHTING!
+995/1011 HP  1326/1396 MP  1274/1274 mv  650tnl
+98% HP (you) |  Enemy: 29% HP (mob) >>   
+ca vampiric
+
+Purr's backstab misses a busy shopper. [0]
+
+FIGHTING!
+995/1011 HP  1326/1396 MP  1274/1274 mv  650tnl
+98% HP (you) |  Enemy: 29% HP (mob) >>   
+Ahhhh, Fresh Blood!
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> Gartas! [196]
+Your life-draining touch <>*<> FISSURES <>*<> Gartas! [157]
+Gartas is gravely injured.
+
+FIGHTING!
+1053/1011 HP  1286/1396 MP  1274/1274 mv  650tnl
+104% HP (you) |  Enemy: 9% HP (mob) >>   
+
+You blink out of existence and avoid Gartas' attack.
+Gartas' slash mangles you. [24]
+Your pierce EXTIRPATES Gartas. [50]
+Your pierce EXTIRPATES Gartas. [49]
+Your pierce EXTIRPATES Gartas. [49]
+Purr's flame <-+-><-*-> CREMATES <-*-><-+-> a busy shopper! [231]
+Purr's cleave <-+-><-*-> CREMATES <-*-><-+-> a busy shopper! [238]
+Purr's flame <*><*><*><*> ANNIHILATES <*><*><*><*> a busy shopper! [247]
+Purr's flame <-+-><-*-> CREMATES <-*-><-+-> a busy shopper! [230]
+A busy shopper's slap misses Purr. [0]
+A busy shopper's slap injures Purr. [16]
+Gartas is at death's door.
+
+FIGHTING!
+1029/1011 HP  1286/1396 MP  1274/1274 mv  650tnl
+ca vampiric
+101% HP (you) |  Enemy: 0% HP (mob) >>   
+
+Purr chants the phrase 'cobril wik'.
+Purr's neural burn <-><-=-><-> EXTERMINATES <-><-=-><-> a busy shopper! [288]
+A busy shopper goes completely still as her brain is melted! She is DEAD!
+Purr sacrifices the brain melted corpse of a busy shopper to Calliope.
+
+FIGHTING!
+1029/1011 HP  1286/1396 MP  1274/1274 mv  650tnl
+101% HP (you) |  Enemy: 0% HP (mob) >>   
+Your life-draining touch <>*<> FISSURES <>*<> Gartas! [154]
+Blood explodes from Gartas' every orifice!! He is DEAD!
+You receive 21 experience points.
+You get 107 gold coins from the bloodless corpse of Gartas.
+Ayla gives you 22 gold coins for the bloodless corpse of Gartas.
+
+1029/1011 HP  1246/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+Cast vampiric touch on whom?
+
+1029/1011 HP  1246/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+Purr enters into a garbage can and disappears.
+
+cp ch
+* a guardian of records (Onyx Bazaar) 34451
+* a small goshawk (Raganatittu) 19861
+* the Mistress of Sharkatan (The Coral Kingdom) 4563
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz) 510
+* some sticky cobwebs (The Temple of Shouggoth - Dead)
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+Note: Dead means that the target is dead, not that you have killed it.
+
+You have 6 days, 2 hours and 54 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+1029/1011 HP  1246/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+spellup
+Queueing spell : invis.
+Queueing spell : sense anger.
+Queueing spell : absorb.
+Queueing spell : underwater breathing.
+
+1029/1011 HP  1246/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   You lost your concentration while trying to cast invis.
+
+1029/1011 HP  1234/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+You can now sense anger in your immediate area.
+
+1029/1011 HP  1194/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+You feel a strong magical force surround your body.
+
+1029/1011 HP  1129/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+You feel gills growing on your neck!
+
+1029/1011 HP  1114/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | Entrance to the Bazaar (EW)
+>>   
+
+
+"run wnwswnws"
+run wnwswnws
+Path through the Market (1271)
+
+A Feast (1270)
+
+Spice Shop (1269)
+
+A Well Worn Path (1268)
+
+Walkway Through the Market (1267)
+
+B'Enrai says, "Come here. Yes, I mean you."
+B'Enrai says, "Take a look, have a sniff. You won't find better stuff
+ anywhere else."
+B'Enrai grins evilly at you.  Hmmm.  Better keep your distance.
+B'Enrai exclaims, "Don't walk away without trying some!"
+Beverage Center (1266)
+
+Butcher Shop (1265)
+
+The Way Below
+  Did a cow just moo?  What a strange sound in the middle of the path.  The
+path seems a bit softer here as if the ground was unstable.  Is there
+something below?  A steep stairwell leads deeper into the immense caverns of
+the black market.  
+
+[ Exits: north south west down ]
+
+1011/1011 HP  1160/1396 MP  1264/1274 mv  629tnl  
+Lv 48  G 351997 | The Way Below (NSWD)
+>>   
+d
+Dark Stairway
+  Only a flicker of light from above guides the way down.  A blast of cool
+damp air escapes from below, bringing the muffled sounds of voices with it. 
+The ancient stone stairs are steep, and the rough stone steps almost crumble
+from the lightest weight put upon them.  Rushing headlong down these stairs
+could lead to a serious fall, ending who knows where.  
+
+[ Exits: up down ]
+
+1011/1011 HP  1160/1396 MP  1263/1274 mv  629tnl  
+Lv 48  G 351997 | Dark Stairway (UD)
+>>   
+d
+The Guard Station
+  The cool stones feel damp to the touch.  Flickering lights and loud music
+seem to be coming from the east.  What sort of happenings could be going on
+in a simple marketplace?  Out of the heat above, this room is definitely
+cooler, although too loud to give anyone a place of comfortable rest.  
+
+[ Exits: east up ]
+A guard with entirely too much muscle watches every move made by those around him.
+
+1011/1011 HP  1160/1396 MP  1260/1274 mv  629tnl  
+Lv 48  G 351997 | The Guard Station (EU)
+>>   
+"run 4enene"
+run 4enene
+Edge of the Crowd (1257)
+
+On a Secondary Stage (1256)
+
+Wrapping a leg around the pole, a sensual dancer sways seductively to the music.
+Crowded Seats (1255)
+
+A Crowded Bar Room (1254)
+
+In Front of a Secondary Stage (1253)
+
+A Sitting Room (1252)
+
+A Classy Seating Place (1251)
+
+Guards
+  Suddenly, penetrating the smell of sweat, something even more dank fills
+the air.  Small three-toed footprints can be found in the dust over the
+flagstones alongside large five-toed ones.  A variety of species have
+passed through to go down the steps.  Perhaps they knew the secret of the
+guards.  
+
+[ Exits: south west down ]
+A guard with entirely too much muscle watches every move made by those around him.
+
+1011/1011 HP  1160/1396 MP  1250/1274 mv  629tnl  
+Lv 48  G 351997 | Guards (SWD)
+>>   
+d
+A Dusty Stairwell
+  A short flight of flagstone stairs end here in a dusty stairwell. Garbled 
+voices, music and the pounding of feet come from above. The steps are covered
+in a thin layer of stone dust, and upon closer inspection, reveals cloven 
+hoofprints of some kind. The stairs lead upwards, and there is a short 
+passageway and a door to the south.
+
+[ Exits: (south) up ]
+
+1011/1011 HP  1160/1396 MP  1249/1274 mv  629tnl  
+Lv 48  G 351997 | A Dusty Stairwell ([S]U)
+>>   
+
+
+d
+Alas, you cannot go that way.
+
+1011/1011 HP  1196/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | A Dusty Stairwell ([S]U)
+>>   
+"o s;run s2w2s2w"
+o s;run s2w2s2w
+You open the Deeper Entrance.
+
+1011/1011 HP  1196/1396 MP  1274/1274 mv  629tnl  
+Lv 48  G 351997 | A Dusty Stairwell (SU)
+>>   Dark Guard Chamber (1273)
+
+Black Magiks (1272)
+
+Pharmacy (1271)
+
+Staves (1270)
+
+Stolen Moments (1269)
+
+Your journey was broken by the need to defend yourself.
+You blink out of existence and avoid a slave buyer's attack.
+A slave buyer's bite DEVASTATES you. [31]
+A slave buyer is in perfect health.
+
+FIGHTING!
+980/1011 HP  1196/1396 MP  1269/1274 mv  629tnl
+96% HP (you) |  Enemy: 100% HP (mob) >>   
+ca fireball
+
+You blink out of existence and avoid a slave buyer's attack.
+A slave buyer's bite DEVASTATES you. [33]
+*Your pierce -= DEMOLISHES =- a slave buyer! [90]
+Your pierce MASSACRES a slave buyer! [69]
+Your pierce MASSACRES a slave buyer! [70]
+A slave buyer is bleeding lightly.
+
+FIGHTING!
+947/1011 HP  1196/1396 MP  1269/1274 mv  629tnl
+93% HP (you) |  Enemy: 84% HP (mob) >>   Your searing ball of flame <-+-><-*-> CREMATES <-*-><-+-> a
+slave buyer! [240]
+Your searing ball of flame <-+-><-*-> CREMATES <-*-><-+-> a slave buyer! [230]
+A slave buyer has quite a few wounds.
+
+FIGHTING!
+947/1011 HP  1166/1396 MP  1269/1274 mv  629tnl
+93% HP (you) |  Enemy: 51% HP (mob) >>   
+ca fireball
+ca fireball
+
+A slave buyer's bite LACERATES you. [28]
+A slave buyer's bite DECIMATES you. [30]
+Your pierce MASSACRES a slave buyer! [69]
+Your pierce MASSACRES a slave buyer! [70]
+Your pierce MASSACRES a slave buyer! [70]
+A slave buyer has some big nasty wounds and scratches.
+
+FIGHTING!
+913/1011 HP  1212/1396 MP  1274/1274 mv  629tnl
+90% HP (you) |  Enemy: 38% HP (mob) >>   Your searing ball of flame <-+-><-*-> CREMATES <-*-><-+-> a
+slave buyer! [229]
+A slave buyer needs a hospital.
+
+FIGHTING!
+913/1011 HP  1182/1396 MP  1274/1274 mv  629tnl
+90% HP (you) |  Enemy: 22% HP (mob) >>   
+ca fireball
+
+You blink out of existence and avoid a slave buyer's attack.
+You blink out of existence and avoid a slave buyer's attack.
+A slave buyer's bite DECIMATES you. [29]
+A slave buyer dodges your attack.
+A slave buyer dodges your attack.
+*Your pierce ***** PULVERIZES ***** a slave buyer! [101]
+A slave buyer needs a hospital.
+
+FIGHTING!
+884/1011 HP  1182/1396 MP  1274/1274 mv  629tnl
+87% HP (you) |  Enemy: 15% HP (mob) >>   
+Your searing ball of flame <=-=><=-=> TEARS INTO <=-=><=-=> a slave buyer! [200]
+A slave buyer is at death's door.
+
+FIGHTING!
+884/1011 HP  1152/1396 MP  1274/1274 mv  629tnl
+87% HP (you) |  Enemy: 2% HP (mob) >>   
+
+You dodge a slave buyer's attack.
+A slave buyer's bite DEVASTATES you. [33]
+Your pierce MASSACRES a slave buyer! [69]
+A slave buyer is slain by a final deadly stab!!
+You receive 25 experience points.
+You get an intricately carved dagger from the perforated corpse of a slave buyer.
+Ayla gives you 21 gold coins for the perforated corpse of a slave buyer.
+
+851/1011 HP  1152/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Stolen Moments (NW)
+ca fireball
+>>   Cast fireball on whom?
+
+851/1011 HP  1152/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Stolen Moments (NW)
+>>   Cast fireball on whom?
+
+851/1011 HP  1152/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Stolen Moments (NW)
+>>   
+
+Your force shield shimmers then fades away.
+
+spellup
+Queueing spell : invis.
+Queueing spell : shield.
+
+851/1011 HP  1152/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Stolen Moments (NW)
+>>   You fade out of existence.
+
+851/1011 HP  1127/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Stolen Moments (NW)
+>>   
+You lost your concentration while trying to cast shield.
+
+851/1011 HP  1125/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Stolen Moments (NW)
+>>   
+
+
+"run 2w"
+run 2w
+A Choice (1273)
+
+Stone Arch
+  A stone arch, covered in strange, undecipherable runes, adorns this nook
+of the caverns.  A latched door at your feet opens downwards to a set of
+decrepit stairs.  Another door, marked "Overseer", opens to the south.
+
+[ Exits: east south down ]
+A shopper, curious to see more of the market, has ventured into dangerous territory.
+
+894/1011 HP  1203/1396 MP  1272/1274 mv  604tnl  
+Lv 48  G 352018 | Stone Arch (ESD)
+>>   
+d
+The Boss's Corner
+  This corner in the pits is occupied by the largest thug yet.  There
+exists around here a strange quiet as compared to neighboring rooms.  It
+appears that even the walls anticipate the coming confrontation.  The room
+seems to shrink as it darkens with the shadows.  
+
+[ Exits: south west up ]
+This thug appears to be an even bigger bully than the rest.
+
+894/1011 HP  1203/1396 MP  1271/1274 mv  604tnl  
+Lv 48  G 352018 | The Boss's Corner (SWU)
+>>   
+
+
+You can no longer avoid some attacks.
+
+Character autosaved at Mon Jul 31 14:50:07 2023.
+
+"run 2s3e;o e;run e2s;o w;run 2ws4w"
+run 2s3e;o e;run e2s;o w;run 2ws4w
+A Warning (1273)
+
+Fully Armored (1272)
+
+Last Stance (1271)
+
+Sparkling corner (1270)
+
+Testing area
+  There is a great deal of evidence in this room indicating it is used for
+testing.  The things which are tested here range from unpleasant to outright
+mind-numbingly unbearable.  Portions of bodies, many of which are
+unrecognizable beyond being bloody chunks, are scattered about.  The walls
+seem to still reverberate with the sound of pained screams.  The longer a
+body lingers in this room, the more discomforting it becomes.  This can be a
+true test of endurance.  
+
+[ Exits: (east) south west down ]
+A shopper, curious to see more of the market, has ventured into dangerous territory.
+A devilish wizard is here, practicing his reprehensible arts.
+
+943/1011 HP  1278/1396 MP  1269/1274 mv  604tnl  
+Lv 48  G 352018 | Testing area ([E]SWD)
+>>   
+You open the door.
+
+943/1011 HP  1278/1396 MP  1269/1274 mv  604tnl  
+Lv 48  G 352018 | Testing area (ESWD)
+>>   Survival (1268)
+
+Gilded hallway (1267)
+
+Pricey Selections
+  This room is well appointed, with clear markings as to what is going on
+beyond the doors.  To the west is a sign indicating 'Specialized Personnel
+Services for any task or job you require'.  South is another sign which
+indicates that the items in that direction for sale will be of a more... 
+delicate nature.  If you want someone to do your work for you, your bidding,
+or anything else you have in mind, that's the place to go.  'Slave labor for
+any occasion!' is their slogan.  
+
+[ Exits: north (south) (west) ]
+     A pass allowing access to the slave quarters is here.
+A man in fine attire, with a very stern look about him, stands guard here.
+
+943/1011 HP  1278/1396 MP  1266/1274 mv  604tnl  
+Lv 48  G 352018 | Pricey Selections (N[S][W])
+>>   You open the impressive door.
+
+943/1011 HP  1278/1396 MP  1266/1274 mv  604tnl  
+Lv 48  G 352018 | Pricey Selections (N[S]W)
+>>   Associates' Hallway (1265)
+
+Turn in the hallway (1265)
+
+Second turn (1265)
+
+End of Associates' Hallway (1265)
+
+A Corridor of Decisions (1265)
+
+Corridor of Lies (1265)
+
+Corridor of Lies
+  The corridor is kept well-lit by officious looking assistants, each of
+whom daydream of a time when they have more important tasks, such as
+bringing down the Boss's enemies and feeding them to the pit.  The Boss'
+office lies to the north.
+
+[ Exits: north east west ]
+
+943/1011 HP  1278/1396 MP  1265/1274 mv  604tnl  
+Lv 48  G 352018 | Corridor of Lies (NEW)
+>>   
+
+You feel yourself slow down.
+
+You are no longer blurred.
+
+w
+Corridor of Lies
+  Finally, the corridor seems to be ending.  To the south, a rough wood
+door marks a change against the cold concrete that surrounds the rest of the
+hall.  The door has an ornate symbol on it.  The symbol itself is five
+braids twisted in an odd fashion.  There seems to be more tension here than
+anywhere else in the area.  
+
+[ Exits: east (south) west ]
+A representative of one of the five families rests here.
+
+964/1011 HP  1325/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Corridor of Lies (E[S]W)
+>>   
+w
+Corridor of Lies
+  The Corridor of Lies is bleak.  Only the Boss can answer the needs of
+supplicants seeking help.  Debts will create bigger debts.  Small torches
+light the walls on both sides.  To go forward is only to go towards the
+answer. 
+
+[ Exits: north east west ]
+
+964/1011 HP  1325/1396 MP  1274/1274 mv  604tnl  
+Lv 48  G 352018 | Corridor of Lies (NEW)
+>>   
+n
+Office of the Five Families
+  All of the records stored here belong to the five families.  Each details
+every act that entailed money, debt and payment.  The records go back
+several centuries, and some debts are so huge that they are still not
+entirely paid off after scores of years.  High interest has a way of doing
+that.  
+
+[ Exits: north south west ]
+(Angry) A guardian of records is on his watch.
+You fade into existence.
+You blink out of existence and avoid a guardian of records' attack.
+You blink out of existence and avoid a guardian of records' attack.
+A guardian of records' slash DEVASTATES you. [34]
+A guardian of records is in perfect health.
+
+FIGHTING!
+930/1011 HP  1325/1396 MP  1274/1274 mv  604tnl
+91% HP (you) |  Enemy: 100% HP (mob) >>   
+
+You blink out of existence and avoid a guardian of records' attack.
+You dodge a guardian of records' attack.
+You blink out of existence and avoid a guardian of records' attack.
+Your pierce misses a guardian of records. [0]
+A guardian of records is in perfect health.
+
+FIGHTING!
+930/1011 HP  1325/1396 MP  1274/1274 mv  604tnl
+91% HP (you) |  Enemy: 100% HP (mob) >>   
+ca fireball
+Your searing ball of flame <-=-> SUNDERS <-=-> a guardian of records! [185]
+Your searing ball of flame <=-=><=-=> TEARS INTO <=-=><=-=> a guardian of records! [194]
+A guardian of records is bleeding lightly.
+
+FIGHTING!
+930/1011 HP  1295/1396 MP  1274/1274 mv  604tnl
+91% HP (you) |  Enemy: 80% HP (mob) >>   
+ca fireball
+
+You blink out of existence and avoid a guardian of records' attack.
+A guardian of records' slash DEVASTATES you. [32]
+A guardian of records' slash DEVASTATES you. [31]
+A guardian of records dodges your attack.
+
+FIGHTING!
+867/1011 HP  1295/1396 MP  1274/1274 mv  604tnl
+85% HP (you) |  Enemy: 80% HP (mob) >>   
+ca fireball
+Your searing ball of flame <=-=><=-=> TEARS INTO <=-=><=-=> a guardian of records! [193]
+Your searing ball of flame <-=-> SUNDERS <-=-> a guardian of records! [187]
+Your searing ball of flame <-=-> SUNDERS <-=-> a guardian of records! [190]
+A guardian of records has quite a few wounds.
+
+FIGHTING!
+867/1011 HP  1265/1396 MP  1274/1274 mv  604tnl
+85% HP (you) |  Enemy: 50% HP (mob) >>   
+ca fireball
+
+You blink out of existence and avoid a guardian of records' attack.
+You blink out of existence and avoid a guardian of records' attack.
+Your pierce misses a guardian of records. [0]
+A guardian of records has quite a few wounds.
+
+FIGHTING!
+890/1011 HP  1295/1396 MP  1274/1274 mv  604tnl
+88% HP (you) |  Enemy: 51% HP (mob) >>   
+ca fireball
+Your searing ball of flame <*><*> LIQUIDATES <*><*> a guardian of records! [162]
+Your searing ball of flame <>*<> FISSURES <>*<> a guardian of records! [153]
+A guardian of records has some very nasty wounds.
+
+FIGHTING!
+890/1011 HP  1265/1396 MP  1274/1274 mv  604tnl
+88% HP (you) |  Enemy: 34% HP (mob) >>   
+ca fireball
+
+A guardian of records' slash DEVASTATES you. [35]
+A guardian of records' slash DEVASTATES you. [34]
+Your pierce DISEMBOWELS a guardian of records! [62]
+A guardian of records has some very nasty wounds.
+
+FIGHTING!
+821/1011 HP  1265/1396 MP  1274/1274 mv  604tnl
+81% HP (you) |  Enemy: 31% HP (mob) >>   
+Your searing ball of flame <-=-> SUNDERS <-=-> a guardian of records! [182]
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> a guardian of records! [175]
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> a guardian of records! [175]
+A guardian of records is at death's door.
+
+FIGHTING!
+821/1011 HP  1235/1396 MP  1274/1274 mv  604tnl
+81% HP (you) |  Enemy: 3% HP (mob) >>   
+ca fireball
+
+A guardian of records' slash DECIMATES you. [30]
+A guardian of records' slash DEVASTATES you. [31]
+A guardian of records' slash DEVASTATES you. [32]
+A guardian of records' kick misses you. [0]
+Your pierce misses a guardian of records. [0]
+A guardian of records is at death's door.
+
+FIGHTING!
+728/1011 HP  1235/1396 MP  1274/1274 mv  604tnl
+72% HP (you) |  Enemy: 3% HP (mob) >>   
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> a guardian of records! [179]
+Heat sears a guardian of records as the fireball slams into him!! He is DEAD!
+You receive 15 experience points.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+You get 199 gold coins from the charred and burnt corpse of a guardian of records.
+You get a strong stone shield from the charred and burnt corpse of a guardian of records.
+Ayla gives you 26 gold coins for the charred and burnt corpse of a guardian of records.
+
+728/1011 HP  1205/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+ca fireball
+>>   
+
+>>> Muzmuz has reincarnated to Vampire Avenger. <<<
+
+Cast fireball on whom?
+
+728/1011 HP  1205/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   Cast fireball on whom?
+
+728/1011 HP  1205/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   You still have to kill * a small goshawk (Raganatittu)
+* the Mistress of Sharkatan (The Coral Kingdom) 4563
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz) 510
+* some sticky cobwebs (The Temple of Shouggoth) 34087
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 2 hours and 49 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+728/1011 HP  1205/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   Cast fireball on whom?
+
+728/1011 HP  1205/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   
+
+You no longer absorb magical attacks.
+
+cp ch
+* a small goshawk (Raganatittu) 19861
+* the Mistress of Sharkatan (The Coral Kingdom) 4563
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz) 510
+* some sticky cobwebs (The Temple of Shouggoth) 34087
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+
+You have 6 days, 2 hours and 49 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+749/1011 HP  1251/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   
+tgt small goshawk
+Target switched to: 1.small goshawk
+
+749/1011 HP  1251/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   
+hold portal; enter; hold disk; d
+You stop holding a Disk of Destruction.
+You hold Aylorian Academy portal in your hand.
+
+749/1010 HP  1251/1394 MP  1274/1272 mv  589tnl  
+Lv 48  G 352243 | Office of the Five Families (NSW)
+>>   WHOOOOOOOOOOOOSH!
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+749/1010 HP  1251/1394 MP  1274/1272 mv  589tnl  
+Lv 48  G 352243 | Outside the Aylorian Academy (NSD)
+>>   You stop holding Aylorian Academy portal.
+You hold a Disk of Destruction in your hand.
+
+749/1011 HP  1251/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | Outside the Aylorian Academy (NSD)
+>>   The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+[AFK] (Player) Vnu the Bandit.
+[AFK] (Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) (Linkdead) MysticSham the Navigator.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+749/1011 HP  1251/1396 MP  1273/1274 mv  589tnl  
+Lv 48  G 352243 | The Grand City of Aylor (NESWUD)
+>>   
+rt Raganatittu
+Skipping run prefix - already at Aylor recall.
+Running to: Raganatittu
+
+749/1011 HP  1251/1396 MP  1273/1274 mv  589tnl  
+Lv 48  G 352243 | The Grand City of Aylor (NESWUD)
+>>   Whitewind Avenue (G) (1273)
+
+Phoenix Square (G) (1273)
+
+Starlight Way - East (G) (1273)
+
+Starlight Way - East (1273)
+
+Starlight Way - East (G) (1273)
+
+Starlight Way - East (G) (1273)
+
+Starlight Way - East (1273)
+
+Starlight Way - East (1273)
+
+You notice the grey moon falling to the west.
+Eastern Entrance - Starlight Way (1274)
+
+Eastern High Road (1274)
+
+Eastern High Road (1273)
+
+Eastern High Road (1272)
+
+A bridge over the Dragon River (1271)
+
+Eastern High Road (1270)
+
+Eastern High Road (1269)
+
+Eastern High Road (1268)
+
+Eastern High Road (1267)
+
+Eastern High Road (1266)
+
+The Tothmeer Trail (G) (1265)
+
+Mesolarian Grassland (1264)
+
+Mesolarian Grassland (1263)
+
+Mesolarian Grassland (1262)
+
+Mesolarian Grassland (1261)
+
+The Tothmeer Trail (1260)
+
+The Tothmeer Trail (1259)
+
+Trampled Ground (1258)
+
+Mesolarian Grassland (1257)
+
+Mesolarian Grassland (1256)
+
+Forest path (1255)
+
+Silverwind Forest (1254)
+
+Silverwind Forest (1253)
+
+Silverwind Forest (1252)
+
+Silverwind Forest (1251)
+
+Silverwind Forest (1250)
+
+On a Dull Forest Trail (1249)
+
+Rugged Mesolarian Grassland (1248)
+
+Imperial Bay (1247)
+
+Aphasia (1246)
+
+Aphasia (1245)
+
+Aphasia (1244)
+
+Aphasia (1243)
+
+Aphasia (1242)
+
+Andunande (1241)
+
+Andunande (1240)
+
+Andunande (1239)
+
+Andunande (1238)
+
+Andunande (1237)
+
+Lamentia (1236)
+
+Lamentia (1235)
+
+Lamentia (1234)
+
+Lamentia (1233)
+
+Ascension Bluff (1232)
+
+Lamentia (1231)
+
+Lamentia (1230)
+
+Alagh, the Blood Lands (1229)
+
+Sunset Coast (1228)
+
+Alagh, the Blood Lands (1227)
+
+Alagh, the Blood Lands (1226)
+
+Alagh, the Blood Lands (1225)
+
+Alagh, the Blood Lands (1224)
+
+Alagh, the Blood Lands (1223)
+
+Wastelands of Alagh (1222)
+
+On the murky river
+  You are carried along slowly by the flow of this muddy river.  Huge trees
+grow along the banks, vines and ferns dripping from their branches. 
+Colorful birds dart overhead, chasing the clouds of droning insects.  
+
+[ Exits: north east west ]
+     A rickety raft has washed up here.
+
+776/1011 HP  1282/1396 MP  1221/1274 mv  589tnl  
+Lv 48  G 352243 | On the murky river (NEW)
+>>   
+
+
+[Newbie] Kikoman: is there echo typing on the aardwolf client ?
+
+[Newbie] (Advisor) Selitos: yes you can echo your cmds if you like
+
+You are no longer able to breathe underwater.
+
+Global Quest: Global Quest # 8132 has been won by Myth - 10800th win.
+
+[Newbie] Kikoman: how do i do that
+
+hunt 1.small goshawk
+You seem unable to hunt that target for some reason.
+
+838/1011 HP  1381/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | On the murky river (NEW)
+>>   
+where 1.small goshawk
+a small goshawk                On a Mountain Ridge
+
+838/1011 HP  1381/1396 MP  1274/1274 mv  589tnl  
+Lv 48  G 352243 | On the murky river (NEW)
+>>   
+
+Your mystic might fades away.
+
+Your body softens.
+
+Your pulse slows to a normal rate.
+
+[Newbie] (Advisor) Selitos: under world properties --> input --> commands
+
+n
+On a jungle path
+  A muddy bank leads to a narrow path threading around these huge trees. 
+The oppressive humidity of the jungle presses down on you like a hot, wet
+sheet.  The thick canopy overhead only allows dim green light to filter
+through.  The path leads off to the east and the river is back to the south.
+
+[ Exits: east south ]
+     A tamarind tree grows here.
+     These vines hang from many trees.
+(Invis) (Hidden) Malaria looks for a person to infect.
+A long-limbed, long-tailed, black-faced monkey nibbles some fruit.
+A fat, reddish-feathered bird pecks at the ground.
+(Hidden) A black panther lazes in the sun.
+(Hidden) A brilliant green chameleon zaps insects with its sticky tongue.
+
+854/1011 HP  1396/1396 MP  1268/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (ES)
+>>   
+e
+On a jungle path
+  The canopy of branches and leaves looms roundly above you, blotting out the 
+sky. The air is heavy with moisture and the scent of wild orchids 
+intermingled with the smell of rotting leaves and wood. Your feet sink in the
+spongey moss-covered ground as you make your way slowly through the jungle.
+The path continues east and west.
+
+[ Exits: east west ]
+     This rotting tree fell during a monsoon many years past.
+(Invis) (Hidden) Malaria looks for a person to infect.
+(Invis) (Hidden) Malaria looks for a person to infect.
+(Invis) (Hidden) Malaria looks for a person to infect.
+A fat, reddish-feathered bird pecks at the ground.
+
+854/1011 HP  1396/1396 MP  1267/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (EW)
+e
+>>   
+On a jungle path
+  Walking through this jungle humidity saps your strength.  Overhead, you catch
+occasional glimpses of small mammals and reptiles.  The calls of various
+brightly colored birds are sharp notes against the soothing drone of
+insects.  
+
+[ Exits: east west ]
+     A cluster of fragrant, yellow orchids hang from a tree.
+     A rubber tree grows here.
+     These vines hang from many trees.
+(Invis) (Hidden) A blood-sucking tiger mosquito lands on you.
+A long-limbed, long-tailed, black-faced monkey nibbles some fruit.
+An iridescent black bird watches you.
+(Invis) (Hidden) A blood-sucking tiger mosquito lands on you.
+(Invis) (Hidden) A blood-sucking tiger mosquito lands on you.
+(Invis) (Hidden) Malaria looks for a person to infect.
+An iridescent black bird watches you.
+
+854/1011 HP  1396/1396 MP  1266/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (EW)
+e
+>>   
+On a jungle path
+  Walking through this jungle heat saps your strength.  Overhead, you catch
+occasional glimpses of small mammals and reptiles.  The calls of various
+brightly colored birds are sharp notes against the soothing drone of
+insects.  Nearby, you can smell the fragrant bark of a cinnamon tree.  
+The path continues west and south.
+
+[ Exits: south west ]
+     A cinnamon tree grows here.
+(Invis) (Hidden) A blood-sucking tiger mosquito lands on you.
+(Hidden) A brilliant green chameleon zaps insects with its sticky tongue.
+A long-limbed, long-tailed, black-faced monkey nibbles some fruit.
+(Invis) (Hidden) A blood-sucking tiger mosquito lands on you.
+A fat, reddish-feathered bird pecks at the ground.
+A long-limbed, long-tailed, black-faced monkey nibbles some fruit.
+(Hidden) A small, slate grey viper hides and waits.
+(Hidden) A brilliant green chameleon zaps insects with its sticky tongue.
+
+854/1011 HP  1396/1396 MP  1265/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (SW)
+e
+>>   
+Alas, you cannot go that way.
+
+854/1011 HP  1396/1396 MP  1265/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (SW)
+>>   
+s
+s
+On an old bridge
+  Here is the most dilapidated bridge you have ever seen!  Its weathered
+grey planks are splintered and broken and more than half of them are
+missing.  You look over the edge to see the rotting pilings sunk deep into
+the mud banks.  Apparently, there is no other way across.  Gathering your
+courage, you take one slow, careful step out onto the bridge.  It shudders
+and groans under your weight.  I hope you make it across!  
+
+[ Exits: north south ]
+
+854/1011 HP  1396/1396 MP  1264/1274 mv  589tnl  
+Lv 48  G 352243 | On an old bridge (NS)
+>>   On a jungle path
+  The jungle is a little less dense here, allowing golden beams of sunshine
+to spear through the trees.  The animal sounds have receded and human sounds
+have emerged.  You hear the shouts of children playing to the west.  
+
+[ Exits: north west ]
+     A thicket of banana trees grows here, with several huge bunches of bananas ready for picking.
+(Hidden) A brilliant green chameleon zaps insects with its sticky tongue.
+
+854/1011 HP  1396/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+
+[Newbie] (Advisor) Selitos: check the box to echo all commands
+
+spellup
+Queueing spell : haste.
+Queueing spell : invis.
+Queueing spell : shield.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : absorb.
+Queueing spell : underwater breathing.
+Queueing spell : mystic might.
+Queueing spell : harden body.
+Queueing spell : magical rush.
+
+854/1011 HP  1396/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   You feel yourself moving more quickly.
+
+854/1011 HP  1376/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You lost your concentration while trying to cast invis.
+
+854/1011 HP  1364/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You are surrounded by a force shield.
+
+854/1011 HP  1359/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You lost your concentration while trying to cast avoidance.
+
+854/1011 HP  1347/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You make your appearance look blurred.
+
+854/1011 HP  1332/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You lost your concentration while trying to cast absorb.
+
+854/1011 HP  1300/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You feel gills growing on your neck!
+
+854/1011 HP  1285/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You feel your body surge with extra power.
+
+854/1011 HP  1255/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You feel your body harden.
+
+854/1011 HP  1225/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+You lost your concentration while trying to cast magical rush.
+
+854/1011 HP  1210/1396 MP  1263/1274 mv  589tnl  
+Lv 48  G 352243 | On a jungle path (NW)
+>>   
+
+
+w
+A path through the fields
+  Here the path is wider and smoother.  Prints from many feet can be seen
+in the packed dirt.  Cultivated fields stretch out on either side of you,
+verdant green in the sun.  Shouts and laughter of children at play reach
+your ears.  Everything appears peaceful, but beware what lurks in the grass.
+To the north is a sugarcane field and to the south is a field of millet.  
+
+[ Exits: north east south west ]
+     An old pomegranate tree grows here, its branches filled with ripe pomegranates.
+(Invis) (Hidden) Malaria looks for a person to infect.
+A long-nosed deer makes a funny barking sound.
+A man works in the fields.
+A spotted deer blends into the foliage.
+A fat, reddish-feathered bird pecks at the ground.
+
+870/1011 HP  1255/1396 MP  1273/1274 mv  589tnl  
+Lv 48  G 352243 | A path through the fields (NESW)
+>>   
+w
+A path through the fields
+  Here the path is wider and smoother.  Prints from many feet can be seen
+in the packed dirt.  Cultivated fields stretch out on either side of you,
+verdant green in the sun.  Shouts and laughter of children at play reach
+your ears.  Everything appears peaceful, but beware what lurks in the grass.
+West is the village shrine and south is the village itself.  East leads back
+to the fields.  
+
+[ Exits: east south west ]
+     A fig tree grows here, its branches filled with ripe figs.
+This swamp deer likes to stay by the riverbanks.
+(White Aura) A hump-backed cow grazes peacefully.
+This small weasel jumps quickly away, chittering.
+A shimmering blue peacock spreads his magnificent tail.
+A drab peahen pecks at the ground, searching for food.
+A long-nosed deer makes a funny barking sound.
+An iridescent black bird watches you.
+A drab peahen pecks at the ground, searching for food.
+A girl helps her mother with day-to-day chores.
+A man works in the fields.
+
+870/1011 HP  1255/1396 MP  1272/1274 mv  589tnl  
+Lv 48  G 352243 | A path through the fields (ESW)
+>>   
+s
+A path through the village
+  The path gets wider again as you enter a small village.  Peacocks strut
+along the road.  Boys chase each other while young girls watch even younger
+babies or help their mothers with the daily chores.  Men hunt and tend the
+fields.  Maybe a dozen huts can be seen.  
+
+[ Exits: north east south west ]
+     A sweet orange tree grows here, its branches filled with ripe oranges.
+A drab peahen pecks at the ground, searching for food.
+(White Aura) A hump-backed cow grazes peacefully.
+A dark-eyed woman in a colorful sari prepares food for her family.
+A boy carries water.
+A member of the dhole pack watches from the shadows.
+A member of the dhole pack watches from the shadows.
+(Hidden) A small, slate grey viper hides and waits.
+
+870/1011 HP  1255/1396 MP  1271/1274 mv  589tnl  
+Lv 48  G 352243 | A path through the village (NESW)
+s
+>>   
+A path through the village
+  This village sure is not very big!  At this end, it backs right up
+against the jungle.  Maybe a dozen huts can be seen from here, a few with
+their doors open.  Women cook and sew while the men hunt or tend the fields.
+Boys fetch water from the river and girls take care of their younger
+siblings.  Everyone is busy.  
+
+[ Exits: north east south west ]
+     A stone fountain provides the village with cool, sweet, clean water.
+     A lychee tree grows here, its branches filled with ripe fruits.
+A spotted deer blends into the foliage.
+Riki Tiki Tavi patrols the garden for threats to the boy.
+(Invis) Nag slithers by, looking for someone to bite.
+A member of the dhole pack watches from the shadows.
+Nag fades into existence.
+You dodge Nag's attack.
+You dodge Nag's attack.
+Nag's sting ERADICATES you. [39]
+Nag is in perfect health.
+
+FIGHTING!
+831/1011 HP  1255/1396 MP  1270/1274 mv  589tnl
+82% HP (you) |  Enemy: 100% HP (mob) >>   
+
+Nag's sting OBLITERATES you. [45]
+Nag's sting DEVASTATES you. [34]
+Nag's sting OBLITERATES you. [45]
+*Nag's sting INCINERATES you! [55]
+Your pierce DISEMBOWELS Nag! [64]
+Your pierce misses Nag. [0]
+Your pierce DISEMBOWELS Nag! [61]
+Nag has a few minor scratches.
+
+FIGHTING!
+652/1011 HP  1255/1396 MP  1270/1274 mv  589tnl
+64% HP (you) |  Enemy: 95% HP (mob) >>   
+ca fireball
+Your searing ball of flame <>*<> FISSURES <>*<> Nag! [152]
+Your searing ball of flame <*><*> LIQUIDATES <*><*> Nag! [169]
+Nag is bleeding lightly.
+
+FIGHTING!
+652/1011 HP  1225/1396 MP  1270/1274 mv  589tnl
+64% HP (you) |  Enemy: 82% HP (mob) >>   
+ca fireball
+
+You dodge Nag's attack.
+Nag's sting ERADICATES you. [37]
+Nag's sting ERADICATES you. [40]
+Nag dodges your attack.
+Your pierce misses Nag. [0]
+Your pierce misses Nag. [0]
+Nag is bleeding lightly.
+
+FIGHTING!
+575/1011 HP  1225/1396 MP  1270/1274 mv  589tnl
+ca fireball
+56% HP (you) |  Enemy: 82% HP (mob) >>   
+Your searing ball of flame <-*-> RAVAGES <-*-> Nag! [144]
+Your searing ball of flame <-=-> SUNDERS <-=-> Nag! [190]
+Nag has some small wounds and bruises.
+
+FIGHTING!
+575/1011 HP  1195/1396 MP  1270/1274 mv  589tnl
+56% HP (you) |  Enemy: 68% HP (mob) >>   
+ca fireball
+
+[Newbie] (Advisor) Selitos: well echo my input
+
+FIGHTING!
+575/1011 HP  1195/1396 MP  1270/1274 mv  589tnl
+56% HP (you) |  Enemy: 68% HP (mob) >>   
+You dodge Nag's attack.
+You blink out of existence and avoid Nag's attack.
+Nag's sting OBLITERATES you. [45]
+Nag's sting OBLITERATES you. [43]
+*Your pierce -= DEMOLISHES =- Nag! [86]
+*Your pierce - BLASTS - Nag! [85]
+Your pierce misses Nag. [0]
+Nag is showing a few battle scars.
+
+FIGHTING!
+487/1011 HP  1195/1396 MP  1270/1274 mv  589tnl
+48% HP (you) |  Enemy: 62% HP (mob) >>   
+ca vampiric
+Your searing ball of flame <*><*> LIQUIDATES <*><*> Nag! [161]
+Your searing ball of flame <->*<=> WASTES <=>*<-> Nag! [208]
+Nag has quite a few wounds.
+
+FIGHTING!
+487/1011 HP  1165/1396 MP  1270/1274 mv  589tnl
+48% HP (you) |  Enemy: 47% HP (mob) >>   
+ca vampiric
+ca vampiric
+
+You blink out of existence and avoid Nag's attack.
+You blink out of existence and avoid Nag's attack.
+You blink out of existence and avoid Nag's attack.
+Nag parries your attack.
+Your pierce misses Nag. [0]
+Your pierce misses Nag. [0]
+Nag has quite a few wounds.
+
+FIGHTING!
+487/1011 HP  1165/1396 MP  1270/1274 mv  589tnl
+48% HP (you) |  Enemy: 47% HP (mob) >>   
+ca vampiric
+Your searing ball of flame <=-=><=-=> TEARS INTO <=-=><=-=> Nag! [194]
+Your searing ball of flame <*><*> LIQUIDATES <*><*> Nag! [161]
+Nag has some very nasty wounds.
+
+FIGHTING!
+487/1011 HP  1135/1396 MP  1270/1274 mv  589tnl
+48% HP (you) |  Enemy: 33% HP (mob) >>   
+ca vampiric
+
+You dodge Nag's attack.
+You blink out of existence and avoid Nag's attack.
+Nag's sting ERADICATES you. [39]
+Nag's sting DEVASTATES you. [34]
+Nag dodges your attack.
+Nag dodges your attack.
+Your pierce misses Nag. [0]
+Nag has some very nasty wounds.
+
+FIGHTING!
+414/1011 HP  1135/1396 MP  1270/1274 mv  589tnl
+40% HP (you) |  Enemy: 33% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> Nag! [193]
+Your life-draining touch <-=-> SUNDERS <-=-> Nag! [187]
+Nag needs a hospital.
+
+FIGHTING!
+449/1011 HP  1095/1396 MP  1270/1274 mv  589tnl
+44% HP (you) |  Enemy: 18% HP (mob) >>   
+ca vampiric
+
+You dodge Nag's attack.
+You dodge Nag's attack.
+Nag's sting ERADICATES you. [39]
+Nag dodges your attack.
+Your pierce misses Nag. [0]
+Your pierce misses Nag. [0]
+Nag needs a hospital.
+
+FIGHTING!
+436/1011 HP  1132/1396 MP  1274/1274 mv  589tnl
+43% HP (you) |  Enemy: 19% HP (mob) >>   
+ca vampiric
+Ahhhh, Fresh Blood!
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> Nag! [193]
+Your life-draining touch <*><*> LIQUIDATES <*><*> Nag! [169]
+Nag is at death's door.
+
+FIGHTING!
+471/1011 HP  1092/1396 MP  1274/1274 mv  589tnl
+46% HP (you) |  Enemy: 4% HP (mob) >>   
+
+You dodge Nag's attack.
+You blink out of existence and avoid Nag's attack.
+You blink out of existence and avoid Nag's attack.
+Nag parries your attack.
+Your pierce misses Nag. [0]
+Your pierce DISEMBOWELS Nag! [65]
+Nag is at death's door.
+
+FIGHTING!
+471/1011 HP  1092/1396 MP  1274/1274 mv  589tnl
+46% HP (you) |  Enemy: 2% HP (mob) >>   
+ca vampiric
+Your life-draining touch <=-=><=-=> TEARS INTO <=-=><=-=> Nag! [196]
+Blood explodes from Nag's every orifice!! He is DEAD!
+You receive 163 experience points.
+You get 767 gold coins from the bloodless corpse of Nag.
+Ayla gives you 30 gold coins for the bloodless corpse of Nag.
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   
+Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+ca vampiric
+>>   
+Cast vampiric touch on whom?
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   
+spellup
+Queueing spell : invis.
+Queueing spell : avoidance.
+Queueing spell : absorb.
+Queueing spell : magical rush.
+
+471/1011 HP  1052/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   You fade out of existence.
+
+471/1011 HP  1027/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   
+You now possess magical powers of avoidance.
+
+471/1011 HP  1002/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   
+A tepid, moderate wind blows from the south.
+Rain starts to fall from the dark night sky.
+
+You feel a strong magical force surround your body.
+
+471/1011 HP  937/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   
+You feel your adrenaline pump as your body speeds up.
+
+471/1011 HP  907/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | A path through the village (NESW)
+>>   
+
+
+s
+On a jungle path
+  Here at the edge of the village, the jungle is a less dense.  The human
+sounds have receded and animal sounds have emerged.  You barely hear the
+shouts of children playing to the north.  
+
+[ Exits: north east south ]
+     A fig tree grows here, its branches filled with ripe figs.
+A small, white orchid hangs from a tree.
+(Invis) (Hidden) A blood-sucking tiger mosquito lands on you.
+A small, white orchid hangs from a tree.
+A rhino browses among the bushes, looking for fruit and tasty leaves.
+A huge rhinoceros peers around itself myopically, looking for the intruder it smells.
+A huge rhinoceros snorts.
+A huge rhinoceros goes back to browsing for tender leaves.
+
+495/1011 HP  940/1396 MP  1273/1274 mv  426tnl  
+Lv 48  G 353040 | On a jungle path (NES)
+>>   
+e
+On a jungle path
+  Traveling this jungle heat saps your strength.  Overhead, you catch
+occasional glimpses of small mammals and reptiles.  The calls of various
+brightly colored birds are sharp notes against the soothing drone of
+insects.  
+
+[ Exits: east west ]
+     These vines hang from many trees.
+     A sweet orange tree grows here, its branches filled with ripe oranges.
+A huge, lavender orchid hangs from a tree.
+An elephant bathes in the river.
+
+495/1011 HP  940/1396 MP  1272/1274 mv  426tnl  
+Lv 48  G 353040 | On a jungle path (EW)
+e
+>>   
+In the foothills
+  The path starts to rise and the ground is a bit drier as you travel into
+the foothills.  Less brush blankets the ground and the trees are further
+apart, allowing more sun to penetrate.  There is still plenty of shade and a
+cool breeze blows down from the high mountain peaks.  
+
+[ Exits: east west ]
+
+495/1011 HP  940/1396 MP  1271/1274 mv  426tnl  
+Lv 48  G 353040 | In the foothills (EW)
+>>   
+e
+In the foothills
+  The path starts to rise and the ground is a bit drier as you travel into
+the foothills.  More grasses can be seen and the trees are further apart,
+allowing more sun to penetrate.  There is still plenty of shade and a cool
+breeze blows down from the high mountain peaks.  To the south, a dark
+opening can be seen in the rocks.  
+
+[ Exits: south west up ]
+A rhino browses among the bushes, looking for fruit and tasty leaves.
+A small, white orchid hangs from a tree.
+A huge, lavender orchid hangs from a tree.
+A huge rhinoceros peers around itself myopically, looking for the intruder it smells.
+A huge rhinoceros snorts.
+A huge rhinoceros goes back to browsing for tender leaves.
+
+495/1011 HP  940/1396 MP  1269/1274 mv  426tnl  
+Lv 48  G 353040 | In the foothills (SWU)
+>>   
+u
+Climbing the Mountains
+  The path is a lot steeper here and the dirt of the jungle has given away
+to packed gravel.  The surrounding foliage is still thick, but a lot more
+light penetrates.  In places, this path is very narrow, winding up along a
+deep ravine.  
+
+[ Exits: up down ]
+A small, white orchid hangs from a tree.
+
+495/1011 HP  940/1396 MP  1267/1274 mv  426tnl  
+Lv 48  G 353040 | Climbing the Mountains (UD)
+>>   
+u
+On a Mountain Ridge
+  You have finally reached the mountain ridge.  A panoramic view of the
+jungle, river and village is spread before you.  The fields surrounding the
+village are a patchwork quilt of color.  To the east and above you lies the
+mountain peak.  To the north is a steep ravine, littered with enormous
+boulders.  
+
+[ Exits: north east down ]
+     These weathered rocks are warmed by the tropical sun.
+A mama snow leopard keeps watch.
+This blue sheep has been separated from its flock.
+This blue sheep has been separated from its flock.
+This blue sheep has been separated from its flock.
+
+495/1011 HP  940/1396 MP  1264/1274 mv  426tnl  
+Lv 48  G 353040 | On a Mountain Ridge (NED)
+>>   
+
+You can no longer sense anger.
+
+hunt 1.small goshawk
+You seem unable to hunt that target for some reason.
+
+512/1011 HP  969/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | On a Mountain Ridge (NED)
+>>   
+where 1.small goshawk
+a small goshawk                On a Mountain Ridge
+
+512/1011 HP  969/1396 MP  1274/1274 mv  426tnl  
+Lv 48  G 353040 | On a Mountain Ridge (NED)
+>>   
+e
+On a Mountain Ridge
+  You have finally reached the mountain ridge.  A panoramic view of the
+jungle, river and village is spread before you.  The fields surrounding the
+village are a patchwork quilt of color.  To the east and above you lies the
+mountain peak.  The scream of a snow leopard can be heard echoing from the
+rocks above you.  
+
+[ Exits: west up ]
+This blue sheep has been separated from its flock.
+(Invis) (Hidden) Malaria looks for a person to infect.
+A crested serpent eagle soars by, watching everything.
+
+512/1011 HP  969/1396 MP  1271/1274 mv  426tnl  
+Lv 48  G 353040 | On a Mountain Ridge (WU)
+>>   
+
+A monsoon breaks over Raganatittu.
+
+u
+At the Peak
+  You have finally reached the peak of this mountain range.  Snow drifts
+into crevasses that are never touched by the sun.  The air is thin and cold.
+Hardly anything grows here, but what does grow is twisted and stunted from
+the constant winds.  The ground is littered with gravel and small boulders. 
+In spite of the breathtaking view, you hurry back down to get away from the
+cold.  
+
+[ Exits: south down ]
+     These weathered rocks are warmed by the tropical sun.
+This blue sheep has been separated from its flock.
+A hyena cackles, calling other hyenas to eat.
+A long-legged bird stalks through the grass.
+
+512/1011 HP  969/1396 MP  1268/1274 mv  426tnl  
+Lv 48  G 353040 | At the Peak (SD)
+>>   
+s
+In a Snow Leopard Den
+  The only way down the back of this mountain range is through this narrow
+passage.  In a shallow cave off to one side, a snow leopard has chosen to
+make her den.  Her four cubs are inside, looking cute and fluffy.  Be
+careful that mama doesn't come back and find you messing with her family!  
+
+[ Exits: north down ]
+A hyena cackles, calling other hyenas to eat.
+(Hidden) A snow leopard cub plays with its littermates.
+(Hidden) A snow leopard cub plays with its littermates.
+
+512/1011 HP  969/1396 MP  1265/1274 mv  426tnl  
+Lv 48  G 353040 | In a Snow Leopard Den (ND)
+>>   
+
+
+d
+On a Mountain Ridge
+  You have finally reached the mountain ridge.  A panoramic view of the
+foothills and grassy plains is spread before you.  Here you are in the 'rain
+shadow' of the mountains.  Things are a lot drier here.  A vast savannah
+starts at the base of this mountain, and in the distance, a large lake and
+marsh can be seen, fed by a river of snowmelt.  
+
+[ Exits: up down ]
+     These weathered rocks are warmed by the tropical sun.
+A large vulture waits in a tree.
+A shikra watches you with mad, red eyes.
+
+531/1011 HP  1014/1396 MP  1273/1274 mv  426tnl  
+Lv 48  G 353040 | On a Mountain Ridge (UD)
+>>   
+ca fireball 'small goshawk'
+ca pois 'small goshawk'
+ca with 'small goshawk'
+You fade into existence.
+Your searing ball of flame <*><*><*> EVAPORATES <*><*><*> a small goshawk! [176]
+Your searing ball of flame <-+-><-*-> CREMATES <-*-><-+-> a small goshawk! [232]
+A small goshawk is bleeding lightly.
+
+FIGHTING!
+531/1011 HP  984/1396 MP  1273/1274 mv  426tnl
+52% HP (you) |  Enemy: 76% HP (mob) >>   
+ca vampiric
+
+A small goshawk dodges your attack.
+A small goshawk dodges your attack.
+Your pierce MASSACRES a small goshawk! [69]
+You blink out of existence and avoid a small goshawk's attack.
+A small goshawk's pierce mangles you. [24]
+A small goshawk's pierce LACERATES you. [28]
+A small goshawk has some small wounds and bruises.
+
+FIGHTING!
+479/1011 HP  984/1396 MP  1273/1274 mv  426tnl
+47% HP (you) |  Enemy: 72% HP (mob) >>   
+A small goshawk looks very ill.
+
+FIGHTING!
+479/1011 HP  964/1396 MP  1273/1274 mv  426tnl
+47% HP (you) |  Enemy: 72% HP (mob) >>   
+ca vampiric
+ca vampiric
+
+A small goshawk dodges your attack.
+Your pierce misses a small goshawk. [0]
+Your pierce misses a small goshawk. [0]
+You blink out of existence and avoid a small goshawk's attack.
+You dodge a small goshawk's attack.
+A small goshawk has some small wounds and bruises.
+
+FIGHTING!
+479/1011 HP  964/1396 MP  1273/1274 mv  426tnl
+47% HP (you) |  Enemy: 72% HP (mob) >>   
+ca vampiric
+Your strength-draining touch <-==-> ATOMIZES <-==-> a small goshawk! [126]
+A small goshawk is showing a few battle scars.
+
+FIGHTING!
+479/1011 HP  934/1396 MP  1273/1274 mv  426tnl
+47% HP (you) |  Enemy: 64% HP (mob) >>   
+ca vampiric
+
+A small cub prowls in from below.
+
+FIGHTING!
+479/1011 HP  934/1396 MP  1273/1274 mv  426tnl
+47% HP (you) |  Enemy: 64% HP (mob) >>   
+
+Your pierce DISEMBOWELS a small goshawk! [65]
+Your pierce DISMEMBERS a small goshawk! [73]
+Your pierce DISEMBOWELS a small goshawk! [65]
+You blink out of existence and avoid a small goshawk's attack.
+You blink out of existence and avoid a small goshawk's attack.
+You blink out of existence and avoid a small goshawk's attack.
+A small goshawk has quite a few wounds.
+
+FIGHTING!
+479/1011 HP  934/1396 MP  1273/1274 mv  426tnl
+ca vampiric
+47% HP (you) |  Enemy: 53% HP (mob) >>   
+Ahhhh, Fresh Blood!
+Your life-draining touch <->*<=> WASTES <=>*<-> a small goshawk! [213]
+Your life-draining touch <->*<=> WASTES <=>*<-> a small goshawk! [204]
+A small goshawk has some very nasty wounds.
+
+FIGHTING!
+519/1011 HP  894/1396 MP  1273/1274 mv  426tnl
+51% HP (you) |  Enemy: 28% HP (mob) >>   
+ca vampiric
+
+Your pierce DISEMBOWELS a small goshawk! [65]
+Your pierce misses a small goshawk. [0]
+Your pierce DISEMBOWELS a small goshawk! [65]
+You blink out of existence and avoid a small goshawk's attack.
+You have become better at blink! (92%)
+You blink out of existence and avoid a small goshawk's attack.
+A small goshawk's pierce mangles you. [23]
+A small goshawk needs a hospital.
+
+FIGHTING!
+496/1011 HP  894/1396 MP  1273/1274 mv  422tnl
+ca vampiric
+49% HP (you) |  Enemy: 21% HP (mob) >>   
+Ahhhh, Fresh Blood!
+Your life-draining touch <->*<=> WASTES <=>*<-> a small goshawk! [207]
+A small goshawk is gravely injured.
+
+FIGHTING!
+535/1011 HP  854/1396 MP  1273/1274 mv  422tnl
+52% HP (you) |  Enemy: 9% HP (mob) >>   
+ca vampiric
+
+A small goshawk dodges your attack.
+Your pierce MASSACRES a small goshawk! [66]
+Your pierce misses a small goshawk. [0]
+You blink out of existence and avoid a small goshawk's attack.
+You blink out of existence and avoid a small goshawk's attack.
+You blink out of existence and avoid a small goshawk's attack.
+A small goshawk is gravely injured.
+
+FIGHTING!
+535/1011 HP  854/1396 MP  1273/1274 mv  422tnl
+52% HP (you) |  Enemy: 5% HP (mob) >>   
+Your life-draining touch <->*<=> WASTES <=>*<-> a small goshawk! [201]
+Blood explodes from a small goshawk's every orifice!! It is DEAD!
+You receive 54 experience points.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+You get 190 gold coins from the bloodless corpse of a small goshawk.
+Ayla gives you 24 gold coins for the bloodless corpse of a small goshawk.
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   
+Cast vampiric touch on whom?
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   Cast vampiric touch on whom?
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+hold portal; enter; hold disk; d
+>>   Cast vampiric touch on whom?
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   Cast vampiric touch on whom?
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   Cast vampiric touch on whom?
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   Cast vampiric touch on whom?
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   You still have to kill * the Mistress of Sharkatan (The Coral Kingdom)
+* a scaly monitor lizard (The Great Salt Flats) 4538
+* a shambling mound (The Labyrinth) 31404
+* a treant (The Labyrinth) 31404
+* a satyr (The Labyrinth) 31404
+* a donkey (The Land of Oz - Dead)
+* some sticky cobwebs (The Temple of Shouggoth) 34087
+* a school of fish (The Wobbly Woes of Woobleville) 11383
+* a grot (Zangar's Demonic Grotto) 6162
+Note: Dead means that the target is dead, not that you have killed it.
+
+You have 6 days, 2 hours and 44 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   You stop holding a Disk of Destruction.
+You hold Aylorian Academy portal in your hand.
+
+535/1010 HP  814/1394 MP  1273/1272 mv  368tnl  
+Lv 48  G 353254 | On a Mountain Ridge (UD)
+>>   WHOOOOOOOOOOOOSH!
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+535/1010 HP  814/1394 MP  1273/1272 mv  368tnl  
+Lv 48  G 353254 | Outside the Aylorian Academy (NSD)
+>>   You stop holding Aylorian Academy portal.
+You hold a Disk of Destruction in your hand.
+
+535/1011 HP  814/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | Outside the Aylorian Academy (NSD)
+>>   The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+[AFK] (Player) Vnu the Bandit.
+[AFK] (Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+535/1011 HP  814/1396 MP  1272/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+
+
+s
+Whitewind Avenue (G)
+  You stand on Whitewind Avenue before a large intersection with a massive
+statue and numerous people.  The city around you is incredible, with amazing
+architecture, breathtaking horizons, and finely crafted roadwork.  Beneath
+your feet, the road is made of a white translucent stone, likely quartz,
+that sparkles in the sunlight.  To the north, the grand Aylorian Temple
+stands high above the city.  
+
+[ Exits: north east south west up down ]
+
+562/1011 HP  853/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | Whitewind Avenue (NESWUD)
+>>   
+w
+Entrance to the Crusader Clan Temple (G)
+  It takes you only a few seconds to realise that this is no ordinary temple 
+building. There is a constant flow in and out of the temple of people and 
+goods. As you watch, a shipment of shining white plate armor is carted into 
+the temple doors. Not long after, a group of noble knights exit the temple 
+accompanied by the blare of trumpets to honor the start of a new crusade 
+against evil. You notice a friendly knight standing near the large arch 
+leading into the temple who appears to be directing all newcomers to various 
+sections of the temple. You are convinced that your stay here will be a 
+blessed one.
+
+[ Exits: north east south west up down ]
+     A small campfire burns merrily away here.
+Cedric leans comfortably against a sign with directions around the temple.
+
+562/1011 HP  853/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | Entrance to the Crusader Clan Temple (NESWUD)
+>>   
+e
+Whitewind Avenue (G)
+  You stand on Whitewind Avenue before a large intersection with a massive
+statue and numerous people.  The city around you is incredible, with amazing
+architecture, breathtaking horizons, and finely crafted roadwork.  Beneath
+your feet, the road is made of a white translucent stone, likely quartz,
+that sparkles in the sunlight.  To the north, the grand Aylorian Temple
+stands high above the city.  
+
+[ Exits: north east south west up down ]
+
+562/1011 HP  853/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | Whitewind Avenue (NESWUD)
+>>   
+u
+A Towering Waterfall (G)
+  A towering waterfall soars above the surrounding forest and continues
+as a river flowing towards the east. The constant roar of falling 
+water pounds your ears as chaotic mists spiral, twist and turn about 
+you. The light from The Three Moons - Nuitari, Lunitari and Solinari - 
+create a dazzling array of colors which invade your senses. Yellows,
+violets, reds and blues fade into one another and together with the 
+chaotic mists create a reality void of definition, form and substance. 
+While searching within the mists of chaos, you are able to hear the 
+faint sounds of music pierce through the roar of the falling water. 
+Following the sounds to the far end of waterfall, an ancient stone 
+structure emerges from the mists.
+
+[ Exits: east up down ]
+     (Magic) You see the shadowy outline of a bed before you.
+     (Magic) A gold and silver fountain
+     A small campfire burns merrily away here.
+Cynthia, High Priestess of the Three Moons, waits here to heal thy woes.
+The Father of CHAoS stands here, watching over you.
+
+562/1011 HP  853/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | A Towering Waterfall (EUD)
+>>   
+d
+Whitewind Avenue (G)
+  You stand on Whitewind Avenue before a large intersection with a massive
+statue and numerous people.  The city around you is incredible, with amazing
+architecture, breathtaking horizons, and finely crafted roadwork.  Beneath
+your feet, the road is made of a white translucent stone, likely quartz,
+that sparkles in the sunlight.  To the north, the grand Aylorian Temple
+stands high above the city.  
+
+[ Exits: north east south west up down ]
+
+562/1011 HP  853/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | Whitewind Avenue (NESWUD)
+>>   
+u
+A Towering Waterfall (G)
+  A towering waterfall soars above the surrounding forest and continues
+as a river flowing towards the east. The constant roar of falling 
+water pounds your ears as chaotic mists spiral, twist and turn about 
+you. The light from The Three Moons - Nuitari, Lunitari and Solinari - 
+create a dazzling array of colors which invade your senses. Yellows,
+violets, reds and blues fade into one another and together with the 
+chaotic mists create a reality void of definition, form and substance. 
+While searching within the mists of chaos, you are able to hear the 
+faint sounds of music pierce through the roar of the falling water. 
+Following the sounds to the far end of waterfall, an ancient stone 
+structure emerges from the mists.
+
+[ Exits: east up down ]
+     (Magic) You see the shadowy outline of a bed before you.
+     (Magic) A gold and silver fountain
+     A small campfire burns merrily away here.
+Cynthia, High Priestess of the Three Moons, waits here to heal thy woes.
+The Father of CHAoS stands here, watching over you.
+
+562/1011 HP  853/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | A Towering Waterfall (EUD)
+>>   
+d
+Whitewind Avenue (G)
+  You stand on Whitewind Avenue before a large intersection with a massive
+statue and numerous people.  The city around you is incredible, with amazing
+architecture, breathtaking horizons, and finely crafted roadwork.  Beneath
+your feet, the road is made of a white translucent stone, likely quartz,
+that sparkles in the sunlight.  To the north, the grand Aylorian Temple
+stands high above the city.  
+
+[ Exits: north east south west up down ]
+
+562/1011 HP  853/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | Whitewind Avenue (NESWUD)
+>>   
+recall
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+[AFK] (Player) Vnu the Bandit.
+[AFK] (Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+562/1011 HP  853/1396 MP  637/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+u
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+562/1011 HP  853/1396 MP  637/1274 mv  368tnl  
+Lv 48  G 353254 | Outside the Aylorian Academy (NSD)
+>>   
+s
+
+INFO: Fafhrd has been reborn as a Shadow Thief.
+
+Boot Clan Public Hall (G)
+  You have wandered out of the Academy and into Boot Camps clanhall. 
+Clans are a special thing on aardwolf allowing like minded people to 
+come together. Read help clans for more information. Boot Camp is a 
+clan designed to help new players learn more about the game and we 
+enjoy doing it. Read help boot and help newbieclan to learn more. 
+This area is not a part of the Academy and the first thing you should 
+do on Aardwolf is complete the Academy goal. We offer newbie starter 
+kits to all new players. If you would like one please send a member a 
+tell. You can type who boot to see who is online. If they do not 
+respond then they are most likely afk. All items in our newbie kits 
+are also sold in this shop. Type list if you would like to take a look 
+at them. To return to the Academy type north.
+
+[ Exits: north east south west ]
+A commissary shopkeeper stands here, begging you to type 'list'.
+
+562/1011 HP  853/1396 MP  636/1274 mv  368tnl  
+Lv 48  G 353254 | Boot Clan Public Hall (NESW)
+w
+>>   
+w
+Recreation Room (G)
+  Walking into the room, you notice there is a relaxed, friendly atmosphere and
+almost everyone is in military uniform. A jukebox is playing a lively tune 
+and some of the patrons are having fun dancing to the music. The sound of 
+laughter coming from one end of the bar, as someone has just delivered the 
+punch line of a good joke. Plush, comfortable looking, couches are scattered 
+around the large room in clusters of two and three, allowing for more 
+intimate gatherings and private conversations. The enlisted and the officers 
+mingle together amicably and everyone is on excellent terms with the 
+bartender.
+
+[ Exits: east south west ]
+An old veteran stands behind the bar, ready to serve you a cool drink.
+
+562/1011 HP  853/1396 MP  635/1274 mv  368tnl  
+Lv 48  G 353254 | Recreation Room (ESW)
+w
+>>   Mudpits (G)
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+562/1011 HP  853/1396 MP  634/1274 mv  368tnl  
+Lv 48  G 353254 | Mudpits (EWD)
+w
+>>   Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+562/1011 HP  853/1396 MP  633/1274 mv  368tnl  
+Lv 48  G 353254 | Boot Camp Headquarters (NE[S]WUD)
+>>   Medical lounge (G)
+  You stand in a plain looking room, with bunk beds lining both sides. Green 
+wool blankets line the beds with perfect hospital corners. At the end of this 
+seemingly endless room are two doors leading to what you believe is some 
+kind of latrine and shower area. On one wall there is a milk cooler next to a 
+sign that shows a Drill Sergeant pointing to the room. Words are written 
+over his head, "Milk makes for a strong soldier!". There is a Second 
+Lieutenant Pixie with a red cross on her hat here.
+
+[ Exits: east (down) ]
+     (Magic) A refrigerated milk cooler stands ready to serve all.
+     (Magic) Multiple beds line the wall, waiting for people to rest or be treated on them.
+     (Magic) An old electric heater.
+[AFK] (Player) (Invis) (Hidden) Davem returning mudder from years ago is sleeping on Medical beds.
+(Player) (White Aura) Tench the Venomist is sleeping in a trivia sleeping bag.
+(Player) (Translucent) Talbor the Enchanter is sleeping in a trivia sleeping bag.
+[AFK] (Player) Roume wasn't built in a day. is sleeping on Medical beds.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Drimshade the Navigator.
+(Player) (White Aura) (OPK) Inix the Hunter is sleeping in a trivia sleeping bag.
+Lieutenant Pixie smiles up at you as she gets ready to amputate your leg.
+
+562/1011 HP  853/1396 MP  632/1274 mv  368tnl  
+Lv 48  G 353254 | Medical lounge (E[D])
+>>   
+sleep bed
+You sleep on Medical beds.
+
+562/1011 HP  853/1396 MP  632/1274 mv  368tnl  
+Lv 48  G 353254 | Medical lounge (E[D])
+>>   
+
+
+[Newbie] Kikoman: u mean on the client it self right ?
+
+[Newbie] Kikoman: how do i open world property
+
+You no longer absorb magical attacks.
+
+wake
+You wake up on Medical beds, then stand up.
+Medical lounge (G)
+  You stand in a plain looking room, with bunk beds lining both sides. Green 
+wool blankets line the beds with perfect hospital corners. At the end of this 
+seemingly endless room are two doors leading to what you believe is some 
+kind of latrine and shower area. On one wall there is a milk cooler next to a 
+sign that shows a Drill Sergeant pointing to the room. Words are written 
+over his head, "Milk makes for a strong soldier!". There is a Second 
+Lieutenant Pixie with a red cross on her hat here.
+
+[ Exits: east (down) ]
+     (Magic) A refrigerated milk cooler stands ready to serve all.
+     (Magic) Multiple beds line the wall, waiting for people to rest or be treated on them.
+     (Magic) An old electric heater.
+[AFK] (Player) (Invis) (Hidden) Davem returning mudder from years ago is sleeping on Medical beds.
+(Player) (White Aura) Tench the Venomist is sleeping in a trivia sleeping bag.
+(Player) (Translucent) Talbor the Enchanter is sleeping in a trivia sleeping bag.
+[AFK] (Player) Roume wasn't built in a day. is sleeping on Medical beds.
+(Player) (Invis) (Hidden) (Translucent) (White Aura) Drimshade the Navigator.
+(Player) (White Aura) (OPK) Inix the Hunter is sleeping in a trivia sleeping bag.
+Lieutenant Pixie smiles up at you as she gets ready to amputate your leg.
+
+1011/1011 HP  1396/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | Medical lounge (E[D])
+>>   
+e
+e
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (White Aura) Breathe in, Breathe out..
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | Boot Camp Headquarters (NE[S]WUD)
+e
+>>   Mudpits (G)
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+1011/1011 HP  1396/1396 MP  1272/1274 mv  368tnl  
+Lv 48  G 353254 | Mudpits (EWD)
+e
+>>   Recreation Room (G)
+  Walking into the room, you notice there is a relaxed, friendly atmosphere and
+almost everyone is in military uniform. A jukebox is playing a lively tune 
+and some of the patrons are having fun dancing to the music. The sound of 
+laughter coming from one end of the bar, as someone has just delivered the 
+punch line of a good joke. Plush, comfortable looking, couches are scattered 
+around the large room in clusters of two and three, allowing for more 
+intimate gatherings and private conversations. The enlisted and the officers 
+mingle together amicably and everyone is on excellent terms with the 
+bartender.
+
+[ Exits: east south west ]
+An old veteran stands behind the bar, ready to serve you a cool drink.
+
+1011/1011 HP  1396/1396 MP  1271/1274 mv  368tnl  
+Lv 48  G 353254 | Recreation Room (ESW)
+>>   Boot Clan Public Hall (G)
+  You have wandered out of the Academy and into Boot Camps clanhall. 
+Clans are a special thing on aardwolf allowing like minded people to 
+come together. Read help clans for more information. Boot Camp is a 
+clan designed to help new players learn more about the game and we 
+enjoy doing it. Read help boot and help newbieclan to learn more. 
+This area is not a part of the Academy and the first thing you should 
+do on Aardwolf is complete the Academy goal. We offer newbie starter 
+kits to all new players. If you would like one please send a member a 
+tell. You can type who boot to see who is online. If they do not 
+respond then they are most likely afk. All items in our newbie kits 
+are also sold in this shop. Type list if you would like to take a look 
+at them. To return to the Academy type north.
+
+[ Exits: north east south west ]
+A commissary shopkeeper stands here, begging you to type 'list'.
+
+1011/1011 HP  1396/1396 MP  1270/1274 mv  368tnl  
+Lv 48  G 353254 | Boot Clan Public Hall (NESW)
+>>   
+n
+Outside the Aylorian Academy (G)
+  Standing before the main entrance of the Aylorian Academy, you can't help but
+notice the sheer scale of the structure. Many famous adventurers have passed 
+through these gates before you and many will follow. The mark you will leave 
+on this realm is to be determined by your actions, by fate, by skill and by 
+chance. 
+
+Type 'North' to begin your journey...
+
+[ Exits: north south down ]
+
+1011/1011 HP  1396/1396 MP  1269/1274 mv  368tnl  
+Lv 48  G 353254 | Outside the Aylorian Academy (NSD)
+>>   
+d
+
+
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (White Aura) Garrodyn - Master of Drunken Boxing.
+[AFK] (Player) Vnu the Bandit.
+[AFK] (Player) (Translucent) (White Aura) Corben Dallas, Multipass.
+(Player) (Linkdead) PrettyInPink the Shaman.
+(Player) (OPK) Forma not formatted.
+
+1011/1011 HP  1396/1396 MP  1273/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+
+INFO: The player rankings have been updated.
+
+You are no longer able to breathe underwater.
+
+You feel less aware of your surroundings.
+
+You no longer detect invisibility.
+The detect magic wears off.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: The remote host closed the connection
+[ INFO ]  - Connection time: 00:29:54.085
+                
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 221         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Mon Jul 31 15:54:19 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Linkdead) Apotheosys The Widow Maker.
+(Player) (OPK) Forma not formatted.
+There are 222 players on, the most on this reboot was 257.
+There are 220 players using compression.
+
+LOTTERY : Current lottery jackpot is at 40,000,000 gold.
+
+BLESSING: Your daily blessing is available.
+
+[*Daily Blessing*] 1011/1011 HP  1396/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+
+Tag option map turned ON
+
+[*Daily Blessing*] 1011/1011 HP  1396/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+
+[*Daily Blessing*] 1011/1011 HP  1396/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   You do not see a bag here.
+
+[*Daily Blessing*] 1011/1011 HP  1396/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+You received your last daily blessing at 30 Jul 2023 16:15:00.
+
+You are ready to receive a new daily blessing.
+
+You have 1 daily blessing reset available.
+
+[*Daily Blessing*] 1011/1011 HP  1396/1396 MP  1274/1274 mv  368tnl  
+Lv 48  G 353254 | The Grand City of Aylor (NESWUD)
+>>   
+
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:00:17.497

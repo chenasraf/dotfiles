@@ -12,7 +12,7 @@ vim.keymap.set('n', '˘', '<Cmd>BufferMoveNext<CR>', opts)
 -- Goto buffer in position...
 vim.keymap.set('n', '¡', '<Cmd>BufferGoto 1<CR>', opts)
 vim.keymap.set('n', '™', '<Cmd>BufferGoto 2<CR>', opts)
-vim.keymap.set('n', '£>', '<Cmd>BufferGoto 3<CR>', opts)
+vim.keymap.set('n', '£', '<Cmd>BufferGoto 3<CR>', opts)
 vim.keymap.set('n', '¢', '<Cmd>BufferGoto 4<CR>', opts)
 vim.keymap.set('n', '∞', '<Cmd>BufferGoto 5<CR>', opts)
 vim.keymap.set('n', '§', '<Cmd>BufferGoto 6<CR>', opts)
