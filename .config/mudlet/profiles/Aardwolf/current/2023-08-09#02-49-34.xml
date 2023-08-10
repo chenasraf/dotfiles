@@ -15,7 +15,7 @@
 			<mInstalledModules>
 				<key>aardwolf</key>
 				<filepath>/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
-				<globalSave>1</globalSave>
+				<globalSave>0</globalSave>
 				<priority>0</priority>
 			</mInstalledModules>
 			<url>aardmud.org</url>
@@ -150,7 +150,7 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Campaign mob done - Check Campaign</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -170,7 +170,7 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Underwater breathing</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -178,8 +178,8 @@
 				<mStayOpen>0</mStayOpen>
 				<mCommand>ca underwater</mCommand>
 				<packageName></packageName>
-				<mFgColor>#fd8008</mFgColor>
-				<mBgColor>#333333</mBgColor>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
 				<mSoundFile></mSoundFile>
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
@@ -1415,7 +1415,7 @@ end</script>
   ["pbag"]="bag",
   ["wield"]="flute",
   ["dual"]="flute",
-  ["port"]="cast 'word of recall'",
+  ["port"]="hold 'academy portal';enter;hold brush;d",
   ["attack1"]="ca 'flame arrow'",
   ["debuff1"]="ca poison",
   ["debuff2"]="ca wither",
@@ -1424,7 +1424,7 @@ end</script>
   ["group"]=1,
   ["tdiff"]=-3,
   ["speak"]="false", -- Stringly typed because of user input in vconfig
-  ["spellup"]="spellup"
+  ["spellup"]="spellup int;spellup wis;spellup luck;spellup stats;spellup"
 }</script>
 				<eventHandlerList />
 			</Script>
@@ -1508,7 +1508,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>mud dweller</value>
+			<value>Arenamaster</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

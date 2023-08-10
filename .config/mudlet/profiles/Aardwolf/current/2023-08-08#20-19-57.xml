@@ -22,10 +22,10 @@
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>25</borderTopHeight>
+			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>709</borderRightWidth>
+			<borderRightWidth>586</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -77,8 +77,8 @@
 			<mSpellDic>en_US</mSpellDic>
 			<mLineSize>10.0</mLineSize>
 			<mRoomSize>1.0</mRoomSize>
-			<mapInfoContributor>Short</mapInfoContributor>
 			<mapInfoContributor>Full</mapInfoContributor>
+			<mapInfoContributor>Short</mapInfoContributor>
 			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
 			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
 			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
@@ -150,7 +150,7 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Campaign mob done - Check Campaign</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -170,7 +170,7 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Underwater breathing</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -178,8 +178,8 @@
 				<mStayOpen>0</mStayOpen>
 				<mCommand>ca underwater</mCommand>
 				<packageName></packageName>
-				<mFgColor>#fd8008</mFgColor>
-				<mBgColor>#333333</mBgColor>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
 				<mSoundFile></mSoundFile>
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
@@ -470,9 +470,29 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Primary Spell 🎯️</name>
+					<name>Start Battle 🎯️</name>
 					<packageName></packageName>
-					<script>send(aard.config["attack1"] .. " '" .. target .. "'")</script>
+					<script>send("ca 'flame arrow' '" .. target .. "'")
+send("ca pois '" .. target .. "'")
+send("ca with '" .. target .. "'")</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Start Battle</name>
+					<packageName></packageName>
+					<script>send("ca 'flame arrow';ca pois;ca with")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -506,12 +526,12 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🤢️ Acid Blast</name>
+					<name>🔥 Fireball</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'acid blast'</commandButtonDown>
+					<commandButtonDown>ca fireball</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -580,7 +600,7 @@ end</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>send(aard.config["debuff1"] " '" .. target .. "'; " .. aard.config["debuff1"] .. "  '" .. target .. "'")</script>
+					<script>send("ca with " .. target .. "; ca pois " .. target)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca poison</commandButtonDown>
@@ -746,24 +766,6 @@ end</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>gulp can; gulp can;</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Rest Outside 🔥️</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>gulp can; gulp can; fire; sleep</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1413,9 +1415,9 @@ end</script>
   ["mpot"]="moonlight",
   ["vpot"]="refreshing",
   ["pbag"]="bag",
-  ["wield"]="flute",
-  ["dual"]="flute",
-  ["port"]="cast 'word of recall'",
+  ["wield"]="razor",
+  ["dual"]="razor",
+  ["port"]="hold 'academy portal';enter;hold brush;d",
   ["attack1"]="ca 'flame arrow'",
   ["debuff1"]="ca poison",
   ["debuff2"]="ca wither",
@@ -1424,7 +1426,7 @@ end</script>
   ["group"]=1,
   ["tdiff"]=-3,
   ["speak"]="false", -- Stringly typed because of user input in vconfig
-  ["spellup"]="spellup"
+  ["spellup"]="spellup int;spellup wis;spellup luck;spellup stats;spellup"
 }</script>
 				<eventHandlerList />
 			</Script>
@@ -1508,7 +1510,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>mud dweller</value>
+			<value>demon cook</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
