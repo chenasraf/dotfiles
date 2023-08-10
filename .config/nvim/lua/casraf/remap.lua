@@ -15,7 +15,8 @@ vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor locat
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
-vim.keymap.set("i", "<A-Backspace>", "<Esc>dbi", { desc = "Delete word backwards" })
+vim.keymap.set("i", "<A-Backspace>", "<Esc>ldbi", { desc = "Delete word backwards" })
+vim.keymap.set("i", "<A-Del>", "<Esc>ldei", { desc = "Delete word backwards" })
 
 -- vim.keymap.set({"v", "n"}, "<C-.>", "<C-o>", { desc = "Go to previous cursor location" })
 -- vim.keymap.set({"v", "n"}, "<C-,>", "<C-i>", { desc = "Go to next cursor location" })
