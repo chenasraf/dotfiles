@@ -119,6 +119,9 @@ fi
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
 rsync -vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
 
+echo_cyan "Copying home dir files..."
+rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig
+
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf
 

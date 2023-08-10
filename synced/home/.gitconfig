@@ -1,0 +1,20 @@
+[user]
+	name = Chen Asraf
+	email = casraf@pm.me
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = master
+[credential]
+	helper = store
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/chen/.config/.gitignore
+[alias]
+  unchanged = update-index --assume-unchanged
+  changed = update-index --no-assume-unchanged
+  show-unchanged = !"git ls-files -v | sed -e 's/^[a-z] //p; d'"
