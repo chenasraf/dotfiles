@@ -444,13 +444,6 @@ send(cmd)</script>
 				<regex>^(prc)|(precall)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>precall</name>
-				<script>send(aard.config["port"])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(prc)|(precall)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
 				<name>crecall</name>
 				<script>send("cast 'word of recall'")</script>
 				<command></command>
@@ -523,19 +516,6 @@ end</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^gl(\s([a-zA-Z"']+))?$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>chase</name>
-					<script>local area = matches[2]
-local mob = matches[3]
-
-set_tgt(mob)
-echo_tgt_switch()
-
-send("cast word; rt " .. area)</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>chase ([\w\d]+) (.+)</regex>
 				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
@@ -1908,7 +1888,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>steward</value>
+			<value>cook</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

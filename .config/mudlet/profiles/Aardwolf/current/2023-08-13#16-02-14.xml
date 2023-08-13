@@ -211,7 +211,7 @@
 				</regexCodePropertyList>
 			</Trigger>
 			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>Quest Done - noop</name>
+				<name>HL only</name>
 				<script>-- send("crc; q comp")</script>
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
@@ -225,8 +225,10 @@
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
 					<string>QUEST: You have almost completed your QUEST!</string>
+					<string>You seem unable to hunt that target for some reason.</string>
 				</regexCodeList>
 				<regexCodePropertyList>
+					<integer>0</integer>
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
@@ -444,11 +446,12 @@ send(cmd)</script>
 				<regex>^(prc)|(precall)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>precall</name>
-				<script>send(aard.config["port"])</script>
+				<name>conjure elemental</name>
+				<script>local stone = matches[3]
+send("hold " .. stone .. "; cast 'conjur elemental'; hold " ..aard.config["held"])</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^(prc)|(precall)</regex>
+				<regex>^(cj|conjure) (.+)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>crecall</name>
@@ -1908,7 +1911,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>steward</value>
+			<value>gambling kobold</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

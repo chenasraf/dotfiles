@@ -1,0 +1,200 @@
+Log session starting at 10:16:20 on Sunday, 13 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-08#20-19-57map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.11s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 190         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Sun Aug 13 03:14:17 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+
+--------------------------------------------------------------------------
+                             Boot Camp - Clan MOTD                             
+--------------------------------------------------------------------------
+Welcome to Boot Camp!
+Be sure to register on our website http://www.aardwolfboot.com
+Also join us on Discord: https://discord.gg/GCjHxxZ
+and Aardwolf's Discord channel https://discord.gg/KH62U8P
+Don't forget our clan skills:
+mutare (double / half the weight of an item) 
+napalm (str and int buff) 
+Always read your notes on the Personal Board, as well as Announce and Mudinfo.
+--------------------------------------------------------------------------
+[ End of Clan MOTD - Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+CLAN: At-ten-tion! KumoGami is here to get some training done!
+Entering the Nenukon
+  You notice the sun burn a violent red as you gaze off into the sky.  It
+is unbearably hot.  In all directions all you can see is the vast wasteland
+known as the Nenukon.  
+
+[ Exits: north east south west ]
+(Hidden) (Golden Aura) (White Aura) A tall man, his face cloaked by a hood, stands here, sword in
+hand.
+There are 192 players on, the most on this reboot was 262.
+There are 192 players using compression.
+
+LOTTERY : Current lottery jackpot is at 120,000,000 gold.
+
+991/1619 HP  241/2233 MP  1625/1625 mv  687tnl  
+Lv 79  G 121700 | Entering the Nenukon (NESW)
+>>    *[NOEXP]* 
+
+Tag option map turned ON
+
+991/1619 HP  241/2233 MP  1625/1625 mv  687tnl  
+Lv 79  G 121700 | Entering the Nenukon (NESW)
+>>    *[NOEXP]* 
+
+991/1619 HP  241/2233 MP  1625/1625 mv  687tnl  
+Lv 79  G 121700 | Entering the Nenukon (NESW)
+>>    *[NOEXP]* The [Recruit] Leather Backpack contains:
+     (Magic) (Glow) (Hum) [Potion] Sniper's Accomplice
+     (K) an Aylorian Hammer
+     (K) (Magic) [Recruit] Insulated Canteen
+( 4) (K) (Magic) (Hum) (!(Lotus Rush)!)
+     (K) a sticky green flyswatter
+     (K) (Invis) (Magic) -=< Clasp of the Keeper >=-
+     (K) (Magic) a tiny wooden boat
+( 2) (K) (Magic) (Glow) (Hum) elixir of protection
+     (K) (Magic) a fishing permit
+     (K) a fishing pole
+     (K) (Magic) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+991/1619 HP  241/2233 MP  1625/1625 mv  687tnl  
+Lv 79  G 121700 | Entering the Nenukon (NESW)
+>>    *[NOEXP]* 
+You have the following daily blessings active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 66 mobs killed will reward double experience              17:13:57     
+Next 2 quests completed will reward double quest points        17:13:57     
+Next 3 levels or powerups will add bonus trains                17:13:57     
+
+You received your last daily blessing at 12 Aug 2023 09:15:59.
+
+You can receive a new daily blessing in 4 hours, 59 minutes and 14 seconds.
+
+You have 1 daily blessing reset available.
+
+991/1619 HP  241/2233 MP  1625/1625 mv  687tnl  
+Lv 79  G 121700 | Entering the Nenukon (NESW)
+>>    *[NOEXP]* 
+Blood flows freely throughout Nenukon as the demons turn their gazes toward you.
+
+vc
+Loaded from /Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/config-KumoGami.lua
+vc
+-vconfig-  seperate multiple commands with | instead of ;
+
+  -  [port]    Recall portal to use                     cast 'word of recall'
+  -  [wield]   Wielded weapon to use                    erato
+  -  [dual]    Dual wielded weapon to use               erato
+  -  [held]    Held item to return after using portals  notes
+  -  [spellup] Spellup to use                           napalm;spellup
+  -  [hpot]    Health potion to use                     breakfast
+  -  [mpot]    Mana potion to use                       moonlight
+  -  [vpot]    Moves potion to use                      refreshing
+  -  [pbag]    Potions bag                              backpack
+  -  [bag]     General bag                              backpack
+  -  [attack1] Primary attack                           ca flame
+  -  [attack2] Secondary attack                         ca vamp
+  -  [debuff1] First debuff                             ca poison
+  -  [debuff2] Second debuff                            ca wither
+  -  [cplvl]   Level to CP level until                  150
+  -  [cpexp]   CP Level noexp toggle amount             700
+  -  [group]   Group Frame Format until                 1
+  -  [tdiff]   Time Difference from Mud Time            7
+  -  [speak]   Speak audio alerts                       false
+
+loadmap map.dat
+Map saved to: /Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.13T10.17.08.
+697.dat
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.10s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.34s).
+An icy, moderate wind blows from the south.
+Hail starts to beat down from a cloudy night sky.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:00:51.945

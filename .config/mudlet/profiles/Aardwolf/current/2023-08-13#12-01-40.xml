@@ -444,13 +444,6 @@ send(cmd)</script>
 				<regex>^(prc)|(precall)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>precall</name>
-				<script>send(aard.config["port"])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(prc)|(precall)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
 				<name>crecall</name>
 				<script>send("cast 'word of recall'")</script>
 				<command></command>
@@ -524,19 +517,6 @@ end</script>
 					<packageName></packageName>
 					<regex>^gl(\s([a-zA-Z"']+))?$</regex>
 				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>chase</name>
-					<script>local area = matches[2]
-local mob = matches[3]
-
-set_tgt(mob)
-echo_tgt_switch()
-
-send("cast word; rt " .. area)</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>chase ([\w\d]+) (.+)</regex>
-				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>save config</name>
@@ -593,19 +573,6 @@ send("s;buy steak;run n2wn;buy silver;")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex></regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>Times - run cmd X times</name>
-				<script>local amt = tonumber(matches[2])
-local cmd = matches[3]
-
-for i = 1, amt do
-  local cur = cmd:gsub('%%', i)
-  send(cur)
-end</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>times ([0-9]+) (.+)</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
@@ -1896,7 +1863,7 @@ end</script>
 		<Variable>
 			<name>target_n</name>
 			<keyType>4</keyType>
-			<value>1</value>
+			<value>2</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
@@ -1908,7 +1875,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>steward</value>
+			<value>ladybird</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
