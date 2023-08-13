@@ -4023,7 +4023,7 @@ guiLoad()</script>
 				<packageName></packageName>
 				<regex>^gui$</regex>
 			</Alias>
-			<Alias isActive="yes" isFolder="no">
+			<Alias isActive="no" isFolder="no">
 				<name>vconfig</name>
 				<script>--(?:\| Stat Mods  \:|\| Resist Mods\:|\| Skill Mods \: Modifies|\| Spells     \: \d+ (?:use|uses) of level|\|            \:
 -- \d+ (?:use|uses) of level|\|| ) ([a-zA-Z0-9]+(?: [a-zA-Z]+)*)[ ]*(?:\: \+|\: |by \+| ')[ ]*([a-zA-Z0-9,+-&gt;]+(?: [a-zA-Z]+)*)[']*  
@@ -4044,7 +4044,16 @@ guiLoad()</script>
 
 --display(matches[2])
 --display(matches[3])
-
+function serialize(t)
+  local serializedValues = {}
+  local value, serializedValue
+  for i=1,#t do
+    value = t[i]
+    serializedValue = type(value)=='table' and serialize(value) or value
+    table.insert(serializedValues, serializedValue)
+  end
+  return string.format("{ %s }", table.concat(serializedValues, ', ') )
+end
 if matches[2] and matches[3] then
 	if aard.config[matches[2]] ~= nil then
 		local arg = string.gsub(matches[3],"|",";")
@@ -4052,6 +4061,7 @@ if matches[2] and matches[3] then
 		aard.config[matches[2]] = arg
 		if gmcp.char.base.name then
 			table.save(getMudletHomeDir().."/aardwolf/config-"..gmcp.char.base.name..".lua", aard.config)
+      decho("Saved to "..getMudletHomeDir().."/aardwolf/config-"..gmcp.char.base.name..".lua")
 		end
 	else
 		echo("\n"..matches[2].." is Not a valid option.\n")
@@ -4236,22 +4246,33 @@ end</script>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>runto rt</name>
-				<script>if string.match("sendhian", matches[2]:lower()) then
-	send("run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
+				<script>local boot_recall = true
+local prefix = ""
+
+local tbl = {
+  ["boot"] = "3end",
+}
+
+if boot_recall then -- TODO add more clans?
+  prefix = "run ".. tbl["boot"] ..";"
+end
+
+if string.match("sendhian", matches[2]:lower()) then
+	send(prefix .. "run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
 	tempTimer(1,[[aard.coordrun(20286)]])
 elseif string.match("light", matches[2]:lower()) then
-	send("runto light",false)--light clanhall
+	send(prefix .. "runto light",false)--light clanhall
 elseif string.match("darklight", matches[2]:lower()) then
-	send("run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
+	send(prefix .. "run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
 	tempTimer(1,[[aard.coordrun(19643)]])
 elseif string.match("imperial nation", matches[2]:lower()) then
-	send("run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
+	send(prefix .. "run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
 	tempTimer(1,[[aard.coordrun(16966)]])
 elseif string.match("the witches of omen tor omentor", matches[2]:lower()) then
-	send("run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
+	send(prefix .. "run 2s10e2n7e7n11e4n4e;enter hole")--vidblain
 	tempTimer(1,[[aard.coordrun(15578)]])
 elseif string.match("inferno", matches[2]:lower()) then
-	send("run 2s8w47s22w10sw;enter crystal;run 10esd")
+	send(prefix .. "run 2s8w47s22w10sw;enter crystal;run 10esd")
 elseif string.match("the partroxis", matches[2]:lower()) then
 	gotoRoom(5861)--partroxis
 else
@@ -4454,21 +4475,22 @@ end
 -- User Config - BACKUP settings here to notepad prior to upgrading to new version.
 -----------------------
 aard.configDefault = {
-["hpot"]="elixir",
-["mpot"]="moonlight",
-["vpot"]="refreshing",
-["pbag"]="bag",
-["wield"]="dagger",
-["dual"]="dagger",
-["port"]="hold duff;enter;hold flute",
-["attack1"]="hammer",
-["debuff1"]="marbu",
-["debuff2"]="dirt",
-["cplvl"]=150,
-["cpexp"]=700,
-["group"]=1,
-["tdiff"]=-3,
-["speak"]="false", -- Stringly typed because of user input in vconfig
+  ["hpot"]="breakfast",
+  ["mpot"]="moonlight",
+  ["vpot"]="refreshing",
+  ["pbag"]="backpack",
+  ["wield"]="flute",
+  ["dual"]="flute",
+  ["port"]="cast 'word of recall'",
+  ["attack1"]="ca 'flame arrow'",
+  ["debuff1"]="ca poison",
+  ["debuff2"]="ca wither",
+  ["cplvl"]=150,
+  ["cpexp"]=700,
+  ["group"]=1,
+  ["tdiff"]=-3,
+  ["speak"]="false", -- Stringly typed because of user input in vconfig
+  ["spellup"]="napalm;spellup",
 }
 
 --Automatically toggle noexp once your TNL is less than this amount on CP level +1
@@ -8746,6 +8768,7 @@ env:close()
 				<name>f8 portalroom</name>
 				<packageName></packageName>
 				<script>--If you are going to use a portal action that does not use the keyword "enter" then press this keybinding beforehand, to indicate your about to use a portal.
+decho("Enter the command to move to the portal destination\n")
 setRoomChar(gmcp.room.info.num, "&gt;")
 aard.other = true</script>
 				<command></command>
