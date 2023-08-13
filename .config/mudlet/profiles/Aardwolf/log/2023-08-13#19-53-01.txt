@@ -92,3 +92,56 @@ Other important links:
 savemap map
 Map saved to: /Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat
 savemap map
+Map saved to: /Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat
++--------------------------------------------------------------+
+|                      system statistics                       |
++--------------------------------------------------------------+
+
+GMCP events:
+{
+  char = {
+    status = {
+      align = 2236,
+      enemy = "",
+      hunger = 17,
+      level = 82,
+      pos = "Sleeping",
+      state = 9,
+      thirst = 17,
+      tnl = 761
+    }
+  }
+}
+
+Channel102 events:
+{
+  [100] = 2
+}
+
+Trigger Report:
+triggers current total: 165
+tempTriggers current total: 0
+active triggers: 163
+trigger patterns total: 186
+active patterns total: 185
+
+Timer Report:
+Timers current total: 50
+tempTimers current total: 50
+active Timers: 2
+
+Alias Report:
+Aliases current total: 46
+tempAliases current total: 0
+active Aliases: 45
+
+Keybinding Report:
+Keys current total: 31
+tempKeys current total: 0
+active Keys: 26
+
+Script Report:
+Scripts current total: 42
+tempScripts current total: 0
+active Scripts: 41
+
