@@ -890,7 +890,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>✨️ Spellup</name>
+					<name>Spellup</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
@@ -908,7 +908,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🎒️ Restock</name>
+					<name>Restock</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
@@ -926,7 +926,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>😴️ Restock + Sleep</name>
+					<name>Restock + Sleep</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
@@ -944,7 +944,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🥛️ Quench</name>
+					<name>Quench (Canteen)</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
@@ -1817,7 +1817,7 @@ end</script>
 		<Variable>
 			<name>target_n</name>
 			<keyType>4</keyType>
-			<value>1</value>
+			<value>2</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
@@ -1829,7 +1829,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>Dsungaripterus</value>
+			<value>Yurgach guard</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

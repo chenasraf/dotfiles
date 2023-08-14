@@ -535,7 +535,7 @@ local mob = matches[3]
 set_tgt(mob)
 echo_tgt_switch()
 
-send("cast word; rt " .. area)</script>
+send("cast word; rt " .. area .. "; hunt " .. get_tgt() .. "; where " .. get_tgt())</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>chase ([\w\d]+) (.+)</regex>
@@ -1829,7 +1829,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>Dsungaripterus</value>
+			<value>dog</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

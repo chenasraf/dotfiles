@@ -1817,7 +1817,7 @@ end</script>
 		<Variable>
 			<name>target_n</name>
 			<keyType>4</keyType>
-			<value>1</value>
+			<value>2</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
@@ -1829,7 +1829,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>Dsungaripterus</value>
+			<value>Yurgach guard</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
