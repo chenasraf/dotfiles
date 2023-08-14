@@ -22,10 +22,10 @@
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>35</borderTopHeight>
+			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>679</borderRightWidth>
+			<borderRightWidth>405</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -610,22 +610,6 @@ end</script>
 				<packageName></packageName>
 				<regex>times ([0-9]+) (.+)</regex>
 			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>close+lock dir</name>
-				<script>local dir = matches[3]
-send("close "..dir.."; lock "..dir)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>(clo|clock) ([dwsneu])</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>knock+enter dir</name>
-				<script>local dir = matches[3]
-send("c knock "..dir.."; "..dir)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>(enk|enterknock) ([dwsneu])</regex>
-			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage>
@@ -790,7 +774,7 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Pots</name>
+					<name>Debuff</name>
 					<packageName></packageName>
 					<script></script>
 					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
@@ -808,13 +792,12 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>HP heal</name>
+					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>local pot = aard.config['hpot']
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script>send(aard.config["debuff1"] " '" .. target .. "'; " .. aard.config["debuff1"] .. "  '" .. target .. "'")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -827,13 +810,12 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Sanctuary</name>
+					<name>Debuff</name>
 					<packageName></packageName>
-					<script>local pot = "accomplice"
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script>send("ca with; ca pois")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -846,13 +828,66 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Inertia</name>
+					<name>Poison</name>
 					<packageName></packageName>
-					<script>local pot = "camouflage"
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Wither</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca wither</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Blindness</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca blindness</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Spook</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca spok</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1876,7 +1911,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rose</value>
+			<value>female rat</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

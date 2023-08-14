@@ -15,17 +15,17 @@
 			<mInstalledModules>
 				<key>aardwolf</key>
 				<filepath>/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
-				<globalSave>0</globalSave>
+				<globalSave>1</globalSave>
 				<priority>0</priority>
 			</mInstalledModules>
 			<url>aardmud.org</url>
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>35</borderTopHeight>
+			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>679</borderRightWidth>
+			<borderRightWidth>664</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -211,7 +211,7 @@
 				</regexCodePropertyList>
 			</Trigger>
 			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>HL only</name>
+				<name>Quest Done - noop</name>
 				<script>-- send("crc; q comp")</script>
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
@@ -225,10 +225,8 @@
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
 					<string>QUEST: You have almost completed your QUEST!</string>
-					<string>You seem unable to hunt that target for some reason.</string>
 				</regexCodeList>
 				<regexCodePropertyList>
-					<integer>0</integer>
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
@@ -446,14 +444,6 @@ send(cmd)</script>
 				<regex>^(prc)|(precall)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>conjure elemental</name>
-				<script>local stone = matches[3]
-send("hold " .. stone .. "; cast 'conjur elemental'; hold " ..aard.config["held"])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(cj|conjure) (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
 				<name>crecall</name>
 				<script>send("cast 'word of recall'")</script>
 				<command></command>
@@ -527,19 +517,6 @@ end</script>
 					<packageName></packageName>
 					<regex>^gl(\s([a-zA-Z"']+))?$</regex>
 				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>chase</name>
-					<script>local area = matches[2]
-local mob = matches[3]
-
-set_tgt(mob)
-echo_tgt_switch()
-
-send("cast word; rt " .. area)</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>chase ([\w\d]+) (.+)</regex>
-				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>save config</name>
@@ -596,35 +573,6 @@ send("s;buy steak;run n2wn;buy silver;")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex></regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>Times - run cmd X times</name>
-				<script>local amt = tonumber(matches[2])
-local cmd = matches[3]
-
-for i = 1, amt do
-  local cur = cmd:gsub('%%', i)
-  send(cur)
-end</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>times ([0-9]+) (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>close+lock dir</name>
-				<script>local dir = matches[3]
-send("close "..dir.."; lock "..dir)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>(clo|clock) ([dwsneu])</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>knock+enter dir</name>
-				<script>local dir = matches[3]
-send("c knock "..dir.."; "..dir)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>(enk|enterknock) ([dwsneu])</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
@@ -700,12 +648,12 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🔥 Flaming Sphere</name>
+					<name>🔥 Flame Arrow</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'flaming sphere'</commandButtonDown>
+					<commandButtonDown>ca 'flame arrow'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -790,7 +738,7 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Pots</name>
+					<name>Debuff</name>
 					<packageName></packageName>
 					<script></script>
 					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
@@ -808,13 +756,12 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>HP heal</name>
+					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>local pot = aard.config['hpot']
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script>send(aard.config["debuff1"] " '" .. target .. "'; " .. aard.config["debuff1"] .. "  '" .. target .. "'")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -827,13 +774,12 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Sanctuary</name>
+					<name>Debuff</name>
 					<packageName></packageName>
-					<script>local pot = "accomplice"
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script>send("ca with; ca pois")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -846,13 +792,66 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Inertia</name>
+					<name>Poison</name>
 					<packageName></packageName>
-					<script>local pot = "camouflage"
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Wither</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca wither</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Blindness</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca blindness</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Spook</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca spok</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1876,7 +1875,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rose</value>
+			<value>fire demon</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

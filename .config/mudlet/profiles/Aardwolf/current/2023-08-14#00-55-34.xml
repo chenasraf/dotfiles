@@ -22,10 +22,10 @@
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>35</borderTopHeight>
+			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>679</borderRightWidth>
+			<borderRightWidth>609</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -1876,7 +1876,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rose</value>
+			<value>violinist</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

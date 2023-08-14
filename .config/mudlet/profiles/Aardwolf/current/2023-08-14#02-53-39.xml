@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="10" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="no" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="10" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -718,6 +718,24 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🐾️ Talon</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca talon</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🥶️ Cone of Cold</name>
 					<packageName></packageName>
 					<script></script>
@@ -1264,6 +1282,24 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<name>🤔️ Hunt</name>
 					<packageName></packageName>
 					<script>send("hunt " .. get_tgt())</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🚪️Gate to Target</name>
+					<packageName></packageName>
+					<script>send("c gate " .. get_tgt())</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1876,7 +1912,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rose</value>
+			<value>female snuckle</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

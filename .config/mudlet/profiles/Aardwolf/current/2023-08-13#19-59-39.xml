@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="10" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="5" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="120" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -22,10 +22,10 @@
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>35</borderTopHeight>
+			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>679</borderRightWidth>
+			<borderRightWidth>749</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -118,8 +118,8 @@
 				<mStayOpen>0</mStayOpen>
 				<mCommand></mCommand>
 				<packageName></packageName>
-				<mFgColor>#804002</mFgColor>
-				<mBgColor>#ffffff</mBgColor>
+				<mFgColor>#fd8008</mFgColor>
+				<mBgColor>#252525</mBgColor>
 				<mSoundFile></mSoundFile>
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
@@ -150,7 +150,7 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Campaign mob done - Check Campaign</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -170,69 +170,7 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>Global Quest mob done - Check Global Quest</name>
-				<script></script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand>gq ch</mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>Congratulations, that was one of the GLOBAL QUEST mobs!</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>Task done - Check Tasks</name>
-				<script>send("tasks here")</script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand>cp ch</mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>** Task Done  : </string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>HL only</name>
-				<script>-- send("crc; q comp")</script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand></mCommand>
-				<packageName></packageName>
-				<mFgColor>#ff0000</mFgColor>
-				<mBgColor>#ffff00</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>QUEST: You have almost completed your QUEST!</string>
-					<string>You seem unable to hunt that target for some reason.</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Underwater breathing</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -240,36 +178,14 @@
 				<mStayOpen>0</mStayOpen>
 				<mCommand>ca underwater</mCommand>
 				<packageName></packageName>
-				<mFgColor>#fd8008</mFgColor>
-				<mBgColor>#333333</mBgColor>
-				<mSoundFile></mSoundFile>
-				<colorTriggerFgColor>#000000</colorTriggerFgColor>
-				<colorTriggerBgColor>#000000</colorTriggerBgColor>
-				<regexCodeList>
-					<string>You cough and splutter as the water invades your lungs!</string>
-					<string>You are no longer able to breathe underwater.</string>
-				</regexCodeList>
-				<regexCodePropertyList>
-					<integer>0</integer>
-					<integer>0</integer>
-				</regexCodePropertyList>
-			</Trigger>
-			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-				<name>True seeing</name>
-				<script>send("c true")</script>
-				<triggerType>0</triggerType>
-				<conditonLineDelta>0</conditonLineDelta>
-				<mStayOpen>0</mStayOpen>
-				<mCommand></mCommand>
-				<packageName></packageName>
 				<mFgColor>#ff0000</mFgColor>
 				<mBgColor>#ffff00</mBgColor>
 				<mSoundFile></mSoundFile>
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
-					<string>You feel almost blind at the loss of your magical sight</string>
-					<string>You lost your concentration while trying to cast true seeing.</string>
+					<string>You cough and splutter as the water invades your lungs!</string>
+					<string>You are no longer able to breathe underwater.</string>
 				</regexCodeList>
 				<regexCodePropertyList>
 					<integer>0</integer>
@@ -424,21 +340,6 @@ installPackage"https://github.com/tspivey/mudlet-reader/releases/latest/download
 			<packageName></packageName>
 			<regex></regex>
 			<Alias isActive="yes" isFolder="no">
-				<name>from bag</name>
-				<script>local item = matches[3]
-local action = matches[4]
-local bag = aard.config['bag']
-
-local cmd = 'get ' .. item .. ' ' .. bag .. "; " .. action .. " " .. item .. "; put " .. item .. " " .. bag .. ";"
-
-decho(serialize(matches))
-decho("\nitem: ["..item.."], action: [" .. action .. "]\n")
-send(cmd)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(fb|from\sbag) ([\w\d\-_.]+|['"][\w\d\s\-_.]+["'])\s?(.*)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
 				<name>precall</name>
 				<script>send(aard.config["port"])</script>
 				<command></command>
@@ -446,30 +347,15 @@ send(cmd)</script>
 				<regex>^(prc)|(precall)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>conjure elemental</name>
-				<script>local stone = matches[3]
-send("hold " .. stone .. "; cast 'conjur elemental'; hold " ..aard.config["held"])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(cj|conjure) (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>crecall</name>
+				<name>precall</name>
 				<script>send("cast 'word of recall'")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^(crc)|(crecall)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>arecall</name>
-				<script>send("cast 'word of recall'; run 3end")</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(arc)|(arecall)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
 				<name>restock</name>
-				<script>send(aard.config["port"] .. '; w; gulp milk; gulp milk; fill can milk;')</script>
+				<script>send(aard.config["port"] .. ';rt boot; run 4w; gulp milk; gulp milk; fill can milk;')</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^restock</regex>
@@ -516,7 +402,7 @@ end</script>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>get/set goal</name>
-					<script>goal = goal or "here"
+					<script>goal = goal or ""
 if matches[2] then
   goal = matches[2]
   send("echo Goal switched to: " .. goal, false)
@@ -525,107 +411,9 @@ else
 end</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^gl(\s([a-zA-Z"']+))?$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>chase</name>
-					<script>local area = matches[2]
-local mob = matches[3]
-
-set_tgt(mob)
-echo_tgt_switch()
-
-send("cast word; rt " .. area)</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>chase ([\w\d]+) (.+)</regex>
+					<regex>^gl\s?([a-zA-Z"']+)?</regex>
 				</Alias>
 			</AliasGroup>
-			<Alias isActive="yes" isFolder="no">
-				<name>save config</name>
-				<script>save_config(matches[2])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>config save (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>load config</name>
-				<script>load_config(matches[2])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>config load (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>vconfig</name>
-				<script>--(?:\| Stat Mods  \:|\| Resist Mods\:|\| Skill Mods \: Modifies|\| Spells     \: \d+ (?:use|uses) of level|\|            \:
--- \d+ (?:use|uses) of level|\|| ) ([a-zA-Z0-9]+(?: [a-zA-Z]+)*)[ ]*(?:\: \+|\: |by \+| ')[ ]*([a-zA-Z0-9,+-&gt;]+(?: [a-zA-Z]+)*)[']*  
-
-if matches[2] and matches[3] then
-	--if aard.config[matches[2]] ~= nil then
-	local arg = string.gsub(matches[3],"|",";")
-	--if matches[3] has space then surround with single quotes
-	aard.config[matches[2]] = arg
-  
-	if aard.name then
-		save_config(aard.name)
-	end
-	--else
-	--	echo("\n"..matches[2].." is Not a valid option.\n")
-	--end
-elseif matches[2] then
-	echo("\nNo Argument Provided for option.\n")
-end
-
-display_config()</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(?:vc|vco|vcon|vconf|vconfi|vconfig)(?: (\w+) (.*))*$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>todo</name>
-				<script>send("tasks here; campaign check; quest info;")</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^todo|td</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>Knossos - Enter castle</name>
-				<script>-- TODO add check for room #
-
-send("s;buy steak;run n2wn;buy silver;")</script>
-				<command></command>
-				<packageName></packageName>
-				<regex></regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>Times - run cmd X times</name>
-				<script>local amt = tonumber(matches[2])
-local cmd = matches[3]
-
-for i = 1, amt do
-  local cur = cmd:gsub('%%', i)
-  send(cur)
-end</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>times ([0-9]+) (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>close+lock dir</name>
-				<script>local dir = matches[3]
-send("close "..dir.."; lock "..dir)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>(clo|clock) ([dwsneu])</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>knock+enter dir</name>
-				<script>local dir = matches[3]
-send("c knock "..dir.."; "..dir)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>(enk|enterknock) ([dwsneu])</regex>
-			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage>
@@ -700,30 +488,12 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🔥 Flaming Sphere</name>
+					<name>🔥 Flame Arrow</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'flaming sphere'</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🥶️ Cone of Cold</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'cone of cold'</commandButtonDown>
+					<commandButtonDown>ca 'flame arrow'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -790,7 +560,7 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Pots</name>
+					<name>Debuff</name>
 					<packageName></packageName>
 					<script></script>
 					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
@@ -808,13 +578,12 @@ send("c knock "..dir.."; "..dir)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>HP heal</name>
+					<name>Debuff 🎯</name>
 					<packageName></packageName>
-					<script>local pot = aard.config['hpot']
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script>send(aard.config["debuff1"] " '" .. target .. "'; " .. aard.config["debuff1"] .. "  '" .. target .. "'")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -827,13 +596,12 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Sanctuary</name>
+					<name>Debuff</name>
 					<packageName></packageName>
-					<script>local pot = "accomplice"
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script>send("ca with; ca pois")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -846,13 +614,66 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Inertia</name>
+					<name>Poison</name>
 					<packageName></packageName>
-					<script>local pot = "camouflage"
-send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
+					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>ca poison</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Wither</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca wither</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Blindness</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca blindness</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Spook</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca spok</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -996,7 +817,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; quest request</commandButtonDown>
+					<commandButtonDown>crecall; rt quest; quest request</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1014,7 +835,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; quest complete</commandButtonDown>
+					<commandButtonDown>crecall; rt quest; quest complete</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1086,25 +907,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; campaign request</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Tasks</name>
-					<packageName></packageName>
-					<script></script>
-					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>crecall; rt quest; campaign request</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1120,24 +923,6 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<name>Tasks</name>
 					<packageName></packageName>
 					<script>send("tasks " .. goal .. " all")</script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Tasks (Here)</name>
-					<packageName></packageName>
-					<script>send("tasks here all")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1243,7 +1028,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🔍 Where</name>
+					<name>Where</name>
 					<packageName></packageName>
 					<script>send("where " .. get_tgt())</script>
 					<css></css>
@@ -1261,7 +1046,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🤔️ Hunt</name>
+					<name>Hunt</name>
 					<packageName></packageName>
 					<script>send("hunt " .. get_tgt())</script>
 					<css></css>
@@ -1279,7 +1064,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>▶ Hunt Next</name>
+					<name>Hunt Next</name>
 					<packageName></packageName>
 					<script>next_tgt_n()
 echo_tgt_switch()
@@ -1299,28 +1084,10 @@ send("hunt " .. get_tgt())</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>⏮ Reset Target</name>
+					<name>Reset Target</name>
 					<packageName></packageName>
 					<script>reset_tgt_n()
 echo_tgt_switch()</script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🔈️ Echo Target</name>
-					<packageName></packageName>
-					<script>echo_tgt()</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown></commandButtonDown>
@@ -1482,10 +1249,10 @@ echo_tgt_switch()</script>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>Recall</name>
 					<packageName></packageName>
-					<script>expandAlias("crc")</script>
+					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
+					<commandButtonDown>cast 'word of recall'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1504,24 +1271,6 @@ echo_tgt_switch()</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>precall</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Upper Planes Portal</name>
-					<packageName></packageName>
-					<script>send("hold planes;enter;hold " .. aard.config["held"])</script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1633,10 +1382,6 @@ function echo_tgt_switch()
   send("echo Target switched to: " .. get_tgt(), false)
 end
 
-function echo_tgt()
-  send("echo Target is: " .. get_tgt(), false)
-end
-
 function set_tgt(tgt, log)
   target = tgt
   target_n = 1
@@ -1664,14 +1409,13 @@ end</script>
 				<name>config</name>
 				<packageName></packageName>
 				<script>aard.config = {
-  ["hpot"]="breakfast",
+  ["hpot"]="elixir",
   ["mpot"]="moonlight",
   ["vpot"]="refreshing",
-  ["pbag"]="backpack",
-  ["wield"]="erato",
+  ["pbag"]="bag",
+  ["wield"]="flute",
   ["dual"]="flute",
-  ["held"]="notes",
-  ["port"]="cast 'word of recall'",
+  ["port"]="hold 'academy portal';enter;hold brush;d",
   ["attack1"]="ca 'flame arrow'",
   ["debuff1"]="ca poison",
   ["debuff2"]="ca wither",
@@ -1680,111 +1424,8 @@ end</script>
   ["group"]=1,
   ["tdiff"]=-3,
   ["speak"]="false", -- Stringly typed because of user input in vconfig
-  ["spellup"]="napalm;spellup",
-}
-
-function load_config(name)
-  if name then
-    local filename = getMudletHomeDir().."/aardwolf/config-"..name..".lua"
-    table.load(filename, aard.config)
-    decho("Loaded from "..filename.."\n")
-  else
-    decho("Must provide filename\n")
-  end
-end
-
-function save_config(name)
-  if name then
-    local filename = getMudletHomeDir().."/aardwolf/config-"..name..".lua"
-    table.save(filename, aard.config)
-    decho("Saved to "..filename.."\n")
-  else
-    decho("Must provide filename\n")
-  end
-end
-
-local srep = string.rep
-
-function lpad(s, l, c)
-	local res = srep(c or ' ', l - #s) .. s
-	return res, res ~= s
-end
-
--- pad the right side
-function rpad(s, l, c)
-	local res = s .. srep(c or ' ', l - #s)
-	return res, res ~= s
-end
-
--- pad on both sides (centering with left justification)
-function spad(s, l, c)
-	c = c or ' '
-	local res1, stat1 = rpad(s,    (l / 2) + #s, c) -- pad to half-length + the length of s
-	local res2, stat2 = lpad(res1,  l,           c) -- right-pad our left-padded string to the full length
-	return res2, stat1 or stat2
-end
-
-function display_config()
-  local tbl = {
-    { "port", "Recall portal to use" },
-    { "wield", "Wielded weapon to use" },
-    { "dual", "Dual wielded weapon to use" },
-    { "held", "Held item to return after using portals" },
-    { "spellup", "Spellup to use" },
-    { "hpot", "Health potion to use" },
-    { "mpot", "Mana potion to use" },
-    { "vpot", "Moves potion to use" },
-    { "pbag", "Potions bag" },
-    { "bag", "General bag" },
-    { "attack1", "Primary attack" },
-    { "attack2", "Secondary attack" },
-    { "debuff1", "First debuff" },
-    { "debuff2", "Second debuff" },
-    { "cplvl", "Level to CP level until" },
-    { "cpexp", "CP Level noexp toggle amount" },
-    { "group", "Group Frame Format until" },
-    { "tdiff", "Time Difference from Mud Time" },
-    { "speak", "Speak audio alerts" },    
-  }
-  
-  --lua display(getFgColor())
-  decho("&lt;51,102,255&gt;-vconfig- &lt;192,192,192&gt; seperate multiple commands with &lt;51,102,255&gt;|&lt;192,192,192&gt; instead of &lt;51,102,255&gt;;\n\n")
-  
-  for i, row in ipairs(tbl) do
-    local key = row[1]
-    local desc = row[2]
-    
-    local value = aard.config[key] or "&lt;empty&gt;"
-    local edit_value = aard.config[key] or ""
-    
-    decho("  &lt;51,102,255&gt;- &lt;192,192,192&gt; " .. rpad("[" .. key .. "]", 10) .. "&lt;255,165,0&gt;" .. rpad(desc, 40) .. "&lt;192,192,192&gt; ")
-    setFgColor(51, 102, 255)
-    echoLink(value, "printCmdLine'vconfig "..key.." "..string.gsub(edit_value,";","|"):gsub("'", "\\'") .."'", "Click to override " .. desc, true)
-    echo("\n")
-  end
-  
-  setFgColor(192,192,192)
-  echo("\n")
-end
-
-if aard.name then
-  load_config(aard.name)
-end</script>
-				<eventHandlerList />
-			</Script>
-			<Script isActive="yes" isFolder="no">
-				<name>utils</name>
-				<packageName></packageName>
-				<script>function serialize(t)
-  local serializedValues = {}
-  local value, serializedValue
-  for i=1,#t do
-    value = t[i]
-    serializedValue = type(value)=='table' and serialize(value) or value
-    table.insert(serializedValues, serializedValue)
-  end
-  return string.format("{ %s }", table.concat(serializedValues, ', ') )
-end</script>
+  ["spellup"]="spellup int;spellup wis;spellup luck;spellup stats;spellup"
+}</script>
 				<eventHandlerList />
 			</Script>
 		</ScriptGroup>
@@ -1826,15 +1467,6 @@ end</script>
 				<keyModifier>570425344</keyModifier>
 			</Key>
 			<Key isActive="yes" isFolder="no">
-				<name>alt + 1 bag</name>
-				<packageName></packageName>
-				<script>local bag = aard.config["bag"] or aard.config["pbag"]
-send("examine " .. bag)</script>
-				<command></command>
-				<keyCode>49</keyCode>
-				<keyModifier>671088640</keyModifier>
-			</Key>
-			<Key isActive="yes" isFolder="no">
 				<name>. scan / debuff</name>
 				<packageName></packageName>
 				<script>if aard.state == 8 then
@@ -1870,13 +1502,13 @@ end</script>
 		<Variable>
 			<name>goal</name>
 			<keyType>4</keyType>
-			<value>obal</value>
+			<value>hatchling</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rose</value>
+			<value>maid</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

@@ -1,0 +1,75 @@
+Log session starting at 20:02:29 on Sunday, 13 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-13#20-01-45map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.10s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 236         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+[*Daily Blessing*] 1787/1787 HP  2201/2201 MP  1596/1596 mv  761tnl  
+Lv 82  G 304688 | Approaching a small mining camp (SU)
+>>    
+
+
+loadmap map.dat
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.13T20.03.04.
+182.dat
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.22s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.31s).
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:00:36.012
