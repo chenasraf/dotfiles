@@ -14,7 +14,7 @@
 			</mInstalledPackages>
 			<mInstalledModules>
 				<key>aardwolf</key>
-				<filepath>/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
+				<filepath>$HOME/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
 				<globalSave>1</globalSave>
 				<priority>0</priority>
 			</mInstalledModules>

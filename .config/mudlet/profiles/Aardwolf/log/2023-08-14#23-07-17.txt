@@ -1,0 +1,117 @@
+Log session starting at 23:07:17 on Monday, 14 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-14#23-07-10map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.22s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-14#23-07-10map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.10s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.21s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.31s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+MainWindowSize: 624    
+
+[::(info): Your existing map has 19626 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 242         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+1913/1913 HP  2322/2322 MP  1676/1676 mv  547tnl  
+Lv 86  G 857039 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+Tag option map turned ON
+
+1913/1913 HP  2322/2322 MP  1676/1676 mv  547tnl  
+Lv 86  G 857039 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+1913/1913 HP  2322/2322 MP  1676/1676 mv  547tnl  
+Lv 86  G 857039 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* The [Recruit] Leather Backpack contains:
+     (K) a sticky green flyswatter
+( 3) (Magic) (Glow) (Hum) [Potion] Scout's Camouflage
+     (K) a dull grey stone
+( 3) (K) (Magic) a deep red stone
+     (K) (Magic) a pale blue stone
+     (K) (Invis) (Magic) -=< Clasp of the Keeper >=-
+( 5) (Magic) (Glow) (Hum) [Potion] Military Breakfast
+( 4) (Magic) (Glow) (Hum) [Potion] Sniper's Accomplice
+     (K) an Aylorian Hammer
+     (K) (Magic) [Recruit] Insulated Canteen
+( 4) (K) (Magic) (Hum) (!(Lotus Rush)!)
+     (K) (Magic) a tiny wooden boat
+( 2) (K) (Magic) (Glow) (Hum) elixir of protection
+     (K) (Magic) a fishing permit
+     (K) a fishing pole
+     (K) (Magic) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+1913/1913 HP  2322/2322 MP  1676/1676 mv  547tnl  
+Lv 86  G 857039 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+You received your last daily blessing at 13 Aug 2023 18:03:27.
+
+You can receive a new daily blessing in 56 minutes and 4 seconds.
+
+You have 1 daily blessing reset available.
+
+1913/1913 HP  2322/2322 MP  1676/1676 mv  547tnl  
+Lv 86  G 857039 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:00:07.664

@@ -14,7 +14,7 @@
 			</mInstalledPackages>
 			<mInstalledModules>
 				<key>aardwolf</key>
-				<filepath>/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
+				<filepath>$HOME/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
 				<globalSave>0</globalSave>
 				<priority>0</priority>
 			</mInstalledModules>
