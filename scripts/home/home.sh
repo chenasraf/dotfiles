@@ -56,9 +56,16 @@ home() {
       case $sub in
         backup | b)
           rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $HOME/.config/mudlet $DOTFILES/.config/
+          for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
+            sed -i '' -E 's/\/Users\/([^\/]+)\//$HOME\//g' $file
+          done
           ;;
         restore | r)
           rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
+          for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
+            echo_yellow "Fixing paths in $file"
+            sed -i '' -e "s/\$HOME/${HOME//\//\\/}/g" $file
+          done
           ;;
         *)
           echo_red "No command or invalid command supplied."

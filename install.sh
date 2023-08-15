@@ -117,7 +117,8 @@ fi
 
 # .config
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
-rsync -vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
+rsync -vtr --exclude ".git" --exclude "node_modules" --exclude "mudlet" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
+home mudlet restore
 
 echo_cyan "Copying home dir files..."
 rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig
