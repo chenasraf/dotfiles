@@ -62,8 +62,7 @@ home() {
           ;;
         restore | r)
           rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
-          for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
-            echo_yellow "Fixing paths in $file"
+          for file in $HOME/.config/mudlet/profiles/Aardwolf/**/*.xml; do
             sed -i '' -e "s/\$HOME/${HOME//\//\\/}/g" $file
           done
           ;;

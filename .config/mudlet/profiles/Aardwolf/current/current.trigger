@@ -1,99 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
-	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="10" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
-			<name>Aardwolf</name>
-			<mInstalledPackages>
-				<string>echo</string>
-				<string>run-lua-code-v4</string>
-				<string>deleteOldProfiles</string>
-				<string>enable-accessibility</string>
-				<string>button-spells</string>
-				<string>button-move</string>
-			</mInstalledPackages>
-			<mInstalledModules>
-				<key>aardwolf</key>
-				<filepath>$HOME/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
-				<globalSave>0</globalSave>
-				<priority>0</priority>
-			</mInstalledModules>
-			<url>aardmud.org</url>
-			<serverPackageName>nothing</serverPackageName>
-			<serverPackageVersion>-1</serverPackageVersion>
-			<port>4000</port>
-			<borderTopHeight>55</borderTopHeight>
-			<borderBottomHeight>55</borderBottomHeight>
-			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>664</borderRightWidth>
-			<wrapAt>100</wrapAt>
-			<wrapIndentCount>0</wrapIndentCount>
-			<mFgColor>#c0c0c0</mFgColor>
-			<mBgColor>#000000</mBgColor>
-			<mCommandFgColor>#717100</mCommandFgColor>
-			<mCommandBgColor>#000000</mCommandBgColor>
-			<mCommandLineFgColor>#808080</mCommandLineFgColor>
-			<mCommandLineBgColor>#000000</mCommandLineBgColor>
-			<mBlack>#000000</mBlack>
-			<mLightBlack>#808080</mLightBlack>
-			<mRed>#800000</mRed>
-			<mLightRed>#ff0000</mLightRed>
-			<mBlue>#000080</mBlue>
-			<mLightBlue>#0000ff</mLightBlue>
-			<mGreen>#008000</mGreen>
-			<mLightGreen>#00ff00</mLightGreen>
-			<mYellow>#808000</mYellow>
-			<mLightYellow>#ffff00</mLightYellow>
-			<mCyan>#008080</mCyan>
-			<mLightCyan>#00ffff</mLightCyan>
-			<mMagenta>#800080</mMagenta>
-			<mLightMagenta>#ff00ff</mLightMagenta>
-			<mWhite>#c0c0c0</mWhite>
-			<mLightWhite>#ffffff</mLightWhite>
-			<mDisplayFont>Bitstream Vera Sans Mono,14,-1,5,50,0,0,0,1,0</mDisplayFont>
-			<mCommandLineFont>Bitstream Vera Sans Mono,14,-1,5,50,0,0,0,0,0</mCommandLineFont>
-			<mCommandSeparator>;</mCommandSeparator>
-			<commandLineMinimumHeight>30</commandLineMinimumHeight>
-			<mFgColor2>#c0c0c0</mFgColor2>
-			<mBgColor2>#000000</mBgColor2>
-			<mRoomBorderColor>#c0c0c0</mRoomBorderColor>
-			<mMapInfoBg alpha="120">#969696</mMapInfoBg>
-			<mBlack2>#000000</mBlack2>
-			<mLightBlack2>#808080</mLightBlack2>
-			<mRed2>#800000</mRed2>
-			<mLightRed2>#ff0000</mLightRed2>
-			<mBlue2>#000080</mBlue2>
-			<mLightBlue2>#0000ff</mLightBlue2>
-			<mGreen2>#008000</mGreen2>
-			<mLightGreen2>#00ff00</mLightGreen2>
-			<mYellow2>#808000</mYellow2>
-			<mLightYellow2>#ffff00</mLightYellow2>
-			<mCyan2>#008080</mCyan2>
-			<mLightCyan2>#00ffff</mLightCyan2>
-			<mMagenta2>#800080</mMagenta2>
-			<mLightMagenta2>#ff00ff</mLightMagenta2>
-			<mWhite2>#c0c0c0</mWhite2>
-			<mLightWhite2>#ffffff</mLightWhite2>
-			<mSpellDic>en_US</mSpellDic>
-			<mLineSize>10.0</mLineSize>
-			<mRoomSize>1.0</mRoomSize>
-			<mapInfoContributor>Full</mapInfoContributor>
-			<mapInfoContributor>Short</mapInfoContributor>
-			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
-			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
-			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
-			<profileShortcut key="Preferences">Ctrl+P</profileShortcut>
-			<profileShortcut key="Notepad">Ctrl+N</profileShortcut>
-			<profileShortcut key="Package manager">Ctrl+O</profileShortcut>
-			<profileShortcut key="Module manager">Ctrl+I</profileShortcut>
-			<profileShortcut key="MultiView">Ctrl+Alt+V</profileShortcut>
-			<profileShortcut key="Play">Ctrl+Alt+C</profileShortcut>
-			<profileShortcut key="Disconnect">Ctrl+D</profileShortcut>
-			<profileShortcut key="Reconnect">Ctrl+R</profileShortcut>
-			<profileShortcut key="Close profile">Ctrl+W</profileShortcut>
-			<stopwatches />
-		</Host>
-	</HostPackage>
 	<TriggerPackage>
 		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 			<name>casraf</name>
@@ -632,22 +539,6 @@ send("c knock "..dir.."; "..dir)</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^cr$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>loadmap</name>
-				<script>local saveString = getMudletHomeDir().."/aardwolf/mapBackup_"..getTime(true,"yyyy.MM.ddThh.mm.ss.zzz")..".dat"
-local savedok = saveMap(saveString)
-
-if not savedok then
-  echo("Couldn't save map :(\n")
-	return 0--bail out, old map didnt save.
-else
-  echo("Map saved to: "..saveString.."\n")
-	loadMap(getMudletHomeDir().."/aardwolf/"..matches[2]..".dat")
-end</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^loadmap (.*)$</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
@@ -1863,7 +1754,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>skeletal warrior</value>
+			<value>hair stylist</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

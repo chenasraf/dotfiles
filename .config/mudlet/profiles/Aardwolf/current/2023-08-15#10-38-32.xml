@@ -633,22 +633,6 @@ send("c knock "..dir.."; "..dir)</script>
 				<packageName></packageName>
 				<regex>^cr$</regex>
 			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>loadmap</name>
-				<script>local saveString = getMudletHomeDir().."/aardwolf/mapBackup_"..getTime(true,"yyyy.MM.ddThh.mm.ss.zzz")..".dat"
-local savedok = saveMap(saveString)
-
-if not savedok then
-  echo("Couldn't save map :(\n")
-	return 0--bail out, old map didnt save.
-else
-  echo("Map saved to: "..saveString.."\n")
-	loadMap(getMudletHomeDir().."/aardwolf/"..matches[2]..".dat")
-end</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^loadmap (.*)$</regex>
-			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage>
@@ -1863,7 +1847,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>skeletal warrior</value>
+			<value>hair stylist</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

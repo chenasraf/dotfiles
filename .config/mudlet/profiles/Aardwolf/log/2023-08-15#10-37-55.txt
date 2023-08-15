@@ -1,0 +1,123 @@
+Log session starting at 10:37:55 on Tuesday, 15 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-14#23-07-10map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.12s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.25s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-14#23-07-10map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.14s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.37s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 4992    
+
+[::(info): Your existing map has 19626 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 195         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+-Idle- (Q:0)
+
+Tag option map turned ON
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* The [Recruit] Leather Backpack contains:
+( 8) (Glow) (Hum) [Potion] Sniper's Accomplice
+( 8) (Glow) (Hum) [Potion] Military Breakfast
+( 8) (Glow) (Hum) [Potion] Scout's Camouflage
+     (K) a sticky green flyswatter
+     (K) a dull grey stone
+( 3) (K) a deep red stone
+     (K) a pale blue stone
+     (K) an Aylorian Hammer
+     (K) [Recruit] Insulated Canteen
+( 4) (K) (Hum) (!(Lotus Rush)!)
+     (K) a tiny wooden boat
+( 2) (K) (Glow) (Hum) elixir of protection
+     (K) a fishing permit
+     (K) a fishing pole
+     (K) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+You have the following daily blessings active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 33 mobs killed will reward double experience              09:10:46     
+Next 20 mobs killed will reward bonus gold                     09:10:46     
+
+You received your last daily blessing at 14 Aug 2023 18:48:49.
+
+You can receive a new daily blessing in 14 hours, 10 minutes and 46 seconds.
+
+You have 1 daily blessing reset available.
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:00:34.965

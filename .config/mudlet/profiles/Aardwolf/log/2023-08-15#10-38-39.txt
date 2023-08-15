@@ -1,0 +1,382 @@
+Log session starting at 10:38:39 on Tuesday, 15 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-15#10-38-32map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.11s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-15#10-38-32map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.13s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.36s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+MainWindowSize: 2432    
+
+[::(info): Your existing map has 19626 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 195         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+
+Tag option map turned ON
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* The [Recruit] Leather Backpack contains:
+( 8) (Glow) (Hum) [Potion] Sniper's Accomplice
+( 8) (Glow) (Hum) [Potion] Military Breakfast
+( 8) (Glow) (Hum) [Potion] Scout's Camouflage
+     (K) a sticky green flyswatter
+     (K) a dull grey stone
+( 3) (K) a deep red stone
+     (K) a pale blue stone
+     (K) an Aylorian Hammer
+     (K) [Recruit] Insulated Canteen
+( 4) (K) (Hum) (!(Lotus Rush)!)
+     (K) a tiny wooden boat
+( 2) (K) (Glow) (Hum) elixir of protection
+     (K) a fishing permit
+     (K) a fishing pole
+     (K) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+You have the following daily blessings active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 33 mobs killed will reward double experience              09:10:02     
+Next 20 mobs killed will reward bonus gold                     09:10:02     
+
+You received your last daily blessing at 14 Aug 2023 18:48:49.
+
+You can receive a new daily blessing in 14 hours, 10 minutes and 2 seconds.
+
+You have 1 daily blessing reset available.
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+
+
+An attendant arrives from the west.
+
+You wince as the bride throws yet another screaming fit.
+
+CLAN: At-ten-tion! Spublofe is here to get some training done!
+
+## You start to feel hungry.
+## You start to feel thirsty.
+
+An attendant chants the phrase 'ubiplihir cin'.
+An attendant turns translucent.
+
+A female servant arrives from the west.
+
+Global Quest: Global Quest # 2025 has been won by Tinypotato - 2199th win.
+Global Quest: Global Quest # 2025 will go into extended time for 5 more minutes.
+
+## You are very hungry; your healing is reduced.
+## You are very thirsty; your healing is reduced.
+
+Global Quest: DjVoltron has completed Global Quest # 2025.
+Global Quest: No active players remaining. Global Quest # 2025 is now over.
+
+loadmap map
+Map saved to: /Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.15T10.48.37.
+991.dat
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.10s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+gulp can; gulp can;
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+cp ch
+You are not currently on a campaign.
+You have completed 1 campaign today.
+You may take a campaign at this level.
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | East Wing ([N][S]W)
+>>    *[NOEXP]* 
+crc
+cast 'word of recall'
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+2004/2004 HP  2386/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+q inf
+You do not have to wait to go on another quest.
+
+2004/2004 HP  2386/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+Someone scans all directions, looking for signs of life.
+
+cp req
+A Grumpy Old General tells you 'I have selected 10 targets for you to hunt, KumoGami.'
+A Grumpy Old General tells you 'Type 'campaign info' to see what you must kill.'
+A Grumpy Old General tells you 'Good luck in your campaign!'
+
+2004/2004 HP  2386/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+cp ch
+* a skeletal warrior (Aardington Estate) 47509
+* the triton (Anthrox) 3993
+* the Food Distributor (Anthrox) 3993
+* the triton guard (Anthrox) 3993
+* a kobold detention center guard (Kobold Siege Camp) 43250
+* the brown thrasher (Snuckles Village) 181
+* the buck (Snuckles Village) 181
+* Liliane (Snuckles Village) 181
+* Lady Nortic (The Grand City of Aylor) 32418
+* a dejected elf (The Yurgach Domain) 29539
+
+You have 6 days, 23 hours and 59 minutes left to finish this campaign.
+You will have to level before you can go on another campaign.
+
+2004/2004 HP  2386/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+
+chase Aardington skeletal warrior
+cast word; rt Aardington; hunt 1.skeletal warrior; where 1.skeletal warrior
+Target switched to: 1.skeletal warrior
+
+2004/2004 HP  2416/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You are already at recall.
+
+2004/2004 HP  2386/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+Running to: Aardington Estate
+
+2004/2004 HP  2386/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You are already at recall.
+
+2004/2004 HP  2356/2416 MP  1733/1733 mv  671tnl  
+Lv 89  G 1475774 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+Mudpits (G) (1732)
+
+Recreation Room (G) (1731)
+
+Boot Clan Public Hall (G) (1730)
+
+Outside the Aylorian Academy (G) (1729)
+
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Translucent) (White Aura) (OPK) Cilmarill the little ninja.
+(Player) (White Aura) Thao is from pandorum.
+(Player) (White Aura) Kiko Monocle Wearing Gentleman [MWG].
+
+2004/2004 HP  2356/2416 MP  1728/1733 mv  671tnl  
+Lv 89  G 1475774 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* Whitewind Avenue (G) (1728)
+
+Phoenix Square (G) (1728)
+
+Starlight Way - East (G) (1728)
+
+Starlight Way - East (1728)
+
+Starlight Way - East (G) (1728)
+
+Starlight Way - East (G) (1728)
+
+Starlight Way - East (1728)
+
+Starlight Way - East (1728)
+
+Eastern Entrance - Starlight Way (1728)
+
+Eastern High Road (1728)
+
+Eastern High Road (1727)
+
+Eastern High Road (1726)
+
+A bridge over the Dragon River (1725)
+
+Eastern High Road (1724)
+
+Eastern High Road (1723)
+
+Eastern High Road (1722)
+
+Eastern High Road (1721)
+
+A dusty field (1720)
+
+A dry stretch of plains (1719)
+
+A dry stretch of plains (1718)
+
+Mesolarian Grassland (1717)
+
+Aardington Estate
+  You stand before a large wrought iron gate which is tipped with iron 
+arrowheads and decorated with an iron worked coat of arms. To either side of 
+the gate is a long iron fence disguised by dark green leafy shrubs, giving it
+the natural appearance of a simple hedge at first glance. On the other side 
+of the gate is a path of small white stones, which leads directly to an 
+enormous bluestone manor situated in the middle of a vast, sprawling estate.
+
+[ Exits: (north) south ]
+     A stray leaf from the shrubs bordering the estate lies on the ground.
+     A wrought iron gate is tipped with iron arrowheads.
+
+2004/2004 HP  2356/2416 MP  1716/1733 mv  671tnl  
+Lv 89  G 1475774 | Aardington Estate ([N]S)
+>>    *[NOEXP]* You seem unable to hunt that target for some reason.
+
+2004/2004 HP  2356/2416 MP  1716/1733 mv  671tnl  
+Lv 89  G 1475774 | Aardington Estate ([N]S)
+>>    *[NOEXP]* a skeletal warrior             Catacombs
+
+2004/2004 HP  2356/2416 MP  1716/1733 mv  671tnl  
+Lv 89  G 1475774 | Aardington Estate ([N]S)
+>>    *[NOEXP]* 
+echo \;
+\
+
+2004/2004 HP  2356/2416 MP  1716/1733 mv  671tnl  
+Lv 89  G 1475774 | Aardington Estate ([N]S)
+>>    *[NOEXP]* 
+echo ;;
+
+
+2004/2004 HP  2356/2416 MP  1716/1733 mv  671tnl  
+Lv 89  G 1475774 | Aardington Estate ([N]S)
+>>    *[NOEXP]* 
+echo @;
+
+
+2004/2004 HP  2356/2416 MP  1716/1733 mv  671tnl  
+Lv 89  G 1475774 | Aardington Estate ([N]S)
+>>    *[NOEXP]* 
+
+
+rfa Catacombs
+
+ You know the following relevant rooms:
+  Catacombs (47594) in aardington. > Show path   > Show speedwalk
+  Catacombs (47595) in aardington. > Show path   > Show speedwalk
+  Catacombs (47596) in aardington. > Show path   > Show speedwalk
+  Catacombs (47597) in aardington. > Show path   > Show speedwalk
+  Catacombs (47598) in aardington. > Show path   > Show speedwalk
+  Catacombs (47599) in aardington. > Show path   > Show speedwalk
+  Catacombs (47600) in aardington. > Show path   > Show speedwalk
+  Entrance to the catacombs (47593) in aardington. > Show path   > Show speedwalk
+  Catacombs (47601) in aardington. > Show path   > Show speedwalk
