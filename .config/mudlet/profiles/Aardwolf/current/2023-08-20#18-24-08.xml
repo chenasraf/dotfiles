@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>707</borderRightWidth>
+			<borderRightWidth>664</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -77,8 +77,8 @@
 			<mSpellDic>en_US</mSpellDic>
 			<mLineSize>10.0</mLineSize>
 			<mRoomSize>1.0</mRoomSize>
-			<mapInfoContributor>Short</mapInfoContributor>
 			<mapInfoContributor>Full</mapInfoContributor>
+			<mapInfoContributor>Short</mapInfoContributor>
 			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
 			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
 			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
@@ -517,7 +517,6 @@ send("hold " .. stone .. "; cast 'conjur elemental'; hold " ..aard.config["held"
   else
     set_tgt(matches[2])
     echo_tgt_switch()
-    send("hunt " .. get_tgt())
   end
 else
   send("echo Target is: " .. get_tgt(), false)
@@ -2159,12 +2158,6 @@ end</script>
 	<VariablePackage>
 		<HiddenVariables />
 		<Variable>
-			<name>target_n</name>
-			<keyType>4</keyType>
-			<value>1</value>
-			<valueType>3</valueType>
-		</Variable>
-		<Variable>
 			<name>goal</name>
 			<keyType>4</keyType>
 			<value>obal</value>
@@ -2173,7 +2166,13 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rebel leader</value>
+			<value>young woman</value>
+			<valueType>4</valueType>
+		</Variable>
+		<Variable>
+			<name>target_n</name>
+			<keyType>4</keyType>
+			<value>1</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

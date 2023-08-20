@@ -2159,12 +2159,6 @@ end</script>
 	<VariablePackage>
 		<HiddenVariables />
 		<Variable>
-			<name>target_n</name>
-			<keyType>4</keyType>
-			<value>1</value>
-			<valueType>3</valueType>
-		</Variable>
-		<Variable>
 			<name>goal</name>
 			<keyType>4</keyType>
 			<value>obal</value>
@@ -2175,6 +2169,12 @@ end</script>
 			<keyType>4</keyType>
 			<value>rebel leader</value>
 			<valueType>4</valueType>
+		</Variable>
+		<Variable>
+			<name>target_n</name>
+			<keyType>4</keyType>
+			<value>1</value>
+			<valueType>3</valueType>
 		</Variable>
 	</VariablePackage>
 </MudletPackage>
