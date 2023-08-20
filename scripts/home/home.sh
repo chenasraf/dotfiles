@@ -59,12 +59,14 @@ home() {
           for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
             sed -i '' -E 's/\/Users\/([^\/]+)\//$HOME\//g' $file
           done
+          echo_yellow "Backup complete."
           ;;
         restore | r)
           rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
           for file in $HOME/.config/mudlet/profiles/Aardwolf/**/*.xml; do
             sed -i '' -e "s/\$HOME/${HOME//\//\\/}/g" $file
           done
+          echo_yellow "Restore complete."
           ;;
         *)
           echo_red "No command or invalid command supplied."
