@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="10" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="7" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -14,7 +14,7 @@
 			</mInstalledPackages>
 			<mInstalledModules>
 				<key>aardwolf</key>
-				<filepath>$HOME/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
+				<filepath>/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/aardwolf.xml</filepath>
 				<globalSave>0</globalSave>
 				<priority>0</priority>
 			</mInstalledModules>
@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>664</borderRightWidth>
+			<borderRightWidth>767</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -276,6 +276,28 @@
 					<integer>0</integer>
 				</regexCodePropertyList>
 			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>disarmed</name>
+				<script>send("get "..aard.config["wield"]..";wield "..aard.config["wield"])</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#fc0067</mFgColor>
+				<mBgColor>#fff5fa</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^.* DISARMS you and sends your .* flying\!$</string>
+					<string>^.* DISARMS you and you struggle not to drop your weapon!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
 		</TriggerGroup>
 	</TriggerPackage>
 	<TimerPackage />
@@ -440,7 +462,7 @@ send(cmd)</script>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>precall</name>
-				<script>send(aard.config["port"])</script>
+				<script>send(aard.config["port"] .. "; hold " .. aard.config['held'])</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^(prc)|(precall)</regex>
@@ -611,6 +633,19 @@ end</script>
 				<regex>times ([0-9]+) (.+)</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
+				<name>Times - run cmd X times</name>
+				<script>local amt = tonumber(matches[2])
+local cmd = matches[3]
+
+for i = 1, amt do
+  local cur = cmd:gsub('%%', i)
+  send(cur)
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>times ([0-9]+) (.+)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
 				<name>close+lock dir</name>
 				<script>local dir = matches[3]
 send("close "..dir.."; lock "..dir)</script>
@@ -648,6 +683,13 @@ end</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^loadmap (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Put all pots in bags</name>
+				<script>send("put all.breakfast backpack; put all.acco backpack; put all.camo back")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>potbag</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
@@ -723,6 +765,24 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>💥️ Force Bolt</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'force bolt'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🔥 Flaming Sphere</name>
 					<packageName></packageName>
 					<script></script>
@@ -759,12 +819,12 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🥶️ Cone of Cold</name>
+					<name>🥶️ Ice Cloud</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'cone of cold'</commandButtonDown>
+					<commandButtonDown>ca 'ice cloud'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1014,7 +1074,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Quest</name>
+					<name>Quests/Campaigns</name>
 					<packageName></packageName>
 					<script></script>
 					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
@@ -1032,79 +1092,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Quest Info</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>quest info</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Quest Request</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; quest request</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Quest Complete</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; quest complete</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Campaign</name>
-					<packageName></packageName>
-					<script></script>
-					<css>border: none; background: none; margin: 8px 0 4px 0;</css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown></commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Campaign Check</name>
+					<name>❓️ CP Check</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
@@ -1122,12 +1110,12 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Campaign Info</name>
+					<name>❓️ Q Info</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>campaign info</commandButtonDown>
+					<commandButtonDown>quest info</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1140,12 +1128,48 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Campaign Request</name>
+					<name>🤌🏻 CP Request</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>crecall; campaign request</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🤌🏻 Q Request</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>crecall; quest request</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>✅️ Q Complete</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>crecall; quest complete</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1774,6 +1798,291 @@ end</script>
 end</script>
 				<eventHandlerList />
 			</Script>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Maps</name>
+				<packageName></packageName>
+				<script></script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>tools</name>
+					<packageName></packageName>
+					<script>function minimapsnap()
+	local mapw = 232
+	local maph = 255
+	local mapx = 800
+	local mapy = 0
+  if GUIframe.tabCoords.topRightTabs then
+		mapx = GUIframe.tabCoords.topRightTabs.x - mapw - 22
+		mapy = GUIframe.tabCoords.topRightTabs.y
+	end
+	
+  if minimap then
+		--minimap
+		minimap:move(mapx,mapy)
+		
+		--group frames
+		if gInfo then
+      local barW = 150
+      local gx = minimap.x:gsub("px","")+(minimap.width:gsub("px","")-barW)
+      local gy = minimap.y:gsub("px","")+minimap.height:gsub("px","")
+      gInfo:move(gx,gy)
+		end
+		
+	end	
+end
+
+function mapStarter()
+  setMapUserData("last_modified", getTime(true,"yyyy.MM.ddThh:mm:ss.zzz"))
+  
+  local saveString = getMudletHomeDir().."/aardwolf/mapBackup_"..getTime(true,"yyyy.MM.ddThh.mm.ss.zzz")..".dat"
+	local savedok = saveMap(saveString)
+	
+  if not savedok then
+    echo("Couldn't save map :(\n")
+		return 0--bail out, map didnt save.
+  else
+    echo("Map saved to: "..saveString.."\n")
+		loadMap(getMudletHomeDir().."/aardwolf/mapStarter.dat")
+  end
+  --lua display(getMapUserData("last_modified"))
+  --lua display(getAllMapUserData())	
+end
+
+function mapCheck()
+	--MAP Backup, save, load
+  local myRoomsTable = getRooms()
+  local count = count or 0
+  for _ in pairs(myRoomsTable) do count = count + 1 end
+	if count &gt; 14906 then
+		echo("\n")
+		aard.log:info("Your existing map has "..count.." rooms mapped.")
+		aard.log:info("To load the starter map anyway (14907 rooms) type: startermap")
+		aard.log:info("startermap will backup your map before loading the starter map.")
+	else
+		mapStarter()		
+	end
+end
+
+function checkDoor(id,dir)
+  local doors = getDoors(id)
+  
+  if not next(doors) then
+		--cecho("\nThere aren't any doors in the room.")
+		return
+	end
+  
+  local door_status = {"open", "closed", "locked"}  
+  for direction, door in pairs(doors) do
+  	if direction == dir then
+			if dir == "up" then--shorten further
+				dir = "u"
+			elseif dir == "down" then--shorten further
+				dir = "d"
+			end
+  		return "o "..dir..";"
+  	end
+    --cecho("\nThere's a door leading in "..direction.." that is "..door_status[door]..".")
+  end
+end
+
+function openDoor(dir)
+  local doors = getDoors(aard.map.current_room)
+  
+  if not next(doors) then
+		--cecho("\nThere aren't any doors in the room.")
+		return
+	end
+  
+  local door_status = {"open", "closed", "locked"}  
+  for direction, door in pairs(doors) do
+  	if direction == dir then
+  		send("op "..dir,true)
+  	end
+    --cecho("\nThere's a door leading in "..direction.." that is "..door_status[door]..".")
+  end
+end
+
+aard.echocolour = "cyan"
+
+function aard_regenerate_areas()
+  -- cached data
+  aard.areatable = getAreaTable() -- this translates an area name to an ID
+  aard.areatabler = {} -- this translates an ID to an area name
+
+  local t = getAreaTable()
+  for k,v in pairs(t) do
+    aard.areatabler[tonumber(v)] = k
+  end
+
+  --aard.clearpathcache()
+end
+aard_regenerate_areas()
+
+function aard.echoPath(from, to)
+	assert(tonumber(from) and tonumber(to), "getPath: both from and to have to be room IDs")
+	if getPath(from, to) then
+		cecho("&lt;white&gt;Directions from &lt;yellow&gt;" .. string.upper(searchRoom(from)) .. " &lt;white&gt;to &lt;yellow&gt;" .. string.upper(searchRoom(to)) .. "&lt;white&gt;:")
+		echo(table.concat(speedWalkDir, ", "))
+		return aard.speedWalkDir
+	else
+	  cecho("&lt;white&gt;I can't find a way from &lt;yellow&gt;" .. string.upper(searchRoom(from)) .. " &lt;white&gt;to &lt;yellow&gt;" .. string.upper(searchRoom(to)) .. "&lt;white&gt;")
+	end
+end
+
+function aard.roomFind(query)
+  if query:ends('.') then query = query:sub(1,-2) end
+  local result = aard.searchRoom(query)
+
+  if type(result) == "string" or not next(result) then
+    cecho("\n&lt;grey&gt; You have no recollection of any room with that name.\n") return end
+
+  cecho("\n&lt;DarkSlateGrey&gt; You know the following relevant rooms:\n")
+
+  local function showmeropis(roomid)
+    if aard.game ~= "achaea" then return '' end
+
+    return aard.oncontinent(getRoomArea(roomid), "Main") and '' or ' (Meropis)'
+  end
+
+  if not tonumber(select(2, next(result))) then -- old style
+    for roomid, roomname in pairs(result) do roomid = tonumber(roomid)
+      cecho(string.format("  &lt;LightSlateGray&gt;%s&lt;DarkSlateGrey&gt; (",
+        tostring(roomname)))
+      cechoLink("&lt;"..aard.echocolour.."&gt;"..roomid, 'gotoRoom('..roomid..')', string.format("Go to %s (%s)", roomid, tostring(roomname)), true)
+      cecho(string.format("&lt;DarkSlateGrey&gt;) in &lt;LightSlateGray&gt;%s%s&lt;DarkSlateGrey&gt;.", aard.stripRoomName(tostring(getRoomAreaName(getRoomArea(roomid)))), showmeropis(roomid)))
+      fg("DarkSlateGrey") echoLink(" &gt; Show path", [[aard.echoPath(]]..aard.map.current_room..[[, ]]..roomid..[[)]], "Display directions from here to "..roomname, true) echo("  ")
+			fg("DarkSlateGrey") echoLink(" &gt; Show recall path\n", [[showSpeedWalk(32418, ]]..roomid..[[)]], "Display directions from here to "..roomname, true)
+			resetFormat()
+    end
+
+  else -- new style
+    for roomname, roomid in pairs(result) do roomid = tonumber(roomid)
+      cecho(string.format("  &lt;LightSlateGray&gt;%s&lt;DarkSlateGrey&gt; (",
+        tostring(roomname)))
+      cechoLink("&lt;"..aard.settings.echocolour.."&gt;"..roomid, 'aard.gotoRoom('..roomid..')', string.format("Go to %s (%s)", roomid, tostring(roomname)), true)
+      cecho(string.format("&lt;DarkSlateGrey&gt;) in &lt;LightSlateGray&gt;%s%s&lt;DarkSlateGrey&gt;.", aard.cleanAreaName(tostring(getRoomAreaName(getRoomArea(roomid)))), showmeropis(roomid)))
+      fg("DarkSlateGrey") echoLink(" &gt; Show path", [[aard.echoPath(]]..aard.map.current_room..[[, ]]..roomid..[[)]], "Display directions from here to "..roomname, true) echo("  ")
+			fg("DarkSlateGrey") echoLink(" &gt; Show recall path\n", [[showSpeedWalk(32418, ]]..roomid..[[)]], "Display directions from here to "..roomname, true)
+			resetFormat()
+    end
+  end
+
+  cecho(string.format("  &lt;DarkSlateGrey&gt;%d rooms found.\n", table.size(result)))
+end
+
+function aard.roomFindArea(query)
+  if query:ends('.') then query = query:sub(1,-2) end
+  local result = aard.searchRoomArea(query)
+
+  if type(result) == "string" or not next(result) then
+    cecho("\n&lt;grey&gt; You have no recollection of any room with that name.\n") return end
+
+  cecho("\n&lt;DarkSlateGrey&gt; You know the following relevant rooms:\n")
+
+  local function showmeropis(roomid)
+    if aard.game ~= "achaea" then return '' end
+
+    return aard.oncontinent(getRoomArea(roomid), "Main") and '' or ' (Meropis)'
+  end
+
+  if not tonumber(select(2, next(result))) then -- old style
+    for roomid, roomname in pairs(result) do roomid = tonumber(roomid)
+      cecho(string.format("  &lt;LightSlateGray&gt;%s&lt;DarkSlateGrey&gt; (",
+        tostring(roomname)))
+      cechoLink("&lt;"..aard.echocolour.."&gt;"..roomid, 'gotoRoom('..roomid..')', string.format("Go to %s (%s)", roomid, tostring(roomname)), true)
+      cecho(string.format("&lt;DarkSlateGrey&gt;) in &lt;LightSlateGray&gt;%s%s&lt;DarkSlateGrey&gt;.", aard.stripRoomName(tostring(getRoomAreaName(getRoomArea(roomid)))), showmeropis(roomid)))
+      fg("DarkSlateGrey") echoLink(" &gt; Show path", [[aard.echoPath(]]..aard.map.current_room..[[, ]]..roomid..[[)]], "Display directions from here to "..roomname, true) echo("  ")
+			fg("DarkSlateGrey") echoLink(" &gt; Show speedwalk\n", [[showSpeedWalk(32418, ]]..roomid..[[)]], "Display directions from here to "..roomname, true)
+			resetFormat()
+    end
+
+  else -- new style
+    for roomname, roomid in pairs(result) do roomid = tonumber(roomid)
+      cecho(string.format("  &lt;LightSlateGray&gt;%s&lt;DarkSlateGrey&gt; (",
+        tostring(roomname)))
+      cechoLink("&lt;"..aard.settings.echocolour.."&gt;"..roomid, 'aard.gotoRoom('..roomid..')', string.format("Go to %s (%s)", roomid, tostring(roomname)), true)
+      cecho(string.format("&lt;DarkSlateGrey&gt;) in &lt;LightSlateGray&gt;%s%s&lt;DarkSlateGrey&gt;.", aard.cleanAreaName(tostring(getRoomAreaName(getRoomArea(roomid)))), showmeropis(roomid)))
+      fg("DarkSlateGrey") echoLink(" &gt; Show path", [[aard.echoPath(]]..aard.map.current_room..[[, ]]..roomid..[[)]], "Display directions from here to "..roomname, true) echo("  ")
+			fg("DarkSlateGrey") echoLink(" &gt; Show speedwalk\n", [[showSpeedWalk(32418, ]]..roomid..[[)]], "Display directions from here to "..roomname, true)
+			resetFormat()
+    end
+  end
+
+  cecho(string.format("  &lt;DarkSlateGrey&gt;%d rooms found.\n", table.size(result)))
+end
+
+-- searchRoom with a cache!
+local cache = {}
+setmetatable(cache, {__mode = "kv"}) -- weak keys/values = it'll periodically get cleaned up by gc
+
+function aard.searchRoom(what)
+  what = what:lower()
+  local result = nil -- cache[what]
+  if not result then
+    result = searchRoom(what)
+    local realResult = {}
+    for key, value in pairs(type(result) == "table" and result or {}) do
+        -- both ways, because searchRoom can return either id-room name or the reverse
+        if type(key) == "string" then					
+          realResult[key:ends(" (road)") and key:sub(1, -8) or key] = value
+        else
+          realResult[key] = value:ends(" (road)") and value:sub(1, -8) or value
+        end
+    end
+    cache[what] = realResult
+    result = realResult
+  end
+  return result
+end
+
+function aard.searchRoomExact(what)
+  what = what:lower()
+  local result = nil -- cache[what]
+  if not result then
+    result = searchRoom(what,true,true)
+    local realResult = {}
+    for key, value in pairs(type(result) == "table" and result or {}) do
+        -- both ways, because searchRoom can return either id-room name or the reverse
+        if type(key) == "string" then					
+          realResult[key:ends(" (road)") and key:sub(1, -8) or key] = value
+        else
+          realResult[key] = value:ends(" (road)") and value:sub(1, -8) or value
+        end
+    end
+    cache[what] = realResult
+    result = realResult
+  end
+  return result
+end
+
+function aard.searchRoomArea(what)
+  what = what:lower()
+  local result = nil -- cache[what]
+  if not result then
+    result = searchRoom(what)
+    local realResult = {}
+    for key, value in pairs(type(result) == "table" and result or {}) do
+        -- both ways, because searchRoom can return either id-room name or the reverse
+        if type(key) == "string" then					
+          realResult[key:ends(" (road)") and key:sub(1, -8) or key] = value
+        else
+					--search room by string value
+					--display(value)
+					if getRoomArea(key) == getRoomArea(aard.map.seen_room) then
+						realResult[key] = value:ends(" (road)") and value:sub(1, -8) or value
+					end
+					--display(getRoomArea(key))
+					--display(getRoomArea(aard.map.seen_room))          
+        end
+    end
+    cache[what] = realResult
+    result = realResult
+  end
+  return result
+end</script>
+					<eventHandlerList />
+				</Script>
+			</ScriptGroup>
 		</ScriptGroup>
 	</ScriptPackage>
 	<KeyPackage>
@@ -1851,7 +2160,7 @@ end</script>
 		<Variable>
 			<name>target_n</name>
 			<keyType>4</keyType>
-			<value>1</value>
+			<value>2</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
@@ -1863,7 +2172,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>skeletal warrior</value>
+			<value>dragon rider</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

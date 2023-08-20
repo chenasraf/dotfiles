@@ -1,0 +1,118 @@
+Log session starting at 10:15:39 on Sunday, 20 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-20#09-43-09map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.12s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-20#09-43-09map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.13s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.21s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.34s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 1552    
+
+[::(info): Your existing map has 20248 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 201         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have no missed tells.
+
+2208/2208 HP  2822/2822 MP  1971/1971 mv  493tnl  
+Lv 99  G 1756206 | End of the Cells (N[E][W])
+>>    *[NOEXP]* 
+
+Tag option map turned ON
+
+2208/2208 HP  2822/2822 MP  1971/1971 mv  493tnl  
+Lv 99  G 1756206 | End of the Cells (N[E][W])
+>>    *[NOEXP]* 
+
+2208/2208 HP  2822/2822 MP  1971/1971 mv  493tnl  
+Lv 99  G 1756206 | End of the Cells (N[E][W])
+>>    *[NOEXP]* The [Recruit] Leather Backpack contains:
+     (Glow) (Hum) [Potion] Military Breakfast
+     (K) a leather-bound book
+( 4) (Glow) (Hum) [Potion] Scout's Camouflage
+     (K) a dull grey stone
+( 3) (K) a deep red stone
+     (K) a pale blue stone
+( 3) (Glow) (Hum) [Potion] Sniper's Accomplice
+     (K) an Aylorian Hammer
+( 4) (K) (Hum) (!(Lotus Rush)!)
+     (K) a tiny wooden boat
+( 2) (K) (Glow) (Hum) elixir of protection
+     (K) a fishing permit
+     (K) a fishing pole
+     (K) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+2208/2208 HP  2822/2822 MP  1971/1971 mv  493tnl  
+Lv 99  G 1756206 | End of the Cells (N[E][W])
+>>    *[NOEXP]* 
+You received your last daily blessing at 19 Aug 2023 08:17:47.
+
+You can receive a new daily blessing in 4 hours, 2 minutes and 0 seconds.
+
+You have 1 daily blessing reset available.
+
+2208/2208 HP  2822/2822 MP  1971/1971 mv  493tnl  
+Lv 99  G 1756206 | End of the Cells (N[E][W])
+>>    *[NOEXP]* 
+
+>>> Cruel has reincarnated to Vampire Priest. <<<
+
+Global Quest: Global Quest # 3417 has been won by Porcius - 121st win.
+Global Quest: Global Quest # 3417 will go into extended time for 5 more minutes.
+
+Global Quest: Vettir has completed Global Quest # 3417.
