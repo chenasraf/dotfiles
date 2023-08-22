@@ -28027,3 +28027,2890 @@ while you're there.
 [ INFO ]  - Connection time: 03:48:40.458
                 
 Loaded from /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/config-KumoGami.lua
+Loaded from /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/config-KumoGami.lua
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 214         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Sun Aug 20 19:37:03 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+
+--------------------------------------------------------------------------
+                             Boot Camp - Clan MOTD                             
+--------------------------------------------------------------------------
+Welcome to Boot Camp!
+Be sure to register on our website http://www.aardwolfboot.com
+Also join us on Discord: https://discord.gg/GCjHxxZ
+and Aardwolf's Discord channel https://discord.gg/KH62U8P
+Don't forget our clan skills:
+mutare (double / half the weight of an item) 
+napalm (str and int buff) 
+Always read your notes on the Personal Board, as well as Announce and Mudinfo.
+--------------------------------------------------------------------------
+[ End of Clan MOTD - Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+CLAN: At-ten-tion! KumoGami is here to get some training done!
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Invis) (Hidden) (Golden Aura) (White Aura) (OPK) Spublofe is always half AFK.
+(Player) (Golden Aura) Ruo the Elementalist.
+(Player) (Golden Aura) (White Aura) EmJay the Shaman.
+(Player) (Translucent) (Golden Aura) (White Aura) Athlau the Alpha.
+(Player) (Translucent) (Golden Aura) (White Aura) (OPK) Lexicon the Navigator.
+A Grumpy Old General stands here, shouting orders at the new recruits.
+There are 215 players on, the most on this reboot was 304.
+There are 213 players using compression.
+
+PERSONAL: You have 4 unread personal notes.
+
+LOTTERY : Current lottery jackpot is at 80,000,000 gold.
+
+BLESSING: Your daily blessing is available.
+
+[*Daily Blessing*] 1970/2428 HP  1995/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+Tag option map turned ON
+
+[*Daily Blessing*] 1970/2428 HP  1995/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+[*Daily Blessing*] 1970/2428 HP  1995/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* The [Recruit] Leather Backpack contains:
+(15) (Magic) (Glow) (Hum) [Potion] Military Breakfast
+     (K) (Invis) (Magic) (Glow) a Dahshur Earring
+     (K) (Magic) a leather-bound book
+( 4) (Magic) (Glow) (Hum) [Potion] Scout's Camouflage
+     (K) a dull grey stone
+( 3) (K) (Magic) a deep red stone
+     (K) (Magic) a pale blue stone
+     (K) (Invis) (Magic) -=< Clasp of the Keeper >=-
+( 3) (Magic) (Glow) (Hum) [Potion] Sniper's Accomplice
+     (K) an Aylorian Hammer
+( 4) (K) (Magic) (Hum) (!(Lotus Rush)!)
+     (K) (Magic) a tiny wooden boat
+( 2) (K) (Magic) (Glow) (Hum) elixir of protection
+     (K) (Magic) a fishing permit
+     (K) a fishing pole
+     (K) (Magic) (Glow) (Hum) AardGear Official TextBook (Look Index for Details!)
+     (K) an Aardwolf Newbie Guide - Unedited (type read newguide)
+
+[*Daily Blessing*] 1970/2428 HP  1995/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+You received your last daily blessing at 20 Aug 2023 11:01:20.
+
+You are ready to receive a new daily blessing.
+
+You have 1 daily blessing reset available.
+
+[*Daily Blessing*] 1970/2428 HP  1995/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+(Friend): Smiling at you, Yerald greets you warmly.
+
+EmJay's eyes glaze over and she appears to be somewhere else.
+
+ft *hiwave Yerald
+(Friend): You wave hello to Yerald.
+
+[*Daily Blessing*] 2130/2428 HP  2243/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+Endian jets in from the east.
+
+Endian jets up.
+Talbor informs a Grumpy Old General that he has completed his quest.
+
+The Gunfire and Training cease for a moment as the Boot Hall is Restored.
+
+CLAN: At-ten-tion! Lepdar is here to get some training done!
+
+Juliet jets in from the east.
+
+Juliet jets up.
+
+Ruo's eyes glaze over and he appears to be somewhere else.
+
+Lepdar appears in the room.
+
+HomerSimpson questions 'is there a spell like probability travel, but that targets only the current
+area?'
+
+Myth questions 'translocate'
+
+Vettir answers '^'
+
+HomerSimpson questions 'ah, will get later I see, thx'
+
+Global Quest: Global quest # 3872 has been declared for levels 97 to 108.
+Global Quest: The quest will start in 4 ticks and will last for 93 ticks.
+Global Quest: See 'Help Global Quests', or, type 'Gquest Join 3872' to take part.
+
+There is a loud scream and a flare of light shoots towards the sky.
+Below the flare, you hear Lighted scream 'HEAR ME, FOR I HAVE CONQUERED!'
+As the light fades you realize a new superhero has been born.
+For the next 15 minutes experience is doubled in honor of the new superhero.
+
+INFO: Lighted has been reborn as a Vampire Mage.
+
+Feihu answers '409'
+
+Lighted flies east.
+
+Lighted jets in from the east.
+
+Lighted jets up.
+
+HomerSimpson questions 'can you translocate into area quest rooms?'
+
+Kazul answers 'yes sir'
+
+Character autosaved at Mon Aug 21 19:17:55 2023.
+
+With a thunderclap, Lighted appears in the room.
+
+
+Lighted flies down.
+
+Garence answers 'only if your're really SMRT.'
+
+Bombora answers 'or lucky'
+
+Lighted jets in from the east.
+
+Lighted jets up.
+
+Bombora answers 'or luckycs'
+
+HomerSimpson questions 'I am so smart!'
+
+(Friend) Yerald: 'with?'
+
+Global Quest: Global quest # 3872 for levels 97 to 108 has now started.
+
+You no longer absorb magical attacks.
+
+(Friend) Yerald: 'ask for something veggie... :P'
+
+Viridi appears in the room.
+
+Viridi flies down.
+
+Lepdar appears in the room.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+[*Daily Blessing*] 2428/2428 HP  3001/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+
+Spublofe asks a Grumpy Old General for a quest.
+
+Lepdar appears in the room.
+
+Ruo has lost his link.
+
+With a thunderclap, Spublofe appears in the room.
+
+
+Spublofe informs a Grumpy Old General that he has completed his quest.
+
+campaign check
+* a confused person (The Ruins of Diamond Reach) 16805
+* a yellow dragon (The Scarred Lands) 34036
+
+You have 5 days, 21 hours and 50 minutes left to finish this campaign.
+You may take a campaign at this level.
+
+[*Daily Blessing*] 2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+daily blessing
+
+You bow your head to The Unknown Soldier and receive your daily blessing.
+
+You have the following daily blessings active:
+
+Blessing                                                       Time Left
+-------------------------------------------------------------- ----------------
+Next 57 mobs killed will reward double experience              18:00:00     
+Next 3 quests completed will reward double quest points        18:00:00     
+Next 71 mobs killed will reward bonus gold                     18:00:00     
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+score
++-------------------------------------------------------------------------+
+|                  KumoGami the Enchanting God of Spiders                 |
++-------------------------+--------------------+--------------------------+
+| Strength    : [129/72 ] | Race  : Half-griff | Practices    : [    592] |
+| Intelligence: [220/143] | Class : Mage       | Trains       : [     42] |
+| Wisdom      : [106/89 ] | Sub   : Enchanter  | Trivia       : [     57] |
+| Dexterity   : [141/92 ] | Gender: Male       | Quest points : [   1273] |
+| Constitution: [103/60 ] | Level : 105        | Quest time   : [      0] |
+| Luck        : [117/96 ] |                    | Goals done   : [     18] |
++------------------------++--------------------+--------------------------+
+| Hit    : [ 2428/2428 ] | Hitroll  : [  158 ] | Weight :   758 of 863    |
+| Mana   : [ 3016/3016 ] | Damroll  : [  199 ] | Items  :    89 of 286    |
+| Moves  : [ 2088/2088 ] | Wimpy    : [  100 ] | Align  : 2500            |
+| Gold   : [    2225791] |                     | Status : Standing        |
+| To Lvl : [       476 ] | Age      : [   15 ] | Hunger : 52  Average     |
+|                        | Hours    : [   438] | Thirst : 52  Average     |
++------------------------+---------------------+--------------------------+
+| Resistances:                                                            |
+| Pierce:  250 (Heavily Armored   ) [##############----------------------]|
+| Bash  :   22 (Slightly Armored  ) [##----------------------------------]|
+| Slash :  249 (Heavily Armored   ) [##############----------------------]|
++-------------------------------------------------------------------------+
+ Type 'aff' for affects, 'attr' for stats only and 'whois' for other info.
+ Type 'resists' for detailed resistance stats.
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+The Gunfire and Training cease for a moment as the Boot Hall is Restored.
+
+Global Quest: Global quest # 3872 has been cancelled due to lack of participants.
+
+Lepdar appears in the room.
+
+With a thunderclap, Spublofe appears in the room.
+
+
+You return to the living world.
+
+:::LoquI::: Liathum snuggles up to Kazul.
+
+chase reach confused person
+prc;rt reach; hunt 1.confused person; where 1.confused person
+hold duffle;enter; hold lasso
+Target switched to: 1.confused person
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You stop holding ~~ Lasso of Hestia ~~.
+You hold ]An Old Duffle Bag[ in your hand.
+
+2428/2428 HP  3016/3106 MP  2088/2043 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* WHOOOOOOOOOOOOSH!
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Golden Aura) (Linkdead) Ruo the Elementalist.
+(Player) (Golden Aura) (White Aura) EmJay the Shaman.
+(Player) (Translucent) (Golden Aura) (White Aura) Athlau the Alpha.
+(Player) (Translucent) (Golden Aura) (White Aura) (OPK) Lexicon the Navigator.
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+2428/2428 HP  3016/3106 MP  2088/2043 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You stop holding ]An Old Duffle Bag[.
+You hold ~~ Lasso of Hestia ~~ in your hand.
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* Running to: The Ruins of Diamond Reach
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You are already at recall.
+
+2428/2428 HP  2986/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Golden Aura) Atrahasis the Avenger.
+(Player) (Golden Aura) (OPK) Forma not formatted.
+(Charmed) (Animated) The resurrected corpse of a grumbling Hordesman.
+(Player) (Red Aura) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+
+2428/2428 HP  2986/3016 MP  2087/2088 mv  476tnl  
+Lv 105  G 2225791 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* Whitewind Avenue (G) (2087)
+
+Phoenix Square (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (2087)
+
+Starlight Way - West (G) (2087)
+
+Western Entrance - Starlight Way (G) (2087)
+
+Western High Road (2087)
+
+In the Fields Surrounding Aylor (G) (2086)
+
+In the Fields Surrounding Aylor (2085)
+
+In the Fields Surrounding Aylor (2084)
+
+In the Fields Surrounding Aylor (2083)
+
+In the Fields Surrounding Aylor (2082)
+
+In the Fields Surrounding Aylor (2081)
+
+A Stand of Trees (2080)
+
+Ocean of Grass (2079)
+
+Ocean of Grass (2078)
+
+Ocean of Grass (2077)
+
+Ocean of Grass (2076)
+
+Ocean of Grass (2075)
+
+<<|Gaardian|>> Kittenbane gasps in astonishment.
+Ocean of Grass (2074)
+
+Ocean of Grass (2073)
+
+An Alternative Trail (2072)
+
+An Alternative Trail (2071)
+
+Coastfollow Road (2070)
+
+Mist-Shrouded Moorland (2069)
+
+Mist-Shrouded Moorland (2068)
+
+Mist-Shrouded Moorland (2067)
+
+Icy Shallows (2066)
+
+Siirima Ocean (2065)
+
+Siirima Ocean (2064)
+
+Siirima Ocean (2063)
+
+Adamant Bay (2062)
+
+Adamant Bay (2061)
+
+Adamant Bay (2060)
+
+Koloma Forest (2059)
+
+Koloma Forest (2058)
+
+Adamant Bay (2057)
+
+Adamant Bay (2056)
+
+Carbonado Mountains (2055)
+
+Near an Old Logging Road
+  A short distance from the old logging road, you see what appears to be 
+a small city wall.  An odd shiver suddenly runs up your spine as you 
+peer into the distance.  Something... is not right.
+
+[ Exits: north west ]
+
+2428/2428 HP  2986/3016 MP  2054/2088 mv  476tnl  
+Lv 105  G 2225791 | Near an Old Logging Road (NW)
+>>    *[NOEXP]* You seem unable to hunt that target for some reason.
+
+2428/2428 HP  2986/3016 MP  2054/2088 mv  476tnl  
+Lv 105  G 2225791 | Near an Old Logging Road (NW)
+>>    *[NOEXP]* a confused person              The Southern Gate
+
+2428/2428 HP  2986/3016 MP  2054/2088 mv  476tnl  
+Lv 105  G 2225791 | Near an Old Logging Road (NW)
+>>    *[NOEXP]* 
+
+:::LoquI::: Liathum beams with pride at Kittenbane.
+
+<<|Gaardian|>> Kittenbane: Liathum is very snuggly today
+
+CLAN: Viridi falls out to take some much needed R & R.
+
+:::LoquI::: Liathum: I'm in a great mood today.
+
+o/~|Bard|o/~ Kazul beams with pride.
+
+<<|Gaardian|>> Kittenbane: because we're friends, of course!
+
+rfa southern gate
+
+ You know the following relevant rooms:
+  The Southern Gate (16806) in ruins. > Show path   > Show speedwalk
+  1 rooms found.
+"run n"
+run n
+The Southern Gate
+  Nearing the remains of the city gates, you begin to inspect the area. 
+The stonewalls lie battered and the gates barely stay on their hinges.  The
+ground is littered with skeletons of the long deceased population, as well
+as half-rotted corpses of previous adventurers...  
+
+[ Exits: north south ]
+(Golden Aura) A confused person is here, totally lost...
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2225791 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+
+CLAN: At-ten-tion! Meroveus is here to get some training done!
+
+ca force 'confused person'
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a confused person!
+[502]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [496]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [476]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a confused person!
+[525]
+A confused person has some small wounds and bruises.
+
+FIGHTING!
+2428/2428 HP  2956/3016 MP  2088/2088 mv  476tnl
+ Enemy: 74%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+*Your light <-+-><-*-> CREMATES <-*-><-+-> a confused person! [229]
+Your light <=-=><=-=> TEARS INTO <=-=><=-=> a confused person! [198]
+Your light <*><*><*> EVAPORATES <*><*><*> a confused person! [175]
+You blink out of existence and avoid a confused person's attack.
+You blink out of existence and avoid a confused person's attack.
+A confused person has some small wounds and bruises.
+
+FIGHTING!
+2428/2428 HP  2956/3016 MP  2088/2088 mv  476tnl
+ Enemy: 67%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [494]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [482]
+A confused person has quite a few wounds.
+
+FIGHTING!
+2428/2428 HP  2896/3016 MP  2088/2088 mv  476tnl
+ Enemy: 54%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+A confused person dodges your attack.
+A confused person dodges your attack.
+*Your light <-+-><-*-> CREMATES <-*-><-+-> a confused person! [232]
+You dodge a confused person's attack.
+You blink out of existence and avoid a confused person's attack.
+A confused person has quite a few wounds.
+
+FIGHTING!
+2428/2428 HP  2896/3016 MP  2088/2088 mv  476tnl
+ Enemy: 51%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a confused person!
+[544]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [497]
+Your crushing force bolt <-:-><-:-*-:-><-*-> SUPERNOVAS <-*-><-:-*-:-><-:-> a confused person! [561]
+A confused person has some very nasty wounds.
+
+FIGHTING!
+2428/2428 HP  2836/3016 MP  2088/2088 mv  476tnl
+ Enemy: 31%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+Your light <*><*><*> EVAPORATES <*><*><*> a confused person! [180]
+Your light <=-=><=-=> TEARS INTO <=-=><=-=> a confused person! [191]
+Your light misses a confused person. [0]
+You blink out of existence and avoid a confused person's attack.
+You blink out of existence and avoid a confused person's attack.
+A confused person has some very nasty wounds.
+
+FIGHTING!
+2428/2428 HP  2890/3016 MP  2088/2088 mv  476tnl
+ Enemy: 27%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [476]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a confused person!
+[530]
+A confused person is gravely injured.
+
+FIGHTING!
+2428/2428 HP  2830/3016 MP  2088/2088 mv  476tnl
+ Enemy: 14%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+A confused person dodges your attack.
+Your light <-=-> SUNDERS <-=-> a confused person! [182]
+Your light misses a confused person. [0]
+You blink out of existence and avoid a confused person's attack.
+You blink out of existence and avoid a confused person's attack.
+A confused person's sap RENDS you! [76]
+A confused person's sap DISMEMBERS you! [73]
+A confused person is gravely injured.
+
+FIGHTING!
+2279/2428 HP  2830/3016 MP  2088/2088 mv  476tnl
+ Enemy: 12%HP (mob) | 93% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a confused person!
+[522]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a confused person! [467]
+A confused person glows momentarily then falls to the floor, DEAD! He is DEAD!
+You don't receive 48 experience points.
+You don't receive 22 'rare kill' experience bonus.
+You have set your character to receive no experience points!
+You don't receive 70 bonus experience points in honor of Lighted reaching superhero.
+You have set your character to receive no experience points!
+You don't receive 70 bonus experience points from your daily blessing.
+You have set your character to receive no experience points!
+You have 56 daily blessing bonus experience kills remaining.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+Your daily blessing added 19,292 gold to the corpse.
+You have 70 daily blessing bonus gold kills remaining.
+You get 38,584 gold coins from the nuked corpse of a confused person.
+You are taxed 385 gold coins by your clan.
+The Unknown Soldier gives you 54 gold coins for the nuked corpse of a confused person.
+
+2279/2428 HP  2770/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+* a yellow dragon (The Scarred Lands) 34036
+
+You have 5 days, 21 hours and 47 minutes left to finish this campaign.
+You may take a campaign at this level.
+
+2279/2428 HP  2770/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+napalm;spellup
+You can already smell napalm, are you a junkie?
+
+2279/2428 HP  2770/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* Queueing spell : invis.
+Queueing spell : wraith form.
+Queueing spell : absorb.
+
+2279/2428 HP  2770/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* You fade out of existence.
+
+2279/2428 HP  2745/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+You enter the borders of the realm of undeath.
+Prepare for the transformation..........
+Adding Wraith Resistance ...
+Enhancing Attributes........
+Adding Sanctuary............
+Transformation Complete.
+
+2279/2428 HP  2595/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+You feel a strong magical force surround your body.
+
+2279/2428 HP  2530/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+
+
+You notice the white moon falling to the east.
+
+napalm;spellup
+You can already smell napalm, are you a junkie?
+
+2313/2428 HP  2586/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* No spells or skills cast.
+
+2313/2428 HP  2586/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* 
+
+INFO: 5 minutes of bonus experience remaining.
+
+chase scarred yellow dragon
+prc;rt scarred; hunt 1.yellow dragon; where 1.yellow dragon
+hold duffle;enter; hold lasso
+Target switched to: 1.yellow dragon
+
+2343/2428 HP  2650/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* You stop holding ~~ Lasso of Hestia ~~.
+You hold ]An Old Duffle Bag[ in your hand.
+
+2343/2428 HP  2650/3106 MP  2088/2043 mv  476tnl  
+Lv 105  G 2264044 | The Southern Gate (NS)
+>>    *[NOEXP]* WHOOOOOOOOOOOOSH!
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Translucent) (Golden Aura) (White Aura) Athlau the Alpha.
+(Player) (Golden Aura) (Linkdead) Ruo the Elementalist.
+(Player) (Golden Aura) (White Aura) EmJay the Shaman.
+(Player) (Translucent) (Golden Aura) (White Aura) (OPK) Lexicon the Navigator.
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+2343/2428 HP  2650/3106 MP  2088/2043 mv  476tnl  
+Lv 105  G 2264044 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You stop holding ]An Old Duffle Bag[.
+You hold ~~ Lasso of Hestia ~~ in your hand.
+
+2343/2428 HP  2650/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* Running to: The Scarred Lands
+
+2343/2428 HP  2650/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* You are already at recall.
+
+2343/2428 HP  2620/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+
+You can no longer sense anger.
+
+The Grand City of Aylor (G)
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+
+[ Exits: north east south west up down ]
+(Player) (Golden Aura) Atrahasis the Avenger.
+(Player) (Golden Aura) (OPK) Forma not formatted.
+(Charmed) (Animated) The resurrected corpse of a grumbling Hordesman.
+(Player) (Red Aura) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+
+2343/2428 HP  2620/3016 MP  2087/2088 mv  476tnl  
+Lv 105  G 2264044 | The Grand City of Aylor (NESWUD)
+>>    *[NOEXP]* Whitewind Avenue (G) (2087)
+
+Phoenix Square (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (G) (2087)
+
+Starlight Way - West (2087)
+
+Starlight Way - West (G) (2087)
+
+Western Entrance - Starlight Way (G) (2087)
+
+Western High Road (2087)
+
+Sprouting Field (2086)
+
+Port-o-Ditch (2085)
+
+Barren Fields (2084)
+
+Drunken Field (2083)
+
+Barren Fields (2082)
+
+Port-O-Ditch (2081)
+
+Unsown Fields (2080)
+
+The Ngleanntan Tuir (2079)
+
+The Ngleanntan Tuir (2078)
+
+The Ngleanntan Tuir (2077)
+
+The Ngleanntan Tuir (2076)
+
+The Ngleanntan Tuir (2075)
+
+The Ngleanntan Tuir (2074)
+
+The Ngleanntan Tuir (2073)
+
+The Ngleanntan Tuir (2072)
+
+The Ngleanntan Tuir (2071)
+
+The Ngleanntan Tuir (2070)
+
+The Ngleanntan Tuir (2069)
+
+River Angor (2068)
+
+River Angor (2067)
+
+The Ngleanntan Tuir (2066)
+
+The Ngleanntan Tuir (2065)
+
+Burned Out Field (2064)
+
+Burned Out Field (2063)
+
+Coastfollow Road (2062)
+
+Untended Fields (2061)
+
+Untended Fields (2060)
+
+Untended Fields (2059)
+
+Untended Fields (2058)
+
+Untended Orchard (2057)
+
+White Cliffs of Sawdust (2056)
+
+Before the Forbidden Waters (2055)
+
+Before the Forbidden Waters (2054)
+
+Before the Forbidden Waters (2053)
+
+The Forbidden Waters (2052)
+
+The Forbidden Waters (2051)
+
+The Forbidden Waters (2050)
+
+The Forbidden Waters (2049)
+
+The Forbidden Waters (2048)
+
+The Forbidden Waters (2047)
+
+The Forbidden Waters (2046)
+
+The Forbidden Waters (2045)
+
+The Forbidden Waters (2044)
+
+Path to the Forbidden Waters (2043)
+
+Path to the Forbidden Waters (2042)
+
+Path to the Forbidden Waters (2041)
+
+Path to the Forbidden Waters (2040)
+
+Path to the Forbidden Waters (2039)
+
+Path to the Forbidden Waters (2038)
+
+Path to the Forbidden Waters (2037)
+
+Path to the Forbidden Waters (2036)
+
+Path to the Forbidden Waters (2035)
+
+Majesty Crest (2034)
+
+Majesty Crest (2033)
+
+Majesty Crest (2032)
+
+Majesty Crest (2031)
+
+Majesty Crest (2030)
+
+Majesty Crest (2029)
+
+The Iron Trail (2028)
+
+Pride's Peak (2027)
+
+Before some cracks
+  You've stumbled upon an odd crack in a cliff.  You can actually feel the
+energy pushing out from the opening.  You also see a sign hammered into the
+ground in front of the crack, perhaps you should read it.  
+
+[ Exits: west ]
+     (Magic) A glowing longbow has been left here.
+     (Glow) (Hum) A crack in the rocks glows faintly.
+
+2343/2428 HP  2620/3016 MP  2026/2088 mv  476tnl  
+Lv 105  G 2264044 | Before some cracks (W)
+>>    *[NOEXP]* You seem unable to hunt that target for some reason.
+
+2343/2428 HP  2620/3016 MP  2026/2088 mv  476tnl  
+Lv 105  G 2264044 | Before some cracks (W)
+>>    *[NOEXP]* a yellow dragon                A plateau
+
+2343/2428 HP  2620/3016 MP  2026/2088 mv  476tnl  
+Lv 105  G 2264044 | Before some cracks (W)
+>>    *[NOEXP]* 
+
+
+rfa plateau
+
+ You know the following relevant rooms:
+  A plateau (34073) in scarred. > Show path   > Show speedwalk
+  1 rooms found.
+"enter crack;run e2nsweusw;o u;run unuen3u2ed2en"
+enter crack;run e2nsweusw;o u;run unuen3u2ed2en
+You step into a crack in the rocks and arrive in...
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* Winding tunnels (2087)
+
+Winding tunnels (2086)
+
+Winding tunnels (G) (2085)
+
+Winding tunnels (2084)
+
+Winding tunnels (2083)
+
+Winding tunnels (2082)
+
+Alas, you cannot go that way.
+Winding tunnels (G) (2081)
+
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2080/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* There is no door up from here.
+
+2371/2428 HP  2686/3016 MP  2080/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* Alas, you cannot go that way.
+Winding tunnels (2079)
+
+Alas, you cannot go that way.
+Winding tunnels (G) (2078)
+
+Winding tunnels (2077)
+
+Alas, you cannot go that way.
+Alas, you cannot go that way.
+Alas, you cannot go that way.
+Too many run errors. Aborting speedwalk.
+
+
+2371/2428 HP  2686/3016 MP  2077/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2371/2428 HP  2686/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2075/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2074/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2073/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+w
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2371/2428 HP  2686/3016 MP  2072/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2071/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2070/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2371/2428 HP  2686/3016 MP  2069/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+w
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2371/2428 HP  2686/3016 MP  2068/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+n
+>>    *[NOEXP]* 
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2371/2428 HP  2686/3016 MP  2067/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2066/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+l;ex
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2066/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* Obvious exits from [ Winding tunnels ]:
+ North          : Winding tunnels 
+ East           : Winding tunnels 
+ South          : Winding tunnels 
+ West           : Winding tunnels 
+
+2371/2428 HP  2686/3016 MP  2066/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2371/2428 HP  2686/3016 MP  2065/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+
+A dracolich leaves west.
+
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2371/2428 HP  2686/3016 MP  2064/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2063/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+w
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2062/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2371/2428 HP  2686/3016 MP  2061/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2371/2428 HP  2686/3016 MP  2060/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2371/2428 HP  2686/3016 MP  2059/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2371/2428 HP  2686/3016 MP  2058/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+
+
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2087/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+
+A dracolich arrives from the north.
+
+n
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2406/2428 HP  2764/3016 MP  2086/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+s
+>>    *[NOEXP]* 
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2084/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2406/2428 HP  2764/3016 MP  2083/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2082/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+e
+>>    *[NOEXP]* 
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+
+2406/2428 HP  2764/3016 MP  2081/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2080/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+w
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2079/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+"run wew"
+run wew
+Winding tunnels (2078)
+
+Winding tunnels (2077)
+
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2075/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+"run e2nswe"
+run e2nswe
+Winding tunnels (2074)
+
+Winding tunnels (2073)
+
+Winding tunnels (G) (2072)
+
+Winding tunnels (2071)
+
+Winding tunnels (2070)
+
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2069/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2068/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2067/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2066/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2065/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2406/2428 HP  2764/3016 MP  2064/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2063/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2062/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2406/2428 HP  2764/3016 MP  2061/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+n
+>>    *[NOEXP]* 
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2060/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2059/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2406/2428 HP  2764/3016 MP  2058/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2406/2428 HP  2764/3016 MP  2057/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2406/2428 HP  2764/3016 MP  2056/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+w
+
+
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2428/2428 HP  2809/3016 MP  2087/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2428/2428 HP  2809/3016 MP  2086/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+e
+>>    *[NOEXP]* 
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2428/2428 HP  2809/3016 MP  2085/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+e
+>>    *[NOEXP]* 
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+
+2428/2428 HP  2809/3016 MP  2084/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Golden Aura) Some fool ignored the warnings and decided to explore this place.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2428/2428 HP  2809/3016 MP  2083/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+Your force shield shimmers then fades away.
+
+n
+Winding tunnels
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A skeletal dragon lunges at you with snapping jaws.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Golden Aura) This person appears to have been part of the rescue party sent to save the miners.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+
+2428/2428 HP  2809/3016 MP  2082/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+e
+Winding tunnels (G)
+  You become very disillusioned as you look around and realize how lost you
+are.  This intersection only looks familiar because it looks exactly like
+the last intersection you were at.  
+
+[ Exits: north east south west ]
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A huge, red worm rushes at you with its jaws open.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+(Red Aura) A horribly twisted beast snarls and tries to eat you.
+
+2428/2428 HP  2809/3016 MP  2081/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (NESW)
+>>    *[NOEXP]* 
+s
+Winding tunnels
+  Finally!  Your hope returns as you think of seeing open sky and the light
+of day again.  All you need to do is climb to the opening above.  
+
+[ Exits: west up ]
+
+2428/2428 HP  2809/3016 MP  2080/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (WU)
+>>    *[NOEXP]* 
+d
+Alas, you cannot go that way.
+
+2428/2428 HP  2809/3016 MP  2080/2088 mv  476tnl  
+Lv 105  G 2264044 | Winding tunnels (WU)
+>>    *[NOEXP]* 
+u
+Out of the tunnels
+  As you look around, you wonder if this is any better then the tunnels. 
+The ground is twisted and broken, a plain filled with death.  Bones litter
+the surface, hundreds of creatures must've died here.  The sky fills you
+with unease as it casts an eerie array of colors around you.  You decide to
+keep your eyes down since watching the clouds above you boil fills you with
+nausea.  
+
+[ Exits: north south down ]
+(Red Aura) The corpse of one of the miners is shambling about evilly.
+(Red Aura) Grass waves in the wind... except the air is calm.
+
+2428/2428 HP  2809/3016 MP  2079/2088 mv  476tnl  
+Lv 105  G 2264044 | Out of the tunnels (NSD)
+>>    *[NOEXP]* 
+rfa plateau
+
+ You know the following relevant rooms:
+  A plateau (34073) in scarred. > Show path   > Show speedwalk
+  1 rooms found.
+"run sw;o u;run unuen3u2ed2en"
+run sw;o u;run unuen3u2ed2en
+At the foot of the mountains (2078)
+
+A steep path (G)
+  This could only be called a path because it's possible to climb it, and
+slightly safer then the razor sharp edges around it.  As you struggle over
+the black stone you begin to wonder if it would be easier to simply go back
+and try to find another way to the top.  After scrambling over a ledge, you
+find a huge pile of boulders blocking your path.  Looks like the decision
+has been made.  
+
+[ Exits: east (up) ]
+(Red Aura) An undead miner is here chewing on part of a dead miner.
+(Red Aura) Grass waves in the wind... except the air is calm.
+(Red Aura) The corpse of one of the miners is shambling about evilly.
+
+2428/2428 HP  2809/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* You do not have a key for the pile.
+
+2428/2428 HP  2809/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* The pile is closed.
+Alas, you cannot go that way.
+The pile is closed.
+Too many run errors. Aborting speedwalk.
+
+
+2428/2428 HP  2809/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* 
+
+
+(Friend): Smiling, Yerald greets Icaerus warmly.
+
+l;ex
+A steep path (G)
+  This could only be called a path because it's possible to climb it, and
+slightly safer then the razor sharp edges around it.  As you struggle over
+the black stone you begin to wonder if it would be easier to simply go back
+and try to find another way to the top.  After scrambling over a ledge, you
+find a huge pile of boulders blocking your path.  Looks like the decision
+has been made.  
+
+[ Exits: east (up) ]
+(Red Aura) An undead miner is here chewing on part of a dead miner.
+(Red Aura) Grass waves in the wind... except the air is calm.
+(Red Aura) The corpse of one of the miners is shambling about evilly.
+
+2428/2428 HP  2809/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* Obvious exits from [ A steep path ]:
+ East           : At the foot of the mountains 
+(Up)            : The pile is closed.
+
+2428/2428 HP  2809/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* 
+op u
+You do not have a key for the pile.
+
+2428/2428 HP  2809/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* 
+ca kn u
+Magical wards around the pile flare as it absorbs your spell.
+
+2428/2428 HP  2739/3016 MP  2076/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* 
+
+
+The scent of napalm fades from your nostrils.
+
+Your skin feels soft again.
+
+You notice the black moon falling to the west.
+
+rfa plateau
+
+ You know the following relevant rooms:
+  A plateau (34073) in scarred. > Show path   > Show speedwalk
+  1 rooms found.
+An undead miner arrives from the east.
+
+INFO: 1 minute of bonus experience remaining.
+
+You can no longer avoid some attacks.
+
+where persistent miner
+a persistent miner             A path into the mountains 1 2
+
+2428/2428 HP  3016/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2264044 | A steep path (E[U])
+>>    *[NOEXP]* 
+
+You notice the grey moon falling to the west.
+INFO: Bonus experience has now expired.
+
+There is a loud scream and a flare of light shoots towards the sky.
+Below the flare, you hear Moradin scream 'HEAR ME, FOR I HAVE CONQUERED!'
+As the light fades you realize a new superhero has been born.
+For the next 15 minutes experience is doubled in honor of the new superhero.
+
+INFO: Moradin has been reborn as a Vampire Mage.
+
+"run e2nenen;o n;n"
+run e2nenen;o n;n
+At the foot of the mountains (2085)
+
+Out of the tunnels (2083)
+
+A huge crater (2082)
+
+An open field (2077)
+
+A weary adventurer exclaims, "They...They're coming!!! PLEASE! HELP ME!
+ NOOOooo!"
+A weary adventurer collapses into a shivering heap.
+Approaching the mountains (2076)
+
+At the foot of the mountains (2074)
+
+A path into the mountains (G)
+  Moving through the rock is difficult, but not completely impossible. 
+Your hopes of getting to the top are just starting to rise when you round a
+bend in the path and find it blocked by a huge pile of boulders.  Despair
+sets in as you try to think of a way to get past this.  
+
+[ Exits: (north) south ]
+(Golden Aura) A miner chips at the rock persistently, getting nowhere fast.
+
+2428/2428 HP  3016/3016 MP  2071/2088 mv  476tnl  
+Lv 105  G 2264044 | A path into the mountains ([N]S)
+>>    *[NOEXP]* You do not have a key for the pile.
+
+2428/2428 HP  3016/3016 MP  2071/2088 mv  476tnl  
+Lv 105  G 2264044 | A path into the mountains ([N]S)
+>>    *[NOEXP]* The pile is closed.
+
+2428/2428 HP  3016/3016 MP  2071/2088 mv  476tnl  
+Lv 105  G 2264044 | A path into the mountains ([N]S)
+>>    *[NOEXP]* 
+ca for persistent
+You fade into existence.
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a persistent miner!
+[518]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a persistent miner!
+[504]
+A persistent miner is bleeding lightly.
+
+FIGHTING!
+2428/2428 HP  2956/3016 MP  2071/2088 mv  476tnl
+ Enemy: 83%HP (mob) | 100% HP (you) >> *[NOEXP]* 
+A persistent miner dodges your attack.
+Your light <-=-> SUNDERS <-=-> a persistent miner! [184]
+Your light <*><*><*> EVAPORATES <*><*><*> a persistent miner! [175]
+You blink out of existence and avoid a persistent miner's attack.
+A persistent miner's slash LACERATES you. [28]
+A persistent miner is bleeding lightly.
+
+FIGHTING!
+2400/2428 HP  2956/3016 MP  2071/2088 mv  476tnl
+ Enemy: 78%HP (mob) | 98% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a persistent miner!
+[522]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a persistent miner!
+[534]
+A persistent miner is showing a few battle scars.
+
+FIGHTING!
+2400/2428 HP  2896/3016 MP  2071/2088 mv  476tnl
+ Enemy: 61%HP (mob) | 98% HP (you) >> *[NOEXP]* 
+*Your light <->*<=> WASTES <=>*<-> a persistent miner! [217]
+Your light <*><*><*> EVAPORATES <*><*><*> a persistent miner! [180]
+*Your light <->*<=> WASTES <=>*<-> a persistent miner! [207]
+You blink out of existence and avoid a persistent miner's attack.
+You blink out of existence and avoid a persistent miner's attack.
+A persistent miner's slash misses you. [0]
+A persistent miner raises his fists and starts yelling KAI-HA!
+A persistent miner's scalp OBLITERATES you. [45]
+A persistent miner's scalp INCINERATES you! [53]
+A persistent miner has quite a few wounds.
+
+FIGHTING!
+2302/2428 HP  2896/3016 MP  2071/2088 mv  476tnl
+ Enemy: 51%HP (mob) | 94% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a persistent miner! [489]
+Your crushing force bolt <-:-><-:-*-:-><-*-> SUPERNOVAS <-*-><-:-*-:-><-:-> a persistent miner!
+[581]
+A persistent miner has some very nasty wounds.
+
+FIGHTING!
+2302/2428 HP  2836/3016 MP  2071/2088 mv  476tnl
+ Enemy: 34%HP (mob) | 94% HP (you) >> *[NOEXP]* 
+A persistent miner dodges your attack.
+Your light <*><*><*> EVAPORATES <*><*><*> a persistent miner! [174]
+Your light <*><*><*> EVAPORATES <*><*><*> a persistent miner! [175]
+You blink out of existence and avoid a persistent miner's attack.
+You blink out of existence and avoid a persistent miner's attack.
+You dodge a persistent miner's attack.
+A persistent miner has some very nasty wounds.
+
+FIGHTING!
+2302/2428 HP  2836/3016 MP  2071/2088 mv  476tnl
+ Enemy: 29%HP (mob) | 94% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a persistent miner! [485]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a persistent miner!
+[540]
+A persistent miner is gravely injured.
+
+FIGHTING!
+2302/2428 HP  2776/3016 MP  2071/2088 mv  476tnl
+ Enemy: 12%HP (mob) | 94% HP (you) >> *[NOEXP]* 
+A persistent miner dodges your attack.
+Your light <*><*><*> EVAPORATES <*><*><*> a persistent miner! [177]
+Your light <*><*><*> EVAPORATES <*><*><*> a persistent miner! [172]
+You blink out of existence and avoid a persistent miner's attack.
+A persistent miner's slash misses you. [0]
+A persistent miner's slash DEVASTATES you. [32]
+A persistent miner is gravely injured.
+
+FIGHTING!
+2270/2428 HP  2776/3016 MP  2071/2088 mv  476tnl
+ Enemy: 7%HP (mob) | 93% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a persistent miner!
+[542]
+A persistent miner glows momentarily then falls to the floor, DEAD! He is DEAD!
+You don't receive 0 experience points.
+You have set your character to receive no experience points!
+Your daily blessing added 1,671 gold to the corpse.
+You have 69 daily blessing bonus gold kills remaining.
+You get 3,342 gold coins from the nuked corpse of a persistent miner.
+You are taxed 33 gold coins by your clan.
+You get a miner's pick from the nuked corpse of a persistent miner.
+You get a worn-out pair of boots from the nuked corpse of a persistent miner.
+The Unknown Soldier gives you 47 gold coins for the nuked corpse of a persistent miner.
+
+2270/2428 HP  2716/3016 MP  2071/2088 mv  476tnl  
+Lv 105  G 2267400 | A path into the mountains ([N]S)
+>>    *[NOEXP]* 
+
+
+rfa small camp
+
+ You know the following relevant rooms:
+  A small camp (34050) in scarred. > Show path   > Show speedwalk
+  1 rooms found.
+"run sws2w"
+run sws2w
+At the foot of the mountains (2085)
+
+Approaching the mountains (2082)
+
+An open field (2080)
+
+A huge crater (2079)
+
+A small camp (G)
+  The disillusioned looks of the people camping here show things have been
+rough for them for a very long time.  Only one tent remains standing,
+barely.  The fire seems dim, even for one so small.  As you look more
+closely you wonder what they've had to resort to using as fuel.  A few
+mining tools stick out of the ground near one wounded man, who's propped up
+against a stack of barrels.  
+
+[ Exits: east ]
+     A big stack of powder kegs sits here, there's a sign on it.
+     A small campfire burns merrily away here.
+     A tattered tent barely stands up in the breeze.
+(Red Aura) The corpse of one of the miners is shambling about evilly.
+(Red Aura) An undead miner is here chewing on part of a dead miner.
+(Golden Aura) This weary soul stares into the distance, in shock from what they've seen.
+(White Aura) A miner lies here, slowly dying from his wounds.
+(Golden Aura) (White Aura) A tall, muscular warrior by the name of Pete stands here.
+A wounded miner says, "My poor tools, left on those mountains. The stone
+ is much too hard for them to do much good. Only way to move that rock is
+ to blast..."
+Pete the warrior shivers uncomfortably.
+Pete the warrior's face relaxes as he takes a deep breath.
+Pete the warrior says, "We keep getting attacked by Dragons. We lose more
+ men every day."
+Pete the warrior asks, "Will you help us?"
+
+2306/2428 HP  2767/3016 MP  2074/2088 mv  476tnl  
+Lv 105  G 2267400 | A small camp (E)
+>>    *[NOEXP]* 
+give pick wounded
+You give a miner's pick to a wounded miner.
+A wounded miner says, "Oh, my tool, thank you so much. For returning this
+ to me I'll give you what you need to reach the top."
+You receive a powder keg from a wounded miner.
+
+2306/2428 HP  2767/3016 MP  2074/2088 mv  476tnl  
+Lv 105  G 2267400 | A small camp (E)
+>>    *[NOEXP]* 
+rfa plateau
+
+ You know the following relevant rooms:
+  A plateau (34073) in scarred. > Show path   > Show speedwalk
+  1 rooms found.
+"run e2sw;o u;run unuen3u2ed2en"
+run e2sw;o u;run unuen3u2ed2en
+A huge crater (2072)
+
+Out of the tunnels (2067)
+
+At the foot of the mountains (2066)
+
+A steep path (G)
+  This could only be called a path because it's possible to climb it, and
+slightly safer then the razor sharp edges around it.  As you struggle over
+the black stone you begin to wonder if it would be easier to simply go back
+and try to find another way to the top.  After scrambling over a ledge, you
+find a huge pile of boulders blocking your path.  Looks like the decision
+has been made.  
+
+[ Exits: east (up) ]
+(Red Aura) An undead miner is here chewing on part of a dead miner.
+(Red Aura) Grass waves in the wind... except the air is calm.
+(Red Aura) An undead miner is here chewing on part of a dead miner.
+(Red Aura) The corpse of one of the miners is shambling about evilly.
+
+2306/2428 HP  2767/3016 MP  2064/2088 mv  476tnl  
+Lv 105  G 2267400 | A steep path (E[U])
+>>    *[NOEXP]* You unlock the pile with a powder keg.
+You open the pile.
+
+2306/2428 HP  2767/3016 MP  2064/2088 mv  476tnl  
+Lv 105  G 2267400 | A steep path (EU)
+>>    *[NOEXP]* A steep path (2061)
+
+A steep path (2058)
+
+A rough trail (2055)
+
+A rough trail (2052)
+
+The base of a cliff (2049)
+
+Halfway up the mountain (2046)
+
+Almost to the top (2043)
+
+A large ledge (2040)
+
+An aerial battlefield (2037)
+
+An aerial battlefield (2032)
+
+An aerial battlefield (G) (2027)
+
+Diving off a Cliff (2022)
+
+In the middle of a camp (2017)
+
+A plateau (G)
+  The surface of the rock has been leveled here, and has the smooth look of
+volcanic rock- could something have melted off the top of this mountain?  As
+you look around, you start to notice a large camp has been set up on the
+plateau.  Humans scurry about, glancing around nervously.  One of the people
+drops something and before they have a chance to pick it up, a dragon
+descends on them.  One quick snap of its jaws and the person is gone.  
+
+[ Exits: south down ]
+(Red Aura) A green dragon stalks around tormenting people.
+(Red Aura) A green dragon stalks around tormenting people.
+(Hidden) (Red Aura) A large, yellow dragon stands here guarding the camp.
+(Hidden) (Red Aura) A large, yellow dragon stands here guarding the camp.
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast EXTIRPATES you. [48]
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast OBLITERATES you. [42]
+A yellow dragon is in perfect health.
+
+FIGHTING!
+2216/2428 HP  2767/3016 MP  2017/2088 mv  476tnl
+ Enemy: 100%HP (mob) | 91% HP (you) >> *[NOEXP]* 
+
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast misses you. [0]
+Your light <>*<> FISSURES <>*<> a yellow dragon! [152]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [166]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [167]
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast misses you. [0]
+A yellow dragon's blast ERADICATES you. [40]
+A yellow dragon's blast OBLITERATES you. [45]
+A yellow dragon is showing a few grazes.
+
+FIGHTING!
+2131/2428 HP  2767/3016 MP  2017/2088 mv  476tnl
+ Enemy: 93%HP (mob) | 87% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [500]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [495]
+Your crushing force bolt <-*-><*><-*-> NUKES <-*-><*><-*-> a yellow dragon! [443]
+A yellow dragon has some small wounds and bruises.
+
+FIGHTING!
+2131/2428 HP  2707/3016 MP  2017/2088 mv  476tnl
+ Enemy: 74%HP (mob) | 87% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+Character autosaved at Mon Aug 21 19:32:58 2023.
+You dodge a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's sap INCINERATES you! [54]
+A yellow dragon's sap INCINERATES you! [51]
+Your light misses a yellow dragon. [0]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [168]
+Your light <>*<> FISSURES <>*<> a yellow dragon! [160]
+You dodge a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast OBLITERATES you. [45]
+A yellow dragon's sap MUTILATES you! [60]
+A yellow dragon's sap ERADICATES you. [39]
+A yellow dragon has some small wounds and bruises.
+
+FIGHTING!
+1917/2428 HP  2767/3016 MP  2088/2088 mv  476tnl
+ Enemy: 70%HP (mob) | 78% HP (you) >> *[NOEXP]* 
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [494]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [508]
+A yellow dragon is showing a few battle scars.
+
+FIGHTING!
+1917/2428 HP  2707/3016 MP  2088/2088 mv  476tnl
+ Enemy: 57%HP (mob) | 78% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast EXTIRPATES you. [49]
+Your light <>*<> FISSURES <>*<> a yellow dragon! [158]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [164]
+Your light misses a yellow dragon. [0]
+You dodge a yellow dragon's attack.
+A yellow dragon's blast misses you. [0]
+A yellow dragon's blast ERADICATES you. [39]
+A yellow dragon's blast misses you. [0]
+A yellow dragon's sap MUTILATES you! [60]
+A yellow dragon's sap OBLITERATES you. [45]
+A yellow dragon has quite a few wounds.
+
+FIGHTING!
+1724/2428 HP  2707/3016 MP  2088/2088 mv  476tnl
+ Enemy: 53%HP (mob) | 71% HP (you) >> *[NOEXP]* 
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [497]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [458]
+A yellow dragon has some big nasty wounds and scratches.
+
+FIGHTING!
+1724/2428 HP  2647/3016 MP  2088/2088 mv  476tnl
+ Enemy: 41%HP (mob) | 71% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast INCINERATES you! [55]
+A yellow dragon dodges your attack.
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [164]
+*Your light <->*<=> WASTES <=>*<-> a yellow dragon! [219]
+You dodge a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast misses you. [0]
+A yellow dragon screams wildly and tries to cleave you in half!
+A yellow dragon's mighty assault MUTILATES you! [58]
+A yellow dragon's mighty assault OBLITERATES you. [42]
+A yellow dragon has some big nasty wounds and scratches.
+
+FIGHTING!
+1569/2428 HP  2647/3016 MP  2088/2088 mv  476tnl
+ Enemy: 35%HP (mob) | 64% HP (you) >> *[NOEXP]* 
+Your crushing force bolt <-*-><*><-*-> NUKES <-*-><*><-*-> a yellow dragon! [441]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [466]
+A yellow dragon needs a hospital.
+
+FIGHTING!
+1569/2428 HP  2587/3016 MP  2088/2088 mv  476tnl
+ Enemy: 24%HP (mob) | 64% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast misses you. [0]
+A yellow dragon dodges your attack.
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [163]
+Your light <>*<> FISSURES <>*<> a yellow dragon! [156]
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast OBLITERATES you. [44]
+A yellow dragon smacks you with a solid uppercut!
+A yellow dragon's uppercut **** DESTROYS **** you! [98]
+A yellow dragon's uppercut -= DEMOLISHES =- you! [87]
+A yellow dragon needs a hospital.
+
+FIGHTING!
+1340/2428 HP  2587/3016 MP  2088/2088 mv  476tnl
+ Enemy: 19%HP (mob) | 55% HP (you) >> *[NOEXP]* 
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [540]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [479]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [451]
+A yellow dragon is at death's door.
+
+FIGHTING!
+1340/2428 HP  2527/3016 MP  2088/2088 mv  476tnl
+ Enemy: 0%HP (mob) | 55% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [165]
+A yellow dragon is DEAD!!
+You don't receive 92 experience points.
+You have set your character to receive no experience points!
+You don't receive 92 bonus experience points in honor of Moradin reaching superhero.
+You have set your character to receive no experience points!
+You don't receive 92 bonus experience points from your daily blessing.
+You have set your character to receive no experience points!
+You have 55 daily blessing bonus experience kills remaining.
+Congratulations, that was one of your CAMPAIGN mobs!
+cp ch
+
+--------------------------------------------------------------
+CONGRATULATIONS! You have completed your campaign.
+                 Reward of 30 quest points added.
+                 Reward of 107335 gold coins added.
+You may take a campaign at this level.
+--------------------------------------------------------------
+You receive 10 quest points bonus for your first campaign completed today.
+Your daily blessing added 2,154 gold to the corpse.
+You have 68 daily blessing bonus gold kills remaining.
+You get 4,308 gold coins from the corpse of a yellow dragon.
+You are taxed 43 gold coins by your clan.
+The Unknown Soldier gives you 52 gold coins for the corpse of a yellow dragon.
+Your light misses a yellow dragon. [0]
+Your light <*><*><*> EVAPORATES <*><*><*> a yellow dragon! [175]
+You dodge a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast ERADICATES you. [39]
+A yellow dragon's blast EXTIRPATES you. [46]
+A yellow dragon has a few minor scratches.
+
+FIGHTING!
+1255/2428 HP  2527/3016 MP  2088/2088 mv  476tnl
+ Enemy: 97%HP (mob) | 51% HP (you) >> *[NOEXP]* 
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [526]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [533]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [512]
+A yellow dragon is bleeding lightly.
+
+FIGHTING!
+1255/2428 HP  2467/3016 MP  2088/2088 mv  476tnl
+ Enemy: 76%HP (mob) | 51% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You dodge a yellow dragon's attack.
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [164]
+*Your light <->*<=> WASTES <=>*<-> a yellow dragon! [203]
+Your light misses a yellow dragon. [0]
+A yellow dragon has some small wounds and bruises.
+
+FIGHTING!
+1255/2428 HP  2467/3016 MP  2088/2088 mv  476tnl
+ Enemy: 71%HP (mob) | 51% HP (you) >> *[NOEXP]* 
+You are not currently on a campaign.
+You have completed 1 campaign today.
+You may take a campaign at this level.
+
+FIGHTING!
+1255/2428 HP  2467/3016 MP  2088/2088 mv  476tnl
+ Enemy: 71%HP (mob) | 51% HP (you) >> *[NOEXP]* Your crushing force bolt -<[=-+-=]<:::<>:::>
+GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [456]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [522]
+A yellow dragon is showing a few battle scars.
+
+FIGHTING!
+1255/2428 HP  2407/3016 MP  2088/2088 mv  476tnl
+ Enemy: 58%HP (mob) | 51% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+A yellow dragon's blast ERADICATES you. [39]
+A yellow dragon's blast ERADICATES you. [39]
+A yellow dragon's blast misses you. [0]
+A yellow dragon's blast INCINERATES you! [53]
+Your light <>*<> FISSURES <>*<> a yellow dragon! [157]
+*Your light <->*<=> WASTES <=>*<-> a yellow dragon! [206]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [165]
+A yellow dragon has quite a few wounds.
+
+FIGHTING!
+1124/2428 HP  2407/3016 MP  2088/2088 mv  476tnl
+ Enemy: 51%HP (mob) | 46% HP (you) >> *[NOEXP]* 
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [472]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [458]
+A yellow dragon has some big nasty wounds and scratches.
+
+FIGHTING!
+1124/2428 HP  2347/3016 MP  2088/2088 mv  476tnl
+ Enemy: 38%HP (mob) | 46% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+
+You blink out of existence and avoid a yellow dragon's attack.
+A yellow dragon's blast EXTIRPATES you. [50]
+A yellow dragon's blast OBLITERATES you. [45]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [165]
+Your light <>*<> FISSURES <>*<> a yellow dragon! [159]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [165]
+A yellow dragon has some very nasty wounds.
+
+FIGHTING!
+1029/2428 HP  2347/3016 MP  2088/2088 mv  476tnl
+ Enemy: 32%HP (mob) | 42% HP (you) >> *[NOEXP]* 
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [459]
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [528]
+A yellow dragon needs a hospital.
+
+FIGHTING!
+1029/2428 HP  2287/3016 MP  2088/2088 mv  476tnl
+ Enemy: 18%HP (mob) | 42% HP (you) >> *[NOEXP]* 
+
+You blink out of existence and avoid a yellow dragon's attack.
+You blink out of existence and avoid a yellow dragon's attack.
+You dodge a yellow dragon's attack.
+A yellow dragon's blast INCINERATES you! [51]
+Your light <*><*> LIQUIDATES <*><*> a yellow dragon! [169]
+*Your light <->*<=> WASTES <=>*<-> a yellow dragon! [204]
+*Your light <->*<=> WASTES <=>*<-> a yellow dragon! [210]
+A yellow dragon is gravely injured.
+
+FIGHTING!
+978/2428 HP  2287/3016 MP  2088/2088 mv  476tnl
+ Enemy: 11%HP (mob) | 40% HP (you) >> *[NOEXP]* 
+ca 'force bolt'
+Your crushing force bolt <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a yellow dragon! [544]
+Your crushing force bolt -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a yellow dragon! [459]
+A yellow dragon glows momentarily then falls to the floor, DEAD! It is DEAD!
+You don't receive 99 experience points.
+You have set your character to receive no experience points!
+You don't receive 99 bonus experience points in honor of Moradin reaching superhero.
+You have set your character to receive no experience points!
+You don't receive 99 bonus experience points from your daily blessing.
+You have set your character to receive no experience points!
+You have 54 daily blessing bonus experience kills remaining.
+Your daily blessing added 2,607 gold to the corpse.
+You have 67 daily blessing bonus gold kills remaining.
+You get 5,214 gold coins from the nuked corpse of a yellow dragon.
+You are taxed 52 gold coins by your clan.
+The Unknown Soldier gives you 52 gold coins for the nuked corpse of a yellow dragon.
+
+978/2428 HP  2227/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | A plateau (SD)
+>>    *[NOEXP]* 
+ca 'force bolt'
+Cast force bolt on whom?
+
+978/2428 HP  2227/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | A plateau (SD)
+>>    *[NOEXP]* 
+
+
+You feel yourself slow down.
+
+You are no longer blurred.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+1003/2428 HP  2284/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | A plateau (SD)
+>>    *[NOEXP]* 
+
+
+You no longer absorb magical attacks.
+
+(Friend) Yerald: 'not even close...'
+
+crecall; campaign request
+cast 'word of recall'
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+[ Exits: north east (south) west up down ]
+(Player) (Invis) (Hidden) (Golden Aura) (White Aura) (OPK) Spublofe is always half AFK.
+(Player) (Golden Aura) (Linkdead) Ruo the Elementalist.
+(Player) (Golden Aura) (White Aura) (Linkdead) EmJay the Shaman.
+(Player) (Translucent) (Golden Aura) (White Aura) (OPK) Lexicon the Navigator.
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+1087/2428 HP  2386/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+A Grumpy Old General tells you 'I have selected 13 targets for you to hunt, KumoGami.'
+A Grumpy Old General tells you 'Type 'campaign info' to see what you must kill.'
+A Grumpy Old General tells you 'Good luck in your campaign!'
+noexp
+
+1087/2428 HP  2386/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | Boot Camp Headquarters (NE[S]WUD)
+>>    *[NOEXP]* 
+You will now receive experience. Happy leveling!
+
+1087/2428 HP  2386/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | Boot Camp Headquarters (NE[S]WUD)
+>>    
+
+
+Global Quest: Global Quest # 3875 has been won by Yop - 95th win.
+Global Quest: Global Quest # 3875 will go into extended time for 5 more minutes.
+
+With a thunderclap, Meroveus appears in the room.
+
+Meroveus informs a Grumpy Old General that he has completed his quest.
+
+With a thunderclap, Athlau appears in the room.
+
+
+Athlau slinks east.
+
+Athlau slinks in from the east.
+
+Athlau slinks down.
+
+With a thunderclap, Meroveus appears in the room.
+
+Meroveus informs a Grumpy Old General that he has completed his quest.
+
+With a thunderclap, Anssett appears in the room.
+
+
+Anssett flies east.
+
+Anssett flies in from the east.
+
+
+
+Anssett enters into A handful of Sendhian Feta cheese. and disappears.
+
+Lepdar appears in the room.
+
+You feel almost blind at the loss of your magical sight.
+c true
+
+You now detect the presence of those hidden.
+You now detect the presence of those invisible.
+You now sense magical properties held within artifacts.
+You now detect the presence of those who walk in shadow.
+You now detect the presence of those who walk in the light.
+You now have true sight.
+
+1531/2428 HP  2946/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | Boot Camp Headquarters (NE[S]WUD)
+>>    
+
+
+(Friend): Smiling, Yerald greets Poppa warmly.
+
+With a thunderclap, Meroveus appears in the room.
+
+Meroveus informs a Grumpy Old General that he has completed his quest.
+
+With a thunderclap, Athlau appears in the room.
+
+
+Athlau slinks down.
+
+With a thunderclap, Anssett appears in the room.
+
+Anssett jets up.
+
+With a thunderclap, Meroveus appears in the room.
+
+Meroveus informs a Grumpy Old General that he has completed his quest.
+
+Lepdar appears in the room.
+
+You return to the living world.
+
+Global Quest: Vettir has completed Global Quest # 3875.
+Global Quest: No active players remaining. Global Quest # 3875 is now over.
+
+With a thunderclap, Athlau appears in the room.
+
+
+Athlau says '(Polished 1) a frog mask [96 lvl] [Treasure] [eyes] [110score] [12dr 4hr] [3stats]
+[3str] [10mental] [750g] [SIR]'
+
+Athlau says ' Bloot changes: [-4 lvl] [+110score] [+12dr +4hr] [+3stats] [+3str] [+10mental]
+[+450g]'
+
+
+Athlau slinks east.
+
+Athlau slinks in from the east.
+
+Athlau slinks down.
+
+Tench arrives from the west.
+
+Tench asks a Grumpy Old General for a quest.
+
+Tench runs down.
+
+With a thunderclap, Tench appears in the room.
+
+
+Tench informs a Grumpy Old General that he has completed his quest.
+
+Tench leaves west.
+
+INFO: 5 minutes of bonus experience remaining.
+
+Your metabolism reverts to its usual speed.
+
+Your mystic might fades away.
+
+Your body softens.
+
+You feel less perceptive.
+
+Your pulse slows to a normal rate.
+
+With a thunderclap, Garence appears in the room.
+
+
+
+Garence asks a Grumpy Old General for a quest.
+
+
+Garence enters into ]An Old Duffle Bag[ and disappears.
+With a thunderclap, Garence appears in the room.
+
+
+
+Garence flies down.
+
+With a thunderclap, Garence appears in the room.
+
+
+
+Garence flies down.
+
+CLAN: At-ten-tion! Mandibular is here to get some training done!
+
+The Gunfire and Training cease for a moment as the Boot Hall is Restored.
+
+With a thunderclap, Athlau appears in the room.
+
+
+Athlau slinks east.
+
+With a thunderclap, Garence appears in the room.
+
+
+
+Garence informs a Grumpy Old General that he has completed his quest.
+
+With a thunderclap, Athlau appears in the room.
+
+
+Athlau slinks down.
+
+Spublofe's eyes glaze over and he appears to be somewhere else.
+
+INFO: 1 minute of bonus experience remaining.
+
+Lepdar appears in the room.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You feel gills growing on your neck!
+
+2428/2428 HP  3001/3016 MP  2088/2088 mv  476tnl  
+Lv 105  G 2384266 | Boot Camp Headquarters (NE[S]WUD)
+>>    
+
+INFO: Bonus experience has now expired.
+
+With a thunderclap, Athlau appears in the room.
+
+
+Athlau slinks west.
+
+Kazul gossips 'mmm that was some good xp NomNomNom!'
+
+(Gossip) Lighted laughs out loud at Kazul.
+
+Athlau slinks in from the west.
+
+Athlau slinks east.
+
+TrEz gossips 'wow'
+
+TrEz gossips 'wtf are these ugly colors, hello?'
+
+Yerald jets in from the east.
+
+Yerald jets up.
+
+TrEz gossips 'bruv you need to talk to emilee like instantly'
+
+With a thunderclap, Anssett appears in the room.
+
+
+Anssett flies east.
+
+Anssett flies in from the east.
+
+
+
+Anssett enters into a two-way mirror and disappears.
+Character autosaved at Mon Aug 21 19:48:01 2023.
+
+:::LoquI::: Liathum: Intellect Devourers are kinda weirdly adorable
+
+o/~|Bard|o/~ Kazul: bit brainy for my taste
+
+With a thunderclap, Anssett appears in the room.
+
+Anssett jets up.
+
+o/~|Bard|o/~ Kazul: displacer beasts are cute tho
+
+Yerald jets in from the east.
+
+Yerald jets up.
+
+:::LoquI::: Liathum: I kind of want a pet Gelatinous Cube
+
+o/~|Bard|o/~ Kazul: they're like goats but not as cute
+
+o/~|Bard|o/~ Kazul: spheres are cooler then cubes
+
+o/~|Bard|o/~ Kazul: maybe a beholder?
+
+Grindcore appears in the room.
+
+:::LoquI::: Liathum: Hmm, maybe
+
+With a thunderclap, Athlau appears in the room.
+
+
+
+Athlau slinks east.
+
+Athlau slinks in from the east.
+
+Athlau slinks down.
+
+:::LoquI::: Liathum: I still kind of want a pet gelatinous cube
+
+With a thunderclap, Anssett appears in the room.
+
+Anssett jets up.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:38:07.562
