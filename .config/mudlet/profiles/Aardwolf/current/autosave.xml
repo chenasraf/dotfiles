@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="7" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="yes" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="7" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="yes" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>707</borderRightWidth>
+			<borderRightWidth>1077</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -196,7 +196,7 @@
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
 				<mStayOpen>0</mStayOpen>
-				<mCommand>cp ch</mCommand>
+				<mCommand></mCommand>
 				<packageName></packageName>
 				<mFgColor>#ff0000</mFgColor>
 				<mBgColor>#ffff00</mBgColor>
@@ -298,6 +298,78 @@
 					<integer>1</integer>
 				</regexCodePropertyList>
 			</Trigger>
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Catch targets</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Catch target mob campaign</name>
+					<script>if should_reset_cp_targets then
+  cp_targets = {}
+  should_reset_cp_targets = false
+  -- echo("\nResetting cp targets")
+end
+
+cp_targets = cp_targets or {}
+
+local mob = matches[3]
+local area = matches[4]
+
+table.insert(cp_targets, { ["mob"] = mob, ["area"] = area })
+
+-- echo("\nCaptured " .. mob .. " in " .. area .. " =&gt; " .. matches[1])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>[*] (a |an |the )?([a-zA-Z0-9 -']+) \(([a-zA-Z0-9 -']+)\)$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Catch target mob campaign END</name>
+					<script>should_reset_cp_targets = true
+echo("\nCaptured " .. #cp_targets .. " target(s)")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You may take a campaign at this level.</string>
+						<string>You will have to level before you can go on another campaign.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
 		</TriggerGroup>
 	</TriggerPackage>
 	<TimerPackage />
@@ -445,64 +517,6 @@ installPackage"https://github.com/tspivey/mudlet-reader/releases/latest/download
 			<command></command>
 			<packageName></packageName>
 			<regex></regex>
-			<Alias isActive="yes" isFolder="no">
-				<name>from bag</name>
-				<script>local item = matches[3]
-local action = matches[4]
-local bag = aard.config['bag']
-
-local cmd = 'get ' .. item .. ' ' .. bag .. "; " .. action .. " " .. item .. "; put " .. item .. " " .. bag .. ";"
-
-decho(serialize(matches))
-decho("\nitem: ["..item.."], action: [" .. action .. "]\n")
-send(cmd)</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(fb|from\sbag) ([\w\d\-_.]+|['"][\w\d\s\-_.]+["'])\s?(.*)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>precall</name>
-				<script>send(aard.config["port"] .. "; hold " .. aard.config['held'])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(prc)|(precall)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>conjure elemental</name>
-				<script>local stone = matches[3]
-send("hold " .. stone .. "; cast 'conjur elemental'; hold " ..aard.config["held"])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(cj|conjure) (.+)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>crecall</name>
-				<script>send("cast 'word of recall'")</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(crc)|(crecall)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>arecall</name>
-				<script>send("cast 'word of recall'; run 3end")</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(arc)|(arecall)</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>restock</name>
-				<script>send(aard.config["port"] .. '; w; gulp milk; gulp milk; fill can milk;')</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^restock</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>sspellup</name>
-				<script>send(aard.config["spellup"])</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^sspellup$</regex>
-			</Alias>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>target</name>
 				<script></script>
@@ -517,7 +531,7 @@ send("hold " .. stone .. "; cast 'conjur elemental'; hold " ..aard.config["held"
   else
     set_tgt(matches[2])
     echo_tgt_switch()
-    send("hunt " .. get_tgt())
+    send("hunt " .. get_tgt() .. "; where " .. get_tgt())
   end
 else
   send("echo Target is: " .. get_tgt(), false)
@@ -563,7 +577,145 @@ expandAlias("prc;rt " .. area .. "; hunt " .. get_tgt() .. "; where " .. get_tgt
 					<packageName></packageName>
 					<regex>chase ([\w\d]+) (.+)</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>cptgt</name>
+					<script>cp_targets = cp_targets or {}
+if #cp_targets == 0 then
+  echo("No targets captured. Try using 'campaign check'\n")
+else
+  for k, v in ipairs(cp_targets) do
+    echo("Target #" .. k .. ": " .. v["mob"] .. " from " .. v["area"] .."\n")
+  end
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^cptgt$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>cphunt</name>
+					<script>cp_targets = cp_targets or {}
+local idx = tonumber(matches[2] or "1")
+
+if #cp_targets &lt; idx then
+  echo("You tried accessing target no. " .. idx .. ", but there are only " .. #cp_targets .. " target(s).\n")
+else
+  local _curTarget = cp_targets[idx]
+  local cleanArea = _curTarget["area"]
+  if aard.areaInfo[cleanArea] ~= nil then
+    cleanArea = aard.areaInfo[cleanArea].zone
+  else
+    cleanArea = cleanArea:gsub("The ", ""):split(' ')[1]:gsub("'", ""):gsub('"', "")
+  end
+  expandAlias("chase " .. cleanArea .. " " .. _curTarget["mob"])
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^cphunt( ([0-9]+))?$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>cpreset</name>
+					<script>cp_targets = {}
+should_reset_cp_targets = false
+echo("Reset CP targets\n")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^cpreset$</regex>
+				</Alias>
 			</AliasGroup>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>bags</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>from bag</name>
+					<script>local item = matches[3]
+local action = matches[4]
+local bag = aard.config['bag']
+
+local cmd = 'get ' .. item .. ' ' .. bag .. "; " .. action .. " " .. item .. "; put " .. item .. " " .. bag .. ";"
+
+decho(serialize(matches))
+decho("\nitem: ["..item.."], action: [" .. action .. "]\n")
+send(cmd)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^(fb|from\sbag) ([\w\d\-_.]+|['"][\w\d\s\-_.]+["'])\s?(.*)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>putall</name>
+					<script>local items = matches[4]
+local bag = matches[3]
+
+for i, item in pairs(items:split(' ')) do
+  local cmd = "put " .. item .. " " .. bag
+  send(cmd)
+  -- echo(cmd)
+  -- echo("\n")
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^(pa|putall) ([\w\d\-_.]+) ([\w\d\-_.  ]+)</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>bag portal</name>
+					<script>local area = matches[3]
+
+if aard.portItems[area] ~= nil then
+  local item = aard.portItems[area]
+  send("get '"..item.."' '"..aard.config["portbag"].."'; hold '" .. item .. "'; enter; hold " .. aard.config["held"] .. "; put '" ..item.. "' '"..aard.config["portbag"].."'")
+else
+  echo("Portal item for " .. (area or "nil") .. " not found\n")
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^(bp|bportal) (.+)$</regex>
+				</Alias>
+			</AliasGroup>
+			<Alias isActive="yes" isFolder="no">
+				<name>precall</name>
+				<script>send(aard.config["port"] .. "; hold '" .. aard.config['held'] .. "'")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(prc)|(precall)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>conjure elemental</name>
+				<script>local stone = matches[3]
+send("hold " .. stone .. "; cast 'conjur elemental'; hold '" ..aard.config["held"] .. "'")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(cj|conjure) (.+)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>crecall</name>
+				<script>send("cast 'word of recall'")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(crc)|(crecall)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>arecall</name>
+				<script>send("cast 'word of recall'; run 3end")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(arc)|(arecall)</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>restock</name>
+				<script>send(aard.config["port"] .. "; wield '"..aard.config['held'].."' w; gulp milk; gulp milk; fill can milk;')</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^restock</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>sspellup</name>
+				<script>send(aard.config["spellup"])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^sspellup$</regex>
+			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>save config</name>
 				<script>save_config(matches[2])</script>
@@ -692,6 +844,13 @@ end</script>
 				<packageName></packageName>
 				<regex>potbag</regex>
 			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>rearm</name>
+				<script>send("wear '"..aard.config["wield"].."'; wear '"..aard.config["held"].."'")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(rearm|ra)$</regex>
+			</Alias>
 		</AliasGroup>
 	</AliasPackage>
 	<ActionPackage>
@@ -766,6 +925,24 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🔥 Scorch</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'scorch'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>💥️ Force Bolt</name>
 					<packageName></packageName>
 					<script></script>
@@ -802,12 +979,12 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>💥️ Talon</name>
+					<name>🔥 Fire Breath 👥</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca talon</commandButtonDown>
+					<commandButtonDown>ca 'fire breath'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -820,12 +997,48 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🥶️ Ice Cloud</name>
+					<name>🥶️ Shard of Ice</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'shard of ice'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🥶️ Ice Cloud 👥</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca 'ice cloud'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>💥️ Talon</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca talon</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -856,12 +1069,48 @@ end</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🤢️ Poison</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'poison'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🧛🏼‍ Vampiric Touch</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca vampiric</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⚡️ Shock Aura</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'shock aura'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1117,6 +1366,24 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>quest info</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>❓️ GQ Check</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>gq check</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1680,6 +1947,7 @@ end</script>
   ["mpot"]="moonlight",
   ["vpot"]="refreshing",
   ["pbag"]="backpack",
+  ["portbag"]="bag",
   ["wield"]="erato",
   ["dual"]="flute",
   ["held"]="notes",
@@ -1747,6 +2015,7 @@ function display_config()
     { "mpot", "Mana potion to use" },
     { "vpot", "Moves potion to use" },
     { "pbag", "Potions bag" },
+    { "portbag", "Portals bag" },
     { "bag", "General bag" },
     { "attack1", "Primary attack" },
     { "attack2", "Secondary attack" },
@@ -2084,6 +2353,115 @@ end</script>
 					<eventHandlerList />
 				</Script>
 			</ScriptGroup>
+			<Script isActive="yes" isFolder="no">
+				<name>portal items</name>
+				<packageName></packageName>
+				<script>aard.portItems = {
+  ["aylor"] = "Amulet of Aardwolf",
+  ["boot"] = "duffle",
+  ["fayke"] = "Wizard's Prism",
+  ["amazon"] = "Queen Melosa's Mirror",
+  ["amusement"] = "amulet planes",
+  ["entropy"] = "Lemniscate",
+  ["arisian"] = "dolphin figurine",
+  ["mayhem"] = "Compendium of Fal'Shara",
+  ["academy"] = "Academy portal",
+  ["adaldar"] = "Permanent Peace",
+  ["lagoon"] = "A Black Pendant",
+  ["raukora"] = "Black Darkness of the Citadel",
+  ["horath"] = "amulet of dragon warding",
+  ["callhero"] = "Aura of the Sage",
+  ["cataclysm"] = "Laurels of the Victor",
+  ["cougarian"] = "Cowlina's Trust",
+  ["fens"] = "dreary hole of despair",
+  ["stronghold"] = "Enchanted Dreams",
+  ["zyian"] = "Medallion of Daemon Summoning",
+  ["darklight"] = "orb of the stars",
+  ["deadlights"] = "Timeless Seal of the Ages",
+  ["ddoom"] = "Desert Doom",
+  ["desert"] = "Gate Rune",
+  ["dsr"] = "Queen Angelina's Locket",
+  ["drageran"] = "Backstage Pass",
+  ["drageran"] = "Royal Audience",
+  ["dread"] = "Broken Curse",
+  ["dynasty"] = "Hatshepsut's Cartouche",
+  ["empire"] = "Denali's teleport device",
+  ["talsa"] = "Irresistible Calling",
+  ["talsa"] = "Evil Intentions",
+  ["talsa"] = "Cosmic Calling",
+  ["hades"] = "Golden Obol",
+  ["autumn"] = "Map of the Woods",
+  ["citadel"] = "A Majestic Orb",
+  ["petstore"] = "Golden Pet Collar",
+  ["undefined"] = "Sir Lauren's Despair",
+  ["arena"] = "&lt;-L-&gt; Lifetime Pass to the Gladiators Arena &lt;-L-&gt;",
+  ["glamdursil"] = "copy of the ((Map of the World))",
+  ["glamdursil"] = "cheat code",
+  ["fortress"] = "Goblin Warplans",
+  ["goldrush"] = "train ticket",
+  ["aylor"] = "garbage can",
+  ["knossos"] = "Passport to Knossos.",
+  ["helegear"] = "Icy Portal of Gvozd",
+  ["cards"] = "[House] of Cards",
+  ["cards"] = "[Trump] of Benedict",
+  ["reme"] = "two-way mirror",
+  ["imperial"] = "dark crystal",
+  ["insan"] = "Cedria",
+  ["losttime"] = "Time Capsule",
+  ["kearvek"] = "Dark Orb of the Vampires",
+  ["fields"] = "A Trip To The Killing Fields",
+  ["labyrinth"] = "wooden yoke",
+  ["labyrinth"] = "Yelsem's (:*Freedom*:)",
+  ["legend"] = "apple press",
+  ["agroth"] = "A Chip of Willow Bark",
+  ["agroth"] = "A Cautionary Tale of the Marsh",
+  ["masq"] = "A Masquerade Mask",
+  ["dunoir"] = "horn of the ANCESTORS",
+  ["nanjiki"] = "Magic Banana",
+  ["oradrin"] = "-=Oradrin's Call=-",
+  ["partroxis"] = "The Partroxis",
+  ["pompeii"] = "black volcanic glass",
+  ["undefined"] = "Gold Plated Silhouette brooch",
+  ["undefined"] = "Share Ownership of Hotele Royale",
+  ["qong"] = "Hot Wok of Qong",
+  ["deneria"] = "mirror showing Deneria's past",
+  ["firebird"] = "Crystal ball",
+  ["ruins"] = "A Heliodor Shard",
+  ["sagewood"] = "Bell Tent",
+  ["sanguine"] = "Strange glowing disc",
+  ["sohtwo"] = "demon school handbook",
+  ["sohtwo"] = "A Jewelry Box",
+  ["undefined"] = "Sea King's Portal",
+  ["snuckles"] = "Enchanted Spellbook",
+  ["lemdagor"] = "Storm Ship in a Bottle",
+  ["takeda"] = "Tiger of Kai",
+  ["tirna"] = "ring of pale mushrooms",
+  ["illoria"] = "Sigil of Illoria",
+  ["tol"] = "starburst",
+  ["gwillim"] = "Crown of Swords",
+  ["gwillim"] = "Passage to Gwillimberry",
+  ["bonds"] = "badge of the Draconic Intelligence Service",
+  ["verdure"] = "holy well",
+  ["wizards"] = "Honeycomb",
+  ["omentor"] = "Aethelswyth's Visions",
+  ["wooble"] = "Cracked Wooble-nut",
+  ["xylmos"] = "An Envelope of Xyl",
+  ["ygg"] = "A Small Crystal Tree",
+  ["yurgach"] = "pendant in the likeness of Kali",
+  ["arisian"] = "pale dolphin figurine",
+  ["adaldar"] = "Temporary Truce",
+  ["blackrose"] = "A Black Rose",
+  ["dread"] = "Cursed Note",
+  ["citadel"] = "book entitled 'My Citadel'",
+  ["undefined"] = "One-Day Pass to the Gladiators Arena",
+  ["paradise"] = "golem's ear",
+  ["qong"] = "low quality wok",
+  ["nenukon"] = "-*)Monuhi's Legacy(*-",
+  ["sanctity"] = "A Bloody Griffin Wing",
+  ["temple"] = "Yin-Yang Pendant",
+}</script>
+				<eventHandlerList />
+			</Script>
 		</ScriptGroup>
 	</ScriptPackage>
 	<KeyPackage>
@@ -2123,13 +2501,22 @@ end</script>
 				<keyModifier>570425344</keyModifier>
 			</Key>
 			<Key isActive="yes" isFolder="no">
-				<name>alt + 1 bag</name>
+				<name>alt + 1 pbag</name>
 				<packageName></packageName>
-				<script>local bag = aard.config["bag"] or aard.config["pbag"]
+				<script>local bag = aard.config["pbag"]
 send("examine " .. bag)</script>
 				<command></command>
 				<keyCode>49</keyCode>
 				<keyModifier>671088640</keyModifier>
+			</Key>
+			<Key isActive="yes" isFolder="no">
+				<name>shift + alt + 1 bag</name>
+				<packageName></packageName>
+				<script>local bag = aard.config["bag"]
+send("examine " .. bag)</script>
+				<command></command>
+				<keyCode>49</keyCode>
+				<keyModifier>704643072</keyModifier>
 			</Key>
 			<Key isActive="yes" isFolder="no">
 				<name>. scan / debuff</name>
@@ -2167,13 +2554,13 @@ end</script>
 		<Variable>
 			<name>goal</name>
 			<keyType>4</keyType>
-			<value>obal</value>
+			<value> Tairayden</value>
 			<valueType>4</valueType>
 		</Variable>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>rebel leader</value>
+			<value>soldier</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
