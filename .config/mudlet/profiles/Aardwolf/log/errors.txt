@@ -948,3 +948,55 @@ Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" a
 ================================= Area issues =================================
 ================================= Room issues =================================
 ################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-24#00-22-32map.dat".
+[ INFO ]  - Successfully read the map file (0.13s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.26s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-08-27T10:39:32 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-24#00-22-32map.dat".
+[ INFO ]  - Successfully read the map file (0.14s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T10:55:14 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.11s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.25s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map" at 2023-08-27T10:55:15 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat" at 2023-08-27T10:55:16 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T10:55:16 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.11s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.25s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
