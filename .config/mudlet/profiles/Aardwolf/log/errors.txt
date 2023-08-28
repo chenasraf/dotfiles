@@ -1000,3 +1000,177 @@ Loading map(1) "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat"
 ================================= Area issues =================================
 ================================= Room issues =================================
 ################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-27#20-57-49map.dat".
+[ INFO ]  - Successfully read the map file (0.11s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.27s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-08-27T20:59:44 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-27#20-57-49map.dat".
+[ INFO ]  - Successfully read the map file (0.11s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat" at 2023-08-27T20:59:54 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T20:59:54 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T20:59:57 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map" at 2023-08-27T20:59:57 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat" at 2023-08-27T21:00:06 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:06 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:09 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map" at 2023-08-27T21:00:09 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:13 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.26s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map" at 2023-08-27T21:00:14 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:24 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.10s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map" at 2023-08-27T21:00:25 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat" at 2023-08-27T21:00:28 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:28 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.13s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.23s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat" at 2023-08-27T21:00:49 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:49 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.09s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:00:52 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.10s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map" at 2023-08-27T21:00:52 report
+================================== Map issues ==================================
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map"!
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-08-27T21:01:01 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.10s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
