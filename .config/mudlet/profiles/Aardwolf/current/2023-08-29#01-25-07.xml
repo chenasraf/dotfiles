@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>967</borderRightWidth>
+			<borderRightWidth>917</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -1416,7 +1416,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; campaign request</commandButtonDown>
+					<commandButtonDown>prc; campaign request</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1434,7 +1434,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; quest request</commandButtonDown>
+					<commandButtonDown>prc; quest request</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1452,7 +1452,7 @@ send("get " .. pot .. " " .. aard.config['pbag'] .. "; quaff " .. pot)</script>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>crecall; quest complete</commandButtonDown>
+					<commandButtonDown>prc; quest complete</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -2390,7 +2390,7 @@ end</script>
   ["cougarian"] = "Cowlina's Trust",
   ["fens"] = "dreary hole of despair",
   ["stronghold"] = "Enchanted Dreams",
-  ["zyian"] = "Medallion of Daemon Summoning",
+  ["zyian"] = "Medallion",
   ["darklight"] = "orb of the stars",
   ["deadlights"] = "Timeless Seal of the Ages",
   ["ddoom"] = "Desert Doom",
@@ -2575,7 +2575,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>cow</value>
+			<value>mine forman</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
