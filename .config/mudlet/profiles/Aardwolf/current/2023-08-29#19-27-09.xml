@@ -139,7 +139,7 @@ tmpVis = false</script>
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
 				<mStayOpen>0</mStayOpen>
-				<mCommand>ca invis</mCommand>
+				<mCommand></mCommand>
 				<packageName></packageName>
 				<mFgColor>#fd8008</mFgColor>
 				<mBgColor>#252525</mBgColor>
@@ -2604,7 +2604,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>mine forman</value>
+			<value>fire demon</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

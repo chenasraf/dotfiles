@@ -1,0 +1,2652 @@
+Log session starting at 10:23:29 on Tuesday, 29 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-29#10-19-16map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.13s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.27s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/planck/.config/mudlet/profiles/Aardwolf/map/2023-08-29#10-19-16map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.14s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.29s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.43s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 622    
+
+[::(info): Your existing map has 21318 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 185         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+
+############# Reconnecting to Game #############
+
+You have 1 tell waiting. Type 'replay' to see it.
+
+[*Daily Blessing*] -Idle- (T:1 Q:0)
+
+Tag option map turned ON
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Medical lounge (E[D])
+>>
+
+<MAPEND>
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Medical lounge (E[D])
+>>
+The [Recruit] Leather Backpack contains:
+(17) (Glow) (Hum) [Potion] Military Breakfast
+( 4) (Glow) (Hum) [Potion] Scout's Camouflage
+( 3) (Glow) (Hum) [Potion] Sniper's Accomplice
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Medical lounge (E[D])
+>>
+
+You received your last daily blessing at 23 Aug 2023 17:16:55.
+
+You are ready to receive a new daily blessing.
+
+You have 1 daily blessing reset available.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Medical lounge (E[D])
+>>
+
+Global Quest: Global quest # 5885 has been cancelled due to lack of participants.
+
+
+e
+e
+Boot Camp Headquarters (G)
+{coords}-1
+{rdesc}
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east (south) west up down ]
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2130/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Boot Camp Headquarters (NE[S]WUD)
+>>
+Mudpits (G)
+{coords}-1
+{rdesc}
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+{/rdesc}
+
+<MAPEND>
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2129/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Mudpits (EWD)
+>>
+e
+Recreation Room (G)
+{coords}-1
+{rdesc}
+  Walking into the room, you notice there is a relaxed, friendly atmosphere and
+almost everyone is in military uniform. A jukebox is playing a lively tune 
+and some of the patrons are having fun dancing to the music. The sound of 
+laughter coming from one end of the bar, as someone has just delivered the 
+punch line of a good joke. Plush, comfortable looking, couches are scattered 
+around the large room in clusters of two and three, allowing for more 
+intimate gatherings and private conversations. The enlisted and the officers 
+mingle together amicably and everyone is on excellent terms with the 
+bartender.
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south west ]
+An old veteran stands behind the bar, ready to serve you a cool drink.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2128/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 465303 | Recreation Room (ESW)
+>>
+buy 20 breakfast
+You buy 20 * [Potion] Military Breakfast from a veteran bartender for 19,200 gold.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2128/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Recreation Room (ESW)
+>>
+potbag
+put all.breakfast backpack; put all.acco backpack; put all.camo back
+You put 20 * [Potion] Military Breakfast into [Recruit] Leather Backpack.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2128/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Recreation Room (ESW)
+>>
+You don't have that.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2128/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Recreation Room (ESW)
+>>
+You don't have that.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2128/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Recreation Room (ESW)
+>>
+w
+w
+Mudpits (G)
+{coords}-1
+{rdesc}
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+{/rdesc}
+
+<MAPEND>
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2127/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Mudpits (EWD)
+>>
+Boot Camp Headquarters (G)
+{coords}-1
+{rdesc}
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east (south) west up down ]
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2126/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Boot Camp Headquarters (NE[S]WUD)
+>>
+
+
+e
+Mudpits (G)
+{coords}-1
+{rdesc}
+  You stand in a training field with wet and muddy grounds.
+As you continue down the fields,you realize that 
+this was once a battlefield of the worthy and ruthless
+but it has now been swept and turned into a training
+ground.
+Apart from the worn paths and unpleasant pools of mud,
+this field is still be used as a training center, and
+an older man in a brown uniform who is as tough as
+nails.
+{/rdesc}
+
+<MAPEND>
+[ Exits: east west down ]
+Gunney Sergeant waits here to train you to exhaustion.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2130/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Mudpits (EWD)
+>>
+w
+Boot Camp Headquarters (G)
+{coords}-1
+{rdesc}
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east (south) west up down ]
+A Grumpy Old General stands here, shouting orders at the new recruits.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2129/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Boot Camp Headquarters (NE[S]WUD)
+>>
+goals open
+
+                  Goal listing for levels 0 to 201
+
+Goal Name    Description                                     Lvl Rating Status
+~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~ ~~~~~~ ~~~~~~
+Wonders      Help out in the Museum of Wonders.              120      1   Open
+Zyian        Discover What the Cult Under the Well Is Planni 140      2   Open
+
+[ 2 ] goals listed.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ratings: 1=Easy, 2=Medium, 3=Difficult, 4=Very Hard.
+Use the syntax 'goal <goal name>' for detailed information on each goal.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2129/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Boot Camp Headquarters (NE[S]WUD)
+>>
+
+
+rt zyian
+Running to: The Dark Temple of Zyian
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Boot Camp Headquarters (NE[S]WUD)
+>>
+You are already at recall.
+
+[*Daily Blessing*] 3603/3603 HP  4206/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | Boot Camp Headquarters (NE[S]WUD)
+>>
+The Grand City of Aylor (G)
+{coords}0,30,20
+{rdesc}
+  You stand on the edge of the beautiful City of Aylor.
+ 
+A bright light shines down from the heavens, pouring over you, bathing you
+in its warm glow.  Everything around you seems rich and pure in color.  An
+enormous, white temple stands to the north, taking up most of your view.
+ 
+To reach the Aylorian Academy, you must travel up the large staircase that
+stands just off the side of the church.  (Type 'UP' to learn how to play the
+game.)
+ 
+Below you are large piles of armor and equipment discarded by other
+adventurers.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east south west up down ]
+(Player) (White Aura) Snagglez Sene sovya caba'donde ain dovienya.
+
+[*Daily Blessing*] 3603/3603 HP  4206/4236 MP  2130/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | The Grand City of Aylor (NESWUD)
+>>
+Whitewind Avenue (G) (2130)
+{coords}0,30,20
+
+Phoenix Square (G) (2130)
+{coords}0,30,20
+
+Starlight Way - West (G) (2130)
+{coords}0,30,20
+
+Starlight Way - West (G) (2130)
+{coords}0,30,20
+
+Starlight Way - West (G) (2130)
+{coords}0,30,20
+
+Starlight Way - West (G) (2130)
+{coords}0,30,20
+
+Starlight Way - West (2130)
+{coords}0,30,20
+
+Starlight Way - West (G) (2130)
+{coords}0,30,20
+
+Western Entrance - Starlight Way (G) (2130)
+{coords}0,30,20
+
+Western High Road (2130)
+{coords}0,29,20
+
+Sprouting Field (2129)
+{coords}0,29,21
+
+Port-o-Ditch (2128)
+{coords}0,29,22
+
+Barren Fields (2127)
+{coords}0,29,23
+
+Drunken Field (2126)
+{coords}0,29,24
+
+Drunken Field (2125)
+{coords}0,29,25
+
+Unsown Fields (2124)
+{coords}0,29,26
+
+Unsown Fields (2123)
+{coords}0,28,26
+
+Unsown Fields (2122)
+{coords}0,27,26
+
+Forest of Illusion (2121)
+{coords}0,26,26
+
+Rotting Field (2120)
+{coords}0,25,26
+
+Ahnerian Fields (2119)
+{coords}0,24,26
+
+Muddy Path (2118)
+{coords}0,23,26
+
+Ahnerian Fields (2118)
+{coords}0,22,26
+
+Mesolarian Mountain Range (2117)
+{coords}0,21,26
+
+Mesolarian Mountain Range (2116)
+{coords}0,20,26
+
+The Ngleanntan Tuir (2115)
+{coords}0,19,26
+
+The Ngleanntan Tuir (2114)
+{coords}0,18,26
+
+The Ngleanntan Tuir (2113)
+{coords}0,17,26
+
+The Ngleanntan Tuir (2112)
+{coords}0,16,26
+
+The Ngleanntan Tuir (2111)
+{coords}0,15,26
+
+River Angor (2110)
+{coords}0,14,26
+
+The Ngleanntan Tuir (2109)
+{coords}0,13,26
+
+The Ngleanntan Tuir (2108)
+{coords}0,12,26
+
+Rotting Field (2107)
+{coords}0,11,26
+
+Rotting Field (2106)
+{coords}0,10,26
+
+Rotting Field (2105)
+{coords}0,10,27
+
+Rotting Field (2104)
+{coords}0,9,27
+
+Coastfollow Road (2103)
+{coords}0,8,27
+
+Corn Fields (2102)
+{coords}0,7,27
+
+Corn Fields (2101)
+{coords}0,6,27
+
+Corn Fields (2100)
+{coords}0,5,27
+
+Corn Fields (2099)
+{coords}0,4,27
+
+Corn Fields (2098)
+{coords}0,3,27
+
+Towering Cliffs (2097)
+{coords}0,2,27
+
+Water Below the Towering Cliffs (2096)
+{coords}0,1,27
+
+Before the Forbidden Waters (2095)
+{coords}0,0,27
+
+Lion's Fury (2094)
+{coords}3,29,27
+
+The Forbidden Waters (2093)
+{coords}3,28,27
+
+The Forbidden Waters (2092)
+{coords}3,28,28
+
+The Forbidden Waters (2091)
+{coords}3,27,28
+
+The Forbidden Waters (2090)
+{coords}3,26,28
+
+The Forbidden Waters (2089)
+{coords}3,25,28
+
+The Forbidden Waters (2088)
+{coords}3,24,28
+
+Black Claw Crag (2087)
+{coords}3,23,28
+
+Black Claw Crag (2086)
+{coords}3,22,28
+
+Black Claw Crag (2085)
+{coords}3,21,28
+
+Black Claw Crag (2084)
+{coords}3,20,28
+
+Black Claw Crag (2083)
+{coords}3,19,28
+
+Lion's Tail Trail (2082)
+{coords}3,18,28
+
+Pride's Pass (2081)
+{coords}3,17,28
+
+Pride's Pass (2080)
+{coords}3,16,28
+
+Pride's Pass (2079)
+{coords}3,15,28
+
+Pride's Pass (2078)
+{coords}3,14,28
+
+Pride's Pass (2077)
+{coords}3,13,28
+
+Pride's Pass (2076)
+{coords}3,13,29
+
+Pride's Pass (2075)
+{coords}3,12,29
+
+A Small Dirt Path
+{coords}3,12,28
+{rdesc}
+  This once large trail has now been reclaimed by the wild grass that grows
+to either side of it.  Only cows keep the trail alive, by walking and
+grazing.  The trail leads north to a small farm.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: north south ]
+A cow stands here, chewing its cud.
+A cow stands here, chewing its cud.
+You have 1 tell waiting. Type 'replay' to see it.
+
+[*Daily Blessing*] 3603/3603 HP  4206/4236 MP  2074/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | A Small Dirt Path (NS)
+>>
+replay
+29 Aug 02:49:49 - Gorsk tells you 'how goes the mushing? :)'
+
+[*Daily Blessing*] 3603/3603 HP  4206/4236 MP  2074/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | A Small Dirt Path (NS)
+>>
+
+
+reply Ehh, not great, but didn't give up yet
+You tell Gorsk 'Ehh, not great, but didn't give up yet'
+Gorsk is catching tells.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | A Small Dirt Path (NS)
+>>
+
+
+You notice the black moon falling to the west.
+
+As the blood flows from their wounds, the minions of Zyian regain their strength...
+
+A moderate wind blows from the northwest.
+Rain starts to fall from the dark night sky.
+
+You notice the white moon falling to the east.
+CLAN: Spublofe falls out to take some much needed R & R.
+
+You see the grey moon rising in the east.
+
+tasks here all
+
+       Zyian : Discover What the Cult Under the Well Is Planning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3  : Talk to the Statues
+
+Thalien says, "I was trying to pick these flowers for Sarah when these people
+came through a door in the well and kidnapped me." 
+
+Thalien says, "Life was dismal after that because they barely fed me and 
+even the water was scarce." 
+
+Thalien says, "I did learn that they are part of some kind of cult that 
+worships someone called Zyian." 
+
+Thalien says, "Something strange did happen while I was here that I think 
+I should tell you about." 
+
+Thalien says, "As I was walking past these statues, I heard a voice whisper 
+that I shouldn't lose hope."
+
+ Thalien says, "Maybe you should find them and see what you can find 
+out about these cultists." 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use 'tasklist' to see a short summary of all open tasks.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | A Small Dirt Path (NS)
+>>
+
+
+where statue
+the Statue of Mercy            A Small Room
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2131/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | A Small Dirt Path (NS)
+>>
+rfa small room
+
+ You have no recollection of any room with that name.
+"run nwnd;o e;run es;o e;e;o s;s"
+run nwnd;o e;run es;o e;e;o s;s
+A Small Dirt Path (2130)
+{coords}3,12,28
+
+Sarah's Farm (2129)
+{coords}3,12,28
+
+A Small Well... (2128)
+{coords}3,12,28
+
+At The Bottom Of The Well
+{coords}3,12,28
+{rdesc}
+  After lowering yourself down the well for what seems to be an eternity,
+you finally reach the bottom of the well.  As you let go of the rope and
+land on the well floor, you can see that Sarah was right, the well is bone
+dry.  As you look around, you can see many small holes in the wall of the
+well.  Perhaps these are where the water came from.  To the east, is a small
+boulder, which appears to be blocking the way of a rather large hole.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: (east) up ]
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2127/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | At The Bottom Of The Well ([E]U)
+>>
+You open the boulder.
+
+[*Daily Blessing*] 3603/3603 HP  4236/4236 MP  2127/2131 mv  887tnl (Reply: Gorsk) 
+Lv 135  G 446103 | At The Bottom Of The Well (EU)
+>>
+Searching the Caverns... [**> PK <**] (2126)
+{coords}3,12,28
+
+Your journey was broken by the need to defend yourself.
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider's bite -=- VAPORIZES -=- you! [117]
+A trapdoor spider's bite <-==-> ATOMIZES <-==-> you! [130]
+
+FIGHTING!
+3356/3603 HP  4236/4236 MP  2126/2131 mv  887tnl
+ Enemy: 100%HP (mob) | 93% HP (you)[**> PK <**]  >>
+There is no door to the east of here.
+
+FIGHTING!
+3356/3603 HP  4236/4236 MP  2126/2131 mv  887tnl
+ Enemy: 100%HP (mob) | 93% HP (you)[**> PK <**]  >>
+Not while you are fighting!
+
+FIGHTING!
+3356/3603 HP  4236/4236 MP  2126/2131 mv  887tnl
+ Enemy: 100%HP (mob) | 93% HP (you)[**> PK <**]  >>
+There is no door to the south of here.
+
+FIGHTING!
+3356/3603 HP  4236/4236 MP  2126/2131 mv  887tnl
+ Enemy: 100%HP (mob) | 93% HP (you)[**> PK <**]  >>
+Not while you are fighting!
+
+FIGHTING!
+3356/3603 HP  4236/4236 MP  2126/2131 mv  887tnl
+ Enemy: 100%HP (mob) | 93% HP (you)[**> PK <**]  >>
+
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider's bite <-:-> ASPHYXIATES <-:-> you! [140]
+Your divine power -=- VAPORIZES -=- a trapdoor spider! [119]
+A trapdoor spider has a few minor scratches.
+
+FIGHTING!
+3216/3603 HP  4236/4236 MP  2126/2131 mv  887tnl
+ Enemy: 98%HP (mob) | 89% HP (you)[**> PK <**]  >>
+ca 'scorch'
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [462]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [493]
+A trapdoor spider is showing a few grazes.
+
+FIGHTING!
+3216/3603 HP  4166/4236 MP  2126/2131 mv  887tnl
+ Enemy: 89%HP (mob) | 89% HP (you)[**> PK <**]  >>
+ca 'scorch'
+
+You blink out of existence and avoid a trapdoor spider's attack.
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider chants the phrase 'web'.
+A trapdoor spider's web fails to take hold of you.
+Your divine power misses a trapdoor spider. [0]
+A trapdoor spider is showing a few grazes.
+
+FIGHTING!
+3216/3603 HP  4166/4236 MP  2126/2131 mv  887tnl
+ Enemy: 89%HP (mob) | 89% HP (you)[**> PK <**]  >>
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [484]
+Your scorching heat <-*-><*><-*-> NUKES <-*-><*><-*-> a trapdoor spider! [419]
+A trapdoor spider is bleeding lightly.
+
+FIGHTING!
+3216/3603 HP  4096/4236 MP  2126/2131 mv  887tnl
+ Enemy: 81%HP (mob) | 89% HP (you)[**> PK <**]  >>
+ca 'scorch'
+
+You dodge a trapdoor spider's attack.
+A trapdoor spider's bite <-==-> ATOMIZES <-==-> you! [124]
+A trapdoor spider's bite <-*-> RAVAGES <-*-> you! [143]
+Your divine power -=- VAPORIZES -=- a trapdoor spider! [118]
+A trapdoor spider is bleeding lightly.
+
+FIGHTING!
+2949/3603 HP  4096/4236 MP  2126/2131 mv  887tnl
+ Enemy: 80%HP (mob) | 81% HP (you)[**> PK <**]  >>
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [477]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [481]
+A trapdoor spider has some small wounds and bruises.
+
+FIGHTING!
+2949/3603 HP  4026/4236 MP  2126/2131 mv  887tnl
+ Enemy: 71%HP (mob) | 81% HP (you)[**> PK <**]  >>
+ca 'scorch'
+
+You blink out of existence and avoid a trapdoor spider's attack.
+You dodge a trapdoor spider's attack.
+A trapdoor spider's bite -=- VAPORIZES -=- you! [119]
+Your divine power -=- VAPORIZES -=- a trapdoor spider! [116]
+A trapdoor spider has some small wounds and bruises.
+
+FIGHTING!
+2830/3603 HP  4026/4236 MP  2126/2131 mv  887tnl
+ Enemy: 70%HP (mob) | 78% HP (you)[**> PK <**]  >>
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [473]
+Your scorching heat <-*-><*><-*-> NUKES <-*-><*><-*-> a trapdoor spider! [437]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [492]
+A trapdoor spider is showing a few battle scars.
+
+FIGHTING!
+2830/3603 HP  3956/4236 MP  2126/2131 mv  887tnl
+ Enemy: 56%HP (mob) | 78% HP (you)[**> PK <**]  >>
+
+You dodge a trapdoor spider's attack.
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider's bite <-==-> ATOMIZES <-==-> you! [128]
+A trapdoor spider dodges your attack.
+
+FIGHTING!
+2748/3603 HP  4033/4236 MP  2131/2131 mv  887tnl
+ Enemy: 57%HP (mob) | 76% HP (you)[**> PK <**]  >>
+ca 'scorch'
+Your scorching heat <-*-><*><-*-> NUKES <-*-><*><-*-> a trapdoor spider! [441]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [478]
+Your scorching heat <-*-><*><-*-> NUKES <-*-><*><-*-> a trapdoor spider! [448]
+A trapdoor spider has some big nasty wounds and scratches.
+
+FIGHTING!
+2748/3603 HP  3963/4236 MP  2131/2131 mv  887tnl
+ Enemy: 44%HP (mob) | 76% HP (you)[**> PK <**]  >>
+
+You dodge a trapdoor spider's attack.
+You blink out of existence and avoid a trapdoor spider's attack.
+*A trapdoor spider's bite <*><*><*> EVAPORATES <*><*><*> you! [180]
+Your divine power -=- VAPORIZES -=- a trapdoor spider! [116]
+A trapdoor spider has some big nasty wounds and scratches.
+
+FIGHTING!
+2568/3603 HP  3963/4236 MP  2131/2131 mv  887tnl
+ Enemy: 43%HP (mob) | 71% HP (you)[**> PK <**]  >>
+ca 'scorch'
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [490]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [494]
+A trapdoor spider has some very nasty wounds.
+
+FIGHTING!
+2568/3603 HP  3893/4236 MP  2131/2131 mv  887tnl
+ Enemy: 34%HP (mob) | 71% HP (you)[**> PK <**]  >>
+
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider's bite <-*-> RAVAGES <-*-> you! [141]
+A trapdoor spider's bite <-==-> ATOMIZES <-==-> you! [129]
+Your divine power -=- VAPORIZES -=- a trapdoor spider! [115]
+A trapdoor spider has some very nasty wounds.
+
+FIGHTING!
+2298/3603 HP  3893/4236 MP  2131/2131 mv  887tnl
+ Enemy: 33%HP (mob) | 63% HP (you)[**> PK <**]  >>
+ca 'scorch'
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [500]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [451]
+Your scorching heat <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a trapdoor spider! [514]
+A trapdoor spider needs a hospital.
+
+FIGHTING!
+2298/3603 HP  3823/4236 MP  2131/2131 mv  887tnl
+ Enemy: 19%HP (mob) | 63% HP (you)[**> PK <**]  >>
+
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider's bite -=- VAPORIZES -=- you! [119]
+A trapdoor spider's bite <-==-> ATOMIZES <-==-> you! [125]
+A trapdoor spider chants the phrase 'web'.
+A trapdoor spider's web fails to take hold of you.
+A trapdoor spider dodges your attack.
+
+FIGHTING!
+2054/3603 HP  3823/4236 MP  2131/2131 mv  887tnl
+ Enemy: 19%HP (mob) | 57% HP (you)[**> PK <**]  >>
+ca 'scorch'
+Your scorching heat <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a trapdoor spider! [525]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [479]
+A trapdoor spider is gravely injured.
+
+FIGHTING!
+2054/3603 HP  3753/4236 MP  2131/2131 mv  887tnl
+ Enemy: 10%HP (mob) | 57% HP (you)[**> PK <**]  >>
+
+You blink out of existence and avoid a trapdoor spider's attack.
+You blink out of existence and avoid a trapdoor spider's attack.
+You blink out of existence and avoid a trapdoor spider's attack.
+Your divine power -=- VAPORIZES -=- a trapdoor spider! [120]
+A trapdoor spider is gravely injured.
+
+FIGHTING!
+2054/3603 HP  3753/4236 MP  2131/2131 mv  887tnl
+ Enemy: 8%HP (mob) | 57% HP (you)[**> PK <**]  >>
+ca 'scorch'
+
+You blink out of existence and avoid a trapdoor spider's attack.
+A trapdoor spider's bite <-:-> ASPHYXIATES <-:-> you! [139]
+A trapdoor spider chants the phrase 'web'.
+A trapdoor spider's web fails to take hold of you.
+A trapdoor spider dodges your attack.
+
+FIGHTING!
+1915/3603 HP  3753/4236 MP  2131/2131 mv  887tnl
+ Enemy: 8%HP (mob) | 53% HP (you)[**> PK <**]  >>
+Your scorching heat <-=-><-:-*-:-><*--*> METEORITES <*--*><-:-*-:-><-=-> a trapdoor spider! [526]
+Your scorching heat -<[=-+-=]<:::<>:::> GLACIATES <:::<>:::>[=-+-=]>- a trapdoor spider! [485]
+A trapdoor spider starts to disintegrate as they is melted by the blast! They are DEAD!
+You receive 18 experience points.
+You get 4,541 gold coins from the molten corpse of a trapdoor spider.
+You are taxed 45 gold coins by your clan.
+The Unknown Soldier gives you 65 gold coins for the molten corpse of a trapdoor spider.
+
+[*Daily Blessing*] 1915/3603 HP  3683/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+napalm;spellup
+The smell of napalm makes your adrenaline rush.
+
+[*Daily Blessing*] 1915/3603 HP  3683/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+Queueing spell : haste.
+Queueing spell : night vision.
+Queueing spell : invis.
+Queueing spell : shield.
+Queueing spell : stone skin.
+Queueing spell : antimagic shell.
+Queueing spell : avoidance.
+Queueing spell : blur.
+Queueing spell : true seeing.
+Queueing spell : wraith form.
+Queueing spell : sense anger.
+Queueing spell : acidproof.
+Queueing spell : shockproof.
+Queueing spell : warmth.
+Queueing spell : holy mirror.
+Queueing spell : absorb.
+Queueing spell : sustenance.
+Queueing spell : underwater breathing.
+Queueing spell : mystic might.
+Queueing spell : harden body.
+Queueing spell : awakening.
+Queueing spell : perception.
+Queueing spell : magical rush.
+Queueing spell : enchanters focus.
+
+[*Daily Blessing*] 1915/3603 HP  3683/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel yourself moving more quickly.
+
+[*Daily Blessing*] 1915/3603 HP  3663/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+Your eyes glow red.
+
+[*Daily Blessing*] 1915/3603 HP  3648/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You fade out of existence.
+
+[*Daily Blessing*] 1915/3603 HP  3623/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+get 'breakfast' backpack;quaf 'breakfast'
+You are surrounded by a force shield.
+
+[*Daily Blessing*] 1915/3603 HP  3618/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+Your skin turns to stone.
+
+[*Daily Blessing*] 1915/3603 HP  3568/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You conjure forth an anti-magic shell about you.
+
+[*Daily Blessing*] 1915/3603 HP  3448/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You now possess magical powers of avoidance.
+
+[*Daily Blessing*] 1915/3603 HP  3423/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You make your appearance look blurred.
+
+[*Daily Blessing*] 1915/3603 HP  3408/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You now detect the presence of those hidden.
+You now detect the presence of those invisible.
+You now sense magical properties held within artifacts.
+You now detect the presence of those who walk in shadow.
+You now detect the presence of those who walk in the light.
+You now have true sight.
+
+[*Daily Blessing*] 1915/3603 HP  3338/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+
+A centipede crawls west.
+
+You enter the borders of the realm of undeath.
+Prepare for the transformation..........
+Adding Wraith Resistance ...
+Enhancing Attributes........
+Adding Sanctuary............
+Transformation Complete.
+
+[*Daily Blessing*] 1915/3603 HP  3188/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You can now sense anger in your immediate area.
+
+[*Daily Blessing*] 1915/3603 HP  3148/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You protect yourself from acid.
+
+[*Daily Blessing*] 1915/3603 HP  3028/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You conjure a shield of earth around yourself.
+
+[*Daily Blessing*] 1915/3603 HP  2908/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You protect yourself from cold.
+
+[*Daily Blessing*] 1915/3603 HP  2788/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You protect yourself from the forces of holy and light.
+
+[*Daily Blessing*] 1948/3603 HP  2724/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel a strong magical force surround your body.
+
+[*Daily Blessing*] 1948/3603 HP  2659/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+Your metabolism slows down to preserve food and drink.
+
+[*Daily Blessing*] 1948/3603 HP  2614/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel gills growing on your neck!
+
+[*Daily Blessing*] 1948/3603 HP  2599/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel your body surge with extra power.
+
+[*Daily Blessing*] 1948/3603 HP  2569/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel your body harden.
+
+[*Daily Blessing*] 1948/3603 HP  2539/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+Your mind feels like a sponge as its power is awakened.
+
+[*Daily Blessing*] 1948/3603 HP  2439/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel your concentration increase.
+
+[*Daily Blessing*] 1948/3603 HP  2389/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You feel your adrenaline pump as your body speeds up.
+
+[*Daily Blessing*] 1948/3603 HP  2359/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+Your enchanting skills feel more focused.
+
+[*Daily Blessing*] 1948/3603 HP  2259/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You get [Potion] Military Breakfast from [Recruit] Leather Backpack.
+
+[*Daily Blessing*] 1948/3603 HP  2259/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+You quaff [Potion] Military Breakfast.
+Wow....what a rush! [120]
+You are already fully refreshed.
+[2] A warm feeling fills your body. [502]
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+napalm;spellup
+You can already smell napalm, are you a junkie?
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+No spells or skills cast.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+"run s;o e;e;o s;s"
+run s;o e;e;o s;s
+A Dead End... (G)
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (east) ]
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+You do not have a key for the door.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+The door is closed.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+There is no door to the south of here.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+n
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+op w
+w
+There is no door to the west of here.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+Searching the Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south west ]
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2450/3603 HP  2379/4236 MP  2122/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+
+## You start to feel hungry.
+## You start to feel thirsty.
+
+s
+A Dead End... (G)
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (east) ]
+
+[*Daily Blessing*] 2501/3603 HP  2435/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+op e
+e
+You do not have a key for the door.
+
+[*Daily Blessing*] 2501/3603 HP  2435/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+The door is closed.
+
+[*Daily Blessing*] 2501/3603 HP  2435/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+n
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2501/3603 HP  2435/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+
+As the blood flows from their wounds, the minions of Zyian regain their strength...
+
+op w
+w
+There is no door to the west of here.
+
+[*Daily Blessing*] 2530/3603 HP  2525/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+Searching the Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south (west) ]
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2530/3603 HP  2525/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ES[W])
+[**> PK <**] >>
+op e
+e
+There is no door to the east of here.
+
+[*Daily Blessing*] 2530/3603 HP  2525/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ES[W])
+[**> PK <**] >>
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2530/3603 HP  2525/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+n
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2530/3603 HP  2525/4236 MP  2122/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (ES)
+[**> PK <**] >>
+
+
+Global Quest: Global Quest # 5886 has been won by Forma - 690th win.
+
+s
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2564/3603 HP  2614/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+op w
+w
+There is no door to the west of here.
+
+[*Daily Blessing*] 2564/3603 HP  2614/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+Searching the Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south (west) ]
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2564/3603 HP  2614/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ES[W])
+[**> PK <**] >>
+
+
+op w
+w
+You open the boulder.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+At The Bottom Of The Well
+{coords}3,12,28
+{rdesc}
+  After lowering yourself down the well for what seems to be an eternity,
+you finally reach the bottom of the well.  As you let go of the rope and
+land on the well floor, you can see that Sarah was right, the well is bone
+dry.  As you look around, you can see many small holes in the wall of the
+well.  Perhaps these are where the water came from.  To the east, is a small
+boulder, which appears to be blocking the way of a rather large hole.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: east up ]
+A centipede is crawling along the floor, looking for its next meal.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | At The Bottom Of The Well (EU)
+>>
+op e
+e
+The boulder is already open.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | At The Bottom Of The Well (EU)
+>>
+Searching the Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south west ]
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2127/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+e
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2124/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+n
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2121/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (ES)
+[**> PK <**] >>
+e
+A Dead End...
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: (east) west ]
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2118/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... ([E]W)
+>>
+w
+Searching the Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south west ]
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2115/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+s
+A Dead End... (G)
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (east) ]
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2112/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+op e
+e
+You do not have a key for the door.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2112/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+The door is closed.
+
+[*Daily Blessing*] 2611/3603 HP  2703/4236 MP  2112/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+ca kn e
+Magical wards around the door flare as it absorbs your spell.
+
+[*Daily Blessing*] 2611/3603 HP  2633/4236 MP  2112/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+n
+op e
+e
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2611/3603 HP  2633/4236 MP  2109/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+There is no door to the east of here.
+
+[*Daily Blessing*] 2611/3603 HP  2633/4236 MP  2109/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 2611/3603 HP  2633/4236 MP  2109/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+w
+Searching the Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+A centipede is crawling along the floor, looking for its next meal.
+
+[*Daily Blessing*] 2611/3603 HP  2633/4236 MP  2106/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching the Caverns... (ESW)
+[**> PK <**] >>
+s
+A Dead End... (G)
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (east) ]
+
+[*Daily Blessing*] 2611/3603 HP  2633/4236 MP  2103/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+
+Character autosaved at Tue Aug 29 03:37:28 2023.
+
+n
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2640/3603 HP  2724/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+"run ws;o e;e"
+run ws;o e;e
+
+
+Searching the Caverns... [**> PK <**] (2128)
+{coords}3,12,28
+
+A Dead End... (G)
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (east) ]
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+You do not have a key for the door.
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+The door is closed.
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2125/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (N[E])
+>>
+n
+Searching The Caverns... [**> PK <**]
+{coords}3,12,28
+{rdesc}
+  Dank and dark are these caves. You notice that water sheets down the wall in 
+some areas of this cave, giving the cavern an almost mirror-like surface. As 
+you venture forward, you come across a corpse of a Elf, hacked to bits and 
+half eaten by the insects that inhabit the caverns. Perhaps this would be a 
+good time to find your way out of here...
+{/rdesc}
+
+<MAPEND>
+[ Exits: north west ]
+A centipede is crawling along the floor, looking for its next meal.
+(White Aura) (Angry) A Trapdoor Spider lies here in wait.
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2122/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Searching The Caverns... (NW)
+[**> PK <**] >>
+"run ne"
+run ne
+Searching The Caverns... [**> PK <**] (2119)
+{coords}3,12,28
+
+A Dead End...
+{coords}3,12,28
+{rdesc}
+  As you continue to follow one of the caverns, it brings you to a rather large
+circular room. Torches provide the only light in this room, and you notice 
+that there are rather large claw marks left in the floor.
+{/rdesc}
+
+<MAPEND>
+[ Exits: (east) west ]
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2116/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... ([E]W)
+>>
+"o e;run es;o e;e"
+o e;run es;o e;e
+You open the boulder.
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2116/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dead End... (EW)
+>>
+A Narrow Tunnel (2113)
+{coords}3,12,28
+
+Entrance to the Castle
+{coords}3,12,28
+{rdesc}
+  As you climb out of the tunnel, you see a rather large castle, carved almost 
+entirely of the stone that makes up these caverns. There are large stone 
+pillars, and fountains that are filled with what appears to be blood.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (east) (west) ]
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2112/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Entrance to the Castle (N[E][W])
+>>
+You open the door.
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2112/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Entrance to the Castle (NE[W])
+>>
+A Dark Passageway
+{coords}3,12,28
+{rdesc}
+  The halls of this castle are dimly lit by an unknown source.  Along the
+walls, strange glyphs are scrawled.  They appear to be freshly made, and
+written in blood.  As you walk along, you can hear a mixture of laughing,
+screaming and moaning, but you cannot tell from where.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: (east) south west ]
+(Red Aura) An Imp flies here, performing minor tasks for its master.
+CLAN: Brun falls out to take some much needed R & R.
+
+[*Daily Blessing*] 2680/3603 HP  2788/4236 MP  2111/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dark Passageway ([E]SW)
+>>
+"run 2sws"
+run 2sws
+A Dark Passageway (2110)
+{coords}3,12,28
+
+A Dark Passageway (G) (2109)
+{coords}3,12,28
+
+A Dark Passageway (2108)
+{coords}3,12,28
+
+A Large Library
+{coords}3,12,28
+{rdesc}
+  The shelves of the library hold many different types of books and are
+quite tall, easily reaching a height of two or three stories.  To the west,
+the books seem to contain knowledge of battle.  To the south, a book of
+spells.  Each side of the library also has a large wooden door, and you
+can't help but feel that what is behind the door will rely on the knowledge
+learnt from the books that surround it.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (south) (west) ]
+(Invis) (Red Aura) Foulspawn, self proclaimed king of the imps, is sitting here.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2130/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Large Library (N[S][W])
+>>
+op w
+w
+You open the door.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2130/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Large Library (N[S]W)
+>>
+A Smaller Library...
+{coords}3,12,28
+{rdesc}
+  You find yourself now standing in a much smaller library than you were in 
+before. However, it seems that the books here are only on one subject: Magic 
+Use. A lone figure sits here reading, and with a minor gesture of his hand, 
+another book floats from a shelf and into his hand. He barely takes the time 
+to look at you before he continues his work.
+{/rdesc}
+
+<MAPEND>
+[ Exits: (south) ]
+     (Magic) (Hum) A simple crest lies on the floor here, depicting a large war.
+(Red Aura) (White Aura) Nyruk the Black Mage sits here, leafing through a book.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2129/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Smaller Library... ([S])
+>>
+
+
+op s
+s
+You unlock the door with the Crest of Combat.
+You open the door.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2129/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Smaller Library... (S)
+>>
+Before the Temple
+{coords}3,12,28
+{rdesc}
+  As you pass the trial, the southern door opens to you and leads you out
+in front of this large temple.  It is carved almost entirely out of white
+marble, and contains many beautifully crafted stained glass windows.  Many
+are showing acts of love, friendship and mercy.  The doors to the cathedral
+are very large, and made mostly out of wood.  They have long bands of iron,
+which are nailed to the planks, keeping the door in one piece.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: (north) east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+s
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+w
+s
+The Slaughterhouse
+{coords}3,12,28
+{rdesc}
+   As you enter the butcher shop, the smell of dried blood fills your
+nostrils.  As you peer over the counter, you can see legs, heads, and torsos
+of various animals hanging from large hooks.  To the left, there are several
+wicker baskets that hold the various organ meats that are for sale.  A
+rather large man walks into the room, and tosses a liver towards the basket.
+However, he misses and it falls on the floor.  "Half Price on that one,"  he
+says to you.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east ]
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A butcher is here, working steadily to keep the kitchen stocked with fresh meat.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | The Slaughterhouse (NE)
+>>
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | The Slaughterhouse (NE)
+>>
+e
+Before the Temple
+{coords}3,12,28
+{rdesc}
+  As you pass the trial, the southern door opens to you and leads you out
+in front of this large temple.  It is carved almost entirely out of white
+marble, and contains many beautifully crafted stained glass windows.  Many
+are showing acts of love, friendship and mercy.  The doors to the cathedral
+are very large, and made mostly out of wood.  They have long bands of iron,
+which are nailed to the planks, keeping the door in one piece.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: (north) east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+e
+A Gravel Path
+{coords}3,12,28
+{rdesc}
+  The gravel path branches off here. To the north is the mess hall, and it is 
+filled with loud yelling, laughing and cursing. To the east are the barracks,
+where the soldiers sleep. And to the west lies the temple.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east west ]
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Gravel Path (NEW)
+>>
+s
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Gravel Path (NEW)
+>>
+e
+Approaching the Barracks
+{coords}3,12,28
+{rdesc}
+  The gravel path comes to an abrupt halt as it leads you to a rather large 
+wooden log building. It is quite long, but in disrepair. There are several 
+holes in the roof, and the wooden logs are rotting away.
+{/rdesc}
+
+<MAPEND>
+[ Exits: (north) west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Approaching the Barracks ([N]W)
+>>
+s
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Approaching the Barracks ([N]W)
+>>
+w
+op n
+n
+A Gravel Path
+{coords}3,12,28
+{rdesc}
+  The gravel path branches off here. To the north is the mess hall, and it is 
+filled with loud yelling, laughing and cursing. To the east are the barracks,
+where the soldiers sleep. And to the west lies the temple.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east west ]
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Gravel Path (NEW)
+>>
+w
+There is no door to the north of here.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Gravel Path (NEW)
+>>
+The Mess Hall
+{coords}3,12,28
+{rdesc}
+  The mess hall could not have been more appropriately named, as the soldiers 
+break furniture, throw food, and brawl over petty arguments. As the officers 
+enter the room and sit to eat, the rabble dies down. The soldiers are hoping 
+that the officers won't cut their supply of wine off.
+{/rdesc}
+
+<MAPEND>
+[ Exits: south west ]
+(13) (Magic) (Glow) A scroll lies on the floor here, plans scrawled out in blood.
+     A long wooden table is here, holding the many mugs of ale and plates of food for the goblins.
+     Several wooden chairs sit here, waiting to be used.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) (White Aura) (Angry) A Major sits here, eating, but keeps an eye on the troops.
+(Golden Aura) (White Aura) A Lieutenant is sitting here, trying to eat his meal in peace.
+(Golden Aura) (White Aura) A Lieutenant is sitting here, trying to eat his meal in peace.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | The Mess Hall (SW)
+>>
+The Kitchen
+{coords}3,12,28
+{rdesc}
+  It's as if you hit a wall of heat as you enter the kitchen.  Several
+cooks rush around, cooking pheasant and venison, preparing salads, and
+pouring out large glasses of wine.  The head cook stands around, watching the
+other cooks and occasionally steps in to take over.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) (White Aura) The head cook is standing here, occasionally stepping in for the order
+cooks.
+(Golden Aura) A short order cook frantically runs around trying to get the food prepared.
+(Golden Aura) A short order cook frantically runs around trying to get the food prepared.
+(Golden Aura) A short order cook frantically runs around trying to get the food prepared.
+(Golden Aura) A short order cook frantically runs around trying to get the food prepared.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | The Kitchen (ES)
+>>
+s
+The Slaughterhouse
+{coords}3,12,28
+{rdesc}
+   As you enter the butcher shop, the smell of dried blood fills your
+nostrils.  As you peer over the counter, you can see legs, heads, and torsos
+of various animals hanging from large hooks.  To the left, there are several
+wicker baskets that hold the various organ meats that are for sale.  A
+rather large man walks into the room, and tosses a liver towards the basket.
+However, he misses and it falls on the floor.  "Half Price on that one,"  he
+says to you.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east ]
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A butcher is here, working steadily to keep the kitchen stocked with fresh meat.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | The Slaughterhouse (NE)
+>>
+e
+Before the Temple
+{coords}3,12,28
+{rdesc}
+  As you pass the trial, the southern door opens to you and leads you out
+in front of this large temple.  It is carved almost entirely out of white
+marble, and contains many beautifully crafted stained glass windows.  Many
+are showing acts of love, friendship and mercy.  The doors to the cathedral
+are very large, and made mostly out of wood.  They have long bands of iron,
+which are nailed to the planks, keeping the door in one piece.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: (north) east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 2730/3603 HP  2870/4236 MP  2128/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+
+
+
+A swordsman leaves west.
+
+CLAN: At-ten-tion! Spublofe is here to get some training done!
+
+A swordsman leaves east.
+
+As the blood flows from their wounds, the minions of Zyian regain their strength...
+
+A footsoldier arrives from the west.
+
+## You are very hungry; your healing is reduced.
+## You are very thirsty; your healing is reduced.
+
+You no longer absorb magical attacks.
+
+Your anti-magic shell disappears.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+A footsoldier arrives from the east.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+A swordsman arrives from the east.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+Your enchanters focus fades.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+[    10 minutes of double exp started courtesy of donations being open   ]
+[ See 'help donate' - get QP/TP/Instinct Trains for supporting Aardwolf! ]
+
+A footsoldier arrives from the west.
+
+CLAN: At-ten-tion! YeeShin is here to get some training done!
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+A footsoldier leaves east.
+
+You feel more vulnerable to acid.
+
+You feel more vulnerable to electricity.
+
+You feel more vulnerable to cold.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+As the blood flows from their wounds, the minions of Zyian regain their strength...
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+CLAN: Lexicon falls out to take some much needed R & R.
+
+INFO: Calak sinks to their knees and honourably accepts defeat at the hands of a soft feather.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+gulp can; gulp can;
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+A footsoldier leaves west.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+You return to the living world.
+
+## You are very hungry; your healing is reduced.
+## You are dehydrated; your healing is greatly reduced.
+
+You are no longer able to breathe underwater.
+ca underwater
+
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+
+[*Daily Blessing*] 3209/3603 HP  3768/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+[*Daily Blessing*] 3209/3603 HP  3768/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+You feel gills growing on your neck!
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+gulp can; gulp can;
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+You gulp down some milk from [Recruit] Insulated Canteen.
+You are now full.
+Your thirst is fully quenched.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple ([N]EW)
+>>
+op n
+n
+You open the door.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+Along the Pews
+{coords}3,12,28
+{rdesc}
+  The pews in the temple are carved out of stone, and sit on angle to the
+aisles.  Many worshippers sit on these pews, slicing their wrists and
+pouring the blood into small bowls that are attached to the pews.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: north south ]
+(Golden Aura) An initiate of Zyian kneels here, praying to him.
+(Golden Aura) A faithful follower is here, guiding the initiates in prayer.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Along the Pews (NS)
+>>
+op s
+s
+The door is already open.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Along the Pews (NS)
+>>
+Before the Temple
+{coords}3,12,28
+{rdesc}
+  As you pass the trial, the southern door opens to you and leads you out
+in front of this large temple.  It is carved almost entirely out of white
+marble, and contains many beautifully crafted stained glass windows.  Many
+are showing acts of love, friendship and mercy.  The doors to the cathedral
+are very large, and made mostly out of wood.  They have long bands of iron,
+which are nailed to the planks, keeping the door in one piece.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+e
+e
+A Gravel Path
+{coords}3,12,28
+{rdesc}
+  The gravel path branches off here. To the north is the mess hall, and it is 
+filled with loud yelling, laughing and cursing. To the east are the barracks,
+where the soldiers sleep. And to the west lies the temple.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east west ]
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Gravel Path (NEW)
+>>
+Approaching the Barracks
+{coords}3,12,28
+{rdesc}
+  The gravel path comes to an abrupt halt as it leads you to a rather large 
+wooden log building. It is quite long, but in disrepair. There are several 
+holes in the roof, and the wooden logs are rotting away.
+{/rdesc}
+
+<MAPEND>
+[ Exits: (north) west ]
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Approaching the Barracks ([N]W)
+>>
+
+INFO: 5 minutes of bonus experience remaining.
+
+rfa small
+
+ You know the following relevant rooms:
+  A Smaller Library... (739) in zyian. > Show path   > Show speedwalk
+  A Small Dirt Path (727) in zyian. > Show path   > Show speedwalk
+  A Small Well... (729) in zyian. > Show path   > Show speedwalk
+  A Small Dirt Path (726) in zyian. > Show path   > Show speedwalk
+  4 rooms found.
+where statue
+the Statue of Mercy            A Small Room
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Approaching the Barracks ([N]W)
+>>
+
+Character autosaved at Tue Aug 29 03:52:31 2023.
+
+l;ex
+Approaching the Barracks
+{coords}3,12,28
+{rdesc}
+  The gravel path comes to an abrupt halt as it leads you to a rather large 
+wooden log building. It is quite long, but in disrepair. There are several 
+holes in the roof, and the wooden logs are rotting away.
+{/rdesc}
+
+[ Exits: (north) west ]
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A swordsman stands here, practicing with his sword.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Approaching the Barracks ([N]W)
+>>
+Obvious exits from [ Approaching the Barracks ]:
+(North)         : The door is closed.
+ West           : A Gravel Path 
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Approaching the Barracks ([N]W)
+>>
+w
+
+
+A Gravel Path
+{coords}3,12,28
+{rdesc}
+  The gravel path branches off here. To the north is the mess hall, and it is 
+filled with loud yelling, laughing and cursing. To the east are the barracks,
+where the soldiers sleep. And to the west lies the temple.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Gravel Path (NEW)
+>>
+w
+Before the Temple
+{coords}3,12,28
+{rdesc}
+  As you pass the trial, the southern door opens to you and leads you out
+in front of this large temple.  It is carved almost entirely out of white
+marble, and contains many beautifully crafted stained glass windows.  Many
+are showing acts of love, friendship and mercy.  The doors to the cathedral
+are very large, and made mostly out of wood.  They have long bands of iron,
+which are nailed to the planks, keeping the door in one piece.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: north east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+s
+Alas, you cannot go that way.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+l;ex
+Before the Temple
+{coords}3,12,28
+{rdesc}
+  As you pass the trial, the southern door opens to you and leads you out
+in front of this large temple.  It is carved almost entirely out of white
+marble, and contains many beautifully crafted stained glass windows.  Many
+are showing acts of love, friendship and mercy.  The doors to the cathedral
+are very large, and made mostly out of wood.  They have long bands of iron,
+which are nailed to the planks, keeping the door in one piece.  
+{/rdesc}
+
+[ Exits: north east west ]
+(Golden Aura) A swordsman stands here, practicing with his sword.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+(Golden Aura) A footsoldier walks along here, trying to stay at attention.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+Obvious exits from [ Before the Temple ]:
+ North          : Along the Pews 
+ East           : A Gravel Path 
+ West           : The Slaughterhouse 
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+op n
+n
+The door is already open.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Before the Temple (NEW)
+>>
+Along the Pews
+{coords}3,12,28
+{rdesc}
+  The pews in the temple are carved out of stone, and sit on angle to the
+aisles.  Many worshippers sit on these pews, slicing their wrists and
+pouring the blood into small bowls that are attached to the pews.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: north south ]
+(Golden Aura) An initiate of Zyian kneels here, praying to him.
+(Golden Aura) A faithful follower is here, guiding the initiates in prayer.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Along the Pews (NS)
+>>
+n
+
+You feel less resistant to light and holy attacks.
+
+The Altar of Pleasure (G)
+{coords}3,12,28
+{rdesc}
+  The altar of pleasure holds many depictions of what pleasures the
+initates can take part in.  Praying, eating, sleeping, worshipping,
+sacrifice, and love are all depicted on this altar.  Long hours are spent
+here by initates, faithful and blessed, seeking and finding solace for their
+sacrifice.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: east south west ]
+(Golden Aura) An initiate of Zyian kneels here, praying to him.
+(Golden Aura) An initiate of Zyian kneels here, praying to him.
+(Golden Aura) (White Aura) A blessed monk stands here, performing the rites of Zyian.
+(Golden Aura) (White Aura) An initiate of Zyian kneels here, praying to him.
+(Golden Aura) A faithful follower is here, guiding the initiates in prayer.
+
+[*Daily Blessing*] 3209/3603 HP  3753/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | The Altar of Pleasure (ESW)
+>>
+
+
+e
+A Stone Staircase
+{coords}3,12,28
+{rdesc}
+  In a small hall just off from the worship area, you find a small stone 
+staircase. Just like the rest of the temple, the stairs are well crafted and 
+have intricate designs carved into them. The stairs lead up, to what appears 
+to be the roof.
+{/rdesc}
+
+<MAPEND>
+[ Exits: west up ]
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Stone Staircase (WU)
+>>
+u
+A Stone Staircase
+{coords}3,12,28
+{rdesc}
+  The top of the staircase brings you up to a very small room, with a lone
+door to the north.  It appears that this is the way that the monks get to
+the roof to keep the cathedral in repair.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: (north) down ]
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Stone Staircase ([N]D)
+>>
+op n
+n
+You open the door.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Stone Staircase (ND)
+>>
+On the Northeast Corner of the Temple Roof
+{coords}3,12,28
+{rdesc}
+  As you walk out through the door, you find yourself out on the cathedral 
+roof. From here you can see everything that surrounds the temple, including 
+the barracks, the slaughterhouse, the mess hall, kitchen and the animal pen.
+The only direction to go is to the west, as the south exit is blocked by the 
+door.
+{/rdesc}
+
+<MAPEND>
+[ Exits: south west ]
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | On the Northeast Corner of the Temple Roof (SW)
+>>
+w
+Walking Along the Temple Roof
+{coords}3,12,28
+{rdesc}
+  As you walk along the roof, you come across a large stained glass window.
+It depicts a picture of a man, summoning a large daemon, covered with
+flames.  As you continue looking at it, you can see small hinges on parts of
+the glass, possibly to gain access to repair the window if it cracks.  
+{/rdesc}
+
+<MAPEND>
+[ Exits: east west ]
+A seagull is perched here, scanning the ground for food.
+A seagull is perched here, scanning the ground for food.
+A seagull is perched here, scanning the ground for food.
+A seagull is perched here, scanning the ground for food.
+A seagull is perched here, scanning the ground for food.
+A stone gargoyle sits on the edge of the temple, guarding it.
+A stone gargoyle sits on the edge of the temple, guarding it.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Walking Along the Temple Roof (EW)
+>>
+s
+The stained glass is closed.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Walking Along the Temple Roof (EW)
+>>
+op s
+You open the stained glass.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | Walking Along the Temple Roof (ESW)
+>>
+s
+A Small Room
+{coords}3,12,28
+{rdesc}
+  As you walk through the stained glass window, you find a small room. The room
+is bare, and seems to only serve as a housing for the glass and a few 
+statues. A small passage leads to the south.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north south ]
+(Golden Aura) (White Aura) A statue of a mother stands here, tending to her children's wounds.
+(Golden Aura) A statue of a man sits here, reading from a book.
+(Golden Aura) A statue of a woman stands here, surrounded by gold coins.
+(Golden Aura) A statue stands here, depicting a famous man, being adored by the people.
+You can no longer sense anger.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2131/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Small Room (NS)
+>>
+
+
+s
+A Dark Room...
+{coords}3,12,28
+{rdesc}
+  As you step into the room, you see very little except a single throne and 
+torches. The walls seem to have been carved out of obsidian as they are of 
+the deepest black, and absorb what little light that the torches provide. As 
+you take steps further into the room, you can hear a quiet laughing coming 
+from the west.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north (west) ]
+(Red Aura) (White Aura) Zyian, the Dark Lord of the Temple, sits here.
+(Player) (White Aura) (OPK) Octosloth Forerunner of the <<{ Great La'na }>>.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2130/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Dark Room... (N[W])
+>>
+n
+A Small Room
+{coords}3,12,28
+{rdesc}
+  As you walk through the stained glass window, you find a small room. The room
+is bare, and seems to only serve as a housing for the glass and a few 
+statues. A small passage leads to the south.
+{/rdesc}
+
+<MAPEND>
+[ Exits: north south ]
+(Golden Aura) (White Aura) A statue of a mother stands here, tending to her children's wounds.
+(Golden Aura) A statue of a man sits here, reading from a book.
+(Golden Aura) A statue of a woman stands here, surrounded by gold coins.
+(Golden Aura) A statue stands here, depicting a famous man, being adored by the people.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2130/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Small Room (NS)
+>>
+tasks here
+
+       Zyian : Discover What the Cult Under the Well Is Planning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 3  : Talk to the Statues
+
+Thalien says, "I was trying to pick these flowers for Sarah when these people
+came through a door in the well and kidnapped me." 
+
+Thalien says, "Life was dismal after that because they barely fed me and 
+even the water was scarce." 
+
+Thalien says, "I did learn that they are part of some kind of cult that 
+worships someone called Zyian." 
+
+Thalien says, "Something strange did happen while I was here that I think 
+I should tell you about." 
+
+Thalien says, "As I was walking past these statues, I heard a voice whisper 
+that I shouldn't lose hope."
+
+ Thalien says, "Maybe you should find them and see what you can find 
+out about these cultists." 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use 'tasklist' to see a short summary of all open tasks.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2130/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Small Room (NS)
+>>
+
+The Statue of Knowledge chants the phrase 'antimagic shell'.
+The Statue of Knowledge conjures an anti-magic shell around himself.
+
+Global Quest: Global Quest # 5889 has been won by Mudd - 698th win.
+
+tasks zyian all
+
+       Zyian : Discover What the Cult Under the Well Is Planning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 1  : Where Is Thalien? (Completed)
+
+Sarah exclaims, "Shortly after he went into the well, I heard him yell, and 
+when I looked down I saw some robed people carrying him through a doorway 
+behind a large boulder!" 
+
+Sarah exclaims, "I tried to follow them, but the doorway closed before I could 
+go any farther, and the noises I heard beyond the door frightened me!" 
+
+Sarah says, "I need you to go in there, rescue Thalien, and see what those 
+robed people are doing." 
+
+Sarah says, "He might be too scared to believe you, so if you give him the 
+flowers in the well, then he will know that you are on his side." 
+
+Task 2  : Save Thalien! (Completed)
+
+Save Thalien before the N'Kari makes a meal out of him!
+
+Task 3  : Talk to the Statues
+
+Thalien says, "I was trying to pick these flowers for Sarah when these people
+came through a door in the well and kidnapped me." 
+
+Thalien says, "Life was dismal after that because they barely fed me and 
+even the water was scarce." 
+
+Thalien says, "I did learn that they are part of some kind of cult that 
+worships someone called Zyian." 
+
+Thalien says, "Something strange did happen while I was here that I think 
+I should tell you about." 
+
+Thalien says, "As I was walking past these statues, I heard a voice whisper 
+that I shouldn't lose hope."
+
+ Thalien says, "Maybe you should find them and see what you can find 
+out about these cultists." 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use 'tasklist' to see a short summary of all open tasks.
+
+[*Daily Blessing*] 3237/3603 HP  3832/4236 MP  2130/2131 mv  869tnl (Reply: Gorsk) 
+Lv 135  G 450664 | A Small Room (NS)
+>>
+
+INFO: 1 minute of bonus experience remaining.
+
+The scent of napalm fades from your nostrils.
+
+Your skin feels soft again.
+
+INFO: Bonus experience has now expired.
+
+Your force shield shimmers then fades away.
+
+As the blood flows from their wounds, the minions of Zyian regain their strength...
+
+You can no longer avoid some attacks.
+
+Gorsk just sent you a tell.
+
+INFO: The player rankings have been updated.
+
+The Statue of Mercy chants the phrase 'gagri ey votopun'.
+The Statue of Mercy is embraced in the protection of Ayla.
+
+The Statue of Wealth chants the phrase 'rabreos'.
+
+## You may now use augmentation abilities.
+
+Enlossys (Special Ops) tells the CLAN: '1033 stats at 159, noice'
+
+Enlossys (Special Ops) tells the CLAN: 'mis'
+
+(Friend): Gorsk claps at Ospario's performance.
+
+You feel yourself slow down.
+
+You are no longer blurred.
+
+(Friend) Gorsk: 'INFO: Ospario enchants another spellbound audience by singing the song of his
+people.'
+
+(Friend) Gorsk: 'is that a goal?'
+
+(Friend) Gorsk: 'or is that bard's pup message?'
+
+(Friend) Gorsk: 'oic. heh'
+
+Log session ending at 11:05:28 on Tuesday, 29 August 2023.
