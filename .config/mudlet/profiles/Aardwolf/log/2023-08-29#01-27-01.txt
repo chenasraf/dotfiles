@@ -1,0 +1,552 @@
+Log session starting at 01:27:01 on Tuesday, 29 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-29#01-25-15map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.13s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.26s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-08-29#01-25-15map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.13s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.37s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 4992    
+
+[::(info): Your existing map has 21318 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 222         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Mon Aug 28 09:25:47 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+
+--------------------------------------------------------------------------
+                             Boot Camp - Clan MOTD                             
+--------------------------------------------------------------------------
+Welcome to Boot Camp!
+Be sure to register on our website http://www.aardwolfboot.com
+Also join us on Discord: https://discord.gg/GCjHxxZ
+and Aardwolf's Discord channel https://discord.gg/KH62U8P
+Don't forget our clan skills:
+mutare (double / half the weight of an item) 
+napalm (str and int buff) 
+Always read your notes on the Personal Board, as well as Announce and Mudinfo.
+--------------------------------------------------------------------------
+[ End of Clan MOTD - Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+CLAN: At-ten-tion! KumoGami is here to get some training done!
+Boot Camp Headquarters (G)
+  As you enter the Boot Camp Headquarters, you immediately notice that
+the large main hall is adorned with feasting tables and fire pits
+allowing the green recruits to relax after a hard days training.
+A large mural on the northern wall depicts the founding members of the
+Boot Camp standing before The Fallen Soldier on an ancient battlefield.
+The other stone walls are decorated in the green and yellow insignia of
+Boot Camp and various 'Boot Needs You' posters depicting an alluring Diva
+dressed in the Boot Camp colours pointing at you.
+From the arches leading out of the hall drift sounds of young recruits
+being put through their paces and the smells of gunpowder and mud linger
+in the air.
+
+<MAPEND>
+[ Exits: north east (south) west up down ]
+(Player) Ruo the Elementalist is sleeping here.
+(Player) (White Aura) Breathe in, Breathe out..
+A Grumpy Old General stands here, shouting orders at the new recruits.
+There are 223 players on, the most on this reboot was 304.
+There are 221 players using compression.
+
+PERSONAL: You have 1 unread personal note.
+
+LOTTERY : Current lottery jackpot is at 160,000,000 gold.
+
+BLESSING: Your daily blessing is available.
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+
+Tag option map turned ON
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+
+<MAPEND>
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+note list
+Posts in the Announce forum :
++------+------------+-------------+-------------------------------------+----+
+| Post#| Date/Time  | Author      | Subject                             |Size|
++------+------------+-------------+-------------------------------------+----+
+|  1410|09 Nov 22:39| Lasher      | Topmudsites.com                     |  19|
+|  1411|16 Nov 23:07| Lasher      | Update to 'help botting'.           |  29|
+|  1412|01 Dec 10:16| Lasher      | December / Aardwolf's 26th Birthday |  17|
+|  1413|30 Jan 20:34| Lasher      | Testers.                            |  19|
+|  1415|24 Feb 18:49| Lasher      | Reboot - Feb 24th 2023.             | 130|
+|  1416|28 Feb 14:30| Lasher      | Aardwolf Official Discord.          |  24|
+|  1418|05 Mar 12:00| Lasher      | Reboot March 5th 2023               |  23|
+|  1420|12 Mar 14:13| Lasher      | Test port - New Server.             |  45|
+|  1421|12 Mar 14:19| Lasher      | Re: Test port - New Server.         |  11|
+|  1422|19 Mar 12:02| Lasher      | Aardwolf web sites.                 |  21|
+|  1428|12 Apr 11:37| Lasher      | Aardwolf new server - please help t |  45|
+|  1431|17 Apr 16:55| Lasher      | ** Aardwolf Downtime **             |  19|
+|  1432|17 Apr 16:56| Lasher      | Re: ** Aardwolf Downtime **         |  14|
+|  1434|17 Apr 18:36| Lasher      | Stop / Help Updated                 |  25|
+|  1435|21 Apr 11:30| Lasher      | Donations Closing.                  |   9|
+|  1436|23 Apr 22:36| Lasher      | Bards Wanted.                       |  25|
+|  1437|26 Apr 23:54| Lasher      | Aardwolf PK & Balance "Council"     |  82|
+|  1438|27 Apr 10:09| Lasher      | Re: Aardwolf PK & Balance "Council" |  14|
+|  1439|29 Apr 11:58| Lasher      | Re: Donations Closing.              |  13|
+|  1440|03 May 13:12| Lasher      | Changes in today's reboot.          |  61|
+|  1441|30 Jun 15:06| Lasher      | Classchange and mastery/instinct re |  10|
+|  1442|15 Jul 12:53| Lasher      | Changes this reboot - July 15th 202 |  83|
+|  1443|15 Jul 12:54| Lasher      | Classchange rewrite and instinct/ma |  52|
+|  1444|16 Jul 18:54| Lasher      | Re: Changes this reboot - July 15th |   9|
+|  1445|18 Jul 22:23| Lasher      | Imm team changes.                   |  19|
+|  1446|01 Aug 14:26| Lasher      | Donations now open.                 |  19|
++------+------------+-------------+-------------------------------------+----+
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+forum personal
+Current forum changed to Personal. You can read and write in this forum.
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+note list
+Posts in the Personal forum :
++------+------------+-------------+-------------------------------------+----+
+| Post#| Date/Time  | Author      | Subject                             |Size|
++------+------------+-------------+-------------------------------------+----+
+|495086|17 Jun 18:52| Zteven      | 2nd Promotion Corpsman/Medic > Sold |  37|
+|495093|17 Jun 19:45| Anssett     | Re: 2nd Promotion Corpsman/Medic >  |  12|
+|495095|17 Jun 20:03| Madrox      | Re: 2nd Promotion Corpsman/Medic >  |   3|
+|495104|17 Jun 22:11| Shaelynne   | Mentor Epics July 2023              |  67|
+|495105|17 Jun 22:15| Zteven      | Re: 2nd Promotion Corpsman/Medic >  |   9|
+|495151|18 Jun 11:07| Anssett     | Re: Mentor Epics July 2023          |  10|
+|495282|19 Jun 00:15| Felwyne     | Joining boot                        |  15|
+|495284|19 Jun 00:27| Epsilon     | Re: Joining boot                    |  45|
+|495286|19 Jun 00:18| Dweebz      | Joining boot                        |  13|
+|495290|19 Jun 01:42| Talbor      | Re: Joining boot                    |  45|
+|495381|19 Jun 22:40| Epsilon     | Felwyne interview                   |   8|
+|495582|21 Jun 02:19| Rokisha     | joining                             |   5|
+|495595|21 Jun 07:43| Roume       | Re: joining                         |  45|
+|495669|21 Jun 19:05| Davem       | promotion                           |   5|
+|495718|22 Jun 02:43| Loro        | Joining Boot                        |   7|
+|495727|22 Jun 08:01| Roume       | Re: Joining Boot                    |  45|
+|495728|22 Jun 08:16| Anssett     | Re: promotion                       |   8|
+|495779|22 Jun 16:08| Davem       | promotion                           |  41|
+|495843|23 Jun 10:03| Ospario     | Rokisha interview                   |  10|
+|495882|23 Jun 12:29| Madrox      | Loro Interview                      |  26|
+|495906|23 Jun 16:52| Ospario     | Rokisha addendum                    |   2|
+|496171|25 Jun 11:32| Saraid      | Re: promotion                       |   5|
+|496202|25 Jun 14:35| Davem       | AQ for clan promotion               |  28|
+|496453|27 Jun 16:10| Tartach     | Goals for promotion                 |  18|
+|496460|27 Jun 16:53| Smasha      | application                         |  26|
+|496477|27 Jun 19:24| Epsilon     | Re: application                     |  45|
+|496566|28 Jun 13:59| Auxiax      | boot application                    |   9|
+|496788|30 Jun 07:47| Mellie      | Slipping out                        |  13|
+|497165|02 Jul 22:32| Zasha       | Promotion to Soldier                |  25|
+|497168|02 Jul 22:40| Greenjello  | Joining Boot                        |  12|
+|497170|02 Jul 22:56| Greenjello  | Delay Joining                       |   6|
+|497177|02 Jul 23:15| Muyu        | Joining Boot                        |   9|
+|497178|02 Jul 23:20| Epsilon     | Re: Joining Boot                    |  45|
+|497250|03 Jul 14:13| Morgawr     | joining Boot                        |  10|
+|497251|03 Jul 14:30| Epsilon     | Re: joining Boot                    |  45|
+|497271|03 Jul 18:56| Anssett     | Re: Promotion to Soldier            |  13|
+|497349|04 Jul 02:22| Zasha       | Re:promotion to Soldier             |   8|
+|497351|04 Jul 02:41| Zasha       | Re:Promotion to Soldier (Story)     |  17|
+|497352|04 Jul 02:51| Kanaye      | Next promotion                      |  10|
+|497368|04 Jul 07:37| Serinqua    | Joining                             |   6|
+|497373|04 Jul 09:48| Epsilon     | Re: Joining                         |  45|
+|497408|04 Jul 21:40| Bloodkiller | Joining Boot                        |  22|
+|497427|05 Jul 00:18| Epsilon     | Serinqua interview                  |   9|
+|497428|05 Jul 00:20| Epsilon     | Muyu interview                      |  11|
+|497498|05 Jul 12:26| Madrox      | Morgawr Interview                   |  17|
+|497645|06 Jul 13:38| Tench       | Promotion Request                   |  24|
+|497656|06 Jul 15:35| Anssett     | Re: Promotion Request               |  10|
+|497855|08 Jul 03:38| Tench       | Promotion issue                     |   4|
+|497856|08 Jul 03:41| Saraid      | Re: Promotion issue                 |   4|
+|497859|08 Jul 08:04| Maximizerboy| Joining Boot                        |  13|
+|497870|08 Jul 09:48| Epsilon     | Re: Joining Boot                    |  45|
+|497880|08 Jul 10:56| Sarei       | Application to join Boot Camp       |   8|
+|497883|08 Jul 11:05| Epsilon     | Re: Application to join Boot Camp   |  45|
+|497923|08 Jul 16:30| Tench       | Tench Promotion Update              |  15|
+|498222|10 Jul 19:32| Epsilon     | Sarei interview                     |  10|
+|498232|10 Jul 20:22| Grindcore   | Boot Application                    |  29|
+|498243|10 Jul 22:21| Epsilon     | Re: Boot Application                |  45|
+|498359|11 Jul 21:15| Madrox      | Grindcore Interview                 |  11|
+|498723|14 Jul 14:34| Mandibular  | Application to join Boot Camp       |   5|
+|498763|14 Jul 22:34| Epsilon     | Re: Application to join Boot Camp   |  45|
+|498889|15 Jul 18:55| Anssett     | Mentor Epics                        |   8|
+|498902|15 Jul 20:34| Fafhrd      | application                         |  10|
+|498908|15 Jul 21:28| Epsilon     | Re: application                     |  45|
+|499003|16 Jul 13:39| Madrox      | Zyian Goal                          |   7|
+|499004|16 Jul 13:43| Madrox      | Re: Zyian Goal                      |  11|
+|499077|16 Jul 22:07| Winger      | Joining Boot                        |  10|
+|499104|17 Jul 00:02| Epsilon     | Re: application                     |  48|
+|499157|17 Jul 12:27| Serinqua    | Promotion                           |   7|
+|499176|17 Jul 14:55| Talbor      | Re: Promotion                       |   8|
+|499178|17 Jul 15:09| Serinqua    | Re: Promotion                       |  18|
+|499217|17 Jul 23:59| Talbor      | Re: Promotion +                     |   7|
+|499287|18 Jul 13:47| Zensch      | Winger - Interview                  |  12|
+|499413|19 Jul 13:36| Serinqua    | Re: Promotion ++                    |  20|
+|499583|20 Jul 12:28| Casador     | application                         |  18|
+|499584|20 Jul 12:43| Epsilon     | Re: application                     |  45|
+|499671|21 Jul 03:58| Abraxos     | Abraxos Promotion Request           |  19|
+|499696|21 Jul 11:01| Golvox      | joining boot                        |   1|
+|499711|21 Jul 11:14| Golvox      | joining boot camp                   |   6|
+|499712|21 Jul 11:20| Zensch      | Re: joining boot camp               |  45|
+|499901|22 Jul 14:43| Madrox      | Win Ben Stei...err Grumpy Old Gener |  91|
+|499946|22 Jul 23:30| Epsilon     | Golvox interview                    |  10|
+|500047|23 Jul 17:48| Narwhal     | Promotion request                   |  46|
+|500055|23 Jul 19:00| Abraxos     | Abraxos Promotion Request           |   7|
+|500057|23 Jul 19:33| Anssett     | Re: Promotion request               |   9|
+|500059|23 Jul 20:03| Anssett     | Re: Abraxos Promotion Request       |  21|
+|500141|24 Jul 09:48| Madrox      | Re: Win Ben Stei...err Grumpy Old G |   9|
+|500205|24 Jul 20:27| Abraxos     | Abraxos Promotion Request           |  20|
+|500342|25 Jul 17:03| Narwhal     | Re: Promotion request +             |   9|
+|500382|25 Jul 22:26| Relek       | Application                         |   6|
+|500396|26 Jul 00:52| Talbor      | Re: Application                     |  45|
+|500462|26 Jul 13:34| Morgawr     | Promotion                           |  11|
+|500514|26 Jul 20:03| Anssett     | Re: Promotion                       |  10|
+|500515|26 Jul 20:16| Anssett     | Contest reminder!                   |   5|
+|500594|27 Jul 13:30| Anssett     | More new staff!                     |  10|
+|500683|28 Jul 08:46| Anssett     | Mentor epics                        |   8|
+|500697|28 Jul 11:05| Icaerus     | Application                         |  23|
+|500699|28 Jul 11:11| Madrox      | Re: Application                     |  15|
+|500704|28 Jul 11:20| Icaerus     | Re: Application +                   |  11|
+|500705|28 Jul 11:31| Madrox      | Re: Application ++                  |  14|
+|500750|28 Jul 20:07| Madrox      | Re: Application +++                 |  10|
+|500809|29 Jul 08:09| Icaerus     | Re: Application ++++                |  21|
+|500892|30 Jul 02:32| Thevidu     | joining boot                        |   0|
+|500976|30 Jul 13:45| Morgawr     | Re: Promotion                       |   6|
+|500981|30 Jul 13:54| Talbor      | Re: joining boot                    |   7|
+|500992|30 Jul 17:31| Roume       | Winds Cards for Trade               |  37|
+|501016|30 Jul 23:45| Felwyne     | To Medic need task please           |   7|
+|501107|31 Jul 14:49| Vnu         | joining boot                        |   7|
+|501121|31 Jul 20:38| Talbor      | Re: To Medic need task please       |   8|
+|501122|31 Jul 20:40| Talbor      | Re: joining boot                    |  45|
+|501175|01 Aug 07:07| Kazm        | Re: Winds Cards for Trade           |   3|
+|501197|01 Aug 11:20| Shravani    | Joining Boot                        |  10|
+|501216|01 Aug 12:49| Kazm        | Re: Joining Boot                    |  45|
+|501244|01 Aug 15:26| Tenchu      | joining                             |   0|
+|501245|01 Aug 15:37| Tenchu      | joining                             |   0|
+|501274|01 Aug 19:11| Abraxos     | Abraxos Promotion Request           |  22|
+|501295|01 Aug 20:22| Winger      | Promotion Request                   |  43|
+|501341|02 Aug 00:27| Talbor      | Re: joining                         |   7|
+|501410|02 Aug 09:13| KumoGami    | Donation                            |   7|
+|501447|02 Aug 12:39| Lasher      | Thank you for your recent donation. |  18|
+|501493|02 Aug 17:46| Mandibular  | joining boot camp                   |   2|
+|501498|02 Aug 18:06| Grrtt       | Boot Application                    |   8|
+|501614|03 Aug 09:16| Roume       | Loqui merger with Boot              |  10|
+|501615|03 Aug 09:28| Crowley     | Re: Loqui merger with Boot          |  27|
+|501619|03 Aug 10:29| Saraid      |  Knossos alias for getting in the c |  19|
+|501668|03 Aug 18:15| Lobsterman  | Re: Loqui merger with Boot +        |   3|
+|501670|03 Aug 18:15| Lobsterman  | Re: Loqui merger with Boot ++       |   3|
+|501671|03 Aug 18:17| SimiLanJ    | Re: Loqui merger with Boot +++      |   3|
+|501788|04 Aug 03:36| Felwyne     | Task Complete                       |   8|
+|501790|04 Aug 04:10| Kanaye      | Re: Loqui merger with Boot ++++++   |   3|
+|501792|04 Aug 04:23| Nakur       | Promotion                           | 151|
+|501798|04 Aug 04:58| Talbor      | Re: Promotion                       |  12|
+|501814|04 Aug 08:05| Crowley     | Re: Loqui merger with Boot +++++++  |  34|
+|501820|04 Aug 08:40| SimiLanJ    | Loqui merger with Boot +++++++      |   8|
+|501826|04 Aug 09:21| Thevidu     | joining boot                        |  11|
+|501841|04 Aug 11:57| Roume       | SH Epic Eq                          |  22|
+|501842|04 Aug 12:07| Roume       | Re: SH Epic Eq                      |  12|
+|501900|04 Aug 15:02| Vinatia     | My Note                             |  52|
+|501950|04 Aug 20:51| Zasha       | Weapons to give away                | 108|
+|501954|04 Aug 21:09| Talbor      | Re: joining boot                    |  45|
+|501957|04 Aug 21:15| Zasha       | Re:Weapons to give away             |   6|
+|501993|05 Aug 00:46| Felwyne     | Re: Promotion +                     |   6|
+|502023|05 Aug 03:46| Nakur       | Re: Promotion +                     |   7|
+|502118|05 Aug 15:37| Madrox      | Re: Win Ben Stei...err Grumpy Old G |   6|
+|502186|06 Aug 01:50| Felwyne     | Promotion                           |   3|
+|502230|06 Aug 10:18| Anssett     | Re: Promotion                       |   5|
+|502239|06 Aug 11:28| Roume       | Change to Boot Social Media         |  14|
+|502289|06 Aug 19:21| Ospario     | Farewell, my friends                |  75|
+|502314|06 Aug 22:07| Ospario     | Also (this one is short)            |   4|
+|502376|07 Aug 01:28| Ospario     | Ermagerd (Last one (edited) I promi |  50|
+|502443|07 Aug 08:54| Winger      | Promotion request                   |  37|
+|502517|07 Aug 13:22| KumoGami    | Tells unheard when you last quit    |   2|
+|502521|07 Aug 13:26| Talbor      | Re: Promotion request               |   8|
+|502652|08 Aug 10:12| Winger      | Finished Promotion Task             |  10|
+|502694|08 Aug 18:12| Luathas     | Joining Bootcamp                    |  28|
+|502707|08 Aug 19:51| Epsilon     | Re: Joining Bootcamp                |  45|
+|502805|09 Aug 09:55| Roume       | Updated Level 91 Eq                 |  12|
+|502895|09 Aug 19:39| Anssett     | Luathas interview                   |   6|
+|502946|10 Aug 03:40| KumoGami    | Re-joining boot                     |  16|
+|502956|10 Aug 08:01| Roume       | Re: Re-joining boot                 |   9|
+|503165|11 Aug 12:36| Grindcore   | Promotion Application               |  43|
+|503199|11 Aug 15:20| Talbor      | Re: Promotion Application           |   9|
+|503211|11 Aug 18:37| Grindcore   | Re: Promotion Application +         |  18|
+|503330|12 Aug 16:18| KumoGami    | Website password reset?             |   8|
+|503405|13 Aug 05:55| Diafour     | promotion request                   |  12|
+|503440|13 Aug 09:44| Diafour     | promotion requirement - goal comple |  10|
+|503446|13 Aug 10:06| Anssett     | Re: promotion request               |  10|
+|503484|13 Aug 13:30| Diafour     | Re: promotion request +             |  13|
+|503649|14 Aug 13:57| Asarius     | Joining Boot                        |   7|
+|503742|14 Aug 23:24| Talbor      | Re: Joining Boot                    |  45|
+|503782|15 Aug 06:21| Lepdar      | joining boot                        |   6|
+|503822|15 Aug 12:49| Kazm        | Re: joining boot                    |  45|
+|504418|18 Aug 16:48| Breathe     | Departing Boot - Thank You For Ever |  16|
+|504649|20 Aug 05:02| Zensch      | Lepdar interview                    |  13|
+|504717|20 Aug 14:24| Furlos      | wishing to join                     |  15|
+|504719|20 Aug 14:34| Epsilon     | Re: wishing to join                 |  45|
+|504760|20 Aug 19:53| Madrox      | 11 days left to win my crap...      |   8|
+|505091|22 Aug 21:41| Epsilon     | Furlos interview                    |  11|
+|505377|24 Aug 18:28| KumoGami    | Promotion Request                   |  35|
+|505529|25 Aug 17:51| Anssett     | Re: Promotion Request               |  10|
+|505597|26 Aug 08:40| Furlos      | promotion                           |   4|
+|505631|26 Aug 12:38| Talbor      | Re: promotion                       |   6|
+|505632|26 Aug 12:43| Talbor      | Re: Promotion Request               |   8|
+|505670|26 Aug 18:41| KumoGami    | Re: Promotion Request +             |  31|
+|505699|26 Aug 22:41| Madrox      | SKD Goal Solution                   |  15|
+|505714|26 Aug 23:50| Talbor      | Re: Promotion Request ++            |   8|
+|505990|28 Aug 13:12|*Anssett     | Leadership opportunity!             |  13|
++------+------------+-------------+-------------------------------------+----+
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+note read
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+From    : Anssett: Leadership opportunity!
+Forum   : Personal - #505990
+To      : Boot
+Date    : Mon Aug 28 13:12:54 2023
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+| Good afternoon, Boot-
+| 
+| I will be stepping down as General in the near future, which means that you,
+| yes YOU, have an opportunity to toss your name in the hat. Ever wondered what
+| goes into clan management? Ever wish it was you picking out which
+| goals/tasks/arbitrary assignments people perform for promotion? Ever want to
+| really find out what gives Saraid a tic ... I mean what makes her tick?
+| 
+| If you are interested in the job, send a note to any Boot leader by noon game
+| time on Sunday, Sept 3 (that's this coming Sunday). If you have any questions,
+| don't hesitate to ask.
+| 
+| -Anssett
+|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[*Daily Blessing*] 3574/3574 HP  4196/4196 MP  2113/2113 mv  943tnl  
+Lv 134  G 417379 | Boot Camp Headquarters (NE[S]WUD)
+>>
+
+Global Quest: Global quest # 5778 has been cancelled due to lack of participants.
+
+
+Tartach appears in the room.
+
+Tench arrives from the west.
+
+Tench asks a Grumpy Old General for a quest.
+
+Tench runs up.
+
+Someone appears in the room.
+
+(WanGrp?!) [L148,497,W+2/T9] Liathum raises his hand.
+
+Someone falls asleep.
+
+(WanGrp?!) [L160,2500,C+2/T1] Viridi: want to drag me liathum? :P
+
+HomerSimpson gossips 'whew that was a pain of a q mob. minion of Bhazat in dunoir. there were like 6
+of them, they are aggro, all in the same room, they hit hard, they took almost no dmg.'
+
+(WanGrp?!) [L148,497,W+2/T9] Liathum: You'd outlevel me in like two rooms or I would :P
+
+(WanGrp?!) [L160,2500,C+2/T1] Viridi: lol
+
+Someone wakes and stands up.
+
+Global Quest: Global quest # 5779 has been cancelled due to lack of participants.
+
+(WanGrp?!) [L139,2500,M+5/T3] Watashi: I wouldnt tho
+
+Someone says 'd'
+
+Someone flies down.
+
+(WanGrp?!) [L37,2500,Mag/T5] Yerald chuckles politely.
+
+Someone appears in the room.
+
+(WanGrp?!) [L148,497,W+2/T9] Liathum beams with pride at Watashi.
+
+Tartach appears in the room.
+
+(Gossip) Poppa comforts HomerSimpson.
+
+Someone has entered Aardwolf.
+CLAN: At-ten-tion! Spublofe is here to get some training done!
+
+Someone asks a Grumpy Old General for a quest.
+
+Ospario gossips 'time for another round of who's the crime boss! no reruns, all new episodes of
+murder, betrayal, and the basest desires of gods and mice - mafia join 22'
+
+o/~|Bard|o/~ Ospario: time for another round of who's the crime boss! no reruns, all new episodes of
+murder, betrayal, and the basest desires of gods and mice - mafia join 22
+
+Ruo's eyes glaze over and he appears to be somewhere else.
+
+With a thunderclap, Someone appears in the room.
+
+
+Someone informs a Grumpy Old General that he has completed his quest.
+
+Someone flies west.
+
+Someone flies in from the west.
+
+Someone jets down.
+
+With a thunderclap, Someone appears in the room.
+
+
+Someone informs a Grumpy Old General that he has completed his quest.
+
+Someone falls asleep.
+
+Breathe asks a Grumpy Old General for a quest.
+
+Someone flies down.
+
+Someone wakes and stands up.
+
+o/~|Bard|o/~ Ospario: 1 more player needed - mafia join 22
+
+:::LoquI::: Liathum: You won't be disappointed!
+
+Breathe flies in from the east.
+
+Breathe informs a Grumpy Old General that he has completed his quest.
+
+Breathe flies down.
+
+With a thunderclap, Tench appears in the room.
+
+
+Tench jets up.
+
+With a thunderclap, Tench appears in the room.
+
+
+
+Tench flies north.
+
+Tench flies in from the north.
+
+Tench jets up.
+
+Someone appears in the room.
+
+The Gunfire and Training cease for a moment as the Boot Hall is Restored.
+
+Viridi (Recruit) tells the CLAN: 'sheesh i died twice in adaldar to bandits'
+
+Bochner pads in from the west.
+
+Bochner asks a Grumpy Old General for a quest.
+
+Bochner pads down.
+
+Epsilon (Special Ops) tells the CLAN: 'Bring potions.'
+
+Epsilon (Special Ops) tells the CLAN: 'You're a caster - you're squishy.'
+
+
+
+### This character has reconnected from 147.235.214.237 (147.235.214.237) ###
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: The remote host closed the connection
+[ INFO ]  - Connection time: 00:10:47.907
+                
+savemap
+savemap map
