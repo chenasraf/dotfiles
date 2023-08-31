@@ -59,6 +59,10 @@ home() {
           for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
             sed -i '' -E 's/\/Users\/([^\/]+)\//$HOME\//g' $file
           done
+          echo_yellow "Preparation complete."
+          git -C "$DOTFILES" add .config/mudlet
+          git -C "$DOTFILES" commit -m "backup: mudlet"
+          git -C "$DOTFILES" push
           echo_yellow "Backup complete."
           ;;
         restore | r)
