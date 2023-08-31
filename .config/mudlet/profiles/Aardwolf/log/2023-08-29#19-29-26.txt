@@ -1,0 +1,388 @@
+Log session starting at 19:29:26 on Tuesday, 29 August 2023.
+[  OK  ]  - Lua module lfs (Lua File System) loaded.
+[  OK  ]  - Lua module lua-zip loaded.
+[  OK  ]  - Lua module rex_pcre loaded.
+[  OK  ]  - Lua module sqlite3 loaded.
+[  OK  ]  - Lua module lua-utf8 loaded.
+[  OK  ]  - Lua module yajl loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.11s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.25s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+[  OK  ]  - Mudlet-lua API & Geyser Layout manager loaded.
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.14s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0.38s).
+[ INFO ]  - Looking up the IP address of server: aardmud.org:4000 ...
+MainWindowSize: 4992    
+
+[::(info): Your existing map has 21459 rooms mapped. ::]
+[::(info): To load the starter map anyway (14907 rooms) type: startermap ::]
+[::(info): startermap will backup your map before loading the starter map. ::]
+[::(info): Initalized aard mapper ::]
+[::(info): Scripts initialized ::]
+[ INFO ]  - The IP address of aardmud.org has been found. It is: 23.111.142.226
+[ INFO ]  - Trying to connect to 23.111.142.226:4000 ...
+[ INFO ]  - A connection has been established successfully.
+                
+                
+#############################################################################
+##[                                               ]##########################
+##[        --- Welcome to Aardwolf MUD ---        ]############ /"  #########
+##[                                               ]########  _-`"""', #######
+##[         Players Currently Online: 230         ]#####  _-"       )  ######
+##[                                               ]### _-"          |  ######
+################################################### _-"            ;  #######
+######################################### __---___-"              |  ########
+######################################  _"   ,,                  ;  `,,  ####
+#################################### _-"    ;''                 |  ,'  ; ####
+##################################  _"      '                    `"'   ; ####
+###########################  __---;                                 ,' ######
+######################## __""  ___                                ,' ########
+#################### _-""   -"" _                               ,' ##########
+################### `-_         _                              ; ############
+#####################  ""----"""   ;                          ; #############
+#######################  /          ;                        ; ##############
+#####################  /             ;                      ; ###############
+###################  /                `                    ; ################
+#################  /                                      ; #################
+-----------------------------------------------------------------------------
+    Enter your character name or type 'NEW' to create a new character
+-----------------------------------------------------------------------------
+What be thy name, adventurer? 
+
+Existing profile loaded - please enter your password.
+
+Password: 
+Last on from 147.235.214.237 (147.235.214.237) at Tue Aug 29 12:27:37 2023
+
+--------------------------------------------------------------------------
+                          Welcome to Aardwolf           
+--------------------------------------------------------------------------
+For recent changes, please read the announce board or visit aardwolf.com
+
+         Facebook Users: Check out our new Facebook page at:
+
+                http://www.facebook.com/AardwolfMud
+
+Other important links:
+
+                http://wiki.aardwolf.com     - the Aardwolf Wiki.
+                http://www.aardwolf.com/blog - the Aardwolf Blog.
+
+    Welcome to Aardwolf. Please enjoy yourself and help create an
+            atmosphere in which others can do the same.
+
+--------------------------------------------------------------------------
+  ## Please vote for Aardwolf at www.aardwolf.com -> 'vote Aardwolf'  ##
+  ##       You can vote every 13 hours to help make Aardwolf #1!      ##
+--------------------------------------------------------------------------
+
+
+[ Press Return to continue ]
+
+
+
+--------------------------------------------------------------------------
+                             Boot Camp - Clan MOTD                             
+--------------------------------------------------------------------------
+Welcome to Boot Camp!
+Be sure to register on our website http://www.aardwolfboot.com
+Also join us on Discord: https://discord.gg/GCjHxxZ
+and Aardwolf's Discord channel https://discord.gg/KH62U8P
+Don't forget our clan skills:
+mutare (double / half the weight of an item) 
+napalm (str and int buff) 
+Always read your notes on the Personal Board, as well as Announce and Mudinfo.
+--------------------------------------------------------------------------
+[ End of Clan MOTD - Press Return to continue ]
+
+
+Welcome to Aardwolf. May your adventures be mystical, challenging and rewarding.
+CLAN: At-ten-tion! KumoGami is here to get some training done!
+
+## You are asleep.
+
+There are 231 players on, the most on this reboot was 304.
+There are 227 players using compression.
+
+INFO: Double experience is running courtesy of Aardwolf supporters - see 'help donate'. - 6 minutes
+left.
+
+LOTTERY : Current lottery jackpot is at 160,000,000 gold.
+
+BLESSING: Your daily blessing is available.
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+
+Tag option map turned ON
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+You dream about a nice treasure map.
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+You dream about being able to look.
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+
+You received your last daily blessing at 23 Aug 2023 17:16:55.
+
+You are ready to receive a new daily blessing.
+
+You have 1 daily blessing reset available.
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+
+Furlos (Recruit) tells the CLAN: 'welcome KumoGami'
+
+The Gunfire and Training cease for a moment as the Boot Hall is Restored.
+
+INFO: 5 minutes of bonus experience remaining.
+
+You feel yourself slow down.
+
+CLAN: At-ten-tion! Spublofe is here to get some training done!
+
+ct Hey :)
+You tell the CLAN: 'Hey :)'
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+curse -h 10
+[29 Aug 12:11:28] (Curse) KumoGami: either simba or lion king for the latter. look it up on urban
+dictionary
+[29 Aug 12:12:07] (Curse) Poppa: goes to other window to check urban dictionary
+[29 Aug 12:12:16] (Curse) Poppa goes to other window to check urban dictionary
+[29 Aug 12:12:32] (Curse) KumoGami: dumb question, how do you do the custom socials
+[29 Aug 12:14:30] (Curse) Poppa: For the love of God... ROFL
+[29 Aug 12:14:55] (Curse) Poppa: wait till I tell the guys that visit me about that funny "Simba"
+position
+[29 Aug 12:15:22] (Curse) Poppa: that should have them all laughing
+[29 Aug 12:18:03] (Curse) Poppa: I'll try the spiderman position on a chick and see if she likes it
+[29 Aug 12:18:13] (Curse) Poppa: no to "Simba" tho
+[29 Aug 12:25:07] (Curse) KumoGami: haha :P
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+
+You are no longer blurred.
+
+(Corpsman) CLAN: You catch Winger attempting to ogle you discreetly out of the corner of his eye.
+
+help socials
+----------------------------------------------------------------------------
+Help Keywords : Socials.
+Help Category : Communication.
+Related Helps : Emote, New Social, Rsocial, Shelp.
+Last Updated  : 2020-03-25 19:59:29.
+----------------------------------------------------------------------------
+
+Syntax:
+
+    socials                  : Displays all socials.
+    socials <string>         : Displays socials with given string.
+    random                   : Uses a random social.
+
+
+Summary:
+
+Type 'socials' to get a list. 
+Type a social name to use it. 
+Type 'social [target]' to use a social on someone else.
+Type 'gossip *smile' to use the smile social on the gossip channel.
+
+Detail:
+
+Socials are a pre-set list of various actions that may either have no 
+target (*nod = "You nod.") or target yourself or another player/monster
+(*nod ivar  = "You nod at Ivar."). 
+
+To see a complete list of socials, type 'socials'.  To search the socials
+file for a specific word, use 'socials <word>'.  To see the specific
+actions a specific social will do, use 'shelp <social>' (see 'help shelp').
+
+You may also use 'random' instead of a specific social to use a random
+social from the list.
+
+For information on how to use socials on channels, see 'help channels'.
+
+If a game command and a social overlap (e.g., 'poker' command vs. 'poke'
+social), prefix the social with a * (like '*poke ivar').
+
+Note: Curse-only socials (see 'help nocurse') will only work on channels;
+they do not work in rooms.
+
+The 'strictsocials' command sets your character so that you have to use the
+'*' prefix to social someone. This is to help reduce the number of socials 
+caused by typos. The current 'strictsocials' setting can be seen by typing 
+'config all'.
+
+----------------------------------------------------------------------------
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+help rsocial
+----------------------------------------------------------------------------
+Help Keywords : Rsocial.
+Help Category : Config.
+Related Helps : Autolist, Socials.
+Last Updated  : 2017-06-14 21:51:38.
+----------------------------------------------------------------------------
+Syntax: rsocial
+
+This command toggles whether or not you allow people to use socials on you,
+as well as you using socials on a target, from a distance. Remote socials
+are prefixed with a cyan asterisk (*).
+----------------------------------------------------------------------------
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+help emote
+----------------------------------------------------------------------------
+Help Keywords : Emote.
+Help Category : Communication.
+Related Helps : Shelp, Socials, Smote.
+Last Updated  : 2017-08-08 22:51:34.
+----------------------------------------------------------------------------
+
+Syntax: emote <action>
+ 
+Emote is used to express emotions or actions. It places your name at the
+beginning of a self-created action, based upon what you type in after the
+emote.
+
+For example, 'emote has updated all of the help files on Aardwolf' will 
+show to the room as 'Lasher has updated all of the help files on Aardwolf'.
+
+Emotes are limited to the room you are in, and will substitute your name 
+for the word 'Emote' when it is displayed to others. Emote is useful for 
+doing things not covered by the more conventional socials.  To create an
+emote with your name somewhere other than the beginning of the emote, use
+'smote' (see 'help smote').
+
+Emotes may also be used on channels.  Use the colon (:) symbol to do 
+this.  For example, 'gossip :has once again updated all of the help files
+on Aardwolf.' would be seen as (Gossip) Lasher has once again updated
+all of the help files on Aardwolf.
+
+There are also many 'built-in' social commands, a list of which can be 
+obtained by typing 'socials'.  These socials may override in-game commands 
+by adding a * to the front- for example, typing 'nod' will toggle 
+nodelivery, but typing '*nod' will show the nod social. To use a social
+on a channel, it is necessary to use the * ('help socials').
+
+Proper use of emotes, socials and smotes can transform a character from 
+ordinary to distinctly... quirky.
+
+
+----------------------------------------------------------------------------
+
+[*Daily Blessing*] 3729/3729 HP  4385/4385 MP  2209/2209 mv  467tnl  
+Lv 139  G 584889 | Medical lounge (E[D])
+>>
+
+Global Quest: Global Quest # 5988 has been won by Cooler - 5412th win.
+Global Quest: Global Quest # 5988 will go into extended time for 5 more minutes.
+
+
+Global Quest: Ani has completed Global Quest # 5988.
+
+INFO: HARDCORE Yuna has been killed by Omphalon at level 60.
+
+INFO: Yuna has entered open PK (OPK) mode!
+
+CLAN: At-ten-tion! Serinqua is here to get some training done!
+
+Global Quest: Kandorr has completed Global Quest # 5988.
+
+Global Quest: Yuna has completed Global Quest # 5988.
+Global Quest: No active players remaining. Global Quest # 5988 is now over.
+
+INFO: 1 minute of bonus experience remaining.
+
+INFO: Bonus experience has now expired.
+
+(Gossip) Grrdy peers intently at Cilmarill.
+
+INFO: Vandit has been reborn as a Vampire Thief.
+
+The Gunfire and Training cease for a moment as the Boot Hall is Restored.
+
+Grrdy gossips 'We're taking the hobbits to Isengard.'
+
+loadmap map.dat
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.29T19.41.09.
+057.dat
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.
+config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.29T19.41.09.
+145.dat
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.24s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+loadmap map
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.29T19.41.14.
+588.dat
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.09s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.25s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.29T19.41.14.
+989.dat
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.
+config/mudlet/profiles/Aardwolf/aardwolf/map"!
+loadmap map.dat
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.29T19.41.18.
+057.dat
+[ ERROR ] - Unable to open map file for reading: "/Users/chen/.
+config/mudlet/profiles/Aardwolf/aardwolf/map.dat.dat"!
+Map saved to: /Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/mapBackup_2023.08.29T19.41.18.
+060.dat
+[ INFO ]  - Reading map. Format version: 20. File:
+            "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat",
+            please wait...
+[ INFO ]  - Successfully read the map file (0.10s), checking some
+            consistency details...
+[ INFO ]  - Map audit starting...
+[  OK  ]  - Auditing of map completed (0.25s). Enjoy your game...
+[  OK  ]  - Map loaded successfully (0s).
+Character autosaved at Tue Aug 29 12:41:13 2023.
+
+CLAN: Furlos falls out to take some much needed R & R.
+
+    
+[ ALERT ] - Socket got disconnected.
+            Reason: User Disconnected
+[ INFO ]  - Connection time: 00:12:18.934

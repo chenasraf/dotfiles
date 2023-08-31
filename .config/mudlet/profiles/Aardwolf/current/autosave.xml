@@ -22,10 +22,10 @@
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>55</borderTopHeight>
+			<borderTopHeight>35</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>967</borderRightWidth>
+			<borderRightWidth>947</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -139,7 +139,7 @@ tmpVis = false</script>
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
 				<mStayOpen>0</mStayOpen>
-				<mCommand>ca invis</mCommand>
+				<mCommand></mCommand>
 				<packageName></packageName>
 				<mFgColor>#fd8008</mFgColor>
 				<mBgColor>#252525</mBgColor>
@@ -343,7 +343,7 @@ table.insert(cp_targets, { ["mob"] = mob, ["area"] = area })
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>[*] (a |an |the )?([a-zA-Z0-9 -']+) \(([a-zA-Z0-9 -']+)\)$</string>
+						<string>[*] (a |an |the )?([\w\d \-']+) \(([a-zA-Z0-9 -']+)\)$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -675,6 +675,26 @@ end</script>
 					<packageName></packageName>
 					<regex>^(bp|bportal) (.+)$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>buy to bag</name>
+					<script>local count = matches[2]
+local item = matches[3]
+
+send("buy " .. count .. " " .. item .. "; put all." .. item .. " " .. aard.config["bag"])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^bbuy ([0-9]*) (.+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>buy to pbag</name>
+					<script>local count = matches[2]
+local item = matches[3]
+
+send("buy " .. count .. " " .. item .. "; put all." .. item .. " " .. aard.config["pbag"])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^pbuy ([0-9]*\s)?(.+)$</regex>
+				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
 				<name>precall</name>
@@ -842,7 +862,7 @@ end</script>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Put all pots in bags</name>
-				<script>send("put all.breakfast backpack; put all.acco backpack; put all.camo back")</script>
+				<script>send("put all.breakfast " .. aard.config["pbag"] .. "; put all.acco " .. aard.config["pbag"] .. "; put all.camo " .. aard.config["pbag"])</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>potbag</regex>
@@ -861,6 +881,14 @@ send("keep '" .. item .. "'; wear '"..item.."'")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^(kw|keepwear) (.+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>buy keep wear</name>
+				<script>local item = matches[3]
+send("buy '" .. item .. "'; keep '" .. item .. "'; wear '"..item.."'")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(bkw|buykeepwear) (.+)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>portal runto</name>
@@ -2604,7 +2632,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>mine forman</value>
+			<value>fleeing gazelle</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

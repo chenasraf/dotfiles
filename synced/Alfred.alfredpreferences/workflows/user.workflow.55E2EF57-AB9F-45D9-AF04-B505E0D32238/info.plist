@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>2675D13C-0E1E-482C-A340-E9A2A636A8BD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AC7604C-F4A3-4534-95BA-6C003EDF7790</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>68EB20C9-2962-4F4F-896E-6DD314A97BCA</key>
 		<array>
 			<dict>
@@ -104,6 +117,57 @@ node ./map.mjs $query</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>aard</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching Gaardian for '{query}'...</string>
+				<key>script</key>
+				<string>query=$1
+
+node ./map.mjs $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Open Gaardian Map for '{query}'</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2675D13C-0E1E-482C-A340-E9A2A636A8BD</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Workflow
@@ -121,6 +185,13 @@ node ./map.mjs $query</string>
 			<real>270</real>
 			<key>ypos</key>
 			<real>65</real>
+		</dict>
+		<key>2675D13C-0E1E-482C-A340-E9A2A636A8BD</key>
+		<dict>
+			<key>xpos</key>
+			<real>75</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 		<key>68EB20C9-2962-4F4F-896E-6DD314A97BCA</key>
 		<dict>

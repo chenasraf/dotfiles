@@ -102,6 +102,11 @@ vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/r
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
 vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Save all buffers" })
 
+-- Jump to next block
+vim.keymap.set("n", "<Leader>]", "/{[^}]*$<CR>", { desc = "Jump to next block" })
+-- Jump to previous block
+vim.keymap.set("n", "<Leader>[", "?{[^}]*$<CR>", { desc = "Jump to previous block" })
+
 vim.keymap.set("n", "<leader>Srv", function()
   local cmd = "http-server -p 5500"
   vim.cmd(":silent !open http://localhost:5500")
