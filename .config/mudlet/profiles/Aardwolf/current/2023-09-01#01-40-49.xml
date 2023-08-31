@@ -862,7 +862,9 @@ end</script>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>savemap</name>
-				<script>saveMap(getMudletHomeDir().."/aardwolf/"..matches[2]..".dat")
+				<script>local filename = getMudletHomeDir().."/aardwolf/"..matches[2]..".dat"
+echo("Map saved to: "..filename.."\n")
+saveMap(filename)
 </script>
 				<command></command>
 				<packageName></packageName>
