@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Monokai Cobalt" mEditorThemeFile="Monokai-Cobalt.tmTheme" mThemePreviewItemID="6" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Mudlet" mEditorThemeFile="Mudlet.tmTheme" mThemePreviewItemID="7" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -25,7 +25,7 @@
 			<borderTopHeight>55</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
 			<borderLeftWidth>55</borderLeftWidth>
-			<borderRightWidth>957</borderRightWidth>
+			<borderRightWidth>967</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
 			<mFgColor>#c0c0c0</mFgColor>
@@ -77,8 +77,8 @@
 			<mSpellDic>en_US</mSpellDic>
 			<mLineSize>10.0</mLineSize>
 			<mRoomSize>1.0</mRoomSize>
-			<mapInfoContributor>Full</mapInfoContributor>
 			<mapInfoContributor>Short</mapInfoContributor>
+			<mapInfoContributor>Full</mapInfoContributor>
 			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
 			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
 			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
@@ -343,7 +343,7 @@ table.insert(cp_targets, { ["mob"] = mob, ["area"] = area })
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>[*] (a |an |the )?([\w\d \-',.]+) \(([a-zA-Z0-9 -']+)\)$</string>
+						<string>[*] (a |an |the )?([a-zA-Z0-9 -']+) \(([a-zA-Z0-9 -']+)\)$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -599,13 +599,17 @@ end</script>
 					<script>cp_targets = cp_targets or {}
 local idx = tonumber(matches[2] or "1")
 
-local tgt = get_cp_tgt_info(idx)
-
-if tgt == nil then
+if #cp_targets &lt; idx then
   echo("You tried accessing target no. " .. idx .. ", but there are only " .. #cp_targets .. " target(s).\n")
 else
-  local mob, area = unpack(tgt)
-  expandAlias("chase " .. area .. " " .. mob)
+  local _curTarget = cp_targets[idx]
+  local cleanArea = _curTarget["area"]
+  if aard.areaInfo[cleanArea] ~= nil then
+    cleanArea = aard.areaInfo[cleanArea].zone
+  else
+    cleanArea = cleanArea:gsub("The ", ""):split(' ')[1]:gsub("'", ""):gsub('"', "")
+  end
+  expandAlias("chase " .. cleanArea .. " " .. _curTarget["mob"])
 end</script>
 					<command></command>
 					<packageName></packageName>
@@ -670,26 +674,6 @@ end</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^(bp|bportal) (.+)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>buy to bag</name>
-					<script>local count = matches[2]
-local item = matches[3]
-
-send("buy " .. count .. " " .. item .. "; put all." .. item .. " " .. aard.config["bag"])</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^bbuy ([0-9]*) (.+)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>buy to pbag</name>
-					<script>local count = matches[2]
-local item = matches[3]
-
-send("buy " .. count .. " " .. item .. "; put all." .. item .. " " .. aard.config["pbag"])</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^pbuy ([0-9]*\s)?(.+)$</regex>
 				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
@@ -857,18 +841,8 @@ end</script>
 				<regex>^loadmap (.*)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>savemap</name>
-				<script>local filename = getMudletHomeDir().."/aardwolf/"..matches[2]..".dat"
-echo("Map saved to: "..filename.."\n")
-saveMap(filename)
-</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^savemap (.*)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
 				<name>Put all pots in bags</name>
-				<script>send("put all.breakfast " .. aard.config["pbag"] .. "; put all.acco " .. aard.config["pbag"] .. "; put all.camo " .. aard.config["pbag"])</script>
+				<script>send("put all.breakfast backpack; put all.acco backpack; put all.camo back")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>potbag</regex>
@@ -887,14 +861,6 @@ send("keep '" .. item .. "'; wear '"..item.."'")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^(kw|keepwear) (.+)$</regex>
-			</Alias>
-			<Alias isActive="yes" isFolder="no">
-				<name>buy keep wear</name>
-				<script>local item = matches[3]
-send("buy '" .. item .. "'; keep '" .. item .. "'; wear '"..item.."'")</script>
-				<command></command>
-				<packageName></packageName>
-				<regex>^(bkw|buykeepwear) (.+)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>portal runto</name>
@@ -1003,30 +969,12 @@ send("vis")</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>⚡️ Lightning Strike</name>
+					<name>🔥 Scorch</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'lightning strike'</commandButtonDown>
-					<icon></icon>
-					<orientation>1</orientation>
-					<location>0</location>
-					<posX>0</posX>
-					<posY>0</posY>
-					<mButtonState>1</mButtonState>
-					<sizeX>0</sizeX>
-					<sizeY>0</sizeY>
-					<buttonColumn>1</buttonColumn>
-					<buttonRotation>0</buttonRotation>
-				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>💡 Nova</name>
-					<packageName></packageName>
-					<script></script>
-					<css></css>
-					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'nova'</commandButtonDown>
+					<commandButtonDown>ca 'scorch'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1207,6 +1155,24 @@ send("vis")</script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
 					<commandButtonDown>ca 'shock aura'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>⚡️ Lightning Bolt</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'lightning bolt'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -2244,11 +2210,7 @@ function openDoor(dir)
   local door_status = {"open", "closed", "locked"}  
   for direction, door in pairs(doors) do
   	if direction == dir then
-      if door_status[door] == "locked" then
-        send("c knock "..dir..";op "..dir,true)
-      else
-    		send("op "..dir,true)
-      end
+  		send("op "..dir,true)
   	end
     --cecho("\nThere's a door leading in "..direction.." that is "..door_status[door]..".")
   end
@@ -2544,28 +2506,6 @@ end</script>
 }</script>
 				<eventHandlerList />
 			</Script>
-			<Script isActive="yes" isFolder="no">
-				<name>cp hunt</name>
-				<packageName></packageName>
-				<script>cp_targets = cp_targets or {}
-
-
-function get_cp_tgt_info(idx)
-  if #cp_targets &lt; idx then
-    return nil
-  else
-    local _curTarget = cp_targets[idx]
-    local cleanArea = _curTarget["area"]
-    if aard.areaInfo[cleanArea] ~= nil then
-      cleanArea = aard.areaInfo[cleanArea].zone
-    else
-      cleanArea = cleanArea:gsub("The ", ""):split(' ')[1]:gsub("'", ""):gsub('"', "")
-    end
-    return { _curTarget["mob"], cleanArea }
-  end
-end</script>
-				<eventHandlerList />
-			</Script>
 		</ScriptGroup>
 	</ScriptPackage>
 	<KeyPackage>
@@ -2664,7 +2604,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>Taraun</value>
+			<value>fire demon</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

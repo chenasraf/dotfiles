@@ -2245,7 +2245,7 @@ function openDoor(dir)
   for direction, door in pairs(doors) do
   	if direction == dir then
       if door_status[door] == "locked" then
-        send("c knock "..dir..";op "..dir,true)
+        send("c knock "..dir,true)
       else
     		send("op "..dir,true)
       end
@@ -2664,7 +2664,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>Taraun</value>
+			<value>Molyneuxan citizen</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
