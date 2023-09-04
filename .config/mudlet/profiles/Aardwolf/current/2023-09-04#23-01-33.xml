@@ -858,7 +858,7 @@ send("c knock "..dir.."; "..dir)</script>
 				<regex>^cr$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>loadmap</name>
+				<name>mapload</name>
 				<script>local saveString = getMudletHomeDir().."/aardwolf/mapBackup_"..getTime(true,"yyyy.MM.ddThh.mm.ss.zzz")..".dat"
 local savedok = saveMap(saveString)
 
@@ -871,17 +871,17 @@ else
 end</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^loadmap (.*)$</regex>
+				<regex>^mapload (.*)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>savemap</name>
+				<name>mapsave</name>
 				<script>local filename = getMudletHomeDir().."/aardwolf/"..matches[2]..".dat"
 echo("Map saved to: "..filename.."\n")
 saveMap(filename)
 </script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^savemap (.*)$</regex>
+				<regex>^mapsave (.*)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Put all pots in bags</name>
