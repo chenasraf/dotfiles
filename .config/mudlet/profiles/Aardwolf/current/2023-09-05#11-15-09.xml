@@ -366,10 +366,8 @@ echo("\nCaptured " .. #cp_targets .. " target(s)")</script>
 					<regexCodeList>
 						<string>You may take a campaign at this level.</string>
 						<string>You will have to level before you can go on another campaign.</string>
-						<string>Use 'cp check' to see only targets that you still need to kill.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
@@ -614,6 +612,23 @@ end</script>
 					<regex>^cphunt( ([0-9]+))?$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
+					<name>cphere</name>
+					<script>cp_targets = cp_targets or {}
+local idx = tonumber(matches[2] or "1")
+
+local tgt = get_cp_tgt_info(idx)
+
+if tgt == nil then
+  echo("You tried accessing target no. " .. idx .. ", but there are only " .. #cp_targets .. " target(s).\n")
+else
+  local mob, area = unpack(tgt)
+  expandAlias("tgt " .. mob)
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^cphere( ([0-9]+))?$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
 					<name>cpreset</name>
 					<script>cp_targets = {}
 should_reset_cp_targets = false
@@ -843,7 +858,7 @@ send("c knock "..dir.."; "..dir)</script>
 				<regex>^cr$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>mapload</name>
+				<name>loadmap</name>
 				<script>local saveString = getMudletHomeDir().."/aardwolf/mapBackup_"..getTime(true,"yyyy.MM.ddThh.mm.ss.zzz")..".dat"
 local savedok = saveMap(saveString)
 
@@ -856,18 +871,17 @@ else
 end</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^mapload (.*)$</regex>
+				<regex>^loadmap (.*)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
-				<name>mapsave</name>
-				<script>local basename = matches[2] or "map"
-local filename = getMudletHomeDir().."/aardwolf/"..basename..".dat"
+				<name>savemap</name>
+				<script>local filename = getMudletHomeDir().."/aardwolf/"..matches[2]..".dat"
 echo("Map saved to: "..filename.."\n")
 saveMap(filename)
 </script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^mapsave\s?(.*)$</regex>
+				<regex>^savemap (.*)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>Put all pots in bags</name>
@@ -2462,7 +2476,7 @@ end</script>
   		send("close north;lock north")
   	elseif gmcp.room.info.num == 47195 and aard.command == "n" then
   		send("close south;lock south")
-  	elseif gmcp.room.info.num == 49260 and aard.command == "u" then
+    elseif gmcp.room.info.num == 49260 and aard.command == "u" then
   		send("close down;lock down")
   	end
 	end
@@ -2790,7 +2804,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>castle guardian</value>
+			<value>butler</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>

@@ -614,6 +614,23 @@ end</script>
 					<regex>^cphunt( ([0-9]+))?$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
+					<name>cphere</name>
+					<script>cp_targets = cp_targets or {}
+local idx = tonumber(matches[2] or "1")
+
+local tgt = get_cp_tgt_info(idx)
+
+if tgt == nil then
+  echo("You tried accessing target no. " .. idx .. ", but there are only " .. #cp_targets .. " target(s).\n")
+else
+  local mob, area = unpack(tgt)
+  expandAlias("tgt " .. mob)
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^cphere( ([0-9]+))?$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
 					<name>cpreset</name>
 					<script>cp_targets = {}
 should_reset_cp_targets = false
@@ -2790,7 +2807,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>castle guardian</value>
+			<value>waiter</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
