@@ -1548,3 +1548,53 @@ Loading map(1) "/Users/planck/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat"
 ================================= Area issues =================================
 ================================= Room issues =================================
 ################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-09-04#23-03-04map.dat".
+[ INFO ]  - Successfully read the map file (0.14s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.28s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-09-04T23:03:19 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/2023-09-04#23-03-04map.dat".
+[ INFO ]  - Successfully read the map file (0.12s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.26s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+Loading map(1) "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat" at 2023-09-04T23:03:28 report
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/aardwolf/map.dat".
+[ INFO ]  - Successfully read the map file (0.10s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.28s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+########################## Pre-Map loading(2) report ##########################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.21s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.48s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
+################# Loading map(2) at 2023-09-05T09:22:40 report #################
+================================== Map issues ==================================
+[ INFO ]  - Reading map. Format version: 20. File: "/Users/chen/.config/mudlet/profiles/Aardwolf/map/autosave.dat".
+[ INFO ]  - Successfully read the map file (0.21s), checking some consistency details...
+[ INFO ]  - Area id numbering is satisfactory.
+[ INFO ]  - Room id numbering is satisfactory.
+[  OK  ]  - Auditing of map completed (0.45s). Enjoy your game...
+================================= Area issues =================================
+================================= Room issues =================================
+################################ End of report ################################
