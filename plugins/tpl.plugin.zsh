@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 SCAFFOLDS_DIR="$DOTFILES/scaffolds"
+
 tpl() {
   tpl_name="$1"
   shift
