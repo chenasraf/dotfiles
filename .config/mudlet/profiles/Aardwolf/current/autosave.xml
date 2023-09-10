@@ -2,7 +2,7 @@
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.001">
 	<HostPackage>
-		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Monokai Cobalt" mEditorThemeFile="Monokai-Cobalt.tmTheme" mThemePreviewItemID="6" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="'&quot;" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
+		<Host autoClearCommandLineAfterSend="no" HighlightHistory="yes" printCommand="yes" USE_IRE_DRIVER_BUGFIX="no" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mEchoLuaErrors="no" runAllKeyMatches="no" AmbigousWidthGlyphsToBeWide="auto" mRawStreamDump="no" mIsLoggingTimestamps="no" logDirectory="" logFileName="" logFileNameFormat="yyyy-MM-dd#HH-mm-ss" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="yes" mEnableGMCP="yes" mEnableMSSP="yes" mEnableMSP="yes" mEnableMSDP="no" mMapStrongHighlight="no" mEnableSpellCheck="yes" mEnableUserDictionary="yes" mUseSharedDictionary="no" mAcceptServerGUI="yes" mAcceptServerMedia="yes" mMapperUseAntiAlias="yes" mMapperShowRoomBorders="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mFORCE_CHARSET_NEGOTIATION_OFF="no" enableTextAnalyzer="no" mRoomSize="1.0" mLineSize="10.0" mBubbleMode="no" mMapViewOnly="no" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="yes" mEditorAutoComplete="yes" mEditorShowBidi="yes" mEditorTheme="Monokai Cobalt" mEditorThemeFile="Monokai-Cobalt.tmTheme" mThemePreviewItemID="6" mThemePreviewType="trigger" mSearchEngineName="Google" mTimerSupressionInterval="00:00:00.000" mUseProxy="no" mProxyAddress="" mProxyPort="0" mProxyUsername="" mProxyPassword="" mSslTsl="no" mSslIgnoreExpired="no" mSslIgnoreSelfSigned="no" mSslIgnoreAll="no" mAskTlsAvailable="yes" mDiscordAccessFlags="2495" mRequiredDiscordUserName="" mRequiredDiscordUserDiscriminator="" mSGRCodeHasColSpaceId="no" mServerMayRedefineColors="no" playerRoomPrimaryColor="#ffff0000" playerRoomSecondaryColor="#ffffffff" playerRoomStyle="0" playerRoomOuterDiameter="200" playerRoomInnerDiameter="70" CompactInputLine="no" mDoubleClickIgnore="&quot;'" EditorSearchOptions="0" DebugShowAllProblemCodepoints="no" announceIncomingText="yes" caretShortcut="None" blankLineBehaviour="Show" NetworkPacketTimeout="300">
 			<name>Aardwolf</name>
 			<mInstalledPackages>
 				<string>echo</string>
@@ -22,9 +22,9 @@
 			<serverPackageName>nothing</serverPackageName>
 			<serverPackageVersion>-1</serverPackageVersion>
 			<port>4000</port>
-			<borderTopHeight>55</borderTopHeight>
+			<borderTopHeight>5</borderTopHeight>
 			<borderBottomHeight>55</borderBottomHeight>
-			<borderLeftWidth>55</borderLeftWidth>
+			<borderLeftWidth>5</borderLeftWidth>
 			<borderRightWidth>967</borderRightWidth>
 			<wrapAt>100</wrapAt>
 			<wrapIndentCount>0</wrapIndentCount>
@@ -77,8 +77,8 @@
 			<mSpellDic>en_US</mSpellDic>
 			<mLineSize>10.0</mLineSize>
 			<mRoomSize>1.0</mRoomSize>
-			<mapInfoContributor>Short</mapInfoContributor>
 			<mapInfoContributor>Full</mapInfoContributor>
+			<mapInfoContributor>Short</mapInfoContributor>
 			<profileShortcut key="Script editor">Ctrl+E</profileShortcut>
 			<profileShortcut key="Show Map">Ctrl+M</profileShortcut>
 			<profileShortcut key="Compact input line">Ctrl+L</profileShortcut>
@@ -317,6 +317,27 @@ tmpVis = false</script>
 				<regexCodeList />
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>CP none</name>
+					<script>should_reset_cp_targets = true
+cp_targets = {}</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You are not currently on a campaign.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Catch target mob campaign</name>
 					<script>if should_reset_cp_targets then
   cp_targets = {}
@@ -343,7 +364,7 @@ table.insert(cp_targets, { ["mob"] = mob, ["area"] = area })
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>[*] (a |an |the )?([\w\d \-',.]+) \(([a-zA-Z0-9 -']+)\)$</string>
+						<string>[*] (a |an |the |some )?([\w\d \-',.]+) \(([a-zA-Z0-9 -']+)\)$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -374,7 +395,95 @@ echo("\nCaptured " .. #cp_targets .. " target(s)")</script>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Catch target mob GQ</name>
+					<script>if should_reset_gq_targets then
+  gq_targets = {}
+  should_reset_gq_targets = false
+  -- echo("\nResetting gq targets")
+end
+
+gq_targets = gq_targets or {}
+
+local amount = matches[2]
+local mob = matches[4]
+local area = matches[5]
+
+table.insert(gq_targets, { ["mob"] = mob, ["area"] = area })
+
+-- echo("\nCaptured " .. mob .. " in " .. area .. " =&gt; " .. matches[1])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You still have to kill ([\d]+) [*] (a |an |the |some )?([\w\d \-',.]+) \(([a-zA-Z0-9 -']+)\)$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Catch target mob GQ END</name>
+					<script>should_reset_gq_targets = true
+echo("\nCaptured " .. #gq_targets .. " GQ target(s)")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>more gquests at this level.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>0</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>cp level</name>
+				<script>--toggle noexp back off
+--in scripts section look at "config" cplvl and set to 0 to disable noexp cp toggle
+if matches[2] then
+	aard.cpLevel = tonumber(matches[2])
+else
+	aard.cpLevel = tonumber(gmcp.char.status.level)
+end
+if aard.noexp == " *NO EXP*" and tonumber(gmcp.char.status.level) &lt;= aard.cpLevel and tonumber(gmcp.char.status.level) &lt;= tonumber(aard.config["cplvl"]) then
+  aard.noexp = ""
+  aard.qTimeNOexp()
+	send("noexp")--turn noexp back on
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>.* tells you 'Good luck in your campaign!'$</string>
+					<string>^Level Taken........: \[  (?:| |  ) (\d+) \]$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
 		</TriggerGroup>
 	</TriggerPackage>
 	<TimerPackage />
@@ -543,7 +652,7 @@ else
 end</script>
 					<command></command>
 					<packageName></packageName>
-					<regex>^tgt\s?([a-zA-Z'" -]+)?</regex>
+					<regex>^tgt\s?([\d\w'" -]+)?</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>next target</name>
@@ -614,6 +723,23 @@ end</script>
 					<regex>^cphunt( ([0-9]+))?$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
+					<name>cphere</name>
+					<script>cp_targets = cp_targets or {}
+local idx = tonumber(matches[2] or "1")
+
+local tgt = get_cp_tgt_info(idx)
+
+if tgt == nil then
+  echo("You tried accessing target no. " .. idx .. ", but there are only " .. #cp_targets .. " target(s).\n")
+else
+  local mob, area = unpack(tgt)
+  expandAlias("tgt " .. mob)
+end</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^cphere( ([0-9]+))?$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
 					<name>cpreset</name>
 					<script>cp_targets = {}
 should_reset_cp_targets = false
@@ -661,7 +787,7 @@ end</script>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>bag portal</name>
-					<script>local area = matches[3]
+					<script>local area = matches[3]:lower()
 
 if aard.portItems[area] ~= nil then
   local item = aard.portItems[area]
@@ -692,6 +818,29 @@ send("buy " .. count .. " " .. item .. "; put all." .. item .. " " .. aard.confi
 					<command></command>
 					<packageName></packageName>
 					<regex>^pbuy ([0-9]*\s)?(.+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>bag quaff</name>
+					<script>local pot = matches[3]
+
+send("get " .. pot .. " " .. aard.config["pbag"] .. "; quaff " .. pot)</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^(bq|bag quaff) ([\w\d.\-'"]+)</regex>
+				</Alias>
+			</AliasGroup>
+			<AliasGroup isActive="yes" isFolder="yes">
+				<name>pots</name>
+				<script></script>
+				<command></command>
+				<packageName></packageName>
+				<regex></regex>
+				<Alias isActive="yes" isFolder="no">
+					<name>pot sight</name>
+					<script>expandAlias("bq sight;bq wolf;bq shadowbane;")</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^pot sight</regex>
 				</Alias>
 			</AliasGroup>
 			<Alias isActive="yes" isFolder="no">
@@ -884,6 +1033,13 @@ saveMap(filename)
 				<regex>^(rearm|ra)$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
+				<name>rehold</name>
+				<script>send("wear '"..aard.config["held"].."'")</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^(rehold|rh)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
 				<name>keep wear</name>
 				<script>local item = matches[3]
 send("keep '" .. item .. "'; wear '"..item.."'")</script>
@@ -970,7 +1126,7 @@ send("vis")</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>Primary Spell 🎯️</name>
+					<name>Primary Atk 🎯️</name>
 					<packageName></packageName>
 					<script>send(aard.config["attack1"] .. " '" .. target .. "'")</script>
 					<css></css>
@@ -988,6 +1144,60 @@ send("vis")</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Primary Atk</name>
+					<packageName></packageName>
+					<script>send(aard.config["attack1"])</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>Secondary Atk</name>
+					<packageName></packageName>
+					<script>send(aard.config["attack2"])</script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown></commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>💥️ Magic Missile</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'magic missile'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🔥 Balefire</name>
 					<packageName></packageName>
 					<script></script>
@@ -1005,7 +1215,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>⚡️ Lightning Strike</name>
 					<packageName></packageName>
 					<script></script>
@@ -1023,7 +1233,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>💡 Nova</name>
 					<packageName></packageName>
 					<script></script>
@@ -1041,7 +1251,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>💥️ Force Bolt</name>
 					<packageName></packageName>
 					<script></script>
@@ -1059,7 +1269,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🔥 Flaming Sphere</name>
 					<packageName></packageName>
 					<script></script>
@@ -1077,7 +1287,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🔥 Fire Breath 👥</name>
 					<packageName></packageName>
 					<script></script>
@@ -1095,7 +1305,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🥶️ Shard of Ice</name>
 					<packageName></packageName>
 					<script></script>
@@ -1113,7 +1323,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🥶️ Ice Cloud 👥</name>
 					<packageName></packageName>
 					<script></script>
@@ -1131,7 +1341,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>💥️ Talon</name>
 					<packageName></packageName>
 					<script></script>
@@ -1149,13 +1359,13 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>🤢️ Acid Wave</name>
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🤢️ Miasma</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
 					<commandButtonUp></commandButtonUp>
-					<commandButtonDown>ca 'acid wave'</commandButtonDown>
+					<commandButtonDown>ca 'miasma'</commandButtonDown>
 					<icon></icon>
 					<orientation>1</orientation>
 					<location>0</location>
@@ -1167,7 +1377,25 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+					<name>🤢️ Acid Cloud 👥</name>
+					<packageName></packageName>
+					<script></script>
+					<css></css>
+					<commandButtonUp></commandButtonUp>
+					<commandButtonDown>ca 'acid cloud'</commandButtonDown>
+					<icon></icon>
+					<orientation>1</orientation>
+					<location>0</location>
+					<posX>0</posX>
+					<posY>0</posY>
+					<mButtonState>1</mButtonState>
+					<sizeX>0</sizeX>
+					<sizeY>0</sizeY>
+					<buttonColumn>1</buttonColumn>
+					<buttonRotation>0</buttonRotation>
+				</Action>
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🤢️ Poison</name>
 					<packageName></packageName>
 					<script></script>
@@ -1185,7 +1413,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>🧛🏼‍ Vampiric Touch</name>
 					<packageName></packageName>
 					<script></script>
@@ -1203,7 +1431,7 @@ send("vis")</script>
 					<buttonColumn>1</buttonColumn>
 					<buttonRotation>0</buttonRotation>
 				</Action>
-				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
+				<Action isActive="no" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
 					<name>⚡️ Shock Aura</name>
 					<packageName></packageName>
 					<script></script>
@@ -2571,7 +2799,7 @@ end</script>
   ["amazon"] = "Queen Melosa's Mirror",
   ["amusement"] = "amulet planes",
   ["entropy"] = "Lemniscate",
-  ["arisian"] = "dolphin figurine",
+  ["arisian"] = "dolphin",
   ["mayhem"] = "Compendium of Fal'Shara",
   ["academy"] = "Academy portal",
   ["adaldar"] = "Permanent Peace",
@@ -2656,7 +2884,6 @@ end</script>
   ["xylmos"] = "An Envelope of Xyl",
   ["ygg"] = "A Small Crystal Tree",
   ["yurgach"] = "pendant in the likeness of Kali",
-  ["arisian"] = "pale dolphin figurine",
   ["adaldar"] = "Temporary Truce",
   ["blackrose"] = "A Black Rose",
   ["dread"] = "Cursed Note",
@@ -2790,7 +3017,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>castle guardian</value>
+			<value>rabbit</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
