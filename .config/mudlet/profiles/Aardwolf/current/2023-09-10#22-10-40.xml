@@ -1198,7 +1198,7 @@ send("vis")</script>
 					<buttonRotation>0</buttonRotation>
 				</Action>
 				<Action isActive="yes" isFolder="no" isPushButton="no" isFlatButton="no" useCustomLayout="no">
-					<name>💥️ Earth Maw</name>
+					<name>💥️ Air Dart</name>
 					<packageName></packageName>
 					<script></script>
 					<css></css>
@@ -3089,7 +3089,7 @@ end</script>
 		<Variable>
 			<name>target</name>
 			<keyType>4</keyType>
-			<value>swallow</value>
+			<value>daisensei</value>
 			<valueType>4</valueType>
 		</Variable>
 	</VariablePackage>
