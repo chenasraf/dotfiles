@@ -51,9 +51,10 @@ home() {
     m | mushclient)
       shift
       sub="$1"
+      mushdir="$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient" 
       case $sub in
         backup | b)
-          rsync -vtr "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient" "$DOTFILES/synced/"
+          rsync -vtr "$mushdir" "$DOTFILES/synced/"
           echo_yellow "Copied Mushclient profile to synced folder."
           git -C "$DOTFILES" add "$DOTFILES/synced/MUSHclient"
           git -C "$DOTFILES" commit -m "backup: mushclient"
@@ -61,7 +62,7 @@ home() {
           echo_yellow "Backup complete."
           ;;
         restore | r)
-          rsync -vtr "$DOTFILES/synced/MUSHclient" "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/"
+          rsync -vtr "$DOTFILES/synced/MUSHclient/" "$mushdir/"
           echo_yellow "Restored Mushclient profile from synced folder."
           ;;
 

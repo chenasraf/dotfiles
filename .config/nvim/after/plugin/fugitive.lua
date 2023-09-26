@@ -15,7 +15,7 @@ autocmd("BufWinEnter", {
     local bufnr = vim.api.nvim_get_current_buf()
     local opts = { buffer = bufnr, remap = false }
     -- print("great success", vim.bo.ft, bufnr, vim.inspect(opts))
-    vim.keymap.set("n", "gp", "]]k", opts)
+    -- vim.keymap.set("n", "gp", "]]k", opts)
 
     -- rebase always
     vim.keymap.set("n", "<leader>gl", function()
@@ -31,13 +31,9 @@ autocmd("BufWinEnter", {
       local current_branch = vim.fn.FugitiveHead()
 
       local cmd = ":Git push -u origin " .. current_branch
-
-      -- vim.fn.inputsave()
-      -- vim.fn.input(cmd)
-      -- vim.fn.inputrestoRe()
-
-      -- prefill input line
       vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(cmd, true, true, true), "n", true)
     end, opts);
+
+    vim.keymap.set("n", "<leader>gf", ":Git fetch<CR>", opts)
   end,
 })
