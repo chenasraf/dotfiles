@@ -101,6 +101,8 @@
     channels_table.claninfo.capture = true
   channels_table.yell = {}
     channels_table.yell.capture = true
+  channels_table.globalecho = {}
+    channels_table.globalecho.capture = true
   channels_table.wardrums = {}
     channels_table.wardrums.capture = true
   channels_table.answer = {}
@@ -228,6 +230,8 @@
       tabs_channel_captures[1].claninfo.capture = true
     tabs_channel_captures[1].yell = {}
       tabs_channel_captures[1].yell.capture = true
+    tabs_channel_captures[1].globalecho = {}
+      tabs_channel_captures[1].globalecho.capture = true
     tabs_channel_captures[1].wardrums = {}
       tabs_channel_captures[1].wardrums.capture = true
     tabs_channel_captures[1].answer = {}
@@ -291,6 +295,8 @@
     tabs_channel_captures[2].claninfo = {}
       tabs_channel_captures[2].claninfo.capture = true
     tabs_channel_captures[2].yell = {}
+    tabs_channel_captures[2].globalecho = {}
+      tabs_channel_captures[2].globalecho.capture = true
     tabs_channel_captures[2].wardrums = {}
     tabs_channel_captures[2].answer = {}
     tabs_channel_captures[2].auction = {}
@@ -345,6 +351,8 @@
     tabs_channel_captures[3].wangrp = {}
     tabs_channel_captures[3].claninfo = {}
     tabs_channel_captures[3].yell = {}
+    tabs_channel_captures[3].globalecho = {}
+      tabs_channel_captures[3].globalecho.capture = true
     tabs_channel_captures[3].wardrums = {}
     tabs_channel_captures[3].answer = {}
     tabs_channel_captures[3].auction = {}
@@ -400,6 +408,8 @@
     tabs_channel_captures[4].claninfo = {}
     tabs_channel_captures[4].yell = {}
       tabs_channel_captures[4].yell.capture = true
+    tabs_channel_captures[4].globalecho = {}
+      tabs_channel_captures[4].globalecho.capture = true
     tabs_channel_captures[4].wardrums = {}
     tabs_channel_captures[4].answer = {}
     tabs_channel_captures[4].auction = {}

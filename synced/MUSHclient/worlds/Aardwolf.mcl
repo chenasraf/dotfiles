@@ -257,13 +257,13 @@ end
 local lv = 0
 for i, sp in ipairs(spWinData) do
   local line = ""
-  line = line .. "@M[@G" .. string.rpad(sp.id, 3) .. "@M] "
   if sp.level &gt; lv then
     line = line .. "@W" .. string.rpad("lv " .. sp.level, 7)
     lv = sp.level
   else
-    line = line .. string.rpad("", 7)
+    line = line .. string.rpad("", 8)
   end
+  line = line .. "@M[@G" .. string.lpad(sp.id, 3) .. "@M] "
   line = line .. "@C" .. string.rpad(sp.name, 40)
   line = line .. "@Y" .. string.lpad(sp.learned .. "%", 4)
   spWin:add_text(line)
@@ -337,7 +337,6 @@ end
   <send>c 'underwater breathing'</send>
   </trigger>
   <trigger
-   enabled="y"
    group="autovis"
    match="You are no longer invisible."
    sequence="100"
@@ -345,7 +344,6 @@ end
   <send>cast invis</send>
   </trigger>
   <trigger
-   enabled="y"
    group="autovis"
    match="You are no longer traceless."
    sequence="100"
@@ -354,6 +352,15 @@ end
   </trigger>
   <trigger
    enabled="y"
+   group="autosp"
+   match="You lost your concentration while trying to cast *."
+   send_to="12"
+   sequence="100"
+  >
+  <send>local sp = "'%1'"
+Send("cast " .. sp)</send>
+  </trigger>
+  <trigger
    group="autovis"
    match="You lost your concentration while trying to cast invis."
    sequence="100"
@@ -361,7 +368,6 @@ end
   <send>cast invis</send>
   </trigger>
   <trigger
-   enabled="y"
    group="autovis"
    match="You made too much noise! You can still be tracked."
    sequence="100"
@@ -578,6 +584,26 @@ Send("rt vidblain")
 Send("coord")</send>
   </alias>
   <alias
+   match="autosp"
+   enabled="y"
+   group="autosp"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local raw = GetVariable("autosp") or "true"
+local autovis = raw == "true"
+local flip = not autovis
+
+SetVariable("autosp", tostring(flip))
+EnableTriggerGroup("autosp", flip)
+
+if flip then
+  ColourNote("cyan", "", "You will automatically try to recast spells.")
+else
+  ColourNote("cyan", "", "You will not automatically try to recast spells.")
+end</send>
+  </alias>
+  <alias
    match="autovis"
    enabled="y"
    group="autovis"
@@ -676,6 +702,20 @@ if autovis then
 end</send>
   </alias>
   <alias
+   match="ka *"
+   enabled="y"
+   group="inventory"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local items = "%1"
+local itmArr = utils.split(items, " ")
+
+for i, itm in ipairs(itmArr) do
+  Send("keep '"..itm.."'")
+end</send>
+  </alias>
+  <alias
    match="kkp"
    enabled="y"
    send_to="10"
@@ -736,7 +776,7 @@ local maxL = lv + 5
 Send("mobdeaths " .. minL .. " " .. maxL .. " " .. align)</send>
   </alias>
   <alias
-   match="pcpr"
+   match="pcr"
    enabled="y"
    group="quests"
    send_to="10"
@@ -866,6 +906,14 @@ else
     Send("c 'detect hidden'")
   end
 end</send>
+  </alias>
+  <alias
+   match="spellup"
+   group="autosp"
+   send_to="12"
+   sequence="100"
+  >
+  <send>--</send>
   </alias>
   <alias
    match="sspellup"
@@ -1003,7 +1051,8 @@ end</send>
    muclient_version="5.07-pre"
    world_file_version="15"
   >
-  <variable name="autovis">true</variable>
+  <variable name="autosp">true</variable>
+  <variable name="autovis">false</variable>
   <variable name="cclass">ranger</variable>
   <variable name="held">dual ebony</variable>
   <variable name="hppot">'light relief'</variable>
@@ -1013,8 +1062,8 @@ end</send>
   <variable name="patk">kick;c mo</variable>
   <variable name="potbag">bag</variable>
   <variable name="recall">duffle</variable>
-  <variable name="themed_miniwindow_heightspWin">907</variable>
-  <variable name="themed_miniwindow_widthspWin">357</variable>
+  <variable name="themed_miniwindow_heightspWin">913</variable>
+  <variable name="themed_miniwindow_widthspWin">367</variable>
   <variable name="username">KumoGami</variable>
   <variable name="waiting_sendhia">false</variable>
 </variables>

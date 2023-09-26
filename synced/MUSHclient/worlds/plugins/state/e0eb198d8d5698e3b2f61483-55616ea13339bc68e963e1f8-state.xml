@@ -108,7 +108,9 @@
   channels_table.wardrums = {}
     channels_table.wardrums.echo = true
   channels_table.yell = {}
-    channels_table.yell.echo = true</variable>
+    channels_table.yell.echo = true
+  channels_table.globalecho = {}
+    channels_table.globalecho.echo = true</variable>
   <variable name="nonchannels_table">nonchannels_table = {}
   nonchannels_table.info = {}
     nonchannels_table.info.echo = true
