@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- MuClient version 5.07-pre -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+
+<!-- Plugin state saved. Plugin: "Aardwolf_GMCP_Mapper". World: "Aardwolf". -->
+
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.07-pre"
+   world_file_version="15"
+  >
+  <variable name="DISTANCE_TO_NEXT_ROOM">32</variable>
+  <variable name="ROOM_SIZE">36</variable>
+  <variable name="auto_backup_count">24</variable>
+  <variable name="backup_timer_enabled">1</variable>
+  <variable name="compact_mode">0</variable>
+  <variable name="config"></variable>
+  <variable name="configs">configs = {
+  ROOM_NOTE_COLOUR = {
+    colour = 9498256,
+    name = "Room notes",
+    },
+  SHOP_FILL_COLOUR = {
+    colour = 3124735,
+    name = "Shop",
+    },
+  ROOM_NAME_FILL = {
+    colour = 5461520,
+    name = "Room name fill",
+    },
+  UNKNOWN_ROOM_COLOUR = {
+    colour = 139,
+    name = "Unknown room",
+    },
+  GUILD_FILL_COLOUR = {
+    colour = 16711935,
+    name = "Guild",
+    },
+  ROOM_NAME_BORDER = {
+    colour = 0,
+    name = "Room name box",
+    },
+  TRAINER_FILL_COLOUR = {
+    colour = 3329434,
+    name = "Trainer",
+    },
+  AREA_NAME_TEXT = {
+    colour = 15856574,
+    name = "Area name text",
+    },
+  QUESTOR_FILL_COLOUR = {
+    colour = 16760576,
+    name = "Questor",
+    },
+  WINDOW = {
+    height = 604,
+    width = 632,
+    },
+  SCAN = {
+    depth = 300,
+    },
+  BACKGROUND_COLOUR = {
+    colour = 1118481,
+    name = "Area Background",
+    },
+  SAFEROOM_FILL_COLOUR = {
+    colour = 15128749,
+    name = "Safe room",
+    },
+  LAST_VISIT_TIME = {
+    time = 180,
+    },
+  BANK_FILL_COLOUR = {
+    colour = 55295,
+    name = "Bank",
+    },
+  FONT = {
+    name = "MesloLGS NF",
+    size = 10,
+    },
+  OUR_ROOM_COLOUR = {
+    colour = 9639167,
+    name = "Our room",
+    },
+  DIFFERENT_AREA_COLOUR = {
+    colour = 255,
+    name = "Another area",
+    },
+  AREA_NAME_BORDER = {
+    colour = 0,
+    name = "Area name box",
+    },
+  PK_BORDER_COLOUR = {
+    colour = 255,
+    name = "PK border",
+    },
+  USE_TEXTURES = {
+    enabled = true,
+    },
+  SHOW_ROOM_ID = true,
+  SHOW_AREA_EXITS = true,
+  ROOM_COLOUR = {
+    colour = 14474460,
+    name = "Room",
+    },
+  AREA_NAME_FILL = {
+    colour = 5461520,
+    name = "Area name fill",
+    },
+  EXIT_COLOUR = {
+    colour = 16777184,
+    name = "Exit",
+    },
+  HEALER_FILL_COLOUR = {
+    colour = 3329434,
+    name = "Healer",
+    },
+  ROOM_NAME_TEXT = {
+    colour = 15856574,
+    name = "Room name text",
+    },
+  EXIT_COLOUR_UP_DOWN = {
+    colour = 12695295,
+    name = "Exit up/down",
+    },
+  MAPPER_NOTE_COLOUR = {
+    colour = 9498256,
+    name = "Messages",
+    },
+  }</variable>
+  <variable name="db_name">Aardwolf</variable>
+  <variable name="echo_prefix"></variable>
+  <variable name="enabled">true</variable>
+  <variable name="last_auto_backup">1695675423</variable>
+  <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowflags">2</variable>
+  <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowmode">0</variable>
+  <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowx">1916</variable>
+  <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowy">2</variable>
+  <variable name="quick_mode">1</variable>
+  <variable name="show_up_down">1</variable>
+  <variable name="shownotes">1</variable>
+  <variable name="window_hidden">0</variable>
+</variables>
+</muclient>

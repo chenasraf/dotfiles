@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+
+<muclient>
+<plugin
+   name="Aardwolf_Package_Update_Checker"
+   author="Fiendish"
+   id="162bba4a5ecef2bb32b5652f"
+   language="Lua"
+   purpose="Checks online for newer versions of the Aardwolf MUSHclient Package."
+   date_written="2011-04-23 11:51:55"
+   requires="4.72"
+   version="1.1"
+   save_state="y"
+>
+<description trim="y">
+This plugin checks for new updates from the development repository at
+https://github.com/fiendish/aardwolfclientpackage
+
+It runs an automatic check every time you start up MUSHclient (or reinstall the plugin).
+
+You can also run a manual check by typing:    package update check
+</description>
+</plugin>
+<!--  Script  -->
+
+<aliases>
+<alias
+   match="package update check"
+   enabled="y"
+   sequence="100"
+   omit_from_output="y"
+   ignore_case="y"
+   script="manualCheck"
+>
+</alias>
+
+<alias
+   match="checkversion"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+   script="versionCheck"
+>
+</alias>
+
+</aliases>
+
+<script>
+<![CDATA[
+
+aard_extras = require "aard_lua_extras"
+async = require "async"
+require "json"
+require "wait"
+
+version_url = "https://raw.githubusercontent.com/fiendish/aardwolfclientpackage/"..aard_extras.git_branch.."/MUSHclient/"..aard_extras.version_file
+download_url = "https://fiendish.github.io/aardwolfclientpackage/"
+window_title = "Aardwolf MUSHclient Package Update Checker"
+ErrorMessage = ""
+
+TIME_BETWEEN_CHECKS = (60*60*24*7*4) -- four weeks
+
+function remember()
+   ColourTell("yellow", "", "Remember, the latest installer/updater is always available at: ")
+   Hyperlink(download_url, download_url, "Installer Download Page", "yellow", "", true)
+   Note("")
+   Note("")
+end
+
+
+function versionCheck()
+   local succ, version, msg = aard_extras.PackageVersionExtended()
+   if succ then
+      ColourNote("white", "", msg)
+   else
+      ColourNote("white","red", msg)
+   end
+   remember()
+end
+
+-- converts special character codes in html source to their ascii
+-- equivalents for display. Also specially escapes things that need to be.
+function convertHTMLcodesToStandardText(str)
+   if not str then
+      return nil
+   end
+
+   local replacements = { -- minimal set. can add more later if needed.
+      {"&gt;",">"},
+      {"&lt;","<"},
+      {"&quot;","\""},
+      {"&#39;","'"},
+      {"&amp;","&"}
+   }
+   for i,v in ipairs(replacements) do
+      str = string.gsub(str, v[1],v[2])
+   end
+   return str
+end
+
+function browse(url)
+   local res = OpenBrowser(url)
+   if res ~= 0 then
+      SetClipboard(url)
+      ColourNote("yellow", "red", "MUSHclient may have encountered an error trying to open the selected URL. It has been copied to the clipboard.")
+      ColourNote("cyan","","v-------------------Copied to clipboard-------------------v")
+      ColourNote("yellow","",url)
+      ColourNote("cyan","","^---------------------------------------------------------^")
+   end
+end
+
+-- Shows an editbox dialog detailing the posted differences between
+-- the newest available download and the currently downloaded package
+function updateDialog(message,list)
+   if utils.editbox(message,window_title,list,nil,nil,{ok_button="Ok, Get It", cancel_button="Ignore", read_only=true, no_default=true}) then
+      browse(download_url)
+   else
+      Note("") 
+      ColourNote("cyan", "", "  +--------------------------------------------------------------------------+")
+      ColourNote("cyan", "", "  |               Aardwolf MUSHclient Package Update Checker                 |")
+      ColourNote("cyan", "", "  +--------------------------------------------------------------------------+")
+      ColourNote("cyan", "", "  |                                                                          |")
+      local ignoreline = "  |  You have chosen to ignore the r"..latest_version.." snapshot."
+      ColourNote("cyan", "", ignoreline..string.rep(" ",77-string.len(ignoreline)).."|")
+      ColourNote("cyan", "", "  |  You will not be alerted again for this version.                         |")
+      ColourNote("cyan", "", "  |                                                                          |")
+      ColourNote("cyan", "", "  |  Remember, you can always get the latest development snapshot at:        |")
+      ColourTell("cyan", "", "  |  ")
+      Hyperlink(download_url, download_url, "Installer Download Page", "cyan", "", true)
+      ColourNote("cyan", "", string.rep(" ", 71-string.len(download_url)).." |")
+      ColourNote("cyan", "", "  |                                                                          |")
+      ColourNote("cyan", "", "  +--------------------------------------------------------------------------+")
+      Note("")
+      SetVariable("ignore_before_version", latest_version)
+   end
+end
+
+-- Something went wrong when trying to check for updates
+function errorMessage(msg)
+   Note("")
+   ColourNote("white","red","Aardwolf MUSHclient Package Updater Error:")
+   ColourNote("white","red",msg)
+   if msg:find("plugin network") then
+      versionCheck()
+   end
+   ColourNote("white","red", "\nThe latest development snapshot is always available at:")
+   Hyperlink(download_url, download_url, "Installer Download Page", "white", "red", true)
+   Note("")
+   Note("")
+end
+
+loaded = false
+function OnPluginListChanged()
+   if not loaded then
+      dofile "lua/aard_requirements.lua"
+      loaded = true
+      async.doAsyncRemoteRequest(version_url, main, "HTTPS", 120)
+   end
+end
+
+function manualCheck()
+   SetVariable("last_check", 0)
+   SetVariable("ignore_before_version", 0)
+   DeleteTemporaryTimers()
+   async.doAsyncRemoteRequest(version_url, main, "HTTPS", 120)
+end
+
+function main(retval, page, status, headers, full_status, request_url)
+   last_check = tonumber(GetVariable("last_check")) or os.time()
+   if (os.time() - last_check) < TIME_BETWEEN_CHECKS then -- wait between update prompts
+      return
+   end
+   SetVariable("last_check", os.time())
+   ignore_before_version = tonumber(GetVariable("ignore_before_version")) or 0
+   SetStatus("Checking online for Aardwolf MUSHclient Package updates")
+   ErrorMessage = ""
+   if checkRemoteFile(page, status) then
+      if checkLocalFile() then
+         showUpdate()
+      end
+   end
+   checkErrors()
+   SetStatus("")
+end
+
+function checkLocalFile()
+   succ, local_version, msg = aard_extras.PackageVersionExtended()
+   if not succ then
+      ErrorMessage = msg
+   end
+   return succ
+end
+
+function checkRemoteFile(page, status)
+   -- grab the download page
+   if status == 200 then -- 200 is the HTTP status code for "OK"
+      update_list, latest_version = string.match(page, "Aardwolf Client Package Major Changes List\r\n\r\n(r(%d+) snapshot.*)")
+      -- extract the snapshot revision number
+      latest_version = tonumber(latest_version)
+
+      if not latest_version then -- string.match failed to find the right pattern above
+         ErrorMessage = "There appears to be a problem with the version information on the Aardwolf MUSHclient Package site. Please alert Fiendish about this."
+         return false
+      end
+   
+      if latest_version <= ignore_before_version then
+         return false
+      end
+
+      return true
+   else -- http access error
+      ErrorMessage = "Could not access the Aardwolf MUSHclient Package download page to check for the latest version number. Please make sure that you are able to access the version file at "..version_url.." and then type \'PACKAGE UPDATE CHECK\' to try again."
+      return false
+   end
+end
+
+function showUpdate()
+   if local_version and latest_version then -- sanity check
+      if local_version < latest_version then
+         local current_stuff_start, _ = string.find(update_list, "r"..local_version.." snapshot")
+         local newer_stuff = nil
+         if current_stuff_start then
+            newer_stuff = update_list:sub(1, current_stuff_start-1)
+         end
+         final_update_list = (newer_stuff or "<ERROR! Please don't modify your "..aard_extras.version_file.." file>\r\n")
+         final_update_list = "( Get it from: "..download_url.." )\r\n\r\n"..convertHTMLcodesToStandardText(final_update_list)
+         message = "There is a new Aardwolf MUSHclient Package snapshot available. You currently have version r"..local_version.." and the newest version is r"..latest_version..".\n\nThe major differences between your version and the latest version are:"
+         updateDialog(message,final_update_list)
+      elseif local_version > latest_version then
+         ErrorMessage = "The Aardwolf MUSHclient Package update checker has detected that you have a version NEWER than what is available online! Contact Fiendish about this message, because clearly this situation is impossible. :/"
+      else
+         ColourNote("yellow", "", "Your Aardwolf MUSHclient package version r"..local_version.." appears to be up-to-date.")
+         remember()
+      end
+   end
+end
+
+function checkErrors()
+   if ErrorMessage ~= "" then
+      errorMessage(ErrorMessage)
+   end
+end
+
+function getmemoryusage()
+  collectgarbage('collect')
+  return collectgarbage('count')
+end
+
+]]>
+</script>
+</muclient>
+

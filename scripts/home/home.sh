@@ -55,7 +55,7 @@ home() {
         backup | b)
           rsync -vtr "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient" "$DOTFILES/synced/"
           echo_yellow "Copied Mushclient profile to synced folder."
-          git -C "$DOTFILES" add "$DOFTILES/synced/MUSHClient"
+          git -C "$DOTFILES" add "$DOTFILES/synced/MUSHclient"
           git -C "$DOTFILES" commit -m "backup: mushclient"
           git -C "$DOTFILES" push
           echo_yellow "Backup complete."
