@@ -1298,8 +1298,8 @@ end</send>
 <include name="aard_help.xml" plugin="y" />
 <include name="aard_vital_shortcuts.xml" plugin="y" />
 <include name="aard_Theme_Controller.xml" plugin="y" />
-<include name="C:\users\crossover\Downloads\aard-plugins-dinv_2.0055\aard-plugins-dinv_2.0055\aard_inventory.xml" plugin="y" />
 <include name="Search_and_Destroy.xml" plugin="y" />
+<include name="aard_inventory.xml" plugin="y" />
 <include name="Hyperlink_URL2.xml" plugin="y" />
 <include name="aard_splitscreen_scrollback.xml" plugin="y" />
 </muclient>
