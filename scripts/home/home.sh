@@ -61,7 +61,7 @@ home() {
           echo_yellow "Backup complete."
           ;;
         restore | r)
-          rsync -vtr "$FDOTFILES/synced/MUSHclient" "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/"
+          rsync -vtr "$DOTFILES/synced/MUSHclient" "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/"
           echo_yellow "Restored Mushclient profile from synced folder."
           ;;
 
