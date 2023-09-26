@@ -6055,3 +6055,617 @@
 @w[26 Sep 03:01:48] @Y(@GSpecial Ops@Y) CLAN: Anssett claps at Winger's performance.
 @w[26 Sep 03:02:23] @RGlobal Quest@Y:@w Cirrus has completed @gGlobal Quest # 3391@w.
 @w[26 Sep 03:04:15] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[26 Sep 14:35:46] @RINFO: You hear a loud scream as Ytrams is brutally killed by an arctic spider.@w
+@w[26 Sep 14:38:12] @GYtrams questions 'Could someone help with my corpse?'
+@w[26 Sep 14:39:03] @GSelitos answers 'its clear grab your corpse'
+@w[26 Sep 14:39:33] @GYtrams questions 'thank you!'
+@w[26 Sep 14:39:48] @GSelitos answers 'make sure you hget everything'
+@w[26 Sep 14:40:37] @RGlobal Quest@Y:@w @gGlobal Quest # 3520@w has been won by @YTinypotato@w - @Y2311th@w win.
+@w[26 Sep 14:44:15] @RINFO: The name Ospario has been scribed upon the pages of the Tome of the Relyks.@w
+@w[26 Sep 14:44:21] @CThe dragon whelp bully exclaims, @c"@CGet out of my way egghead!@c"
+@w[26 Sep 14:45:00] @CMlactom gossips 'to whoever auctioned that dagger earlier, much gratitude'
+@w[26 Sep 14:45:16] @G(Friend)@c: @CGorsk gallantly tips his hat to Reina.
+@w[26 Sep 14:48:15] @CJenny, the tavern owner exclaims, @c"@CKumoGami! I need your help!@c"
+@w[26 Sep 14:48:15] @CJenny, the tavern owner exclaims, @c"@CPlease, say you'll help me. I'm in dire need!@c"
+@w[26 Sep 14:50:28] @CA gossipy demon says, @c"@CLucifer has been acting very strangely lately, and it's got everyone in Pandemonium stirred up. He comes and goes at odd hours, rarely shows his face in public, and his movements and speech are all stilted. There's so many rumors about what's going on it's hard to sort out truth from lies, but if anyone knows, it's his daughter, Lilith. If only I was brave enough to seek her out...@c"
+@w[26 Sep 14:51:16] @CA City Guard exclaims, @c"@CYou'd better have a pass if you're thinking of entering the Royal Plaza, mortal!@c"
+@w[26 Sep 14:51:16] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[26 Sep 14:51:16] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[26 Sep 14:51:16] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[26 Sep 14:51:16] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[26 Sep 14:51:33] @RINFO: The last post plays mournfully as KumoGami falls in battle to a City Guard and 2 others.@w
+@w[26 Sep 14:52:58] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[26 Sep 14:54:52] @RGlobal Quest@Y:@w @gGlobal Quest # 3524@w has been won by @YEnlossys@w - @Y213th@w win.
+@w[26 Sep 14:55:28] @RINFO: HARDCORE Porcius has been killed by Macbeth at level 52.@w
+@w[26 Sep 14:56:03] @RINFO: Porcius has entered open PK (OPK) mode!@w
+@w[26 Sep 14:57:45] @GCLAN: At-ten-tion! Abraxos is here to get some training done!
+@w[26 Sep 14:58:50] @GCLAN: At-ten-tion! Zensch is here to get some training done!
+@w[26 Sep 14:58:55] @RINFO: Kittenbane has restored balance to the Flying Citadel.@w
+@w[26 Sep 15:00:11] @RINFO: The player rankings have been updated.@w
+@w[26 Sep 15:02:23] @RINFO: HARDCORE Tipro has been killed by Dixon at level 45.@w
+@w[26 Sep 15:02:28] @RINFO: Tipro has entered open PK (OPK) mode!@w
+@w[26 Sep 15:03:00] @GCLAN: At-ten-tion! Kanaye is here to get some training done!
+@w[26 Sep 15:03:29] @G(Friend)@c: @CGorsk waves hello to Kanaye.
+@w[26 Sep 15:03:56] @G(Friend)@c: @CGorsk reins his horse next to SimiLanJ and salutes him with his lance.
+@w[26 Sep 15:04:56] @RINFO: Serinqua has helped create the perfect wedding!@w
+@w[26 Sep 15:05:12] @WRestore@w: @x165Ermagherd, Kherpern wants to see some bloodshed!  An IMM-sponsored Fractals of the Weave event has started 3s of recall!
+@w[26 Sep 15:05:41] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'Fractal 3s of recall!'
+@w[26 Sep 15:05:52] @RINFO: Sammael has succumbed to a foul disease.@w
+@w[26 Sep 15:06:36] @RGlobal Quest@Y:@w @gGlobal Quest # 3527@w has been won by @YTinypotato@w - @Y2312th@w win.
+@w[26 Sep 15:06:48] @GCLAN: At-ten-tion! Anssett is here to get some training done!
+@w[26 Sep 15:07:07] @CAbig gossips 'thanks for th fractal event'
+@w[26 Sep 15:08:12] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'Fractal Annssett!'
+@w[26 Sep 15:12:53] @GCLAN: At-ten-tion! Blunt is here to get some training done!
+@w[26 Sep 15:13:00] @YBlunt (@GSpecial Ops@Y) tells the CLAN: 'lo'
+@w[26 Sep 15:13:08] @YLepdar (@GCorpsman@Y) tells the CLAN: 'hi'
+@w[26 Sep 15:14:24] @GCLAN: At-ten-tion! Flynnt is here to get some training done!
+@w[26 Sep 15:14:38] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'fractal running'
+@w[26 Sep 15:15:13] @YLepdar (@GCorpsman@Y) tells the CLAN: 'is it'
+@w[26 Sep 15:15:16] @YFlynnt (@GSoldier@Y) tells the CLAN: 'and me at level 12'
+@w[26 Sep 15:15:19] @YFlynnt (@GSoldier@Y) tells the CLAN: 'and me at level 21'
+@w[26 Sep 15:15:29] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'you get rewards at your level too flynnt :p'
+@w[26 Sep 15:15:41] @YFlynnt (@GSoldier@Y) tells the CLAN: 'oh I know..just harder to stay alive in some parts'
+@w[26 Sep 15:15:45] @YFlynnt (@GSoldier@Y) tells the CLAN: 'without retreat'
+@w[26 Sep 15:15:50] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'oh true'
+@w[26 Sep 15:15:51] @YSaraid (@GGeneral@Y) tells the CLAN: 'use flee'
+@w[26 Sep 15:16:01] @YFlynnt (@GSoldier@Y) tells the CLAN: 'I know...just less reliable I tink'
+@w[26 Sep 15:16:09] @YFlynnt (@GSoldier@Y) tells the CLAN: 'but we'll see :)'
+@w[26 Sep 15:16:14] @YSaraid (@GGeneral@Y) tells the CLAN: 'I use flee'
+@w[26 Sep 15:16:18] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i think flee succeeds better'
+@w[26 Sep 15:16:22] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'just can't pick a dir'
+@w[26 Sep 15:16:24] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'i don't think there is any part you need use retreat'
+@w[26 Sep 15:16:30] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'flee is enough'
+@w[26 Sep 15:16:39] @GCLAN: Rever falls out to take some much needed R & R.
+@w[26 Sep 15:16:42] @YFlynnt (@GSoldier@Y) tells the CLAN: 'here too'
+@w[26 Sep 15:16:45] @YFlynnt (@GSoldier@Y) tells the CLAN: 'dont have heals'
+@w[26 Sep 15:16:49] @YFlynnt (@GSoldier@Y) tells the CLAN: 'or enough'
+@w[26 Sep 15:16:58] @GCLAN: At-ten-tion! Tavrin is here to get some training done!
+@w[26 Sep 15:17:06] @YFlynnt (@GSoldier@Y) tells the CLAN: 'taking damage'
+@w[26 Sep 15:17:09] @YFlynnt (@GSoldier@Y) tells the CLAN: 'away from center'
+@w[26 Sep 15:17:14] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'when you're low on health you can try recallable room, quaff pot and return'
+@w[26 Sep 15:17:16] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'moev out of the rooms with the fire'
+@w[26 Sep 15:17:16] @YSaraid (@GGeneral@Y) tells the CLAN: 'go to a part not wiht a mob in it'
+@w[26 Sep 15:17:23] @RINFO: Mytheral has been removed from this realm by Vorel Corrupted.@w
+@w[26 Sep 15:17:51] @YFlynnt (@GSoldier@Y) tells the CLAN: 'think I will just try to stay alive :)'
+@w[26 Sep 15:18:00] @RINFO: The last post plays mournfully as Lepdar falls in battle to a cone of primordial flame.@w
+@w[26 Sep 15:18:01] @YLepdar (@GCorpsman@Y) tells the CLAN: 'i am so dead'
+@w[26 Sep 15:18:16] @RINFO: Mytheral has been killed by a cone of primordial flame.@w
+@w[26 Sep 15:18:18] @RINFO: Ometotchtli is cut down in the midst of bloody warfare by a cone of primordial flame.@w
+@w[26 Sep 15:18:31] @RINFO: The last post plays mournfully as Kanaye falls in battle to a cone of primordial flame.@w
+@w[26 Sep 15:18:45] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'l2r.'
+@w[26 Sep 15:19:44] @GValkarn questions 'Is there any way to disable hunger/thirst warnings?'
+@w[26 Sep 15:19:52] @GGraoldan answers 'drink'
+@w[26 Sep 15:20:01] @GValkarn questions 'Permanently, I mean, lol'
+@w[26 Sep 15:20:17] @RGlobal Quest@Y:@w @gGlobal Quest # 3530@w has been won by @YGorsk@w - @Y1154th@w win.
+@w[26 Sep 15:20:17] @RGlobal Quest@Y:@w @gGlobal Quest # 3530@w will go into extended time for 5 more minutes.
+@w[26 Sep 15:20:18] @GGraoldan answers 'drink every quest.. or spent qp and get the wish'
+@w[26 Sep 15:20:26] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 3530@w.
+@w[26 Sep 15:20:28] @G(Friend)@c: @CGorsk goes, "Whee!"
+@w[26 Sep 15:20:53] @RGlobal Quest@Y:@w Kers has completed @gGlobal Quest # 3530@w.
+@w[26 Sep 15:21:22] @G(Friend)@c: @CGorsk waves hello to Vader.
+@w[26 Sep 15:21:30] @G(Friend)@c: @CGorsk beams a smile at Perlesvaus.
+@w[26 Sep 15:22:10] @RGlobal Quest@Y:@w Sparhawk has completed @gGlobal Quest # 3530@w.
+@w[26 Sep 15:22:13] @GValkarn questions 'Alright, thanks'
+@w[26 Sep 15:23:07] @RINFO: Silence falls as Vandit is slain by the Fractal Anomaly.@w
+@w[26 Sep 15:23:07] @RINFO: Ometotchtli is cut down in the midst of bloody warfare by the Fractal Anomaly.@w
+@w[26 Sep 15:23:07] @RINFO: Khadaji's Chi has been unbalanced by the Fractal Anomaly, and she begins her journey anew.@w
+@w[26 Sep 15:23:07] @RINFO: Scarratt sinks to their knees and honourably accepts defeat at the hands of the Fractal Anomaly.@w
+@w[26 Sep 15:23:07] @RINFO: The last post plays mournfully as Abraxos falls in battle to the Fractal Anomaly.@w
+@w[26 Sep 15:23:07] @RINFO: The pirates prepare a burial at sea for Xyzzy, slain by the Fractal Anomaly.@w
+@w[26 Sep 15:23:31] @GNeeper answers 'all of the above is very very good advice and i strongly recommend following it, however, if you really really want to gag the hugnerthirst messages, "spamreduce hunger" will actually do it for you.'
+@w[26 Sep 15:23:49] @RINFO: Scarratt sinks to their knees and honourably accepts defeat at the hands of a blossom of fire.@w
+@w[26 Sep 15:23:56] @RINFO: Graoldan sinks to their knees and honourably accepts defeat at the hands of a blossom of fire and 1 other.@w
+@w[26 Sep 15:23:58] @RINFO: The last post plays mournfully as Abraxos falls in battle to a blossom of fire.@w
+@w[26 Sep 15:24:00] @RINFO: Feihu has fallen, blood staining a blossom of fire and 1 other's hands.@w
+@w[26 Sep 15:24:08] @GValkarn questions 'Well, that's what I actually wanted to know, thanks.'
+@w[26 Sep 15:24:44] @YFlynnt (@GSoldier@Y) tells the CLAN: 'yay! no death!'
+@w[26 Sep 15:24:49] @GYtrams questions 'where can I find Amulet of the Planes?'
+@w[26 Sep 15:24:51] @GValkarn questions 'I'm not gonna buy the wish any time soon, and spending time on refilling hunger doesn't feel worth the effort when I can just heal and chug mana potions instead.'
+@w[26 Sep 15:25:14] @GPorcius answers 'you have to kill the dragon in gauntlet I think'
+@w[26 Sep 15:25:18] @GNeeper answers 'being hungry and thirsty is a _massive_ dent in your regeneration ability'
+@w[26 Sep 15:25:18] @GAbig answers 'that amulet is from the gauntlet area'
+@w[26 Sep 15:25:31] @GNeeper answers 'you can save yourself a whole ton of potions by resolving it'
+@w[26 Sep 15:25:49] @GValkarn questions 'But why would I want to save potions? I have like infinite money anyway.'
+@w[26 Sep 15:25:59] @GZoth answers 'I made an alias to drink when I request a quest.  It takes care of it'
+@w[26 Sep 15:26:08] @GFeast questions 'anyone need amulet?'
+@w[26 Sep 15:26:19] @GValkarn answers 'I have scripts to automatically heal and chug mana potions.'
+@w[26 Sep 15:26:40] @GGraoldan answers 'help newbie-container fill a container with milk/juice from a clan and it does both hunger.. or every quest at clan quester.. alias qr drink;;quest request'
+@w[26 Sep 15:26:47] @YLepdar (@GCorpsman@Y) tells the CLAN: 'we do anything in this spire or just recall out'
+@w[26 Sep 15:26:52] @GNeeper answers 'its free advice, just wanted to make sure you were aware of all the consequences.'
+@w[26 Sep 15:27:01] @GValkarn answers 'But then I gotta refill it now and then.'
+@w[26 Sep 15:27:09] @YEnlossys (@GSpecial Ops@Y) tells the CLAN: 'You can recall out, and there are also shops in the spire which allow you to buy tokens to spawn fractals and punching bag mobs'
+@w[26 Sep 15:27:12] @GVader answers 'these containers really do hold a lot'
+@w[26 Sep 15:27:12] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'technically you can buy things from the shops but they're expensive'
+@w[26 Sep 15:27:22] @YAnssett (@GSpecial Ops@Y) tells the CLAN: '^'
+@w[26 Sep 15:27:42] @GValkarn answers 'I'm sure they do, but it's an extra thing I gotta keep track of on top of refilling my stock of mana potions, rather than only keeping track of mana potions.'
+@w[26 Sep 15:27:52] @RGlobal Quest@Y:@w @cGlobal quest # 3532@w has been declared for levels @c41@w to @c52@w - @c10 or fewer wins only@w.
+@w[26 Sep 15:27:52] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c88@w ticks.
+@w[26 Sep 15:27:52] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 3532@w' to take part.
+@w[26 Sep 15:28:22] @YLepdar (@GCorpsman@Y) tells the CLAN: 'weee i got a fractal weee'
+@w[26 Sep 15:28:33] @YZoth (@GRecruit@Y) tells the CLAN: 'nice'
+@w[26 Sep 15:29:24] @GValkarn answers 'I appreciate the advice though.'
+@w[26 Sep 15:29:52] @RGlobal Quest@Y:@w @cGlobal quest # 3532@w for levels @c41@w to @c52@w - @c10 or fewer wins only@w has now started.
+@w[26 Sep 15:29:58] @GVader answers 'stay hungry then! XD'
+@w[26 Sep 15:30:00] @GReyn answers 'you can find several places where there is a questor in the room with a fountain. use that one and alias "quest request" to "quest request;gulp fountain" or something similar'
+@w[26 Sep 15:30:00] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[26 Sep 15:30:27] @GVader answers 'tbh thats a good one to do for you then!'
+@w[26 Sep 15:30:41] @GValkarn answers 'Yeah, if I find such a questor I'll do that.'
+@w[26 Sep 15:30:42] @GVader answers 'if you're never gonna carry with food, do that so when you do a quest and afk when you get back you've regenned at least'
+@w[26 Sep 15:30:50] @RINFO: All please welcome Geralto, Aardwolf's newest Shadow Necromancer!@w
+@w[26 Sep 15:31:03] @YLepdar (@GCorpsman@Y) tells the CLAN: 'thanks for calling fractal guys appreciate it '
+@w[26 Sep 15:31:04] @GReyn answers 'check some of the open clanhalls. or buy an aardwolf amulet'
+@w[26 Sep 15:31:07] @GOspario answers 'south and up from recall is just such a questor'
+@w[26 Sep 15:31:11] @GValkarn answers 'Although regeneration rate feels a bit like a non-issue when all I'm doing is running out and obliterating a single quest mob'
+@w[26 Sep 15:31:36] @GValkarn answers 'I do plan on getting the amulet next'
+@w[26 Sep 15:32:10] @GReyn answers 'you can intentionally limit your regen rate if you'd like, but there's really no reason to when there are so many ways to avoid the issue without really thinking about it'
+@w[26 Sep 15:32:32] @RINFO: All please welcome Lebosse, Aardwolf's newest Vampire Elementalist!@w
+@w[26 Sep 15:32:59] @GValkarn answers 'Well, it's a trivial way to avoid something that has no impact on me whatsoever right now. But yeah, I guess I can do that.'
+@w[26 Sep 15:34:23] @GFeast answers 'It impacts regen of moves, too? Its not a problem until you run out of gas somewhere like nenukon. '
+@w[26 Sep 15:34:43] @GValkarn answers 'I never run out of moves because all I do is run to a quest location, kill the mob and portal back'
+@w[26 Sep 15:34:53] @RGlobal Quest@Y:@w @cGlobal quest # 3532@w has been cancelled due to lack of participants.
+@w[26 Sep 15:35:00] @GAbig questions 'while we are at question time: got a blank choas portal from daily blessing. At t0r1 level 100 I can do nothing with it?'
+@w[26 Sep 15:36:19] @YZoth (@GRecruit@Y) tells the CLAN: 'Wow I actually got a blink skillup'
+@w[26 Sep 15:36:26] @GValkarn answers 'If I ever start getting into the situation where I start running out of moves more than once in a blue moon, then I'll take steps to improve my regen'
+@w[26 Sep 15:38:04] @GEnnui answers 'Abig my best suggestion would be to sell it for roughly 50m as a big boost to your resources. Either that, or hold it like Gollum and the one ring until you are much much bigger'
+@w[26 Sep 15:38:23] @GAbig answers 'thanks for confirmation'
+@w[26 Sep 15:38:32] @RINFO: Feihu has fallen, blood staining a lazy pirate and 2 others's hands.@w
+@w[26 Sep 15:38:46] @GSelitos answers 'you can hold onto it until youare SH navi or sell it for 50 mil'
+@w[26 Sep 15:39:58] @GAbig questions 'hmm why hold it till sh navi? I would get the needed spell at level 186. What changes in that regard with sh?'
+@w[26 Sep 15:40:08] @GPorcius answers 'better stats'
+@w[26 Sep 15:40:36] @GPorcius answers 'which affects the % that it becomes golden'
+@w[26 Sep 15:40:37] @GSelitos answers 'better stats give you a better chance to get a portal that is useful ratherthen junk'
+@w[26 Sep 15:41:14] @GSelitos answers 'i would not bother without max navi stats'
+@w[26 Sep 15:41:24] @GAbig answers 'ah, thanks. did not read that in the helpfile, but wondered what wisdom as primary stat will affect'
+@w[26 Sep 15:41:49] @GPorcius answers 'honestly the rate is so low anyway it doesnt matter. Or maybe I've just been unlucky'
+@w[26 Sep 15:42:07] @GSelitos answers 'i think it also heps with continet vs area rooms'
+@w[26 Sep 15:42:17] @GPorcius answers 'don't know about that'
+@w[26 Sep 15:42:46] @GSelitos answers 'eve nchasnce of being the room your standing in...tho that may be rarer?'
+@w[26 Sep 15:43:03] @GSelitos answers 'that is the point of higher ingredient portals'
+@w[26 Sep 15:43:31] @GPorcius answers 'plat is 50% and diamond is 100%. Don't think stat affect these?'
+@w[26 Sep 15:43:54] @GPorcius questions 'how much does a plat portal sell for?'
+@w[26 Sep 15:44:14] @GTalbor answers '1 bil+'
+@w[26 Sep 15:44:21] @GTalbor answers 'nm thats diamond'
+@w[26 Sep 15:44:30] @GPorcius answers 'damn thought I was rich for 1 second'
+@w[26 Sep 15:44:36] @GTalbor answers 'might be able to check history'
+@w[26 Sep 15:45:00] @GPorcius questions 'how do you do that?'
+@w[26 Sep 15:45:21] @GSelitos answers 'like 500 mil i beleive'
+@w[26 Sep 15:45:26] @GTalbor answers 'trying to remember, lol'
+@w[26 Sep 15:45:31] @GMyth questions 'they don't really sell for anything, as they've not been on market for a VERY long time'
+@w[26 Sep 15:46:20] @GPorcius questions 'ok but given that a normal bcp sell for 50m then whats a reasonable price for plat'
+@w[26 Sep 15:46:31] @GEnlossys answers '~500mil'
+@w[26 Sep 15:46:36] @GPorcius answers 'ok'
+@w[26 Sep 15:46:44] @GMyth questions 'probably 1b+ for platinum, and 5-10 bil for diamond'
+@w[26 Sep 15:47:17] @GMyth questions 'platinum used to got for 500+ in the old days when people were selling them, and there were much less gold around'
+@w[26 Sep 15:47:43] @GYtrams questions 'Any bored person can help me hunt damn dragon in the gauntlet? :('
+@w[26 Sep 15:48:19] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[26 Sep 15:48:43] @RINFO: Mlactom has been killed by incinerator bot.@w
+@w[26 Sep 15:49:16] @GAbig answers 'thanks to all for all the insight, there is still so much I am uncertain of'
+@w[26 Sep 15:49:37] @GPorcius questions 'ok, do live chaos portals sell like normal portals? As in do you have to buy reown?'
+@w[26 Sep 15:51:26] @GNuanse answers 'live chaos is owned'
+@w[26 Sep 15:51:41] @GMyth questions 'i think reowning chaos portals is cheaper, but live (not golden) chaos portals are usually not worth the reown cost, with very minimal exceptions'
+@w[26 Sep 15:52:11] @GPorcius answers 'ye just checked it's 2tp thx'
+@w[26 Sep 15:53:17] @RGlobal Quest@Y:@w @gGlobal Quest # 3536@w has been won by @YFiB@w - @Y745th@w win.
+@w[26 Sep 15:53:17] @RGlobal Quest@Y:@w @gGlobal Quest # 3536@w will go into extended time for 5 more minutes.
+@w[26 Sep 15:53:31] @GFeast answers '1h'
+@w[26 Sep 15:53:32] @RGlobal Quest@Y:@w Feihu has completed @gGlobal Quest # 3536@w.
+@w[26 Sep 15:53:54] @GFeast questions 'Deep dragon sorted?'
+@w[26 Sep 15:54:16] @C(@WCurse@C)@W Khadaji: ur mum is the deep dragon
+@w[26 Sep 15:54:21] @C(@WCurse@C)@W Khadaji: oh shi-
+@w[26 Sep 15:55:53] @RGlobal Quest@Y:@w Neeper has completed @gGlobal Quest # 3536@w.
+@w[26 Sep 15:55:53] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 3536@w is now over.
+@w[26 Sep 15:57:04] @GCLAN: Serinqua falls out to take some much needed R & R.
+@w[26 Sep 16:00:11] @RINFO: The player rankings have been updated.@w
+@w[26 Sep 16:01:37] @RINFO: Porcius has been killed by A lilting Ironwood psithurist and 2 others.@w
+@w[26 Sep 16:07:53] @GCLAN: At-ten-tion! Betrilon is here to get some training done!
+@w[26 Sep 16:08:00] @RGlobal Quest@Y:@w @gGlobal Quest # 3539@w has been won by @YZensch@w - @Y350th@w win.
+@w[26 Sep 16:08:27] @YBetrilon (@GRecruit@Y) tells the CLAN: 'gz Zensch! '
+@w[26 Sep 16:08:33] @Y(@GSpecial Ops@Y) CLAN: Zensch thanks Betrilon heartily.
+@w[26 Sep 16:09:01] @YBetrilon (@GRecruit@Y) tells the CLAN: 'what's your approach to playing this mud? how do you make it fun?'
+@w[26 Sep 16:09:27] @YZoth (@GRecruit@Y) tells the CLAN: 'Every time you level, take a shot'
+@w[26 Sep 16:09:30] @Y(@GSpecial Ops@Y) CLAN: Anssett falls to the ground and rolls around, laughing hysterically.
+@w[26 Sep 16:09:39] @YBetrilon (@GRecruit@Y) tells the CLAN: 'hahahaha '
+@w[26 Sep 16:09:41] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'set a goal, work toward it :P'
+@w[26 Sep 16:10:11] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I wonder what kind of a goal I could have '
+@w[26 Sep 16:10:43] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'we kinda help with that - check out the clan website and look at the promotion requirements'
+@w[26 Sep 16:10:57] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'for the moment you can use those as your milestones until you are more aware of what you want to work toward'
+@w[26 Sep 16:11:40] @YBetrilon (@GRecruit@Y) tells the CLAN: 'thanks Anssett! I tried to login to our page but It was failing my connection so I couldnt check it'
+@w[26 Sep 16:11:48] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I'lltry now'
+@w[26 Sep 16:12:16] @GCLAN: At-ten-tion! Nueve is here to get some training done!
+@w[26 Sep 16:15:46] @GCLAN: Betrilon falls out to take some much needed R & R.
+@w[26 Sep 16:18:01] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[26 Sep 16:19:24] @GCLAN: At-ten-tion! Betrilon is here to get some training done!
+@w[26 Sep 16:19:32] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I accidentally found my old character when looking for a boot account'
+@w[26 Sep 16:19:42] @YBetrilon (@GRecruit@Y) tells the CLAN: 'it's level 120 thief! with 1250 qp only tho'
+@w[26 Sep 16:20:24] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I can't recover my password to the boot website'
+@w[26 Sep 16:20:38] @RGlobal Quest@Y:@w @gGlobal Quest # 3542@w has been won by @YSparhawk@w - @Y9636th@w win.
+@w[26 Sep 16:20:38] @RGlobal Quest@Y:@w @gGlobal Quest # 3542@w will go into extended time for 5 more minutes.
+@w[26 Sep 16:21:22] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 3542@w.
+@w[26 Sep 16:21:37] @YLepdar (@GCorpsman@Y) tells the CLAN: 'ask anssett'
+@w[26 Sep 16:21:57] @YLepdar (@GCorpsman@Y) tells the CLAN: 'he helped me with the same '
+@w[26 Sep 16:22:02] @RINFO: 1 minute of bonus experience remaining.@w
+@w[26 Sep 16:22:04] @YBetrilon (@GRecruit@Y) tells the CLAN: 'thanks Lepdar ! :) '
+@w[26 Sep 16:22:17] @YLepdar (@GCorpsman@Y) tells the CLAN: 'any time buddy'
+@w[26 Sep 16:22:53] @RGlobal Quest@Y:@w Gorsk has completed @gGlobal Quest # 3542@w.
+@w[26 Sep 16:23:02] @RINFO: Bonus experience has now expired.@w
+@w[26 Sep 16:23:07] @YLepdar (@GCorpsman@Y) tells the CLAN: 'you will know your logged in when it say howsy betrilon on the top right of page'
+@w[26 Sep 16:23:17] @YLepdar (@GCorpsman@Y) tells the CLAN: 'you will know your logged in when it say howdy betrilon on the top right of page'
+@w[26 Sep 16:23:18] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'not where i can work on that right now, but you can see the promotion requirements without being logged in'
+@w[26 Sep 16:23:51] @YBetrilon (@GRecruit@Y) tells the CLAN: 'right, I'm already reading, thanks Anssett :) '
+@w[26 Sep 16:24:08] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I'm almost done for the first promotion'
+@w[26 Sep 16:24:41] @YBetrilon (@GRecruit@Y) tells the CLAN: 'or not! :D '
+@w[26 Sep 16:25:14] @YBetrilon (@GRecruit@Y) tells the CLAN: 'only qp and campaigns done is close'
+@w[26 Sep 16:25:21] @YLepdar (@GCorpsman@Y) tells the CLAN: 'the globals betrilon'
+@w[26 Sep 16:25:43] @YBetrilon (@GRecruit@Y) tells the CLAN: 'how can I check my number of completed global quests?'
+@w[26 Sep 16:25:57] @CA gossipy demon says, @c"@CLucifer has been acting very strangely lately, and it's got everyone in Pandemonium stirred up. He comes and goes at odd hours, rarely shows his face in public, and his movements and speech are all stilted. There's so many rumors about what's going on it's hard to sort out truth from lies, but if anyone knows, it's his daughter, Lilith. If only I was brave enough to seek her out...@c"
+@w[26 Sep 16:25:57] @YLepdar (@GCorpsman@Y) tells the CLAN: 'type score'
+@w[26 Sep 16:26:18] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'you can only see GQs won through that interface, not a real easy way to find completed but not won'
+@w[26 Sep 16:26:26] @YLepdar (@GCorpsman@Y) tells the CLAN: 'or type whois betrilon'
+@w[26 Sep 16:26:46] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I won 1 gquest, bot not sure in how many I participated tho'
+@w[26 Sep 16:26:58] @YBetrilon (@GRecruit@Y) tells the CLAN: 'but I can substitute'
+@w[26 Sep 16:29:22] @GCLAN: At-ten-tion! Darkfist is here to get some training done!
+@w[26 Sep 16:29:38] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[26 Sep 16:29:57] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[26 Sep 16:29:58] @CFyrne exclaims, @c"@CKumoGami! Good, you are here!@c"
+@w[26 Sep 16:29:58] @CFyrne exclaims, @c"@CGo and get help! These spies are too strong for you to handle!@c"
+@w[26 Sep 16:30:03] @YLepdar (@GCorpsman@Y) tells the CLAN: 'what are health shard'
+@w[26 Sep 16:30:57] @YLepdar (@GCorpsman@Y) tells the CLAN: 'anssett??'
+@w[26 Sep 16:31:05] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'they restore health to everyone in the room'
+@w[26 Sep 16:31:29] @YLepdar (@GCorpsman@Y) tells the CLAN: 'thanxs i see them sold all the time'
+@w[26 Sep 16:33:20] @YBetrilon (@GRecruit@Y) tells the CLAN: 'hello Saraid :) '
+@w[26 Sep 16:34:34] @Y(@GCorpsman@Y) CLAN: @MNew post @W#XOXO@M in forum @WHugs@M from @WLepdar @MSubj:@W Saraid is awesome!
+@w[26 Sep 16:34:50] @RINFO: All please welcome Rasigan, Aardwolf's newest Shadow Necromancer!@w
+@w[26 Sep 16:34:57] @YLepdar (@GCorpsman@Y) tells the CLAN: 'well thats disturbing'
+@w[26 Sep 16:35:58] @GCLAN: At-ten-tion! Mandibular is here to get some training done!
+@w[26 Sep 16:37:03] @C(Gossip) Cilmarill gives the lagmonster a serious talk to
+@w[26 Sep 16:37:13] @YLepdar (@GCorpsman@Y) tells the CLAN: 'punch mandibuler'
+@w[26 Sep 16:37:36] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[26 Sep 16:37:45] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[26 Sep 16:37:53] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[26 Sep 16:38:19] @RGlobal Quest@Y:@w @gGlobal Quest # 3545@w has been won by @YCooler@w - @Y5496th@w win.
+@w[26 Sep 16:38:22] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[26 Sep 16:38:26] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[26 Sep 16:38:53] @YBetrilon (@GRecruit@Y) tells the CLAN: 'boot'
+@w[26 Sep 16:38:59] @YBetrilon (@GRecruit@Y) tells the CLAN: 'who's our leader?'
+@w[26 Sep 16:39:08] @YLepdar (@GCorpsman@Y) tells the CLAN: 'madrox'
+@w[26 Sep 16:39:24] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'claninfo boot'
+@w[26 Sep 16:39:26] @YBetrilon (@GRecruit@Y) tells the CLAN: 'thanks! '
+@w[26 Sep 16:39:28] @YLepdar (@GCorpsman@Y) tells the CLAN: 'ot type who boot'
+@w[26 Sep 16:39:35] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'mad is one of boot's leaders'
+@w[26 Sep 16:39:44] @YBetrilon (@GRecruit@Y) tells the CLAN: 'oh Saraid is a leader too'
+@w[26 Sep 16:40:16] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'There's actually more than one!'
+@w[26 Sep 16:40:19] @Y(@GSpecial Ops@Y) CLAN: Epsilon nods quietly to himself.  What a wacko.
+@w[26 Sep 16:41:37] @YBetrilon (@GRecruit@Y) tells the CLAN: 'aye! '
+@w[26 Sep 16:42:58] @RINFO: Rockwell has been reborn as a Vampire Paladin.@w
+@w[26 Sep 16:43:10] @CSoggy Wooble exclaims 'What do you want? I don't know you... Get away from me!'
+@w[26 Sep 16:43:10] @CSoggy Wooble exclaims 'You're wet, too. I don't need any more water, thank you. Now shoo!'
+@w[26 Sep 16:43:46] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'i was a leader once'
+@w[26 Sep 16:43:51] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'then i took an arrow to the knee'
+@w[26 Sep 16:44:15] @YBetrilon (@GRecruit@Y) tells the CLAN: 'ouch! '
+@w[26 Sep 16:44:30] @RINFO: Rockwell has entered open PK (OPK) mode!@w
+@w[26 Sep 16:44:34] @RINFO: HARDCORE Yuna has been killed by Dixon at level 8.@w
+@w[26 Sep 16:44:34] @RINFO: Yuna has entered open PK (OPK) mode!@w
+@w[26 Sep 16:47:32] @GIcaerus questions 'how long in real life time is a season?'
+@w[26 Sep 16:47:49] @GScars answers 'help season explains'
+@w[26 Sep 16:50:49] @YEnlossys (@GSpecial Ops@Y) tells the CLAN: 'I find it funny actually'
+@w[26 Sep 16:51:00] @YEnlossys (@GSpecial Ops@Y) tells the CLAN: 'an arrow to the knee is a play on getting married'
+@w[26 Sep 16:51:04] @YEnlossys (@GSpecial Ops@Y) tells the CLAN: 'by getting down on one knee'
+@w[26 Sep 16:51:16] @YBetrilon (@GRecruit@Y) tells the CLAN: ':) '
+@w[26 Sep 16:51:19] @RGlobal Quest@Y:@w @gGlobal Quest # 3548@w has been won by @YCooler@w - @Y5497th@w win.
+@w[26 Sep 16:51:19] @RGlobal Quest@Y:@w @gGlobal Quest # 3548@w will go into extended time for 5 more minutes.
+@w[26 Sep 16:53:14] @YZoth (@GRecruit@Y) tells the CLAN: 'getting these logs in logging camp seems suspiciously like a wow quest'
+@w[26 Sep 16:53:28] @CBeatrice asks, @c"@CHi, I'm Beatrice. Who are you?@c"
+@w[26 Sep 16:53:28] @CBeatrice asks, @c"@CNice to meet you, KumoGami. Perhaps you would like to know more about Sargasso?@c"
+@w[26 Sep 16:53:28] @CBeatrice says, @c"@CYou can say 'Cathedral', 'Castle', or 'Mine' to be sent to those parts of DSR.@c"
+@w[26 Sep 16:53:28] @CYou say 'cathedral'
+@w[26 Sep 16:53:43] @RGlobal Quest@Y:@w Bezaleel has completed @gGlobal Quest # 3548@w.
+@w[26 Sep 16:53:43] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 3548@w is now over.
+@w[26 Sep 16:57:44] @RINFO: Mytheral has been removed from this realm by an alchemist and 3 others.@w
+@w[26 Sep 17:00:12] @RINFO: The player rankings have been updated.@w
+@w[26 Sep 17:02:54] @RINFO: Zensch has removed himself from the (OPK) victim pool!@w
+@w[26 Sep 17:03:07] @RINFO: Vandit has removed himself from the (OPK) victim pool!@w
+@w[26 Sep 17:04:09] @GCLAN: Darkfist falls out to take some much needed R & R.
+@w[26 Sep 17:06:36] @CSen-Tree exclaims 'Get off me you pesky birds!'
+@w[26 Sep 17:06:36] @CSen-Tree says 'I am Sen-Tree, a direct descendant of the once powerful Guard-Trees.'
+@w[26 Sep 17:06:36] @CSen-Tree says 'You are on Earth Plane 4, twenty kilometers from the Teuton Empire which is to the north. Follow the path that lies behind my trunk.'
+@w[26 Sep 17:06:42] @CHebetudinous exclaims 'AAAEEEEEEE!'
+@w[26 Sep 17:06:42] @CHebetudinous exclaims 'AAAEEEEEEE!'
+@w[26 Sep 17:06:42] @CHebetudinous exclaims 'AAAEEEEEEE!'
+@w[26 Sep 17:07:34] @CA witch exclaims 'Dx nxt xttxck xs!'
+@w[26 Sep 17:07:40] @RINFO: The last post plays mournfully as KumoGami falls in battle to a witch and 2 others.@w
+@w[26 Sep 17:11:34] @RINFO: All please welcome Ludderk, Aardwolf's newest Dwarf Knight!@w
+@w[26 Sep 17:13:01] @RINFO: Sawdust settles as Zoth helps Svrogan establish camp on the Ironwood isles.@w
+@w[26 Sep 17:13:32] @YMadrox (@GGeneral@Y) tells the CLAN: 'hey yo'
+@w[26 Sep 17:13:43] @YLepdar (@GCorpsman@Y) tells the CLAN: 'yo'
+@w[26 Sep 17:13:43] @YZoth (@GRecruit@Y) tells the CLAN: 'First time doing one of those goals.  Other than the academy one'
+@w[26 Sep 17:14:24] @RINFO: Lepdar is now an honored employee at Tumari's diner.@w
+@w[26 Sep 17:15:17] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'staves are using your stats?'
+@w[26 Sep 17:16:23] @Y(@GSpecial Ops@Y) CLAN: Epsilon nods.
+@w[26 Sep 17:16:40] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'As far as I can tell, other than casting level, it's using your stats.'
+@w[26 Sep 17:17:06] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Although it'd be an interesting test to compare a level 20 staff to casting the same spell at level 20, and then trying the staff again at SH. I admit I've never tested it.'
+@w[26 Sep 17:17:17] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'nod nod, i had a feeling this might be a thing while trying using disin staves :('
+@w[26 Sep 17:17:42] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Oh yeah, level's almost certainly going to play a part there.'
+@w[26 Sep 17:17:45] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: '... fuck.'
+@w[26 Sep 17:17:58] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'I went through Qong killing all those guards, and forgot I could disintigrate/banish/etc.'
+@w[26 Sep 17:18:00] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'lol'
+@w[26 Sep 17:18:16] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Although if the builder's as much of an asshole as I expect, you probably can't anyway :V'
+@w[26 Sep 17:19:31] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'there is a special place in hell for all people with rsocials turned off :P'
+@w[26 Sep 17:19:40] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'how can i troll / annoy people :('
+@w[26 Sep 17:19:42] @Y(@GSpecial Ops@Y) CLAN: You notice that Zensch is extremely depressed.
+@w[26 Sep 17:19:48] @RGlobal Quest@Y:@w @gGlobal Quest # 3551@w has been won by @YYtrams@w - @Y12th@w win.
+@w[26 Sep 17:19:53] @YMadrox (@GGeneral@Y) tells the CLAN: 'speaking on public channels like icaerus?'
+@w[26 Sep 17:20:03] @Y(@GCorpsman@Y) CLAN: Lepdar struts proudly.
+@w[26 Sep 17:20:06] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'I think you answered your own question there, really. :V'
+@w[26 Sep 17:20:10] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'nah, not my field / expertise :P'
+@w[26 Sep 17:20:22] @YMadrox (@GGeneral@Y) tells the CLAN: 'if you try really hard it might work'
+@w[26 Sep 17:20:33] @CA tax collector exclaims 'There's a 35 gold piece tax to support the city. Pay up!'
+@w[26 Sep 17:20:33] @CA tax collector says 'Thank you for your prompt tax payment.'
+@w[26 Sep 17:20:34] @CQuanah Parker says, @c"@CThere's been a pissing match going on between Marshall James and Mad Dog Jake fer a bunch of years now.  They're brothers, you see, so this all started back in when they were mites no bigger than the bee's knees.  Back then, Mrs. James, their mama, doted on the Marshall.  His younger brother, Jake, was pretty much left to his own devices, and spent his time killing off pet cats and pulling the wings offa flies.@c"
+@w[26 Sep 17:21:13] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[26 Sep 17:24:16] @RINFO: All please welcome Muzzi, Aardwolf's newest Half-griffon Necromancer!@w
+@w[26 Sep 17:25:14] @RINFO: 1 minute of bonus experience remaining.@w
+@w[26 Sep 17:26:14] @RINFO: Bonus experience has now expired.@w
+@w[26 Sep 17:26:54] @YZoth (@GRecruit@Y) tells the CLAN: 'Has anyone done that logging camp goal? Just wondering if it's safe to get rid of the pixie'
+@w[26 Sep 17:27:09] @YMadrox (@GGeneral@Y) tells the CLAN: 'no, its needed for end of goal'
+@w[26 Sep 17:27:18] @YZoth (@GRecruit@Y) tells the CLAN: 'I got the lantern, is there more than that?'
+@w[26 Sep 17:27:26] @YMadrox (@GGeneral@Y) tells the CLAN: 'no, if goal is done, goal is done'
+@w[26 Sep 17:27:44] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'you also got 50QP'
+@w[26 Sep 17:28:12] @YYou tell the CLAN: 'is there a faster way to get through all the seals in kingsholm?'
+@w[26 Sep 17:28:22] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'say next'
+@w[26 Sep 17:28:27] @YTalbor (@GGeneral@Y) tells the CLAN: 'do the goal'
+@w[26 Sep 17:28:29] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'or maybe just type next'
+@w[26 Sep 17:28:36] @CYou say 'next'
+@w[26 Sep 17:28:36] @YTalbor (@GGeneral@Y) tells the CLAN: 'then you can type next'
+@w[26 Sep 17:28:43] @YYou tell the CLAN: 'holy shit ty i will do that'
+@w[26 Sep 17:29:03] @YYou tell the CLAN: 'it was getting very tiring lmao'
+@w[26 Sep 17:29:09] @YTalbor (@GGeneral@Y) tells the CLAN: 'still get aggrod a little but it's much better'
+@w[26 Sep 17:29:19] @YTalbor (@GGeneral@Y) tells the CLAN: 'and don't need keys'
+@w[26 Sep 17:29:47] @YAbraxos (@GElite Soldier@Y) tells the CLAN: 'Many of the goals enable better/faster movement through the areas and are really worth completing.'
+@w[26 Sep 17:31:01] @YYou tell the CLAN: 'yeah i do goals but i didn't do this one'
+@w[26 Sep 17:31:05] @RGlobal Quest@Y:@w @gGlobal Quest # 3556@w has been won by @YMarauder@w - @Y1019th@w win.
+@w[26 Sep 17:31:35] @GCLAN: At-ten-tion! Kalimbog is here to get some training done!
+@w[26 Sep 17:32:43] @RINFO: The last post plays mournfully as Zoth falls in battle to a cave dweller and 2 others.@w
+@w[26 Sep 17:38:03] @YFlynnt (@GSoldier@Y) tells the CLAN: 'allright, I have forgotten trick to getting into the Labyrinth to trigger the mobprog to teleport me in'
+@w[26 Sep 17:38:13] @YFlynnt (@GSoldier@Y) tells the CLAN: 'and its not triggering '
+@w[26 Sep 17:38:25] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'you've got a heavy iron key'
+@w[26 Sep 17:38:27] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'give it to jula'
+@w[26 Sep 17:38:32] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'go north'
+@w[26 Sep 17:38:47] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'why is it not triggering'
+@w[26 Sep 17:38:50] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'does for me'
+@w[26 Sep 17:39:09] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'jula wants your key lol'
+@w[26 Sep 17:39:12] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'be vis and go s n?'
+@w[26 Sep 17:39:18] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'vis is not necessary'
+@w[26 Sep 17:39:25] @YFlynnt (@GSoldier@Y) tells the CLAN: 'which key Ans?'
+@w[26 Sep 17:39:38] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'heavy iron key, i believe'
+@w[26 Sep 17:39:48] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'Who can fido me one tp token?'
+@w[26 Sep 17:39:58] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'I'll send one back in a moment'
+@w[26 Sep 17:40:01] @YSaraid (@GGeneral@Y) tells the CLAN: 'runto ravi? :P'
+@w[26 Sep 17:40:08] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'i'll do that'
+@w[26 Sep 17:40:11] @G(Friend)@c: @CGorsk waves hello to Antarii.
+@w[26 Sep 17:40:50] @YFlynnt (@GSoldier@Y) tells the CLAN: 'okay...thanks Ans.  I have added it as a note this time.'
+@w[26 Sep 17:41:02] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'no need to advertise madrox'
+@w[26 Sep 17:41:07] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'ive bid 500 gold on it'
+@w[26 Sep 17:41:10] @Y(@GSpecial Ops@Y) CLAN: Nueve throws back his head and cackles with insane glee!
+@w[26 Sep 17:41:25] @YMadrox (@GGeneral@Y) tells the CLAN: 'oh man should of said something, I would of 100% not sold it to you because lauc :P'
+@w[26 Sep 17:41:36] @CKing Philip exclaims, @c"@CThe armies of Gritzkiller the Goblin and Blightspeaker the Ogre are marching upon us. We will never survive against such foes!@c"
+@w[26 Sep 17:41:36] @CKing Philip exclaims, @c"@CWe must summon the champion. The champion must activate the seals of Kingsholm! He will save us! But who will find him? Please say you will find him. You must. Our kingdom depends on him!@c"
+@w[26 Sep 17:41:36] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'lol'
+@w[26 Sep 17:41:42] @CYou say 'i will find him'
+@w[26 Sep 17:41:42] @CKing Philip says, @c"@CGo now, brave one. Go now and find the champion. Save us.@c"
+@w[26 Sep 17:41:42] @YMadrox (@GGeneral@Y) tells the CLAN: 'because=before'
+@w[26 Sep 17:41:58] @RGlobal Quest@Y:@w @gGlobal Quest # 3557@w has been won by @YRockwell@w - @Y279th@w win.
+@w[26 Sep 17:42:07] @G(Friend)@c: @CGorsk claps at Rockwell's performance.
+@w[26 Sep 17:42:11] @YMadrox (@GGeneral@Y) tells the CLAN: 'anyone wanna buy blank chaos portals for 50mil each before I go public with them?'
+@w[26 Sep 17:42:40] @YZoth (@GRecruit@Y) tells the CLAN: 'I'm a little short'
+@w[26 Sep 17:43:17] @CYou say 'activate the seals'
+@w[26 Sep 17:43:17] @CThe king's champion says, @c"@CIsh in no condishion to open the sheals. You needsh to do it.@c"
+@w[26 Sep 17:43:17] @CThe king's champion says, @c"@CTo open the shealsh, you jush need...@c"
+@w[26 Sep 17:43:55] @CYou say 'activate the seals'
+@w[26 Sep 17:43:55] @CAn ancient scholar says, @c"@CI believe I read something about activating the seals in one of these books.@c"
+@w[26 Sep 17:43:55] @CAn ancient scholar says, @c"@CSee here. It says here if all else fails the gods will lead the way. Perhaps you should make an offering to the gods and ask them for a sign.@c"
+@w[26 Sep 17:43:55] @CAn ancient scholar says, @c"@CThat's all I can tell you. If I find something else in the books, I will pass along the information.@c"
+@w[26 Sep 17:43:58] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'I have to pay some alt 6 tps to get a new ring of purest light... because 'we dont reimburse silly mistakes'. I blame the system'
+@w[26 Sep 17:44:11] @Y(@GSpecial Ops@Y) CLAN: Anssett snickers with Kanaye about their shared secret.
+@w[26 Sep 17:44:28] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'I mean, that's basically cost though?'
+@w[26 Sep 17:44:37] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'So at least they're not soaking you for it. :P'
+@w[26 Sep 17:44:38] @YMadrox (@GGeneral@Y) tells the CLAN: 'yeah friends and clannies discount'
+@w[26 Sep 17:45:00] @RGlobal Quest@Y:@w @mGlobal Quest # 3559@w has been won by @YBreathe@w - @Y58th@w win.
+@w[26 Sep 17:45:18] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'versus "give 10 tp to this alt i'll never play again, and i'll spend 6 on reown"'
+@w[26 Sep 17:45:33] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Hell, I'd ask for an extra token to cover the trouble.'
+@w[26 Sep 17:45:39] @YFlynnt (@GSoldier@Y) tells the CLAN: 'nice...crumble for 5m'
+@w[26 Sep 17:47:32] @CYou say 'activate the seals'
+@w[26 Sep 17:47:33] @CA statue of Apollo says, @c"@CYou would ask a boon of me? People have robbed me of tribute that was freely given, and then they want more.@c"
+@w[26 Sep 17:47:33] @CA statue of Apollo says, @c"@CIf you would ask something of me, you must first do something for me. My lute has been stolen. You must find and return my lute to me. If you do this for me, the next time you ask I shall help you in return.@c"
+@w[26 Sep 17:47:48] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'jezus madrox'
+@w[26 Sep 17:47:52] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'you filthy rich'
+@w[26 Sep 17:48:04] @YMadrox (@GGeneral@Y) tells the CLAN: 'well im 50mil less than I began day with :P'
+@w[26 Sep 17:48:15] @YZoth (@GRecruit@Y) tells the CLAN: 'doh'
+@w[26 Sep 17:48:17] @YMadrox (@GGeneral@Y) tells the CLAN: 'but...'
+@w[26 Sep 17:48:19] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'that were 10 chaos portals :P'
+@w[26 Sep 17:48:21] @G(Friend) Gorsk@c:@C 'what does navi have to do with those?'
+@w[26 Sep 17:48:24] @YMadrox (@GGeneral@Y) tells the CLAN: 'the platinum is on lauc'
+@w[26 Sep 17:48:37] @RINFO: All please welcome Eudaimonia, Aardwolf's newest Elf Elementalist!@w
+@w[26 Sep 17:48:39] @RINFO: The valkyries come for Fafhrd who was slain by a starving child.@w
+@w[26 Sep 17:48:46] @G(Friend) Gorsk@c:@C 'does it? didn't realize that for normal ones'
+@w[26 Sep 17:48:51] @YMadrox (@GGeneral@Y) tells the CLAN: 'its at 140mil, so already 90mil in profit prolly gonna go for alot more'
+@w[26 Sep 17:48:55] @CYou say 'activate the seals'
+@w[26 Sep 17:48:55] @CA statue of Apollo says, @c"@CYou really should speak with Aphrodite. I believe she knows how to activate the seals.@c"
+@w[26 Sep 17:49:06] @YMadrox (@GGeneral@Y) tells the CLAN: 'but that gamble doesn't pay off 90% of the time :P'
+@w[26 Sep 17:49:31] @RINFO: Zoth is the new Funeral Director at the Graveyard!@w
+@w[26 Sep 17:49:39] @YMadrox (@GGeneral@Y) tells the CLAN: 'case in point, the 5th bcp I bought was platinum, so I got excited(planned to only get ten), so I bought 12 more after the 10'
+@w[26 Sep 17:49:48] @RGlobal Quest@Y:@w @gGlobal quest # 3560@w has been declared for levels @g45@w to @g56@w.
+@w[26 Sep 17:49:48] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g80@w ticks.
+@w[26 Sep 17:49:48] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 3560@w' to take part.
+@w[26 Sep 17:49:58] @G(Friend) Gorsk@c:@C 'oic'
+@w[26 Sep 17:50:43] @CYou say 'activate the seals'
+@w[26 Sep 17:50:43] @CA statue of Aphrodite says, @c"@CIf you want something from me, you must do something for me. Everyone steals what I would give out for free. Someone has stolen a bit of my love. If you return it to me, I shall let you ask your question again.@c"
+@w[26 Sep 17:50:52] @CYou say 'activate the seals'
+@w[26 Sep 17:50:52] @CA statue of Aphrodite exclaims, @c"@COh, thank you, thank you!@c"
+@w[26 Sep 17:50:52] @CA statue of Aphrodite says, @c"@CYou really should speak with Athena. I believe she knows how to activate the seals.@c"
+@w[26 Sep 17:51:06] @CYou say 'activate the seals'
+@w[26 Sep 17:51:06] @CA statue of Athena says, @c"@CIf you want something from me, you must do something for me. You must find wisdom and return it to me. Then you may present your question to me again.@c"
+@w[26 Sep 17:51:09] @G(Friend) Gorsk@c:@C 'also, wha'd you spend all your gold on?'
+@w[26 Sep 17:51:49] @RGlobal Quest@Y:@w @gGlobal quest # 3560@w for levels @g45@w to @g56@w has now started.
+@w[26 Sep 17:52:06] @G(Friend) Gorsk@c:@C 'heh'
+@w[26 Sep 17:52:51] @RINFO: HARDCORE Lexos has been killed by Dixon at level 85.@w
+@w[26 Sep 17:52:58] @RINFO: Lexos has entered open PK (OPK) mode!@w
+@w[26 Sep 17:53:36] @CYou say 'activate the seals'
+@w[26 Sep 17:53:36] @CA statue of Athena says, @c"@CI thank you, but you must speak with Zeus. He is the one who knows.@c"
+@w[26 Sep 17:53:45] @CYou say 'activate the seals'
+@w[26 Sep 17:53:45] @CA statue of Zeus says, @c"@CSo you want to know how to activate the seals. I can do that, but you must do something for me. I have lost a bit of my lightning bolt. I went slumming in this city and believe I lost it then. If you find my missing bit of a lightning bolt and return it to me, I shall give you the information you desire.@c"
+@w[26 Sep 17:56:12] @RINFO: At the Crossroads of Fortune, Ospario travels one of many paths.@w
+@w[26 Sep 17:56:40] @RINFO: The last post plays mournfully as KumoGami falls in battle to Trey, the Unforgiven and 3 others.@w
+@w[26 Sep 17:56:49] @RGlobal Quest@Y:@w @gGlobal quest # 3560@w has been cancelled due to lack of participants.
+@w[26 Sep 17:58:21] @CAberrant gossips 'was there another fractal just now?'
+@w[26 Sep 17:59:35] @YZoth (@GRecruit@Y) tells the CLAN: 'Do I need to be added as a member to view the guides on the clan site? '
+@w[26 Sep 17:59:56] @GCLAN: Abraxos falls out to take some much needed R & R.
+@w[26 Sep 17:59:56] @RINFO: The last post plays mournfully as KumoGami falls in battle to Trey, the Unforgiven and 3 others.@w
+@w[26 Sep 18:00:05] @YYou tell the CLAN: 'fml'
+@w[26 Sep 18:00:08] @YMadrox (@GGeneral@Y) tells the CLAN: 'rank 2 gets access to area goals'
+@w[26 Sep 18:00:12] @RINFO: The player rankings have been updated.@w
+@w[26 Sep 18:00:16] @YZoth (@GRecruit@Y) tells the CLAN: 'Oh okay'
+@w[26 Sep 18:00:17] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[26 Sep 18:00:49] @CMadrox says 'no spells sorry'
+@w[26 Sep 18:00:53] @RGlobal Quest@Y:@w @mGlobal Quest # 3561@w has been won by @YChimalli@w - @Y127th@w win.
+@w[26 Sep 18:00:53] @RGlobal Quest@Y:@w @mGlobal Quest # 3561@w will go into extended time for 5 more minutes.
+@w[26 Sep 18:00:58] @cYou tell Madrox 'np thanks!'
+@w[26 Sep 18:01:04] @cMadrox tells you 'anytime'
+@w[26 Sep 18:04:10] @RINFO: All please welcome Remache, Aardwolf's newest Human Sorcerer!@w
+@w[26 Sep 18:06:47] @G(Friend) Gorsk@c:@C '@wYou spend @Y15,625@w trains and @Y74,500,000@w gold to increase your third attack instinct by @Y10@w to @Y60@w.'
+@w[26 Sep 18:07:45] @YInix (@GSoldier@Y) tells the CLAN: 'What are you going to do with those tokens?'
+@w[26 Sep 18:08:34] @RGlobal Quest@Y:@w @gGlobal Quest # 3563@w has been won by @YTinypotato@w - @Y2313th@w win.
+@w[26 Sep 18:08:34] @RGlobal Quest@Y:@w @gGlobal Quest # 3563@w will go into extended time for 5 more minutes.
+@w[26 Sep 18:09:31] @RINFO: All please welcome Dionysys, Aardwolf's newest Dwarf Oracle!@w
+@w[26 Sep 18:09:58] @RGlobal Quest@Y:@w Tussin has completed @gGlobal Quest # 3563@w.
+@w[26 Sep 18:15:01] @YLepdar (@GCorpsman@Y) tells the CLAN: 'see ya guys'
+@w[26 Sep 18:15:59] @GCLAN: Lepdar falls out to take some much needed R & R.
+@w[26 Sep 18:16:31] @RINFO: Zensch has been reborn as a Vampire Cleric.@w
+@w[26 Sep 18:16:32] @RINFO: Calliope sheds a tear as Ospario and Rei prove that death can be beautiful.@w
+@w[26 Sep 18:18:05] @RINFO: Vandit has been reborn as a Vampire Mage.@w
+@w[26 Sep 18:18:31] @RGlobal Quest@Y:@w @mGlobal Quest # 3565@w has been won by @YGrrdy@w - @Y182nd@w win.
+@w[26 Sep 18:18:31] @RGlobal Quest@Y:@w @mGlobal Quest # 3565@w will go into extended time for 5 more minutes.
+@w[26 Sep 18:18:50] @RINFO: Vandit has entered open PK (OPK) mode!@w
+@w[26 Sep 18:19:38] @GCLAN: At-ten-tion! Betrilon is here to get some training done!
+@w[26 Sep 18:20:23] @RINFO: Zensch has entered (HARDCORE) mode!@w
+@w[26 Sep 18:23:17] @CA tax collector exclaims 'There's a 35 gold piece tax to support the city. Pay up!'
+@w[26 Sep 18:23:17] @CA tax collector says 'Thank you for your prompt tax payment.'
+@w[26 Sep 18:23:18] @CQuanah Parker says, @c"@CThere's been a pissing match going on between Marshall James and Mad Dog Jake fer a bunch of years now.  They're brothers, you see, so this all started back in when they were mites no bigger than the bee's knees.  Back then, Mrs. James, their mama, doted on the Marshall.  His younger brother, Jake, was pretty much left to his own devices, and spent his time killing off pet cats and pulling the wings offa flies.@c"
+@w[26 Sep 18:23:22] @CQuanah Parker says, @c"@CWell, comes the time they're adults, the Marshall now, he went fer the right side of the law.  That's not to say he's good at heart, cause that one's bad to the bone.  Doesn't mind taking a bitta blunt under the table fer his trouble, and will look the other way if you pays him enough.  But fer all that, he's the best bit of law we've got around here, and he generally kept things quiet like until his brother Jake came back into town.@c"
+@w[26 Sep 18:23:27] @CQuanah Parker says, @c"@CJake's not entirely a bad boy either.  He spends his days making his brother's life a misery, but doesn't mind helping out poor folk when he's got a little extra cash.@c"
+@w[26 Sep 18:23:32] @CQuanah Parker says, @c"@CNow, of course, they're so mad to get to each other, there ain't nothing like work gettin' done around here.  Mad Dog Jake's holed himself up in the mines, and Marshall James just keeps sending trigger happy idiots down there to root him out.  The townsfolk are getting a mite tired of all this.  So you've either gotta plug Mad Dog Jake, or take out Marshall James.  Really don't matter much to me which one you do, just do one of 'em.@c"
+@w[26 Sep 18:23:37] @CQuanah Parker says, @c"@CSo, how about it?  Will ya help?  Say yes or no.@c"
+@w[26 Sep 18:24:36] @RINFO: Sarisa has dispelled the amnesia in Gnomalin.@w
+@w[26 Sep 18:24:56] @CA henchman exclaims 'Intruders!'
+@w[26 Sep 18:24:56] @CA henchman exclaims 'Intruders!'
+@w[26 Sep 18:24:56] @CA henchman says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:25:16] @RINFO: The last post plays mournfully as KumoGami falls in battle to a henchman and 4 others.@w
+@w[26 Sep 18:25:26] @RGlobal Quest@Y:@w @gGlobal Quest # 3566@w has been won by @YMadrox@w - @Y671st@w win.
+@w[26 Sep 18:25:26] @RGlobal Quest@Y:@w @gGlobal Quest # 3566@w will go into extended time for 5 more minutes.
+@w[26 Sep 18:25:40] @CSaraid says 'KumoGami don't forget detect invis, and make sure your corpse rots (invis items) before you leave the morgue or room! @W*this message is a trigger :)*@w'
+@w[26 Sep 18:25:40] @CSaraid smirks 'sheesh stop dying :P'
+@w[26 Sep 18:26:01] @cYou tell Saraid 'don't you think I'm trying T_T'
+@w[26 Sep 18:26:57] @CA tax collector exclaims 'There's a 35 gold piece tax to support the city. Pay up!'
+@w[26 Sep 18:26:57] @CA tax collector says 'Thank you for your prompt tax payment.'
+@w[26 Sep 18:26:58] @CQuanah Parker says, @c"@CThere's been a pissing match going on between Marshall James and Mad Dog Jake fer a bunch of years now.  They're brothers, you see, so this all started back in when they were mites no bigger than the bee's knees.  Back then, Mrs. James, their mama, doted on the Marshall.  His younger brother, Jake, was pretty much left to his own devices, and spent his time killing off pet cats and pulling the wings offa flies.@c"
+@w[26 Sep 18:27:02] @CQuanah Parker says, @c"@CWell, comes the time they're adults, the Marshall now, he went fer the right side of the law.  That's not to say he's good at heart, cause that one's bad to the bone.  Doesn't mind taking a bitta blunt under the table fer his trouble, and will look the other way if you pays him enough.  But fer all that, he's the best bit of law we've got around here, and he generally kept things quiet like until his brother Jake came back into town.@c"
+@w[26 Sep 18:27:31] @CA tax collector exclaims 'There's a 35 gold piece tax to support the city. Pay up!'
+@w[26 Sep 18:27:31] @CA tax collector says 'Thank you for your prompt tax payment.'
+@w[26 Sep 18:27:36] @CQuanah Parker says, @c"@CThere's been a pissing match going on between Marshall James and Mad Dog Jake fer a bunch of years now.  They're brothers, you see, so this all started back in when they were mites no bigger than the bee's knees.  Back then, Mrs. James, their mama, doted on the Marshall.  His younger brother, Jake, was pretty much left to his own devices, and spent his time killing off pet cats and pulling the wings offa flies.@c"
+@w[26 Sep 18:28:12] @YBetrilon (@GRecruit@Y) tells the CLAN: 'hey I have a mob that cannot be found on where'
+@w[26 Sep 18:28:20] @YBetrilon (@GRecruit@Y) tells the CLAN: 'champion of the light in yurgach'
+@w[26 Sep 18:28:22] @YMadrox (@GGeneral@Y) tells the CLAN: 'nowhere mobs exist'
+@w[26 Sep 18:28:26] @YMadrox (@GGeneral@Y) tells the CLAN: 'its in the rift'
+@w[26 Sep 18:28:46] @YBetrilon (@GRecruit@Y) tells the CLAN: 'damn I was in the rift already but I found only a guardian of light'
+@w[26 Sep 18:28:58] @YMadrox (@GGeneral@Y) tells the CLAN: 'oh then maybe im confusing them'
+@w[26 Sep 18:29:06] @YYou tell the CLAN: 'oh i just had to find that one today'
+@w[26 Sep 18:29:09] @YBetrilon (@GRecruit@Y) tells the CLAN: 'Madrox could I have a task for the first rank promotion from you? :) '
+@w[26 Sep 18:29:09] @YMadrox (@GGeneral@Y) tells the CLAN: 'try more south from rift behind door'
+@w[26 Sep 18:29:12] @YYou tell the CLAN: 'it's in uhm lemme see'
+@w[26 Sep 18:29:21] @YBetrilon (@GRecruit@Y) tells the CLAN: 'ok :) '
+@w[26 Sep 18:29:32] @YMadrox (@GGeneral@Y) tells the CLAN: 'do goals notdone, and paste it and your required stats in a note to boot on personal'
+@w[26 Sep 18:29:33] @YTalbor (@GGeneral@Y) tells the CLAN: 'small hill #29471'
+@w[26 Sep 18:30:00] @YYou tell the CLAN: 'yep that one'
+@w[26 Sep 18:30:23] @YBetrilon (@GRecruit@Y) tells the CLAN: 'thanks!!!!!! :))) '
+@w[26 Sep 18:30:38] @RINFO: The pirates prepare a burial at sea for Kortai, slain by a shifty-eyed scoundrel and 3 others.@w
+@w[26 Sep 18:31:12] @YBetrilon (@GRecruit@Y) tells the CLAN: 'how can I found aroom number?'
+@w[26 Sep 18:31:30] @YMadrox (@GGeneral@Y) tells the CLAN: 'mapper goto number if using SnD'
+@w[26 Sep 18:32:06] @YBetrilon (@GRecruit@Y) tells the CLAN: 'damn it works!!! THANK YOU !'
+@w[26 Sep 18:32:23] @YMadrox (@GGeneral@Y) tells the CLAN: 'as long as you have it explored mapper goto will take you there'
+@w[26 Sep 18:32:23] @G(Friend)@c: @CGorsk beams a smile at Vost.
+@w[26 Sep 18:32:32] @YBetrilon (@GRecruit@Y) tells the CLAN: 'Madrox, so any undone goal is ok? so I'll have to do 4 in sum?'
+@w[26 Sep 18:32:41] @YMadrox (@GGeneral@Y) tells the CLAN: 'of course you would need proper cexit set if it was behind a portal'
+@w[26 Sep 18:32:47] @YMadrox (@GGeneral@Y) tells the CLAN: 'no you have to post the whole list :P'
+@w[26 Sep 18:32:55] @YMadrox (@GGeneral@Y) tells the CLAN: 'so we pick the goal'
+@w[26 Sep 18:33:08] @YMadrox (@GGeneral@Y) tells the CLAN: 'just copy and paste the output from goals notdone'
+@w[26 Sep 18:33:12] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I have only academy goal done, x'
+@w[26 Sep 18:33:12] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I have only academy goal done, x'
+@w[26 Sep 18:33:13] @CA cracked statue says, @c"@CGreetings, follower of the light.@c"
+@w[26 Sep 18:33:13] @CA cracked statue says, @c"@CLong ago I was carved from the stones of this place. I have seen when the light and dark worked together in harmony, a perfect balance. Then something happened, suddenly they started warring. Nobody knows why or who is to blame. Obviously, the light blames the dark and the dark blames the light. Luckily, Malcrom is attempting to figure out who is truly to blame.@c"
+@w[26 Sep 18:33:13] @CA cracked statue says, @c"@CIf you would like to hear more, please indicate that you @Gaccept@C.@c"
+@w[26 Sep 18:33:13] @CA cracked statue says, @c"@CIf you don't want to help, you may either join the dark or join the light.@c"
+@w[26 Sep 18:33:18] @YBetrilon (@GRecruit@Y) tells the CLAN: 'xD'
+@w[26 Sep 18:33:22] @YMadrox (@GGeneral@Y) tells the CLAN: 'make sure to list the other requirements :P'
+@w[26 Sep 18:33:39] @YMadrox (@GGeneral@Y) tells the CLAN: 'yeah but if we let you slide, then someone else will be trying to do the same'
+@w[26 Sep 18:33:49] @YMadrox (@GGeneral@Y) tells the CLAN: 'think of it as a learning experience of how to write a really long note'
+@w[26 Sep 18:33:51] @YBetrilon (@GRecruit@Y) tells the CLAN: 'okie dokie'
+@w[26 Sep 18:34:04] @YBetrilon (@GRecruit@Y) tells the CLAN: 'it indeed is, I have to recall how to do it '
+@w[26 Sep 18:34:04] @CYou say 'join the light'
+@w[26 Sep 18:34:04] @CA cracked statue says 'You shall battle the darkness on your way to the prize.'
+@w[26 Sep 18:34:35] @YMadrox (@GGeneral@Y) tells the CLAN: 'copy and paste it to a notepad first, then paste it back into the note once you have all other requirements listed'
+@w[26 Sep 18:35:14] @YBetrilon (@GRecruit@Y) tells the CLAN: 'Madrox, should I post the note after I fulfill all the other requirements?'
+@w[26 Sep 18:35:24] @YMadrox (@GGeneral@Y) tells the CLAN: 'yes'
+@w[26 Sep 18:35:35] @YBetrilon (@GRecruit@Y) tells the CLAN: 'ok, so I'll have to focus on completing gquests and goals now '
+@w[26 Sep 18:35:56] @YMadrox (@GGeneral@Y) tells the CLAN: 'remember you can subsitute a gq win/completion with cp completions'
+@w[26 Sep 18:36:00] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I only have campaigns and qp done'
+@w[26 Sep 18:36:14] @YBetrilon (@GRecruit@Y) tells the CLAN: 'oh yeah'
+@w[26 Sep 18:36:25] @YMadrox (@GGeneral@Y) tells the CLAN: 'shouldn't take you long if you focus on it'
+@w[26 Sep 18:36:45] @YBetrilon (@GRecruit@Y) tells the CLAN: 'I think the goals will be a hard thing to do'
+@w[26 Sep 18:36:56] @YMadrox (@GGeneral@Y) tells the CLAN: 'nah, you can ask if you get stuck'
+@w[26 Sep 18:37:07] @YMadrox (@GGeneral@Y) tells the CLAN: 'do the easy low level ones that aren't level locked to you'
+@w[26 Sep 18:37:31] @YMadrox (@GGeneral@Y) tells the CLAN: 'how many do you have to have done before you can apply for promotion? (I should know this)'
+@w[26 Sep 18:37:44] @YBetrilon (@GRecruit@Y) tells the CLAN: 'allrighty, thanks :) I have no goals done at all, only the academy one '
+@w[26 Sep 18:39:03] @YBetrilon (@GRecruit@Y) tells the CLAN: 'for gquests I can't remember, but I won one '
+@w[26 Sep 18:39:10] @YMadrox (@GGeneral@Y) tells the CLAN: 'oh only need to do 3 more done'
+@w[26 Sep 18:39:30] @YBetrilon (@GRecruit@Y) tells the CLAN: 'the gquests or goals? or both?'
+@w[26 Sep 18:39:41] @YMadrox (@GGeneral@Y) tells the CLAN: 'you have 1 gq win, and 5 more cps than you need, so you are good on cps/gqs'
+@w[26 Sep 18:39:43] @YMadrox (@GGeneral@Y) tells the CLAN: '3 goals'
+@w[26 Sep 18:39:49] @YBetrilon (@GRecruit@Y) tells the CLAN: 'ok :) '
+@w[26 Sep 18:39:55] @YInix (@GSoldier@Y) tells the CLAN: 'Can someone point me to the help file on how to set my tier mod for stats?'
+@w[26 Sep 18:40:05] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'help tierstat'
+@w[26 Sep 18:40:12] @YInix (@GSoldier@Y) tells the CLAN: 'ah, as one word.  Thank you'
+@w[26 Sep 18:41:33] @RGlobal Quest@Y:@w @gGlobal Quest # 3569@w has been won by @YGuinness@w - @Y2842nd@w win.
+@w[26 Sep 18:41:33] @RGlobal Quest@Y:@w @gGlobal Quest # 3569@w will go into extended time for 5 more minutes.
+@w[26 Sep 18:42:40] @CA hellhound says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:42:59] @CA hellhound says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:43:07] @RGlobal Quest@Y:@w Mael has completed @gGlobal Quest # 3569@w.
+@w[26 Sep 18:43:07] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 3569@w is now over.
+@w[26 Sep 18:44:25] @CA cracked statue says, @c"@CGreetings, follower of the light.@c"
+@w[26 Sep 18:44:25] @CA cracked statue says, @c"@CLong ago I was carved from the stones of this place. I have seen when the light and dark worked together in harmony, a perfect balance. Then something happened, suddenly they started warring. Nobody knows why or who is to blame. Obviously, the light blames the dark and the dark blames the light. Luckily, Malcrom is attempting to figure out who is truly to blame.@c"
+@w[26 Sep 18:44:25] @CA cracked statue says, @c"@CIf you would like to hear more, please indicate that you @Gaccept@C.@c"
+@w[26 Sep 18:44:25] @CA cracked statue says, @c"@CIf you don't want to help, you may either join the dark or join the light.@c"
+@w[26 Sep 18:44:36] @CYou say 'join the light'
+@w[26 Sep 18:44:36] @CA cracked statue says 'You shall battle the darkness on your way to the prize.'
+@w[26 Sep 18:44:47] @CA hellhound says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:44:51] @CA hellhound says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:45:27] @CA hellhound says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:45:30] @CA hellhound says 'Your purity sickens me, KumoGami.'
+@w[26 Sep 18:46:10] @RGlobal Quest@Y:@w @mGlobal Quest # 3568@w has been won by @YVettir@w - @Y125th@w win.
+@w[26 Sep 18:49:08] @RINFO: The pirates prepare a burial at sea for Raine, slain by a bald eagle and 3 others.@w
+@w[26 Sep 18:49:10] @RINFO: The last post plays mournfully as Blunt falls in battle to Axaldra, the Eternal One and 1 other.@w
+@w[26 Sep 18:52:04] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[26 Sep 18:54:27] @RINFO: All please welcome Meowtachi, Aardwolf's newest Human Soldier!@w
+@w[26 Sep 18:54:39] @RINFO: Nobody mourns the death of outcast Jarhad, slain by an arctic spider and 1 other. @w
+@w[26 Sep 18:55:32] @GCLAN: At-ten-tion! Lexicon is here to get some training done!
+@w[26 Sep 18:57:12] @RGlobal Quest@Y:@w @gGlobal Quest # 3571@w has been won by @YNajin@w - @Y805th@w win.
+@w[26 Sep 18:57:47] @GCLAN: At-ten-tion! Ratel is here to get some training done!
+@w[26 Sep 18:58:48] @w*Click*, the door opens.
+@w[26 Sep 18:59:52] @GCilmarill questions 'where do I find the key to get into A Hotel Room in Prosper's Island?'
+@w[26 Sep 18:59:59] @w*Click*, the door opens.
+@w[26 Sep 19:00:09] @GNajin answers 'its the portal'
+@w[26 Sep 19:00:11] @RINFO: The player rankings have been updated.@w
+@w[26 Sep 19:00:11] @GTeleron answers 'It the portal called share.'
+@w[26 Sep 19:00:14] @w*Click*, the door opens.
+@w[26 Sep 19:00:22] @w*Click*, the door opens.
+@w[26 Sep 19:00:23] @GNajin answers '@wa Share Ownership of H@bot@Be@wl R@bo@By@ba@wle'
+@w[26 Sep 19:01:06] @RINFO: The pirates prepare a burial at sea for Macbeth, slain by Axaldra, the Eternal One and 1 other.@w
+@w[26 Sep 19:01:47] @YZoth (@GRecruit@Y) tells the CLAN: 'There an item i NEEd to wear to get past these bouncers in fellchantry?  Not much information about this area online'
+@w[26 Sep 19:02:17] @GCLAN: KumoGami falls out to take some much needed R & R.

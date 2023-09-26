@@ -337,6 +337,7 @@ end
   <send>c 'underwater breathing'</send>
   </trigger>
   <trigger
+   enabled="y"
    group="autovis"
    match="You are no longer invisible."
    sequence="100"
@@ -344,6 +345,7 @@ end
   <send>cast invis</send>
   </trigger>
   <trigger
+   enabled="y"
    group="autovis"
    match="You are no longer traceless."
    sequence="100"
@@ -361,6 +363,7 @@ end
 Send("cast " .. sp)</send>
   </trigger>
   <trigger
+   enabled="y"
    group="autovis"
    match="You lost your concentration while trying to cast invis."
    sequence="100"
@@ -368,6 +371,7 @@ Send("cast " .. sp)</send>
   <send>cast invis</send>
   </trigger>
   <trigger
+   enabled="y"
    group="autovis"
    match="You made too much noise! You can still be tracked."
    sequence="100"
@@ -626,10 +630,17 @@ end</send>
   <alias
    match="cr"
    enabled="y"
-   send_to="10"
+   send_to="12"
    sequence="100"
   >
-  <send>wake;sight;sight;get all corpse;suit</send>
+  <send>require "wait"
+
+wait.make(function()
+  Execute("wake;sight;sight;get all corpse;")
+
+  wait.time(7)
+  Execute("suit")
+end)</send>
   </alias>
   <alias
    match="di *"
@@ -693,6 +704,7 @@ local autovis = raw == "true"
 local lv = tonumber(gmcp("char.base.level"))
 
 if autovis then
+  ColourNote("cyan", "", "Invis for level " .. lv)
   if lv &gt;= 25 then
     Send("cast invis")
   end
@@ -1052,7 +1064,7 @@ end</send>
    world_file_version="15"
   >
   <variable name="autosp">true</variable>
-  <variable name="autovis">false</variable>
+  <variable name="autovis">true</variable>
   <variable name="cclass">ranger</variable>
   <variable name="held">dual ebony</variable>
   <variable name="hppot">'light relief'</variable>
