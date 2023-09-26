@@ -22,115 +22,115 @@
   <variable name="config"></variable>
   <variable name="configs">configs = {
   ROOM_NOTE_COLOUR = {
-    colour = 9498256,
     name = "Room notes",
-    },
-  SHOP_FILL_COLOUR = {
-    colour = 3124735,
-    name = "Shop",
-    },
-  ROOM_NAME_FILL = {
-    colour = 5461520,
-    name = "Room name fill",
-    },
-  UNKNOWN_ROOM_COLOUR = {
-    colour = 139,
-    name = "Unknown room",
-    },
-  GUILD_FILL_COLOUR = {
-    colour = 16711935,
-    name = "Guild",
-    },
-  ROOM_NAME_BORDER = {
-    colour = 0,
-    name = "Room name box",
-    },
-  TRAINER_FILL_COLOUR = {
-    colour = 3329434,
-    name = "Trainer",
-    },
-  AREA_NAME_TEXT = {
-    colour = 15856574,
-    name = "Area name text",
-    },
-  QUESTOR_FILL_COLOUR = {
-    colour = 16760576,
-    name = "Questor",
-    },
-  WINDOW = {
-    height = 604,
-    width = 632,
-    },
-  SCAN = {
-    depth = 300,
-    },
-  BACKGROUND_COLOUR = {
-    colour = 1118481,
-    name = "Area Background",
-    },
-  SAFEROOM_FILL_COLOUR = {
-    colour = 15128749,
-    name = "Safe room",
-    },
-  LAST_VISIT_TIME = {
-    time = 180,
+    colour = 9498256,
     },
   BANK_FILL_COLOUR = {
-    colour = 55295,
     name = "Bank",
-    },
-  FONT = {
-    name = "MesloLGS NF",
-    size = 10,
-    },
-  OUR_ROOM_COLOUR = {
-    colour = 9639167,
-    name = "Our room",
-    },
-  DIFFERENT_AREA_COLOUR = {
-    colour = 255,
-    name = "Another area",
+    colour = 55295,
     },
   AREA_NAME_BORDER = {
-    colour = 0,
     name = "Area name box",
+    colour = 0,
     },
-  PK_BORDER_COLOUR = {
+  SAFEROOM_FILL_COLOUR = {
+    name = "Safe room",
+    colour = 15128749,
+    },
+  UNKNOWN_ROOM_COLOUR = {
+    name = "Unknown room",
+    colour = 139,
+    },
+  FONT = {
+    size = 10,
+    name = "MesloLGS NF",
+    },
+  OUR_ROOM_COLOUR = {
+    name = "Our room",
+    colour = 9639167,
+    },
+  DIFFERENT_AREA_COLOUR = {
+    name = "Another area",
     colour = 255,
-    name = "PK border",
+    },
+  WINDOW = {
+    width = 632,
+    height = 604,
     },
   USE_TEXTURES = {
     enabled = true,
     },
-  SHOW_ROOM_ID = true,
+  BACKGROUND_COLOUR = {
+    name = "Area Background",
+    colour = 1118481,
+    },
   SHOW_AREA_EXITS = true,
-  ROOM_COLOUR = {
-    colour = 14474460,
-    name = "Room",
+  SCAN = {
+    depth = 300,
     },
   AREA_NAME_FILL = {
-    colour = 5461520,
     name = "Area name fill",
-    },
-  EXIT_COLOUR = {
-    colour = 16777184,
-    name = "Exit",
-    },
-  HEALER_FILL_COLOUR = {
-    colour = 3329434,
-    name = "Healer",
-    },
-  ROOM_NAME_TEXT = {
-    colour = 15856574,
-    name = "Room name text",
+    colour = 5461520,
     },
   EXIT_COLOUR_UP_DOWN = {
-    colour = 12695295,
     name = "Exit up/down",
+    colour = 12695295,
+    },
+  SHOW_ROOM_ID = true,
+  HEALER_FILL_COLOUR = {
+    name = "Healer",
+    colour = 3329434,
+    },
+  LAST_VISIT_TIME = {
+    time = 180,
     },
   MAPPER_NOTE_COLOUR = {
-    colour = 9498256,
     name = "Messages",
+    colour = 9498256,
+    },
+  PK_BORDER_COLOUR = {
+    name = "PK border",
+    colour = 255,
+    },
+  ROOM_NAME_TEXT = {
+    name = "Room name text",
+    colour = 15856574,
+    },
+  SHOP_FILL_COLOUR = {
+    name = "Shop",
+    colour = 3124735,
+    },
+  ROOM_COLOUR = {
+    name = "Room",
+    colour = 14474460,
+    },
+  ROOM_NAME_FILL = {
+    name = "Room name fill",
+    colour = 5461520,
+    },
+  EXIT_COLOUR = {
+    name = "Exit",
+    colour = 16777184,
+    },
+  GUILD_FILL_COLOUR = {
+    name = "Guild",
+    colour = 16711935,
+    },
+  ROOM_NAME_BORDER = {
+    name = "Room name box",
+    colour = 0,
+    },
+  TRAINER_FILL_COLOUR = {
+    name = "Trainer",
+    colour = 3329434,
+    },
+  AREA_NAME_TEXT = {
+    name = "Area name text",
+    colour = 15856574,
+    },
+  QUESTOR_FILL_COLOUR = {
+    name = "Questor",
+    colour = 16760576,
     },
   }</variable>
   <variable name="db_name">Aardwolf</variable>
