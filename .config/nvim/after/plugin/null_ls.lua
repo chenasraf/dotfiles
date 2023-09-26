@@ -2,7 +2,7 @@ local nls = require("null-ls")
 
 local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
 local event = "BufWritePre" -- or "BufWritePost"
-local async = event == "BufWritePost"
+-- local async = event == "BufWritePost"
 
 local function external_format_stdin(filetype, format_cmd)
   if vim.bo.filetype == filetype then
@@ -34,7 +34,7 @@ local function format()
     -- ["javascript"] = "prettier --stdin-filepath ${INPUT}",
     -- ["typescript"] = "prettier --stdin-filepath ${INPUT}",
     -- ["typescriptreact"] = "prettier --stdin-filepath ${INPUT}",
-    ["dart"] = "dart format --line-length 120 --output show",
+    ["dart"] = "dart format --output show",
   }
 
   for filetype, format_cmd in pairs(formatters) do
@@ -44,11 +44,13 @@ local function format()
   end
 
   vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+  vim.api.nvim_echo({ { "Formatted", "Type" } }, true, {})
 end
 
 vim.keymap.set("n", "<Leader>f", format, { desc = "[nolsp] format" })
 
 nls.setup({
+  ---@diagnostic disable-next-line: unused-local
   on_attach = function(client, bufnr)
     -- if client.supports_method("textDocument/formatting") then
     vim.keymap.set("n", "<Leader>f", format, { buffer = bufnr, desc = "[lsp] format" })
@@ -57,7 +59,7 @@ nls.setup({
     vim.api.nvim_create_autocmd(event, {
       buffer = bufnr,
       group = group,
-      callback = format,
+      callback = function() format() end,
       desc = "[lsp] format on save",
     })
     -- end

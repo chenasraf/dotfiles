@@ -48,30 +48,23 @@ home() {
     install | i)
       source $DOTFILES/install.sh
       ;;
-    m | mudlet)
+    m | mushclient)
       shift
-
       sub="$1"
-
       case $sub in
         backup | b)
-          rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $HOME/.config/mudlet $DOTFILES/.config/
-          for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
-            sed -i '' -E 's/\/Users\/([^\/]+)\//$HOME\//g' $file
-          done
-          echo_yellow "Preparation complete."
-          git -C "$DOTFILES" add .config/mudlet
-          git -C "$DOTFILES" commit -m "backup: mudlet"
+          rsync -vtr "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient" "$DOTFILES/synced/"
+          echo_yellow "Copied Mushclient profile to synced folder."
+          git -C "$DOTFILES" add "$DOFTILES/synced/MUSHClient"
+          git -C "$DOTFILES" commit -m "backup: mushclient"
           git -C "$DOTFILES" push
           echo_yellow "Backup complete."
           ;;
         restore | r)
-          rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
-          for file in $HOME/.config/mudlet/profiles/Aardwolf/**/*.xml; do
-            sed -i '' -e "s/\$HOME/${HOME//\//\\/}/g" $file
-          done
-          echo_yellow "Restore complete."
+          rsync -vtr "$FDOTFILES/synced/MUSHclient" "$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/"
+          echo_yellow "Restored Mushclient profile from synced folder."
           ;;
+
         *)
           echo_red "No command or invalid command supplied."
           __home_print_help 0
@@ -79,35 +72,66 @@ home() {
           ;;
       esac
       ;;
-    dropzone | dz)
-      shift
-      dz_lib="$HOME/Library/Application Support/Dropzone"
-      dz_bak="$DOTFILES/synced/Dropzone"
-      sub="$1"
-
-      case $sub in
-      r | restore)
-        echo_cyan "Restoring Dropzone backup..."
-        src="$dz_bak"
-        target="$dz"
-        mkdir -p $target
-        rsync -tvr --exclude ".git" --exclude "node_modules" --no-links $src/* $target
-        ;;
-      d | dump)
-        echo_cyan "Creating Dropzone backup..."
-        target="$dz_bak"
-        src="$dz"
-        rm -rf $target
-        mkdir -p $target
-        rsync -tvr --exclude ".git" --exclude "node_modules" --no-links $src/* $target
-        ;;
-      *) # unknown option
-        echo_red "No command or invalid command supplied."
-        __home_print_help 0
-        return 1
-        ;;
-      esac
-      ;;
+    # m | mudlet)
+    #   shift
+    #
+    #   sub="$1"
+    #
+    #   case $sub in
+    #     backup | b)
+    #       rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $HOME/.config/mudlet $DOTFILES/.config/
+    #       for file in $DOTFILES/.config/mudlet/profiles/Aardwolf/**/*.xml; do
+    #         sed -i '' -E 's/\/Users\/([^\/]+)\//$HOME\//g' $file
+    #       done
+    #       echo_yellow "Preparation complete."
+    #       git -C "$DOTFILES" add .config/mudlet
+    #       git -C "$DOTFILES" commit -m "backup: mudlet"
+    #       git -C "$DOTFILES" push
+    #       echo_yellow "Backup complete."
+    #       ;;
+    #     restore | r)
+    #       rsync -vtr --exclude ".git" --exclude "node_modules" --no-links $DOTFILES/.config/mudlet $HOME/.config/
+    #       for file in $HOME/.config/mudlet/profiles/Aardwolf/**/*.xml; do
+    #         sed -i '' -e "s/\$HOME/${HOME//\//\\/}/g" $file
+    #       done
+    #       echo_yellow "Restore complete."
+    #       ;;
+    #     *)
+    #       echo_red "No command or invalid command supplied."
+    #       __home_print_help 0
+    #       return 1
+    #       ;;
+    #   esac
+    #   ;;
+    # dropzone | dz)
+    #   shift
+    #   dz_lib="$HOME/Library/Application Support/Dropzone"
+    #   dz_bak="$DOTFILES/synced/Dropzone"
+    #   sub="$1"
+    #
+    #   case $sub in
+    #   r | restore)
+    #     echo_cyan "Restoring Dropzone backup..."
+    #     src="$dz_bak"
+    #     target="$dz"
+    #     mkdir -p $target
+    #     rsync -tvr --exclude ".git" --exclude "node_modules" --no-links $src/* $target
+    #     ;;
+    #   d | dump)
+    #     echo_cyan "Creating Dropzone backup..."
+    #     target="$dz_bak"
+    #     src="$dz"
+    #     rm -rf $target
+    #     mkdir -p $target
+    #     rsync -tvr --exclude ".git" --exclude "node_modules" --no-links $src/* $target
+    #     ;;
+    #   *) # unknown option
+    #     echo_red "No command or invalid command supplied."
+    #     __home_print_help 0
+    #     return 1
+    #     ;;
+    #   esac
+    #   ;;
     workflows | w)
       shift
       __home_prepare_dir
