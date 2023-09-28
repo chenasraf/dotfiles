@@ -18,14 +18,14 @@
   <variable name="enabled">true</variable>
   <variable name="font_name">MesloLGS NF</variable>
   <variable name="font_size">9</variable>
-  <variable name="height">356</variable>
+  <variable name="height">246</variable>
   <variable name="maptype">1</variable>
-  <variable name="mw_3f498d929793c12cb70fb59e_windowx">1432</variable>
-  <variable name="mw_3f498d929793c12cb70fb59e_windowy">3</variable>
+  <variable name="mw_3f498d929793c12cb70fb59e_windowx">1838</variable>
+  <variable name="mw_3f498d929793c12cb70fb59e_windowy">5</variable>
   <variable name="showcoords">0</variable>
   <variable name="showexits">0</variable>
   <variable name="showtitle">1</variable>
   <variable name="want_blinks">1</variable>
-  <variable name="width">265</variable>
+  <variable name="width">236</variable>
 </variables>
 </muclient>

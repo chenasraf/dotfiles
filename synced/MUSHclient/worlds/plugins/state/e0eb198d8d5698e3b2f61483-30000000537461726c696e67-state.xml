@@ -1575,10 +1575,10 @@
     min = 30,
     },
   }</variable>
-  <variable name="mcvar_cp_level_taken">54</variable>
+  <variable name="mcvar_cp_level_taken">0</variable>
   <variable name="mcvar_gqid_extended">-1</variable>
   <variable name="mcvar_gqid_joined">-1</variable>
-  <variable name="mcvar_gqid_started">3560</variable>
+  <variable name="mcvar_gqid_started">3915</variable>
   <variable name="mcvar_qt_areaName"></variable>
   <variable name="mcvar_qt_arid"></variable>
   <variable name="mcvar_qt_mob"></variable>
@@ -1592,13 +1592,14 @@
   <variable name="mcvar_window_height">309</variable>
   <variable name="mcvar_window_height_max">280</variable>
   <variable name="mcvar_window_hide_settings_button">on</variable>
-  <variable name="mcvar_window_pos_x">1048</variable>
-  <variable name="mcvar_window_pos_y">19</variable>
+  <variable name="mcvar_window_pos_x">1407</variable>
+  <variable name="mcvar_window_pos_y">24</variable>
   <variable name="mcvar_window_state">max</variable>
   <variable name="mcvar_window_width">546</variable>
   <variable name="mcvar_window_width_max">325</variable>
   <variable name="mcvar_xgui_window_onoff">on</variable>
-  <variable name="mw_sd_window_30000000537461726c696e67_windowx">852</variable>
-  <variable name="mw_sd_window_30000000537461726c696e67_windowy">13</variable>
+  <variable name="mcvar_xset_vidblain_onoff">on</variable>
+  <variable name="mw_sd_window_30000000537461726c696e67_windowx">1008</variable>
+  <variable name="mw_sd_window_30000000537461726c696e67_windowy">17</variable>
 </variables>
 </muclient>

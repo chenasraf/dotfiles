@@ -16,6 +16,9 @@
   >
   <variable name="background_colour">0</variable>
   <variable name="colorVals">colorVals = {}
+  colorVals.Moves = {}
+    colorVals.Moves[1] = 65535
+    colorVals.Moves[2] = 17476
   colorVals.Align = {}
     colorVals.Align[1] = 255
     colorVals.Align[2] = 65535
@@ -24,21 +27,18 @@
     colorVals.Health[2] = 17408
   colorVals.Mana = {}
     colorVals.Mana[1] = 16733440
-    colorVals.Mana[2] = 4465152
-  colorVals.Moves = {}
-    colorVals.Moves[1] = 65535
-    colorVals.Moves[2] = 17476</variable>
+    colorVals.Mana[2] = 4465152</variable>
   <variable name="enabled">true</variable>
   <variable name="font_name">MesloLGS NF</variable>
   <variable name="font_size">8</variable>
   <variable name="gauge_style">0</variable>
-  <variable name="height">356</variable>
+  <variable name="height">245</variable>
   <variable name="hidden">0</variable>
   <variable name="in_room">0</variable>
   <variable name="mw_f178e68512c685b3be1e9b07_windowflags">2</variable>
   <variable name="mw_f178e68512c685b3be1e9b07_windowmode">0</variable>
-  <variable name="mw_f178e68512c685b3be1e9b07_windowx">1698</variable>
-  <variable name="mw_f178e68512c685b3be1e9b07_windowy">0</variable>
+  <variable name="mw_f178e68512c685b3be1e9b07_windowx">1573</variable>
+  <variable name="mw_f178e68512c685b3be1e9b07_windowy">6</variable>
   <variable name="number_style">1</variable>
   <variable name="overlay_numbers">0</variable>
   <variable name="show_hp">1</variable>
@@ -57,6 +57,6 @@
   <variable name="thresh2percent">20</variable>
   <variable name="title_colour">2697513</variable>
   <variable name="ultracompact">0</variable>
-  <variable name="width">219</variable>
+  <variable name="width">265</variable>
 </variables>
 </muclient>

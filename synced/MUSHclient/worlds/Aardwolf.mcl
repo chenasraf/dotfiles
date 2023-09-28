@@ -43,7 +43,7 @@
    chat_port="4050"
    confirm_on_paste="y"
    confirm_on_send="y"
-   connect_method="3"
+   connect_method="2"
    default_trigger_sequence="100"
    default_alias_sequence="100"
    detect_pueblo="y"
@@ -109,8 +109,7 @@
    use_custom_link_colour="y"
    utf_8="y"
    warn_if_scripting_inactive="y"
-   wrap="y"
-   wrap_column="155"
+   wrap_column="173"
    write_world_name_to_log="y"
    > <!-- end of general world attributes -->
 
@@ -521,17 +520,23 @@ end</send>
   <send>dinv organize;dinv get oninv</send>
   </alias>
   <alias
-   match="^(p)?(longrest|lr)$"
+   match="^(p)?lr$"
    enabled="y"
    group="utils"
    regexp="y"
    send_to="12"
    sequence="100"
   >
-  <send>if "%1" == "p" then
-  Execute("prc;w")
-end
-Execute("gulp;gulp;fill can;sleep bed")</send>
+  <send>require "wait"
+
+wait.make(function()
+  if "%1" == "p" then
+    Execute("prc;w")
+    wait.time(2)
+  end
+  
+  Execute("gulp;gulp;fill can;sleep bed")
+end)</send>
   </alias>
   <alias
    match="^(sp|spe|spell|spells)$"
@@ -549,6 +554,64 @@ EnableTriggerGroup("spellbook")
 spWinData = {}
 Send("spells")
 </send>
+  </alias>
+  <alias
+   match="^dj(a)?\s?(.+)$"
+   enabled="y"
+   group="inventory"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local all = "%1" ~= "" or "%2" == "a"
+local items = "%2"
+
+if all then
+  items = { "all" }
+else
+  items = utils.split(items, " ")
+end
+
+for i, it in ipairs(items) do
+  Send("drop " ..it)
+end
+
+
+for i, it in ipairs(items) do
+  Send("junk " ..it)
+end</send>
+  </alias>
+  <alias
+   match="^m([ou])([udwesn])$"
+   enabled="y"
+   group="mapper"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local dir = "%2"
+local unlock = string.lower("%1") == "u"
+
+local cmd = "mapper cexit "
+
+if unlock == true then
+  cmd = "mapper cexit_wait 7;" .. cmd
+  cmd = cmd .. "cast knock " .. dir .. ";;"
+end
+
+cmd = cmd .. "open " .. dir .. ";;" .. dir
+
+Execute(cmd)</send>
+  </alias>
+  <alias
+   match="^mc (.+)$"
+   enabled="y"
+   group="mapper"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>mapper cexit %1</send>
   </alias>
   <alias
    match="^pa ([\d\w.]+) (.+)$"
@@ -672,6 +735,7 @@ Execute("dinv " .. sub)</send>
   <alias
    match="en *"
    enabled="y"
+   group="mapper"
    send_to="10"
    sequence="100"
   >
@@ -730,6 +794,7 @@ end</send>
   <alias
    match="kkp"
    enabled="y"
+   group="atk"
    send_to="10"
    sequence="100"
   >
@@ -738,6 +803,7 @@ end</send>
   <alias
    match="kp"
    enabled="y"
+   group="atk"
    send_to="10"
    sequence="100"
   >
@@ -788,6 +854,17 @@ local maxL = lv + 5
 Send("mobdeaths " .. minL .. " " .. maxL .. " " .. align)</send>
   </alias>
   <alias
+   match="pbuy (\d+) (.+)"
+   enabled="y"
+   group="pots"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>buy %1 %2
+dinv organize type potion</send>
+  </alias>
+  <alias
    match="pcr"
    enabled="y"
    group="quests"
@@ -835,6 +912,15 @@ end</send>
   <send>dinv search type portal</send>
   </alias>
   <alias
+   match="potbag"
+   enabled="y"
+   group="pots"
+   send_to="10"
+   sequence="100"
+  >
+  <send>dinv organize type potion</send>
+  </alias>
+  <alias
    match="potheal"
    enabled="y"
    expand_variables="y"
@@ -846,6 +932,15 @@ end</send>
   <send>-- world.Execute("get " .. GetVariable("hppot") .. " " .. GetVariable("potbag") .. "; quaff " .. GetVariable("hppot"))
 
 world.Execute("dinv consume small heal")</send>
+  </alias>
+  <alias
+   match="pots"
+   enabled="y"
+   group="pots"
+   send_to="10"
+   sequence="100"
+  >
+  <send>dinv search type potion</send>
   </alias>
   <alias
    match="prc"
@@ -901,15 +996,15 @@ world.Execute("port boot;rt %1")</send>
 
 local lv = tonumber(gmcp("char.base.level"))
 
+if lv &gt;= 8 then
+  Send("c 'night vision'")
+end
 if lv &gt;= 55 then
   Send("c 'true seeing'")
 else
   if lv &gt;= 6 then
     Send("c 'detect invis'")
     Send("c 'detect magic'")
-  end
-  if lv &gt;= 8 then
-    Send("c 'night vision'")
   end
   --if lv &gt;= 10 then
   --  Send("c 'detect poison'")
@@ -934,7 +1029,7 @@ end</send>
    send_to="10"
    sequence="100"
   >
-  <send>napalm;spellup</send>
+  <send>napalm;invis;sight;spellup</send>
   </alias>
   <alias
    match="suit"
@@ -1068,14 +1163,14 @@ end</send>
   <variable name="cclass">ranger</variable>
   <variable name="held">dual ebony</variable>
   <variable name="hppot">'light relief'</variable>
-  <variable name="mw_spWin_windowx">1039</variable>
-  <variable name="mw_spWin_windowy">333</variable>
+  <variable name="mw_spWin_windowx">1209</variable>
+  <variable name="mw_spWin_windowy">347</variable>
   <variable name="password">8th38WTwfLPsQVE.eFHA</variable>
   <variable name="patk">kick;c mo</variable>
   <variable name="potbag">bag</variable>
   <variable name="recall">duffle</variable>
-  <variable name="themed_miniwindow_heightspWin">913</variable>
-  <variable name="themed_miniwindow_widthspWin">367</variable>
+  <variable name="themed_miniwindow_heightspWin">886</variable>
+  <variable name="themed_miniwindow_widthspWin">339</variable>
   <variable name="username">KumoGami</variable>
   <variable name="waiting_sendhia">false</variable>
 </variables>
@@ -1312,6 +1407,7 @@ end</send>
 <include name="aard_Theme_Controller.xml" plugin="y" />
 <include name="Search_and_Destroy.xml" plugin="y" />
 <include name="aard_inventory.xml" plugin="y" />
+<include name="Aardwolf_Showmap.xml" plugin="y" />
 <include name="Hyperlink_URL2.xml" plugin="y" />
 <include name="aard_splitscreen_scrollback.xml" plugin="y" />
 </muclient>
