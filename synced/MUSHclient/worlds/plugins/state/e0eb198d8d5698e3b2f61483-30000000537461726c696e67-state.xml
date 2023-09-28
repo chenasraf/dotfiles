@@ -19,8 +19,14 @@
   <variable name="last_installed_version">5.99</variable>
   <variable name="mcvar_anex_tnl_cutoff">0</variable>
   <variable name="mcvar_areaStartRooms">{
+  vlad = {
+    roomid = "16020",
+    },
   coral = {
     roomid = "4583",
+    },
+  fortress = {
+    roomid = "31834",
     },
   }</variable>
   <variable name="mcvar_area_range">{
@@ -1575,15 +1581,15 @@
     min = 30,
     },
   }</variable>
-  <variable name="mcvar_cp_level_taken">0</variable>
+  <variable name="mcvar_cp_level_taken">69</variable>
   <variable name="mcvar_gqid_extended">-1</variable>
   <variable name="mcvar_gqid_joined">-1</variable>
-  <variable name="mcvar_gqid_started">3915</variable>
+  <variable name="mcvar_gqid_started">4184</variable>
   <variable name="mcvar_qt_areaName"></variable>
   <variable name="mcvar_qt_arid"></variable>
   <variable name="mcvar_qt_mob"></variable>
   <variable name="mcvar_qt_room"></variable>
-  <variable name="mcvar_quick_kill_command">kick;c mo</variable>
+  <variable name="mcvar_quick_kill_command">kick;ca 'flame arrow'</variable>
   <variable name="mcvar_window_font">MesloLGS NF</variable>
   <variable name="mcvar_window_font_bold">0</variable>
   <variable name="mcvar_window_font_italic">0</variable>

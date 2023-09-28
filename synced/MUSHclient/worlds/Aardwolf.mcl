@@ -520,7 +520,7 @@ end</send>
   <send>dinv organize;dinv get oninv</send>
   </alias>
   <alias
-   match="^(p)?lr$"
+   match="^(p|u)?lr$"
    enabled="y"
    group="utils"
    regexp="y"
@@ -533,6 +533,8 @@ wait.make(function()
   if "%1" == "p" then
     Execute("prc;w")
     wait.time(2)
+  elseif "%1" == "u" then
+    Execute("open u;u;close d;lock d")
   end
   
   Execute("gulp;gulp;fill can;sleep bed")
@@ -612,6 +614,15 @@ Execute(cmd)</send>
    sequence="100"
   >
   <send>mapper cexit %1</send>
+  </alias>
+  <alias
+   match="^mcw (\d+) (.+)$"
+   enabled="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>mapper cexit_wait %1;mapper cexit %2</send>
   </alias>
   <alias
    match="^pa ([\d\w.]+) (.+)$"
@@ -713,24 +724,29 @@ end)</send>
    sequence="100"
   >
   <send>local sub = "%1"
+local args = string.split(sub, " ")
+local first = args[1]
+table.remove(args, 1)
 
 local function match(str)
-  for i = 1, #sub, 1 do
-    if string.sub(sub, 0, i):lower() == string.sub(str, 0, i):lower() then
+  for i = 1, #first, 1 do
+    if string.sub(first, 0, i):lower() == string.sub(str, 0, i):lower() then
       return true
     end
   end
 
-  return string.sub(sub, 0, #sub):lower() == str:lower()
+  return string.sub(sub, 0, #first):lower() == str:lower()
 end
 
--- TODO make this accept full string,
--- then iterate letter by letter for match
 if match("refresh") then
-  sub = "refresh"
+  first = "refresh"
+elseif match("organize") then
+  first = "organize"
+elseif match("consume") then
+  first = "consume"
 end
 
-Execute("dinv " .. sub)</send>
+Execute("dinv " .. first .. " " .. table.concat(args, " "))</send>
   </alias>
   <alias
    match="en *"
@@ -854,6 +870,17 @@ local maxL = lv + 5
 Send("mobdeaths " .. minL .. " " .. maxL .. " " .. align)</send>
   </alias>
   <alias
+   match="patk *"
+   enabled="y"
+   group="atk"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local atk = "%1"
+SetVariable("patk", atk)
+Execute("xset kk ".. Replace(atk, ";", ";;"))</send>
+  </alias>
+  <alias
    match="pbuy (\d+) (.+)"
    enabled="y"
    group="pots"
@@ -943,6 +970,14 @@ world.Execute("dinv consume small heal")</send>
   <send>dinv search type potion</send>
   </alias>
   <alias
+   match="pq *"
+   enabled="y"
+   group="pots"
+   sequence="100"
+  >
+  <send>get %1 bag;quaff %1</send>
+  </alias>
+  <alias
    match="prc"
    enabled="y"
    group="recall"
@@ -1011,6 +1046,9 @@ else
   --end
   if lv &gt;= 19 then
     Send("c 'detect hidden'")
+  end
+  if lv &gt;= 26 then
+    Send("c 'sense anger'")
   end
 end</send>
   </alias>
@@ -1160,13 +1198,12 @@ end</send>
   >
   <variable name="autosp">true</variable>
   <variable name="autovis">true</variable>
-  <variable name="cclass">ranger</variable>
+  <variable name="cclass">mage</variable>
   <variable name="held">dual ebony</variable>
   <variable name="hppot">'light relief'</variable>
   <variable name="mw_spWin_windowx">1209</variable>
   <variable name="mw_spWin_windowy">347</variable>
-  <variable name="password">8th38WTwfLPsQVE.eFHA</variable>
-  <variable name="patk">kick;c mo</variable>
+  <variable name="patk">kick;ca 'flame arrow'</variable>
   <variable name="potbag">bag</variable>
   <variable name="recall">duffle</variable>
   <variable name="themed_miniwindow_heightspWin">886</variable>
