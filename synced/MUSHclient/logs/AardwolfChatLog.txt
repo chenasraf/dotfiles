@@ -9900,3 +9900,388 @@
 @w[29 Sep 03:14:30] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
 @w[29 Sep 03:14:53] @RINFO: 5 minutes of bonus experience remaining.@w
 @w[29 Sep 03:15:04] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[29 Sep 10:41:30] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[29 Sep 10:43:14] @RINFO: All please welcome Brent, Aardwolf's newest Human Soldier!@w
+@w[29 Sep 10:46:14] @GShadedancer questions 'i am stuck in an endless loop with serina how do i kill her'
+@w[29 Sep 10:46:25] @GNuanse answers 'change damage type'
+@w[29 Sep 10:46:51] @GShadedancer answers 'she keeps healing ro full'
+@w[29 Sep 10:47:02] @GShadedancer answers 'to'
+@w[29 Sep 10:47:26] @GNuanse answers 'maybe you do something wrong then? '
+@w[29 Sep 10:47:27] @GOspario answers 'you have to knock her last 20 or 30% off all at once'
+@w[29 Sep 10:47:40] @GOspario answers 'as long as you gave her all of the seeds or whatever'
+@w[29 Sep 10:48:13] @GOspario answers 'otherwise she will always heal - if you cant knock off that much at once right now, wait a few levels'
+@w[29 Sep 10:48:35] @GNuanse answers 'maybe she didn't give all the seeds *ponder'
+@w[29 Sep 10:48:54] @GNuanse answers 'might require male to seed her up *snicker'
+@w[29 Sep 10:49:22] @GOspario answers 'i think you have to give the seeds whenever you get the mobprog that she is hurt as well, not before'
+@w[29 Sep 10:49:31] @GNuanse answers 'and no, you do not need to change sex for that'
+@w[29 Sep 10:49:52] @RGlobal Quest@Y:@w @gGlobal Quest # 4293@w has been won by @YCooler@w - @Y5506th@w win.
+@w[29 Sep 10:49:52] @RGlobal Quest@Y:@w @gGlobal Quest # 4293@w will go into extended time for 5 more minutes.
+@w[29 Sep 10:50:22] @GCLAN: Venoch falls out to take some much needed R & R.
+@w[29 Sep 10:54:19] @RGlobal Quest@Y:@w Vost has completed @gGlobal Quest # 4293@w.
+@w[29 Sep 10:54:19] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 4293@w is now over.
+@w[29 Sep 10:59:54] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[29 Sep 11:00:11] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 11:01:04] @GLiathum Tech@w: @CI have a question about a plugin window--is there a way to change the font on Athlau's conw window?
+@w[29 Sep 11:01:55] @RGlobal Quest@Y:@w @gGlobal quest # 4296@w has been declared for levels @g69@w to @g80@w.
+@w[29 Sep 11:01:55] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g98@w ticks.
+@w[29 Sep 11:01:55] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 4296@w' to take part.
+@w[29 Sep 11:03:55] @RGlobal Quest@Y:@w @gGlobal quest # 4296@w for levels @g69@w to @g80@w has now started.
+@w[29 Sep 11:06:08] @GHeliandar questions 'how do i ask the questor for quests'
+@w[29 Sep 11:06:13] @GKorendir answers 'quest request'
+@w[29 Sep 11:06:25] @GHeliandar questions 'ok thanks'
+@w[29 Sep 11:08:56] @RGlobal Quest@Y:@w @gGlobal quest # 4296@w has been cancelled due to lack of participants.
+@w[29 Sep 11:17:27] @RGlobal Quest@Y:@w @mGlobal quest # 4301@w has been declared for levels @m61@w to @m72@w - @m200 or fewer wins only@w.
+@w[29 Sep 11:17:27] @RGlobal Quest@Y:@w The quest will start in @m4@w ticks and will last for @m81@w ticks.
+@w[29 Sep 11:17:27] @RGlobal Quest@Y:@w See '@mHelp Global Quests@w', or, type '@mGquest Join 4301@w' to take part.
+@w[29 Sep 11:19:13] @G(Friend)@c: @CGorsk waves hello to Keitarou.
+@w[29 Sep 11:19:28] @RGlobal Quest@Y:@w @mGlobal quest # 4301@w for levels @m61@w to @m72@w - @m200 or fewer wins only@w has now started.
+@w[29 Sep 11:21:27] @RGlobal Quest@Y:@w @gGlobal Quest # 4299@w has been won by @YEnlossys@w - @Y217th@w win.
+@w[29 Sep 11:21:27] @RGlobal Quest@Y:@w @gGlobal Quest # 4299@w will go into extended time for 5 more minutes.
+@w[29 Sep 11:22:27] @RINFO: Hugoplutten has been reborn as a Vampire Ranger.@w
+@w[29 Sep 11:22:37] @RGlobal Quest@Y:@w Vettir has completed @gGlobal Quest # 4299@w.
+@w[29 Sep 11:22:37] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 4299@w is now over.
+@w[29 Sep 11:22:54] @RINFO: Hugoplutten has entered (HARDCORE) mode!@w
+@w[29 Sep 11:23:59] @RINFO: The last post plays mournfully as Kanaye falls in battle to elven guard and 10 others.@w
+@w[29 Sep 11:24:13] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'thanks mommy'
+@w[29 Sep 11:24:18] @Y(@GSpecial Ops@Y) CLAN: Kanaye hugs Saraid.
+@w[29 Sep 11:24:24] @Y(@GGeneral@Y) CLAN: Saraid goes to Kanaye: "No Problem!"
+@w[29 Sep 11:24:28] @CA drow lieutenant exclaims, @c"@CYou are not allowed here!  Leave now!@c"
+@w[29 Sep 11:25:08] @CGrozawin says, @c"@CThere is still time to choose your path. Which path will you choose? To help or to hinder? To save or to kill? Nothing is simple. Nothing is hard. What will be, will be. Now you must choose, will you @Rchoose your destiny@w or not.@c"
+@w[29 Sep 11:25:29] @RINFO: The last post plays mournfully as KumoGami falls in battle to an armadillo and 2 others.@w
+@w[29 Sep 11:25:30] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'you know who has scalpel key in  nix??'
+@w[29 Sep 11:25:39] @RGlobal Quest@Y:@w @mGlobal Quest # 4301@w has been won by @YDejavu@w - @Y5th@w win.
+@w[29 Sep 11:25:50] @YSaraid (@GGeneral@Y) tells the CLAN: 'it's like the mob that is down in the torture part'
+@w[29 Sep 11:26:07] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'hmm, i'll try to get it'
+@w[29 Sep 11:26:38] @YSaraid (@GGeneral@Y) tells the CLAN: 'think it opens from the other side '
+@w[29 Sep 11:26:49] @YSaraid (@GGeneral@Y) tells the CLAN: 'or passdoor something weird'
+@w[29 Sep 11:27:20] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'The Torturer readies a scalpel and approaches you...v'
+@w[29 Sep 11:27:35] @YZoth (@GRecruit@Y) tells the CLAN: 'Where do you get the butcher knife in slaughterhouse? says butchers have it but no dice'
+@w[29 Sep 11:27:55] @YSaraid (@GGeneral@Y) tells the CLAN: 'think the butchers do '
+@w[29 Sep 11:28:16] @YZoth (@GRecruit@Y) tells the CLAN: 'Been killing them they don't have anything, though the guide says they have the knife'
+@w[29 Sep 11:28:34] @YSaraid (@GGeneral@Y) tells the CLAN: 'hmm'
+@w[29 Sep 11:28:42] @G(Friend)@c: @CGorsk cackles gleefully at Cide.
+@w[29 Sep 11:28:45] @CA drow lieutenant exclaims, @c"@CYou are not allowed here!  Leave now!@c"
+@w[29 Sep 11:29:15] @G(Friend)@c: @CGorsk enthusiastically high-fives Cide!
+@w[29 Sep 11:29:22] @YSaraid (@GGeneral@Y) tells the CLAN: 'chef in gilda?'
+@w[29 Sep 11:30:40] @YSaraid (@GGeneral@Y) tells the CLAN: 'there are butcher knives in slaughter but not right now'
+@w[29 Sep 11:34:11] @YZoth (@GRecruit@Y) tells the CLAN: 'Depends on time or something?'
+@w[29 Sep 11:34:35] @CIridia gossips 'hi there ... where do I go to buy an aard weapon'
+@w[29 Sep 11:34:52] @CGorsk gossips 'questor'
+@w[29 Sep 11:34:55] @CKharpern gossips 'any questor will work'
+@w[29 Sep 11:34:58] @CCide gossips 'can do so at any questor.'
+@w[29 Sep 11:35:01] @CIridia gossips 'thanks'
+@w[29 Sep 11:35:29] @YSaraid (@GGeneral@Y) tells the CLAN: 'not sure actually '
+@w[29 Sep 11:35:59] @G(Friend) Gorsk@c:@C 'what ocean maze?'
+@w[29 Sep 11:36:07] @G(Friend) Gorsk@c:@C 'oic'
+@w[29 Sep 11:36:10] @YSaraid (@GGeneral@Y) tells the CLAN: 'try killing all the butchers it could be that only one loads it but it won't load if they aren't all dead'
+@w[29 Sep 11:36:16] @G(Friend) Gorsk@c:@C 'can't hunt?'
+@w[29 Sep 11:36:55] @GCLAN: At-ten-tion! Venoch is here to get some training done!
+@w[29 Sep 11:37:09] @YSaraid (@GGeneral@Y) tells the CLAN: 'yeah one will do it but there is a max of 6 butchers so if there are already others out it won't load '
+@w[29 Sep 11:37:09] @G(Friend) Gorsk@c:@C 'what're you trying to get to?'
+@w[29 Sep 11:37:22] @YSaraid (@GGeneral@Y) tells the CLAN: 'wait that was the wrong mob'
+@w[29 Sep 11:37:27] @CA gossipy demon says, @c"@CLucifer has been acting very strangely lately, and it's got everyone in Pandemonium stirred up. He comes and goes at odd hours, rarely shows his face in public, and his movements and speech are all stilted. There's so many rumors about what's going on it's hard to sort out truth from lies, but if anyone knows, it's his daughter, Lilith. If only I was brave enough to seek her out...@c"
+@w[29 Sep 11:37:40] @G(Friend) Gorsk@c:@C 'nesoda?'
+@w[29 Sep 11:37:47] @CA City Guard exclaims, @c"@CYou'd better have a pass if you're thinking of entering the Royal Plaza, mortal!@c"
+@w[29 Sep 11:37:47] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[29 Sep 11:37:47] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[29 Sep 11:37:47] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[29 Sep 11:37:47] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[29 Sep 11:37:47] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[29 Sep 11:37:47] @CA City Guard exclaims 'How dare you enter the Plaza without a pass!'
+@w[29 Sep 11:37:49] @RINFO: HARDCORE Hugoplutten has been killed by a Moruk skirmisher at level 4.@w
+@w[29 Sep 11:38:07] @G(Friend) Gorsk@c:@C 'isn't he in the ships?'
+@w[29 Sep 11:38:19] @YSaraid (@GGeneral@Y) tells the CLAN: 'yeah I would just kill them all and wait for repop'
+@w[29 Sep 11:38:28] @G(Friend)@c: @CGorsk bows deeply.
+@w[29 Sep 11:38:32] @RINFO: Hugoplutten has entered open PK (OPK) mode!@w
+@w[29 Sep 11:39:27] @RINFO: Shadedancer has fallen, blood staining a raging storm and 1 other's hands.@w
+@w[29 Sep 11:39:47] @CMlactom gossips 'is anyone not really doing anything rn'
+@w[29 Sep 11:39:55] @CMlactom gossips 'i need help'
+@w[29 Sep 11:40:02] @CCide gossips 'What do you need help with?'
+@w[29 Sep 11:40:18] @CMlactom gossips 'i cant find a room'
+@w[29 Sep 11:40:31] @CCide gossips 'what room are you looking for?'
+@w[29 Sep 11:40:46] @CMlactom gossips 'its 'a tangled forest'
+@w[29 Sep 11:41:02] @CMlactom gossips 'nm'
+@w[29 Sep 11:41:30] @CMlactom gossips 'are there any maps that let you see all mobs that can be in the rooms'
+@w[29 Sep 11:41:47] @CA drow lieutenant exclaims, @c"@CYou are not allowed here!  Leave now!@c"
+@w[29 Sep 11:41:58] @CCide gossips 'is this for a campaign?'
+@w[29 Sep 11:42:25] @CMlactom gossips 'yeah'
+@w[29 Sep 11:42:32] @RINFO: The last post plays mournfully as KumoGami falls in battle to an armadillo.@w
+@w[29 Sep 11:42:45] @CMlactom gossips 'i have two mobs in two different areas and one isnt even mapped'
+@w[29 Sep 11:42:52] @CSaraid says 'KumoGami don't forget detect invis, and make sure your corpse rots (invis items) before you leave the morgue or room! @W*this message is a trigger :)*@w'
+@w[29 Sep 11:43:05] @c*@wYou thank Saraid heartily.
+@w[29 Sep 11:43:06] @CSaraid gossips 'which mob are you lookingfor?'
+@w[29 Sep 11:43:10] @CCide gossips 'svrogan's logging camp is fairly new'
+@w[29 Sep 11:43:29] @CCide gossips 'so if its that area there might not be a map yet but i havent looked myself.'
+@w[29 Sep 11:43:30] @CMlactom gossips 'not that one'
+@w[29 Sep 11:43:33] @C(Gossip) Cide nods.
+@w[29 Sep 11:43:38] @CMlactom gossips 'asherodan'
+@w[29 Sep 11:43:44] @CCide gossips 'oh that area'
+@w[29 Sep 11:43:57] @CMlactom gossips 'logging has maps on gaardian'
+@w[29 Sep 11:44:00] @CSaraid gossips 'there is a map on boot's website'
+@w[29 Sep 11:44:13] @CA drow lieutenant exclaims, @c"@CYou are not allowed here!  Leave now!@c"
+@w[29 Sep 11:44:22] @CSaraid gossips 'Bootcamp by Zensch  https://aardwolfboot.com/map/The_Keep_of_the_Asherodan_by_Zensch.pdf'
+@w[29 Sep 11:44:33] @CMlactom gossips 'thanks!'
+@w[29 Sep 11:44:58] @CSaraid gossips 'which mob is it that you were looking for?'
+@w[29 Sep 11:45:04] @CMlactom gossips 'a rose'
+@w[29 Sep 11:45:38] @CA gateguard exclaims 'Good day! Welcome to the Citadel of Stone!'
+@w[29 Sep 11:45:38] @CA gateguard says 'You may enter the Citadel.'
+@w[29 Sep 11:45:49] @CA gateguard exclaims 'Good day! Welcome to the Citadel of Stone!'
+@w[29 Sep 11:45:49] @CA gateguard says 'You may enter the Citadel.'
+@w[29 Sep 11:45:54] @CJarendora the Stonesmith says 'Have a wonderful day KumoGami, and please visit us again soon.'
+@w[29 Sep 11:45:59] @CSaraid gossips 'have you tried looking? you aren't even in the area'
+@w[29 Sep 11:46:00] @CJarendora the Stonesmith says 'Have a wonderful day KumoGami, and please visit us again soon.'
+@w[29 Sep 11:46:07] @CStone Mason says 'Greetings KumoGami, welcome to my shop.'
+@w[29 Sep 11:46:17] @CMlactom gossips 'gossip im doing the other mob'
+@w[29 Sep 11:46:32] @CA gateguard exclaims 'Good day! Welcome to the Citadel of Stone!'
+@w[29 Sep 11:46:32] @CA gateguard says 'You may enter the Citadel.'
+@w[29 Sep 11:46:50] @CMlactom gossips 'the problem isnt that i cant finf the mob'
+@w[29 Sep 11:47:00] @CMlactom gossips 'i just cant find the key to a door'
+@w[29 Sep 11:47:07] @CSaraid gossips 'exploring helps :)'
+@w[29 Sep 11:47:21] @CMlactom gossips 'its supposed to be with a statue'
+@w[29 Sep 11:48:12] @YZoth (@GRecruit@Y) tells the CLAN: 'It worked, I killed all butchers and on repop first one I found had knife'
+@w[29 Sep 11:48:19] @YZoth (@GRecruit@Y) tells the CLAN: 'Thanks'
+@w[29 Sep 11:48:19] @YSaraid (@GGeneral@Y) tells the CLAN: 'nice '
+@w[29 Sep 11:48:23] @YSaraid (@GGeneral@Y) tells the CLAN: 'that happens sometimes'
+@w[29 Sep 11:48:40] @YSaraid (@GGeneral@Y) tells the CLAN: 'there are max 6 in the game but only one will reset the knife'
+@w[29 Sep 11:50:39] @RINFO: Shadedancer has fallen, blood staining Larry, the missionary's hands.@w
+@w[29 Sep 11:51:16] @CA zombie of a priest says 'Illoco noe trivor 'ev parden KumoGami.'
+@w[29 Sep 11:51:16] @CA zombie of a priest says 'Illoco noe trivor 'ev parden KumoGami.'
+@w[29 Sep 11:51:30] @CChar the Knight exclaims, @c"@CWhilst Michael and his minions live, you shall never be victorious!@c"
+@w[29 Sep 11:51:30] @CChar the Knight exclaims, @c"@COn a more personal note...curse ye!  Now I'll never be a pirate, n'er wear me tight shiny pants!@c"
+@w[29 Sep 11:52:21] @CKyn the Archer exclaims, @c"@CYou may have defeated me, but Michael can never die!@c"
+@w[29 Sep 11:52:46] @CA zombie of a priest says 'Illoco noe trivor 'ev parden KumoGami.'
+@w[29 Sep 11:52:46] @CA zombie of a priest says 'Illoco noe trivor 'ev parden KumoGami.'
+@w[29 Sep 11:52:51] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:52:52] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:52:53] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:53:11] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:53:12] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:53:12] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:53:13] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:53:14] @CA bat exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[29 Sep 11:54:28] @CYou say 'marble'
+@w[29 Sep 11:54:28] @CGalvan asks 'So, you wish to visit the marble pillar?'
+@w[29 Sep 11:54:28] @CGalvan says 'Very well then.'
+@w[29 Sep 11:54:28] @CGalvan says 'Be safe on your journey, my friend.'
+@w[29 Sep 11:54:46] @RINFO: The last post plays mournfully as Kanaye falls in battle to elven guard and 11 others.@w
+@w[29 Sep 11:54:52] @Y(@GSpecial Ops@Y) CLAN: Kanaye puts his finger in his mouth and says, "Oopsie! Did I do that?"
+@w[29 Sep 11:54:54] @CThe Gateguard exclaims, @c"@CWelcome to the fair!@c"
+@w[29 Sep 11:54:54] @CThe Gateguard exclaims, @c"@CYou'll find lots of excitement here. Don't miss the tournament!@c"
+@w[29 Sep 11:54:54] @CThe Gateguard says, @c"@CI can never remember the rest of my lines...@c"
+@w[29 Sep 11:55:19] @CA fortune teller says, @c"@CAh, hello. I've been expecting you. I sense you've come from a great distance...@c"
+@w[29 Sep 11:55:19] @CA fortune teller says, @c"@COh, you've only come from the food tent? Well, 'great distance' is relative, I suppose.@c"
+@w[29 Sep 11:55:19] @CCasir the Magician asks, @c"@CHello?@c"
+@w[29 Sep 11:55:19] @CCasir the Magician says, @c"@COh, you're not my brother. You're not Fenris.@c"
+@w[29 Sep 11:55:19] @CCasir the Magician says, @c"@CHe was supposed to help me clean up and prepare the tent. Alas, he's probably off conning people into playing his games...@c"
+@w[29 Sep 11:55:35] @CRisa the Barkeep demands, @c"@CYeah, whaddya want??@c"
+@w[29 Sep 11:56:18] @CWickens the Wolfen exclaims 'Olad! Olad! Another drink and another bit of meat, if you please!'
+@w[29 Sep 11:56:18] @COlad the Great Illorian Chef exclaims 'Ho ho, Wickens! You've had quite enough, don't you think? That's your 15th helping!'
+@w[29 Sep 11:56:18] @CWickens the Wolfen says 'I have to eat. It keeps my fur shiny, don't you know...'
+@w[29 Sep 11:56:18] @COlad the Great Illorian Chef exclaims 'You keep eating, Wickens, you won't fit into your fur anymore!'
+@w[29 Sep 11:56:26] @CRisa the Barkeep demands, @c"@CYeah, whaddya want??@c"
+@w[29 Sep 11:58:12] @RINFO: Radience embraces Bonjour who died valiantly in combat against Axaldra, the Eternal One and 1 other.@w
+@w[29 Sep 12:00:11] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 12:02:24] @RGlobal Quest@Y:@w @mGlobal Quest # 4307@w has been won by @YGrrdy@w - @Y189th@w win.
+@w[29 Sep 12:06:54] @RGlobal Quest@Y:@w @gGlobal Quest # 4308@w has been won by @YGrrdy@w - @Y190th@w win.
+@w[29 Sep 12:11:37] @GCLAN: Venoch falls out to take some much needed R & R.
+@w[29 Sep 12:15:16] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'anyone free for miracle and spells?'
+@w[29 Sep 12:15:36] @YSaraid (@GGeneral@Y) tells the CLAN: 'for?'
+@w[29 Sep 12:15:50] @RINFO: Iberyl has performed the duties around Aardington Estate quite admirably.@w
+@w[29 Sep 12:15:53] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'me'
+@w[29 Sep 12:16:06] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'thanks'
+@w[29 Sep 12:16:07] @YSaraid (@GGeneral@Y) tells the CLAN: 'nope!'
+@w[29 Sep 12:16:29] @RINFO: The last post plays mournfully as Kanaye falls in battle to elven guard and 11 others.@w
+@w[29 Sep 12:16:35] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'damn'
+@w[29 Sep 12:16:39] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'that room to big for me'
+@w[29 Sep 12:16:53] @YSaraid (@GGeneral@Y) tells the CLAN: 'I can go clear the guards '
+@w[29 Sep 12:16:56] @RGlobal Quest@Y:@w @mGlobal Quest # 4310@w has been won by @YAdara@w - @Y15th@w win.
+@w[29 Sep 12:17:02] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'awesome'
+@w[29 Sep 12:17:12] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'single class struggles'
+@w[29 Sep 12:18:02] @YSaraid (@GGeneral@Y) tells the CLAN: 'guards are strangled'
+@w[29 Sep 12:18:20] @YSaraid (@GGeneral@Y) tells the CLAN: 'can't do the elders they assist so you will have to come and I'll heal you as you go '
+@w[29 Sep 12:19:05] @YSaraid (@GGeneral@Y) tells the CLAN: 'you on your way?'
+@w[29 Sep 12:19:25] @GCLAN: At-ten-tion! Venoch is here to get some training done!
+@w[29 Sep 12:19:37] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'maybe I should have shield uup ha'
+@w[29 Sep 12:19:41] @YSaraid (@GGeneral@Y) tells the CLAN: 'yeah :P'
+@w[29 Sep 12:21:50] @Y(@GRecruit@Y) CLAN: Venoch S what do I do with this again? Note: You have unallocated tier or wish stats.
+@w[29 Sep 12:21:59] @YVenoch (@GRecruit@Y) tells the CLAN: 'brain fart'
+@w[29 Sep 12:22:10] @YTalbor (@GGeneral@Y) tells the CLAN: 'help tierstat'
+@w[29 Sep 12:22:14] @YSaraid (@GGeneral@Y) tells the CLAN: 'set your tier or wish stat'
+@w[29 Sep 12:22:26] @YVenoch (@GRecruit@Y) tells the CLAN: 'ah yes ty'
+@w[29 Sep 12:22:44] @YVenoch (@GRecruit@Y) tells the CLAN: 'woops i did wrong stat'
+@w[29 Sep 12:22:48] @YVenoch (@GRecruit@Y) tells the CLAN: '=] genius'
+@w[29 Sep 12:33:35] @RGlobal Quest@Y:@w @gGlobal Quest # 4314@w has been won by @YEvl@w - @Y437th@w win.
+@w[29 Sep 12:44:27] @RGlobal Quest@Y:@w @gGlobal Quest # 4317@w has been won by @YHugoplutten@w - @Y217th@w win.
+@w[29 Sep 12:45:02] @GElshar questions 'how do you get the large prize in the amusement park?'
+@w[29 Sep 12:50:14] @RINFO: The spirits welcome Heliandar who has drowned.@w
+@w[29 Sep 12:52:04] @G(Friend)@c: @CGorsk waves hello to Vost.
+@w[29 Sep 12:53:37] @RINFO: Elshar took out Mad Dog Jake and brought peace to the City of Gold!@w
+@w[29 Sep 12:57:45] @GHeliandar questions 'how to sleep on thr bed,"sleep on bed"isnt working in infirmary'
+@w[29 Sep 12:57:52] @GDaresia answers 'just sleep bed'
+@w[29 Sep 12:57:56] @GOspario answers 'sleep bed'
+@w[29 Sep 12:58:01] @GHeliandar questions 'ok'
+@w[29 Sep 12:59:19] @RGlobal Quest@Y:@w @gGlobal Quest # 4319@w has been won by @YTinypotato@w - @Y2320th@w win.
+@w[29 Sep 13:00:12] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 13:02:13] @GHeliandar questions 'what happens if i die in the amusement park scuba diving game?'
+@w[29 Sep 13:02:28] @G(@WDice@G)@w @G(Answer) Graoldan rolls 1 die with 2 sides - total dice roll is 2.
+@w[29 Sep 13:02:32] @GDaresia answers 'then you die. probably?'
+@w[29 Sep 13:02:39] @GGraoldan answers '2 ya die'
+@w[29 Sep 13:02:44] @GGraoldan answers '1 was drown'
+@w[29 Sep 13:02:52] @GHeliandar questions 'i mean where do i find my corpse'
+@w[29 Sep 13:02:58] @GDaresia answers 'in the game'
+@w[29 Sep 13:03:04] @GGraoldan answers 'float or sink.. '
+@w[29 Sep 13:03:11] @G(@WDice@G)@w @G(Answer) Graoldan rolls 1 die with 2 sides - total dice roll is 2.
+@w[29 Sep 13:03:13] @GHeliandar questions 'ok let find it'
+@w[29 Sep 13:03:21] @GGraoldan answers 'sink it is'
+@w[29 Sep 13:03:38] @GDaresia answers 'there are no player corpses at the moment - did you actually die?'
+@w[29 Sep 13:03:52] @GTalbor answers 'check inv'
+@w[29 Sep 13:04:06] @GGraoldan answers 'man.. take all the options out.. :('
+@w[29 Sep 13:04:08] @GTalbor answers 'might've died in a morgue-flagged room'
+@w[29 Sep 13:04:18] @GOspario answers 'trick dice!'
+@w[29 Sep 13:04:20] @GDaresia answers 'it's possibly the game is protected/morgued'
+@w[29 Sep 13:04:41] @GGraoldan answers 'we didn't check for corpse or no corpse.. maybe next time we'll be on it'
+@w[29 Sep 13:04:49] @CJegeas gossips 'Go for it! Be a Matt Cauthon!'
+@w[29 Sep 13:04:51] @GHeliandar questions 'i have all the item in the ive'
+@w[29 Sep 13:05:09] @GOspario answers 'well then happy questing!'
+@w[29 Sep 13:05:51] @GHeliandar questions 'ok then thanks i probably have them because i am a newbie or lesser than level 10,ithunk'
+@w[29 Sep 13:07:29] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: Aardwolf is great, at least if you don't mind the days and nights of endless grind. The headaches, the bedsores, the bruises on your behind. It's a masochistic love of the purest kind.
+@w[29 Sep 13:07:37] @GGraoldan answers 'some areas.. have rooms that when you die, you have your stuff.. couldn't list them all.. normally in rooms with agro and no exit'
+@w[29 Sep 13:07:42] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy swoons in absolute ecstasy.
+@w[29 Sep 13:08:01] @Y|@x238Watchmen@Y|@w Sindayne: bard still exists? i havn't seen a bard logo let alone the new one in years :P
+@w[29 Sep 13:08:23] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: Under new management. We're here, get used to it :P
+@w[29 Sep 13:08:36] @GHeliandar questions 'yeah the scuba diving has no exit,thanks for the guys'
+@w[29 Sep 13:08:44] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: We even had an event last weekend.
+@w[29 Sep 13:10:07] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: who got crumbles? 
+@w[29 Sep 13:10:38] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy proudly wears his "GOT BARD?" T-shirt.
+@w[29 Sep 13:11:01] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: i guess that means that all the crumbles are still out there, if no one got them
+@w[29 Sep 13:12:50] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: I got one yesterday.
+@w[29 Sep 13:13:02] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: I wonder if Kazul or Mellie crumbles have been found.
+@w[29 Sep 13:13:48] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: those are the 1 billion gold each crumbles, right?
+@w[29 Sep 13:13:59] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: or 5 million or somethin
+@w[29 Sep 13:14:14] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: Some absurd number i'm sure.
+@w[29 Sep 13:14:16] @Y|@x238Watchmen@Y|@w Sindayne: i'll try my luck with slots, least it gives me 24m on chance vs 5m :P
+@w[29 Sep 13:14:44] @GCLAN: At-ten-tion! Ratel is here to get some training done!
+@w[29 Sep 13:16:15] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: tell me more
+@w[29 Sep 13:20:01] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[29 Sep 13:20:07] @YKazm (@GSpecial Ops@Y) tells the CLAN: 'morning'
+@w[29 Sep 13:20:13] @CWeAreSamurai gossips 'gossip gossip Hello Ladies & Gentlemen, Boys & Girls, friendly reminder that Aardwolf & MUSHclient tutorials are available on my YouTube channel over here : https://www.youtube.com/channel/UCc5P1bUJ3hKlzJdtErn9Lyg'
+@w[29 Sep 13:20:26] @CWeAreSamurai gossips 'You can also find some handy plugins for Aardwolf I've made as described in the 'my plugins' video on my Pastebin over here : https://pastebin.com/u/AardNeoCool '
+@w[29 Sep 13:26:15] @RINFO: All please welcome Scarameow, Aardwolf's newest Dark elf Shaman!@w
+@w[29 Sep 13:28:12] @RINFO: Humunculous has been killed by a vine and 1 other.@w
+@w[29 Sep 13:29:21] @RINFO: Scarratt sinks to their knees and honourably accepts defeat at the hands of a floating fire rune and 5 others.@w
+@w[29 Sep 13:32:13] @CHumunculous gossips 'what's the trick for getting the key to asherodan'
+@w[29 Sep 13:41:37] @RGlobal Quest@Y:@w @gGlobal Quest # 4328@w has been won by @YVenoch@w - @Y19th@w win.
+@w[29 Sep 13:41:37] @RGlobal Quest@Y:@w @gGlobal Quest # 4328@w will go into extended time for 5 more minutes.
+@w[29 Sep 13:52:40] @RGlobal Quest@Y:@w @mGlobal Quest # 4326@w has been won by @YGantza@w - @Y2nd@w win.
+@w[29 Sep 13:55:35] @CHumunculous gossips 'is there a straightforward area like paradise lost for lvl 80 to grind?'
+@w[29 Sep 13:59:14] @RGlobal Quest@Y:@w @gGlobal Quest # 4330@w has been won by @YTinypotato@w - @Y2321st@w win.
+@w[29 Sep 14:00:12] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 14:01:33] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[29 Sep 14:05:55] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[29 Sep 14:08:53] @RGlobal Quest@Y:@w @mGlobal Quest # 4332@w has been won by @YGrrdy@w - @Y191st@w win.
+@w[29 Sep 14:14:05] @RGlobal Quest@Y:@w @gGlobal Quest # 4333@w has been won by @YAkira@w - @Y625th@w win.
+@w[29 Sep 14:14:05] @RGlobal Quest@Y:@w @gGlobal Quest # 4333@w will go into extended time for 5 more minutes.
+@w[29 Sep 14:14:32] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 4333@w.
+@w[29 Sep 14:14:50] @RGlobal Quest@Y:@w Calfin has completed @gGlobal Quest # 4333@w.
+@w[29 Sep 14:16:05] @RGlobal Quest@Y:@w Gorsk has completed @gGlobal Quest # 4333@w.
+@w[29 Sep 14:17:40] @RINFO: All please welcome Vandit back from tier creation!@w
+@w[29 Sep 14:18:17] @RINFO: Vandit has entered (HARDCORE) mode!@w
+@w[29 Sep 14:19:00] @RGlobal Quest@Y:@w Nifto has completed @gGlobal Quest # 4333@w.
+@w[29 Sep 14:21:28] @YTalbor (@GGeneral@Y) tells the CLAN: 'anybody want a good sh shield until you get aardshield?'
+@w[29 Sep 14:21:32] @YTalbor (@GGeneral@Y) tells the CLAN: '@G(@WGleaming@G)@w @x254a massive shield wall@w @x244[lv@W201@x244] [@Wshield@x244] [@Y20@x244wgt] [@Y570@x244 Score] [@G1@x244str @G1@x244int @G7@x244wis @G6@x244dex @G8@x244con @G8@x244luk] [@G20@x244hr @G31@x244dr] [@G20@x244hp @G60@x244mn] [@G8@x244all magic @G11@x244all physical @G40@x244cold @G10@x244light] [@CSIR@x244]'
+@w[29 Sep 14:22:09] @YSaraid (@GGeneral@Y) tells the CLAN: 'someone take it so talbor can tier!'
+@w[29 Sep 14:22:27] @YTalbor (@GGeneral@Y) tells the CLAN: 'don't think they want me to'
+@w[29 Sep 14:22:56] @YSaraid (@GGeneral@Y) tells the CLAN: 'tal drop and sac!'
+@w[29 Sep 14:23:02] @YTalbor (@GGeneral@Y) tells the CLAN: 'should liven up more soon so hopefully auctions pick up :)'
+@w[29 Sep 14:23:42] @GMytheral questions 'any enchanters on?'
+@w[29 Sep 14:24:10] @YTalbor (@GGeneral@Y) tells the CLAN: 'when does witchs cauldron start up?'
+@w[29 Sep 14:24:16] @YSaraid (@GGeneral@Y) tells the CLAN: 'never'
+@w[29 Sep 14:24:24] @YTalbor (@GGeneral@Y) tells the CLAN: 'not doing it this year?'
+@w[29 Sep 14:24:24] @YSaraid (@GGeneral@Y) tells the CLAN: 'seriously don't hold on to that stuff :P'
+@w[29 Sep 14:24:31] @YSaraid (@GGeneral@Y) tells the CLAN: 'it was something rumour started'
+@w[29 Sep 14:24:42] @YTalbor (@GGeneral@Y) tells the CLAN: 'awwww, that sucks'
+@w[29 Sep 14:24:47] @YSaraid (@GGeneral@Y) tells the CLAN: 'she's not here anymore and honestly I don't have the spoons to continue it'
+@w[29 Sep 14:24:57] @YTalbor (@GGeneral@Y) tells the CLAN: 'I'll drop in storage'
+@w[29 Sep 14:24:59] @YSaraid (@GGeneral@Y) tells the CLAN: '8 might do it but really it's just extra stuff you don't need'
+@w[29 Sep 14:27:32] @GMytheral questions 'where do i find the elementalist?'
+@w[29 Sep 14:27:52] @GSaraid answers 'which elementalist?'
+@w[29 Sep 14:28:06] @GMytheral questions 'one for doubling or halving weight?'
+@w[29 Sep 14:28:29] @GSaraid answers 'runto forge it is around there just read signs'
+@w[29 Sep 14:28:32] @GDaresia answers 'type 'find elementalist' in aylor'
+@w[29 Sep 14:28:38] @GMytheral questions 'ty'
+@w[29 Sep 14:28:41] @GSaraid answers 'also don't recommend doubling'
+@w[29 Sep 14:28:58] @GSelitos answers 'you can runto elementalist in aylor'
+@w[29 Sep 14:29:01] @GMytheral questions 'was going to half'
+@w[29 Sep 14:29:12] @GMytheral questions 'i tried runto wasnt working for me'
+@w[29 Sep 14:29:14] @GSaraid answers 'just make sure you read the sign :)'
+@w[29 Sep 14:29:59] @GCLAN: At-ten-tion! Blunt is here to get some training done!
+@w[29 Sep 14:30:05] @YBlunt (@GSpecial Ops@Y) tells the CLAN: 'lo'
+@w[29 Sep 14:30:15] @GGraoldan answers 'i always use rlook sign there.. '
+@w[29 Sep 14:35:47] @GCLAN: At-ten-tion! Foing is here to get some training done!
+@w[29 Sep 14:44:16] @GCLAN: At-ten-tion! Mandibular is here to get some training done!
+@w[29 Sep 14:44:34] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[29 Sep 14:48:07] @RINFO: All please welcome Graoldan back from tier creation!@w
+@w[29 Sep 14:49:26] @RGlobal Quest@Y:@w @gGlobal Quest # 4340@w has been won by @YReyn@w - @Y434th@w win.
+@w[29 Sep 14:54:35] @RINFO: Radience embraces Bonjour who died valiantly in combat against Axaldra, the Eternal One and 1 other.@w
+@w[29 Sep 14:55:58] @RINFO: Calliope sheds a tear as Grrdy and Gyani and 5 others prove that death can be beautiful.@w
+@w[29 Sep 14:57:14] @RINFO: Graoldan has entered (HARDCORE) mode!@w
+@w[29 Sep 14:57:51] @YTalbor (@GGeneral@Y) tells the CLAN: '@Wa bro@wken hea@Wrt penda@wnt neckl@Wace@w @x244[lv@W201@x244] [@Wneck@x244] [@Y21@x244wgt] [@Y410@x244 Score] [@G5@x244str @G4@x244wis @G5@x244dex @G3@x244luk] [@G21@x244hr @G27@x244dr] [@G8@x244all magic @G11@x244all physical @G6@x244mental @R-6@x244poison] [@CIRS@x244]'
+@w[29 Sep 14:58:03] @YTalbor (@GGeneral@Y) tells the CLAN: 'think that's ocean park reward'
+@w[29 Sep 14:59:04] @GCLAN: At-ten-tion! Abraxos is here to get some training done!
+@w[29 Sep 14:59:19] @RINFO: Mlactom has been killed by a violent gale and 1 other.@w
+@w[29 Sep 14:59:25] @GCLAN: At-ten-tion! Anssett is here to get some training done!
+@w[29 Sep 14:59:40] @YEnlossys (@GSpecial Ops@Y) tells the CLAN: 'oh no'
+@w[29 Sep 15:00:12] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 15:00:17] @RINFO: HARDCORE Graoldan has been killed by Kandorr at level 1.@w
+@w[29 Sep 15:00:20] @YTalbor (@GGeneral@Y) tells the CLAN: 'what?'
+@w[29 Sep 15:00:29] @RINFO: Graoldan has entered open PK (OPK) mode!@w
+@w[29 Sep 15:02:35] @RGlobal Quest@Y:@w @gGlobal Quest # 4343@w has been won by @YGraoldan@w - @Y471st@w win.
+@w[29 Sep 15:02:35] @RGlobal Quest@Y:@w @gGlobal Quest # 4343@w will go into extended time for 5 more minutes.
+@w[29 Sep 15:02:41] @RGlobal Quest@Y:@w Kandorr has completed @gGlobal Quest # 4343@w.
+@w[29 Sep 15:02:41] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 4343@w is now over.
+@w[29 Sep 15:06:59] @GCLAN: At-ten-tion! Zensch is here to get some training done!
+@w[29 Sep 15:08:33] @RINFO: Heliandar has had a Super Fun Adventure Day at the Amusement Park.@w
+@w[29 Sep 15:10:40] @GCLAN: Foing falls out to take some much needed R & R.
+@w[29 Sep 15:20:27] @YRoume (@GGeneral@Y) tells the CLAN: 'Morning Boots'
+@w[29 Sep 15:20:36] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'heya roume'
+@w[29 Sep 15:20:42] @Y(@GGeneral@Y) CLAN: Saraid says "@CRoumeiepoo! :)@w"
+@w[29 Sep 15:20:53] @YBlunt (@GSpecial Ops@Y) tells the CLAN: 'lo roume'
+@w[29 Sep 15:22:00] @RINFO: Heliandar has been killed by a pickpocket and 1 other.@w
+@w[29 Sep 15:22:13] @GCLAN: At-ten-tion! Cereus is here to get some training done!
+@w[29 Sep 15:23:00] @RINFO: Kanaye has been reborn as a Vampire Warrior.@w
+@w[29 Sep 15:24:09] @GHeliandar questions 'does the questmaster not consider theblevel of the person asking for the quest i died in fort terramire because of a pickpoket'
+@w[29 Sep 15:24:45] @GSelitos answers 'yes the quest mob is matched to your lvl, that does not mean that other mobs in the area are above your level'
+@w[29 Sep 15:25:05] @RINFO: Radience embraces Bonjour who died valiantly in combat against Axaldra, the Eternal One and 1 other.@w
+@w[29 Sep 15:25:08] @GSelitos answers 'in fact i know several areas where mobs have a wide range in level'
+@w[29 Sep 15:25:34] @GZensch Tech@w: @Canyone familiar with OC plugin, what does 'tai enabled' do? i've got an error on 'oc start' but in the code there is enabling/disabling autoinvites - do you need to have some other autoinviter plugin installed (have hgm) ?
+@w[29 Sep 15:25:41] @GHeliandar questions 'i see,then i guess its going to be quite a problem for me to retrive my corpse'
+@w[29 Sep 15:25:59] @GSelitos answers 'you can ask for a CR (corpse retrievel) if you need help'
+@w[29 Sep 15:26:01] @GMytheral questions 'what lvl r u?'
+@w[29 Sep 15:26:01] @GAnssett Tech@w: @Cit is built to use tallimos' auto inviter too
+@w[29 Sep 15:26:12] @GHeliandar questions 'only 10'
+@w[29 Sep 15:26:13] @GAnssett Tech@w: @Cif you don't use that then you can ignore the error
+@w[29 Sep 15:26:14] @GZensch Tech@w: @Coh that's why
+@w[29 Sep 15:26:17] @GTech@w:@C Anssett rapidly nods twice, in complete agreement.
+@w[29 Sep 15:26:29] @GZensch Tech@w: @Ci ignore but i don't like errors :P
+@w[29 Sep 15:26:30] @GMytheral questions 'ill help u where r u'
+@w[29 Sep 15:26:43] @GAnssett Tech@w: @Cfind the line that sends it and comment it out then
+@w[29 Sep 15:26:44] @GTech@w:@C Zensch thanks Anssett heartily.
+@w[29 Sep 15:26:52] @RINFO: Calliope sheds a tear as Ospario and A Necrosapien and 4 others prove that death can be beautiful.@w
+@w[29 Sep 15:26:56] @GAnssett Tech@w: @Cafaik it's non critical :)
+@w[29 Sep 15:27:13] @GCLAN: Venoch falls out to take some much needed R & R.
+@w[29 Sep 15:27:16] @GSelitos answers 'if you want to come back to your corpse i have killed the aggro mobs, you have 6 minutes tip repop'
+@w[29 Sep 15:27:23] @GZensch Tech@w: @Ccan you disable/enable grouping with hgm?
+@w[29 Sep 15:27:25] @GHeliandar questions 'i am in the recall positiom of aylor'
+@w[29 Sep 15:27:42] @GSelitos answers 'you remeber how to get back to where you died?'
+@w[29 Sep 15:27:59] @GCLAN: At-ten-tion! Kalimbog is here to get some training done!
+@w[29 Sep 15:28:04] @YRoume (@GGeneral@Y) tells the CLAN: 'hi Kalim'
+@w[29 Sep 15:28:06] @GZensch Tech@w: @Cbeside tricks like changing pass to 'trytoguessthisone2023!'? :)
+@w[29 Sep 15:28:07] @YKalimbog (@GRecruit@Y) tells the CLAN: 'morning'
+@w[29 Sep 15:28:19] @GHeliandar questions 'yup'
+@w[29 Sep 15:28:51] @GHeliandar questions 'i cant see your tell'
+@w[29 Sep 15:29:11] @GAnssett Tech@w: @Ci have no idea haha, i think not from glancing at the help
+@w[29 Sep 15:29:46] @GHeliandar questions 'gorsk man,i cant see your tell,can you tell me how can i '
+@w[29 Sep 15:29:58] @YRoume (@GGeneral@Y) tells the CLAN: 'Automated Message: Birgitte  09/22/23  Applicant is online. Please interview if they are still an applicant. If interviewed, toggled to interviewed status. Thanks!'
+@w[29 Sep 15:30:03] @RINFO: Radience embraces Bonjour who died valiantly in combat against A roaring inferno and 1 other.@w
+@w[29 Sep 15:32:35] @RGlobal Quest@Y:@w @gGlobal Quest # 4349@w has been won by @YKittenbane@w - @Y39th@w win.
+@w[29 Sep 15:37:04] @GCLAN: KumoGami falls out to take some much needed R & R.

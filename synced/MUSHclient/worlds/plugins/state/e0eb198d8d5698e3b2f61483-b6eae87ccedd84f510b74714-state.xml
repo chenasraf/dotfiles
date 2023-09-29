@@ -16,7 +16,7 @@
   >
   <variable name="DISTANCE_TO_NEXT_ROOM">20</variable>
   <variable name="ROOM_SIZE">24</variable>
-  <variable name="auto_backup_count">29</variable>
+  <variable name="auto_backup_count">30</variable>
   <variable name="backup_timer_enabled">1</variable>
   <variable name="compact_mode">0</variable>
   <variable name="config"></variable>
@@ -136,7 +136,7 @@
   <variable name="db_name">Aardwolf</variable>
   <variable name="echo_prefix"></variable>
   <variable name="enabled">true</variable>
-  <variable name="last_auto_backup">1695849188</variable>
+  <variable name="last_auto_backup">1695973286</variable>
   <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowflags">2</variable>
   <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowmode">0</variable>
   <variable name="mw_b6eae87ccedd84f510b74714_mapper_windowx">2077</variable>

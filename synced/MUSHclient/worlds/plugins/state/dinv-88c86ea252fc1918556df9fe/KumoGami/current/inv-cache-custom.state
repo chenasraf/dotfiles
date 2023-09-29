@@ -1,7 +1,6 @@
 1
-e2d2344a9f7cd64dce439cadc66295eea6c00bd4
+3a52942693a6e59d66015eba0083a776e933fcc0
 inv.cache.custom.table = {}
-  inv.cache.custom.table.name = "custom"
   inv.cache.custom.table.maxEntries = 1500
   inv.cache.custom.table.entries = {}
     inv.cache.custom.table.entries[2891069037] = {}
@@ -14,3 +13,4 @@ inv.cache.custom.table = {}
         inv.cache.custom.table.entries[2348872912].entry.keywords = "recruit 1bootdrink insulated canteen oninv"
         inv.cache.custom.table.entries[2348872912].entry.organize = ""
       inv.cache.custom.table.entries[2348872912].timeCached = 1695942904
+  inv.cache.custom.table.name = "custom"

@@ -520,7 +520,7 @@ end</send>
   <send>dinv organize;dinv get oninv</send>
   </alias>
   <alias
-   match="^(p|u)?lr$"
+   match="^(p|u|w)?lr$"
    enabled="y"
    group="utils"
    regexp="y"
@@ -533,6 +533,8 @@ wait.make(function()
   if "%1" == "p" then
     Execute("prc;w")
     wait.time(2)
+  elseif "%1" == "w" then
+    Execute("w")
   elseif "%1" == "u" then
     Execute("open u;u;close d;lock d")
   end
