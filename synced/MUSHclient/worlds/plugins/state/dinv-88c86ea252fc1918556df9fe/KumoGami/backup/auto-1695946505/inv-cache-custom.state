@@ -1,0 +1,16 @@
+1
+e2d2344a9f7cd64dce439cadc66295eea6c00bd4
+inv.cache.custom.table = {}
+  inv.cache.custom.table.name = "custom"
+  inv.cache.custom.table.maxEntries = 1500
+  inv.cache.custom.table.entries = {}
+    inv.cache.custom.table.entries[2891069037] = {}
+      inv.cache.custom.table.entries[2891069037].entry = {}
+        inv.cache.custom.table.entries[2891069037].entry.keywords = "old duffle KumoGami oninv"
+        inv.cache.custom.table.entries[2891069037].entry.organize = ""
+      inv.cache.custom.table.entries[2891069037].timeCached = 1695942894
+    inv.cache.custom.table.entries[2348872912] = {}
+      inv.cache.custom.table.entries[2348872912].entry = {}
+        inv.cache.custom.table.entries[2348872912].entry.keywords = "recruit 1bootdrink insulated canteen oninv"
+        inv.cache.custom.table.entries[2348872912].entry.organize = ""
+      inv.cache.custom.table.entries[2348872912].timeCached = 1695942904

@@ -9705,3 +9705,198 @@
 @w[29 Sep 01:48:02] @RGlobal Quest@Y:@w @gGlobal Quest # 4193@w will go into extended time for 5 more minutes.
 @w[29 Sep 01:48:11] @RGlobal Quest@Y:@w @mGlobal Quest # 4192@w has been won by @YKalimbog@w - @Y47th@w win.
 @w[29 Sep 01:48:53] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 4193@w.
+@w[29 Sep 01:49:45] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[29 Sep 01:50:20] @RINFO: Silence falls as Cide is slain by a stone gargoyle and 4 others.@w
+@w[29 Sep 01:51:15] @GCLAN: At-ten-tion! Relek is here to get some training done!
+@w[29 Sep 01:51:56] @RGlobal Quest@Y:@w Modi has completed @gGlobal Quest # 4193@w.
+@w[29 Sep 01:52:07] @YYou tell the CLAN: 'any way to make dinv remember my stuff better? it keeps forgetting what i'm holding'
+@w[29 Sep 01:52:22] @YRelek (@GRecruit@Y) tells the CLAN: 'Hello Boot'
+@w[29 Sep 01:52:24] @CWeAreSamurai gossips 'gossip Hello Ladies & Gentlemen, Boys & Girls, friendly reminder that Aardwolf & MUSHclient tutorials are available on my YouTube channel over here : https://www.youtube.com/channel/UCc5P1bUJ3hKlzJdtErn9Lyg'
+@w[29 Sep 01:52:36] @CWeAreSamurai gossips 'gossip You can also find some handy plugins for Aardwolf I've made as described in the 'my plugins' video on my Pastebin over here : https://pastebin.com/u/AardNeoCool '
+@w[29 Sep 01:52:55] @YFurlos (@GRecruit@Y) tells the CLAN: 'hello Relek'
+@w[29 Sep 01:53:06] @GCLAN: Tartach falls out to take some much needed R & R.
+@w[29 Sep 01:53:43] @CWeAreSamurai gossips 'typo'd with gossip at the start there *2 ... what do I know!'
+@w[29 Sep 01:54:06] @GCLAN: At-ten-tion! Garence is here to get some training done!
+@w[29 Sep 01:55:24] @GTech@w: @Cany way to make dinv remember my stuff better? it keeps forgetting what i'm holding
+@w[29 Sep 01:55:39] @GAlgaru Tech@w: @Ci think it forgets what you're holding if you die
+@w[29 Sep 01:55:51] @GSelitos Tech@w: @Chas no problems, workd fine
+@w[29 Sep 01:56:37] @GSelitos Tech@w: @Cwhat do you mean buy "forgets what i am holding"?
+@w[29 Sep 01:57:16] @GTech@w: @Ci wanna use dinv consume and sometimes after a while it just doesn't know that i have pots and i'm stuck mid-battle w/o them
+@w[29 Sep 01:57:27] @GTech@w: @Cseems to happen randomly, not only after death
+@w[29 Sep 01:57:56] @GTech@w: @Csays stuff like no items match query when i have 20+ of the pot
+@w[29 Sep 01:58:04] @GSelitos Tech@w: @Cdinv refresh should fix it, but if it thinks you consumed the potion but you didn't i fogets you have it assume you drank it
+@w[29 Sep 01:58:26] @GSelitos Tech@w: @Ci knoe thta happens in rooms that are noquaff and i try to quaff
+@w[29 Sep 01:58:31] @GTech@w: @Ci was hoping to avoid dinv refresh every few minutes, especially since it's usually mid-battle where it really sticks me
+@w[29 Sep 01:58:56] @GSelitos Tech@w: @Cdo you use dinv consume buy to get the potions?
+@w[29 Sep 01:59:05] @GTech@w: @Cyes
+@w[29 Sep 01:59:30] @GTech@w: @Cit remembers them after that or after refreshes, but then a while later it just doesn't anymore
+@w[29 Sep 01:59:45] @GSelitos Tech@w: @Cnot sure, that does not happen to me
+@w[29 Sep 01:59:52] @GTech@w:@C KumoGami ponders
+@w[29 Sep 02:00:12] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 02:00:17] @GTech@w: @Ci guess i'll keep living with it for now, ty :)
+@w[29 Sep 02:00:20] @GSelitos Tech@w: @Cbeen using the consume for a long time now, no issues other the the two instinaces i mentioned
+@w[29 Sep 02:00:37] @RGlobal Quest@Y:@w @gGlobal quest # 4197@w has been declared for levels @g65@w to @g76@w.
+@w[29 Sep 02:00:37] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g88@w ticks.
+@w[29 Sep 02:00:37] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 4197@w' to take part.
+@w[29 Sep 02:00:40] @GSelitos Tech@w: @Cyou see it counting down?
+@w[29 Sep 02:00:47] @GSelitos Tech@w: @Cthe count down number correct/.
+@w[29 Sep 02:00:50] @GSelitos Tech@w: @C?
+@w[29 Sep 02:00:57] @GTech@w: @Cyeah, when it knows i have them, it works great
+@w[29 Sep 02:01:01] @GWeaponGuy Tech@w: @CI have to redo DINV several times per remort. It won't keep track of my stuff, which never changes.
+@w[29 Sep 02:01:33] @GSelitos Tech@w: @Chas never had these problems, it works great
+@w[29 Sep 02:01:42] @CA female wood elf gardener says, @c"@CGreetings, KumoGami.@c"
+@w[29 Sep 02:02:38] @RGlobal Quest@Y:@w @gGlobal quest # 4197@w for levels @g65@w to @g76@w has now started.
+@w[29 Sep 02:02:58] @GWeaponGuy Tech@w: @CAll I want it to do is change my eq when I level into it, and I have Aard daggers every 20 levels. It's constantly losing track of them and not upgrading when I activate it. Then I have to put it through the process of taking an inventory. Every remort, several times.
+@w[29 Sep 02:03:23] @GTech@w: @CI'll try resetting some of the stuff
+@w[29 Sep 02:03:39] @YFurlos (@GRecruit@Y) tells the CLAN: 'any clues on how to get around in the fabled city of stone?'
+@w[29 Sep 02:03:44] @GEvl Tech@w: @Cwhen you envenom or change the flags like keep it needs to redo
+@w[29 Sep 02:03:56] @GTech@w:@C Selitos nods at Evl.
+@w[29 Sep 02:04:12] @GEvl Tech@w: @Cas a venomist i assume you envenom things or whats the point
+@w[29 Sep 02:04:16] @YMadrox (@GGeneral@Y) tells the CLAN: 'carefully?'
+@w[29 Sep 02:04:24] @YMadrox (@GGeneral@Y) tells the CLAN: 'someone has to have a map somewhere'
+@w[29 Sep 02:04:31] @GSelitos Tech@w: @Canytime you enchant, temper, envenom ect you have to update that item in the database
+@w[29 Sep 02:04:36] @YMadrox (@GGeneral@Y) tells the CLAN: 'my mapper gets me around so would be hard to explain'
+@w[29 Sep 02:04:50] @RGlobal Quest@Y:@w @gGlobal Quest # 4197@w has been won by @YYuna@w - @Y693rd@w win.
+@w[29 Sep 02:04:50] @RGlobal Quest@Y:@w @gGlobal Quest # 4197@w will go into extended time for 5 more minutes.
+@w[29 Sep 02:04:53] @GWeaponGuy Tech@w: @CIt happens enough that I set one of the keypad buttons I don't use to do an inventory. I never envenom, enchant, temper, sharpen, nothing.
+@w[29 Sep 02:05:01] @YMadrox (@GGeneral@Y) tells the CLAN: 'I do remember that each mob that begins in gr has the next section after it'
+@w[29 Sep 02:05:13] @GSelitos Tech@w: @Creally a venomist that doesn
+@w[29 Sep 02:05:18] @GSelitos Tech@w: @Creally a venomist that doesn't envenom?
+@w[29 Sep 02:05:59] @GSelitos Tech@w: @Cyou rebuilding the database or just dinv refresh?
+@w[29 Sep 02:06:32] @GSelitos Tech@w: @Cyou should always do dinv refresh periodically
+@w[29 Sep 02:06:44] @GWeaponGuy Tech@w: @CI've been rebuilding the database. Maybe refreshing will accomplish what I need.
+@w[29 Sep 02:06:50] @GEvl Tech@w: @Calso if they are invis and you lose see invis during a refresh itll lose that item sometimes - also wont find things that are invis when you cant see them
+@w[29 Sep 02:06:55] @GSelitos Tech@w: @Cyeah try dinv refresh all
+@w[29 Sep 02:07:08] @GSelitos Tech@w: @Cit just updates the missing items not everything in your inventory
+@w[29 Sep 02:07:39] @RGlobal Quest@Y:@w Aleyra has completed @gGlobal Quest # 4197@w.
+@w[29 Sep 02:07:39] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 4197@w is now over.
+@w[29 Sep 02:07:57] @YFurlos (@GRecruit@Y) tells the CLAN: 'so how do i get these mappers? is that easier than using online maps?'
+@w[29 Sep 02:08:10] @YInix (@GSoldier@Y) tells the CLAN: 'yes'
+@w[29 Sep 02:08:16] @YInix (@GSoldier@Y) tells the CLAN: 'well, once you have it setup'
+@w[29 Sep 02:08:22] @YMadrox (@GGeneral@Y) tells the CLAN: 'well I used search and destroy and while moving around it records rooms so you can get back'
+@w[29 Sep 02:08:39] @GCLAN: Viridi falls out to take some much needed R & R.
+@w[29 Sep 02:09:23] @YMadrox (@GGeneral@Y) tells the CLAN: 'bbs dinner'
+@w[29 Sep 02:09:46] @GWeaponGuy Tech@w: @CApparently that found some thing. I wore a couple items that should have been changes several levels ago.
+@w[29 Sep 02:10:12] @GDejavu questions 'How do I get the wooble to breathe underwater?'
+@w[29 Sep 02:10:34] @GSelitos Tech@w: @Ckeep in mind Weaponguy that the plugin does not nessassrily wear the highestest lvl item it wears the items that will best max your pclass stats
+@w[29 Sep 02:12:21] @GWeaponGuy Tech@w: @CI understand that. But I'm pretty sure a level 100 aard dagger with no added stats is always better than a level 80 aard dagger with no added stats.
+@w[29 Sep 02:13:05] @GSelitos Tech@w: @Ctheoretically yes, unoless the plugin doesn't know the stats of the 100 dagger
+@w[29 Sep 02:13:34] @GBreathe Tech@w: @CI have the same issue - dinv doesn't wear the better aard daggers for me.  But I don't refresh enough, so maybe that is why and I temper my weapons 
+@w[29 Sep 02:13:45] @GWeaponGuy Tech@w: @CIt should by now, as it's been inventoried dozens of times.
+@w[29 Sep 02:13:53] @GEvl Tech@w: @Cyeah gotta refresh after every temper
+@w[29 Sep 02:14:10] @GSelitos Tech@w: @Cyes if you temper the item the plugin assume it no longer knows the satats on the item and ignores it
+@w[29 Sep 02:14:36] @GEvl Tech@w: @Cwhen i get time im gonna fix that and make it default to the known stats
+@w[29 Sep 02:15:18] @YFurlos (@GRecruit@Y) tells the CLAN: 'i have two mappers that came with the mushclient. is there another plugin that you're talking about?'
+@w[29 Sep 02:15:22] @GEvl Tech@w: @Cand make it prompt if you cant see invis when it refreshes
+@w[29 Sep 02:15:29] @GEvl Tech@w: @Cwould be nice huh
+@w[29 Sep 02:15:31] @GSelitos Tech@w: @Ci think deaths will also mess it up sometimes
+@w[29 Sep 02:15:40] @RGlobal Quest@Y:@w @gGlobal quest # 4200@w has been declared for levels @g69@w to @g80@w.
+@w[29 Sep 02:15:40] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g95@w ticks.
+@w[29 Sep 02:15:40] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 4200@w' to take part.
+@w[29 Sep 02:15:48] @GSelitos Tech@w: @Cbut i do not die much
+@w[29 Sep 02:16:09] @GWeaponGuy Tech@w: @CThat might be my issue. I die all the time, because I play like an idiot.
+@w[29 Sep 02:16:11] @GMushambo Tech@w: @Ctoo bad, it teaches resiliience
+@w[29 Sep 02:16:16] @YTalbor (@GGeneral@Y) tells the CLAN: 's&d is a separate plugin to help with quest, cp's etc'
+@w[29 Sep 02:16:27] @Y(@GRecruit@Y) CLAN: Furlos nods.
+@w[29 Sep 02:16:38] @YFurlos (@GRecruit@Y) tells the CLAN: 'ok, thanks for the answer'
+@w[29 Sep 02:17:29] @GWeaponGuy Tech@w: @CI refuse to buy potions and I always think "I can fight one more with this much health".
+@w[29 Sep 02:17:41] @RGlobal Quest@Y:@w @gGlobal quest # 4200@w for levels @g69@w to @g80@w has now started.
+@w[29 Sep 02:18:01] @GEvl Tech@w: @Cother issues arise if you dont have identify wish and dont refresh in front of the identify guy - but its been so long since i didnt have identify wish i dont know what happens anymore
+@w[29 Sep 02:19:40] @RGlobal Quest@Y:@w @gGlobal Quest # 4200@w has been won by @YYuna@w - @Y694th@w win.
+@w[29 Sep 02:19:40] @RGlobal Quest@Y:@w @gGlobal Quest # 4200@w will go into extended time for 5 more minutes.
+@w[29 Sep 02:19:59] @CA female wood elf gardener says, @c"@CGreetings, KumoGami.@c"
+@w[29 Sep 02:20:05] @RGlobal Quest@Y:@w Aleyra has completed @gGlobal Quest # 4200@w.
+@w[29 Sep 02:20:41] @CTrEz gossips 'grats yuna'
+@w[29 Sep 02:20:46] @CYuna gossips 'thanks!'
+@w[29 Sep 02:21:47] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[29 Sep 02:21:47] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[29 Sep 02:23:05] @YFurlos (@GRecruit@Y) tells the CLAN: 'i downloaded zip for search and destroy. i can never figure out what to do with them after that.'
+@w[29 Sep 02:23:16] @GDejavu questions 'How come I don't see the Fortune Teller in Land of Oz?'
+@w[29 Sep 02:23:42] @YTalbor (@GGeneral@Y) tells the CLAN: 'if it's pwars he has instructions on his github wiki'
+@w[29 Sep 02:23:58] @YTalbor (@GGeneral@Y) tells the CLAN: 'if it's crowleys i'm not sure but assume he has the same'
+@w[29 Sep 02:24:04] @GSelitos answers 'i do not beleive oz has a fortune teller, try bazaar or illoria'
+@w[29 Sep 02:24:05] @YMadrox (@GGeneral@Y) tells the CLAN: 'unzip it to mush/worlds/plugins'
+@w[29 Sep 02:24:34] @YYou tell the CLAN: 'just put it in the plugins dir, use the plugins window (ctrl+shift+p) and install that file through there'
+@w[29 Sep 02:24:42] @RGlobal Quest@Y:@w @gGlobal quest # 4200 @w(extended) is now over.
+@w[29 Sep 02:25:35] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[29 Sep 02:25:54] @YFurlos (@GRecruit@Y) tells the CLAN: 'thanks i'll do that'
+@w[29 Sep 02:27:56] @GMushambo Tech@w: @Cif i cant get external HDDs recognized, is it better to just disconnect and save for a pro forensics buddy to take care of it ?
+@w[29 Sep 02:29:59] @YFurlos (@GRecruit@Y) tells the CLAN: 'ok, sorry for all the dumb questions. i don't know which plugin in the plugin window it is to install.'
+@w[29 Sep 02:33:23] @YYou tell the CLAN: 'you click 'add' and find the file in the plugins directory which you downloaded'
+@w[29 Sep 02:33:33] @YFurlos (@GRecruit@Y) tells the CLAN: 'oh, i think i just got it.now to figure out how to use it. :D thanks'
+@w[29 Sep 02:33:40] @YYou tell the CLAN: 'np :)'
+@w[29 Sep 02:36:22] @RINFO: Lions and tigers and bears, OH MY! Dejavu has made his way over the Rainbow.@w
+@w[29 Sep 02:38:17] @RINFO: The last post plays mournfully as Furlos falls in battle to a swarm of gnats.@w
+@w[29 Sep 02:38:41] @RGlobal Quest@Y:@w @gGlobal Quest # 4203@w has been won by @YWinger@w - @Y96th@w win.
+@w[29 Sep 02:38:41] @RGlobal Quest@Y:@w @gGlobal Quest # 4203@w will go into extended time for 5 more minutes.
+@w[29 Sep 02:39:40] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[29 Sep 02:39:40] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[29 Sep 02:42:13] @CA goblin shaman exclaims 'Get off my back! I'm busy enough without you bothering me, KumoGami!'
+@w[29 Sep 02:46:26] @YFurlos (@GRecruit@Y) tells the CLAN: 'oh just figured how to go somewhere with s&d. i'm liking it just for the cp check. that's pretty cool'
+@w[29 Sep 02:46:48] @YMadrox (@GGeneral@Y) tells the CLAN: 'I hit 3 keys on keyboard to do quests cps, and qps :P its great'
+@w[29 Sep 02:48:57] @YFurlos (@GRecruit@Y) tells the CLAN: 'still learning. but it's pretty good so far. :)'
+@w[29 Sep 02:49:06] @CYou say 'stone'
+@w[29 Sep 02:49:06] @CGalvan asks 'So, you wish to visit the stone pillar?'
+@w[29 Sep 02:49:06] @CGalvan says 'Very well then.'
+@w[29 Sep 02:49:06] @CGalvan says 'Be safe on your journey, my friend.'
+@w[29 Sep 02:49:10] @C(@MWanGrp?!@C)@M [@wL186,-830,M+4/T9@M] Cide: anyone free for one of those drag thingies?
+@w[29 Sep 02:49:13] @CYou say 'marble'
+@w[29 Sep 02:49:13] @CGalvan asks 'So, you wish to visit the marble pillar?'
+@w[29 Sep 02:49:13] @CGalvan says 'Very well then.'
+@w[29 Sep 02:49:13] @CGalvan says 'Be safe on your journey, my friend.'
+@w[29 Sep 02:49:33] @CYou say 'stone'
+@w[29 Sep 02:49:33] @CGalvan asks 'So, you wish to visit the stone pillar?'
+@w[29 Sep 02:49:33] @CGalvan says 'Very well then.'
+@w[29 Sep 02:49:33] @CGalvan says 'Be safe on your journey, my friend.'
+@w[29 Sep 02:49:43] @RGlobal Quest@Y:@w @mGlobal Quest # 4204@w has been won by @YVettir@w - @Y133rd@w win.
+@w[29 Sep 02:49:53] @CYou say 'marble'
+@w[29 Sep 02:49:53] @CGalvan asks 'So, you wish to visit the marble pillar?'
+@w[29 Sep 02:49:53] @CGalvan says 'Very well then.'
+@w[29 Sep 02:49:53] @CGalvan says 'Be safe on your journey, my friend.'
+@w[29 Sep 02:50:00] @CYou say 'glass'
+@w[29 Sep 02:50:00] @CGalvan asks 'So, you wish to visit the glass pillar?'
+@w[29 Sep 02:50:00] @CGalvan says 'Very well then.'
+@w[29 Sep 02:50:00] @CGalvan says 'Be safe on your journey, my friend.'
+@w[29 Sep 02:54:36] @CSayra says 'Wow! thank you very much! '
+@w[29 Sep 02:54:36] @CSayra says 'For your help here is a little something.'
+@w[29 Sep 02:54:36] @CSayra exclaims 'Go on and take care of yourself!'
+@w[29 Sep 02:56:06] @RGlobal Quest@Y:@w @gGlobal Quest # 4206@w has been won by @YWinger@w - @Y97th@w win.
+@w[29 Sep 02:56:06] @RGlobal Quest@Y:@w @gGlobal Quest # 4206@w will go into extended time for 5 more minutes.
+@w[29 Sep 02:58:43] @CTlars the hobo exclaims 'Thank you very much KumoGami! I owe my life to you!'
+@w[29 Sep 02:58:43] @CTlars the hobo says 'Here. This will help you on your travels.'
+@w[29 Sep 02:58:43] @CTlars the hobo exclaims 'Take care!'
+@w[29 Sep 02:58:57] @CA Castle Guard says 'Well, everything seems to be in order.'
+@w[29 Sep 02:58:57] @CA Castle Guard says 'You may pass. Just wait one moment while I inform the next guard that you are coming.'
+@w[29 Sep 02:58:57] @CA Castle Guard exclaims 'Ok, everything is set. Have a good day!'
+@w[29 Sep 02:59:06] @CA castle guard says 'Well well.... I see this is forged....what to do... what to do....'
+@w[29 Sep 02:59:06] @CA castle guard says 'Well, I'm feeling rather nice today so I guess I can let you go.'
+@w[29 Sep 02:59:06] @CA castle guard exclaims 'Just one moment please!'
+@w[29 Sep 02:59:07] @CA castle guard says 'Well everything seems to be in order.'
+@w[29 Sep 02:59:07] @CA castle guard exclaims 'Have a fun visit!'
+@w[29 Sep 02:59:12] @RGlobal Quest@Y:@w Potato has completed @gGlobal Quest # 4206@w.
+@w[29 Sep 02:59:12] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 4206@w is now over.
+@w[29 Sep 03:00:12] @RINFO: The player rankings have been updated.@w
+@w[29 Sep 03:00:21] @GShadedancer questions 'where do i start the goal for verdure'
+@w[29 Sep 03:00:55] @GSelitos answers 'verdure doesn't have an official goal, only and old AQ'
+@w[29 Sep 03:01:51] @GShadedancer answers 'i must have forgot that quest lol'
+@w[29 Sep 03:02:50] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[29 Sep 03:04:00] @CA zoo keeper says, @c"@CLife's not fair!  Every day, I work my behind off to keep this zoo clean, and to make sure the animals are happy and healthy.  And what do I get?  A full frontal view of one of my 'co-workers' sitting around smoking and joking.  Co-worker.  There's the joke, they don't do any work around here.  Something bad should happen to them, if you know what I mean.@c"
+@w[29 Sep 03:04:00] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[29 Sep 03:04:50] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[29 Sep 03:08:08] @CBeatrice asks, @c"@CHi, I'm Beatrice. Who are you?@c"
+@w[29 Sep 03:08:08] @CBeatrice asks, @c"@CNice to meet you, KumoGami. Perhaps you would like to know more about Sargasso?@c"
+@w[29 Sep 03:08:08] @CBeatrice says, @c"@CYou can say 'Cathedral', 'Castle', or 'Mine' to be sent to those parts of DSR.@c"
+@w[29 Sep 03:08:29] @CBeatrice asks, @c"@CHi, I'm Beatrice. Who are you?@c"
+@w[29 Sep 03:08:29] @CBeatrice asks, @c"@CNice to meet you, KumoGami. Perhaps you would like to know more about Sargasso?@c"
+@w[29 Sep 03:08:29] @CBeatrice says, @c"@CYou can say 'Cathedral', 'Castle', or 'Mine' to be sent to those parts of DSR.@c"
+@w[29 Sep 03:08:29] @CYou say 'cathedral'
+@w[29 Sep 03:08:42] @CSister Rose says 'I remember that time back in Aylor, when ...'
+@w[29 Sep 03:08:51] @RINFO: 1 minute of bonus experience remaining.@w
+@w[29 Sep 03:09:51] @RINFO: Bonus experience has now expired.@w
+@w[29 Sep 03:10:23] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[29 Sep 03:10:23] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[29 Sep 03:14:10] @CWeAreSamurai gossips 'burger beer'
+@w[29 Sep 03:14:30] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[29 Sep 03:14:30] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[29 Sep 03:14:53] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[29 Sep 03:15:04] @GCLAN: KumoGami falls out to take some much needed R & R.

@@ -1,5 +1,5 @@
 1
-d77cc326da425b11492ee0e3bfd86aea21897c00
+22d9f4dc7667a1c248c7e4eb163066fa1ae7bb50
 inv.statBonus.spellBonus = {}
   inv.statBonus.spellBonus[1] = {}
     inv.statBonus.spellBonus[1].max = {}
@@ -1030,12 +1030,12 @@ inv.statBonus.spellBonus = {}
       inv.statBonus.spellBonus[69].max.con = 19
       inv.statBonus.spellBonus[69].max.int = 30
     inv.statBonus.spellBonus[69].ave = {}
-      inv.statBonus.spellBonus[69].ave.luck = 20.25
-      inv.statBonus.spellBonus[69].ave.wis = 22.75
-      inv.statBonus.spellBonus[69].ave.str = 33.75
-      inv.statBonus.spellBonus[69].ave.dex = 31.5
-      inv.statBonus.spellBonus[69].ave.con = 21.5
-      inv.statBonus.spellBonus[69].ave.int = 27.5
+      inv.statBonus.spellBonus[69].ave.luck = 0.31640625
+      inv.statBonus.spellBonus[69].ave.wis = 0.35546875
+      inv.statBonus.spellBonus[69].ave.str = 9.65234375
+      inv.statBonus.spellBonus[69].ave.dex = 6.6328125
+      inv.statBonus.spellBonus[69].ave.con = 1.2734375
+      inv.statBonus.spellBonus[69].ave.int = 5.0234375
   inv.statBonus.spellBonus[70] = {}
     inv.statBonus.spellBonus[70].max = {}
       inv.statBonus.spellBonus[70].max.luck = 0

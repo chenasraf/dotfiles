@@ -1,0 +1,21 @@
+1
+4a548d91a969923440cc13d3c198228eb3e867c3
+inv.cache.custom.table = {}
+  inv.cache.custom.table.entries = {}
+    inv.cache.custom.table.entries[2348872912] = {}
+      inv.cache.custom.table.entries[2348872912].entry = {}
+        inv.cache.custom.table.entries[2348872912].entry.keywords = "recruit 1bootdrink insulated canteen can oninv"
+        inv.cache.custom.table.entries[2348872912].entry.organize = ""
+      inv.cache.custom.table.entries[2348872912].timeCached = 1695247094
+    inv.cache.custom.table.entries[2891069037] = {}
+      inv.cache.custom.table.entries[2891069037].entry = {}
+        inv.cache.custom.table.entries[2891069037].entry.keywords = "old duffle KumoGami oninv"
+        inv.cache.custom.table.entries[2891069037].entry.organize = ""
+      inv.cache.custom.table.entries[2891069037].timeCached = 1695247101
+    inv.cache.custom.table.entries[2897579977] = {}
+      inv.cache.custom.table.entries[2897579977].entry = {}
+        inv.cache.custom.table.entries[2897579977].entry.organize = "type potion || type pill || type armor || type portal || type wield || type weapon || type light || type treasure || type drink || ~key duffle || ~key can || ~type key || ~key oninv"
+        inv.cache.custom.table.entries[2897579977].entry.keywords = "bag aardwolf (428644) isScanned"
+      inv.cache.custom.table.entries[2897579977].timeCached = 1695930548
+  inv.cache.custom.table.maxEntries = 1500
+  inv.cache.custom.table.name = "custom"

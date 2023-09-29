@@ -1581,10 +1581,10 @@
     min = 30,
     },
   }</variable>
-  <variable name="mcvar_cp_level_taken">69</variable>
+  <variable name="mcvar_cp_level_taken">70</variable>
   <variable name="mcvar_gqid_extended">-1</variable>
   <variable name="mcvar_gqid_joined">-1</variable>
-  <variable name="mcvar_gqid_started">4184</variable>
+  <variable name="mcvar_gqid_started">4200</variable>
   <variable name="mcvar_qt_areaName"></variable>
   <variable name="mcvar_qt_arid"></variable>
   <variable name="mcvar_qt_mob"></variable>
@@ -1595,13 +1595,13 @@
   <variable name="mcvar_window_font_italic">0</variable>
   <variable name="mcvar_window_font_size">10</variable>
   <variable name="mcvar_window_font_underline">0</variable>
-  <variable name="mcvar_window_height">309</variable>
+  <variable name="mcvar_window_height">320</variable>
   <variable name="mcvar_window_height_max">280</variable>
   <variable name="mcvar_window_hide_settings_button">on</variable>
   <variable name="mcvar_window_pos_x">1407</variable>
   <variable name="mcvar_window_pos_y">24</variable>
   <variable name="mcvar_window_state">max</variable>
-  <variable name="mcvar_window_width">546</variable>
+  <variable name="mcvar_window_width">547</variable>
   <variable name="mcvar_window_width_max">325</variable>
   <variable name="mcvar_xgui_window_onoff">on</variable>
   <variable name="mcvar_xset_vidblain_onoff">on</variable>
