@@ -6,14 +6,13 @@ local event = "BufWritePre" -- or "BufWritePost"
 
 local function external_format_stdin(filetype, format_cmd)
   if vim.bo.filetype == filetype then
+    local newline = "\n"
     local buftxt = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
-    buftxt = buftxt:gsub('%"', '\\"'):gsub('%$', '\\$'):gsub('%\n', '\\\\n')
-    local command = [[ echo -e " ]] .. buftxt .. [[ " | ]] .. format_cmd
 
+    local command = format_cmd .. [[ <<-'EOF']] .. newline .. buftxt .. newline .. [[EOF]]
     local output = vim.fn.system(command)
     local err = vim.v.shell_error
-    if err ~= 0 then
-      -- vim.api.nvim_err_writeln("Error: " .. err .. ": " .. output)
+    if err ~= 0 or output == "" or string.find(output, "command not found:") then
       error("Error: " .. err .. ": " .. output)
     end
 
