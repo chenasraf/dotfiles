@@ -1,6 +1,18 @@
 1
-ec9d6834222c75adb6aeb0e327da5ebd870550b2
+556d57c2e547e327b85fd77eb3b3b95960a5c81b
 inv.consume.table = {}
+  inv.consume.table.fly = {}
+    inv.consume.table.fly[1] = {}
+      inv.consume.table.fly[1].fullName = "(!(Griffon's Blood)!)"
+      inv.consume.table.fly[1].name = "griff"
+      inv.consume.table.fly[1].room = "32476"
+      inv.consume.table.fly[1].level = 1
+  inv.consume.table.mana = {}
+    inv.consume.table.mana[1] = {}
+      inv.consume.table.mana[1].fullName = "(!(Lotus Rush)!)"
+      inv.consume.table.mana[1].name = "lotus rush"
+      inv.consume.table.mana[1].room = "32476"
+      inv.consume.table.mana[1].level = 1
   inv.consume.table.heal = {}
     inv.consume.table.heal[1] = {}
       inv.consume.table.heal[1].fullName = "(!(Light Relief)!)"
@@ -17,15 +29,3 @@ inv.consume.table = {}
       inv.consume.table.heal[3].name = "breakfast"
       inv.consume.table.heal[3].room = "49392"
       inv.consume.table.heal[3].level = 60
-  inv.consume.table.mana = {}
-    inv.consume.table.mana[1] = {}
-      inv.consume.table.mana[1].fullName = "(!(Lotus Rush)!)"
-      inv.consume.table.mana[1].name = "lotus rush"
-      inv.consume.table.mana[1].room = "32476"
-      inv.consume.table.mana[1].level = 1
-  inv.consume.table.fly = {}
-    inv.consume.table.fly[1] = {}
-      inv.consume.table.fly[1].fullName = "(!(Griffon's Blood)!)"
-      inv.consume.table.fly[1].name = "griff"
-      inv.consume.table.fly[1].room = "32476"
-      inv.consume.table.fly[1].level = 1

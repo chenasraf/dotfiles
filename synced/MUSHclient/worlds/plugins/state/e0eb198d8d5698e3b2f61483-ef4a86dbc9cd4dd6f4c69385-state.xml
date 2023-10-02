@@ -29,12 +29,6 @@
   <variable name="overlay_numbers">3</variable>
   <variable name="reverseTNL">1</variable>
   <variable name="showBar">showBar = {}
-  showBar.Enemy = {}
-    showBar.Enemy[1] = "Enemy :"
-    showBar.Enemy[2] = true
-    showBar.Enemy[3] = "Enemy:"
-    showBar.Enemy[4] = 255
-    showBar.Enemy[5] = 68
   showBar.Moves = {}
     showBar.Moves[1] = "Moves :"
     showBar.Moves[2] = true
@@ -64,7 +58,13 @@
     showBar.Mana[2] = true
     showBar.Mana[3] = "Mana:"
     showBar.Mana[4] = 16733440
-    showBar.Mana[5] = 4465152</variable>
+    showBar.Mana[5] = 4465152
+  showBar.Enemy = {}
+    showBar.Enemy[1] = "Enemy :"
+    showBar.Enemy[2] = true
+    showBar.Enemy[3] = "Enemy:"
+    showBar.Enemy[4] = 255
+    showBar.Enemy[5] = 68</variable>
   <variable name="showLabels">1</variable>
   <variable name="stacked">0</variable>
   <variable name="thresh1active">0</variable>

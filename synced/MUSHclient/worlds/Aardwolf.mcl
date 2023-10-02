@@ -290,16 +290,15 @@ EnableTriggerGroup("spellbook", false)</send>
    send_to="12"
    sequence="100"
   >
-  <send>if GetVariable("waiting_sendhia") then
-  local e = Send
-  local curX = %2
-  local curY = %1
+  <send>local e = Send
+local curX = %2
+local curY = %1
 
-  local sendhiaX = 6
-  local sendhiaY = 5
+local function navTo(y, x)
+  ColourNote("cyan", "", "Finding path to " ..x..", "..y.."...")
 
-  local vert = curX - sendhiaX
-  local horz = curY - sendhiaY
+  local vert = curX - x
+  local horz = curY - y
 
   local hDir = "w"
   local vDir = "n"
@@ -322,8 +321,17 @@ EnableTriggerGroup("spellbook", false)</send>
   if tr ~= "run " then
     e(rt)
   end
+end
+
+if GetVariable("waiting_sendhia") == "true" then
+  navTo(5, 6)
   e("moonrift")
   SetVariable("waiting_sendhia", "false")
+
+elseif GetVariable("waiting_darklight") == "true" then
+  navTo(14, 23)
+  e("d")
+  SetVariable("waiting_darklight", "false")
 end
 </send>
   </trigger>
@@ -495,32 +503,7 @@ ColourNote ("white", "green", "Added trigger to match on '%1', sending '%2'")
   </send>
   </alias>
   <alias
-   match="^(\d+)\* (.+)$"
-   enabled="y"
-   group="utils"
-   regexp="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>local amt = %1
-local cmd = "%2"
-
-for i=1,amt,1 do
-  Execute(Replace(cmd, "%%", i, true))
-end</send>
-  </alias>
-  <alias
-   match="^(organize|org)$"
-   enabled="y"
-   group="inventory"
-   regexp="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>dinv organize;dinv get oninv</send>
-  </alias>
-  <alias
-   match="^(p|u|w)?lr$"
+   match="^([puw])?lr$"
    enabled="y"
    group="heal"
    regexp="y"
@@ -536,11 +519,59 @@ wait.make(function()
   elseif "%1" == "w" then
     Execute("w")
   elseif "%1" == "u" then
-    Execute("open u;u;close d;lock d")
+    Execute("open u;u;close d;lock d;map")
   end
   
-  Execute("gulp;gulp;fill can;sleep bed")
+  Execute("gulp;gulp;fill insulated;sleep bed")
 end)</send>
+  </alias>
+  <alias
+   match="^(\d+)\* (.+)$"
+   enabled="y"
+   group="utils"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local amt = %1
+local cmd = "%2"
+
+for i=1,amt,1 do
+  Execute(Replace(cmd, "%%", i, true))
+end</send>
+  </alias>
+  <alias
+   match="^(invis|hide)$"
+   enabled="y"
+   group="autovis"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>require "gmcphelper"
+local raw = GetVariable("autovis") or "true"
+local autovis = raw == "true"
+local lv = tonumber(gmcp("char.base.level"))
+
+if autovis then
+  ColourNote("yellow", "", "Invis for level " .. lv)
+  if lv &gt;= 25 then
+    Send("cast invis")
+  end
+  if lv &gt;= 26 then
+    Send("trace")
+  end
+end</send>
+  </alias>
+  <alias
+   match="^(organize|org)$"
+   enabled="y"
+   group="inventory"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>dinv organize;dinv get oninv</send>
   </alias>
   <alias
    match="^(sp|spe|spell|spells)$"
@@ -588,7 +619,7 @@ end</send>
   <alias
    match="^m([ou])([udwesn])$"
    enabled="y"
-   group="mapper"
+   group="movement"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -610,7 +641,7 @@ Execute(cmd)</send>
   <alias
    match="^mc (.+)$"
    enabled="y"
-   group="mapper"
+   group="movement"
    regexp="y"
    send_to="10"
    sequence="100"
@@ -756,7 +787,7 @@ Execute("dinv " .. first .. " " .. table.concat(args, " "))</send>
   <alias
    match="en *"
    enabled="y"
-   group="mapper"
+   group="movement"
    send_to="10"
    sequence="100"
   >
@@ -777,29 +808,6 @@ Execute("dinv " .. first .. " " .. table.concat(args, " "))</send>
    sequence="100"
   >
   <send>gulp canteen</send>
-  </alias>
-  <alias
-   match="invis|hide"
-   enabled="y"
-   group="autovis"
-   regexp="y"
-   send_to="12"
-   sequence="100"
-  >
-  <send>require "gmcphelper"
-local raw = GetVariable("autovis") or "true"
-local autovis = raw == "true"
-local lv = tonumber(gmcp("char.base.level"))
-
-if autovis then
-  ColourNote("yellow", "", "Invis for level " .. lv)
-  if lv &gt;= 25 then
-    Send("cast invis")
-  end
-  if lv &gt;= 26 then
-    Send("trace")
-  end
-end</send>
   </alias>
   <alias
    match="ka *"
@@ -857,6 +865,14 @@ for i, a in ipairs(atk) do
 end</send>
   </alias>
   <alias
+   match="kpa"
+   enabled="y"
+   group="inventory"
+   sequence="100"
+  >
+  <send>keyring put all</send>
+  </alias>
+  <alias
    match="mb"
    enabled="y"
    send_to="12"
@@ -876,6 +892,15 @@ local minL = lv + 2
 local maxL = lv + 5
 
 Send("mobdeaths " .. minL .. " " .. maxL .. " " .. align)</send>
+  </alias>
+  <alias
+   match="mnh"
+   enabled="y"
+   group="mapper"
+   send_to="10"
+   sequence="100"
+  >
+  <send>mapper notes here</send>
   </alias>
   <alias
    match="patk *"
@@ -933,7 +958,7 @@ local ids = {
 
 for area, id in pairs(ids) do
   if starts(area:lower(), "%1") then
-    world.Execute("dinv portal use " .. id)
+    Execute("dinv portal use " .. id)
     break
   end
 end</send>
@@ -990,26 +1015,19 @@ world.Execute("dinv consume small heal")</send>
    match="prc"
    enabled="y"
    group="recall"
-   send_to="12"
+   send_to="10"
    sequence="100"
   >
-  <send>local p = GetVariable("recall")
-local i = GetVariable("held")
-
-world.Execute("port boot")</send>
+  <send>port boot</send>
   </alias>
   <alias
    match="prt *"
    enabled="y"
    group="recall"
-   send_to="12"
+   send_to="10"
    sequence="100"
   >
-  <send>local p = GetVariable("recall")
-local i = GetVariable("held")
-
--- world.Execute("hold '" .. p .. "'; enter; " .. i .. "; rt %1")
-world.Execute("port boot;rt %1")</send>
+  <send>prc;rt %1</send>
   </alias>
   <alias
    match="rf *"
@@ -1028,6 +1046,27 @@ world.Execute("port boot;rt %1")</send>
    sequence="100"
   >
   <send>mapper find %1</send>
+  </alias>
+  <alias
+   match="rid"
+   enabled="y"
+   group="mapper"
+   sequence="100"
+  >
+  <send>require "gmcphelper"
+
+ColourNote("cyan", "", "Room ID: " .. gmcp("room.info.num"))</send>
+  </alias>
+  <alias
+   match="rt darklight"
+   enabled="y"
+   group="movement"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("waiting_darklight", "true")
+Send("rt vidblain")
+Send("coord")</send>
   </alias>
   <alias
    match="sight"
@@ -1223,12 +1262,13 @@ end</send>
   <variable name="hppot">'light relief'</variable>
   <variable name="mw_spWin_windowx">1209</variable>
   <variable name="mw_spWin_windowy">347</variable>
-  <variable name="patk">cast 'flame arrow';kick</variable>
+  <variable name="patk">cast 'flame arrow'</variable>
   <variable name="potbag">bag</variable>
   <variable name="recall">duffle</variable>
   <variable name="themed_miniwindow_heightspWin">886</variable>
   <variable name="themed_miniwindow_widthspWin">339</variable>
   <variable name="username">KumoGami</variable>
+  <variable name="waiting_darklight">false</variable>
   <variable name="waiting_sendhia">false</variable>
 </variables>
 
@@ -1405,7 +1445,7 @@ end</send>
   </key>
 
   <key name="Ctrl++" >
-  <send>sight</send>
+  <send>hide</send>
   </key>
 </keypad>
 
