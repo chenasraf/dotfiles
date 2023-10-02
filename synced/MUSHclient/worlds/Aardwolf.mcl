@@ -522,7 +522,7 @@ end</send>
   <alias
    match="^(p|u|w)?lr$"
    enabled="y"
-   group="utils"
+   group="heal"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -620,6 +620,7 @@ Execute(cmd)</send>
   <alias
    match="^mcw (\d+) (.+)$"
    enabled="y"
+   group="movement"
    regexp="y"
    send_to="10"
    sequence="100"
@@ -629,6 +630,7 @@ Execute(cmd)</send>
   <alias
    match="^pa ([\d\w.]+) (.+)$"
    enabled="y"
+   group="inventory"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -654,7 +656,7 @@ Execute("prc;q " .. c)</send>
   <alias
    match="^rt sendhia[n]?$"
    enabled="y"
-   group="rt"
+   group="movement"
    regexp="y"
    send_to="12"
    sequence="100"
@@ -706,6 +708,7 @@ end</send>
   <alias
    match="cr"
    enabled="y"
+   group="heal"
    send_to="12"
    sequence="100"
   >
@@ -721,12 +724,12 @@ end)</send>
   <alias
    match="di *"
    enabled="y"
-   group="utils"
+   group="inventory"
    send_to="12"
    sequence="100"
   >
   <send>local sub = "%1"
-local args = string.split(sub, " ")
+local args = utils.split(sub, " ")
 local first = args[1]
 table.remove(args, 1)
 
@@ -762,6 +765,7 @@ Execute("dinv " .. first .. " " .. table.concat(args, " "))</send>
   <alias
    match="eqs"
    enabled="y"
+   group="inventory"
    sequence="100"
   >
   <send>eqsearch all</send>
@@ -769,14 +773,16 @@ Execute("dinv " .. first .. " " .. table.concat(args, " "))</send>
   <alias
    match="gulc"
    enabled="y"
+   group="heal"
    sequence="100"
   >
   <send>gulp canteen</send>
   </alias>
   <alias
-   match="invis"
+   match="invis|hide"
    enabled="y"
    group="autovis"
+   regexp="y"
    send_to="12"
    sequence="100"
   >
@@ -786,7 +792,7 @@ local autovis = raw == "true"
 local lv = tonumber(gmcp("char.base.level"))
 
 if autovis then
-  ColourNote("cyan", "", "Invis for level " .. lv)
+  ColourNote("yellow", "", "Invis for level " .. lv)
   if lv &gt;= 25 then
     Send("cast invis")
   end
@@ -935,6 +941,7 @@ end</send>
   <alias
    match="portals"
    enabled="y"
+   group="inventory"
    send_to="10"
    sequence="100"
   >
@@ -1033,6 +1040,8 @@ world.Execute("port boot;rt %1")</send>
 
 local lv = tonumber(gmcp("char.base.level"))
 
+ColourNote("yellow", "", "Sight for level " .. lv)
+
 if lv &gt;= 8 then
   Send("c 'night vision'")
 end
@@ -1055,21 +1064,13 @@ else
 end</send>
   </alias>
   <alias
-   match="spellup"
-   group="autosp"
-   send_to="12"
-   sequence="100"
-  >
-  <send>--</send>
-  </alias>
-  <alias
    match="sspellup"
    enabled="y"
    group="spellup"
    send_to="10"
    sequence="100"
   >
-  <send>napalm;invis;sight;spellup</send>
+  <send>hide;sight;spellup;napalm</send>
   </alias>
   <alias
    match="suit"
@@ -1088,6 +1089,23 @@ end</send>
    sequence="100"
   >
   <send>tasks here</send>
+  </alias>
+  <alias
+   match="try *"
+   enabled="y"
+   group="movement"
+   send_to="12"
+   sequence="100"
+  >
+  <send>require 'gmcphelper'
+local dir = "%1"
+local roomId = gmcp('room.info.exits.' .. dir)
+
+if roomId ~= nil then
+  Execute("mapper goto " .. roomId)
+else
+  Execute(dir)
+end</send>
   </alias>
 </aliases>
 
@@ -1205,7 +1223,7 @@ end</send>
   <variable name="hppot">'light relief'</variable>
   <variable name="mw_spWin_windowx">1209</variable>
   <variable name="mw_spWin_windowy">347</variable>
-  <variable name="patk">kick;ca 'flame arrow'</variable>
+  <variable name="patk">cast 'flame arrow';kick</variable>
   <variable name="potbag">bag</variable>
   <variable name="recall">duffle</variable>
   <variable name="themed_miniwindow_heightspWin">886</variable>
@@ -1286,15 +1304,15 @@ end</send>
   </key>
 
   <key name="2" >
-  <send>south</send>
+  <send>s</send>
   </key>
 
   <key name="3" >
-  <send>down</send>
+  <send>d</send>
   </key>
 
   <key name="4" >
-  <send>west</send>
+  <send>w</send>
   </key>
 
   <key name="5" >
@@ -1302,7 +1320,7 @@ end</send>
   </key>
 
   <key name="6" >
-  <send>east</send>
+  <send>e</send>
   </key>
 
   <key name="7" >
@@ -1310,11 +1328,11 @@ end</send>
   </key>
 
   <key name="8" >
-  <send>north</send>
+  <send>n</send>
   </key>
 
   <key name="9" >
-  <send>up</send>
+  <send>u</send>
   </key>
 
   <key name="." >
@@ -1336,6 +1354,7 @@ end</send>
   </key>
 
   <key name="Ctrl+0" >
+  <send>whois</send>
   </key>
 
   <key name="Ctrl+1" >
@@ -1343,33 +1362,33 @@ end</send>
   </key>
 
   <key name="Ctrl+2" >
-  <send>mapper cexit o s;;s</send>
+  <send>try s</send>
   </key>
 
   <key name="Ctrl+3" >
-  <send>mapper cexit o d;;d</send>
+  <send>try d</send>
   </key>
 
   <key name="Ctrl+4" >
-  <send>mapper cexit o w;;w</send>
+  <send>try w</send>
   </key>
 
   <key name="Ctrl+5" >
   </key>
 
   <key name="Ctrl+6" >
-  <send>mapper cexit o e;;e</send>
+  <send>try e</send>
   </key>
 
   <key name="Ctrl+7" >
   </key>
 
   <key name="Ctrl+8" >
-  <send>mapper cexit o n;;n</send>
+  <send>try n</send>
   </key>
 
   <key name="Ctrl+9" >
-  <send>mapper cexit o u;;u</send>
+  <send>try u</send>
   </key>
 
   <key name="Ctrl+." >

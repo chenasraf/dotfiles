@@ -1,0 +1,6 @@
+1
+18818e1ab690cda2e94b3be192e859c7f15f2920
+inv.cache.frequent.table = {}
+  inv.cache.frequent.table.maxEntries = 100
+  inv.cache.frequent.table.name = "frequent"
+  inv.cache.frequent.table.entries = {}

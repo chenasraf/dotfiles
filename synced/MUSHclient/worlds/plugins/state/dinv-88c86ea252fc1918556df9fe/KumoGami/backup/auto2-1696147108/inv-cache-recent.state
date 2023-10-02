@@ -1,0 +1,6 @@
+1
+812865a3631839eda8876318dfa7c5170a815d5c
+inv.cache.recent.table = {}
+  inv.cache.recent.table.maxEntries = 1000
+  inv.cache.recent.table.name = "recent"
+  inv.cache.recent.table.entries = {}
