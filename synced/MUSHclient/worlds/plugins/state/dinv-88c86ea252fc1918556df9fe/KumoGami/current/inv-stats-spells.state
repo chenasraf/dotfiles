@@ -1,5 +1,5 @@
 1
-7d809dfdeb422131fbc7d8e66ba7a086c39cb6ad
+7da8781d0e3368c638103339178f3d135c14f2d2
 inv.statBonus.spellBonus = {}
   inv.statBonus.spellBonus[1] = {}
     inv.statBonus.spellBonus[1].ave = {}
@@ -1143,17 +1143,17 @@ inv.statBonus.spellBonus = {}
       inv.statBonus.spellBonus[76].max.wis = 0
   inv.statBonus.spellBonus[77] = {}
     inv.statBonus.spellBonus[77].ave = {}
-      inv.statBonus.spellBonus[77].ave.str = 24
-      inv.statBonus.spellBonus[77].ave.dex = 32
-      inv.statBonus.spellBonus[77].ave.con = 31
-      inv.statBonus.spellBonus[77].ave.int = 22
-      inv.statBonus.spellBonus[77].ave.luck = 24
-      inv.statBonus.spellBonus[77].ave.wis = 20
+      inv.statBonus.spellBonus[77].ave.str = 6.5634765625
+      inv.statBonus.spellBonus[77].ave.dex = 9.685302734375
+      inv.statBonus.spellBonus[77].ave.con = 5.302978515625
+      inv.statBonus.spellBonus[77].ave.int = 4.969970703125
+      inv.statBonus.spellBonus[77].ave.luck = 0.005859375
+      inv.statBonus.spellBonus[77].ave.wis = 0.0048828125
     inv.statBonus.spellBonus[77].max = {}
-      inv.statBonus.spellBonus[77].max.str = 0
-      inv.statBonus.spellBonus[77].max.dex = 0
-      inv.statBonus.spellBonus[77].max.con = 0
-      inv.statBonus.spellBonus[77].max.int = 0
+      inv.statBonus.spellBonus[77].max.str = 13
+      inv.statBonus.spellBonus[77].max.dex = 14
+      inv.statBonus.spellBonus[77].max.con = 6
+      inv.statBonus.spellBonus[77].max.int = 9
       inv.statBonus.spellBonus[77].max.luck = 0
       inv.statBonus.spellBonus[77].max.wis = 0
   inv.statBonus.spellBonus[78] = {}
