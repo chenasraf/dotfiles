@@ -15025,3 +15025,419 @@
 @w[03 Oct 16:34:05] @G(Friend)@c: @CGorsk waves hello to Castiel.
 @w[03 Oct 16:34:06] @YLepdar (@GCorpsman@Y) tells the CLAN: 'does anyone know when next fractal is'
 @w[03 Oct 16:35:05] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[03 Oct 17:40:17] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[03 Oct 17:40:27] @G(Friend)@c: @CGorsk smiles at you.
+@w[03 Oct 17:40:53] @G(Friend)@c: @CYou smile at Gorsk and greet him warmly.
+@w[03 Oct 17:41:24] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[03 Oct 17:42:02] @G(Friend)@c: @CGorsk gets ready to redo.
+@w[03 Oct 17:42:03] @CA drow lieutenant exclaims, @c"@CYou are not allowed here!  Leave now!@c"
+@w[03 Oct 17:42:26] @RINFO: The last post plays mournfully as KumoGami falls in battle to a drow lieutenant and 2 others.@w
+@w[03 Oct 17:42:44] @cGorsk tells you 'want a miracle?'
+@w[03 Oct 17:42:52] @cYou tell Gorsk 'would love that ty'
+@w[03 Oct 17:43:08] @c*@wYou wave goodbye to Gorsk.
+@w[03 Oct 17:43:12] @c*@wYou wave hello to Gorsk.
+@w[03 Oct 17:43:29] @cYou tell Gorsk 'woo ty :D'
+@w[03 Oct 17:43:44] @c*@wYou hug him.
+@w[03 Oct 17:44:26] @CA drow lieutenant exclaims, @c"@CYou are not allowed here!  Leave now!@c"
+@w[03 Oct 17:45:02] @GCLAN: At-ten-tion! Defcon is here to get some training done!
+@w[03 Oct 17:46:07] @CA gateguard exclaims 'Good day! Welcome to the Citadel of Stone!'
+@w[03 Oct 17:46:07] @CA gateguard says 'You may enter the Citadel.'
+@w[03 Oct 17:48:15] @YDefcon (@GRecruit@Y) tells the CLAN: 'good morning'
+@w[03 Oct 17:48:31] @YZoth (@GRecruit@Y) tells the CLAN: 'Hey'
+@w[03 Oct 17:49:01] @YMadrox (@GGeneral@Y) tells the CLAN: 'hey yo'
+@w[03 Oct 17:49:47] @GPopa questions 'how does one go about getting around divine protection on a mob. sorry, it's been ages.'
+@w[03 Oct 17:50:02] @GReyn answers 'you don't'
+@w[03 Oct 17:50:03] @GGorsk answers 'one doesn't'
+@w[03 Oct 17:50:04] @GPorcius answers 'you dont'
+@w[03 Oct 17:50:21] @RGlobal Quest@Y:@w @cGlobal quest # 5434@w has been declared for levels @c69@w to @c80@w - @c10 or fewer wins only@w.
+@w[03 Oct 17:50:21] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c86@w ticks.
+@w[03 Oct 17:50:21] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 5434@w' to take part.
+@w[03 Oct 17:50:34] @GGorsk answers 'one picks a different mob'
+@w[03 Oct 17:50:52] @GStormwind answers 'I believe you could become an immportal and slay it.'
+@w[03 Oct 17:51:37] @YDefcon (@GRecruit@Y) tells the CLAN: 'how do i get the key in zodiac?'
+@w[03 Oct 17:52:00] @GVader questions 'why do sometimes i get 2 spells off between my martial hits?'
+@w[03 Oct 17:52:05] @GPopa questions 'thanks :) i'll see about the immortal thing'
+@w[03 Oct 17:52:17] @GTrEz answers 'time shift'
+@w[03 Oct 17:52:18] @GWelding answers 'vader - timeshifting'
+@w[03 Oct 17:52:19] @GPorcius answers 'because you are navigator'
+@w[03 Oct 17:52:22] @RGlobal Quest@Y:@w @cGlobal quest # 5434@w for levels @c69@w to @c80@w - @c10 or fewer wins only@w has now started.
+@w[03 Oct 17:52:25] @RINFO: All hail Luniana! Champion of Kimr's Farm!@w
+@w[03 Oct 17:52:34] @GVader answers 'oh snapppp'
+@w[03 Oct 17:52:42] @GVader answers 'yo thats cool'
+@w[03 Oct 17:52:51] @GReyn answers 'it's absurdly powerful and useful'
+@w[03 Oct 17:52:55] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[03 Oct 17:52:56] @CA female wood elf gardener says, @c"@CGreetings, KumoGami.@c"
+@w[03 Oct 17:53:11] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[03 Oct 17:53:11] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[03 Oct 17:53:13] @GDefcon questions 'how do i enter the pearl i zodiac?'
+@w[03 Oct 17:54:15] @GGorsk answers 'enter pearl should work'
+@w[03 Oct 17:55:36] @GVorthel answers 'how much does luck play part in additional spell casts?'
+@w[03 Oct 17:56:22] @GCLAN: At-ten-tion! Kitrana is here to get some training done!
+@w[03 Oct 17:56:26] @YKitrana (@GRecruit@Y) tells the CLAN: 'ok so mutare can double the weight of an item, why want that?'
+@w[03 Oct 17:56:33] @GStormwind answers 'im not sure if anyone but lasher knows how much, but luck affects almost everything.'
+@w[03 Oct 17:56:38] @YSaraid (@GGeneral@Y) tells the CLAN: 'you don't'
+@w[03 Oct 17:56:39] @YKalimbog (@GCorpsman@Y) tells the CLAN: 'to help with dual wielding, to make the primary hand weapon heavy'
+@w[03 Oct 17:56:40] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'help spunch, that's all that i can think of'
+@w[03 Oct 17:56:41] @YSaraid (@GGeneral@Y) tells the CLAN: 'it's just an option'
+@w[03 Oct 17:56:46] @CA zoo keeper says, @c"@CLife's not fair!  Every day, I work my behind off to keep this zoo clean, and to make sure the animals are happy and healthy.  And what do I get?  A full frontal view of one of my 'co-workers' sitting around smoking and joking.  Co-worker.  There's the joke, they don't do any work around here.  Something bad should happen to them, if you know what I mean.@c"
+@w[03 Oct 17:56:49] @GMacbeth answers 'like a random multiplier probably'
+@w[03 Oct 17:56:49] @YMadrox (@GGeneral@Y) tells the CLAN: 'its a relic from ancient times'
+@w[03 Oct 17:56:50] @GSelitos answers 'read help luck'
+@w[03 Oct 17:56:51] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'but that hasnt' been a relevant skill in like'
+@w[03 Oct 17:56:54] @YAnssett (@GSpecial Ops@Y) tells the CLAN: '30 years? :P'
+@w[03 Oct 17:57:10] @YMadrox (@GGeneral@Y) tells the CLAN: 'mutare is based on DoH clanskill balance, and yes spunch was why'
+@w[03 Oct 17:57:13] @YZoth (@GRecruit@Y) tells the CLAN: 'It was really good at low level in wars since it doesn't take any moves to use and hits hard'
+@w[03 Oct 17:57:14] @GVorthel answers 'yeah read the helpfile, but it's intentionally vague'
+@w[03 Oct 17:57:16] @CYou say 'stone'
+@w[03 Oct 17:57:16] @CGalvan asks 'So, you wish to visit the stone pillar?'
+@w[03 Oct 17:57:16] @CGalvan says 'Very well then.'
+@w[03 Oct 17:57:16] @CGalvan says 'Be safe on your journey, my friend.'
+@w[03 Oct 17:57:21] @CYou say 'marble'
+@w[03 Oct 17:57:21] @CGalvan asks 'So, you wish to visit the marble pillar?'
+@w[03 Oct 17:57:21] @CGalvan says 'Very well then.'
+@w[03 Oct 17:57:21] @CGalvan says 'Be safe on your journey, my friend.'
+@w[03 Oct 17:57:25] @YSaraid (@GGeneral@Y) tells the CLAN: 'spunch wasn't even a thing while doh was around'
+@w[03 Oct 17:57:26] @YKitrana (@GRecruit@Y) tells the CLAN: 'spunch?'
+@w[03 Oct 17:57:35] @GVorthel answers 'sometimes I get up to 3 spells for the price of one, I guess.'
+@w[03 Oct 17:57:35] @YMadrox (@GGeneral@Y) tells the CLAN: 'shield punch'
+@w[03 Oct 17:57:40] @CA clinic assistant says, @c"@CWelcome to the clinic, KumoGami.@c"
+@w[03 Oct 17:57:40] @CA clinic assistant says, @c"@CYou don't appear to need my help. Please move along.@c"
+@w[03 Oct 17:57:40] @CEarshda the receptionist exclaims, @c"@CWelcome back to the clinic, KumoGami!@c"
+@w[03 Oct 17:57:40] @CEarshda the receptionist says, @c"@CIf you need anything, don't hesitate to ask.@c"
+@w[03 Oct 17:57:44] @RGlobal Quest@Y:@w @cGlobal Quest # 5434@w has been won by @YKumoGami@w - @Y7th@w win.
+@w[03 Oct 17:57:44] @YSaraid (@GGeneral@Y) tells the CLAN: 'it's just the same as the flag you can do in aylor that's why'
+@w[03 Oct 17:57:56] @YMadrox (@GGeneral@Y) tells the CLAN: 'ahh makes sense'
+@w[03 Oct 17:57:57] @YSaraid (@GGeneral@Y) tells the CLAN: 'and that predates doh and would have been used for spunch'
+@w[03 Oct 17:58:44] @YMadrox (@GGeneral@Y) tells the CLAN: 'never thought of mutare just being a copy of the setweight flag shop'
+@w[03 Oct 17:58:44] @YSaraid (@GGeneral@Y) tells the CLAN: 'I use double when I'm keeping a pie :P'
+@w[03 Oct 17:59:00] @GSelitos answers 'vague yes but i think it makes the point'
+@w[03 Oct 17:59:10] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'setweight does not set ownership?'
+@w[03 Oct 17:59:11] @YSaraid (@GGeneral@Y) tells the CLAN: 'so like the bonusloot flag pie I double it so it's owned and I can drop it '
+@w[03 Oct 17:59:12] @YMadrox (@GGeneral@Y) tells the CLAN: 'I too wish all pies I came accross were twice their size, thats why I avoid pies as much as I can'
+@w[03 Oct 17:59:21] @YDefcon (@GRecruit@Y) tells the CLAN: 'what was the other goals cmd?'
+@w[03 Oct 17:59:26] @Y(@GCorpsman@Y) CLAN: KumoGami is thinking maybe he should mutare all the crap in his inv
+@w[03 Oct 17:59:34] @YZoth (@GRecruit@Y) tells the CLAN: 'Twice the pie at all times seems op'
+@w[03 Oct 17:59:44] @RGlobal Quest@Y:@w @mGlobal Quest # 5435@w has been won by @YBreathe@w - @Y61st@w win.
+@w[03 Oct 17:59:53] @YDefcon (@GRecruit@Y) tells the CLAN: 'whats the goals cmd that llist exactly what needs to be done?'
+@w[03 Oct 17:59:54] @GNuanse answers 'sometimes I get 6 lucky quest points as extra, I guess that has something to do with luck'
+@w[03 Oct 18:00:03] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'try tasklist'
+@w[03 Oct 18:00:12] @RINFO: The player rankings have been updated.@w
+@w[03 Oct 18:00:17] @YSaraid (@GGeneral@Y) tells the CLAN: 'help goalsolving'
+@w[03 Oct 18:00:35] @YZoth (@GRecruit@Y) tells the CLAN: 'Talking about goals (areaname)?'
+@w[03 Oct 18:00:44] @YDefcon (@GRecruit@Y) tells the CLAN: 'zodiac'
+@w[03 Oct 18:00:52] @YDefcon (@GRecruit@Y) tells the CLAN: 'what do i need to say to aphroditie'
+@w[03 Oct 18:00:54] @YKitrana (@GRecruit@Y) tells the CLAN: 'what areaname is jhonny appleseed?'
+@w[03 Oct 18:01:01] @YMadrox (@GGeneral@Y) tells the CLAN: 'land of legends'
+@w[03 Oct 18:01:05] @YDejavu (@GRecruit@Y) tells the CLAN: 'legends'
+@w[03 Oct 18:01:11] @YKitrana (@GRecruit@Y) tells the CLAN: 'thanks'
+@w[03 Oct 18:03:05] @GMisfit questions 'I'm getting a responds that says I'm temporarily blind yet there is nothing on the affects list nor does cure blindness fix'
+@w[03 Oct 18:03:49] @GNueve answers 'uncurse'
+@w[03 Oct 18:04:07] @GNueve answers 'it's an item if youve been in titan/trans/terra'
+@w[03 Oct 18:04:15] @GNueve answers 'tendrils or something'
+@w[03 Oct 18:04:34] @GKharpern answers 'no it's from nine hells remove bat'
+@w[03 Oct 18:04:39] @GKharpern answers 'remove back that is'
+@w[03 Oct 18:04:40] @GMisfit questions 'it was an item.  thx'
+@w[03 Oct 18:04:41] @GNueve answers 'there ya go!'
+@w[03 Oct 18:05:33] @YDefcon (@GRecruit@Y) tells the CLAN: 'what do i do in zodiac to get past aphrodite?'
+@w[03 Oct 18:08:25] @RINFO: All please welcome Zodo, Aardwolf's newest Elf Mentalist!@w
+@w[03 Oct 18:11:51] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[03 Oct 18:14:56] @RINFO: Virion is sent with a blood curdling scream by a familiar stranger and 5 others to meet Taboo.@w
+@w[03 Oct 18:17:12] @YDejavu (@GRecruit@Y) tells the CLAN: 'where is a thief in training in glimmerdim?'
+@w[03 Oct 18:18:15] @RGlobal Quest@Y:@w @mGlobal Quest # 5437@w has been won by @YSaltmarsh@w - @Y15th@w win.
+@w[03 Oct 18:18:15] @RGlobal Quest@Y:@w @mGlobal Quest # 5437@w will go into extended time for 5 more minutes.
+@w[03 Oct 18:19:37] @YZoth (@GRecruit@Y) tells the CLAN: 'Does it show up on where?'
+@w[03 Oct 18:20:07] @YSaraid (@GGeneral@Y) tells the CLAN: 'first ave maybe'
+@w[03 Oct 18:20:21] @YSaraid (@GGeneral@Y) tells the CLAN: 'detect hidden is necessary'
+@w[03 Oct 18:20:36] @RGlobal Quest@Y:@w Dejavu has completed @mGlobal Quest # 5437@w.
+@w[03 Oct 18:20:36] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 5437@w is now over.
+@w[03 Oct 18:20:44] @YDejavu (@GRecruit@Y) tells the CLAN: 'ugh it was hidden..lost the win :('
+@w[03 Oct 18:20:49] @YDejavu (@GRecruit@Y) tells the CLAN: 'tks tks'
+@w[03 Oct 18:21:04] @GCLAN: At-ten-tion! Brun is here to get some training done!
+@w[03 Oct 18:22:55] @RINFO: Trevana has followed the path and become a believer.@w
+@w[03 Oct 18:23:46] @RINFO: Radience embraces Wulfgar who died valiantly in combat against a dog salmon.@w
+@w[03 Oct 18:23:59] @RINFO: Kitrana is now a proven Art (of Melody) lover.@w
+@w[03 Oct 18:24:41] @YKitrana (@GRecruit@Y) tells the CLAN: 'i can't believe the melody goal'
+@w[03 Oct 18:24:52] @YZoth (@GRecruit@Y) tells the CLAN: 'gj'
+@w[03 Oct 18:24:59] @YDejavu (@GRecruit@Y) tells the CLAN: 'why'
+@w[03 Oct 18:25:26] @YKitrana (@GRecruit@Y) tells the CLAN: 'the goal was right next to the finish line'
+@w[03 Oct 18:26:01] @RINFO: All please welcome Rezok, Aardwolf's newest Eldar Avenger!@w
+@w[03 Oct 18:26:25] @RINFO: Gunners's blood is spilled by a bumblebee and 17 others and the earth runs crimson. @w
+@w[03 Oct 18:27:57] @YZoth (@GRecruit@Y) tells the CLAN: 'Heh that guy aoeing in tol got killed'
+@w[03 Oct 18:33:00] @G(Friend)@w: @CFeast has quit.
+@w[03 Oct 18:33:53] @RINFO: Neeper has been reborn as a Vampire Thief.@w
+@w[03 Oct 18:34:30] @RGlobal Quest@Y:@w @cGlobal quest # 5441@w has been declared for levels @c73@w to @c84@w - @c10 or fewer wins only@w.
+@w[03 Oct 18:34:30] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c87@w ticks.
+@w[03 Oct 18:34:30] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 5441@w' to take part.
+@w[03 Oct 18:35:01] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[03 Oct 18:35:17] @RINFO: Neeper has entered open PK (OPK) mode!@w
+@w[03 Oct 18:36:31] @RGlobal Quest@Y:@w @cGlobal quest # 5441@w for levels @c73@w to @c84@w - @c10 or fewer wins only@w has now started.
+@w[03 Oct 18:38:01] @G(Friend)@c: @CGorsk waves hello to Vost.
+@w[03 Oct 18:38:46] @G(Friend) Gorsk@c:@C '@x019| @WCredits:@R  155 @x019| @WRank:@R1 @x123[||||||||||||||||||||||||||||||||||||||||||||  ] @x019|@w'
+@w[03 Oct 18:38:53] @G(Friend) Gorsk@c:@C 'almost... :)'
+@w[03 Oct 18:39:16] @RINFO: All hail Trevana! Champion of Kimr's Farm!@w
+@w[03 Oct 18:39:37] @G(Friend) Gorsk@c:@C 'oh, i'm a dork. i should be redoing, not campaigning'
+@w[03 Oct 18:39:59] @G(Friend) Gorsk@c:@C 'force of habit :('
+@w[03 Oct 18:41:32] @RGlobal Quest@Y:@w @cGlobal quest # 5441@w has been cancelled due to lack of participants.
+@w[03 Oct 18:43:53] @Y(@GSpecial Ops@Y) CLAN: Zensch tickles Anssett.
+@w[03 Oct 18:46:05] @GCLAN: At-ten-tion! Polemides is here to get some training done!
+@w[03 Oct 18:49:23] @RINFO: Vandit has been reborn as a Vampire Mage.@w
+@w[03 Oct 18:49:23] @RINFO: Zensch has been reborn as a Vampire Ranger.@w
+@w[03 Oct 18:49:30] @RINFO: All please welcome Flaw back from tier creation!@w
+@w[03 Oct 18:49:33] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[03 Oct 18:49:46] @RINFO: Zensch has entered (HARDCORE) mode!@w
+@w[03 Oct 18:50:02] @RINFO: Vandit has entered open PK (OPK) mode!@w
+@w[03 Oct 18:50:40] @RINFO: Dartan has been reborn as a Vampire Ranger.@w
+@w[03 Oct 18:50:48] @RINFO: Dartan has entered open PK (OPK) mode!@w
+@w[03 Oct 18:50:56] @RGlobal Quest@Y:@w @gGlobal Quest # 5443@w has been won by @YZolstead@w - @Y289th@w win.
+@w[03 Oct 18:51:07] @G(Friend) Gorsk@c:@C 'so, just watched Disparu's review of robyn hood... *sighs*'
+@w[03 Oct 18:52:23] @G(Friend) Gorsk@c:@C 'it's getting worse and worse'
+@w[03 Oct 18:53:04] @GCLAN: At-ten-tion! Growltiger is here to get some training done!
+@w[03 Oct 18:53:05] @G(Friend) Gorsk@c:@C 'robyn (new spelling) is a black bisexual woman'
+@w[03 Oct 18:53:10] @G(Friend) Gorsk@c:@C 'no, it's canadian'
+@w[03 Oct 18:53:17] @Y(@GGeneral@Y) CLAN: Saraid squeals with delight at Growltiger.
+@w[03 Oct 18:53:34] @RINFO: 1 minute of bonus experience remaining.@w
+@w[03 Oct 18:53:47] @GMlactom Tech@w: @Chow do i successfully connect to aard on python? i just did it but the login screen came all garbled and it disconnected
+@w[03 Oct 18:53:48] @G(Friend) Gorsk@c:@C 'who like to break into places to make music videos while doing it'
+@w[03 Oct 18:54:34] @RINFO: Bonus experience has now expired.@w
+@w[03 Oct 18:54:39] @G(Friend) Gorsk@c:@C 'and in the first episode steals a car from the "bad guy" to pay for her mom's bail'
+@w[03 Oct 18:55:30] @G(Friend) Gorsk@c:@C 'the bad guy's a blond white guy, ofc'
+@w[03 Oct 18:55:39] @GMlactom Tech@w: @Cis there any way to do it?
+@w[03 Oct 18:55:59] @GCrowley Tech@w: @CHuh?
+@w[03 Oct 18:56:12] @GCrowley Tech@w: @CAre you talking about using a client based on python code?
+@w[03 Oct 18:56:14] @GAnssett Tech@w: @Clike, from the python shell?
+@w[03 Oct 18:56:25] @GMlactom Tech@w: @Ctelnetlib
+@w[03 Oct 18:56:33] @GMlactom Tech@w: @Cdo it using telnetlib
+@w[03 Oct 18:56:43] @GMlactom Tech@w: @Cor even better telnetlib3
+@w[03 Oct 18:57:13] @GCLAN: Brun falls out to take some much needed R & R.
+@w[03 Oct 18:57:17] @GCrowley Tech@w: @CAnd what is 'garbled'? Screenshot it?
+@w[03 Oct 18:57:19] @GAnssett Tech@w: @Cfrom the shell, or are you writing a python program/app/whatever they call it? i mean either way i can't help you
+@w[03 Oct 18:57:40] @GAnssett Tech@w: @Cif it's garbled i'm going to assume you're not using the correct decompression protocol or something
+@w[03 Oct 18:57:56] @G(Friend) Gorsk@c:@C 'and the 2 strongest people in the show are both girls who are about 5 feet tall and weigh 100 lbs soaking wet'
+@w[03 Oct 18:58:10] @GMlactom Tech@w: @Cgarbled as in all the characters are right but in a really strange order
+@w[03 Oct 18:58:18] @GVader Tech@w: @Cis it the linebreaks?
+@w[03 Oct 18:58:25] @GVader Tech@w: @Cor actually incorrect order.
+@w[03 Oct 18:58:30] @GMlactom Tech@w: @C'#############################################################################\n\r##[
+@w[03 Oct 18:58:41] @GAnssett Tech@w: @Cthat's not handling line breaks correctly then
+@w[03 Oct 18:58:47] @GTech@w:@C Crowley nods at Anssett.
+@w[03 Oct 18:58:49] @GAnssett Tech@w: @C\n\r are line break chards
+@w[03 Oct 18:58:52] @GVader Tech@w: @Cthat looks fine to me. Yeah
+@w[03 Oct 18:58:52] @GAnssett Tech@w: @Cchars*
+@w[03 Oct 18:58:55] @GMlactom Tech@w: @Cdid you get all that?
+@w[03 Oct 18:59:00] @GVader Tech@w: @Cyou just need to handle the line breaks.
+@w[03 Oct 18:59:02] @GAnssett Tech@w: @Ci think we got enough lol
+@w[03 Oct 18:59:07] @RINFO: HARDCORE Zensch has been killed by Dixon at level 5.@w
+@w[03 Oct 18:59:08] @RINFO: Zensch has entered open PK (OPK) mode!@w
+@w[03 Oct 18:59:13] @GAnssett Tech@w: @Cfix line breaks and see if that fixes your problem lol
+@w[03 Oct 18:59:20] @GMlactom Tech@w: @Chowwww
+@w[03 Oct 18:59:34] @GAnssett Tech@w: @Cno idea, i'm not the one working in python :D
+@w[03 Oct 18:59:37] @GRaiona Tech@w: @CIf you get it to interpret it as a string, it should handle it
+@w[03 Oct 18:59:41] @GCrowley Tech@w: @CIt's possible that it only looks for \r\n, and not \n\r? :p
+@w[03 Oct 18:59:43] @GRaiona Tech@w: @Cprint() and suchlike
+@w[03 Oct 18:59:48] @GMlactom Tech@w: @Cim pretty much fine with the messy asci
+@w[03 Oct 18:59:53] @GAnssett Tech@w: @Craiona, i know that some mud clients ahve issues with the order of line returns
+@w[03 Oct 18:59:57] @GVader Tech@w: @CI'd take the output, and put it into chatgpt and tell it to write a function to fix the new lines :D
+@w[03 Oct 19:00:01] @GVader Tech@w: @Cbut i'm a lazy developer
+@w[03 Oct 19:00:02] @GAnssett Tech@w: @Ci think fiendish was going back and forth with mudlet devs?
+@w[03 Oct 19:00:09] @GMlactom Tech@w: @Cbut it disconnects when i input
+@w[03 Oct 19:00:13] @RINFO: The player rankings have been updated.@w
+@w[03 Oct 19:00:20] @GCrowley Tech@w: @CI really want a screenshot, though. :(
+@w[03 Oct 19:00:22] @G(Friend) Gorsk@c:@C 'ok, that's it. i'm making an alias to rebuild my instinct. only have 1 friggin skill to change but game wants to charge me 1k trains if i don't wipe everything'
+@w[03 Oct 19:00:35] @GMlactom Tech@w: @Cim literally using the windows version of python 3.10.0
+@w[03 Oct 19:00:48] @GRaiona Tech@w: @CPretty sure python doesn't mind, though it might act strangely. if it's interpreting it as \n\r then it just isn't interpreting it
+@w[03 Oct 19:01:00] @GVader Tech@w: @Cwhat was the library to do this btw? I wanna play with aardwolf in python :D
+@w[03 Oct 19:01:14] @GMlactom Tech@w: @Ctelnetlib
+@w[03 Oct 19:01:17] @GVader Tech@w: @Cty <3
+@w[03 Oct 19:01:39] @GVader Tech@w: @Cis there a dump of all helpfiles somewhere?
+@w[03 Oct 19:01:46] @RGlobal Quest@Y:@w @cGlobal Quest # 5444@w has been won by @YAqilon@w - @Y11th@w win.
+@w[03 Oct 19:01:47] @GRaiona Tech@w: @CI wrote a client to connect to OneLife in python using telnetlib, so I have a little experience ^^
+@w[03 Oct 19:02:18] @GMlactom Tech@w: @Ctelnetlibs been deprecated tho
+@w[03 Oct 19:02:22] @GVader Tech@w: @C:(
+@w[03 Oct 19:02:31] @GMlactom Tech@w: @Ctelnetlib3 works tho
+@w[03 Oct 19:02:44] @GCrowley Tech@w: @CWhy use unsupported libraries?
+@w[03 Oct 19:02:46] @GRaiona Tech@w: @COh? Maybe I should try porting it ...
+@w[03 Oct 19:02:48] @GMlactom Tech@w: @Craiona - how do you do it
+@w[03 Oct 19:03:02] @GMlactom Tech@w: @Cim on 3.10 so its fine 
+@w[03 Oct 19:03:04] @GVader Tech@w: @Chow many tps to ask for a PR to update these libraries crowley?
+@w[03 Oct 19:03:15] @GMlactom Tech@w: @Cdeprecated 3.11 and slated for removal 3.13
+@w[03 Oct 19:03:22] @GCrowley Tech@w: @C200,000. 150,000 just to understand the code.
+@w[03 Oct 19:03:28] @GTech@w:@C Crowley blinks innocently.
+@w[03 Oct 19:03:32] @GNuanse Tech@w: @Caardwolf wiki has all of them
+@w[03 Oct 19:03:32] @GVader Tech@w: @CThat's a steal tbh
+@w[03 Oct 19:03:38] @GTech@w:@C Crowley nods at Vader.
+@w[03 Oct 19:03:39] @GNuanse Tech@w: @Ctalking about help
+@w[03 Oct 19:03:55] @GVader Tech@w: @CMeh, i have to scrape wiki
+@w[03 Oct 19:03:58] @GRaiona Tech@w: @Cmy code's all in telnetlib, not telnetlib3, but sending a command was ...  self.tn.write(cmd.encode())
+@w[03 Oct 19:04:01] @GCrowley Tech@w: @CI try to avoid things that are beyond my skill level, or research and disect existing code to make my stuff work.
+@w[03 Oct 19:04:19] @GVader Tech@w: @Cif i did that i'd never get anything done
+@w[03 Oct 19:04:21] @GMlactom Tech@w: @Cdoes anyone know any good browser-based telnet clients 
+@w[03 Oct 19:04:21] @GNuanse Tech@w: @Cand think, there is also shelp
+@w[03 Oct 19:04:25] @GVader Tech@w: @Ceverything is above my skill level :D
+@w[03 Oct 19:04:33] @GRaded Tech@w: @Cnot typing! you have that
+@w[03 Oct 19:04:43] @GVader Tech@w: @Cwho says i'm not using a voice to text?
+@w[03 Oct 19:04:46] @GRaiona Tech@w: @Cwhere cmd was a string. I think.
+@w[03 Oct 19:04:48] @GRaded Tech@w: @Cvoice to text is harder!
+@w[03 Oct 19:05:15] @GMushambo Tech@w: @CI usually defer to skynet for the first 70% of code, decide actually learning Lua is too much effort, and just give up :) several mini-games in the hopper if anyone's interested/bored/on speed
+@w[03 Oct 19:05:16] @GCrowley Tech@w: @CAardwolf just updated their browser client.
+@w[03 Oct 19:05:17] @GMlactom Tech@w: @Craiona i can use telnetlib wheres the code
+@w[03 Oct 19:05:17] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[03 Oct 19:05:29] @GMlactom Tech@w: @Chave you published it
+@w[03 Oct 19:05:38] @GRaiona Tech@w: @CGosh, I have a bunch of uncommitted changes even :/ No, it's not published
+@w[03 Oct 19:05:54] @GMlactom Tech@w: @C:(
+@w[03 Oct 19:05:56] @GVader Tech@w: @CI guess I found my new side project
+@w[03 Oct 19:06:00] @GMlactom Tech@w: @Ci am much sorrow
+@w[03 Oct 19:06:10] @RINFO: All please welcome Neira, Aardwolf's newest Diva Oracle!@w
+@w[03 Oct 19:06:28] @GMlactom Tech@w: @Cshellngn's paid 
+@w[03 Oct 19:06:43] @GMlactom Tech@w: @Cheroku needs adblock off
+@w[03 Oct 19:06:45] @GRaiona Tech@w: @Ca BUNCH of uncommitted changes. I don't know how long it'
+@w[03 Oct 19:06:49] @GVader Tech@w: @Cis there an easy command to see raw GMCP data?
+@w[03 Oct 19:06:52] @GRaiona Tech@w: @Cs going to take to even sort this out :/
+@w[03 Oct 19:06:55] @G(Friend)@w: @CGorsk has quit.
+@w[03 Oct 19:07:09] @RINFO: All please welcome Gorsk back from tier creation!@w
+@w[03 Oct 19:07:09] @G(Friend)@w: @CGorsk has entered Aardwolf.
+@w[03 Oct 19:07:55] @GNuanse Tech@w: @CBOT DETECTED
+@w[03 Oct 19:08:06] @GVader Tech@w: @Ci'm not a bot! yet.
+@w[03 Oct 19:08:06] @GRaiona Tech@w: @Cthere totally is, but I forgot it.
+@w[03 Oct 19:08:24] @GMlactom Tech@w: @CHELPFILES HELPFILES HELPFILE
+@w[03 Oct 19:08:39] @GVader Tech@w: @Cif i start yelling EXTERMINATE into tech, run.
+@w[03 Oct 19:08:40] @GCrowley Tech@w: @CVader: gmcpdebug 1 or gmcpdebug 2. gmcpdebug 0 to turn off.
+@w[03 Oct 19:08:47] @GVader Tech@w: @C<3 tyvm
+@w[03 Oct 19:08:51] @GLiber Tech@w: @Cwhen I checked the possibility to have a portable client in python, the main issue was the console screen. unless you want to do everything in curses, the other libraries I found were kind of unfit for something like the output window in mushclient.
+@w[03 Oct 19:08:53] @GNuanse Tech@w: @Ctried this command mlactom. didnt work
+@w[03 Oct 19:09:10] @RINFO: Light shines upon Dejavu, a beacon of hope for the people of Kul Tiras.@w
+@w[03 Oct 19:09:10] @GLiber Tech@w: @Cand damn if i'm doing it in curses.
+@w[03 Oct 19:09:11] @GMlactom Tech@w: @Cwhat command
+@w[03 Oct 19:09:35] @YDejavu (@GRecruit@Y) tells the CLAN: 'What does this do: You receive Ring of Purest Light from Rami. ?'
+@w[03 Oct 19:09:43] @YMadrox (@GGeneral@Y) tells the CLAN: 'put it on keyring'
+@w[03 Oct 19:09:46] @YTalbor (@GGeneral@Y) tells the CLAN: 'goal reward'
+@w[03 Oct 19:09:47] @YWinger (@GSoldier@Y) tells the CLAN: 'i stops the agro '
+@w[03 Oct 19:09:51] @YWinger (@GSoldier@Y) tells the CLAN: 'it'
+@w[03 Oct 19:09:53] @YMadrox (@GGeneral@Y) tells the CLAN: 'it stops kultiras from aggying you'
+@w[03 Oct 19:09:58] @GRaiona Tech@w: @CMine is totally in curses ... and interprests the map as a nethack style grid :)
+@w[03 Oct 19:10:03] @YDejavu (@GRecruit@Y) tells the CLAN: 'aah'
+@w[03 Oct 19:10:07] @YZoth (@GRecruit@Y) tells the CLAN: 'Sounds pretty good'
+@w[03 Oct 19:10:09] @YTalbor (@GGeneral@Y) tells the CLAN: 'if you do it good aligned'
+@w[03 Oct 19:10:10] @YDejavu (@GRecruit@Y) tells the CLAN: 'I thought it stopped aggro for all mobs hahaha'
+@w[03 Oct 19:10:10] @RINFO: Geril has been killed by a wailing spirit.@w
+@w[03 Oct 19:10:20] @GRaiona Tech@w: @Cthough onelife kind of lends itself to that
+@w[03 Oct 19:10:21] @YTalbor (@GGeneral@Y) tells the CLAN: 'if not they'll all aggy ya :P'
+@w[03 Oct 19:10:29] @YTalbor (@GGeneral@Y) tells the CLAN: 'does in that area'
+@w[03 Oct 19:10:35] @YDejavu (@GRecruit@Y) tells the CLAN: 'Your ring glows with a divine light, keeping a bat at bay.'
+@w[03 Oct 19:10:37] @YDejavu (@GRecruit@Y) tells the CLAN: 'nice :)'
+@w[03 Oct 19:10:40] @GVader Tech@w: @Cthere's a lot less in the GMCP than i thought
+@w[03 Oct 19:10:48] @YTalbor (@GGeneral@Y) tells the CLAN: 'ye p'
+@w[03 Oct 19:10:54] @YMadrox (@GGeneral@Y) tells the CLAN: 'make sure you keyr put ring'
+@w[03 Oct 19:10:55] @YWinger (@GSoldier@Y) tells the CLAN: 'don't lose it, you can't get another'
+@w[03 Oct 19:11:02] @YTalbor (@GGeneral@Y) tells the CLAN: 'finally did that yesterday tp'
+@w[03 Oct 19:11:05] @YWinger (@GSoldier@Y) tells the CLAN: 'can't get another yourself that is'
+@w[03 Oct 19:11:15] @YTalbor (@GGeneral@Y) tells the CLAN: 'thought you had to wear it, you don't?'
+@w[03 Oct 19:11:23] @YWinger (@GSoldier@Y) tells the CLAN: 'no'
+@w[03 Oct 19:11:26] @YTalbor (@GGeneral@Y) tells the CLAN: 'sweet'
+@w[03 Oct 19:11:28] @GMlactom Tech@w: @Cit isnt linebreaks 'o'
+@w[03 Oct 19:11:33] @YDejavu (@GRecruit@Y) tells the CLAN: 'i just do keyr put all every few minutes'
+@w[03 Oct 19:11:38] @YTalbor (@GGeneral@Y) tells the CLAN: 'i can delete my cexit hen'
+@w[03 Oct 19:11:43] @GCrowley Tech@w: @CBear in mind that you only see information if it gets updated.
+@w[03 Oct 19:12:02] @RINFO: All please welcome Gezi back from recreation!@w
+@w[03 Oct 19:12:04] @GVader Tech@w: @COooh ok
+@w[03 Oct 19:12:08] @GCLAN: At-ten-tion! Kanaye is here to get some training done!
+@w[03 Oct 19:12:19] @G(Friend)@c: @CGorsk waves hello to Kanaye.
+@w[03 Oct 19:12:28] @GMlactom Tech@w: @Cyou could just have it behave like default telnet
+@w[03 Oct 19:12:31] @GVader Tech@w: @C- 50
+@w[03 Oct 19:12:37] @GVader Tech@w: @Crip
+@w[03 Oct 19:12:42] @GMlactom Tech@w: @Cthough i doubt anyone actually uses that
+@w[03 Oct 19:12:42] @GCrowley Tech@w: @CYou can view the Proctols - GMCP page on the aardwiki to see a list of what GMCP data is available.
+@w[03 Oct 19:13:13] @GNuanse Tech@w: @CI played cs 15 years ago. Then I realized aardwolf has better graphics
+@w[03 Oct 19:13:21] @GCrowley Tech@w: @Chttps://www.aardwolf.com/wiki/index.php/Clients/GMCP
+@w[03 Oct 19:13:26] @GNuanse Tech@w: @Coops
+@w[03 Oct 19:13:33] @GRaiona Tech@w: @Cway better gpu optimization, imo.
+@w[03 Oct 19:13:53] @GVader Tech@w: @COoooh shiny page
+@w[03 Oct 19:13:56] @GVader Tech@w: @Cty crowley
+@w[03 Oct 19:15:33] @G(Friend)@c: @CGorsk comforts Kanaye.
+@w[03 Oct 19:15:45] @GTech@w:@C Crowley nods.
+@w[03 Oct 19:16:22] @G(Friend) Gorsk@c:@C 'i'm almost at r2 :D'
+@w[03 Oct 19:16:25] @G(Friend)@c: @CGorsk struts proudly.
+@w[03 Oct 19:18:20] @G(Friend) Gorsk@c:@C 'now i'll need to line up my redo with trans'
+@w[03 Oct 19:19:56] @RINFO: HARDCORE Nifto has been killed by Kers at level 3.@w
+@w[03 Oct 19:20:25] @RINFO: All please welcome Daimyo back from tier creation!@w
+@w[03 Oct 19:20:44] @RINFO: Nifto has entered open PK (OPK) mode!@w
+@w[03 Oct 19:24:34] @RINFO: A mountain fades as Saltmarsh dies to a hideously hairy spider and 4 others.@w
+@w[03 Oct 19:28:27] @GSaltmarsh questions 'Is there a trick to the dance satan stage of Gallows? I've danced and flee lots of times. Can I get a hint?'
+@w[03 Oct 19:28:47] @GTrEz answers 'dance is kill I think'
+@w[03 Oct 19:29:12] @RGlobal Quest@Y:@w @mGlobal Quest # 5448@w has been won by @YZoh@w - @Y96th@w win.
+@w[03 Oct 19:29:14] @YDejavu (@GRecruit@Y) tells the CLAN: 'how do I fish in kobaloi?'
+@w[03 Oct 19:29:21] @GSaltmarsh questions 'dance starts combat but if you kill him the task doesn't commplete'
+@w[03 Oct 19:29:35] @YDejavu (@GRecruit@Y) tells the CLAN: 'assuming it'll do something for the quest lol'
+@w[03 Oct 19:30:06] @GTrEz answers 'dance, kill'
+@w[03 Oct 19:30:12] @GTrEz answers 'wait for pop, kill (without dance)'
+@w[03 Oct 19:30:24] @GSelitos answers 'kill him slower perhaps? maybe killing him too fast for mobprog'
+@w[03 Oct 19:30:31] @RINFO: Zarat has been reborn as an Eldar Paladin.@w
+@w[03 Oct 19:30:52] @GSaltmarsh answers 'will try kill without eq on'
+@w[03 Oct 19:31:08] @RGlobal Quest@Y:@w @gGlobal Quest # 5451@w has been won by @YMadrox@w - @Y680th@w win.
+@w[03 Oct 19:31:20] @Y(@GSpecial Ops@Y) CLAN: Zensch claps at Madrox's performance.
+@w[03 Oct 19:32:01] @GSaltmarsh answers 'Have had a tell with a good hint thanks all.'
+@w[03 Oct 19:32:03] @G(Friend) Gorsk@c:@C 'ah, it feels nice campaigning again :)'
+@w[03 Oct 19:33:53] @CMlactom gossips 'im blind help me'
+@w[03 Oct 19:34:02] @CMlactom gossips 'im going tto die'
+@w[03 Oct 19:34:45] @RINFO: The valkyries come for Mlactom who was slain by a blue rune.@w
+@w[03 Oct 19:34:53] @C(Gossip) Ometotchtli gives Mlactom a nod, saying, "OK".
+@w[03 Oct 19:35:45] @CMlactom gossips 'god dammit'
+@w[03 Oct 19:36:12] @GCLAN: Polemides falls out to take some much needed R & R.
+@w[03 Oct 19:36:21] @C(Gossip) Ometotchtli comforts Mlactom.
+@w[03 Oct 19:37:11] @CMlactom gossips 'how do i get past the runes'
+@w[03 Oct 19:37:20] @CMlactom gossips 'kobold'
+@w[03 Oct 19:38:43] @RGlobal Quest@Y:@w @gGlobal quest # 5453@w has been declared for levels @g69@w to @g80@w.
+@w[03 Oct 19:38:43] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g98@w ticks.
+@w[03 Oct 19:38:43] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 5453@w' to take part.
+@w[03 Oct 19:38:50] @G(Friend) Gorsk@c:@C 'hmmm... something's wrong... i got what i thought were all my instincts back and for some reason i still have way too many trains'
+@w[03 Oct 19:39:02] @G(Friend) Gorsk@c:@C 'so i -must- be forgetting something but idk what :('
+@w[03 Oct 19:40:35] @G(Friend) Gorsk@c:@C 'oh, found it. it was protection evil'
+@w[03 Oct 19:40:43] @RGlobal Quest@Y:@w @gGlobal quest # 5453@w for levels @g69@w to @g80@w has now started.
+@w[03 Oct 19:42:11] @GCLAN: Abraxos falls out to take some much needed R & R.
+@w[03 Oct 19:42:47] @GPopa questions 'Question regarding Sahuagin. I've gotten to Cirdan Lossehelin, however, healing him appears to be an issue. I attempted poultice a number of times, yet he still died. Do I just need to spam more, or do I need to actually have the heal spell for it to work?'
+@w[03 Oct 19:43:39] @G(Friend)@c: @CSmiling, Yerald greets everyone warmly.
+@w[03 Oct 19:43:42] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[03 Oct 19:43:56] @RINFO: All please welcome Noelle, Aardwolf's newest Shadow Necromancer!@w
+@w[03 Oct 19:45:05] @RGlobal Quest@Y:@w @gGlobal Quest # 5453@w has been won by @YQuantumn@w - @Y145th@w win.
+@w[03 Oct 19:45:05] @RGlobal Quest@Y:@w @gGlobal Quest # 5453@w will go into extended time for 5 more minutes.
+@w[03 Oct 19:45:53] @RGlobal Quest@Y:@w Porcius has completed @gGlobal Quest # 5453@w.
+@w[03 Oct 19:45:53] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 5453@w is now over.
+@w[03 Oct 19:45:59] @GOgreskull answers 'yes, spam more, yes, heal spell makes this easier and I don't know iif anyone can tell you specifically if poultice can output enough healing'
+@w[03 Oct 19:46:20] @RINFO: Mlactom has been removed from this realm by a violent gale.@w
+@w[03 Oct 19:46:52] @GPopa questions 'I assumed, I just wasn't sure if it was programmed to key off that specific skill or if any healing would work. Thanks :)'
+@w[03 Oct 19:47:01] @GOgreskull answers 'I can confirm the goal was completable in the last year or so, when I completed the goal, but I did have all the remorts under my belt at t9'
+@w[03 Oct 19:47:07] @GOgreskull answers 'maybe it needs heal, we don't know'
+@w[03 Oct 19:47:37] @GPopa questions 'Yeah, no worries.'
+@w[03 Oct 19:51:11] @CMlactom gossips 'OH LORD'
+@w[03 Oct 19:51:22] @CMlactom gossips 'HELP'
+@w[03 Oct 19:51:30] @CMlactom gossips 'please'
+@w[03 Oct 19:51:33] @CMlactom gossips 'the runes'
+@w[03 Oct 19:51:40] @CMlactom gossips 'kobold'
+@w[03 Oct 19:52:33] @CMlactom gossips 'oooo i can recal out of combat?!'
+@w[03 Oct 19:52:42] @CGrrdy gossips 'You can indeed!'
+@w[03 Oct 19:52:50] @CGorsk gossips 'yes, there's just a chance of failure'
+@w[03 Oct 19:52:51] @CPorcius gossips 'as long as you are not curse and the room is not norecall'
+@w[03 Oct 19:53:25] @CMlactom gossips 'even when blind?'
+@w[03 Oct 19:53:39] @CGorsk gossips 'yes'
+@w[03 Oct 19:53:57] @CMlactom gossips 'so i cant flee but i can recal'
+@w[03 Oct 19:56:16] @GCLAN: Winger falls out to take some much needed R & R.
+@w[03 Oct 19:57:00] @RGlobal Quest@Y:@w @gGlobal Quest # 5457@w has been won by @YGorsk@w - @Y1159th@w win.
+@w[03 Oct 19:57:00] @RGlobal Quest@Y:@w @gGlobal Quest # 5457@w will go into extended time for 5 more minutes.
+@w[03 Oct 19:57:17] @GCLAN: At-ten-tion! Serinqua is here to get some training done!
+@w[03 Oct 19:58:36] @CMlactom gossips 'help realenglich scarred me for life'
+@w[03 Oct 19:58:59] @RGlobal Quest@Y:@w Dartan has completed @gGlobal Quest # 5457@w.
+@w[03 Oct 19:58:59] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 5457@w is now over.
+@w[03 Oct 19:59:11] @CRhavage gossips 'Anybody know where the mob fransica yituera is? Room is bedroom.'
+@w[03 Oct 19:59:18] @CMlactom gossips 'who has th best potions'
+@w[03 Oct 19:59:27] @CRhavage gossips 'gonna be a low lev mob'
+@w[03 Oct 20:00:12] @RINFO: The player rankings have been updated.@w
+@w[03 Oct 20:10:52] @RINFO: All please welcome Alexeymm, Aardwolf's newest Elf Hunter!@w
+@w[03 Oct 20:22:11] @GYtrams questions 'How to move inside area in The Stuff of Shadows? Stuck in first 4 rooms'
+@w[03 Oct 20:22:52] @GTrevana answers 'say stuff of shadows'
+@w[03 Oct 20:23:20] @GPorcius answers 'say shadows to Magister'
+@w[03 Oct 20:23:30] @GTrevana answers 'then give him gold'
+@w[03 Oct 20:23:40] @GPorcius answers 'then give 5000 to him'
+@w[03 Oct 20:24:01] @RINFO: Limea has been killed by a lazy pirate and 1 other.@w
+@w[03 Oct 20:24:07] @GTrevana answers 'nod porcius'
+@w[03 Oct 20:24:49] @GYtrams questions 'thanks!!!'
+@w[03 Oct 20:25:11] @RINFO: Aziki took down the law in the City of Gold!@w
+@w[03 Oct 20:27:42] @RINFO: Zoth has been reborn as a Triton Cleric.@w
+@w[03 Oct 20:28:44] @GCLAN: KumoGami falls out to take some much needed R & R.

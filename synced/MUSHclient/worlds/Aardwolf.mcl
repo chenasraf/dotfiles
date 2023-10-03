@@ -1173,6 +1173,10 @@ end</send>
    muclient_version="5.07-pre"
    world_file_version="15"
   >
+  <timer enabled="y" minute="10" second="0.00" offset_second="0.00" group="keepawake" >
+  <send>;</send>
+
+  </timer>
 </timers>
 
 <!-- macros -->
