@@ -15441,3 +15441,173 @@
 @w[03 Oct 20:25:11] @RINFO: Aziki took down the law in the City of Gold!@w
 @w[03 Oct 20:27:42] @RINFO: Zoth has been reborn as a Triton Cleric.@w
 @w[03 Oct 20:28:44] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[03 Oct 23:48:02] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[03 Oct 23:48:20] @YYou tell the CLAN: 'hi boot'
+@w[03 Oct 23:48:25] @G(Friend)@c: @CYou wave.
+@w[03 Oct 23:48:38] @G(Friend)@c: @CGorsk smiles at you.
+@w[03 Oct 23:52:47] @G(Friend)@c: @CGorsk thanks Cide heartily.
+@w[03 Oct 23:52:50] @GYou tell your friends@c: @C'greet Gorsk'
+@w[03 Oct 23:52:54] @G(Friend)@c: @CYou smile at Gorsk and greet him warmly.
+@w[03 Oct 23:55:42] @GShadedancer questions 'why does treating wounds take moves?'
+@w[03 Oct 23:55:42] @RINFO: Quroz has been killed by a slithering cobra and 2 others.@w
+@w[03 Oct 23:55:56] @RINFO: Cide has removed himself from the (OPK) victim pool!@w
+@w[03 Oct 23:56:18] @GMyth questions 'because you do it without magic'
+@w[03 Oct 23:56:30] @GAeoln answers 'its an action, but just use pots'
+@w[03 Oct 23:56:34] @GShadedancer questions 'ok'
+@w[03 Oct 23:56:44] @GYhtaa answers 'moves are kind of warriors mana'
+@w[03 Oct 23:57:32] @GCLAN: At-ten-tion! Roume is here to get some training done!
+@w[03 Oct 23:57:44] @YRoume (@GGeneral@Y) tells the CLAN: 'hi boots. just lgoging in'
+@w[03 Oct 23:59:08] @GCLAN: At-ten-tion! Grindcore is here to get some training done!
+@w[03 Oct 23:59:22] @RINFO: HARDCORE Breathe has been killed by Kortai at level 32.@w
+@w[04 Oct 00:00:12] @RINFO: The player rankings have been updated.@w
+@w[04 Oct 00:02:35] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[04 Oct 00:04:32] @RINFO: Breathe has entered open PK (OPK) mode!@w
+@w[04 Oct 00:04:32] @YYou tell the CLAN: 'Hi'
+@w[04 Oct 00:06:35] @RINFO: 1 minute of bonus experience remaining.@w
+@w[04 Oct 00:06:53] @GPopa questions 'Question regarding Sahuagin. I've gotten to Cirdan Lossehelin, however, healing him appears to be an issue. I attempted poultice'
+@w[04 Oct 00:07:06] @GPopa questions 'Ignore me. Copy paste bad.'
+@w[04 Oct 00:07:36] @RINFO: Bonus experience has now expired.@w
+@w[04 Oct 00:10:05] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[04 Oct 00:12:24] @GCLAN: At-ten-tion! Blunt is here to get some training done!
+@w[04 Oct 00:12:32] @YBlunt (@GSpecial Ops@Y) tells the CLAN: 'lo'
+@w[04 Oct 00:12:44] @YYou tell the CLAN: 'hey Blunt'
+@w[04 Oct 00:13:01] @CThe Earl of Aardington says, @c"@CGreetings, KumoGami, welcome to my family's manor.@c"
+@w[04 Oct 00:13:01] @CThe Earl of Aardington says, @c"@CYou have an intelligent look about you, and I am in need of someone quick-witted to help with a few jobs around the estate. If you are willing, know that I will pay well. To help me out, please @Rsay yes@w.@c"
+@w[04 Oct 00:13:39] @RINFO: Saltmarsh has freed Gallows Hill from the shadow of evil!@w
+@w[04 Oct 00:16:51] @RINFO: All please welcome Jagladash back from recreation!@w
+@w[04 Oct 00:20:16] @CBeatrice asks, @c"@CHi, I'm Beatrice. Who are you?@c"
+@w[04 Oct 00:20:16] @CBeatrice asks, @c"@CNice to meet you, KumoGami. Perhaps you would like to know more about Sargasso?@c"
+@w[04 Oct 00:20:16] @CBeatrice says, @c"@CYou can say 'Cathedral', 'Castle', or 'Mine' to be sent to those parts of DSR.@c"
+@w[04 Oct 00:20:31] @CBeatrice asks, @c"@CHi, I'm Beatrice. Who are you?@c"
+@w[04 Oct 00:20:31] @CBeatrice asks, @c"@CNice to meet you, KumoGami. Perhaps you would like to know more about Sargasso?@c"
+@w[04 Oct 00:20:31] @CBeatrice says, @c"@CYou can say 'Cathedral', 'Castle', or 'Mine' to be sent to those parts of DSR.@c"
+@w[04 Oct 00:20:31] @CYou say 'castle'
+@w[04 Oct 00:20:35] @RINFO: A mountain fades as Saltmarsh dies to some sticky cobwebs and 3 others.@w
+@w[04 Oct 00:20:53] @CA bounty hunter says, @c"@CSo have you heard the news? Nawibo the legendary warrior is seeking to @Roverthrow the Imperial nation@C. If you find him, there is a huge bounty on his head, and I'm willing to give you a portion.@c"
+@w[04 Oct 00:20:53] @RINFO: The valkyries come for Draoli who was slain by a sly fox and 1 other.@w
+@w[04 Oct 00:21:31] @CA bounty hunter says, @c"@CSo have you heard the news? Nawibo the legendary warrior is seeking to @Roverthrow the Imperial nation@C. If you find him, there is a huge bounty on his head, and I'm willing to give you a portion.@c"
+@w[04 Oct 00:22:17] @RINFO: The last post plays mournfully as KumoGami falls in battle to a practicing Templar.@w
+@w[04 Oct 00:23:24] @GKulton questions 'is there a hotkey to close pop-up help windows?'
+@w[04 Oct 00:23:29] @GElshar questions 'complete'
+@w[04 Oct 00:24:57] @GKulton questions 'I don't see a 'complete' key on my keyboard..'
+@w[04 Oct 00:25:48] @CA burly worker says 'Work Work Work..lift this..lift that..that's all I do at this lousy job...'
+@w[04 Oct 00:25:57] @RINFO: Draoli is a member of Robin Hood's Merry Band of Outlaws.@w
+@w[04 Oct 00:26:06] @RGlobal Quest@Y:@w @gGlobal Quest # 5503@w has been won by @YVettir@w - @Y147th@w win.
+@w[04 Oct 00:26:09] @GCLAN: Lepdar falls out to take some much needed R & R.
+@w[04 Oct 00:26:33] @GGorsk answers 'you should have a custom keyboard made and problem solved'
+@w[04 Oct 00:26:52] @CGaloran asks, @c"@CWould you be willing to help me with a problem in South Berwick?@c"
+@w[04 Oct 00:27:10] @GKulton questions 'alright. I will try to shop arond for one first.'
+@w[04 Oct 00:31:12] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[04 Oct 00:36:57] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[04 Oct 00:37:16] @GSleever questions 'anyone have a sec to talk call of heros? pls send a tell'
+@w[04 Oct 00:38:05] @GCide answers 'is it goal related?'
+@w[04 Oct 00:38:29] @GSleever questions 'campaign'
+@w[04 Oct 00:38:39] @GCide answers 'oh what ya looking for in there?'
+@w[04 Oct 00:39:27] @RGlobal Quest@Y:@w @mGlobal Quest # 5505@w has been won by @YQuroz@w - @Y7th@w win.
+@w[04 Oct 00:39:27] @RGlobal Quest@Y:@w @mGlobal Quest # 5505@w will go into extended time for 5 more minutes.
+@w[04 Oct 00:39:48] @GSleever questions 'bar manservant, pretty sure ive been in every room, just looking for a hint'
+@w[04 Oct 00:39:51] @RINFO: Rusky has been removed from this realm by a young morgrat and 1 other.@w
+@w[04 Oct 00:40:03] @RINFO: The valkyries come for Draoli who was slain by an actor's bodyguard.@w
+@w[04 Oct 00:40:11] @GDar answers 'did you check behind the bar?'
+@w[04 Oct 00:40:22] @GCide answers 'oh thats behind a hidden door'
+@w[04 Oct 00:40:33] @RGlobal Quest@Y:@w Vettir has completed @mGlobal Quest # 5505@w.
+@w[04 Oct 00:40:33] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 5505@w is now over.
+@w[04 Oct 00:41:26] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[04 Oct 00:41:32] @GSleever questions 'i thought i found them all, ok i'll check again. thx'
+@w[04 Oct 00:41:56] @GCide answers 'east of that dominic guy'
+@w[04 Oct 00:43:07] @RINFO: Roebart has been reborn as a Vampire Thief.@w
+@w[04 Oct 00:43:38] @RINFO: Roebart has entered open PK (OPK) mode!@w
+@w[04 Oct 00:44:16] @GSleever questions 'thanks i'll check it out!'
+@w[04 Oct 00:47:28] @RINFO: Draoli has been killed by an actor's bodyguard and 1 other.@w
+@w[04 Oct 00:52:31] @CA bounty hunter says, @c"@CSo have you heard the news? Nawibo the legendary warrior is seeking to @Roverthrow the Imperial nation@C. If you find him, there is a huge bounty on his head, and I'm willing to give you a portion.@c"
+@w[04 Oct 00:53:18] @CFred the tavernkeeper boggles, @c"@CThat darned T-rex!  Roaring and stamping and causing a ruckus! How is anyone supposed to conduct a business around here, I ask you?!@c"
+@w[04 Oct 00:53:18] @CFred the tavernkeeper exclaims, @c"@CThere's another big one.  You've gotta help us out here.  The last three men we sent up there never came back, but you look like you're made of sturdier stuff.  Besides, I expect you're fast on your feet, all the better for running away!@c"
+@w[04 Oct 00:53:18] @CFred the tavernkeeper exclaims, @c"@CSo, what about it?  Will ya help us out?  Give us a bellow if you will!@c"
+@w[04 Oct 00:57:46] @CA raccoon says 'Your purity sickens me, KumoGami.'
+@w[04 Oct 01:00:12] @RINFO: The player rankings have been updated.@w
+@w[04 Oct 01:00:19] @CJinky says, @c"@CPlease send my apologies to Shay, I did not mean to take this.@c"
+@w[04 Oct 01:00:28] @GCLAN: At-ten-tion! Anssett is here to get some training done!
+@w[04 Oct 01:01:01] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'evenin folks'
+@w[04 Oct 01:01:02] @CThe Gateguard exclaims, @c"@CWelcome to the fair!@c"
+@w[04 Oct 01:01:02] @CThe Gateguard exclaims, @c"@CYou'll find lots of excitement here. Don't miss the tournament!@c"
+@w[04 Oct 01:01:02] @CThe Gateguard says, @c"@CI can never remember the rest of my lines...@c"
+@w[04 Oct 01:06:30] @Y(@GCorpsman@Y) CLAN: Smiling, Kalimbog greets Anssett warmly.
+@w[04 Oct 01:06:49] @RINFO: Dharca has restored peace and quiet to Hotel Orlando!@w
+@w[04 Oct 01:07:44] @RINFO: The last post plays mournfully as KumoGami falls in battle to a thicket of roses and 2 others.@w
+@w[04 Oct 01:08:56] @RINFO: You hear a loud scream as Elshar is brutally killed by a lab guard.@w
+@w[04 Oct 01:09:08] @RGlobal Quest@Y:@w @gGlobal Quest # 5511@w has been won by @YPhotai@w - @Y123rd@w win.
+@w[04 Oct 01:09:08] @RGlobal Quest@Y:@w @gGlobal Quest # 5511@w will go into extended time for 5 more minutes.
+@w[04 Oct 01:09:30] @G(Friend) Gorsk@c:@C 'talking about health shards?'
+@w[04 Oct 01:09:51] @G(Friend) Gorsk@c:@C 'what do those do?'
+@w[04 Oct 01:10:08] @G(Friend) Gorsk@c:@C 'that's pretty good'
+@w[04 Oct 01:10:39] @G(Friend) Gorsk@c:@C 'much better than inc pots'
+@w[04 Oct 01:10:43] @G(Friend) Gorsk@c:@C 'can they be farmed?'
+@w[04 Oct 01:11:13] @G(Friend) Gorsk@c:@C 'i was about to ask... :('
+@w[04 Oct 01:11:44] @G(Friend) Gorsk@c:@C 'oic. one of those'
+@w[04 Oct 01:11:57] @G(Friend) Gorsk@c:@C 'just trans or trans/terra/titan?'
+@w[04 Oct 01:12:19] @G(Friend)@c: @CGorsk is agreeing with that Cide person again...
+@w[04 Oct 01:12:21] @RGlobal Quest@Y:@w Saltmarsh has completed @gGlobal Quest # 5511@w.
+@w[04 Oct 01:12:21] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 5511@w is now over.
+@w[04 Oct 01:14:08] @CBeatrice asks, @c"@CHi, I'm Beatrice. Who are you?@c"
+@w[04 Oct 01:14:08] @CBeatrice asks, @c"@CNice to meet you, KumoGami. Perhaps you would like to know more about Sargasso?@c"
+@w[04 Oct 01:14:08] @CBeatrice says, @c"@CYou can say 'Cathedral', 'Castle', or 'Mine' to be sent to those parts of DSR.@c"
+@w[04 Oct 01:14:08] @CYou say 'castle'
+@w[04 Oct 01:15:09] @RINFO: Knights race from the stronghold to avenge the death of Spank to a gardener and 2 others.@w
+@w[04 Oct 01:15:14] @G(Friend) Gorsk@c:@C 'oops, forgot that i'm a psi, now. got confused for a sec when "con all" didn't start me backstabbing'
+@w[04 Oct 01:17:34] @G(Friend) Gorsk@c:@C 'join light, have them tell you, leave. problem solved'
+@w[04 Oct 01:17:49] @CJenny, the tavern owner exclaims, @c"@CKumoGami! I need your help!@c"
+@w[04 Oct 01:17:49] @CJenny, the tavern owner exclaims, @c"@CPlease, say you'll help me. I'm in dire need!@c"
+@w[04 Oct 01:18:06] @CJenny, the tavern owner exclaims, @c"@CKumoGami! I need your help!@c"
+@w[04 Oct 01:18:06] @CJenny, the tavern owner exclaims, @c"@CPlease, say you'll help me. I'm in dire need!@c"
+@w[04 Oct 01:18:22] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[04 Oct 01:18:22] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[04 Oct 01:18:22] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[04 Oct 01:18:53] @CAn old gardener says 'If you want to know more about the bride just ask.'
+@w[04 Oct 01:19:14] @G(Friend) Gorsk@c:@C 'note said it was stupidly easy and alot of people overlook it, iirc. not sure that qualifies'
+@w[04 Oct 01:19:51] @G(Friend)@c: @CGorsk assassinates Terra.
+@w[04 Oct 01:20:54] @CTzar Vislav says, @c"@CWelcome back to my realm, KumoGami.@c"
+@w[04 Oct 01:21:10] @G(Friend) Gorsk@c:@C 'why alot of trouble?'
+@w[04 Oct 01:22:06] @G(Friend) Gorsk@c:@C 'can't remove em?'
+@w[04 Oct 01:22:31] @YKalimbog (@GCorpsman@Y) tells the CLAN: 'is there a way to flag all of lemdagor no recall/ no portal so i can limit what mapper tries to use to elave the area, or do i have to flag every room manually'
+@w[04 Oct 01:22:38] @G(Friend) Gorsk@c:@C 'so make a trigger with the wish?'
+@w[04 Oct 01:22:42] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'AFAIK, you just have to keep flagging.'
+@w[04 Oct 01:22:50] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[04 Oct 01:22:50] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Although using "recon" will mark the room.'
+@w[04 Oct 01:23:08] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'ah. Too low for recon though.'
+@w[04 Oct 01:23:11] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[04 Oct 01:23:20] @YKalimbog (@GCorpsman@Y) tells the CLAN: 'i mean i can do it when i get there just to make life easier, its painful every remort'
+@w[04 Oct 01:23:34] @G(Friend) Gorsk@c:@C 'does it have to be 1v1? or can you bring friends?'
+@w[04 Oct 01:23:38] @YYou tell the CLAN: 'anyone know which area "a dangling cage" is in?'
+@w[04 Oct 01:23:43] @YKalimbog (@GCorpsman@Y) tells the CLAN: 'good to know about recon, thanks'
+@w[04 Oct 01:23:51] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Looks like siege camp.'
+@w[04 Oct 01:23:54] @G(Friend) Gorsk@c:@C 'that seems pretty good'
+@w[04 Oct 01:23:56] @YYou tell the CLAN: 'ty'
+@w[04 Oct 01:24:44] @G(Friend) Gorsk@c:@C 'heh'
+@w[04 Oct 01:25:02] @G(Friend) Gorsk@c:@C 'is he awe'able?'
+@w[04 Oct 01:25:14] @G(Friend) Gorsk@c:@C 'no pacify, either?'
+@w[04 Oct 01:25:20] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Oh, yeah. Anyone need a honeycomb portal?'
+@w[04 Oct 01:25:41] @G(Friend) Gorsk@c:@C 'i've done the epic like 4-5 times. idk the things there too well'
+@w[04 Oct 01:25:48] @G(Friend) Gorsk@c:@C 'i just usually do what people tell me'
+@w[04 Oct 01:25:59] @w*Click*, the cage door opens.
+@w[04 Oct 01:26:38] @G(Friend) Gorsk@c:@C 'and then you win?'
+@w[04 Oct 01:26:49] @G(Friend)@c: @CGorsk struts proudly.
+@w[04 Oct 01:27:16] @G(Friend)@c: @CGorsk wields a hammer and gets ready to heal.
+@w[04 Oct 01:27:39] @RGlobal Quest@Y:@w @gGlobal Quest # 5514@w has been won by @YQuroz@w - @Y8th@w win.
+@w[04 Oct 01:27:39] @RGlobal Quest@Y:@w @gGlobal Quest # 5514@w will go into extended time for 5 more minutes.
+@w[04 Oct 01:28:02] @RGlobal Quest@Y:@w Zarat has completed @gGlobal Quest # 5514@w.
+@w[04 Oct 01:28:26] @G(Friend) Gorsk@c:@C 'hell, that's probably how long it took me to kill the shadow's end boss. my own damn fault, i guess. shouldn't have gone in as a pthi'
+@w[04 Oct 01:28:48] @RINFO: Virion is sent with a blood curdling scream by a sunflower and 3 others to meet Taboo.@w
+@w[04 Oct 01:28:52] @GCLAN: At-ten-tion! Mandibular is here to get some training done!
+@w[04 Oct 01:28:59] @G(Friend) Gorsk@c:@C 'if i had something other than spiral, it would've been much easier'
+@w[04 Oct 01:29:39] @RGlobal Quest@Y:@w Grbano has completed @gGlobal Quest # 5514@w.
+@w[04 Oct 01:29:39] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 5514@w is now over.
+@w[04 Oct 01:31:38] @G(Friend) Gorsk@c:@C 'and there's a mob that appears that heals him, so you gotta switch to her til she leaves but killing her at rogue speed is awful and she tends to restore herself before you can kill her'
+@w[04 Oct 01:32:08] @C(@MWanGrp?!@C)@M [@wL201,@G1056@w,M+6/T9@M] Cide raises his hand.
+@w[04 Oct 01:32:20] @G(Friend) Gorsk@c:@C 'i burned through like 600 potions killing him'
+@w[04 Oct 01:32:31] @G(Friend) Gorsk@c:@C 'level 60 heals but still'
+@w[04 Oct 01:33:28] @G(Friend) Gorsk@c:@C 'sort of'
+@w[04 Oct 01:34:10] @G(Friend) Gorsk@c:@C 'i brewed some incs that i dropped on the floor to not have em get vaped when i got hit with spells'
+@w[04 Oct 01:34:24] @G(Friend) Gorsk@c:@C 'and when i finished, i tried to go back to get em'
+@w[04 Oct 01:34:35] @G(Friend) Gorsk@c:@C 'but it wouldn't let me back into the room'
+@w[04 Oct 01:34:58] @G(Friend) Gorsk@c:@C 'so idk if it will if i'm grouped with someone doing the goal or if you need someone who hasn't done the goal to go with you'
+@w[04 Oct 01:35:28] @GCLAN: KumoGami falls out to take some much needed R & R.

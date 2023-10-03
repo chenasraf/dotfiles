@@ -624,19 +624,46 @@ end</send>
    send_to="12"
    sequence="100"
   >
-  <send>local dir = "%2"
+  <send>require "gmcphelper"
+require "wait"
+
+local opposites = {
+  ["w"] = "e",
+  ["e"] = "w",
+  ["s"] = "n",
+  ["n"] = "s",
+  ["u"] = "d",
+  ["d"] = "u",
+}
+
+local dir = "%2"
 local unlock = string.lower("%1") == "u"
+local oppDir = opposites[dir]
+local curRid = gmcp("room.info.num")
 
 local cmd = "mapper cexit "
+local oppCmd = "mapper fullcexit {"
 
 if unlock == true then
   cmd = "mapper cexit_wait 7;" .. cmd
   cmd = cmd .. "cast knock " .. dir .. ";;"
+  oppCmd = oppCmd .. "cast knock " .. oppDir .. ";;"
 end
 
 cmd = cmd .. "open " .. dir .. ";;" .. dir
+oppCmd = oppCmd .. "open " .. oppDir .. ";;" .. oppDir
 
-Execute(cmd)</send>
+wait.make(function()
+  Execute(cmd)
+  wait.time(unlock and 7 or 2)
+  local newRid = gmcp("room.info.num")
+  if curRid == newRid then
+    ColourNote("red", "", "mapper cexit didn't work, not adding opposite side")
+  else
+    oppCmd = oppCmd .. "} " .. newRid .. " " .. curRid .. " 0"
+    Execute(oppCmd)
+  end
+end)</send>
   </alias>
   <alias
    match="^mc (.+)$"
@@ -1173,8 +1200,9 @@ end</send>
    muclient_version="5.07-pre"
    world_file_version="15"
   >
-  <timer enabled="y" minute="10" second="0.00" offset_second="0.00" group="keepawake" >
-  <send>;</send>
+  <timer enabled="y" minute="10" second="0.00" offset_second="0.00"    send_to="12"
+group="keepawake" >
+  <send>Send("")</send>
 
   </timer>
 </timers>
