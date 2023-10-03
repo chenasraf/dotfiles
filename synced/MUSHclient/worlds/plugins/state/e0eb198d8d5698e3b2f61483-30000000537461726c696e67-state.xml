@@ -1581,11 +1581,11 @@
     min = 30,
     },
   }</variable>
-  <variable name="mcvar_cp_level_taken">78</variable>
+  <variable name="mcvar_cp_level_taken">0</variable>
   <variable name="mcvar_gq_info_efflvl">78</variable>
   <variable name="mcvar_gqid_extended">-1</variable>
   <variable name="mcvar_gqid_joined">-1</variable>
-  <variable name="mcvar_gqid_started">5250</variable>
+  <variable name="mcvar_gqid_started">5383</variable>
   <variable name="mcvar_qt_areaName"></variable>
   <variable name="mcvar_qt_arid"></variable>
   <variable name="mcvar_qt_mob"></variable>

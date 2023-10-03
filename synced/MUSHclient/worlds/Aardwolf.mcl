@@ -934,6 +934,25 @@ dinv organize type potion</send>
   <send>prc;cp r</send>
   </alias>
   <alias
+   match="peter *"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local cmd = "%1"
+
+if cmd == "summon" or cmd == "su" then
+  Send("cast dust PeterParker")
+elseif cmd == "stay" or cmd == "s" then
+  Send("order peter sleep")
+elseif cmd == "come" or cmd == "c" then
+  Send("order peter wake")
+  Send("heel")
+elseif cmd == "find" or cmd == "f" then
+  Send("hunt PeterParker")
+end</send>
+  </alias>
+  <alias
    match="port *"
    enabled="y"
    group="mapper"
