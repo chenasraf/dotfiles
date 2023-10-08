@@ -19,14 +19,17 @@
   <variable name="last_installed_version">5.99</variable>
   <variable name="mcvar_anex_tnl_cutoff">0</variable>
   <variable name="mcvar_areaStartRooms">{
+  logging = {
+    roomid = "31254",
+    },
+  fortress = {
+    roomid = "31834",
+    },
   vlad = {
     roomid = "16020",
     },
   coral = {
     roomid = "4583",
-    },
-  fortress = {
-    roomid = "31834",
     },
   }</variable>
   <variable name="mcvar_area_range">{
@@ -1581,11 +1584,11 @@
     min = 30,
     },
   }</variable>
-  <variable name="mcvar_cp_level_taken">90</variable>
+  <variable name="mcvar_cp_level_taken">0</variable>
   <variable name="mcvar_gq_info_efflvl">74</variable>
   <variable name="mcvar_gqid_extended">-1</variable>
   <variable name="mcvar_gqid_joined">-1</variable>
-  <variable name="mcvar_gqid_started">6034</variable>
+  <variable name="mcvar_gqid_started">6590</variable>
   <variable name="mcvar_qt_areaName"></variable>
   <variable name="mcvar_qt_arid"></variable>
   <variable name="mcvar_qt_mob"></variable>

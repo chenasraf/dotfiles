@@ -597,7 +597,7 @@ end</send>
   <send>dinv organize;dinv get oninv</send>
   </alias>
   <alias
-   match="^(sp|spe|spell|spells)$"
+   match="^(sp|spe|spell|spells)( .+)?$"
    enabled="y"
    group="spellbook"
    regexp="y"
@@ -610,7 +610,7 @@ spWin = ThemedTextWindow("spWin", 200, 200, 600, 500, "Spellbook", "center", tru
 
 EnableTriggerGroup("spellbook")
 spWinData = {}
-Send("spells")
+Send("spells%2")
 </send>
   </alias>
   <alias
