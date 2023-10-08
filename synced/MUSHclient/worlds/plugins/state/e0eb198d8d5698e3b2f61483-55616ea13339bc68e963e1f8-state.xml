@@ -112,19 +112,19 @@
   channels_table.globalecho = {}
     channels_table.globalecho.echo = true</variable>
   <variable name="nonchannels_table">nonchannels_table = {}
+  nonchannels_table.raidinfo = {}
+    nonchannels_table.raidinfo.echo = true
   nonchannels_table.claninfo = {}
     nonchannels_table.claninfo.echo = true
-  nonchannels_table.clan_donations = {}
-    nonchannels_table.clan_donations.echo = true
-  nonchannels_table.global_quest = {}
-    nonchannels_table.global_quest.echo = true
   nonchannels_table.info = {}
     nonchannels_table.info.echo = true
-  nonchannels_table.remort_auction = {}
-    nonchannels_table.remort_auction.echo = true
+  nonchannels_table.global_quest = {}
+    nonchannels_table.global_quest.echo = true
   nonchannels_table.warfare = {}
     nonchannels_table.warfare.echo = true
-  nonchannels_table.raidinfo = {}
-    nonchannels_table.raidinfo.echo = true</variable>
+  nonchannels_table.remort_auction = {}
+    nonchannels_table.remort_auction.echo = true
+  nonchannels_table.clan_donations = {}
+    nonchannels_table.clan_donations.echo = true</variable>
 </variables>
 </muclient>

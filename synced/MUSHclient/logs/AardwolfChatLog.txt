@@ -20144,3 +20144,678 @@
 @w[08 Oct 22:14:34] @RGlobal Quest@Y:@w @gGlobal Quest # 6818@w has been won by @YGrrdy@w - @Y210th@w win.
 @w[08 Oct 22:16:04] @G(Friend)@c: @CGorsk comforts Rockwell.
 @w[08 Oct 22:16:25] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[08 Oct 22:21:48] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[08 Oct 22:21:48] @RINFO: @wDouble experience is running courtesy of Kratos' daily blessing. - @Y7@w minutes left.
+@w[08 Oct 22:22:02] @Y(@GCorpsman@Y) CLAN: You wave.
+@w[08 Oct 22:22:36] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'hey kumo'
+@w[08 Oct 22:23:25] @YYou tell the CLAN: 'hey Anssett'
+@w[08 Oct 22:23:40] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[08 Oct 22:24:04] @RINFO: Tiiga has been killed by a nupperibo and 4 others.@w
+@w[08 Oct 22:25:40] @RGlobal Quest@Y:@w @cGlobal quest # 6819@w has been cancelled due to lack of participants.
+@w[08 Oct 22:26:10] @RGlobal Quest@Y:@w @mGlobal quest # 6820@w has been cancelled due to lack of participants.
+@w[08 Oct 22:26:27] @RINFO: Sarisa has saved the village of Raganatittu.@w
+@w[08 Oct 22:26:47] @RGlobal Quest@Y:@w @gGlobal Quest # 6821@w has been won by @YScars@w - @Y905th@w win.
+@w[08 Oct 22:26:47] @RGlobal Quest@Y:@w @gGlobal Quest # 6821@w will go into extended time for 5 more minutes.
+@w[08 Oct 22:27:41] @RINFO: 1 minute of bonus experience remaining.@w
+@w[08 Oct 22:28:41] @RINFO: Bonus experience has now expired.@w
+@w[08 Oct 22:29:08] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down a mosquito.@w
+@w[08 Oct 22:30:45] @RINFO: Neeper has saved the village of Raganatittu.@w
+@w[08 Oct 22:31:13] @GVader questions 'whats a max stat hallowed light look like now a days? +20?'
+@w[08 Oct 22:32:09] @RGlobal Quest@Y:@w Garrot has completed @gGlobal Quest # 6821@w.
+@w[08 Oct 22:32:09] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 6821@w is now over.
+@w[08 Oct 22:32:30] @w*Click*, the door opens.
+@w[08 Oct 22:33:18] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[08 Oct 22:33:18] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[08 Oct 22:34:09] @RINFO: The last post plays mournfully as Birgitte falls in battle to Zombie and 6 others.@w
+@w[08 Oct 22:35:09] @YBirgitte (@GRecruit@Y) tells the CLAN: 'u'
+@w[08 Oct 22:35:15] @YBirgitte (@GRecruit@Y) tells the CLAN: 'mis'
+@w[08 Oct 22:35:29] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[08 Oct 22:40:55] @RINFO: Neeper has vanquished the Jengu and freed the Coral Seas.@w
+@w[08 Oct 22:40:59] @YYou tell the CLAN: 'any way i can get xrt working for logging area? seems to never be able to find a path for some reason'
+@w[08 Oct 22:41:06] @RINFO: Reroll has removed the blight of Fetch for all eternity.@w
+@w[08 Oct 22:41:16] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'there's a cexit at the end'
+@w[08 Oct 22:41:16] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'check speedwalks'
+@w[08 Oct 22:41:21] @YSaraid (@GGeneral@Y) tells the CLAN: 'look at speedwalk logging and put the cexit in the end'
+@w[08 Oct 22:41:23] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'go to the last room and then make the cexit'
+@w[08 Oct 22:43:03] @YYou tell the CLAN: 'yes that did it, thanks guys!'
+@w[08 Oct 22:44:59] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down a mosquito.@w
+@w[08 Oct 22:45:24] @YKitrana (@GRecruit@Y) tells the CLAN: 'what's xrt?'
+@w[08 Oct 22:45:51] @RINFO: Orphean sinks to their knees and honourably accepts defeat at the hands of a waddling grov and 9 others.@w
+@w[08 Oct 22:46:13] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'for snd plugin a command to move to an area'
+@w[08 Oct 22:46:18] @GCLAN: At-ten-tion! Darkfist is here to get some training done!
+@w[08 Oct 22:46:21] @YYou tell the CLAN: 'comes with the snd plugin, it's like rt but works from anywhere and uses the mapper to find the fastest routes from anywhere, including cexits'
+@w[08 Oct 22:46:36] @YInix (@GSoldier@Y) tells the CLAN: 'At first glance I thought you asked "What's art?"  and was like, man...deep question.'
+@w[08 Oct 22:46:44] @Y(@GCorpsman@Y) CLAN: KumoGami laughs
+@w[08 Oct 22:47:43] @YKitrana (@GRecruit@Y) tells the CLAN: 'is there a way to use that part of snd without a target?'
+@w[08 Oct 22:48:00] @YYou tell the CLAN: 'sure, just "xrt <areaname>"'
+@w[08 Oct 22:48:03] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'to use xrt without a target?'
+@w[08 Oct 22:48:05] @YAnssett (@GSpecial Ops@Y) tells the CLAN: '^'
+@w[08 Oct 22:49:17] @YKitrana (@GRecruit@Y) tells the CLAN: 'it has some weird gaps. like xrt sandcastle fails'
+@w[08 Oct 22:49:29] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'if it fails it's almost always because you have to create a cexit'
+@w[08 Oct 22:49:35] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'sandcastle has one too'
+@w[08 Oct 22:49:46] @YKitrana (@GRecruit@Y) tells the CLAN: 'huh?'
+@w[08 Oct 22:50:03] @RINFO: HARDCORE Nifto has been killed by Veritheia at level 19.@w
+@w[08 Oct 22:50:09] @RINFO: Nifto has entered open PK (OPK) mode!@w
+@w[08 Oct 22:50:11] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'mapper help exits'
+@w[08 Oct 22:50:55] @YYou tell the CLAN: 'cexit = custom exit, it's stuff like "enter pool" or "climb up tree"'
+@w[08 Oct 22:50:57] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'some rooms have a "special" exit instead of nsewud'
+@w[08 Oct 22:51:34] @YKitrana (@GRecruit@Y) tells the CLAN: 'oookay, i knew abnhout cexits i've set some up but i didn't think it needed them since runto sandcastle takes you to at least the storm.'
+@w[08 Oct 22:52:02] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'runto uses the cexits'
+@w[08 Oct 22:52:08] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'it's a game command. mapper doesn't harvest those'
+@w[08 Oct 22:52:16] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'you have to create your own cexits'
+@w[08 Oct 22:52:23] @YKitrana (@GRecruit@Y) tells the CLAN: 'no i don't'
+@w[08 Oct 22:52:33] @YKitrana (@GRecruit@Y) tells the CLAN: 'it*'
+@w[08 Oct 22:52:41] @GBalderon questions 'How do I get the king and queen to follow me in the kingdom of ahner?'
+@w[08 Oct 22:52:47] @YKitrana (@GRecruit@Y) tells the CLAN: 'if i runto sandcastle it takes me to the storm. it doesn't escape storm.'
+@w[08 Oct 22:53:09] @YKitrana (@GRecruit@Y) tells the CLAN: 'now that i setup the cexit if i xrt to sandcastle it escapes the storm'
+@w[08 Oct 22:53:20] @GYtrams answers 'beckon ?'
+@w[08 Oct 22:53:21] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'the storm is probably technically the first room of the area'
+@w[08 Oct 22:53:24] @YYou tell the CLAN: 'xrt would put you in the area if you set the default room inside. and it will do it not only from recall but from anywhere'
+@w[08 Oct 22:53:42] @GBalderon answers 'that worked!'
+@w[08 Oct 22:53:59] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[08 Oct 22:53:59] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[08 Oct 22:53:59] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[08 Oct 22:55:16] @w*Click*, the door opens.
+@w[08 Oct 22:55:20] @RINFO: The reign of the Dullurd is ended and Balderon has restored Ahner to his throne.@w
+@w[08 Oct 22:55:34] @RINFO: The valkyries come for Tiiga who was slain by a nupperibo and 1 other.@w
+@w[08 Oct 22:56:43] @RINFO: Juliet has been reborn as a Wolfen Warrior.@w
+@w[08 Oct 22:58:17] @RINFO: Neeper took down the law in the City of Gold!@w
+@w[08 Oct 22:59:26] @RGlobal Quest@Y:@w @mGlobal Quest # 6826@w has been won by @YHomerSimpson@w - @Y106th@w win.
+@w[08 Oct 22:59:41] @RINFO: The last post plays mournfully as Davem falls in battle to the bodyguard of an actress and 6 others.@w
+@w[08 Oct 22:59:46] @CA bounty hunter says, @c"@CSo have you heard the news? Nawibo the legendary warrior is seeking to @Roverthrow the Imperial nation@C. If you find him, there is a huge bounty on his head, and I'm willing to give you a portion.@c"
+@w[08 Oct 22:59:50] @CA bounty hunter says, @c"@CSo have you heard the news? Nawibo the legendary warrior is seeking to @Roverthrow the Imperial nation@C. If you find him, there is a huge bounty on his head, and I'm willing to give you a portion.@c"
+@w[08 Oct 23:00:13] @RINFO: The player rankings have been updated.@w
+@w[08 Oct 23:02:16] @RGlobal Quest@Y:@w @gGlobal Quest # 6827@w has been won by @YSelitos@w - @Y871st@w win.
+@w[08 Oct 23:02:16] @RGlobal Quest@Y:@w @gGlobal Quest # 6827@w will go into extended time for 5 more minutes.
+@w[08 Oct 23:02:26] @YYou tell the CLAN: 'i have an alias that opens/unlocks a room in given direction and auto-registers the opposite way when it is confirmed if anyone wants'
+@w[08 Oct 23:02:51] @YKitrana (@GRecruit@Y) tells the CLAN: 'what do you mean auto registers?'
+@w[08 Oct 23:02:58] @YYou tell the CLAN: 'creates a cexit'
+@w[08 Oct 23:03:21] @RINFO: Vader has answered the Call of Heroes!@w
+@w[08 Oct 23:03:27] @YYou tell the CLAN: 'for closed/locked doors'
+@w[08 Oct 23:03:32] @RINFO: Kulton has been reborn as an Eldar Paladin.@w
+@w[08 Oct 23:04:30] @RGlobal Quest@Y:@w Bezaleel has completed @gGlobal Quest # 6827@w.
+@w[08 Oct 23:04:48] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 6827@w.
+@w[08 Oct 23:04:54] @YBirgitte (@GRecruit@Y) tells the CLAN: 'that sounds useful.  I made an alias for each direction because I wasn't sure how to do that.'
+@w[08 Oct 23:05:10] @RGlobal Quest@Y:@w Zensch has completed @gGlobal Quest # 6827@w.
+@w[08 Oct 23:05:21] @RINFO: Neeper has been reborn as a Vampire Mage.@w
+@w[08 Oct 23:05:54] @YYou tell the CLAN: 'for mine you basically use "m[o|u]<direction>" so e.g. mou to open up, mue to unlock e (works with cast knock but you can change that)'
+@w[08 Oct 23:05:58] @RGlobal Quest@Y:@w Bonjour has completed @gGlobal Quest # 6827@w.
+@w[08 Oct 23:05:59] @YYou tell the CLAN: 'lemme put it on pastebin'
+@w[08 Oct 23:06:05] @YYou tell the CLAN: 'or a gist'
+@w[08 Oct 23:07:33] @YBirgitte (@GRecruit@Y) tells the CLAN: 'cool, thanks'
+@w[08 Oct 23:08:29] @RINFO: Neald had a great day at the Olde Worlde Carnivale!@w
+@w[08 Oct 23:08:49] @YKazarkas (@GRecruit@Y) tells the CLAN: 'Can you create aliases and stuff via command line in Mushclient?'
+@w[08 Oct 23:09:07] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'technically yes, but i dont know how. fiendish has a plugin that manages it'
+@w[08 Oct 23:09:31] @YSaraid (@GGeneral@Y) tells the CLAN: 'have done it don't remember how though '
+@w[08 Oct 23:10:33] @YKazarkas (@GRecruit@Y) tells the CLAN: 'Alright, heh. I've tried looking a few times. I just need to spend more time in mushclient figuring it out, I'm still too used to how zmud does things.'
+@w[08 Oct 23:10:39] @YYou tell the CLAN: 'pretty sure mushclient came with only 2 pre-filled aliases, which were `alias {*} {*}` and `trigger {*} {*}` and they do just that'
+@w[08 Oct 23:11:08] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'aard help might get you in the right direction, unsure'
+@w[08 Oct 23:11:26] @RINFO: The valkyries come for Balderon who was slain by a Draconian priest and 2 others.@w
+@w[08 Oct 23:13:46] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[08 Oct 23:14:22] @GCLAN: At-ten-tion! Ratel is here to get some training done!
+@w[08 Oct 23:14:38] @GCLAN: At-ten-tion! Zensch is here to get some training done!
+@w[08 Oct 23:14:43] @YYou tell the CLAN: 'here is it - https://t.ly/RDqIX'
+@w[08 Oct 23:15:01] @YYou tell the CLAN: 'forget the url shortener, i can't copy/paste easily to mushclient'
+@w[08 Oct 23:15:30] @RGlobal Quest@Y:@w @mGlobal Quest # 6829@w has been won by @YBreathe@w - @Y65th@w win.
+@w[08 Oct 23:16:51] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[08 Oct 23:17:18] @YYou tell the CLAN: 'forgive**'
+@w[08 Oct 23:19:51] @RGlobal Quest@Y:@w @gGlobal Quest # 6830@w has been won by @YSmudge@w - @Y1777th@w win.
+@w[08 Oct 23:19:51] @RGlobal Quest@Y:@w @gGlobal Quest # 6830@w will go into extended time for 5 more minutes.
+@w[08 Oct 23:20:37] @RGlobal Quest@Y:@w Evl has completed @gGlobal Quest # 6830@w.
+@w[08 Oct 23:20:37] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 6830@w is now over.
+@w[08 Oct 23:21:19] @RINFO: You hear a loud scream as Draoli is brutally killed by savage winds.@w
+@w[08 Oct 23:21:31] @GZensch Tech@w: @Chow can i turn off 'output' window in mushclient?
+@w[08 Oct 23:21:35] @GFeast questions 'I understand there are a few furniture items out there, but I think I've only seen Ocho's log. Where do those come from?'
+@w[08 Oct 23:22:32] @CThe Balrog's Adept asks, @c"@CDo you seek the power of TrueSilver?@c"
+@w[08 Oct 23:23:53] @GCLAN: Darkfist falls out to take some much needed R & R.
+@w[08 Oct 23:25:12] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[08 Oct 23:25:31] @GCLAN: At-ten-tion! Zensch is here to get some training done!
+@w[08 Oct 23:29:54] @RGlobal Quest@Y:@w @mGlobal Quest # 6832@w has been won by @YYtrams@w - @Y38th@w win.
+@w[08 Oct 23:32:51] @RINFO: Radience embraces Wulfgar who died valiantly in combat against an Umbraquaeris oculist and 3 others.@w
+@w[08 Oct 23:33:39] @RGlobal Quest@Y:@w @gGlobal Quest # 6833@w has been won by @YYtrams@w - @Y39th@w win.
+@w[08 Oct 23:33:39] @RGlobal Quest@Y:@w @gGlobal Quest # 6833@w will go into extended time for 5 more minutes.
+@w[08 Oct 23:33:49] @Y(@GSpecial Ops@Y) CLAN: Kanaye tells everyone goodnight.
+@w[08 Oct 23:33:55] @YYou tell the CLAN: 'night'
+@w[08 Oct 23:33:59] @YYtrams (@GRecruit@Y) tells the CLAN: 'night'
+@w[08 Oct 23:35:46] @MAntarii gametalks@w: [@RHOLONET@w] @YAlert@w: Attention - Bounty, Treasure Hunters and associated contractors, the Jedi Order is seeking assistance in the retrieval of @W[Jedi Holocron's]@w, a device utilized to pass down valuable information over long periods of time. The recovery of these artifacts are of the highest of priorities. Holocrons can be found in rooms or containers, and are highlighted with the @R[QUEST]@w icon. We have come across credible information to suggest that a holocron has been located in @C[Town of Solan]@w. Find and recover the holocron. @WDeliver it to Antarii at the Jedi Temple. (showdesc Antarii for more information). The reward for successful completion of this mission is [@YGold@w or @GTrivia Point Tokens@w].
+@w[08 Oct 23:37:46] @YKazarkas (@GRecruit@Y) tells the CLAN: 'What's the best first use of quest points?'
+@w[08 Oct 23:37:50] @RGlobal Quest@Y:@w Juliet has completed @gGlobal Quest # 6833@w.
+@w[08 Oct 23:37:50] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 6833@w is now over.
+@w[08 Oct 23:38:19] @MAntarii gametalks@w: [@RHOLONET@w] @YAlert@w: Attention - The holocron has been recovered by Scars.
+@w[08 Oct 23:38:32] @YMadrox (@GGeneral@Y) tells the CLAN: 'guide on our webpage'
+@w[08 Oct 23:38:33] @YZoth (@GCorpsman@Y) tells the CLAN: 'Help newbie-aard has suggestions.  Level 1 aura and bp are a safe bet to get early'
+@w[08 Oct 23:38:44] @CThe Balrog's Adept asks, @c"@CDo you seek the power of TrueSilver?@c"
+@w[08 Oct 23:39:26] @YKazarkas (@GRecruit@Y) tells the CLAN: 'I don't have access to the webpage quite yet. '
+@w[08 Oct 23:39:53] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[08 Oct 23:40:16] @w*Click*, the door opens.
+@w[08 Oct 23:40:19] @CDracos asks, @c"@CYou dare to test me Half-griffon?@c"
+@w[08 Oct 23:40:19] @CDracos exclaims, @c"@CI will make sure you never breathe again!@c"
+@w[08 Oct 23:41:33] @MAntarii gametalks@w: [@RHOLONET@w] @YAlert@w: Attention - Bounty, Treasure Hunters and associated contractors, the Jedi Order is seeking assistance in the retrieval of @W[Jedi Holocron's]@w, a device utilized to pass down valuable information over long periods of time. The recovery of these artifacts are of the highest of priorities. Holocrons can be found in rooms or containers, and are highlighted with the @R[QUEST]@w icon. We have come across credible information to suggest that a holocron has been located in @C[Town Grand City of Aylor]@w. Find and recover the holocron. @WDeliver it to Antarii at the Jedi Temple. (showdesc Antarii for more information). The reward for successful completion of this mission is [@YGold@w or @GTrivia Point Tokens@w].
+@w[08 Oct 23:41:44] @MAntarii gametalks@w: @Ythe grand city of aylor
+@w[08 Oct 23:42:47] @RINFO: Neald has fought a glorious battle and is the new Tournament Champion.@w
+@w[08 Oct 23:44:27] @RINFO: The valkyries come for Quroz who was slain by a troll fighter and 2 others.@w
+@w[08 Oct 23:47:06] @GZensch Tech@w: @Chow can i find trigger id, e.g. i have error [string "Trigger: *trigger28"]:24: 'for' limit must be a number
+@w[08 Oct 23:47:48] @w*Click*, the door opens.
+@w[08 Oct 23:48:12] @RINFO: Knights race from the stronghold to avenge the death of Teleron to a troll fighter and 2 others.@w
+@w[08 Oct 23:48:42] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[08 Oct 23:48:42] @CAn elderly woman exclaims, @c"@CThose young whippersnappers, someone should teach them a lesson.  Running hither and yon, stirring up trouble. Those zookeepers can't keep them under control.  I wouldn't be surprised if a lion or tiger ate them.  Someone should teach them a lesson!@c"
+@w[08 Oct 23:48:47] @CJenny, the tavern owner exclaims, @c"@CKumoGami! I need your help!@c"
+@w[08 Oct 23:48:47] @CJenny, the tavern owner exclaims, @c"@CPlease, say you'll help me. I'm in dire need!@c"
+@w[08 Oct 23:49:51] @CQuroz gossips 'Can someone help me with a CR, long hallway in Sanctity'
+@w[08 Oct 23:50:02] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[08 Oct 23:50:02] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[08 Oct 23:50:24] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[08 Oct 23:50:24] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[08 Oct 23:50:26] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[08 Oct 23:50:26] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[08 Oct 23:51:02] @MAntarii gametalks@w: [@RHOLONET@w] @YAlert@w: Attention - The holocron has been recovered by Darth Vader.
+@w[08 Oct 23:51:22] @MYuna gametalks@w: @YZoinks!
+@w[08 Oct 23:51:27] @MKazul gametalks@w: @Ythere goes the neighborhood
+@w[08 Oct 23:51:32] @CKorendir gossips 'room is clear for 3-4 min to repop'
+@w[08 Oct 23:51:33] @MAntarii gametalks@w: @Ylol
+@w[08 Oct 23:51:42] @MYuna gametalks@w: @YJustice for Jedha!
+@w[08 Oct 23:52:33] @CCougar Master of Battle exclaims, @c"@CYou have a lot of guts to challenge me, now feel my wrath!@c"
+@w[08 Oct 23:52:34] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:52:40] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:52:43] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:52:46] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:52:52] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:52:55] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:53:01] @CCougar Master of Battle exclaims, @c"@CAh ha!  You're mine now, young warrior!@c"
+@w[08 Oct 23:53:04] @CCougar Master of Battle says, @c"@CYou fought well, young warrior, I commend you.@c"
+@w[08 Oct 23:53:41] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[08 Oct 23:54:03] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[08 Oct 23:54:04] @CQuroz gossips 'thank you invisible person!'
+@w[08 Oct 23:54:16] @CA dog of the witch Sycorax says 'You - will - die.'
+@w[08 Oct 23:54:16] @RINFO: The last post plays mournfully as KumoGami falls in battle to a dog of the witch Sycorax and 1 other.@w
+@w[08 Oct 23:55:11] @YYou tell the CLAN: 'anyone available for a miracle? *makes puppy eyes*'
+@w[08 Oct 23:55:20] @YInix (@GSoldier@Y) tells the CLAN: 'Whatcha need?'
+@w[08 Oct 23:55:45] @YYou tell the CLAN: 'thanks Madrox!'
+@w[08 Oct 23:55:50] @YMadrox (@GGeneral@Y) tells the CLAN: 'np'
+@w[08 Oct 23:57:21] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[08 Oct 23:57:54] @RGlobal Quest@Y:@w @gGlobal Quest # 6836@w has been won by @YYuna@w - @Y708th@w win.
+@w[08 Oct 23:58:06] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[08 Oct 23:58:33] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[08 Oct 23:58:35] @w*Click*, the door to the captain's ready room opens.
+@w[08 Oct 23:58:55] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[08 Oct 23:59:03] @w*Click*, the door to the captain's ready room opens.
+@w[08 Oct 23:59:21] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[08 Oct 23:59:22] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[09 Oct 00:00:13] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 00:01:36] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[09 Oct 00:01:49] @CThe Entrance Guard exclaims, @c"@CWelcome to the Gladiator's Arena, sir! For a small fee, you may enter and try your skills against some of the finest warriors, and... uhm... others the land has to offer!@c"
+@w[09 Oct 00:01:54] @CThe Entrance Guard says, @c"@CI'm sure you can afford more than that, but I suppose this is sufficient... THIS time...@c"
+@w[09 Oct 00:02:55] @CRilnyi says, @c"@CHello, friend. We could use a little help down here.@c"
+@w[09 Oct 00:02:55] @CRilnyi says, @c"@CIt's been so long since a mortal has come here.@c"
+@w[09 Oct 00:03:54] @RGlobal Quest@Y:@w @mGlobal Quest # 6838@w has been won by @YVettir@w - @Y167th@w win.
+@w[09 Oct 00:03:54] @RGlobal Quest@Y:@w @mGlobal Quest # 6838@w will go into extended time for 5 more minutes.
+@w[09 Oct 00:05:01] @RINFO: Zoh is cut down in the midst of bloody warfare by a pack of wild boar and 4 others.@w
+@w[09 Oct 00:05:22] @CRilnyi says, @c"@CHello, friend. We could use a little help down here.@c"
+@w[09 Oct 00:05:22] @CRilnyi says, @c"@CIt's been so long since a mortal has come here.@c"
+@w[09 Oct 00:06:03] @RINFO: Myth has been removed from this realm by Axaldra, the Eternal One and 1 other.@w
+@w[09 Oct 00:06:35] @YDejavu (@GRecruit@Y) tells the CLAN: 'what's first wish i shud get?'
+@w[09 Oct 00:06:37] @C(@MWanGrp?!@C)@M [@wL201,812,M+7/T9@M] Cide raises his hand.
+@w[09 Oct 00:07:09] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'games 8 shows the most popular wishes'
+@w[09 Oct 00:07:18] @YInix (@GSoldier@Y) tells the CLAN: 'I think I went for fasthunt first'
+@w[09 Oct 00:07:44] @YInix (@GSoldier@Y) tells the CLAN: 'Since it's so useful for quests.  But yeah, really personal taste choice there'
+@w[09 Oct 00:08:21] @YKitrana (@GRecruit@Y) tells the CLAN: 'seriously spellup beat no vorp?'
+@w[09 Oct 00:08:48] @YInix (@GSoldier@Y) tells the CLAN: 'I spellup all the time, I've only been vorpal'd once'
+@w[09 Oct 00:08:48] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'oh yeah, you use spellup way more often than being decapitated'
+@w[09 Oct 00:08:55] @YInix (@GSoldier@Y) tells the CLAN: 'jinx'
+@w[09 Oct 00:08:56] @YZensch (@GSpecial Ops@Y) tells the CLAN: '+ you can avoid areas with mobs with vorpal'
+@w[09 Oct 00:08:57] @YMadrox (@GGeneral@Y) tells the CLAN: 'novorp is a wish you buy out of anger when vorped for 5th time'
+@w[09 Oct 00:09:08] @YKitrana (@GRecruit@Y) tells the CLAN: 'yeah but it takes like 10 seconds. it isn't that long!'
+@w[09 Oct 00:09:29] @YInix (@GSoldier@Y) tells the CLAN: 'adds up, adds up to more time saved on spellup than regaining xp from the one time I was vorpald'
+@w[09 Oct 00:09:35] @YZensch (@GSpecial Ops@Y) tells the CLAN: '10 seconds x 100+ times a day x 365 days'
+@w[09 Oct 00:09:47] @CThe Black Knight says 'Your purity sickens me, KumoGami.'
+@w[09 Oct 00:09:51] @YDejavu (@GRecruit@Y) tells the CLAN: 'was thinking spellup duration acutally'
+@w[09 Oct 00:09:53] @RGlobal Quest@Y:@w @gGlobal Quest # 6839@w has been won by @YZarat@w - @Y775th@w win.
+@w[09 Oct 00:09:53] @RGlobal Quest@Y:@w @gGlobal Quest # 6839@w will go into extended time for 5 more minutes.
+@w[09 Oct 00:10:00] @YKitrana (@GRecruit@Y) tells the CLAN: 'and what else would you be doing during a spellup?'
+@w[09 Oct 00:10:01] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'before i got no vorpal i was maybe vorpalled 10 times in a year or so'
+@w[09 Oct 00:10:19] @CThe drow assassin exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[09 Oct 00:10:29] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'spellup duration is nice when you have lots of spells and problems with mana'
+@w[09 Oct 00:10:29] @YKitrana (@GRecruit@Y) tells the CLAN: 'like during quests or campaigns i don't spellup. so i am not doing anything else when i would spellup.'
+@w[09 Oct 00:10:38] @YMadrox (@GGeneral@Y) tells the CLAN: 'i have a novorp counter, its kicked in 18times since june'
+@w[09 Oct 00:10:41] @YInix (@GSoldier@Y) tells the CLAN: 'oh, I always stay spell'd up'
+@w[09 Oct 00:10:51] @CThe Black Knight says 'Your purity sickens me, KumoGami.'
+@w[09 Oct 00:11:18] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'but you exp a lot in areas with vorpal mobs (dung)'
+@w[09 Oct 00:11:30] @YMadrox (@GGeneral@Y) tells the CLAN: 'yes i do'
+@w[09 Oct 00:11:45] @YKitrana (@GRecruit@Y) tells the CLAN: 'i have a trigger to recast many of my spellups. so i mostly do too. but like when i use spu alias i'm not waisting time was my point. because i wouldn't be doing anything else anyway.'
+@w[09 Oct 00:11:52] @YMadrox (@GGeneral@Y) tells the CLAN: 'one of my prime pup spots has vorpal weap equipped mobs'
+@w[09 Oct 00:12:04] @YInix (@GSoldier@Y) tells the CLAN: 'I have 9 wishes, novorp isn't one of them yet'
+@w[09 Oct 00:12:06] @CYour double exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[09 Oct 00:12:15] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'so 18 times since june is still not a lot'
+@w[09 Oct 00:12:19] @YInix (@GSoldier@Y) tells the CLAN: 'high on the list for next though'
+@w[09 Oct 00:12:28] @YMadrox (@GGeneral@Y) tells the CLAN: 'nope not alot at all'
+@w[09 Oct 00:12:31] @RINFO: Davem has been reborn as an Eldar Ranger.@w
+@w[09 Oct 00:12:34] @CMallic the Wizard says, @c"@CI'm sorry, but I'm rather busy right now. Please come back another time.@c"
+@w[09 Oct 00:12:35] @YKitrana (@GRecruit@Y) tells the CLAN: 'i think i would take every immunity and no hunger before spellup time'
+@w[09 Oct 00:12:46] @CThe Baron of Diamond Reach says, @c"@CGreetings! I am anxiously awaiting the return of the saviors of our town but please make yourself at home.@c"
+@w[09 Oct 00:12:51] @YInix (@GSoldier@Y) tells the CLAN: 'nohunger?  there's free milk in the clan'
+@w[09 Oct 00:13:12] @YKitrana (@GRecruit@Y) tells the CLAN: 'but that's one less command i have to run every umpteen minutes.'
+@w[09 Oct 00:13:16] @YMadrox (@GGeneral@Y) tells the CLAN: 'duration was like my 5th wish'
+@w[09 Oct 00:13:18] @YInix (@GSoldier@Y) tells the CLAN: 'but hey, people play differently.  Maybe you stay away from clan more than I do'
+@w[09 Oct 00:13:21] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'no hunger is rather poor choice for a wish (but i took it as a first wish :P)'
+@w[09 Oct 00:13:38] @YMadrox (@GGeneral@Y) tells the CLAN: 'same, we all did'
+@w[09 Oct 00:13:39] @YYou tell the CLAN: 'when should i get my 1st wish?'
+@w[09 Oct 00:13:45] @YYou tell the CLAN: 'wait for tier?'
+@w[09 Oct 00:13:50] @YKitrana (@GRecruit@Y) tells the CLAN: 'hunger is just utterly annoying. it would be nice not to ever need that trigger again'
+@w[09 Oct 00:13:53] @YMadrox (@GGeneral@Y) tells the CLAN: 'wishes came in out of blue and it was like 3k so we all got it first'
+@w[09 Oct 00:13:56] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'after having aard breastplate + aura'
+@w[09 Oct 00:14:31] @YYou tell the CLAN: 'should get both of those on lv 1?'
+@w[09 Oct 00:14:38] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'yeah'
+@w[09 Oct 00:14:46] @YYou tell the CLAN: 'gotcha. so at least next remort'
+@w[09 Oct 00:14:56] @YYou tell the CLAN: 'if not later lmao'
+@w[09 Oct 00:16:33] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[09 Oct 00:18:54] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[09 Oct 00:18:58] @GCLAN: Nueve falls out to take some much needed R & R.
+@w[09 Oct 00:19:27] @CA wounded miner says, @c"@CMy poor tools, left on those mountains. The stone is much too hard for them to do much good. Only way to move that rock is to blast...@c"
+@w[09 Oct 00:20:08] @CAlimnar asks, @c"@CBeware, brave soul- you are in dire peril if you go any further than you already have. This is a place of great evil. If you wish to continue on your way, I might be able to sell you something you need, no?@c"
+@w[09 Oct 00:20:27] @RINFO: Ytrams has become an Honorary Keeper of the Kobaloi!@w
+@w[09 Oct 00:20:52] @CAlimnar asks, @c"@CBeware, brave soul- you are in dire peril if you go any further than you already have. This is a place of great evil. If you wish to continue on your way, I might be able to sell you something you need, no?@c"
+@w[09 Oct 00:21:28] @YKitrana (@GRecruit@Y) tells the CLAN: 'oh look my first quest to nenukon. lets see what's so bad about this place'
+@w[09 Oct 00:22:00] @YYou tell the CLAN: 'good luck, get a pet'
+@w[09 Oct 00:23:24] @YKitrana (@GRecruit@Y) tells the CLAN: 'it won't follow me in and i can'
+@w[09 Oct 00:23:28] @YKitrana (@GRecruit@Y) tells the CLAN: 'it won't follow me in and i can't make it heel'
+@w[09 Oct 00:23:46] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'don't worry about pet, without hunt skill it's useless'
+@w[09 Oct 00:24:04] @YKitrana (@GRecruit@Y) tells the CLAN: 'but you can't hunt something without it being in the same area anyway'
+@w[09 Oct 00:24:06] @YZensch (@GSpecial Ops@Y) tells the CLAN: '"almost" useless'
+@w[09 Oct 00:24:08] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'don't need a pet for nenu, you can just hunt hooded to get out'
+@w[09 Oct 00:24:21] @YYou tell the CLAN: 'you can put it in the room S to the entrance, but if you don't have hunt, yeah forget it sry'
+@w[09 Oct 00:24:24] @YKitrana (@GRecruit@Y) tells the CLAN: 'only if you actually have the hunt skill. psi's don'
+@w[09 Oct 00:24:26] @Y(@GSpecial Ops@Y) CLAN: Anssett nods.
+@w[09 Oct 00:24:27] @YKitrana (@GRecruit@Y) tells the CLAN: 'only if you actually have the hunt skill. psi's don't get hunt'
+@w[09 Oct 00:24:33] @YInix (@GSoldier@Y) tells the CLAN: 'Always like when someone else has left a pet in planes...makes it easier'
+@w[09 Oct 00:24:35] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'don't know if you can beacon in there'
+@w[09 Oct 00:24:49] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'when i'm navi i bypass it lol'
+@w[09 Oct 00:25:07] @Y(@GSpecial Ops@Y) CLAN: Zensch acks at Anssett!
+@w[09 Oct 00:25:20] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'nenukon? this is a nice area! :)'
+@w[09 Oct 00:25:22] @YKitrana (@GRecruit@Y) tells the CLAN: 'nope not beaconable'
+@w[09 Oct 00:25:57] @YYou tell the CLAN: 'it's not that bad after a few times'
+@w[09 Oct 00:26:11] @RGlobal Quest@Y:@w @gGlobal Quest # 6843@w has been won by @YCooler@w - @Y5518th@w win.
+@w[09 Oct 00:26:11] @RGlobal Quest@Y:@w @gGlobal Quest # 6843@w will go into extended time for 5 more minutes.
+@w[09 Oct 00:26:20] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'it ain't that good after a few times either lol'
+@w[09 Oct 00:26:29] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'it has bad fame just like planes, but actually these areas are not bad'
+@w[09 Oct 00:26:53] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'planes doesn't bother me, i haven't ever bypassed them'
+@w[09 Oct 00:27:19] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'but planes also has the problem of 2 areas in similar ranges with the same design, so if you want to avoid planes you have to consume 2 bypass slots'
+@w[09 Oct 00:27:21] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ew et'
+@w[09 Oct 00:27:24] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'etc*'
+@w[09 Oct 00:27:58] @YInix (@GSoldier@Y) tells the CLAN: 'You must be a Navigator to bypass entire areas.'
+@w[09 Oct 00:28:04] @YKitrana (@GRecruit@Y) tells the CLAN: 'why do so many areas use the random exit BS?'
+@w[09 Oct 00:28:05] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'yep'
+@w[09 Oct 00:28:25] @YYou tell the CLAN: 'bypass sounds nice'
+@w[09 Oct 00:28:36] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i assume there's some arms race between builders and people who use SND'
+@w[09 Oct 00:28:41] @RGlobal Quest@Y:@w Emuliatko has completed @gGlobal Quest # 6843@w.
+@w[09 Oct 00:29:38] @YDejavu (@GRecruit@Y) tells the CLAN: 'probably why every area has a maze lol'
+@w[09 Oct 00:29:45] @YYou tell the CLAN: 'there really should be a way to dump your entire map db to some graphical map with text searching'
+@w[09 Oct 00:29:54] @YYou tell the CLAN: 'yeah lmao'
+@w[09 Oct 00:30:06] @RGlobal Quest@Y:@w Graoldan has completed @gGlobal Quest # 6843@w.
+@w[09 Oct 00:30:07] @YInix (@GSoldier@Y) tells the CLAN: 'Can't search the text in your maps in mush?'
+@w[09 Oct 00:30:13] @YMadrox (@GGeneral@Y) tells the CLAN: 'btw, almost every area with random exits was made way before snd'
+@w[09 Oct 00:30:20] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'oh were they'
+@w[09 Oct 00:30:30] @YYou tell the CLAN: 'not in areas i don't have yet. and not everywhere is mapped or easily searchable'
+@w[09 Oct 00:30:35] @YMadrox (@GGeneral@Y) tells the CLAN: 'im struggling to even think of one post snd'
+@w[09 Oct 00:30:47] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'idk how far back snd goes so yea'
+@w[09 Oct 00:30:48] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'rofl'
+@w[09 Oct 00:30:52] @YInix (@GSoldier@Y) tells the CLAN: 'Oh, then you just go map it'
+@w[09 Oct 00:31:05] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'it is structured data kumo'
+@w[09 Oct 00:31:06] @YMadrox (@GGeneral@Y) tells the CLAN: 'mapper plugin was first begining to be a thing right before I left'
+@w[09 Oct 00:31:29] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i started playing with something to interpret it to something graphical but my dev chops are lacking haha'
+@w[09 Oct 00:31:34] @YYou tell the CLAN: 'yeah I want to give it a try myself at some point, but it's not the parsing I have a problem with, it's creating a graph from it'
+@w[09 Oct 00:31:38] @YMadrox (@GGeneral@Y) tells the CLAN: 'was one for cmud for a bit befofre I left not widely avail though only friend of friends thing'
+@w[09 Oct 00:31:48] @GCLAN: At-ten-tion! Rever is here to get some training done!
+@w[09 Oct 00:31:52] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i think danj is/was working on something to do that for gaardian maps'
+@w[09 Oct 00:32:10] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'you might hit him up when you have some spare cycles'
+@w[09 Oct 00:32:21] @CJari gossips 'i think i'm going to win the lottery'
+@w[09 Oct 00:32:23] @Y(@GSoldier@Y) CLAN: Inix is content with his TT++ setup.
+@w[09 Oct 00:32:32] @CJari gossips 'i just know'
+@w[09 Oct 00:32:45] @CGraoldan gossips 'i've thought that.. it's widdled me down.. to loose hope'
+@w[09 Oct 00:32:51] @YMadrox (@GGeneral@Y) tells the CLAN: 'draoli is online, not asking for interviews, and sitting 2x t0... '
+@w[09 Oct 00:32:57] @CRhavage gossips 'I've had a good feeling about you, Jari. I think you'll win, too.'
+@w[09 Oct 00:33:13] @YYou tell the CLAN: 'gaardian website makes it sound like it's an automated process, but then they haven't updated in a while, so i wonder if that still exists even'
+@w[09 Oct 00:33:21] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'it is kinda kumo'
+@w[09 Oct 00:33:39] @YYou tell the CLAN: 'why aren't they updating it then? there are some areas outdated, many missing'
+@w[09 Oct 00:33:42] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'if you dig into the html, it looks like its a bunch of clientside javascript rednering the maps'
+@w[09 Oct 00:33:53] @CJari gossips 'thanks, and dont worry. i will have plenty to share'
+@w[09 Oct 00:33:53] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'because the old dev went awol with the access'
+@w[09 Oct 00:33:58] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'and the clan was nearly defunct'
+@w[09 Oct 00:34:02] @YMadrox (@GGeneral@Y) tells the CLAN: 'they have like 4 active members'
+@w[09 Oct 00:34:06] @YYou tell the CLAN: 'wait, if that's true i might do something way sooner'
+@w[09 Oct 00:34:21] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'danj's been fooling with it for a yearish now?'
+@w[09 Oct 00:34:22] @YYou tell the CLAN: 'then i can try to make a version that's crowd sourced, and it can stay up to date forever'
+@w[09 Oct 00:34:26] @YMadrox (@GGeneral@Y) tells the CLAN: 'we could ship you to gaardian to help :P'
+@w[09 Oct 00:34:26] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'but he's not horribly active either'
+@w[09 Oct 00:34:27] @Y(@GCorpsman@Y) CLAN: KumoGami ponders
+@w[09 Oct 00:34:41] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'but seriously if you are inclined, drop him a note'
+@w[09 Oct 00:34:53] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'they may have some useful structure in place'
+@w[09 Oct 00:35:55] @YYou tell the CLAN: 'who should i talk to again?'
+@w[09 Oct 00:36:02] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'danj'
+@w[09 Oct 00:36:23] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i mean don't let me stop you from doing your own thing either'
+@w[09 Oct 00:36:42] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'sometimes it's preferable to start from 0'
+@w[09 Oct 00:37:03] @YYou tell the CLAN: 'i mean. it's not really the own thing i care about but something that has longevity would be better than someone going awol with it. if it can be automated, it can be decoupled from ppl'
+@w[09 Oct 00:37:11] @Y(@GSpecial Ops@Y) CLAN: Anssett nods.
+@w[09 Oct 00:37:22] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'people can get ... protective'
+@w[09 Oct 00:37:26] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'about their niche things'
+@w[09 Oct 00:37:27] @YYou tell the CLAN: 'at the very least open sourced'
+@w[09 Oct 00:38:09] @YYou tell the CLAN: 'i get it. but it still surprised me a bit. as a professional dev i find the plugin/coding community here interesting, there are many cool stuff but collaboration is rare'
+@w[09 Oct 00:38:18] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i am frankly slightly surprised that the mushclient mapper doesn't have an accompanying export plugin'
+@w[09 Oct 00:38:34] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'mushclient's mapper has been a feature a long time'
+@w[09 Oct 00:38:34] @YYou tell the CLAN: 'i am surprised it doesn't support locked/closed doors out of the box'
+@w[09 Oct 00:38:49] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'it does, cexits ;)'
+@w[09 Oct 00:38:55] @YYou tell the CLAN: 'it was a given for me on mudlet'
+@w[09 Oct 00:39:00] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i think that was a conscious decision to make it less botty'
+@w[09 Oct 00:39:12] @YMadrox (@GGeneral@Y) tells the CLAN: 'yes or not on our oct clan logo? |@x244x=x@x202mBOOooOoT@x244x=x@Y|@w'
+@w[09 Oct 00:39:13] @YYou tell the CLAN: 'well, lemme ask you this, is there a way i can get a report of open/closed status of rooms on the current map?'
+@w[09 Oct 00:39:18] @YMadrox (@GGeneral@Y) tells the CLAN: 'yes or not on our oct clan logo? |@x244x=x@x202BOOooOoT@x244x=x@Y|@w'
+@w[09 Oct 00:39:26] @Y(@GSpecial Ops@Y) CLAN: Anssett gives a thumbs-up to Madrox.
+@w[09 Oct 00:39:31] @YInix (@GSoldier@Y) tells the CLAN: 'no to whatever that was'
+@w[09 Oct 00:39:37] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'probably in gmcp kumo'
+@w[09 Oct 00:39:54] @YYou tell the CLAN: 'it only reports room id from what i can tell but i may be wrong'
+@w[09 Oct 00:39:55] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i don't know how easy it is to get closed vs locked'
+@w[09 Oct 00:40:03] @GCLAN: Rever falls out to take some much needed R & R.
+@w[09 Oct 00:40:13] @YMadrox (@GGeneral@Y) tells the CLAN: '|@x244x=x@x214BOOooOoT@x244x=x@Y|@w'
+@w[09 Oct 00:40:27] @YMadrox (@GGeneral@Y) tells the CLAN: 'I like that orange better'
+@w[09 Oct 00:40:38] @YBirgitte (@GRecruit@Y) tells the CLAN: 'I like that'
+@w[09 Oct 00:40:38] @YInix (@GSoldier@Y) tells the CLAN: 'supposed to be a ghostly version of Boot or something?'
+@w[09 Oct 00:40:39] @YYou tell the CLAN: 'i guess keeping a db of closed/locked doors shouldn't be too difficult actually though. a separate db and some triggers for "this room is closed" etc'
+@w[09 Oct 00:40:40] @YMadrox (@GGeneral@Y) tells the CLAN: 'ill work on it'
+@w[09 Oct 00:40:41] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ah maybe maptags'
+@w[09 Oct 00:40:43] @YInix (@GSoldier@Y) tells the CLAN: 'BooOOoOoOoOOOT'
+@w[09 Oct 00:41:00] @GCLAN: At-ten-tion! Zasha is here to get some training done!
+@w[09 Oct 00:41:45] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'locked state may be inferred but i feel like it shows in various map plugins'
+@w[09 Oct 00:41:58] @YMadrox (@GGeneral@Y) tells the CLAN: 'ill work on itwho gaardian'
+@w[09 Oct 00:42:03] @YMadrox (@GGeneral@Y) tells the CLAN: 'oops'
+@w[09 Oct 00:42:05] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'lol'
+@w[09 Oct 00:42:21] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'a decent amount of data ingame comes through the various tags kumo'
+@w[09 Oct 00:42:54] @YMadrox (@GGeneral@Y) tells the CLAN: '|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w'
+@w[09 Oct 00:43:08] @YMadrox (@GGeneral@Y) tells the CLAN: 'kinda like that :P'
+@w[09 Oct 00:43:15] @YInix (@GSoldier@Y) tells the CLAN: 'For what?'
+@w[09 Oct 00:43:19] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[09 Oct 00:43:20] @YInix (@GSoldier@Y) tells the CLAN: 'I'm legitimately confused'
+@w[09 Oct 00:43:25] @YMadrox (@GGeneral@Y) tells the CLAN: 'our logo until end of month'
+@w[09 Oct 00:43:25] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'clan tags'
+@w[09 Oct 00:43:37] @YInix (@GSoldier@Y) tells the CLAN: 'ohh, gotcha'
+@w[09 Oct 00:43:38] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'they can be changed for thematic events'
+@w[09 Oct 00:43:38] @YBirgitte (@GRecruit@Y) tells the CLAN: 'clan tag for spooky season!'
+@w[09 Oct 00:43:42] @YMadrox (@GGeneral@Y) tells the CLAN: 'gaardian have theirs changed'
+@w[09 Oct 00:43:42] @YInix (@GSoldier@Y) tells the CLAN: 'for Halloween'
+@w[09 Oct 00:43:54] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'a cpl years ago we swapped boot's and hook's logos for april 1'
+@w[09 Oct 00:44:02] @YInix (@GSoldier@Y) tells the CLAN: 'you said oct, not Oct, and I completely didn't get that you meant October.  Ok, all caught up now.'
+@w[09 Oct 00:44:16] @YYou tell the CLAN: 'i like the last one'
+@w[09 Oct 00:44:33] @YMadrox (@GGeneral@Y) tells the CLAN: 'imma post it and see if anyone here balks at it :P'
+@w[09 Oct 00:44:40] @YKitrana (@GRecruit@Y) tells the CLAN: 'what's the oct clan logo?'
+@w[09 Oct 00:44:41] @YYou tell the CLAN: 'and anssett yeah but i don't think it tags that. still seems easy to solve, the question is how to get the mapper to work with that info'
+@w[09 Oct 00:46:08] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'yeah i guess i see "locked room" in the ingame map'
+@w[09 Oct 00:46:19] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'which would be ... tricky to parse probably'
+@w[09 Oct 00:47:09] @RGlobal Quest@Y:@w @mGlobal quest # 6847@w has been declared for levels @m89@w to @m100@w - @m200 or fewer wins only@w.
+@w[09 Oct 00:47:09] @RGlobal Quest@Y:@w The quest will start in @m4@w ticks and will last for @m94@w ticks.
+@w[09 Oct 00:47:09] @RGlobal Quest@Y:@w See '@mHelp Global Quests@w', or, type '@mGquest Join 6847@w' to take part.
+@w[09 Oct 00:47:11] @w*Click*, the door opens.
+@w[09 Oct 00:47:11] @RINFO: The last post plays mournfully as Birgitte falls in battle to Anthbeast guard and 3 others.@w
+@w[09 Oct 00:47:53] @YMadrox (@GGeneral@Y) tells the CLAN: 'i posted it saying anssett or the clan I guess will pay'
+@w[09 Oct 00:49:09] @RGlobal Quest@Y:@w @mGlobal quest # 6847@w for levels @m89@w to @m100@w - @m200 or fewer wins only@w has now started.
+@w[09 Oct 00:49:30] @YYou tell the CLAN: 'you can always add triggers for "the door is closed" and "you do not have a key for that door". you do need to catch the last attempted direction tho'
+@w[09 Oct 00:50:19] @GNeoCool Tech@w: @Ccan someone please tell me what's wrong with this? : https://pastebin.com/k8rYDyct why is it not setting and noteing me those 4 time_remaining_since_afk_2 variables every 2 ticks when I can see the rest of the function is working?!
+@w[09 Oct 00:50:44] @RINFO: Aliera has freed the Arisian Realm from Allora's Curse!@w
+@w[09 Oct 00:50:52] @G(Friend) Feast@c:@C 'yo'
+@w[09 Oct 00:53:28] @GNeoCool Tech@w: @Cor every tick even...
+@w[09 Oct 00:53:39] @GNeoCool Tech@w: @Ctired...
+@w[09 Oct 00:55:07] @RGlobal Quest@Y:@w @mGlobal Quest # 6847@w has been won by @YElshar@w - @Y13th@w win.
+@w[09 Oct 00:55:07] @RGlobal Quest@Y:@w @mGlobal Quest # 6847@w will go into extended time for 5 more minutes.
+@w[09 Oct 00:56:10] @RGlobal Quest@Y:@w Teleron has completed @mGlobal Quest # 6847@w.
+@w[09 Oct 00:56:11] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 6847@w is now over.
+@w[09 Oct 00:57:18] @G(Friend) Feast@c:@C 'GL!'
+@w[09 Oct 01:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 01:00:42] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 01:01:42] @RINFO: The heavens part as Odheso is sent by a vila to the Nameless One's embrace.@w
+@w[09 Oct 01:04:12] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 01:04:12] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 01:04:15] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 01:04:15] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 01:04:23] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 01:04:23] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 01:04:31] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 01:04:31] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 01:04:42] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 01:05:43] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 01:07:57] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[09 Oct 01:08:29] @YInix (@GSoldier@Y) tells the CLAN: 'I have 8x iron ore and one chunk of golden ore...none say 'epic' though'
+@w[09 Oct 01:08:45] @YInix (@GSoldier@Y) tells the CLAN: 'I'm just hoarding them, no idea what to do with them'
+@w[09 Oct 01:08:55] @YInix (@GSoldier@Y) tells the CLAN: 'oh, wrong line apparently'
+@w[09 Oct 01:09:12] @YMadrox (@GGeneral@Y) tells the CLAN: 'epic ore is ore from inferno, titan, icefall, and trans'
+@w[09 Oct 01:11:18] @CFox Demon says, @c"@CYou shall not leave this place alive.@c"
+@w[09 Oct 01:14:59] @RINFO: Turnus has graduated from the Aylorian Academy!@w
+@w[09 Oct 01:15:32] @RINFO: Porcius has been reborn as a Vampire Mage.@w
+@w[09 Oct 01:16:44] @CAlik asks 'Greetings! How may I serve you today?'
+@w[09 Oct 01:16:45] @CLeonard asks 'Hello, what are you looking for today?'
+@w[09 Oct 01:17:15] @CThe guardian of the shrine asks, @c"@CHello young traveller!  Are you ready to accept our gods as yours?@c"
+@w[09 Oct 01:18:35] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[09 Oct 01:18:58] @RINFO: Porcius has entered (HARDCORE) mode!@w
+@w[09 Oct 01:19:11] @Y(@GSpecial Ops@Y) CLAN: Smiling, Anssett greets Kazm warmly.
+@w[09 Oct 01:19:14] @CA castle guard exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[09 Oct 01:20:25] @GCLAN: At-ten-tion! Meroveus is here to get some training done!
+@w[09 Oct 01:22:34] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[09 Oct 01:23:11] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[09 Oct 01:23:16] @RINFO: HARDCORE Zolstead has been killed by Roebart at level 13.@w
+@w[09 Oct 01:23:46] @RINFO: Zolstead has entered open PK (OPK) mode!@w
+@w[09 Oct 01:23:57] @CSecurity Officer on weapons detail says, @c"@CWe've been boarded Ensign! Will you help repel the boarders? If so, listen to me to learn more about aiding the defense.@c"
+@w[09 Oct 01:23:58] @CBosun Tofi says, @c"@CWelcome aboard The Tempest, KumoGami.@c"
+@w[09 Oct 01:24:02] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[09 Oct 01:24:02] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[09 Oct 01:24:55] @G(Friend)@w: @CGorsk has entered Aardwolf.
+@w[09 Oct 01:25:04] @G(Friend)@c: @CYou wave hello to Gorsk.
+@w[09 Oct 01:25:24] @G(Friend)@c: @CGorsk waves hello.
+@w[09 Oct 01:25:31] @G(Friend)@c: @CGorsk beams a smile at Cide.
+@w[09 Oct 01:25:37] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[09 Oct 01:25:37] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[09 Oct 01:25:37] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[09 Oct 01:25:43] @G(Friend)@c: @CGorsk smiles at you and tips his lance in greeting.
+@w[09 Oct 01:27:28] @G(Friend)@c: @CSmiling, Yerald greets everyone warmly.
+@w[09 Oct 01:27:39] @G(Friend)@c: @CYou wave hello to Yerald.
+@w[09 Oct 01:30:21] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[09 Oct 01:30:21] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[09 Oct 01:30:21] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[09 Oct 01:30:22] @C(Gossip) @WYerald waves his hands about in grand gestures as he casts, "@GSUMMON DOUBLE!@W"
+@w[09 Oct 01:30:37] @G(Friend) Gorsk@c:@C 'if your phone takes 34 hours to charge, you might need a new phone'
+@w[09 Oct 01:30:40] @RGlobal Quest@Y:@w @gGlobal Quest # 6855@w has been won by @YCirrus@w - @Y1017th@w win.
+@w[09 Oct 01:30:40] @RGlobal Quest@Y:@w @gGlobal Quest # 6855@w will go into extended time for 5 more minutes.
+@w[09 Oct 01:31:02] @RGlobal Quest@Y:@w Madrox has completed @gGlobal Quest # 6855@w.
+@w[09 Oct 01:31:07] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 6855@w.
+@w[09 Oct 01:31:42] @CHighlord Koran says 'Welcome, child of the Light. The path of good will show the road to balance.'
+@w[09 Oct 01:31:53] @RGlobal Quest@Y:@w Modi has completed @gGlobal Quest # 6855@w.
+@w[09 Oct 01:32:42] @RGlobal Quest@Y:@w @mGlobal Quest # 6854@w has been won by @YBelkas@w - @Y49th@w win.
+@w[09 Oct 01:36:06] @CA doomguard exclaims 'Begone!'
+@w[09 Oct 01:36:08] @YKitrana (@GRecruit@Y) tells the CLAN: 'i should bypass scarred lands. this winding tunnels nonsense is just stupid'
+@w[09 Oct 01:36:31] @YKitrana (@GRecruit@Y) tells the CLAN: 'meh fail this quest'
+@w[09 Oct 01:36:42] @YMadrox (@GGeneral@Y) tells the CLAN: 'I translocate past maze everytime'
+@w[09 Oct 01:37:01] @YKitrana (@GRecruit@Y) tells the CLAN: 'do these things get more common as you climb the area levels?'
+@w[09 Oct 01:37:18] @CA dark elf gatekeeper asks, @c"@CWhat?  Are you trying to sneak in, KumoGami?@c"
+@w[09 Oct 01:37:18] @CA dark elf gatekeeper exclaims, @c"@CYou'll have to answer to me first!@c"
+@w[09 Oct 01:37:31] @YKitrana (@GRecruit@Y) tells the CLAN: 'translocate to who? because i don't know'
+@w[09 Oct 01:37:32] @CA dying dwarf exclaims, @c"@CPlease!  Wait!  Hear my words before you go any further!@c"
+@w[09 Oct 01:37:36] @CA dying dwarf says, @c"@CThanks for waiting.  Meerek, our elven prince, sent out for reinforcements... an entire brigade!  We came storming through the door and began slashing, stomping and chopping our way into this vile place.@c"
+@w[09 Oct 01:37:36] @CA dying dwarf says, @c"@CAs you can see, we didn't get very far.  The more of the dark elves we killed, the more that came!  Once we realized that we were outnumbered, we attempted a tactical retreat...only to find out that we were surrounded.@c"
+@w[09 Oct 01:37:36] @CA dying dwarf says, @c"@CSo, we did what any good dwarven unit would do.  We pushed into the fortress as far as we could, hoping at least a few of us would reach Meerek.  But just before we got there, an undead dragon of some kind was unleashed on us.@c"
+@w[09 Oct 01:37:36] @CA dying dwarf asks, @c"@CI ran... I ran away and hid under my fallen brethren.  And I played dead until the dark elves came back and tried to eat me!  Can you believe that!?@c"
+@w[09 Oct 01:37:36] @CA dying dwarf says, @c"@CListen, KumoGami, it's up to you now.  You must let Meerek know he's cut off from reinforcements.  He's on his own, I fear.@c"
+@w[09 Oct 01:37:37] @CA dying dwarf asks, @c"@CCan you do this for me?@c"
+@w[09 Oct 01:37:48] @CA dark elf guard exclaims, @c"@CLook at KumoGami!  Let's kill 'em!@c"
+@w[09 Oct 01:37:48] @CA dark elf guard exclaims, @c"@CLook at KumoGami!  Let's kill 'em!@c"
+@w[09 Oct 01:37:48] @CA dark elf guard exclaims, @c"@CLook at KumoGami!  Let's kill 'em!@c"
+@w[09 Oct 01:37:48] @CA dark elf guard exclaims, @c"@CLook at KumoGami!  Let's kill 'em!@c"
+@w[09 Oct 01:37:48] @CA dark elf guard exclaims, @c"@CLook at KumoGami!  Let's kill 'em!@c"
+@w[09 Oct 01:37:48] @CA dark elf guard exclaims, @c"@CLook at KumoGami!  Let's kill 'em!@c"
+@w[09 Oct 01:38:02] @YKitrana (@GRecruit@Y) tells the CLAN: 'maps don't list the tanslocate mobs'
+@w[09 Oct 01:38:10] @RINFO: The last post plays mournfully as KumoGami falls in battle to a dark elf guard and 4 others.@w
+@w[09 Oct 01:38:25] @YMadrox (@GGeneral@Y) tells the CLAN: 'translocate randomly moves you to another room it has no target'
+@w[09 Oct 01:39:16] @YTalbor (@GGeneral@Y) tells the CLAN: 'super handy spell'
+@w[09 Oct 01:39:27] @YYou tell the CLAN: 'didn't think about it that way, that's nice to know'
+@w[09 Oct 01:39:35] @YKitrana (@GRecruit@Y) tells the CLAN: 'sadly all i got is probability travel'
+@w[09 Oct 01:39:53] @YMadrox (@GGeneral@Y) tells the CLAN: 'yeah its 122 sadly'
+@w[09 Oct 01:39:54] @YKitrana (@GRecruit@Y) tells the CLAN: 'whos help file does not stgate it is area limited'
+@w[09 Oct 01:40:20] @RINFO: Neeper has entered open PK (OPK) mode!@w
+@w[09 Oct 01:40:29] @YTalbor (@GGeneral@Y) tells the CLAN: 'wouldn't use that one'
+@w[09 Oct 01:41:10] @YKitrana (@GRecruit@Y) tells the CLAN: 'apparently i get translocate after 122'
+@w[09 Oct 01:41:31] @YKitrana (@GRecruit@Y) tells the CLAN: 'nice, i should have figured navigator got that'
+@w[09 Oct 01:42:02] @YMadrox (@GGeneral@Y) tells the CLAN: 'so maybe bypass scarred for two more tiers :P'
+@w[09 Oct 01:42:11] @YTalbor (@GGeneral@Y) tells the CLAN: 'you learn mazes better over time or at least better ways to navigate some of them'
+@w[09 Oct 01:42:24] @GCLAN: At-ten-tion! EmJay is here to get some training done!
+@w[09 Oct 01:42:29] @YYou tell the CLAN: 'yeah they become somewhat manageable... most of the time lol'
+@w[09 Oct 01:42:47] @YKitrana (@GRecruit@Y) tells the CLAN: 'random exit rooms are not mazes'
+@w[09 Oct 01:43:19] @YInix (@GSoldier@Y) tells the CLAN: 'when do you ask for drag again, is it 186?'
+@w[09 Oct 01:43:23] @YMadrox (@GGeneral@Y) tells the CLAN: 'thats what we been calling them since 1997'
+@w[09 Oct 01:43:26] @YTalbor (@GGeneral@Y) tells the CLAN: 'yeah'
+@w[09 Oct 01:43:27] @YMadrox (@GGeneral@Y) tells the CLAN: '186'
+@w[09 Oct 01:43:52] @YKitrana (@GRecruit@Y) tells the CLAN: 'mazes have actual mappable soluitions'
+@w[09 Oct 01:44:00] @YTalbor (@GGeneral@Y) tells the CLAN: 'have to be within 15 levels to group so 186 is soonest you can group with sh'
+@w[09 Oct 01:44:05] @YKitrana (@GRecruit@Y) tells the CLAN: 'you can pen and paper map your way out of a maze'
+@w[09 Oct 01:44:09] @RINFO: Evl has removed himself from the (OPK) victim pool!@w
+@w[09 Oct 01:44:22] @YYou tell the CLAN: 'ty Talbor, i was always wondering why that level'
+@w[09 Oct 01:44:41] @YTalbor (@GGeneral@Y) tells the CLAN: 'np :)'
+@w[09 Oct 01:45:00] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[09 Oct 01:45:00] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[09 Oct 01:45:04] @CA dark elf gatekeeper asks, @c"@CWhat?  Are you trying to sneak in, KumoGami?@c"
+@w[09 Oct 01:45:04] @CA dark elf gatekeeper exclaims, @c"@CYou'll have to answer to me first!@c"
+@w[09 Oct 01:45:17] @GCLAN: At-ten-tion! Karnagio is here to get some training done!
+@w[09 Oct 01:45:21] @CA dying dwarf exclaims, @c"@CPlease!  Wait!  Hear my words before you go any further!@c"
+@w[09 Oct 01:45:26] @CA dying dwarf says, @c"@CThanks for waiting.  Meerek, our elven prince, sent out for reinforcements... an entire brigade!  We came storming through the door and began slashing, stomping and chopping our way into this vile place.@c"
+@w[09 Oct 01:45:26] @CA dying dwarf says, @c"@CAs you can see, we didn't get very far.  The more of the dark elves we killed, the more that came!  Once we realized that we were outnumbered, we attempted a tactical retreat...only to find out that we were surrounded.@c"
+@w[09 Oct 01:45:26] @CA dying dwarf says, @c"@CSo, we did what any good dwarven unit would do.  We pushed into the fortress as far as we could, hoping at least a few of us would reach Meerek.  But just before we got there, an undead dragon of some kind was unleashed on us.@c"
+@w[09 Oct 01:45:26] @CA dying dwarf asks, @c"@CI ran... I ran away and hid under my fallen brethren.  And I played dead until the dark elves came back and tried to eat me!  Can you believe that!?@c"
+@w[09 Oct 01:45:26] @CA dying dwarf says, @c"@CListen, KumoGami, it's up to you now.  You must let Meerek know he's cut off from reinforcements.  He's on his own, I fear.@c"
+@w[09 Oct 01:45:26] @CA dying dwarf asks, @c"@CCan you do this for me?@c"
+@w[09 Oct 01:47:02] @YKarnagio (@GRecruit@Y) tells the CLAN: 'Hey all.'
+@w[09 Oct 01:47:13] @GNeoCool Tech@w: @Cwell idk what's wrong with this : https://pastebin.com/6CMU7kky, anyone care to enlighten me?
+@w[09 Oct 01:47:23] @RGlobal Quest@Y:@w @gGlobal Quest # 6858@w has been won by @YSmudge@w - @Y1778th@w win.
+@w[09 Oct 01:47:43] @w*Click*, the door opens.
+@w[09 Oct 01:47:52] @GYerald Tech@w: @Cwhat does the error message say?
+@w[09 Oct 01:48:04] @w*Click*, the door opens.
+@w[09 Oct 01:48:16] @RINFO: Evl has been reborn as a Halfling Mage.@w
+@w[09 Oct 01:48:34] @RINFO: Evl has entered open PK (OPK) mode!@w
+@w[09 Oct 01:48:39] @w*Click*, the door opens.
+@w[09 Oct 01:48:41] @GSelitos Tech@w: @Cwhy you trying so hard all you need is a simple trigger to stay active you do not need a fancy plugin
+@w[09 Oct 01:49:33] @GNeoCool Tech@w: @Cno error but it aint settinng those 4 remaining_afk variables and then noting them when the tick timer reaches 1 like it's supposed to in do_tick_timer() ... the rest of the function is working as-well as the rest of the plugin as intended...
+@w[09 Oct 01:50:25] @CA dark elf thief exclaims, @c"@CHmm... An unsuspecting tourist!  Let's see what kind of treasures KumoGami has!@c"
+@w[09 Oct 01:51:12] @CThe centaur queen says, @c"@CI desperately need your help, KumoGami.@c"
+@w[09 Oct 01:51:14] @GMushambo Tech@w: @Ctriggers are a gateway?
+@w[09 Oct 01:51:21] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[09 Oct 01:51:28] @GTech@w:@C Selitos laughs
+@w[09 Oct 01:51:38] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[09 Oct 01:51:38] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[09 Oct 01:51:42] @CA dark elf gatekeeper asks, @c"@CWhat?  Are you trying to sneak in, KumoGami?@c"
+@w[09 Oct 01:51:42] @CA dark elf gatekeeper exclaims, @c"@CYou'll have to answer to me first!@c"
+@w[09 Oct 01:51:42] @CA dying dwarf exclaims, @c"@CPlease!  Wait!  Hear my words before you go any further!@c"
+@w[09 Oct 01:51:47] @CA dying dwarf says, @c"@CThanks for waiting.  Meerek, our elven prince, sent out for reinforcements... an entire brigade!  We came storming through the door and began slashing, stomping and chopping our way into this vile place.@c"
+@w[09 Oct 01:51:47] @CA dying dwarf says, @c"@CAs you can see, we didn't get very far.  The more of the dark elves we killed, the more that came!  Once we realized that we were outnumbered, we attempted a tactical retreat...only to find out that we were surrounded.@c"
+@w[09 Oct 01:51:47] @CA dying dwarf says, @c"@CSo, we did what any good dwarven unit would do.  We pushed into the fortress as far as we could, hoping at least a few of us would reach Meerek.  But just before we got there, an undead dragon of some kind was unleashed on us.@c"
+@w[09 Oct 01:51:47] @CA dying dwarf asks, @c"@CI ran... I ran away and hid under my fallen brethren.  And I played dead until the dark elves came back and tried to eat me!  Can you believe that!?@c"
+@w[09 Oct 01:51:47] @CA dying dwarf says, @c"@CListen, KumoGami, it's up to you now.  You must let Meerek know he's cut off from reinforcements.  He's on his own, I fear.@c"
+@w[09 Oct 01:51:47] @CA dying dwarf asks, @c"@CCan you do this for me?@c"
+@w[09 Oct 01:52:30] @CDarkon Stills says, @c"@CGreetings! Are you here about the poster? You look like the type to seek adventure and there is a fairly good reward if you are willing to help us.@c"
+@w[09 Oct 01:53:28] @CProvidencia gossips 'MMmmm.. Cheddar frieds with cheddar melted on them and fried turkey scrapple slices'
+@w[09 Oct 01:53:45] @CProvidencia gossips 'MMmmm.. Cheddar fries with cheddar melted on them and fried turkey scrapple slices'
+@w[09 Oct 01:53:52] @CProvidencia gossips 'sorry for the error'
+@w[09 Oct 01:54:59] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[09 Oct 01:55:22] @CSkeleton says 'Your purity sickens me, KumoGami.'
+@w[09 Oct 01:55:38] @CTrEz gossips 'chedar fries with chedar'
+@w[09 Oct 01:57:53] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 01:58:15] @GCLAN: At-ten-tion! Garence is here to get some training done!
+@w[09 Oct 01:59:18] @YInix (@GSoldier@Y) tells the CLAN: 'I've been chatting with Quroz, seems like a decent chap.  They might put in a app tonight.'
+@w[09 Oct 01:59:25] @YInix (@GSoldier@Y) tells the CLAN: 'Just saying, they have a rec from me'
+@w[09 Oct 01:59:59] @YTalbor (@GGeneral@Y) tells the CLAN: 'sounds good, thanks'
+@w[09 Oct 02:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 02:00:30] @YMadrox (@GGeneral@Y) tells the CLAN: 'talbor quick before saraid aor roume can veto, approve the change of our logo'
+@w[09 Oct 02:01:54] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 02:02:43] @YTalbor (@GGeneral@Y) tells the CLAN: 'done'
+@w[09 Oct 02:02:44] @RGlobal Quest@Y:@w @gGlobal Quest # 6861@w has been won by @YFrosty@w - @Y242nd@w win.
+@w[09 Oct 02:02:49] @YMadrox (@GGeneral@Y) tells the CLAN: 'yeeesssss'
+@w[09 Oct 02:02:54] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 02:03:08] @YMadrox (@GGeneral@Y) tells the CLAN: 'now i strangely hope saraid doesnt like it and has to begrudgingly put it'
+@w[09 Oct 02:03:13] @YYou tell the CLAN: 'where do we see it?'
+@w[09 Oct 02:03:24] @YTalbor (@GGeneral@Y) tells the CLAN: 'hahaha'
+@w[09 Oct 02:03:25] @YMadrox (@GGeneral@Y) tells the CLAN: 'once imms do upgrade'
+@w[09 Oct 02:04:13] @YYou tell the CLAN: 'cool'
+@w[09 Oct 02:04:46] @YKitrana (@GRecruit@Y) tells the CLAN: 'how do i see our new logo?'
+@w[09 Oct 02:04:55] @RGlobal Quest@Y:@w @mGlobal Quest # 6860@w has been won by @YLexicon@w - @Y189th@w win.
+@w[09 Oct 02:05:02] @YMadrox (@GGeneral@Y) tells the CLAN: 'its not done yet'
+@w[09 Oct 02:05:29] @YKarnagio (@GRecruit@Y) tells the CLAN: 'Cool, i am excited to see it.'
+@w[09 Oct 02:06:04] @RINFO: Yuna has been reborn as a Shadow Ranger.@w
+@w[09 Oct 02:06:08] @RINFO: Yuna has entered (HARDCORE) mode!@w
+@w[09 Oct 02:07:26] @w*Click*, the door opens.
+@w[09 Oct 02:07:43] @GCLAN: At-ten-tion! Rever is here to get some training done!
+@w[09 Oct 02:08:31] @RINFO: Radience embraces Wulfgar who died valiantly in combat against a shadowsmith's assistant and 5 others.@w
+@w[09 Oct 02:08:32] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:08:32] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:08:33] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:08:33] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:08:45] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[09 Oct 02:08:46] @RINFO: New post #@W512949@R in forum @WPersonal@R from @WQuroz@R Subj: @WJoining Boot@w
+@w[09 Oct 02:09:05] @RINFO: HARDCORE Yuna has been killed by Dixon at level 2.@w
+@w[09 Oct 02:09:06] @RINFO: Yuna has entered open PK (OPK) mode!@w
+@w[09 Oct 02:09:22] @RINFO: New post #@W512950@R in forum @WPersonal@R from @WMadrox@R Subj: @WRe: Joining Boot @w
+@w[09 Oct 02:09:24] @YInix (@GSoldier@Y) tells the CLAN: 'QUroz submitted his app'
+@w[09 Oct 02:11:07] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:11:07] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:11:10] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:11:10] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:11:11] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:11:11] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:11:38] @CYota Timo exclaims, @c"@CI summon thee, oh fallen ones.  Destroy that which has threatened my existence and burn them to the core!@c"
+@w[09 Oct 02:11:41] @CYota Timo says, @c"@COh plague and pestilence.  Spread across the land and bring a new order of chaos into the world.@c"
+@w[09 Oct 02:12:05] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:08] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:08] @GCLAN: At-ten-tion! Zasha is here to get some training done!
+@w[09 Oct 02:12:11] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:14] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:20] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:23] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:32] @CElk Battle Mistress exclaims, @c"@CI shall never be defeated!@c"
+@w[09 Oct 02:12:32] @CElk Battle Mistress says, @c"@CI shall not be defeated this way...@c"
+@w[09 Oct 02:12:56] @GCLAN: Meroveus falls out to take some much needed R & R.
+@w[09 Oct 02:13:03] @G(Friend) Gorsk@c:@C 'it sucks'
+@w[09 Oct 02:13:44] @G(Friend) Gorsk@c:@C 'on everything?'
+@w[09 Oct 02:13:53] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:13:53] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:13:56] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:13:56] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:13:57] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:13:57] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:13:58] @G(Friend) Gorsk@c:@C 'it's 8 but you better have alot of tp'
+@w[09 Oct 02:13:58] @GCLAN: At-ten-tion! Blunt is here to get some training done!
+@w[09 Oct 02:14:06] @YBlunt (@GSpecial Ops@Y) tells the CLAN: 'lo'
+@w[09 Oct 02:14:13] @G(Friend) Gorsk@c:@C '7 is alot more common'
+@w[09 Oct 02:14:14] @RGlobal Quest@Y:@w @gGlobal Quest # 6863@w has been won by @YNifto@w - @Y380th@w win.
+@w[09 Oct 02:14:14] @RGlobal Quest@Y:@w @gGlobal Quest # 6863@w will go into extended time for 5 more minutes.
+@w[09 Oct 02:14:37] @YTalbor (@GGeneral@Y) tells the CLAN: 'hey'
+@w[09 Oct 02:14:37] @G(Friend)@c: @CGorsk is agreeing with that Cide person again...
+@w[09 Oct 02:15:04] @YInix (@GSoldier@Y) tells the CLAN: 'Salutations'
+@w[09 Oct 02:15:40] @CThe Hooded Exile asks, @c"@CHail, Exile of the Far Country.  What brings you to the Nenukon?@c"
+@w[09 Oct 02:15:40] @CThe Hooded Exile asks, @c"@CIs it possible you have a purpose in coming?@c"
+@w[09 Oct 02:16:12] @C(@MWanGrp?!@C)@M [@wL186,@G2500@w,War/T0@M] Quroz: requesting a drag if anyone is available.
+@w[09 Oct 02:16:22] @G(Friend) Gorsk@c:@C 'when i was enchanting my sets, it'd take me a full focus duration to do 1-2 pieces'
+@w[09 Oct 02:16:27] @GCLAN: Zoth falls out to take some much needed R & R.
+@w[09 Oct 02:16:38] @G(Friend) Gorsk@c:@C 'there, i went for 8 cause it's just gold'
+@w[09 Oct 02:16:47] @CEagle Mistress of Battle says, @c"@CYou dare to challenge me.  I shall show you what hell is truly like.@c"
+@w[09 Oct 02:17:00] @CEagle Mistress of Battle exclaims, @c"@CFeel the fury of the Eagle Tribe!@c"
+@w[09 Oct 02:17:00] @CEagle Mistress of Battle asks, @c"@CHow do you like that, warrior!?@c"
+@w[09 Oct 02:17:01] @G(Friend)@c: @CGorsk chuckles at Cide's joke.
+@w[09 Oct 02:17:19] @CEagle Mistress of Battle says, @c"@CThis is not over.@c"
+@w[09 Oct 02:17:19] @CEagle Mistress of Battle exclaims, @c"@CI am going to take you to hell with me!@c"
+@w[09 Oct 02:17:26] @RGlobal Quest@Y:@w HomerSimpson has completed @gGlobal Quest # 6863@w.
+@w[09 Oct 02:18:24] @GCLAN: At-ten-tion! Furlos is here to get some training done!
+@w[09 Oct 02:19:25] @YFurlos (@GRecruit@Y) tells the CLAN: 'huh? i guess i'm th one not using compression. whatever that is. :D'
+@w[09 Oct 02:19:47] @YKarnagio (@GRecruit@Y) tells the CLAN: 'I'm not either i think.'
+@w[09 Oct 02:19:57] @YYou tell the CLAN: 'should come with your client'
+@w[09 Oct 02:20:26] @YKarnagio (@GRecruit@Y) tells the CLAN: 'The web client?'
+@w[09 Oct 02:20:45] @YYou tell the CLAN: 'type mccp to verify'
+@w[09 Oct 02:21:03] @YInix (@GSoldier@Y) tells the CLAN: 'saving 87.92%'
+@w[09 Oct 02:21:08] @YYou tell the CLAN: 'or are you talking about something else, Furlos?'
+@w[09 Oct 02:21:20] @YFurlos (@GRecruit@Y) tells the CLAN: 'i see. so i am using compression. who knew? :D'
+@w[09 Oct 02:21:48] @YYou tell the CLAN: 'you get some bonus qp from quests for it so it's good to have. plus, saves transferred data which is always good'
+@w[09 Oct 02:21:50] @YGarence (@GCorpsman@Y) tells the CLAN: 'well 'questor' tells you every quest.'
+@w[09 Oct 02:21:51] @YFurlos (@GRecruit@Y) tells the CLAN: 'i noticed when i start the game, it says how many are using compression'
+@w[09 Oct 02:22:00] @YKarnagio (@GRecruit@Y) tells the CLAN: 'url not found'
+@w[09 Oct 02:23:00] @YYou tell the CLAN: 'anyways i'm off to bed, night boots'
+@w[09 Oct 02:23:05] @YTalbor (@GGeneral@Y) tells the CLAN: 'cya later'
+@w[09 Oct 02:23:14] @GCLAN: KumoGami falls out to take some much needed R & R.

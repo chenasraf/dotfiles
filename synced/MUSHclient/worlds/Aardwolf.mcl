@@ -105,7 +105,6 @@
    treeview_triggers="y"
    treeview_aliases="y"
    underline_hyperlinks="y"
-   unpause_on_send="y"
    use_custom_link_colour="y"
    utf_8="y"
    warn_if_scripting_inactive="y"
