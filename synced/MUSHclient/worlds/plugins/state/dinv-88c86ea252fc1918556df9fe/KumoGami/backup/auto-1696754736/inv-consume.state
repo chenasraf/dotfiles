@@ -1,0 +1,31 @@
+1
+fbf4f53ba4312fdc998a56076ac5eac7fa504e58
+inv.consume.table = {}
+  inv.consume.table.fly = {}
+    inv.consume.table.fly[1] = {}
+      inv.consume.table.fly[1].room = "32476"
+      inv.consume.table.fly[1].level = 1
+      inv.consume.table.fly[1].fullName = "(!(Griffon's Blood)!)"
+      inv.consume.table.fly[1].name = "griff"
+  inv.consume.table.mana = {}
+    inv.consume.table.mana[1] = {}
+      inv.consume.table.mana[1].room = "32476"
+      inv.consume.table.mana[1].level = 1
+      inv.consume.table.mana[1].fullName = "(!(Lotus Rush)!)"
+      inv.consume.table.mana[1].name = "lotus rush"
+  inv.consume.table.heal = {}
+    inv.consume.table.heal[1] = {}
+      inv.consume.table.heal[1].room = "32476"
+      inv.consume.table.heal[1].level = 1
+      inv.consume.table.heal[1].fullName = "(!(Light Relief)!)"
+      inv.consume.table.heal[1].name = "light relief"
+    inv.consume.table.heal[2] = {}
+      inv.consume.table.heal[2].room = "32476"
+      inv.consume.table.heal[2].level = 20
+      inv.consume.table.heal[2].fullName = "(!(Serious Relief)!)"
+      inv.consume.table.heal[2].name = "serious relief"
+    inv.consume.table.heal[3] = {}
+      inv.consume.table.heal[3].room = "49392"
+      inv.consume.table.heal[3].level = 60
+      inv.consume.table.heal[3].fullName = "[Potion] Military Breakfast"
+      inv.consume.table.heal[3].name = "breakfast"

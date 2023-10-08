@@ -19480,3 +19480,5 @@
 @w[08 Oct 02:40:02] @RGlobal Quest@Y:@w Grbano has completed @gGlobal Quest # 6595@w.
 @w[08 Oct 02:42:16] @YYou tell the CLAN: 'gnight boot o/'
 @w[08 Oct 02:42:22] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[08 Oct 11:45:17] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[08 Oct 11:45:20] @GCLAN: At-ten-tion! Kanaye is here to get some training done!
