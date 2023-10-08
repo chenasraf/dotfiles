@@ -1,10 +1,12 @@
 1
-a9420250e33d29398bab6ae3db2bb0d35bd01da9
+7769881531c994cd28d467f91bf4d5806c0754a5
 inv.config.table = {}
+  inv.config.table.pluginVer = {}
+    inv.config.table.pluginVer.minor = 56
+    inv.config.table.pluginVer.major = 2
+  inv.config.table.isBuildExecuted = true
   inv.config.table.refreshPeriod = 5
-  inv.config.table.tableFormat = {}
-    inv.config.table.tableFormat.minor = 1
-    inv.config.table.tableFormat.major = 0
+  inv.config.table.refreshEagerSec = 5
   inv.config.table.cacheFormat = {}
     inv.config.table.cacheFormat.minor = 1
     inv.config.table.cacheFormat.major = 0
@@ -20,14 +22,12 @@ inv.config.table = {}
   inv.config.table.snapshotFormat = {}
     inv.config.table.snapshotFormat.minor = 1
     inv.config.table.snapshotFormat.major = 0
-  inv.config.table.isRegenEnabled = false
-  inv.config.table.refreshEagerSec = 5
+  inv.config.table.tableFormat = {}
+    inv.config.table.tableFormat.minor = 1
+    inv.config.table.tableFormat.major = 0
+  inv.config.table.isBackupEnabled = true
   inv.config.table.doIgnoreKeyring = false
-  inv.config.table.isPromptEnabled = true
+  inv.config.table.isRegenEnabled = false
   inv.config.table.regenOrigObjId = 0
   inv.config.table.regenNewObjId = 0
-  inv.config.table.isBackupEnabled = true
-  inv.config.table.pluginVer = {}
-    inv.config.table.pluginVer.minor = 56
-    inv.config.table.pluginVer.major = 2
-  inv.config.table.isBuildExecuted = true
+  inv.config.table.isPromptEnabled = true

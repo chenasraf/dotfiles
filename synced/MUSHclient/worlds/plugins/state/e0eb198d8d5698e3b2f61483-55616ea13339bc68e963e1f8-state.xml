@@ -15,6 +15,12 @@
    world_file_version="15"
   >
   <variable name="channels_table">channels_table = {}
+  channels_table.claninfo = {}
+    channels_table.claninfo.echo = true
+  channels_table.answer = {}
+    channels_table.answer.echo = true
+  channels_table.auction = {}
+    channels_table.auction.echo = true
   channels_table.barter = {}
     channels_table.barter.echo = true
   channels_table.cant = {}
@@ -103,14 +109,8 @@
     channels_table.wardrums.echo = true
   channels_table.yell = {}
     channels_table.yell.echo = true
-  channels_table.claninfo = {}
-    channels_table.claninfo.echo = true
   channels_table.globalecho = {}
-    channels_table.globalecho.echo = true
-  channels_table.answer = {}
-    channels_table.answer.echo = true
-  channels_table.auction = {}
-    channels_table.auction.echo = true</variable>
+    channels_table.globalecho.echo = true</variable>
   <variable name="nonchannels_table">nonchannels_table = {}
   nonchannels_table.claninfo = {}
     nonchannels_table.claninfo.echo = true

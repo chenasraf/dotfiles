@@ -1584,16 +1584,16 @@
     min = 30,
     },
   }</variable>
-  <variable name="mcvar_cp_level_taken">0</variable>
+  <variable name="mcvar_cp_level_taken">94</variable>
   <variable name="mcvar_gq_info_efflvl">74</variable>
   <variable name="mcvar_gqid_extended">-1</variable>
   <variable name="mcvar_gqid_joined">-1</variable>
-  <variable name="mcvar_gqid_started">6590</variable>
+  <variable name="mcvar_gqid_started">6807</variable>
   <variable name="mcvar_qt_areaName"></variable>
   <variable name="mcvar_qt_arid"></variable>
   <variable name="mcvar_qt_mob"></variable>
   <variable name="mcvar_qt_room"></variable>
-  <variable name="mcvar_quick_kill_command">cast 'flame arrow'</variable>
+  <variable name="mcvar_quick_kill_command">cast 'flaming sphere'</variable>
   <variable name="mcvar_window_font">MesloLGS NF</variable>
   <variable name="mcvar_window_font_bold">0</variable>
   <variable name="mcvar_window_font_italic">0</variable>

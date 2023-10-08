@@ -341,22 +341,27 @@ local function navTo(y, x)
   end
 end
 
-if GetVariable("waiting_sendhia") == "true" then
+local dest = GetVariable("waiting_rt")
+
+if dest == "sendhia" or dest == "sendhian" then
   navTo(5, 6)
   e("moonrift")
-  SetVariable("waiting_sendhia", "false")
 
-elseif GetVariable("waiting_darklight") == "true" then
+elseif dest == "darklight" then
   navTo(14, 23)
   e("d")
-  SetVariable("waiting_darklight", "false")
 
-elseif GetVariable("waiting_asherodan") == "true" then
+elseif dest == "asherodan" then
   navTo(10, 15)
   e("u")
-  SetVariable("waiting_asherodan", "false")
+
+elseif dest == "imperial" then
+  navTo(23, 4)
+  e("u")
+
 end
-</send>
+
+SetVariable("waiting_rt", "")</send>
   </trigger>
   <trigger
    enabled="y"
@@ -753,7 +758,7 @@ Execute("prc;q " .. c)</send>
    send_to="12"
    sequence="100"
   >
-  <send>SetVariable("waiting_sendhia", "true")
+  <send>SetVariable("waiting_rt", "sendhia")
 Send("rt vidblain")
 Send("coord")</send>
   </alias>
@@ -841,6 +846,8 @@ elseif match("organize") then
   first = "organize"
 elseif match("consume") then
   first = "consume"
+elseif match("search") then
+  first = "search"
 end
 
 Execute("dinv " .. first .. " " .. table.concat(args, " "))</send>
@@ -1142,7 +1149,7 @@ ColourNote("cyan", "", "Room ID: " .. gmcp("room.info.num"))</send>
    send_to="12"
    sequence="100"
   >
-  <send>SetVariable("waiting_asherodan", "true")
+  <send>SetVariable("waiting_rt", "asherondan")
 Send("rt vidblain")
 Send("coord")</send>
   </alias>
@@ -1153,7 +1160,18 @@ Send("coord")</send>
    send_to="12"
    sequence="100"
   >
-  <send>SetVariable("waiting_darklight", "true")
+  <send>SetVariable("waiting_rt", "darklight")
+Send("rt vidblain")
+Send("coord")</send>
+  </alias>
+  <alias
+   match="rt imperial"
+   enabled="y"
+   group="rt"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("waiting_rt", "imperial")
 Send("rt vidblain")
 Send("coord")</send>
   </alias>
@@ -1356,15 +1374,13 @@ group="keepawake" >
   <variable name="hppot">'light relief'</variable>
   <variable name="mw_spWin_windowx">1209</variable>
   <variable name="mw_spWin_windowy">347</variable>
-  <variable name="patk">cast 'flame arrow'</variable>
+  <variable name="patk">cast 'flaming sphere'</variable>
   <variable name="potbag">bag</variable>
   <variable name="recall">duffle</variable>
   <variable name="themed_miniwindow_heightspWin">649</variable>
   <variable name="themed_miniwindow_widthspWin">340</variable>
   <variable name="username">KumoGami</variable>
-  <variable name="waiting_asherodan">false</variable>
-  <variable name="waiting_darklight">false</variable>
-  <variable name="waiting_sendhia">false</variable>
+  <variable name="waiting_rt"></variable>
 </variables>
 
 <!-- colours -->
