@@ -20819,3 +20819,650 @@
 @w[09 Oct 02:23:00] @YYou tell the CLAN: 'anyways i'm off to bed, night boots'
 @w[09 Oct 02:23:05] @YTalbor (@GGeneral@Y) tells the CLAN: 'cya later'
 @w[09 Oct 02:23:14] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[09 Oct 10:38:14] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[09 Oct 10:38:19] @CMushambo gossips 'can anyone USA access Ticketmaster or Livenation right now? I figured it was some VPN block but nope'
+@w[09 Oct 10:38:23] @G(Friend)@c: @CGorsk smiles at you.
+@w[09 Oct 10:38:30] @G(Friend)@c: @CYou smile at Gorsk and greet him warmly.
+@w[09 Oct 10:38:34] @Y(@GCorpsman@Y) CLAN: You wave.
+@w[09 Oct 10:38:48] @G(Friend) Gorsk@c:@C 'you can buy em with tps'
+@w[09 Oct 10:40:16] @CMushambo gossips '"We Will Return Shortly Our site is temporarily down for maintenance. We apologize for the inconvenience and appreciate your patience. Please check back soon." There are (kid you not EIGHT tickets available for this concert, now I feel the need to stay up again to see if I get a Wonka Golden Ticket :-( '
+@w[09 Oct 10:40:38] @RGlobal Quest@Y:@w @mGlobal quest # 6956@w has been declared for levels @m93@w to @m104@w - @m200 or fewer wins only@w.
+@w[09 Oct 10:40:38] @RGlobal Quest@Y:@w The quest will start in @m4@w ticks and will last for @m83@w ticks.
+@w[09 Oct 10:40:38] @RGlobal Quest@Y:@w See '@mHelp Global Quests@w', or, type '@mGquest Join 6956@w' to take part.
+@w[09 Oct 10:40:40] @CConcerned citizen says, @c"@CPompeii thanks you for your help.@c"
+@w[09 Oct 10:42:38] @RGlobal Quest@Y:@w @mGlobal quest # 6956@w for levels @m93@w to @m104@w - @m200 or fewer wins only@w has now started.
+@w[09 Oct 10:42:45] @RGlobal Quest@Y:@w @gGlobal Quest # 6955@w has been won by @YYtrams@w - @Y42nd@w win.
+@w[09 Oct 10:42:53] @G(Friend)@c: @wGorsk goes @Goo@gOO@Goo@gOO@Goo@w at Ytrams.
+@w[09 Oct 10:47:39] @RGlobal Quest@Y:@w @mGlobal quest # 6956@w has been cancelled due to lack of participants.
+@w[09 Oct 10:48:36] @GAcheos questions 'hmm, if i have a 150 potions in my bag and I want to remove just 50, what would be the syntax?'
+@w[09 Oct 10:48:46] @GOspario answers 'none'
+@w[09 Oct 10:48:51] @GOspario answers 'would be cool, though'
+@w[09 Oct 10:49:23] @GOspario answers 'so get __ bag 50 times sounds easier than get all and put 100 back'
+@w[09 Oct 10:53:41] @GCLAN: At-ten-tion! YeeShin is here to get some training done!
+@w[09 Oct 10:54:51] @GCLAN: At-ten-tion! Cyndr is here to get some training done!
+@w[09 Oct 10:56:27] @CCyndr gossips 'how're we doin?'
+@w[09 Oct 10:56:42] @C(Gossip) Cyndr bows incredibly deeply
+@w[09 Oct 10:56:55] @C(Gossip) Cyndr collapses from the bowing
+@w[09 Oct 11:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 11:01:20] @C(Gossip) Cyndr laughs in Sisyphus
+@w[09 Oct 11:02:30] @RINFO: All please welcome Cognizance, Aardwolf's newest Sprite Navigator!@w
+@w[09 Oct 11:03:02] @C(@MWanGrp?!@C)@M [@wL182,@R-2500@w,H+4/T9@M] DjVoltron: it's the kid in me
+@w[09 Oct 11:03:05] @C(@MWanGrp?!@C)@M [@wL182,@R-2500@w,H+4/T9@M] DjVoltron: doh
+@w[09 Oct 11:03:33] @RGlobal Quest@Y:@w @gGlobal Quest # 6957@w has been won by @YFrosty@w - @Y243rd@w win.
+@w[09 Oct 11:04:31] @YRatel (@GRecruit@Y) tells the CLAN: 'when you are in a global quest and you still busy and said been canceled. are you to slow'
+@w[09 Oct 11:04:43] @YSaraid (@GGeneral@Y) tells the CLAN: 'yes'
+@w[09 Oct 11:04:50] @YEnlossys (@GSpecial Ops@Y) tells the CLAN: 'Yeah it means a few minutes have elapsed since the last mob kill'
+@w[09 Oct 11:04:54] @MDjVoltron gametalks@w: @Yi mean i'll buy it, put it up
+@w[09 Oct 11:05:06] @YRatel (@GRecruit@Y) tells the CLAN: 'aish okay'
+@w[09 Oct 11:05:17] @MDjVoltron gametalks@w: @Ynot sure how that happened
+@w[09 Oct 11:05:27] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Enlossys: What in tarnation did you people do to our clan tag
+@w[09 Oct 11:05:39] @MDjVoltron gametalks@w: @Ybidding on mushrooms
+@w[09 Oct 11:05:45] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Cyndr: what in label alteration happened?
+@w[09 Oct 11:05:46] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Saraid goes @Goo@gOO@Goo@gOO@Goo@w at Enlossys.
+@w[09 Oct 11:05:56] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Cyndr bows incredibly deeply
+@w[09 Oct 11:06:15] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Enlossys: Did leadership get into my LSD stash again?
+@w[09 Oct 11:06:15] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Cyndr clutches at his chest and falls over dead.
+@w[09 Oct 11:06:31] @MDjVoltron gametalks@w: @Yand if anyone guesses the song i have on, 2m gold
+@w[09 Oct 11:06:32] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Cyndr gets a pitchfork ready
+@w[09 Oct 11:06:32] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Saraid looks at Enlossys with an innocent face and says: 'Listen baby - WASNTME!'.
+@w[09 Oct 11:06:47] @B(@W^@b\@WRh@wab@Wdo@b/@W^@B)@w Acheos peers around himself intently.
+@w[09 Oct 11:06:52] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Enlossys playfully tackles Acheos.
+@w[09 Oct 11:06:56] @MDjVoltron gametalks@w: @Ymybad, think i missed that mushroom
+@w[09 Oct 11:07:05] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Cyndr chides Enlossys
+@w[09 Oct 11:07:11] @Y|@x244x=x@x214BooOOoOoOoOOOT@x244x=x@Y|@w Enlossys lives in fear of Cyndr.
+@w[09 Oct 11:07:11] @MDjVoltron gametalks@w: @Ywas putting a bandaid on finally :P
+@w[09 Oct 11:07:36] @Y|@x244x=x@x214BooOOoOoOOOT@x244x=x@Y|@w Cyndr laughs maniacally, "@rhahahaha"
+@w[09 Oct 11:12:58] @GCLAN: Cyndr falls out to take some much needed R & R.
+@w[09 Oct 11:21:10] @MDjVoltron gametalks@w: @YDamn already thinkin of questions for the next sessionl.
+@w[09 Oct 11:30:05] @RGlobal Quest@Y:@w @gGlobal Quest # 6964@w has been won by @YNifto@w - @Y381st@w win.
+@w[09 Oct 11:30:17] @GCLAN: YeeShin falls out to take some much needed R & R.
+@w[09 Oct 11:39:07] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'The Unknown Soldier blesses you with a free point of mastery in sonic damage.'
+@w[09 Oct 11:39:13] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'Finally something'
+@w[09 Oct 11:55:46] @G(Friend) Gorsk@c:@C 'stupid mapper...'
+@w[09 Oct 11:56:08] @G(Friend) Gorsk@c:@C 'to have me leave cataclysm, it decided to walk me out through the great portal'
+@w[09 Oct 11:58:22] @GCLAN: Lexicon falls out to take some much needed R & R.
+@w[09 Oct 12:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 12:00:28] @RINFO: Radience embraces Tianshi who died valiantly in combat against A roaring inferno.@w
+@w[09 Oct 12:21:14] @RINFO: You hear a loud scream as Faur is brutally killed by a deputy and 1 other.@w
+@w[09 Oct 12:21:37] @RINFO: All please welcome Michouxe, Aardwolf's newest Wolfen Venomist!@w
+@w[09 Oct 12:25:46] @RINFO: Krarrg has been reborn as a Dark elf Thief.@w
+@w[09 Oct 12:27:35] @RINFO: Radience embraces Bonjour who died valiantly in combat against Axaldra, the Eternal One and 1 other.@w
+@w[09 Oct 12:27:55] @GMoonboy questions 'what cause mobs respawn straight away after we kill it? is it just random thing? it's kinda annoying when it's aggro :/'
+@w[09 Oct 12:28:17] @GTrachx answers 'special mob '
+@w[09 Oct 12:28:24] @GOspario answers 'either you just catch repop o its a mobprog'
+@w[09 Oct 12:29:26] @GTrachx answers 'for example: sea monster in prosper, dragon in des'
+@w[09 Oct 12:29:47] @GTrachx answers 'also if it is gq target then area repop is set to 30 seconds or so'
+@w[09 Oct 12:31:00] @GMoonboy questions 'thanks guys, will look into it further on the helpfiles'
+@w[09 Oct 12:31:25] @RINFO: FireScape has been reborn as a Giant Ranger.@w
+@w[09 Oct 12:32:17] @GTrachx answers 'also I think some transfer mobs like crystal in ruins or unicorn/chimera in citadel are respawned on kill'
+@w[09 Oct 12:34:57] @GCLAN: At-ten-tion! EmJay is here to get some training done!
+@w[09 Oct 12:38:20] @RINFO: Shadedancer has fallen, blood staining an alchemist's hands.@w
+@w[09 Oct 12:39:26] @RINFO: All please welcome Bababull, Aardwolf's newest Dwarf Barbarian!@w
+@w[09 Oct 12:42:00] @RINFO: All please welcome Jonasthebest, Aardwolf's newest Lizardman Soldier!@w
+@w[09 Oct 12:42:39] @RINFO: Trurien's journalistic integrity crumbles in the affair known as a cave dweller and 1 othergate.@w
+@w[09 Oct 12:44:54] @RGlobal Quest@Y:@w @gGlobal Quest # 6971@w has been won by @YTrurien@w - @Y279th@w win.
+@w[09 Oct 12:52:34] @G(Friend)@c: @CGorsk gallantly tips his hat to Vost.
+@w[09 Oct 13:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 13:01:13] @RGlobal Quest@Y:@w @mGlobal Quest # 6977@w has been won by @YMoonboy@w - @Y95th@w win.
+@w[09 Oct 13:08:07] @GShadedancer questions 'how does one use an item that has charges'
+@w[09 Oct 13:08:33] @GTalbor answers 'help brandish'
+@w[09 Oct 13:10:05] @GCLAN: EmJay falls out to take some much needed R & R.
+@w[09 Oct 13:11:36] @RGlobal Quest@Y:@w @gGlobal quest # 6981@w has been declared for levels @g89@w to @g100@w.
+@w[09 Oct 13:11:36] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g86@w ticks.
+@w[09 Oct 13:11:36] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 6981@w' to take part.
+@w[09 Oct 13:13:36] @RGlobal Quest@Y:@w @gGlobal quest # 6981@w for levels @g89@w to @g100@w has now started.
+@w[09 Oct 13:15:40] @GMlactom Tech@w: @Cdo they just hand out free telnet servers
+@w[09 Oct 13:15:50] @GMlactom Tech@w: @Cits basically redundant now
+@w[09 Oct 13:16:05] @GCLAN: At-ten-tion! Zoth is here to get some training done!
+@w[09 Oct 13:16:15] @GMlactom Tech@w: @Cand could i use an ssh protocol to connect to aard via port 23
+@w[09 Oct 13:17:04] @RGlobal Quest@Y:@w @gGlobal Quest # 6981@w has been won by @YFrosty@w - @Y244th@w win.
+@w[09 Oct 13:17:04] @RGlobal Quest@Y:@w @gGlobal Quest # 6981@w will go into extended time for 5 more minutes.
+@w[09 Oct 13:17:07] @RGlobal Quest@Y:@w Cilmarill has completed @gGlobal Quest # 6981@w.
+@w[09 Oct 13:17:07] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 6981@w is now over.
+@w[09 Oct 13:17:17] @GGraoldan questions 'this may be a tech question.. but don't have that channel on.. anyone know how to make things double spaced? i used to have it and now i don't unsure if it's something i clicked or some setting i've changed.'
+@w[09 Oct 13:18:40] @RINFO: Shadedancer has fallen, blood staining a booted eagle and 5 others's hands.@w
+@w[09 Oct 13:21:49] @GGorsk answers 'possibly "compact" unless you're looking for something else'
+@w[09 Oct 13:22:55] @CGraoldan gossips 'test'
+@w[09 Oct 13:23:08] @GGraoldan answers 'that's gold thanks gorsk.. '
+@w[09 Oct 13:23:11] @CMlactom gossips 'whatever you did it worked'
+@w[09 Oct 13:23:17] @G(Answer) Gorsk bows deeply.
+@w[09 Oct 13:23:26] @C(Gossip) Cilmarill taps Graoldan's microphone
+@w[09 Oct 13:23:39] @CCilmarill gossips 'he's going to burst into song now'
+@w[09 Oct 13:24:01] @CGraoldan gossips 'well almost.. unfortunately.. havn't drunk enough to perform in public'
+@w[09 Oct 13:24:44] @CMlactom gossips 'thats a lotta socials'
+@w[09 Oct 13:25:01] @CMlactom gossips 'might aswell just use the colon emote thing'
+@w[09 Oct 13:25:18] @C(Gossip) Cilmarill never uses colons
+@w[09 Oct 13:25:48] @RINFO: Hildfelis has graduated from the Aylorian Academy!@w
+@w[09 Oct 13:26:07] @C(Gossip) Mlactom thinks highly of that opinion
+@w[09 Oct 13:26:37] @CMlactom gossips 'can you donate invis stuff'
+@w[09 Oct 13:32:14] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[09 Oct 13:33:28] @YZoth (@GCorpsman@Y) tells the CLAN: 'Just got one of the witch's cauldron ingredients.  wonder how rare they are.'
+@w[09 Oct 13:34:14] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'individual or in general?'
+@w[09 Oct 13:34:28] @RINFO: The last post plays mournfully as Ytrams falls in battle to the enemy of Zeus.@w
+@w[09 Oct 13:34:36] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'this is what I got so far http://mb.aardwolfboot.com/yorotayixe'
+@w[09 Oct 13:35:32] @YZoth (@GCorpsman@Y) tells the CLAN: 'Okay good I guess they aren't very rare.  I hadn't gotten one yet until now'
+@w[09 Oct 13:46:22] @GCLAN: At-ten-tion! Enlossys is here to get some training done!
+@w[09 Oct 13:50:21] @RINFO: Shadedancer has fallen, blood staining Bob's hands.@w
+@w[09 Oct 13:52:26] @YDejavu (@GRecruit@Y) tells the CLAN: 'How do I get a pet to put in uplanes?'
+@w[09 Oct 13:52:36] @YTalbor (@GGeneral@Y) tells the CLAN: 'heel'
+@w[09 Oct 13:52:47] @YDejavu (@GRecruit@Y) tells the CLAN: 'why do i buy one i mean, giant pet store?'
+@w[09 Oct 13:52:48] @YTalbor (@GGeneral@Y) tells the CLAN: 'or rt pet first '
+@w[09 Oct 13:52:51] @YKazm (@GSpecial Ops@Y) tells the CLAN: 'first you buy it or create it'
+@w[09 Oct 13:54:25] @RINFO: Neeper, cursing a Nulan'Boar hunter and 3 others, embraces death and returns to the Dark One.@w
+@w[09 Oct 13:55:50] @YKazm (@GSpecial Ops@Y) tells the CLAN: 'sure'
+@w[09 Oct 13:56:49] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[09 Oct 14:00:11] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 14:00:18] @RGlobal Quest@Y:@w @gGlobal Quest # 6990@w has been won by @YTsarikos@w - @Y2566th@w win.
+@w[09 Oct 14:07:36] @RINFO: The last post plays mournfully as Davem falls in battle to a Kobalos palace guard.@w
+@w[09 Oct 14:11:27] @G(Friend)@c: @CGorsk waves hello to Castiel.
+@w[09 Oct 14:13:23] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[09 Oct 14:15:32] @YYtrams (@GRecruit@Y) tells the CLAN: 'wow! You killed a Trivia Point bonus mob!! Trivia point added.'
+@w[09 Oct 14:15:37] @YZoth (@GCorpsman@Y) tells the CLAN: 'nice'
+@w[09 Oct 14:15:37] @YYtrams (@GRecruit@Y) tells the CLAN: 'first time'
+@w[09 Oct 14:15:51] @RGlobal Quest@Y:@w @gGlobal Quest # 6993@w has been won by @YVost@w - @Y3085th@w win.
+@w[09 Oct 14:15:56] @G(Friend)@c: @CGorsk goes "WHEE!" and dances around Vost.
+@w[09 Oct 14:25:06] @YLepdar (@GSoldier@Y) tells the CLAN: 'nite guys'
+@w[09 Oct 14:25:27] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'byeeeeeeeeeeeeeeeeeeeeeeeeeee'
+@w[09 Oct 14:25:57] @YLepdar (@GSoldier@Y) tells the CLAN: 'hahah lol '
+@w[09 Oct 14:26:04] @Y(@GSpecial Ops@Y) CLAN: A bright, shiny gold halo appears over Kanaye's head.
+@w[09 Oct 14:30:49] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[09 Oct 14:33:18] @C(@MWanGrp?!@C)@M [@wL186,@R-2500@w,W+6/T1@M] Winger: anyone free for a drag to 200 for double?
+@w[09 Oct 14:35:04] @GCLAN: Lepdar falls out to take some much needed R & R.
+@w[09 Oct 14:46:40] @RINFO: Scarratt sinks to their knees and honourably accepts defeat at the hands of a venomous bat.@w
+@w[09 Oct 14:51:29] @G(Friend) Gorsk@c:@C 'trying'
+@w[09 Oct 14:51:33] @G(Friend) Gorsk@c:@C 'i wanna take a nap before trans'
+@w[09 Oct 14:51:54] @G(Friend) Gorsk@c:@C 'na, almost there and i got daily double'
+@w[09 Oct 14:52:05] @G(Friend) Gorsk@c:@C 'and i found some rare'
+@w[09 Oct 14:52:35] @G(Friend)@c: @CGorsk smirks at Vader's saying.
+@w[09 Oct 14:58:00] @RINFO: Gorsk has removed himself from the (OPK) victim pool!@w
+@w[09 Oct 14:58:40] @RGlobal Quest@Y:@w @gGlobal Quest # 7001@w has been won by @YPorcius@w - @Y163rd@w win.
+@w[09 Oct 14:58:40] @RGlobal Quest@Y:@w @gGlobal Quest # 7001@w will go into extended time for 5 more minutes.
+@w[09 Oct 14:58:42] @G(Friend)@c: @CGorsk gallantly tips his hat to Hira.
+@w[09 Oct 14:59:13] @RGlobal Quest@Y:@w Davem has completed @gGlobal Quest # 7001@w.
+@w[09 Oct 14:59:13] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7001@w is now over.
+@w[09 Oct 15:00:11] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 15:00:42] @G(Friend) Gorsk@c:@C 'double!'
+@w[09 Oct 15:05:03] @G(Friend) Gorsk@c:@C 'ok, taking a nap. i'll hopefully be back before trans'
+@w[09 Oct 15:05:08] @G(Friend)@c: @CGorsk waves happily.
+@w[09 Oct 15:08:57] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 15:11:35] @RGlobal Quest@Y:@w @gGlobal Quest # 7004@w has been won by @YCooler@w - @Y5520th@w win.
+@w[09 Oct 15:12:58] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 15:13:58] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 15:18:52] @RINFO: Winger has been reborn as a Triton Thief.@w
+@w[09 Oct 15:20:25] @CMlactom gossips 'the thing just disconnected me because i have such slow ping and i was moving on my own'
+@w[09 Oct 15:24:11] @GCLAN: At-ten-tion! Mosher is here to get some training done!
+@w[09 Oct 15:26:00] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 15:26:14] @RGlobal Quest@Y:@w @gGlobal Quest # 7007@w has been won by @YHaagen@w - @Y188th@w win.
+@w[09 Oct 15:27:30] @GCLAN: At-ten-tion! EmJay is here to get some training done!
+@w[09 Oct 15:30:01] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 15:31:02] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 15:31:30] @CMlactom gossips 'is there a seekers or chaos or something map of the halls of the damned'
+@w[09 Oct 15:31:50] @CMlactom gossips 'thats simple enough for an idiot to understand'
+@w[09 Oct 15:32:14] @CGraoldan gossips 'slight maze, with few tunnels not that difficult. look graf near entrance for 8star key'
+@w[09 Oct 15:33:20] @CMlactom gossips 'look graf?'
+@w[09 Oct 15:33:24] @RINFO: Maxual has entered open PK (OPK) mode!@w
+@w[09 Oct 15:34:25] @CGraoldan gossips '(g) in room name.. grafetti'
+@w[09 Oct 15:34:55] @CMlactom gossips 'is there a command or something that lets you run to a specific room name'
+@w[09 Oct 15:35:02] @CGraoldan gossips 'anyhow bed for me.... i've slept the last hr.. mayaswell go where it's comfortable'
+@w[09 Oct 15:35:21] @CGraoldan gossips 'if you've mapped it.. go 1  works there'
+@w[09 Oct 15:35:24] @CMlactom gossips 'good night'
+@w[09 Oct 15:35:35] @CCilmarill gossips 'you can do "mapper goto <room number>"'
+@w[09 Oct 15:36:16] @CMlactom gossips 'mapper?'
+@w[09 Oct 15:36:20] @CGraoldan gossips 'lots of caverns... there's like 2x coridors with them either side'
+@w[09 Oct 15:36:53] @CGraoldan gossips 'snd plugin '
+@w[09 Oct 15:36:58] @CCilmarill gossips 'do you play on mushclient?'
+@w[09 Oct 15:37:07] @CMlactom gossips 'ohh search and destroy'
+@w[09 Oct 15:37:14] @CMlactom gossips 'nope'
+@w[09 Oct 15:37:32] @CMlactom gossips 'i have it it doesnt rlly work'
+@w[09 Oct 15:37:32] @CCilmarill gossips 'ahh right. I am of no further help I'm afraid :)'
+@w[09 Oct 15:37:43] @CCilmarill gossips 'well, I suppose, of no help *at all* :)'
+@w[09 Oct 15:37:45] @CMlactom gossips 'i just use telnet'
+@w[09 Oct 15:37:57] @CGraoldan gossips 'well least it's easy to nav then.. you should switch if you got the option.. some people have got plugins for blowtorch.. i havn't bothered when i'm on my phone '
+@w[09 Oct 15:38:07] @CCilmarill gossips 'well, definitely try to use mushclient to begin with :)'
+@w[09 Oct 15:38:18] @CMlactom gossips 'i have snd on mushclient'
+@w[09 Oct 15:38:31] @CMlactom gossips 'i just have like seven different mushclients'
+@w[09 Oct 15:38:38] @CMlactom gossips 'i installed it seven times'
+@w[09 Oct 15:39:18] @RGlobal Quest@Y:@w @gGlobal Quest # 7010@w has been won by @YNano@w - @Y583rd@w win.
+@w[09 Oct 15:39:18] @RGlobal Quest@Y:@w @gGlobal Quest # 7010@w will go into extended time for 5 more minutes.
+@w[09 Oct 15:39:21] @CGraoldan gossips 'gotta just use the same one.. and the more you explore the more it will learn.. and easier quests/cps will be'
+@w[09 Oct 15:39:34] @CWario gossips 'yes exactly'
+@w[09 Oct 15:39:38] @CGraoldan gossips 'but you have to also download snd plugin'
+@w[09 Oct 15:39:49] @CWario gossips 'there are techies on the tech channel that love to help'
+@w[09 Oct 15:42:06] @RGlobal Quest@Y:@w Selitos has completed @gGlobal Quest # 7010@w.
+@w[09 Oct 15:43:40] @RGlobal Quest@Y:@w SimiLanJ has completed @gGlobal Quest # 7010@w.
+@w[09 Oct 15:44:16] @CMlactom gossips 'there r pot ingredients s of recal'
+@w[09 Oct 15:44:26] @CMlactom gossips 'its not owned'
+@w[09 Oct 15:47:35] @RGlobal Quest@Y:@w @mGlobal quest # 7012@w has been declared for levels @m89@w to @m100@w - @m200 or fewer wins only@w.
+@w[09 Oct 15:47:35] @RGlobal Quest@Y:@w The quest will start in @m4@w ticks and will last for @m89@w ticks.
+@w[09 Oct 15:47:35] @RGlobal Quest@Y:@w See '@mHelp Global Quests@w', or, type '@mGquest Join 7012@w' to take part.
+@w[09 Oct 15:49:35] @RGlobal Quest@Y:@w @mGlobal quest # 7012@w for levels @m89@w to @m100@w - @m200 or fewer wins only@w has now started.
+@w[09 Oct 15:50:22] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy perks up in his recliner and drops the book he's been reading, "50 shades of sakura" by O. R. Phean.
+@w[09 Oct 15:50:32] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: When clan tags attack :O
+@w[09 Oct 15:52:53] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: Baaaaardsss....
+@w[09 Oct 15:54:36] @RGlobal Quest@Y:@w @mGlobal quest # 7012@w has been cancelled due to lack of participants.
+@w[09 Oct 15:57:43] @RINFO: Zoh has been reborn as an Eldar Warrior.@w
+@w[09 Oct 16:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 16:09:35] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'anyone doing spells?'
+@w[09 Oct 16:11:54] @GCLAN: At-ten-tion! Lexicon is here to get some training done!
+@w[09 Oct 16:13:00] @GCLAN: At-ten-tion! DobbyBobby is here to get some training done!
+@w[09 Oct 16:14:43] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[09 Oct 16:18:22] @GCLAN: At-ten-tion! Abraxos is here to get some training done!
+@w[09 Oct 16:18:28] @CKulton gossips 'someone please auction some level 40 healing potions, please'
+@w[09 Oct 16:18:33] @RINFO: All please welcome Furkanqwe, Aardwolf's newest Vampire Enchanter!@w
+@w[09 Oct 16:18:58] @GCLAN: At-ten-tion! Anssett is here to get some training done!
+@w[09 Oct 16:19:19] @GKulton questions 'I need like 20 to get out of lower planes..'
+@w[09 Oct 16:20:05] @CKulton gossips 'ah, I am out. thanks guys.  :)'
+@w[09 Oct 16:20:27] @GKulton questions 'I was stuck down there with aggro mobs everywhere and out of pots.  :)'
+@w[09 Oct 16:20:45] @GNifto answers 'im sure we've all been there :)'
+@w[09 Oct 16:21:48] @GCLAN: At-ten-tion! Flynnt is here to get some training done!
+@w[09 Oct 16:22:37] @GCLAN: At-ten-tion! Nueve is here to get some training done!
+@w[09 Oct 16:27:09] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy: Bard was strolling without a care / when a loud noise gave him quit the scare / white as a spook, he took a look / it was just his own noisy air
+@w[09 Oct 16:27:29] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Grrdy has lost his mojo
+@w[09 Oct 16:28:43] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'Any SH doing spells?'
+@w[09 Oct 16:30:13] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'surte'
+@w[09 Oct 16:30:15] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'where are ya'
+@w[09 Oct 16:30:23] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'I come crec'
+@w[09 Oct 16:30:30] @YNueve (@GSpecial Ops@Y) tells the CLAN: 'want a cancel?'
+@w[09 Oct 16:32:34] @RINFO: From a broiling ocean arose TrEz, having walked the halls of the Sea King's Dominion.@w
+@w[09 Oct 16:39:58] @RINFO: Dixon has been reborn as a Vampire Warrior.@w
+@w[09 Oct 16:40:45] @RGlobal Quest@Y:@w @cGlobal quest # 7022@w has been declared for levels @c89@w to @c100@w - @c10 or fewer wins only@w.
+@w[09 Oct 16:40:45] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c85@w ticks.
+@w[09 Oct 16:40:45] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 7022@w' to take part.
+@w[09 Oct 16:40:58] @RINFO: Dixon has entered open PK (OPK) mode!@w
+@w[09 Oct 16:42:45] @RGlobal Quest@Y:@w @cGlobal quest # 7022@w for levels @c89@w to @c100@w - @c10 or fewer wins only@w has now started.
+@w[09 Oct 16:45:22] @RGlobal Quest@Y:@w @mGlobal Quest # 7020@w has been won by @YPopa@w - @Y26th@w win.
+@w[09 Oct 16:47:46] @RGlobal Quest@Y:@w @cGlobal quest # 7022@w has been cancelled due to lack of participants.
+@w[09 Oct 16:49:47] @G(Friend)@w: @CFeast has quit.
+@w[09 Oct 16:52:47] @GCLAN: DobbyBobby falls out to take some much needed R & R.
+@w[09 Oct 16:53:20] @YDejavu (@GRecruit@Y) tells the CLAN: 'who drops lifecleaver in paradise lost?'
+@w[09 Oct 16:54:00] @GDejavu questions 'who drops lifecleaver in paradise lost?'
+@w[09 Oct 16:59:49] @YDejavu (@GRecruit@Y) tells the CLAN: 'found it'
+@w[09 Oct 17:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 17:00:13] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'sorry missed the first question deja'
+@w[09 Oct 17:00:28] @YDejavu (@GRecruit@Y) tells the CLAN: 'np!'
+@w[09 Oct 17:03:10] @GCLAN: At-ten-tion! DobbyBobby is here to get some training done!
+@w[09 Oct 17:04:20] @RGlobal Quest@Y:@w @gGlobal quest # 7026@w has been declared for levels @g93@w to @g104@w.
+@w[09 Oct 17:04:20] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g93@w ticks.
+@w[09 Oct 17:04:20] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 7026@w' to take part.
+@w[09 Oct 17:06:20] @RGlobal Quest@Y:@w @gGlobal quest # 7026@w for levels @g93@w to @g104@w has now started.
+@w[09 Oct 17:08:36] @WRestore@w: @yGobble, gobble! @RHa@Wpp@Ry C@Wa@Rn@Wa@Rd@Wi@Ra@Wn @RTha@Wnksgi@Rving! @yGobble, gobble!
+@w[09 Oct 17:12:39] @RGlobal Quest@Y:@w @gGlobal Quest # 7026@w has been won by @YForma@w - @Y721st@w win.
+@w[09 Oct 17:12:54] @RINFO: Neeper, cursing a cooking kobold and 2 others, embraces death and returns to the Dark One.@w
+@w[09 Oct 17:12:59] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[09 Oct 17:14:38] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'Where to drag Zoth on evil if he didn't do empy yet?'
+@w[09 Oct 17:14:50] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'evil mobs? or evil zoth'
+@w[09 Oct 17:14:59] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'Mobs'
+@w[09 Oct 17:15:06] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'tanra maybe'
+@w[09 Oct 17:15:12] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'therre already'
+@w[09 Oct 17:15:51] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'fens if you can handle the incoming damage, or werewood. or just accept that align isn't that hard to flip and do cove'
+@w[09 Oct 17:16:28] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'i can try fens'
+@w[09 Oct 17:17:28] @RINFO: The last post plays mournfully as Kanaye falls in battle to a large sockeye salmon and 8 others.@w
+@w[09 Oct 17:17:39] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'wrong button'
+@w[09 Oct 17:17:43] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'haha'
+@w[09 Oct 17:17:49] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Yes, don't hit the "die" button.'
+@w[09 Oct 17:17:51] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'That's bad.'
+@w[09 Oct 17:17:51] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'that's cove :D'
+@w[09 Oct 17:18:29] @RINFO: All please welcome Abelpro, Aardwolf's newest Troll Soldier!@w
+@w[09 Oct 17:21:16] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'I am in a hurry'
+@w[09 Oct 17:24:24] @RGlobal Quest@Y:@w @cGlobal quest # 7030@w has been declared for levels @c97@w to @c108@w - @c10 or fewer wins only@w.
+@w[09 Oct 17:24:24] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c80@w ticks.
+@w[09 Oct 17:24:24] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 7030@w' to take part.
+@w[09 Oct 17:26:24] @RGlobal Quest@Y:@w @cGlobal quest # 7030@w for levels @c97@w to @c108@w - @c10 or fewer wins only@w has now started.
+@w[09 Oct 17:31:26] @RGlobal Quest@Y:@w @cGlobal quest # 7030@w has been cancelled due to lack of participants.
+@w[09 Oct 17:31:33] @RGlobal Quest@Y:@w @gGlobal Quest # 7029@w has been won by @YZelog@w - @Y364th@w win.
+@w[09 Oct 17:34:02] @RINFO: Trurien's journalistic integrity crumbles in the affair known as the spirit of Bakarnegate.@w
+@w[09 Oct 17:36:22] @YMadrox (@GGeneral@Y) tells the CLAN: 'hey yo'
+@w[09 Oct 17:37:09] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down a tiny bird.@w
+@w[09 Oct 17:39:27] @GCLAN: DobbyBobby falls out to take some much needed R & R.
+@w[09 Oct 17:42:19] @GCLAN: At-ten-tion! Zensch is here to get some training done!
+@w[09 Oct 17:49:17] @G(Friend)@w: @CGorsk has entered Aardwolf.
+@w[09 Oct 17:51:34] @GCLAN: At-ten-tion! Rapscallia is here to get some training done!
+@w[09 Oct 17:51:48] @GCLAN: Rapscallia falls out to take some much needed R & R.
+@w[09 Oct 17:52:30] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 17:56:31] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 17:57:32] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 17:57:59] @YZoth (@GCorpsman@Y) tells the CLAN: 'grats'
+@w[09 Oct 17:58:47] @RGlobal Quest@Y:@w @mGlobal Quest # 7035@w has been won by @YYtrams@w - @Y43rd@w win.
+@w[09 Oct 18:00:13] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 18:00:15] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'can somebody open morgle pls'
+@w[09 Oct 18:00:18] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'morgue *'
+@w[09 Oct 18:00:33] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ty'
+@w[09 Oct 18:07:34] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 18:07:37] @RINFO: All please welcome Holtan, Aardwolf's newest Elf Enchanter!@w
+@w[09 Oct 18:07:49] @RINFO: Elshar has been removed from this realm by Talsa and 1 other.@w
+@w[09 Oct 18:08:36] @RINFO: Faur has ended the icy winter.@w
+@w[09 Oct 18:10:52] @GCLAN: At-ten-tion! Rapscallia is here to get some training done!
+@w[09 Oct 18:11:13] @GCLAN: Rapscallia falls out to take some much needed R & R.
+@w[09 Oct 18:11:24] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[09 Oct 18:11:25] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[09 Oct 18:11:28] @GCLAN: Brun falls out to take some much needed R & R.
+@w[09 Oct 18:11:31] @CYou say 'moricand'
+@w[09 Oct 18:11:31] @CThe Captain of the Airship says, @c"@CWe'll go to Moricand.@c"
+@w[09 Oct 18:11:31] @CThe Captain of the Airship says, @c"@COkay, we'll be here until you want to go somewhere else.@c"
+@w[09 Oct 18:11:31] @CThe Captain of the Airship says, @c"@CTo get back here, all you need to do is climb the ladder.@c"
+@w[09 Oct 18:11:35] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 18:12:14] @CThe Entrance Guard exclaims, @c"@CWelcome to the Gladiator's Arena, sir! For a small fee, you may enter and try your skills against some of the finest warriors, and... uhm... others the land has to offer!@c"
+@w[09 Oct 18:12:17] @CThe Entrance Guard says, @c"@CI'm sure you can afford more than that, but I suppose this is sufficient... THIS time...@c"
+@w[09 Oct 18:12:35] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 18:13:35] @RINFO: Murder most foul; a corpse has been discovered in the Fellchantry alleyways, and Ironwolf is the prime suspect.@w
+@w[09 Oct 18:18:05] @RINFO: All please welcome Agreton, Aardwolf's newest Human Ninja!@w
+@w[09 Oct 18:24:25] @GCLAN: At-ten-tion! Kazarkas is here to get some training done!
+@w[09 Oct 18:24:28] @RGlobal Quest@Y:@w @gGlobal Quest # 7039@w has been won by @YAkira@w - @Y627th@w win.
+@w[09 Oct 18:24:28] @RGlobal Quest@Y:@w @gGlobal Quest # 7039@w will go into extended time for 5 more minutes.
+@w[09 Oct 18:24:59] @RINFO: Sarisa has escaped Thandeld's grasp with only a couple of cuts and bruises.@w
+@w[09 Oct 18:26:10] @RGlobal Quest@Y:@w Junkai has completed @gGlobal Quest # 7039@w.
+@w[09 Oct 18:28:35] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 7039@w.
+@w[09 Oct 18:28:35] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7039@w is now over.
+@w[09 Oct 18:28:35] @G(Friend)@c: @CGorsk waves hello to Vost.
+@w[09 Oct 18:30:37] @RINFO: Cosette's blood is spilled by a stone gargoyle and the earth runs crimson. @w
+@w[09 Oct 18:30:45] @RINFO: All please welcome Jeagles, Aardwolf's newest Wolfen Soldier!@w
+@w[09 Oct 18:37:35] @RINFO: Kratos's name is carved into the annals as a legend who triumphed over the Elder Gods!@w
+@w[09 Oct 18:45:54] @RGlobal Quest@Y:@w @gGlobal Quest # 7042@w has been won by @YRoronoa@w - @Y132nd@w win.
+@w[09 Oct 18:45:54] @RGlobal Quest@Y:@w @gGlobal Quest # 7042@w will go into extended time for 5 more minutes.
+@w[09 Oct 18:46:06] @CFeast gossips 'Anyone know when fractals will occur?'
+@w[09 Oct 18:48:46] @G(Friend) Gorsk@c:@C 'well, just spent 150 transcendence points'
+@w[09 Oct 18:49:43] @RINFO: The last post plays mournfully as Kazarkas falls in battle to an oil painting.@w
+@w[09 Oct 18:50:42] @RGlobal Quest@Y:@w Dixon has completed @gGlobal Quest # 7042@w.
+@w[09 Oct 18:50:42] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7042@w is now over.
+@w[09 Oct 18:51:57] @GCLAN: At-ten-tion! Ratel is here to get some training done!
+@w[09 Oct 18:52:34] @RINFO: Dartan has been reborn as a Vampire Cleric.@w
+@w[09 Oct 18:53:07] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ty for the oc zen'
+@w[09 Oct 18:53:13] @Y(@GSpecial Ops@Y) CLAN: Zensch tickles Anssett.
+@w[09 Oct 18:53:38] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'i only summoned people for it :P'
+@w[09 Oct 18:54:27] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ya meant i didn't have to :D'
+@w[09 Oct 18:54:45] @Y(@GSpecial Ops@Y) CLAN: Zensch prods Anssett into action!
+@w[09 Oct 18:54:56] @YZoth (@GCorpsman@Y) tells the CLAN: 'Anyone feel like doing another exciting newbie drag'
+@w[09 Oct 18:54:59] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'getting close to my pup goal for this redo'
+@w[09 Oct 18:55:04] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'you can try organize genie this week!'
+@w[09 Oct 18:55:07] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ha'
+@w[09 Oct 18:55:16] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'i can in a minute if you don't get one zoth'
+@w[09 Oct 18:55:17] @YMadrox (@GGeneral@Y) tells the CLAN: 'genie at 11am earliest pls'
+@w[09 Oct 18:55:37] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[09 Oct 18:55:37] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[09 Oct 18:55:41] @CA dark elf gatekeeper asks, @c"@CWhat?  Are you trying to sneak in, KumoGami?@c"
+@w[09 Oct 18:55:41] @CA dark elf gatekeeper exclaims, @c"@CYou'll have to answer to me first!@c"
+@w[09 Oct 18:55:53] @CA dying dwarf exclaims, @c"@CPlease!  Wait!  Hear my words before you go any further!@c"
+@w[09 Oct 18:55:55] @w*Click*, the door opens.
+@w[09 Oct 18:56:11] @RINFO: Elshar has been killed by a gas demon and 1 other.@w
+@w[09 Oct 18:57:45] @G(Friend) Gorsk@c:@C 'how do i upgrade transcendence gear?'
+@w[09 Oct 18:57:56] @CA deep well says, @c"@CHello there, traveller.  You look a bit tired.  Sit down and rest.@c"
+@w[09 Oct 18:57:56] @CA deep well says, @c"@CYou want adventure?  Excitement?!  A player craves not these thing...err...sorry, wrong channel.@c"
+@w[09 Oct 18:57:56] @CA deep well exclaims, @c"@CThe Faerie King is looking for someone to clean up the mess around here, and you look like just the sucke...err...likely youth to do it!@c"
+@w[09 Oct 18:57:56] @CA deep well says, @c"@CSo really, all you need to do is shake your booty.  Or perhaps just say 'Okay!' with an appropriate amount of vim and enthusiasm.@c"
+@w[09 Oct 18:58:00] @G(Friend) Gorsk@c:@C 'token doesn't explain how to use itself :('
+@w[09 Oct 18:59:51] @YMadrox (@GGeneral@Y) tells the CLAN: 'do you have a drag zoth?'
+@w[09 Oct 19:00:13] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 19:00:18] @YZoth (@GCorpsman@Y) tells the CLAN: 'I have a group thanks though'
+@w[09 Oct 19:00:21] @YMadrox (@GGeneral@Y) tells the CLAN: 'ok'
+@w[09 Oct 19:01:41] @CJenny, the tavern owner exclaims, @c"@CKumoGami! I need your help!@c"
+@w[09 Oct 19:01:41] @CJenny, the tavern owner exclaims, @c"@CPlease, say you'll help me. I'm in dire need!@c"
+@w[09 Oct 19:02:45] @RGlobal Quest@Y:@w @gGlobal Quest # 7046@w has been won by @YSath@w - @Y634th@w win.
+@w[09 Oct 19:02:46] @RGlobal Quest@Y:@w @gGlobal Quest # 7046@w will go into extended time for 5 more minutes.
+@w[09 Oct 19:02:57] @GCLAN: At-ten-tion! Garence is here to get some training done!
+@w[09 Oct 19:03:48] @RINFO: The last post plays mournfully as KumoGami falls in battle to a boy playing in the water and 1 other.@w
+@w[09 Oct 19:03:57] @RINFO: Shadedancer has fallen, blood staining Valkur's Personal Bodyguard and 4 others's hands.@w
+@w[09 Oct 19:04:00] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[09 Oct 19:04:25] @c*@wYou thank Madrox heartily.
+@w[09 Oct 19:04:47] @G(Friend) Feast@c:@C 'Lifechants at druid'
+@w[09 Oct 19:07:11] @RGlobal Quest@Y:@w Zius has completed @gGlobal Quest # 7046@w.
+@w[09 Oct 19:07:11] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7046@w is now over.
+@w[09 Oct 19:07:37] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'ok back. zoth still need a drag?'
+@w[09 Oct 19:07:45] @YMadrox (@GGeneral@Y) tells the CLAN: 'he got one'
+@w[09 Oct 19:07:55] @Y(@GSpecial Ops@Y) CLAN: Anssett holds his thumb up at nothing in particular.
+@w[09 Oct 19:09:53] @YRatel (@GRecruit@Y) tells the CLAN: 'if i type market sell item gold it give me list on market'
+@w[09 Oct 19:10:19] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[09 Oct 19:10:21] @YTalbor (@GGeneral@Y) tells the CLAN: 'item is the name of wha you're selling'
+@w[09 Oct 19:10:43] @YRatel (@GRecruit@Y) tells the CLAN: 'yes dont want to type out now. '
+@w[09 Oct 19:11:16] @YRatel (@GRecruit@Y) tells the CLAN: 'want to sell item but give me list'
+@w[09 Oct 19:11:33] @YTalbor (@GGeneral@Y) tells the CLAN: 'what item?'
+@w[09 Oct 19:11:49] @YRatel (@GRecruit@Y) tells the CLAN: 'incomplete healing potion'
+@w[09 Oct 19:12:21] @YTalbor (@GGeneral@Y) tells the CLAN: 'market sell inc gold 3 confirm'
+@w[09 Oct 19:12:37] @YTalbor (@GGeneral@Y) tells the CLAN: 'replace 3 with 5 or 7 if you wanna list longer'
+@w[09 Oct 19:12:37] @YRatel (@GRecruit@Y) tells the CLAN: 'thanks'
+@w[09 Oct 19:12:44] @YTalbor (@GGeneral@Y) tells the CLAN: 'no'
+@w[09 Oct 19:12:46] @YTalbor (@GGeneral@Y) tells the CLAN: 'mp'
+@w[09 Oct 19:12:51] @YTalbor (@GGeneral@Y) tells the CLAN: 'ugh, np :)'
+@w[09 Oct 19:13:12] @YTalbor (@GGeneral@Y) tells the CLAN: 'you'll need to unkeep the potion first'
+@w[09 Oct 19:15:04] @YDejavu (@GRecruit@Y) tells the CLAN: 'When I buy an Aard weapon, how many TP do I need to max it out with the right flags etc?'
+@w[09 Oct 19:15:32] @YTalbor (@GGeneral@Y) tells the CLAN: '2 tps to toggle glow hum invis if you do it all at once'
+@w[09 Oct 19:15:35] @GCLAN: Garence falls out to take some much needed R & R.
+@w[09 Oct 19:15:36] @YTalbor (@GGeneral@Y) tells the CLAN: 'help toggle'
+@w[09 Oct 19:16:12] @YTalbor (@GGeneral@Y) tells the CLAN: 'tpenchanting is different, so don't know the numbers. you can check the help file '
+@w[09 Oct 19:16:32] @YTalbor (@GGeneral@Y) tells the CLAN: 'i wouldn't tpenchant yet though'
+@w[09 Oct 19:18:08] @YDejavu (@GRecruit@Y) tells the CLAN: 'Yeah seems tpenchant is for late game ppl min/maxing?'
+@w[09 Oct 19:18:24] @YTalbor (@GGeneral@Y) tells the CLAN: 'yeah'
+@w[09 Oct 19:18:32] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Ratel - usually if you ask on barter, someone will buy those incomplete potions for 500k flat.'
+@w[09 Oct 19:18:56] @YTalbor (@GGeneral@Y) tells the CLAN: 'true, save the market fee'
+@w[09 Oct 19:19:06] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Probably better in the future than marketing it - you lose 100k + 10% market fee + 1% clan tax sticking it on market vs. a direct sale.'
+@w[09 Oct 19:19:13] @RINFO: Gorsk has been reborn as an Eldar Paladin.@w
+@w[09 Oct 19:21:19] @GCLAN: Xaeris falls out to take some much needed R & R.
+@w[09 Oct 19:21:43] @RINFO: Zoth has been reborn as a Triton Ranger.@w
+@w[09 Oct 19:22:24] @RINFO: Gorsk has entered open PK (OPK) mode!@w
+@w[09 Oct 19:23:52] @YRatel (@GRecruit@Y) tells the CLAN: 'awesome thanks did not know'
+@w[09 Oct 19:28:46] @YRatel (@GRecruit@Y) tells the CLAN: 'got 3 spell ingredients how do i know to contact '
+@w[09 Oct 19:29:00] @G(Friend)@c: @CGorsk beams a smile at Orphean.
+@w[09 Oct 19:31:12] @CCilmarill gossips 'yay! I'm back on my old computer and the keyboatd has a life of it's own!'
+@w[09 Oct 19:31:21] @RINFO: The last post plays mournfully as Davem falls in battle to Mimeiky the head nurse and 1 other.@w
+@w[09 Oct 19:32:22] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[09 Oct 19:32:49] @RINFO: HARDCORE Mael has been killed by Zathrus at level 29.@w
+@w[09 Oct 19:34:14] @RINFO: Mael has entered open PK (OPK) mode!@w
+@w[09 Oct 19:35:16] @RGlobal Quest@Y:@w @gGlobal Quest # 7051@w has been won by @YEmuliatko@w - @Y1147th@w win.
+@w[09 Oct 19:35:16] @RGlobal Quest@Y:@w @gGlobal Quest # 7051@w will go into extended time for 5 more minutes.
+@w[09 Oct 19:35:49] @RINFO: Spublofe has been reborn as a Diva Thief.@w
+@w[09 Oct 19:36:22] @RGlobal Quest@Y:@w Neeper has completed @gGlobal Quest # 7051@w.
+@w[09 Oct 19:36:22] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7051@w is now over.
+@w[09 Oct 19:39:45] @RINFO: Popa has completely unraveled Talisin's poetic conundrum.@w
+@w[09 Oct 19:41:13] @RINFO: Radience embraces Rockwell who died valiantly in combat against a crystal pylon.@w
+@w[09 Oct 19:41:13] @RINFO: The last post plays mournfully as Zensch falls in battle to a crystal pylon.@w
+@w[09 Oct 19:41:13] @RINFO: Radience embraces TrEz who died valiantly in combat against a crystal pylon and 1 other.@w
+@w[09 Oct 19:43:02] @RINFO: Ytrams has fought a glorious battle and is the new Tournament Champion.@w
+@w[09 Oct 19:43:04] @YRatel (@GRecruit@Y) tells the CLAN: 'want to train stats but say got unused tier stat'
+@w[09 Oct 19:43:25] @YTalbor (@GGeneral@Y) tells the CLAN: 'help tierstat'
+@w[09 Oct 19:43:26] @YZoth (@GCorpsman@Y) tells the CLAN: 'help tierstat'
+@w[09 Oct 19:43:34] @YWinger (@GSoldier@Y) tells the CLAN: 'each tier you get the chance to apply a -1 modifier to a stats cost'
+@w[09 Oct 19:43:40] @YRatel (@GRecruit@Y) tells the CLAN: 'thanks alot'
+@w[09 Oct 19:44:14] @YWinger (@GSoldier@Y) tells the CLAN: 'you're tier 1, so you can do it once. Next tier you'll have two such modifiers, and so on. Tierstat <statname> is the command to apply'
+@w[09 Oct 19:44:25] @G(Friend)@c: @CGorsk beams a smile at Cide.
+@w[09 Oct 19:44:36] @YRatel (@GRecruit@Y) tells the CLAN: 'o okay'
+@w[09 Oct 19:52:25] @YSpublofe (@GElite Soldier@Y) tells the CLAN: 'anyone got an aardword A or L they're willing to sell me? '
+@w[09 Oct 19:52:37] @RINFO: Radience embraces Rockwell who died valiantly in combat against the Sea King.@w
+@w[09 Oct 19:53:29] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[09 Oct 19:53:31] @RINFO: Radience embraces TrEz who died valiantly in combat against the Sea King.@w
+@w[09 Oct 19:53:46] @RINFO: The last post plays mournfully as Zensch falls in battle to the Sea King.@w
+@w[09 Oct 19:56:26] @RGlobal Quest@Y:@w @cGlobal quest # 7056@w has been declared for levels @c93@w to @c104@w - @c10 or fewer wins only@w.
+@w[09 Oct 19:56:26] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c96@w ticks.
+@w[09 Oct 19:56:26] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 7056@w' to take part.
+@w[09 Oct 19:57:27] @CKulton gossips 'what are these special ingredients *![ An Angel's Charm ]!* all of sudden are droping from mobs?'
+@w[09 Oct 19:57:37] @CKulton gossips 'is it a specail event or something?'
+@w[09 Oct 19:57:43] @CNifto gossips 'there is yes. help cauldron'
+@w[09 Oct 19:58:27] @RGlobal Quest@Y:@w @cGlobal quest # 7056@w for levels @c93@w to @c104@w - @c10 or fewer wins only@w has now started.
+@w[09 Oct 19:59:22] @CKulton gossips 'I see.'
+@w[09 Oct 19:59:27] @G(Friend)@w: @CFeast has quit.
+@w[09 Oct 20:00:13] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 20:00:37] @RGlobal Quest@Y:@w @gGlobal Quest # 7054@w has been won by @YElshar@w - @Y14th@w win.
+@w[09 Oct 20:03:28] @RGlobal Quest@Y:@w @cGlobal quest # 7056@w has been cancelled due to lack of participants.
+@w[09 Oct 20:05:40] @YKazarkas (@GRecruit@Y) tells the CLAN: 'Silly question, but I can't find any help files on it, is there a way to counter expiration on equipment?'
+@w[09 Oct 20:06:04] @YMadrox (@GGeneral@Y) tells the CLAN: 'if it has rot death flag and begins to rot no'
+@w[09 Oct 20:06:06] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Nope.'
+@w[09 Oct 20:06:25] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Also what Madrox said though - what's the item?'
+@w[09 Oct 20:06:48] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'You *can* toggle rot-death.'
+@w[09 Oct 20:06:55] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'But you've got to do it before you die :p'
+@w[09 Oct 20:06:58] @YKazarkas (@GRecruit@Y) tells the CLAN: 'It's just shadow leggings from the eqsearch function, from a drow priestess in goblin fortress.'
+@w[09 Oct 20:07:29] @YKazarkas (@GRecruit@Y) tells the CLAN: 'It is tagged hum, evil, magic, rot-death, nolocate - but I didn't die.'
+@w[09 Oct 20:07:32] @YWinger (@GSoldier@Y) tells the CLAN: 'don't think you can turn off the rot timer, not death-rot'
+@w[09 Oct 20:07:51] @YWinger (@GSoldier@Y) tells the CLAN: 'some items and keys dest after a while'
+@w[09 Oct 20:07:59] @YKazarkas (@GRecruit@Y) tells the CLAN: 'Ah ok, I'll just find another piece of equipment then. :) Thanks for the info'
+@w[09 Oct 20:08:09] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'It triggers rot-death when the mob dies too.'
+@w[09 Oct 20:08:17] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'Makes me wonder if assassinate triggers rot-death.'
+@w[09 Oct 20:08:26] @YWinger (@GSoldier@Y) tells the CLAN: 'so steal then?'
+@w[09 Oct 20:08:37] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'I don't think you can steal worn equipment.'
+@w[09 Oct 20:08:42] @YEpsilon (@GSpecial Ops@Y) tells the CLAN: 'So unless it's in the inventory...'
+@w[09 Oct 20:09:01] @YMadrox (@GGeneral@Y) tells the CLAN: 'can command them to remove it then steal it but its alot of work for something not good prolly'
+@w[09 Oct 20:10:59] @RINFO: All hail Agresu! Champion of Kimr's Farm!@w
+@w[09 Oct 20:14:33] @W-=@RMasaki@W=-@w Orphean: @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w :O :O 2spooky4me
+@w[09 Oct 20:15:00] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Kelaire: Masaki needs to play the game now too.
+@w[09 Oct 20:16:03] @GAberrant questions 'what's the portal to zyian called?'
+@w[09 Oct 20:16:24] @RGlobal Quest@Y:@w @mGlobal Quest # 7059@w has been won by @YWinger@w - @Y109th@w win.
+@w[09 Oct 20:16:24] @RGlobal Quest@Y:@w @mGlobal Quest # 7059@w will go into extended time for 5 more minutes.
+@w[09 Oct 20:16:41] @GTrachx answers '@wa Medallion of Daemon Summoning'
+@w[09 Oct 20:16:44] @RGlobal Quest@Y:@w Dartan has completed @mGlobal Quest # 7059@w.
+@w[09 Oct 20:16:44] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 7059@w is now over.
+@w[09 Oct 20:16:45] @GEmuliatko answers 'Medallion of Daemon Summoning'
+@w[09 Oct 20:16:57] @GAberrant answers 'thank you'
+@w[09 Oct 20:16:58] @GYerald answers 'https://www.aardwolf.com/wiki/index.php/Main/Portals'
+@w[09 Oct 20:21:13] @GCLAN: At-ten-tion! Tartach is here to get some training done!
+@w[09 Oct 20:21:32] @YTartach (@GSoldier@Y) tells the CLAN: 'Hey hey all'
+@w[09 Oct 20:21:39] @Y(@GSoldier@Y) CLAN: Winger holds out a pole and questions how low Tartach can go!
+@w[09 Oct 20:23:15] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Kittenbane: Bard, you need to step up. where's Bard2theBone?
+@w[09 Oct 20:23:24] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Kittenbane: and Spooqui?
+@w[09 Oct 20:23:38] @RINFO: Orphean sinks to their knees and honourably accepts defeat at the hands of a royal mage and 6 others.@w
+@w[09 Oct 20:24:14] @Y|@x244x=x@x214BooOOoOoOOOT@x244x=x@Y|@w Winger: hmmmm
+@w[09 Oct 20:25:26] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Kelaire: It's spooqui season :-)
+@w[09 Oct 20:25:44] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Kittenbane gives a round of applause.
+@w[09 Oct 20:26:39] @GCLAN: At-ten-tion! Nienna is here to get some training done!
+@w[09 Oct 20:28:11] @YWinger (@GSoldier@Y) tells the CLAN: 'ok, who wants a sexy massage, i just looted some lavender oil'
+@w[09 Oct 20:35:02] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[09 Oct 20:36:46] @GFeast questions 'Animate Object... do higher level objects make better pets? Does the kind of item matter?'
+@w[09 Oct 20:37:11] @GFlaw answers 'no'
+@w[09 Oct 20:37:43] @GFeast answers 'Well that makes it easy, anyway. Thanks!'
+@w[09 Oct 20:39:38] @GFlaw answers 'mostly used to mark rooms in mazes, like the first room of upper/lower planes'
+@w[09 Oct 20:40:44] @YNienna (@GSpecial Ops@Y) tells the CLAN: 'found the professor in case someone's looking for the guy'
+@w[09 Oct 20:41:12] @RGlobal Quest@Y:@w @gGlobal Quest # 7062@w has been won by @YKerith@w - @Y257th@w win.
+@w[09 Oct 20:41:12] @RGlobal Quest@Y:@w @gGlobal Quest # 7062@w will go into extended time for 5 more minutes.
+@w[09 Oct 20:41:26] @YNienna (@GSpecial Ops@Y) tells the CLAN: 'in nanjiki btw, near the entrance'
+@w[09 Oct 20:41:38] @RGlobal Quest@Y:@w Myth has completed @gGlobal Quest # 7062@w.
+@w[09 Oct 20:41:38] @RGlobal Quest@Y:@w Madrox has completed @gGlobal Quest # 7062@w.
+@w[09 Oct 20:42:19] @CProvidencia gossips 'Woah Mr.Kerith beat Mr.Myth in a global'
+@w[09 Oct 20:42:26] @CProvidencia gossips 'nice work:)'
+@w[09 Oct 20:43:06] @RGlobal Quest@Y:@w Zarat has completed @gGlobal Quest # 7062@w.
+@w[09 Oct 20:53:06] @GCLAN: At-ten-tion! DobbyBobby is here to get some training done!
+@w[09 Oct 20:53:21] @GCLAN: At-ten-tion! Xaeris is here to get some training done!
+@w[09 Oct 20:56:08] @GElshar questions 'anyone know where this might be? Been beating my head against it for awhile now: * the spellbound worker (Energy Storage Area). It's around level 100'
+@w[09 Oct 20:56:24] @GWinger answers 'stormship of lemdagor'
+@w[09 Oct 20:56:25] @GTrachx answers 'prosper'
+@w[09 Oct 20:56:26] @GSaraid answers 'prosper'
+@w[09 Oct 20:56:36] @GElshar answers 'tyvm'
+@w[09 Oct 20:56:39] @GOspario answers 'via lemdagor'
+@w[09 Oct 20:56:42] @GWinger answers 'technically prosper... '
+@w[09 Oct 20:56:57] @GElshar answers 'tyvmwhe'
+@w[09 Oct 20:56:57] @YWinger (@GSoldier@Y) tells the CLAN: 'it's a wierd area'
+@w[09 Oct 20:57:06] @GSath answers 'there's a corridor where you have to go north a bunch to get through it, it's past that, go down'
+@w[09 Oct 20:57:16] @RGlobal Quest@Y:@w @gGlobal Quest # 7066@w has been won by @YGorsk@w - @Y1176th@w win.
+@w[09 Oct 20:57:16] @RGlobal Quest@Y:@w @gGlobal Quest # 7066@w will go into extended time for 5 more minutes.
+@w[09 Oct 20:59:09] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[09 Oct 20:59:13] @YMadrox (@GGeneral@Y) tells the CLAN: 'bbl'
+@w[09 Oct 20:59:29] @RGlobal Quest@Y:@w Dartan has completed @gGlobal Quest # 7066@w.
+@w[09 Oct 20:59:29] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7066@w is now over.
+@w[09 Oct 21:00:12] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 21:02:14] @YKanaye (@GSpecial Ops@Y) tells the CLAN: 'what do you spent tps on anway?'
+@w[09 Oct 21:03:03] @C(@MWanGrp?!@C)@M [@wL186,@R-2500@w,W+3/T1@M] Feast: Anybody up for a drag? Loud ready
+@w[09 Oct 21:03:54] @RINFO: You hear a loud scream as Garon is brutally killed by a tiny coffin mite.@w
+@w[09 Oct 21:05:16] @GGaron questions 'can i get help with a cr? I died in city of shadows?'
+@w[09 Oct 21:08:05] @RINFO: The last post plays mournfully as Davem falls in battle to a busy little bee and 6 others.@w
+@w[09 Oct 21:10:42] @GCLAN: Tartach falls out to take some much needed R & R.
+@w[09 Oct 21:12:33] @G(Friend) Yerald@c:@C 'worse for leaving it invis in the first place.'
+@w[09 Oct 21:12:42] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 21:15:52] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down a tiny bird.@w
+@w[09 Oct 21:16:43] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 21:17:04] @RINFO: The last post plays mournfully as Davem falls in battle to a living thorn and 3 others.@w
+@w[09 Oct 21:17:43] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 21:24:26] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[09 Oct 21:28:18] @GCLAN: Kazarkas falls out to take some much needed R & R.
+@w[09 Oct 21:29:16] @GCLAN: DobbyBobby falls out to take some much needed R & R.
+@w[09 Oct 21:31:18] @RINFO: Sath has been reborn as a Vampire Cleric.@w
+@w[09 Oct 21:35:01] @RINFO: Nienna has stopped Zyian and prevented the demons from destroying Abend!@w
+@w[09 Oct 21:39:52] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Juliet: All clans should do a Halloween clan name :)
+@w[09 Oct 21:40:34] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Liber goes @Moo@mOO@Moo@mOO@Moo@w.
+@w[09 Oct 21:40:43] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w *Yay!*  Go Kelaire!!!  Juliet cheers him on.
+@w[09 Oct 21:41:18] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 21:42:45] @RINFO: Junkai, cursing the Piranha and 6 others, embraces death and returns to the Dark One.@w
+@w[09 Oct 21:42:48] @RINFO: Agresu has graduated from the Aylorian Academy!@w
+@w[09 Oct 21:43:18] @GCLAN: At-ten-tion! Mandibular is here to get some training done!
+@w[09 Oct 21:44:32] @RINFO: New post #@W513178@R in forum @WPersonal@R from @WElshar@R Subj: @WI'd like to join boot@w
+@w[09 Oct 21:45:07] @RINFO: Aberrant sinks to their knees and honourably accepts defeat at the hands of a dove chaser.@w
+@w[09 Oct 21:45:19] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 21:46:19] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 21:47:03] @RINFO: Reroll has quelled the rebellion of the Nix!@w
+@w[09 Oct 21:49:53] @GCLAN: At-ten-tion! Kitrana is here to get some training done!
+@w[09 Oct 21:50:17] @RINFO: Sarisa has ended the icy winter.@w
+@w[09 Oct 21:50:18] @GCLAN: At-ten-tion! Rever is here to get some training done!
+@w[09 Oct 21:50:48] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Juliet shows her approval by clapping her hands together.
+@w[09 Oct 21:52:50] @RGlobal Quest@Y:@w @gGlobal quest # 7077@w has been declared for levels @g97@w to @g108@w.
+@w[09 Oct 21:52:50] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g98@w ticks.
+@w[09 Oct 21:52:50] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 7077@w' to take part.
+@w[09 Oct 21:53:32] @GCLAN: Rever falls out to take some much needed R & R.
+@w[09 Oct 21:54:51] @RGlobal Quest@Y:@w @gGlobal quest # 7077@w for levels @g97@w to @g108@w has now started.
+@w[09 Oct 21:59:52] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[09 Oct 22:00:13] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 22:00:26] @GCLAN: At-ten-tion! Felwyne is here to get some training done!
+@w[09 Oct 22:02:25] @RGlobal Quest@Y:@w @gGlobal Quest # 7077@w has been won by @YGarrot@w - @Y795th@w win.
+@w[09 Oct 22:02:25] @RGlobal Quest@Y:@w @gGlobal Quest # 7077@w will go into extended time for 5 more minutes.
+@w[09 Oct 22:04:03] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[09 Oct 22:06:27] @GReroll questions 'Any tips on how to stop Cervese the White from healing in the Rebellion of the Nix?'
+@w[09 Oct 22:06:56] @GYerald answers 'ask for a sh spellup and try again?'
+@w[09 Oct 22:07:02] @RGlobal Quest@Y:@w @mGlobal Quest # 7079@w has been won by @YYtrams@w - @Y44th@w win.
+@w[09 Oct 22:07:02] @RGlobal Quest@Y:@w @mGlobal Quest # 7079@w will go into extended time for 5 more minutes.
+@w[09 Oct 22:07:14] @GSaraid answers 'you need items from the goal, it's quite easy of a goal'
+@w[09 Oct 22:07:32] @GReroll questions 'ty!'
+@w[09 Oct 22:07:54] @RGlobal Quest@Y:@w @gGlobal quest # 7077 @w(extended) is now over.
+@w[09 Oct 22:09:30] @RINFO: All please welcome Alysima, Aardwolf's newest Human Hunter!@w
+@w[09 Oct 22:11:04] @G(Friend) Gorsk@c:@C 'why is potential so expensive? :('
+@w[09 Oct 22:11:07] @G(Friend)@c: @CGorsk bursts into tears.
+@w[09 Oct 22:11:41] @G(Friend) Gorsk@c:@C 'need another 1100 qp for my next point *sighs*'
+@w[09 Oct 22:12:27] @GCLAN: At-ten-tion! Dejavu is here to get some training done!
+@w[09 Oct 22:18:01] @GCLAN: At-ten-tion! EmJay is here to get some training done!
+@w[09 Oct 22:18:07] @RINFO: Roebart, cursing A roaring inferno and 1 other, embraces death and returns to the Dark One.@w
+@w[09 Oct 22:18:20] @RINFO: The last post plays mournfully as Felwyne falls in battle to the Nine of clubs.@w
+@w[09 Oct 22:19:12] @GCLAN: At-ten-tion! DobbyBobby is here to get some training done!
+@w[09 Oct 22:19:35] @RGlobal Quest@Y:@w @gGlobal Quest # 7081@w has been won by @YNajin@w - @Y829th@w win.
+@w[09 Oct 22:25:19] @Y(@GSpecial Ops@Y) CLAN: Kanaye tells everyone goodnight.
+@w[09 Oct 22:25:21] @GYtrams questions 'Does anyone know where/how to find last item (on the top level) of 'Challenge the Spyre' (Guardian's Spyre of Knowledge). Stuck completely :/'
+@w[09 Oct 22:25:28] @YYtrams (@GRecruit@Y) tells the CLAN: 'night!'
+@w[09 Oct 22:25:32] @G(Friend)@c: @CGorsk waves goodbye to Kanaye.
+@w[09 Oct 22:29:37] @RINFO: Ytrams has ascended to the top of the Spyre.@w
+@w[09 Oct 22:31:19] @RINFO: The last post plays mournfully as Felwyne falls in battle to the King of hearts and 5 others.@w
+@w[09 Oct 22:31:34] @RGlobal Quest@Y:@w @cGlobal Quest # 7084@w has been won by @YAlysima@w - @Y1st@w win.
+@w[09 Oct 22:38:06] @RINFO: The last post plays mournfully as Felwyne falls in battle to a Joker.@w
+@w[09 Oct 22:39:30] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[09 Oct 22:42:16] @RINFO: Light shines upon Rekcah, a beacon of hope for the people of Kul Tiras.@w
+@w[09 Oct 22:48:21] @RGlobal Quest@Y:@w @mGlobal Quest # 7085@w has been won by @YRaiona@w - @Y16th@w win.
+@w[09 Oct 22:49:05] @GCLAN: At-ten-tion! Rever is here to get some training done!
+@w[09 Oct 22:49:18] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[09 Oct 22:49:20] @RINFO: Popa's journalistic integrity crumbles in the affair known as a demon scout and 13 othersgate.@w
+@w[09 Oct 22:51:38] @RGlobal Quest@Y:@w @gGlobal Quest # 7087@w has been won by @YCooler@w - @Y5521st@w win.
+@w[09 Oct 22:52:54] @RINFO: Papawolf has been removed from this realm by a big, scary rat.@w
+@w[09 Oct 22:53:18] @GCLAN: Flynnt falls out to take some much needed R & R.
+@w[09 Oct 22:53:33] @GCLAN: EmJay falls out to take some much needed R & R.
+@w[09 Oct 22:55:30] @RGlobal Quest@Y:@w @cGlobal Quest # 7086@w has been won by @YDobbyBobby@w - @Y4th@w win.
+@w[09 Oct 22:59:33] @YKitrana (@GRecruit@Y) tells the CLAN: 'how long does a trivia spellup potion last?'
+@w[09 Oct 23:00:13] @RINFO: The player rankings have been updated.@w
+@w[09 Oct 23:01:30] @RINFO: Gunners has been reborn as a Vampire Thief.@w
+@w[09 Oct 23:01:37] @GCLAN: Nueve falls out to take some much needed R & R.
+@w[09 Oct 23:06:25] @GCLAN: Rever falls out to take some much needed R & R.
+@w[09 Oct 23:08:36] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[09 Oct 23:09:42] @RINFO: The pirates prepare a burial at sea for Raine, slain by a silver fish and 2 others.@w
+@w[09 Oct 23:12:37] @RINFO: 1 minute of bonus experience remaining.@w
+@w[09 Oct 23:13:38] @RINFO: Bonus experience has now expired.@w
+@w[09 Oct 23:15:43] @RINFO: Alysima has graduated from the Aylorian Academy!@w
+@w[09 Oct 23:16:18] @YZoth (@GCorpsman@Y) tells the CLAN: 'Just now noticed our logo changed'
+@w[09 Oct 23:19:00] @YZensch (@GSpecial Ops@Y) tells the CLAN: '@G(@WDazzling@G)@w @x152a silver battle axe@w @x244[@W2929260186@x244] [lv@W199@x244] [@Wwield@x244] [@W629@x244dam] [@Y3006@x244pts] [@G8@x244str @G10@x244wis @G2@x244dex @G2@x244con] [@G20@x244hr @G24@x244dr] [@G80@x244mn @G60@x244mv] [@G30@x244pierce @G10@x244slash]'
+@w[09 Oct 23:19:04] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'anyone?'
+@w[09 Oct 23:21:29] @G(Friend)@c: @CGorsk chuckles at Cide's joke.
+@w[09 Oct 23:21:48] @RGlobal Quest@Y:@w @gGlobal Quest # 7092@w has been won by @YYtrams@w - @Y45th@w win.
+@w[09 Oct 23:21:48] @RGlobal Quest@Y:@w @gGlobal Quest # 7092@w will go into extended time for 5 more minutes.
+@w[09 Oct 23:22:18] @GCLAN: Abraxos falls out to take some much needed R & R.
+@w[09 Oct 23:22:51] @RGlobal Quest@Y:@w Winger has completed @gGlobal Quest # 7092@w.
+@w[09 Oct 23:23:41] @GCLAN: At-ten-tion! EmJay is here to get some training done!
+@w[09 Oct 23:24:12] @RINFO: You hear a loud scream as Ironwolf is brutally killed by an eyed tentacle and 6 others.@w
+@w[09 Oct 23:24:12] @RINFO: Popa's journalistic integrity crumbles in the affair known as a slavering demon and 14 othersgate.@w
+@w[09 Oct 23:24:18] @RINFO: HARDCORE Porcius has been killed by Nifto at level 72.@w
+@w[09 Oct 23:24:46] @RINFO: Porcius has entered open PK (OPK) mode!@w
+@w[09 Oct 23:28:49] @C(Gossip) Providencia peers around as a quack escapes his clenched butt cheeks.
+@w[09 Oct 23:28:55] @RINFO: Popa's journalistic integrity crumbles in the affair known as a demon scout and 12 othersgate.@w
+@w[09 Oct 23:31:41] @GCLAN: DobbyBobby falls out to take some much needed R & R.
+@w[09 Oct 23:34:45] @C(@MWanGrp?!@C)@M [@wL187,-522,W+3/T1@M] Feast: Anyone up for dragging me? Just got 80 db kills, loud!
+@w[09 Oct 23:34:52] @C(@MWanGrp?!@C)@M [@wL23,83,W+3/T9@M] Liathum: You got this, Feast!
+@w[09 Oct 23:35:20] @GCLAN: Anssett falls out to take some much needed R & R.
+@w[09 Oct 23:35:51] @YDejavu (@GRecruit@Y) tells the CLAN: 'Should I be buying Aard gear like lvl 80-130 as well? or just wpns'
+@w[09 Oct 23:36:30] @GCLAN: At-ten-tion! Garence is here to get some training done!
+@w[09 Oct 23:36:56] @GCLAN: KumoGami falls out to take some much needed R & R.
