@@ -61,6 +61,16 @@ home() {
           git -C "$DOTFILES" push
           echo_yellow "Backup complete."
           ;;
+        dbr)
+          src="Aardwolf.db.Backup_Manual"
+          bk="Aardwolf.db.bk"
+          dest="Aardwolf.db"
+          echo_yellow "Renaming $dest to $bk"
+          mv "$mushdir/$dest" "$mushdir/$bk"
+          echo_yellow "Copying $mushdir/db_backups/$src to $mushdir/$dest"
+          cp "$mushdir/db_backups/$src" "$DOTFILES/synced/MUSHclient/$dest"
+          echo_yellow "Done."
+          ;;
         restore | r)
           rsync -vtr "$DOTFILES/synced/MUSHclient/" "$mushdir/"
           echo_yellow "Restored Mushclient profile from synced folder."
