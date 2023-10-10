@@ -1,5 +1,5 @@
 1
-e98dc1bc3ad7bf47c03f73aec0e16bc7b71786f2
+8f39c695ffc23841c080d3759a1a734912d32ee8
 inv.statBonus.equipBonus = {}
   inv.statBonus.equipBonus[1] = {}
     inv.statBonus.equipBonus[1].wis = 25
@@ -702,19 +702,19 @@ inv.statBonus.equipBonus = {}
     inv.statBonus.equipBonus[100].int = 95
     inv.statBonus.equipBonus[100].luck = 100
   inv.statBonus.equipBonus[101] = {}
-    inv.statBonus.equipBonus[101].wis = 94
-    inv.statBonus.equipBonus[101].str = 81
-    inv.statBonus.equipBonus[101].dex = 81
-    inv.statBonus.equipBonus[101].con = 90
-    inv.statBonus.equipBonus[101].int = 85
-    inv.statBonus.equipBonus[101].luck = 94
+    inv.statBonus.equipBonus[101].wis = 101
+    inv.statBonus.equipBonus[101].str = 101
+    inv.statBonus.equipBonus[101].dex = 101
+    inv.statBonus.equipBonus[101].con = 101
+    inv.statBonus.equipBonus[101].int = 101
+    inv.statBonus.equipBonus[101].luck = 101
   inv.statBonus.equipBonus[102] = {}
-    inv.statBonus.equipBonus[102].wis = 77
-    inv.statBonus.equipBonus[102].str = 70
-    inv.statBonus.equipBonus[102].dex = 64
-    inv.statBonus.equipBonus[102].con = 66
-    inv.statBonus.equipBonus[102].int = 70
-    inv.statBonus.equipBonus[102].luck = 72
+    inv.statBonus.equipBonus[102].wis = 102
+    inv.statBonus.equipBonus[102].str = 102
+    inv.statBonus.equipBonus[102].dex = 102
+    inv.statBonus.equipBonus[102].con = 102
+    inv.statBonus.equipBonus[102].int = 102
+    inv.statBonus.equipBonus[102].luck = 102
   inv.statBonus.equipBonus[103] = {}
     inv.statBonus.equipBonus[103].wis = 77
     inv.statBonus.equipBonus[103].str = 71
