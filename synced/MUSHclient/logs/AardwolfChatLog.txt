@@ -21466,3 +21466,535 @@
 @w[09 Oct 23:35:51] @YDejavu (@GRecruit@Y) tells the CLAN: 'Should I be buying Aard gear like lvl 80-130 as well? or just wpns'
 @w[09 Oct 23:36:30] @GCLAN: At-ten-tion! Garence is here to get some training done!
 @w[09 Oct 23:36:56] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[09 Oct 23:47:30] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[09 Oct 23:48:45] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: omghai
+@w[09 Oct 23:48:54] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Kittenbane tucks Grrdy into bed with a kiss, stabbing the covers in snugly around him.
+@w[09 Oct 23:48:58] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum blinks innocently.
+@w[09 Oct 23:49:05] @Y(@GCorpsman@Y) CLAN: You wave.
+@w[09 Oct 23:49:20] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down house servant.@w
+@w[09 Oct 23:49:38] @G(Friend)@c: @CYou wave.
+@w[09 Oct 23:49:48] @G(Friend)@c: @CGorsk waves hello to you; he is pleased to see you.
+@w[09 Oct 23:49:55] @G(Friend)@c: @CYou hug him.
+@w[09 Oct 23:49:57] @GYou tell your friends@c: @C'sup?'
+@w[09 Oct 23:50:05] @G(Friend) Gorsk@c:@C 'campaigning :)'
+@w[09 Oct 23:50:23] @GYou tell your friends@c: @C'nice :)'
+@w[09 Oct 23:51:03] @G(Friend) Gorsk@c:@C '@wYou have completed @Y154@w campaigns today.'
+@w[09 Oct 23:52:18] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[09 Oct 23:52:52] @GYou tell your friends@c: @C'o_o wow'
+@w[09 Oct 23:53:14] @CA Security guard says, @c"@CThanks again for your help.@c"
+@w[09 Oct 23:53:24] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[09 Oct 23:53:29] @CA black crow says, @c"@C*SQUAWK* Get out or I will kill you! *SQUAWK*@c"
+@w[09 Oct 23:53:33] @RINFO: The last post plays mournfully as KumoGami falls in battle to Marsilea and 4 others.@w
+@w[09 Oct 23:53:52] @G(Friend) Gorsk@c:@C 'i need be a sh tomorrow at 11 am'
+@w[09 Oct 23:54:54] @GYou tell your friends@c: @C'why?'
+@w[09 Oct 23:55:03] @G(Friend) Gorsk@c:@C 'there's an epic run i want to join'
+@w[09 Oct 23:56:39] @RINFO: Marauder, cursing a Black Lamia and 1 other, embraces death and returns to the Dark One.@w
+@w[09 Oct 23:56:42] @G(Friend) Gorsk@c:@C 'finally made it to rank 2, earlier today. now, starts the long slow path to rank 3'
+@w[09 Oct 23:57:40] @GYou tell your friends@c: @C'gl mate'
+@w[09 Oct 23:57:50] @G(Friend) Gorsk@c:@C 'it's just a matter of time'
+@w[09 Oct 23:58:08] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[09 Oct 23:58:09] @G(Friend) Gorsk@c:@C 'you get pts for completing the run and when you reach a certain number of points, you go up in rank'
+@w[09 Oct 23:58:56] @GYou tell your friends@c: @C'how do you join raids?'
+@w[09 Oct 23:58:58] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: I should buy a fedora.
+@w[09 Oct 23:59:05] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: So I can unironically say "m'lady".
+@w[09 Oct 23:59:17] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Kittenbane: m'Lia
+@w[09 Oct 23:59:24] @G(Friend) Gorsk@c:@C 'step 1: go back in time about a decade cause that's when they were still run'
+@w[09 Oct 23:59:26] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: M'KB
+@w[09 Oct 23:59:31] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum cuddles Kittenbane.
+@w[09 Oct 23:59:31] @x032<@W-@x032)@WLight@x032(@W-@x032>@w Welding gallantly tips his fedora and graciously says, "Milady."
+@w[09 Oct 23:59:40] @G(Friend) Gorsk@c:@C 'if you can go back further, there'll be even more of them'
+@w[10 Oct 00:00:10] @GYou tell your friends@c: @C'lmao i meant epics'
+@w[10 Oct 00:00:12] @RINFO: The player rankings have been updated.@w
+@w[10 Oct 00:00:33] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:00:33] @w*It was built about 353 B.C.
+@w[10 Oct 00:00:33] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:00:33] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:00:33] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:00:33] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:00:34] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:00:34] @w*It was built about 353 B.C.
+@w[10 Oct 00:00:34] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:00:34] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:00:34] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:00:34] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:00:35] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:00:35] @w*It was built about 353 B.C.
+@w[10 Oct 00:00:35] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:00:35] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:00:35] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:00:35] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:00:37] @G(Friend) Gorsk@c:@C 'there's usually a note saying what's being run on the epics board'
+@w[10 Oct 00:00:38] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: omg we're spooqui
+@w[10 Oct 00:00:48] @G(Friend) Gorsk@c:@C 'also, group is usually announnced on the epics channel'
+@w[10 Oct 00:00:57] @GYou tell your friends@c: @C'ah that explains it i am not subbed to that'
+@w[10 Oct 00:00:59] @W-=@RMasaki@W=-@w Gaury: as a ghost would say
+@w[10 Oct 00:01:04] @G(Friend) Gorsk@c:@C 'be a superhero, have max stats and at least 30k hp'
+@w[10 Oct 00:01:12] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: I heartily support having "poo" in our name.
+@w[10 Oct 00:01:16] @RGlobal Quest@Y:@w @cGlobal quest # 7100@w has been declared for levels @c89@w to @c100@w - @c10 or fewer wins only@w.
+@w[10 Oct 00:01:16] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c90@w ticks.
+@w[10 Oct 00:01:16] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 7100@w' to take part.
+@w[10 Oct 00:01:34] @G(Friend) Gorsk@c:@C 'some epics are tougher than others, though'
+@w[10 Oct 00:01:36] @GYou tell your friends@c: @C'30k hp? i guess not for another tier or two'
+@w[10 Oct 00:01:51] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: I must gclan more often now
+@w[10 Oct 00:01:58] @G(Friend) Gorsk@c:@C 'the lower hit point values come easier'
+@w[10 Oct 00:01:58] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum gclans harder.
+@w[10 Oct 00:02:22] @G(Friend) Gorsk@c:@C 'each training of hp gives 10 of them'
+@w[10 Oct 00:02:50] @GDejavu questions 'ne1 lagging?'
+@w[10 Oct 00:02:57] @GDartan answers 'earlier yes'
+@w[10 Oct 00:03:12] @G(Friend) Gorsk@c:@C 'so at the lower end, you're paying 2/3/4 trains for 10 hp'
+@w[10 Oct 00:03:17] @RGlobal Quest@Y:@w @cGlobal quest # 7100@w for levels @c89@w to @c100@w - @c10 or fewer wins only@w has now started.
+@w[10 Oct 00:03:24] @G(Friend) Gorsk@c:@C 'at the high end, you're paying 30 trains for 10 hp'
+@w[10 Oct 00:03:42] @W-=@RMasaki@W=-@w Evl: its a good coloured poo too
+@w[10 Oct 00:03:50] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: Its like my car!
+@w[10 Oct 00:03:55] @GYou tell your friends@c: @C'ah dang'
+@w[10 Oct 00:03:57] @GYou tell your friends@c: @C'ah dang'
+@w[10 Oct 00:04:07] @G(Friend) Gorsk@c:@C 'it's a finite thing. eventually you'll max it out'
+@w[10 Oct 00:04:10] @CYou ask 'can I see the live entertainment?'
+@w[10 Oct 00:04:16] @GEvl answers 'yes lagging baaad'
+@w[10 Oct 00:04:17] @W-=@RMasaki@W=-@w Gaury: red = dead
+@w[10 Oct 00:04:24] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: With no redemption?
+@w[10 Oct 00:04:42] @G(Friend) Gorsk@c:@C 'max mana is also quite nice'
+@w[10 Oct 00:04:49] @CYou ask 'can I see the live entertainment?'
+@w[10 Oct 00:04:51] @W-=@RMasaki@W=-@w Gaury: redemption doesnt come within
+@w[10 Oct 00:05:05] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum dances wildly before you!
+@w[10 Oct 00:05:13] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum drops all his @YBitcoin@w on a PI to lure out the @x208GreatPumpkin@w!
+@w[10 Oct 00:05:19] @G(Friend) Gorsk@c:@C 'max moves lets you flex :)'
+@w[10 Oct 00:05:22] @GAgostos answers 'Not me'
+@w[10 Oct 00:05:49] @GCLAN: At-ten-tion! Anssett is here to get some training done!
+@w[10 Oct 00:06:14] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: I'm sad when you finger me there's no poo.
+@w[10 Oct 00:06:14] @G(Friend) Gorsk@c:@C 'i got mine to max cause i used to blacksmith in titan before the mobprogs'
+@w[10 Oct 00:06:41] @W-=@RMasaki@W=-@w Gaury: a problem you can solve
+@w[10 Oct 00:06:42] @G(Friend) Gorsk@c:@C 'and running out of moves in titan3 was a bad thing'
+@w[10 Oct 00:06:53] @G(Friend) Gorsk@c:@C 'ele's broken?'
+@w[10 Oct 00:07:10] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum beams with pride.
+@w[10 Oct 00:07:31] @RGlobal Quest@Y:@w @gGlobal Quest # 7102@w has been won by @YYuna@w - @Y709th@w win.
+@w[10 Oct 00:07:31] @RGlobal Quest@Y:@w @gGlobal Quest # 7102@w will go into extended time for 5 more minutes.
+@w[10 Oct 00:07:32] @GYou tell your friends@c: @C'i am not even close to max so not gonna think about it for a while'
+@w[10 Oct 00:07:33] @GYtrams questions 'any hints for 'Find a rare Book of All Equations for Randym' in 'All in a Fayke Day'?'
+@w[10 Oct 00:07:50] @RGlobal Quest@Y:@w Nifto has completed @gGlobal Quest # 7102@w.
+@w[10 Oct 00:07:51] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7102@w is now over.
+@w[10 Oct 00:07:53] @GYou tell your friends@c: @C'do my stats add up into the sh stats when i get there? or are sh stats separate from remort stats?'
+@w[10 Oct 00:08:15] @GCLAN: At-ten-tion! Viridi is here to get some training done!
+@w[10 Oct 00:08:16] @G(Friend) Gorsk@c:@C 'the trains you spent on stats during your mort are refunded'
+@w[10 Oct 00:08:18] @RGlobal Quest@Y:@w @cGlobal quest # 7100@w has been cancelled due to lack of participants.
+@w[10 Oct 00:09:52] @G(Friend) Gorsk@c:@C 'crap... :('
+@w[10 Oct 00:10:08] @GYou tell your friends@c: @C'ah'
+@w[10 Oct 00:10:14] @G(Friend) Gorsk@c:@C '@wYou still have to kill * @gthe grey wolf @w(@rSnuckles Village - Dead@w)'
+@w[10 Oct 00:10:18] @G(Friend) Gorsk@c:@C '@wYou sense that life will return to this area in roughly @Y8-9@w minutes.'
+@w[10 Oct 00:11:03] @G(Friend) Gorsk@c:@C 'and it was also my last target :('
+@w[10 Oct 00:12:24] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down the Harpy and 1 other.@w
+@w[10 Oct 00:13:16] @GYou tell your friends@c: @C'dunno what happened but aww'
+@w[10 Oct 00:13:25] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:14:03] @RINFO: HARDCORE Cooler has been killed by Zathrus at level 82.@w
+@w[10 Oct 00:14:25] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:14:28] @CConcerned citizen says, @c"@CPompeii thanks you for your help.@c"
+@w[10 Oct 00:14:40] @RINFO: Cooler has entered open PK (OPK) mode!@w
+@w[10 Oct 00:15:07] @GCLAN: At-ten-tion! Blunt is here to get some training done!
+@w[10 Oct 00:15:12] @Y(@GSpecial Ops@Y) CLAN: Smiling, Anssett greets Blunt warmly.
+@w[10 Oct 00:15:31] @RINFO: Spublofe has entered open PK (OPK) mode!@w
+@w[10 Oct 00:15:53] @YSpublofe (@GElite Soldier@Y) tells the CLAN: 'always forget to turn opk back on after I remort'
+@w[10 Oct 00:16:53] @RINFO: All please welcome Feron back from recreation!@w
+@w[10 Oct 00:24:47] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[10 Oct 00:25:14] @GCLAN: At-ten-tion! Freddie is here to get some training done!
+@w[10 Oct 00:26:48] @YSpublofe (@GElite Soldier@Y) tells the CLAN: 'every mort pockets 4 looks more and more tempting'
+@w[10 Oct 00:28:08] @GCLAN: Freddie falls out to take some much needed R & R.
+@w[10 Oct 00:28:21] @GCLAN: Zoth falls out to take some much needed R & R.
+@w[10 Oct 00:30:52] @GCLAN: Winger falls out to take some much needed R & R.
+@w[10 Oct 00:31:50] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:31:54] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:31:54] @w*It was built about 353 B.C.
+@w[10 Oct 00:31:54] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:31:54] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:31:54] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:31:54] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:32:01] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:32:17] @GCLAN: At-ten-tion! DobbyBobby is here to get some training done!
+@w[10 Oct 00:32:43] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:33:10] @w*Croesus was the last king of Lydia (present day Turkey) and had
+@w[10 Oct 00:33:10] @w*He built the temple in honor of Artemis, the goddess of the moon. 
+@w[10 Oct 00:33:10] @w*A statue of Artemis stood in the temple. 
+@w[10 Oct 00:33:10] @w*It was much larger than the Parthenon and built before it. 
+@w[10 Oct 00:33:10] @w*Two years after it was erected it was burned to the ground by Herostratus. 
+@w[10 Oct 00:33:10] @w*Alexander the Great was born the same day. 
+@w[10 Oct 00:33:10] @w*Alexander had a second temple built later. 
+@w[10 Oct 00:33:11] @w*Croesus was the last king of Lydia (present day Turkey) and had
+@w[10 Oct 00:33:11] @w*He built the temple in honor of Artemis, the goddess of the moon. 
+@w[10 Oct 00:33:11] @w*A statue of Artemis stood in the temple. 
+@w[10 Oct 00:33:11] @w*It was much larger than the Parthenon and built before it. 
+@w[10 Oct 00:33:11] @w*Two years after it was erected it was burned to the ground by Herostratus. 
+@w[10 Oct 00:33:11] @w*Alexander the Great was born the same day. 
+@w[10 Oct 00:33:11] @w*Alexander had a second temple built later. 
+@w[10 Oct 00:33:18] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:33:23] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:33:31] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:34:31] @RINFO: A mountain fades as Saltmarsh dies to the Wicked Witch of the West.@w
+@w[10 Oct 00:34:50] @w*The Lighthouse is located in the country of Egypt. 
+@w[10 Oct 00:34:50] @w*The Lighthouse stands on the island of Pharaohs. 
+@w[10 Oct 00:34:50] @w*The Lighthouse stood over 400 feet tall. 
+@w[10 Oct 00:34:50] @w*There were six wonders to disappear and the Lighthouse was one of them. 
+@w[10 Oct 00:34:50] @w*It is the seventh wonder added to the list. 
+@w[10 Oct 00:34:50] @w*The lighthouse helped ships up to 25 miles away. 
+@w[10 Oct 00:34:53] @w*The Lighthouse is located in the country of Egypt. 
+@w[10 Oct 00:34:53] @w*The Lighthouse stands on the island of Pharaohs. 
+@w[10 Oct 00:34:53] @w*The Lighthouse stood over 400 feet tall. 
+@w[10 Oct 00:34:53] @w*There were six wonders to disappear and the Lighthouse was one of them. 
+@w[10 Oct 00:34:53] @w*It is the seventh wonder added to the list. 
+@w[10 Oct 00:34:53] @w*The lighthouse helped ships up to 25 miles away. 
+@w[10 Oct 00:34:54] @w*The Lighthouse is located in the country of Egypt. 
+@w[10 Oct 00:34:54] @w*The Lighthouse stands on the island of Pharaohs. 
+@w[10 Oct 00:34:54] @w*The Lighthouse stood over 400 feet tall. 
+@w[10 Oct 00:34:54] @w*There were six wonders to disappear and the Lighthouse was one of them. 
+@w[10 Oct 00:34:54] @w*It is the seventh wonder added to the list. 
+@w[10 Oct 00:34:54] @w*The lighthouse helped ships up to 25 miles away. 
+@w[10 Oct 00:35:40] @w*It took 12 years to build the Colossus.
+@w[10 Oct 00:35:40] @w*A violent earthquake brought the Colossus down. 
+@w[10 Oct 00:35:40] @w*It lasted under 100 years.
+@w[10 Oct 00:35:40] @w*The Colossus had 12.5 Tons of Bronze. 
+@w[10 Oct 00:35:40] @w*The Colossus was over 110 feet tall. 
+@w[10 Oct 00:35:40] @w*The Colossus of Rhodes looked a lot like the statue of Liberty. 
+@w[10 Oct 00:35:40] @w*In 357 B.C. the island of Rhodes was conquered by Mausolus
+@w[10 Oct 00:35:43] @w*It took 12 years to build the Colossus.
+@w[10 Oct 00:35:43] @w*A violent earthquake brought the Colossus down. 
+@w[10 Oct 00:35:43] @w*It lasted under 100 years.
+@w[10 Oct 00:35:43] @w*The Colossus had 12.5 Tons of Bronze. 
+@w[10 Oct 00:35:43] @w*The Colossus was over 110 feet tall. 
+@w[10 Oct 00:35:43] @w*The Colossus of Rhodes looked a lot like the statue of Liberty. 
+@w[10 Oct 00:35:43] @w*In 357 B.C. the island of Rhodes was conquered by Mausolus
+@w[10 Oct 00:35:44] @w*It took 12 years to build the Colossus.
+@w[10 Oct 00:35:44] @w*A violent earthquake brought the Colossus down. 
+@w[10 Oct 00:35:44] @w*It lasted under 100 years.
+@w[10 Oct 00:35:44] @w*The Colossus had 12.5 Tons of Bronze. 
+@w[10 Oct 00:35:44] @w*The Colossus was over 110 feet tall. 
+@w[10 Oct 00:35:44] @w*The Colossus of Rhodes looked a lot like the statue of Liberty. 
+@w[10 Oct 00:35:44] @w*In 357 B.C. the island of Rhodes was conquered by Mausolus
+@w[10 Oct 00:35:45] @w*It took 12 years to build the Colossus.
+@w[10 Oct 00:35:45] @w*A violent earthquake brought the Colossus down. 
+@w[10 Oct 00:35:45] @w*It lasted under 100 years.
+@w[10 Oct 00:35:45] @w*The Colossus had 12.5 Tons of Bronze. 
+@w[10 Oct 00:35:45] @w*The Colossus was over 110 feet tall. 
+@w[10 Oct 00:35:45] @w*The Colossus of Rhodes looked a lot like the statue of Liberty. 
+@w[10 Oct 00:35:45] @w*In 357 B.C. the island of Rhodes was conquered by Mausolus
+@w[10 Oct 00:36:53] @GCLAN: Felwyne falls out to take some much needed R & R.
+@w[10 Oct 00:37:36] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum is running about dressed up in a Halloween costume screaming "WHAZZUP!!?!"
+@w[10 Oct 00:37:57] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:38:05] @RINFO: Myth has been killed by Dracolich.@w
+@w[10 Oct 00:39:06] @RGlobal Quest@Y:@w @mGlobal Quest # 7107@w has been won by @YKittenbane@w - @Y56th@w win.
+@w[10 Oct 00:39:06] @RGlobal Quest@Y:@w @mGlobal Quest # 7107@w will go into extended time for 5 more minutes.
+@w[10 Oct 00:39:24] @RGlobal Quest@Y:@w Neeper has completed @mGlobal Quest # 7107@w.
+@w[10 Oct 00:41:31] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:41:46] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:41:52] @CA black crow says, @c"@C*SQUAWK* Get out or I will kill you! *SQUAWK*@c"
+@w[10 Oct 00:42:45] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:42:53] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:42:53] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:42:53] @w*It was built about 353 B.C.
+@w[10 Oct 00:42:53] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:42:53] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:42:53] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:42:53] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:42:58] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:42:58] @w*It was built about 353 B.C.
+@w[10 Oct 00:42:58] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:42:58] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:42:58] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:42:58] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:42:59] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:43:05] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:43:07] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:43:09] @GCLAN: At-ten-tion! Felwyne is here to get some training done!
+@w[10 Oct 00:43:55] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:43:55] @w*It was built about 353 B.C.
+@w[10 Oct 00:43:55] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:43:55] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:43:55] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:43:55] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:43:59] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:43:59] @w*It was built about 353 B.C.
+@w[10 Oct 00:43:59] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:43:59] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:43:59] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:43:59] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:44:00] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:44:02] @w*The Mausoleum is located in southwestern Turkey. 
+@w[10 Oct 00:44:02] @w*It was built about 353 B.C.
+@w[10 Oct 00:44:02] @w*The tomb is about 135 feet (41 meters) high.
+@w[10 Oct 00:44:02] @w*The Mausoleum at Halicarnassus is the 5th one of the Seven Wonders of the world.
+@w[10 Oct 00:44:02] @w*Four famous Greek sculptors: Bryaxis, Leochares, Scopas, and Timotheus carved the 
+@w[10 Oct 00:44:02] @w*Artemisa lived for only two years after the death of her husband. 
+@w[10 Oct 00:44:05] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:44:16] @w*It took 12 years to build the Colossus.
+@w[10 Oct 00:44:16] @w*A violent earthquake brought the Colossus down. 
+@w[10 Oct 00:44:16] @w*It lasted under 100 years.
+@w[10 Oct 00:44:16] @w*The Colossus had 12.5 Tons of Bronze. 
+@w[10 Oct 00:44:16] @w*The Colossus was over 110 feet tall. 
+@w[10 Oct 00:44:16] @w*The Colossus of Rhodes looked a lot like the statue of Liberty. 
+@w[10 Oct 00:44:16] @w*In 357 B.C. the island of Rhodes was conquered by Mausolus
+@w[10 Oct 00:45:38] @G(Friend)@c: @CGorsk beams a smile at Orphean.
+@w[10 Oct 00:47:46] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:48:02] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 00:49:19] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down a cat.@w
+@w[10 Oct 00:52:55] @RGlobal Quest@Y:@w @gGlobal Quest # 7110@w has been won by @YZelog@w - @Y365th@w win.
+@w[10 Oct 00:53:59] @RINFO: Yuna sinks to their knees and honourably accepts defeat at the hands of a cerejellum sage and 3 others.@w
+@w[10 Oct 00:59:00] @GCLAN: At-ten-tion! EmJay is here to get some training done!
+@w[10 Oct 00:59:15] @RGlobal Quest@Y:@w @mGlobal Quest # 7111@w has been won by @YPorcius@w - @Y164th@w win.
+@w[10 Oct 00:59:15] @RGlobal Quest@Y:@w @mGlobal Quest # 7111@w will go into extended time for 5 more minutes.
+@w[10 Oct 01:00:12] @RINFO: The player rankings have been updated.@w
+@w[10 Oct 01:00:40] @RGlobal Quest@Y:@w Neeper has completed @mGlobal Quest # 7111@w.
+@w[10 Oct 01:02:59] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[10 Oct 01:03:40] @RINFO: The last post plays mournfully as Garence falls in battle to a hollow horror and 3 others.@w
+@w[10 Oct 01:09:22] @RINFO: Garence has been reborn as a Giant Psionicist.@w
+@w[10 Oct 01:10:42] @RINFO: The last post plays mournfully as Felwyne falls in battle to a lancer and 1 other.@w
+@w[10 Oct 01:12:16] @CRilnyi says, @c"@CHello, friend. We could use a little help down here.@c"
+@w[10 Oct 01:12:16] @CRilnyi says, @c"@CIt's been so long since a mortal has come here.@c"
+@w[10 Oct 01:13:01] @CRilnyi says, @c"@CHello, friend. We could use a little help down here.@c"
+@w[10 Oct 01:13:01] @CRilnyi says, @c"@CIt's been so long since a mortal has come here.@c"
+@w[10 Oct 01:13:35] @CRilnyi says, @c"@CHello, friend. We could use a little help down here.@c"
+@w[10 Oct 01:13:36] @CRilnyi says, @c"@CIt's been so long since a mortal has come here.@c"
+@w[10 Oct 01:14:21] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 01:15:42] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 01:15:57] @GKulton questions 'which mob/dragon in Scarred Lands drop steels?  these Steel Dragons are not dropping any.'
+@w[10 Oct 01:16:44] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 01:16:44] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 01:16:56] @GCLAN: At-ten-tion! Relek is here to get some training done!
+@w[10 Oct 01:17:37] @CA wounded miner says, @c"@CMy poor tools, left on those mountains. The stone is much too hard for them to do much good. Only way to move that rock is to blast...@c"
+@w[10 Oct 01:17:37] @CPete the warrior says, @c"@CWe keep getting attacked by Dragons. We lose more men every day.@c"
+@w[10 Oct 01:17:38] @CPete the warrior asks, @c"@CWill you help us?@c"
+@w[10 Oct 01:17:41] @CPete the warrior exclaims, @c"@CThank you so much.  I hate those snakes!@c"
+@w[10 Oct 01:17:53] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 01:18:19] @GCLAN: At-ten-tion! Ratel is here to get some training done!
+@w[10 Oct 01:18:31] @GCLAN: Garence falls out to take some much needed R & R.
+@w[10 Oct 01:18:44] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum sends Orphean across the dance floor.
+@w[10 Oct 01:19:47] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[10 Oct 01:19:47] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[10 Oct 01:19:47] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[10 Oct 01:19:58] @RINFO: The last post plays mournfully as Relek falls in battle to a Morukian skirmisher and 5 others.@w
+@w[10 Oct 01:20:02] @GCLAN: DobbyBobby falls out to take some much needed R & R.
+@w[10 Oct 01:20:20] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[10 Oct 01:20:20] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[10 Oct 01:20:20] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[10 Oct 01:20:53] @RGlobal Quest@Y:@w @gGlobal Quest # 7116@w has been won by @YZolstead@w - @Y295th@w win.
+@w[10 Oct 01:20:53] @RGlobal Quest@Y:@w @gGlobal Quest # 7116@w will go into extended time for 5 more minutes.
+@w[10 Oct 01:22:53] @GCLAN: At-ten-tion! Quroz is here to get some training done!
+@w[10 Oct 01:23:01] @YQuroz (@GRecruit@Y) tells the CLAN: 'good Evening everyone'
+@w[10 Oct 01:23:11] @YRatel (@GRecruit@Y) tells the CLAN: 'how do i contact a imm to help with spellup ingredients'
+@w[10 Oct 01:23:11] @Y(@GSoldier@Y) CLAN: Winger is a way cuter Horsey Girl than Quroz! at least he thinks...
+@w[10 Oct 01:23:16] @YRatel (@GRecruit@Y) tells the CLAN: 'hi'
+@w[10 Oct 01:23:20] @YWinger (@GSoldier@Y) tells the CLAN: 'send 'em a tell'
+@w[10 Oct 01:24:11] @RGlobal Quest@Y:@w Vettir has completed @gGlobal Quest # 7116@w.
+@w[10 Oct 01:24:58] @YRatel (@GRecruit@Y) tells the CLAN: 'how do i check if a imm are online'
+@w[10 Oct 01:25:37] @YRatel (@GRecruit@Y) tells the CLAN: 'i type imm online then it shows red lol'
+@w[10 Oct 01:25:39] @RGlobal Quest@Y:@w Vost has completed @gGlobal Quest # 7116@w.
+@w[10 Oct 01:25:39] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7116@w is now over.
+@w[10 Oct 01:25:55] @YMadrox (@GGeneral@Y) tells the CLAN: 'who imm'
+@w[10 Oct 01:26:13] @YMadrox (@GGeneral@Y) tells the CLAN: 'if it shows none then none are available'
+@w[10 Oct 01:26:33] @RGlobal Quest@Y:@w @mGlobal quest # 7117@w has been declared for levels @m97@w to @m108@w - @m200 or fewer wins only@w.
+@w[10 Oct 01:26:33] @RGlobal Quest@Y:@w The quest will start in @m4@w ticks and will last for @m83@w ticks.
+@w[10 Oct 01:26:33] @RGlobal Quest@Y:@w See '@mHelp Global Quests@w', or, type '@mGquest Join 7117@w' to take part.
+@w[10 Oct 01:26:53] @YRatel (@GRecruit@Y) tells the CLAN: 'okay thanks'
+@w[10 Oct 01:28:33] @RGlobal Quest@Y:@w @mGlobal quest # 7117@w for levels @m97@w to @m108@w - @m200 or fewer wins only@w has now started.
+@w[10 Oct 01:29:46] @CAlimnar asks, @c"@CBeware, brave soul- you are in dire peril if you go any further than you already have. This is a place of great evil. If you wish to continue on your way, I might be able to sell you something you need, no?@c"
+@w[10 Oct 01:29:51] @RINFO: Agreton has been killed by a baby dragon.@w
+@w[10 Oct 01:32:48] @w*Click*, the door opens.
+@w[10 Oct 01:32:52] @RINFO: The last post plays mournfully as Davem falls in battle to an Upholder of the Umbrifi and 2 others.@w
+@w[10 Oct 01:33:04] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[10 Oct 01:33:29] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 01:33:31] @CConcerned citizen says, @c"@CPompeii thanks you for your help.@c"
+@w[10 Oct 01:33:34] @G(Friend)@w: @CFeast has quit.
+@w[10 Oct 01:34:04] @GCLAN: EmJay falls out to take some much needed R & R.
+@w[10 Oct 01:34:52] @RINFO: HARDCORE Ralyn has been killed by Dixon at level 45.@w
+@w[10 Oct 01:34:56] @RINFO: Ralyn has entered open PK (OPK) mode!@w
+@w[10 Oct 01:35:03] @CA Templar guard says 'Welcome to Rosewood Castle...'
+@w[10 Oct 01:35:03] @CA Templar guard says 'Please step to the side so that we may inspect your equipment.'
+@w[10 Oct 01:35:11] @CA burly worker exclaims 'That's it! I'm sick of this job's lousy hours and poor benefits! I'm going on strike!'
+@w[10 Oct 01:35:11] @CA burly worker says 'Ah, who am I kidding...'
+@w[10 Oct 01:35:11] @CThe executioner says, @c"@CWonder when the next batch of 'Papists' will be coming out.@c"
+@w[10 Oct 01:35:11] @CThe executioner asks, @c"@CWanna help me keep in practice?@c"
+@w[10 Oct 01:37:09] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[10 Oct 01:39:02] @RINFO: The last post plays mournfully as Felwyne falls in battle to a proud archer.@w
+@w[10 Oct 01:42:19] @CThe drow assassin exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[10 Oct 01:42:24] @RGlobal Quest@Y:@w @gGlobal Quest # 7119@w has been won by @YGuinness@w - @Y2850th@w win.
+@w[10 Oct 01:44:04] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: the mafier is in town and someone's gotta do something about it, are you up to the task? mafia join 25
+@w[10 Oct 01:44:30] @MVelvetLies gametalks@w: @Ymafia join 25, just need 1 more to play
+@w[10 Oct 01:44:37] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: just one more player needed
+@w[10 Oct 01:45:18] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: Mafia join 33! We just need one more :)
+@w[10 Oct 01:45:27] @CMallic says, @c"@CGreetings KumoGami. I am quite busy but please make yourself at home.@c"
+@w[10 Oct 01:45:41] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: 25, not 33
+@w[10 Oct 01:45:49] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: What Ospario said
+@w[10 Oct 01:45:57] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: 25! :P
+@w[10 Oct 01:46:51] @CThe steward exclaims 'Hello, my lord! Enjoy the wedding celebration!'
+@w[10 Oct 01:46:51] @CThe steward says, @c"@CThe bride is a bit cranky today... If you're not going to help out, then I advise you to stay away from the mansion.@c"
+@w[10 Oct 01:46:51] @CThe steward exclaims, @c"@CBut enjoy anyway!@c"
+@w[10 Oct 01:46:57] @RINFO: Popa's journalistic integrity crumbles in the affair known as Gyani and 5 othersgate.@w
+@w[10 Oct 01:47:16] @RGlobal Quest@Y:@w @mGlobal Quest # 7117@w has been won by @YKumoGami@w - @Y8th@w win.
+@w[10 Oct 01:48:04] @COspario gossips 'one more player needed to rid the world of the scourge of organized crime, or perhaps innocent civilians - type mafia join 25! if it is your first time, we will make sure you know what you are doing before starting the game'
+@w[10 Oct 01:48:37] @RINFO: Yuna sinks to their knees and honourably accepts defeat at the hands of a filthy harpy and 4 others.@w
+@w[10 Oct 01:49:07] @B[@GMafia@B] @wLiathum chats: Yeehaw!
+@w[10 Oct 01:49:07] @B[@GMafia@B] @wVelvetLies chats: hooray
+@w[10 Oct 01:49:10] @B[@GMafia@B] @wOspario chats: kumogami!
+@w[10 Oct 01:49:12] @B[@GMafia@B] @wYou chat: yo
+@w[10 Oct 01:49:17] @B[@GMafia@B] @wVelvetLies chats: is everyone here?
+@w[10 Oct 01:49:21] @B[@GMafia@B] @wNeeper raises his hand.
+@w[10 Oct 01:49:24] @B[@GMafia@B] @wOspario chats: alright! we may be waiting for mush
+@w[10 Oct 01:50:08] @B[@GMafia@B] @wOspario chats: and if velvetlies dies first, its mush, just to get the ball rolling (hopefully i am not mafia with him if so)
+@w[10 Oct 01:50:17] @B[@GMafia@B] @wNeeper chats: lmao
+@w[10 Oct 01:50:27] @B[@GMafia@B] @wLiathum snickers softly.
+@w[10 Oct 01:50:35] @B[@GMafia@B] @wNeeper chats: "mafia config spoiler-alert on"
+@w[10 Oct 01:51:36] @B[@GMafia@B] @wOspario chats: everyone played recently enough to remember all the rules/commands?
+@w[10 Oct 01:51:43] @B[@GMafia@B] @wLiathum chats: Aye aye
+@w[10 Oct 01:51:49] @B[@GMafia@B] @wNeeper nods.
+@w[10 Oct 01:51:57] @B[@GMafia@B] @wMushambo chats: sadly, im back early trying to figure out best wayto cook chicken. I assume Mafia involves needing at least one hand and switching propane tanks didnt seem prudent :-*
+@w[10 Oct 01:51:58] @RINFO: Popa's journalistic integrity crumbles in the affair known as Gyani and 5 othersgate.@w
+@w[10 Oct 01:51:59] @B[@GMafia@B] @wVelvetLies chats: shirley
+@w[10 Oct 01:52:30] @B[@GMafia@B] @wOspario chats: good plan, mush. alright, we ready? kumogami stiil at keys?
+@w[10 Oct 01:52:48] @B[@GMafia@B] @wNeeper chats: "mchat" is this channel if you didnt know
+@w[10 Oct 01:53:58] @B[@GMafia@B] @wOspario chats: should we try for another and boot him if we get one before he comes back to keys or wait a lil bit?
+@w[10 Oct 01:54:25] @B[@GMafia@B] @wVelvetLies chats: I have to go feed the cat in a few minutes 
+@w[10 Oct 01:54:32] @B[@GMafia@B] @wVelvetLies chats: that's all I know
+@w[10 Oct 01:54:43] @MMushambo gametalks@w: @Ymafia join 25 if anyone is interested, newbies welcome :) no one except the founder knows what theyre even doing
+@w[10 Oct 01:54:53] @co@W/@c~@C|@WBard@C|@co@W/@c~@w Ospario: it looke like 1 more to start this mafia game, we lost a soul to the real world - mafia join 25!
+@w[10 Oct 01:55:06] @x214:@x238:@x214:@x172Sp@x136o@x130o@x094quI@x214:@x238:@x214:@w Liathum: Guaranteed to be spooktacular!
+@w[10 Oct 01:56:08] @RGlobal Quest@Y:@w @gGlobal Quest # 7121@w has been won by @YMadrox@w - @Y686th@w win.
+@w[10 Oct 01:56:08] @RGlobal Quest@Y:@w @gGlobal Quest # 7121@w will go into extended time for 5 more minutes.
+@w[10 Oct 01:56:18] @B[@GMafia@B] @wOspario chats: alternately, we can just all decide beforehand to kill kumogami off as mafia or in the first round if mafia doesnt kill someone because he is one and they couldnt reach concensus
+@w[10 Oct 01:56:50] @B[@GMafia@B] @wOspario chats: effectively making it a 5 person game from the start which will be slanted odds one side or other
+@w[10 Oct 01:57:02] @RGlobal Quest@Y:@w Nano has completed @gGlobal Quest # 7121@w.
+@w[10 Oct 01:57:19] @B[@GMafia@B] @wLiathum chats: Oh, when did I turn off gossip?
+@w[10 Oct 01:57:37] @B[@GMafia@B] @wOspario chats: now, i guess, i don't see anyone asking about it anyway
+@w[10 Oct 01:57:45] @B[@GMafia@B] @wLiathum snickers softly.
+@w[10 Oct 01:58:42] @RGlobal Quest@Y:@w Akira has completed @gGlobal Quest # 7121@w.
+@w[10 Oct 01:58:59] @B[@GMafia@B] @wVelvetLies chats: should we start or give it up for a while?
+@w[10 Oct 01:59:18] @B[@GMafia@B] @wNeeper chats: might as well pass :(
+@w[10 Oct 01:59:19] @B[@GMafia@B] @wLiathum chats: I'm down with whatever anyone decides.
+@w[10 Oct 01:59:25] @B[@GMafia@B] @wOspario chats: let's start if you gotta go soon? 
+@w[10 Oct 01:59:39] @B[@GMafia@B] @wNeeper chats: we can try it, but it'll be short :)
+@w[10 Oct 01:59:55] @B[@GMafia@B] @wMushambo chats: "Present"
+@w[10 Oct 02:00:12] @RINFO: The player rankings have been updated.@w
+@w[10 Oct 02:00:33] @RGlobal Quest@Y:@w Modi has completed @gGlobal Quest # 7121@w.
+@w[10 Oct 02:01:06] @RGlobal Quest@Y:@w Selitos has completed @gGlobal Quest # 7121@w.
+@w[10 Oct 02:01:43] @B[@GMafia@B] @wMushambo chats: sorry, im grumpy the grill is busted. i wanted chicken without heating up the whole house :-(
+@w[10 Oct 02:01:49] @B[@GMafia@B] @wLiathum patiently twiddles his thumbs.
+@w[10 Oct 02:01:52] @B[@GMafia@B] @wNeeper yawns.
+@w[10 Oct 02:01:53] @B[@GMafia@B] @wLiathum chats: Well that blows :P
+@w[10 Oct 02:01:57] @B[@GMafia@B] @wVelvetLies chats: RIP doctor
+@w[10 Oct 02:02:01] @B[@GMafia@B] @wOspario chats: damn
+@w[10 Oct 02:02:04] @B[@GMafia@B] @wNeeper chats: not the doctor! :o omg!
+@w[10 Oct 02:02:16] @B[@GMafia@B] @wOspario chats: @CYour investigation reveals that Mushambo is in the Mafia!
+@w[10 Oct 02:02:29] @B[@GMafia@B] @wNeeper gasps in astonishment.
+@w[10 Oct 02:02:30] @GCLAN: At-ten-tion! Zoth is here to get some training done!
+@w[10 Oct 02:02:36] @B[@GMafia@B] @wMushambo chats: yinyang, one of you is wrong
+@w[10 Oct 02:02:40] @B[@GMafia@B] @wOspario chats: well, im gonna die now so make it worth it
+@w[10 Oct 02:04:06] @B[@GMafia@B] @wLiathum peers around himself intently.
+@w[10 Oct 02:04:13] @B[@GMafia@B] @wLiathum chats: Neeps or VL
+@w[10 Oct 02:04:16] @B[@GMafia@B] @wNeeper chats: honestly, i'm not sure how the property values in this city survive with so much casual murdering
+@w[10 Oct 02:04:34] @B[@GMafia@B] @wLiathum chats: Or both of you, that works too :P
+@w[10 Oct 02:04:51] @B[@GMafia@B] @wNeeper chats: connor mode, there can only be only one
+@w[10 Oct 02:04:56] @GDartan questions 'anyone know where to get the key for the north exit in 4332'
+@w[10 Oct 02:05:12] @B[@GMafia@B] @wOspario chats: you hear a scratching beneath the floorboards, a loud groan, window shutters slamming, and a smell like mothballs seeping out of your crawlspace
+@w[10 Oct 02:05:16] @B[@GMafia@B] @wLiathum chats: I'm a loyal citizen! ...as I have been for my last seven flipping games.
+@w[10 Oct 02:06:46] @RINFO: Reroll has been killed by the Angel of Death.@w
+@w[10 Oct 02:07:33] @GCLAN: At-ten-tion! Rever is here to get some training done!
+@w[10 Oct 02:08:24] @GCLAN: At-ten-tion! Garence is here to get some training done!
+@w[10 Oct 02:12:12] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[10 Oct 02:16:05] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[10 Oct 02:17:13] @RINFO: Dartan has successfully defended the Avian Kingdom!@w
+@w[10 Oct 02:17:17] @GCLAN: Rever falls out to take some much needed R & R.
+@w[10 Oct 02:18:10] @R[@GGlobal Clan@R]@w: sorry everyone, i had to leave for something fast, almost emergency
+@w[10 Oct 02:18:37] @RINFO: Agreton has been killed by a snowman noble.@w
+@w[10 Oct 02:19:01] @RGlobal Quest@Y:@w @gGlobal Quest # 7124@w has been won by @YHomerSimpson@w - @Y107th@w win.
+@w[10 Oct 02:19:13] @CAn Eldar assassin says 'Your purity sickens me, KumoGami.'
+@w[10 Oct 02:19:13] @CAn Eldar assassin says 'Your purity sickens me, KumoGami.'
+@w[10 Oct 02:20:22] @G(Friend)@c: @wGorsk goes @Goo@gOO@Goo@gOO@Goo@w at Rockwell.
+@w[10 Oct 02:24:14] @RGlobal Quest@Y:@w @mGlobal quest # 7127@w has been declared for levels @m93@w to @m104@w - @m200 or fewer wins only@w.
+@w[10 Oct 02:24:14] @RGlobal Quest@Y:@w The quest will start in @m4@w ticks and will last for @m89@w ticks.
+@w[10 Oct 02:24:14] @RGlobal Quest@Y:@w See '@mHelp Global Quests@w', or, type '@mGquest Join 7127@w' to take part.
+@w[10 Oct 02:25:43] @RINFO: Roebart, cursing A roaring inferno and 1 other, embraces death and returns to the Dark One.@w
+@w[10 Oct 02:26:01] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[10 Oct 02:26:14] @RGlobal Quest@Y:@w @mGlobal quest # 7127@w for levels @m93@w to @m104@w - @m200 or fewer wins only@w has now started.
+@w[10 Oct 02:27:03] @G(Friend) Feast@c:@C 'I'm back! Time to hunt for a drag >>'
+@w[10 Oct 02:28:11] @GCLAN: At-ten-tion! Zasha is here to get some training done!
+@w[10 Oct 02:28:30] @RINFO: Zenmeister just made Employee of the Month at the Pet Store!@w
+@w[10 Oct 02:29:45] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[10 Oct 02:29:45] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[10 Oct 02:31:35] @RINFO: You hear a loud scream as Elshar is brutally killed by an angry drunk and 1 other.@w
+@w[10 Oct 02:32:05] @G(Friend)@c: @CGorsk goes "WHEE!" and dances around Rockwell.
+@w[10 Oct 02:32:13] @CThe Entrance Guard exclaims, @c"@CWelcome to the Gladiator's Arena, sir! For a small fee, you may enter and try your skills against some of the finest warriors, and... uhm... others the land has to offer!@c"
+@w[10 Oct 02:32:16] @CThe Entrance Guard exclaims, @c"@CThat's plenty, when I can see you're rather hard up! Enter with my compliments, and good luck to you!@c"
+@w[10 Oct 02:32:25] @YFelwyne (@GCorpsman@Y) tells the CLAN: 'how goes it my cheese wizzes?'
+@w[10 Oct 02:32:32] @YWinger (@GSoldier@Y) tells the CLAN: 'crackin''
+@w[10 Oct 02:33:22] @YFelwyne (@GCorpsman@Y) tells the CLAN: 'nice deal'
+@w[10 Oct 02:35:52] @CThe drow assassin exclaims 'Your level is of no interest to me KumoGami; I will kill you anyway!'
+@w[10 Oct 02:36:47] @RGlobal Quest@Y:@w @cGlobal Quest # 7129@w has been won by @YGarence@w - @Y9th@w win.
+@w[10 Oct 02:36:49] @RINFO: Yuna sinks to their knees and honourably accepts defeat at the hands of a starving child and 7 others.@w
+@w[10 Oct 02:36:53] @GCLAN: At-ten-tion! Ratel is here to get some training done!
+@w[10 Oct 02:37:27] @CMallic says, @c"@CGreetings KumoGami. I am quite busy but please make yourself at home.@c"
+@w[10 Oct 02:38:58] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 02:40:33] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 02:45:35] @GCLAN: Kitrana falls out to take some much needed R & R.
+@w[10 Oct 02:47:00] @RINFO: The child's play is finally at an end thanks to Peevo!@w
+@w[10 Oct 02:47:18] @w*Click*, the door opens.
+@w[10 Oct 02:49:14] @YQuroz (@GRecruit@Y) tells the CLAN: 'oh I got magic potion ingredients, but no imms :('
+@w[10 Oct 02:49:34] @RGlobal Quest@Y:@w @mGlobal Quest # 7127@w has been won by @YKumoGami@w - @Y9th@w win.
+@w[10 Oct 02:49:40] @G(Friend)@c: @CGorsk claps at your performance.
+@w[10 Oct 02:49:44] @YInix (@GSoldier@Y) tells the CLAN: 'Seems like a lot of those appeared last night'
+@w[10 Oct 02:49:52] @G(Friend)@c: @CYou thank Gorsk heartily.
+@w[10 Oct 02:49:53] @YZoth (@GCorpsman@Y) tells the CLAN: 'Yeah that's definitely limiting the usefulness of the event.'
+@w[10 Oct 02:50:08] @cGorsk tells you 'you're about to win yourself out of a cycle'
+@w[10 Oct 02:50:10] @RINFO: Peevo has graduated from the Aylorian Academy!@w
+@w[10 Oct 02:50:19] @YMadrox (@GGeneral@Y) tells the CLAN: 'you're supposed to collect more than one and make a potion via an imm not turn them in one at a time'
+@w[10 Oct 02:50:22] @YQuroz (@GRecruit@Y) tells the CLAN: 'is there a time limit on the event'
+@w[10 Oct 02:50:27] @YQuroz (@GRecruit@Y) tells the CLAN: 'I have 3 of them'
+@w[10 Oct 02:50:28] @YMadrox (@GGeneral@Y) tells the CLAN: 'you guys gonna get Ocho murdered'
+@w[10 Oct 02:50:30] @YInix (@GSoldier@Y) tells the CLAN: 'Also good to see ya bud.  How's it going?'
+@w[10 Oct 02:50:36] @cYou tell Gorsk 'the 3 per level one or something else?'
+@w[10 Oct 02:50:45] @YQuroz (@GRecruit@Y) tells the CLAN: 'good'
+@w[10 Oct 02:50:49] @cGorsk tells you 'the 10 wins or less one'
+@w[10 Oct 02:50:56] @cGorsk tells you 'type gq cycle'
+@w[10 Oct 02:50:57] @YQuroz (@GRecruit@Y) tells the CLAN: 'you know, cp and questing to remort again'
+@w[10 Oct 02:51:02] @cYou tell Gorsk 'ahh yeah'
+@w[10 Oct 02:51:05] @YInix (@GSoldier@Y) tells the CLAN: 'nodnod, tis the life'
+@w[10 Oct 02:51:12] @YQuroz (@GRecruit@Y) tells the CLAN: 'well till like 80 or 4750 qp'
+@w[10 Oct 02:52:21] @YQuroz (@GRecruit@Y) tells the CLAN: 'I guess I should plan what I'm going to buy'
+@w[10 Oct 02:52:27] @YInix (@GSoldier@Y) tells the CLAN: 'Sounds smart'
+@w[10 Oct 02:52:39] @YInix (@GSoldier@Y) tells the CLAN: 'Set goals so you know what to achieve.'
+@w[10 Oct 02:52:44] @GCLAN: At-ten-tion! Birgitte is here to get some training done!
+@w[10 Oct 02:52:59] @cYou tell Gorsk 'i'll have it again at 105 if i'm reading correctly?'
+@w[10 Oct 02:53:18] @cGorsk tells you 'what do you mean?'
+@w[10 Oct 02:53:48] @cYou tell Gorsk 'ahh oops'
+@w[10 Oct 02:54:01] @cGorsk tells you '10<105'
+@w[10 Oct 02:54:01] @cYou tell Gorsk 'well 200 or fewer i guess soon'
+@w[10 Oct 02:54:09] @cGorsk tells you 'you're in all of them, atm'
+@w[10 Oct 02:55:12] @cGorsk tells you 'one is (if wins<10) the other is (if wins<200) the last one is (all)'
+@w[10 Oct 02:55:19] @cGorsk tells you 'oops <='
+@w[10 Oct 02:55:19] @cYou tell Gorsk 'are there that little gq's for all players?'
+@w[10 Oct 02:55:23] @RINFO: Myth has broken Pandemonia's heart forever.@w
+@w[10 Oct 02:55:31] @cYou tell Gorsk 'ranges i mean'
+@w[10 Oct 02:55:37] @cGorsk tells you 'there are 3 ranges'
+@w[10 Oct 02:56:05] @cYou tell Gorsk 'i mean the level ranges that have "all" aren't very many, so after 200 you get many less opportunities?'
+@w[10 Oct 02:56:16] @cGorsk tells you 'yes and no'
+@w[10 Oct 02:56:36] @cGorsk tells you 'the less than 10 has very few players joining so it takes forever to go thgouth a cycle'
+@w[10 Oct 02:56:45] @YQuroz (@GRecruit@Y) tells the CLAN: 'I think this round the goal is boots, helm, and ring of regen'
+@w[10 Oct 02:56:56] @cGorsk tells you 'the 200 wins or less has more people but they can often take 20 mins to complete'
+@w[10 Oct 02:56:59] @YInix (@GSoldier@Y) tells the CLAN: 'what'd you get already?'
+@w[10 Oct 02:57:01] @YInix (@GSoldier@Y) tells the CLAN: 'aura/bp?'
+@w[10 Oct 02:57:03] @YQuroz (@GRecruit@Y) tells the CLAN: 'aura and bp'
+@w[10 Oct 02:57:09] @YInix (@GSoldier@Y) tells the CLAN: 'don't forget wings, they're helpful early also'
+@w[10 Oct 02:57:19] @cGorsk tells you 'the general pool usually cycles fast cause people finish in in 1-5 mins depending on the level'
+@w[10 Oct 02:57:23] @YBirgitte (@GRecruit@Y) tells the CLAN: 'I was wondering what to get next myself.  I have bp, aura and wings'
+@w[10 Oct 02:57:23] @YQuroz (@GRecruit@Y) tells the CLAN: 'I have wings as a vamp so skipping for now'
+@w[10 Oct 02:57:33] @YInix (@GSoldier@Y) tells the CLAN: 'ah, makes sense'
+@w[10 Oct 02:57:54] @YQuroz (@GRecruit@Y) tells the CLAN: 'I think bracers mean you don't get disarmed'
+@w[10 Oct 02:57:57] @cYou tell Gorsk 'i see'
+@w[10 Oct 02:58:00] @YQuroz (@GRecruit@Y) tells the CLAN: 'and gloves are dual wield I think'
+@w[10 Oct 02:58:12] @YBirgitte (@GRecruit@Y) tells the CLAN: 'Oh no disarm sounds nice'
+@w[10 Oct 02:58:16] @YQuroz (@GRecruit@Y) tells the CLAN: 'but helm has truesight which I like'
+@w[10 Oct 02:58:20] @YQuroz (@GRecruit@Y) tells the CLAN: 'and boots give haste'
+@w[10 Oct 02:58:22] @cYou tell Gorsk 'thanks! anyways i gotta go to bed :) night o/'
+@w[10 Oct 02:58:32] @YQuroz (@GRecruit@Y) tells the CLAN: 'so those two and regen for now I guess'
+@w[10 Oct 02:58:36] @YYou tell the CLAN: 'night booters'
+@w[10 Oct 02:58:40] @YQuroz (@GRecruit@Y) tells the CLAN: 'Goodnight!'
+@w[10 Oct 02:58:41] @YGarence (@GCorpsman@Y) tells the CLAN: 'night kg'
+@w[10 Oct 02:58:48] @YBirgitte (@GRecruit@Y) tells the CLAN: 'night kg'
+@w[10 Oct 02:58:52] @YInix (@GSoldier@Y) tells the CLAN: 'night kg'
+@w[10 Oct 02:59:07] @YYou tell the CLAN: 'o/'
+@w[10 Oct 02:59:08] @RINFO: New post #@W513243@R in forum @WPersonal@R from @WKumoGami@R Subj: @WTells unheard when you last quit@w
+@w[10 Oct 02:59:08] @GCLAN: KumoGami falls out to take some much needed R & R.
