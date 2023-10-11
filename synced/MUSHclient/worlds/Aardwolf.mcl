@@ -802,6 +802,16 @@ else
 end</send>
   </alias>
   <alias
+   name="command_line_alias_Y3By"
+   match="cpr"
+   enabled="y"
+   group="command_line_aliases"
+   send_to="10"
+   sequence="100"
+  >
+  <send>cp r</send>
+  </alias>
+  <alias
    match="cr"
    enabled="y"
    group="heal"
@@ -1112,6 +1122,26 @@ world.Execute("dinv consume small heal")</send>
    sequence="100"
   >
   <send>prc;rt %1</send>
+  </alias>
+  <alias
+   name="command_line_alias_cWM"
+   match="qc"
+   enabled="y"
+   group="command_line_aliases"
+   send_to="10"
+   sequence="100"
+  >
+  <send>q c</send>
+  </alias>
+  <alias
+   name="command_line_alias_cXI"
+   match="qr"
+   enabled="y"
+   group="command_line_aliases"
+   send_to="10"
+   sequence="100"
+  >
+  <send>q r</send>
   </alias>
   <alias
    match="rf *"

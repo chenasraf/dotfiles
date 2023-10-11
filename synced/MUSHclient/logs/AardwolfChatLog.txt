@@ -23096,3 +23096,218 @@
 @w[10 Oct 23:35:09] @RINFO: The last post plays mournfully as Felwyne falls in battle to a gate guard and 3 others.@w
 @w[10 Oct 23:35:54] @GCLAN: Xaeris falls out to take some much needed R & R.
 @w[10 Oct 23:35:55] @RINFO: 1 minute of bonus experience remaining.@w
+@w[10 Oct 23:44:52] @Y(@GCorpsman@Y) CLAN: You wave.
+@w[10 Oct 23:44:56] @G(Friend)@c: @CYou wave.
+@w[10 Oct 23:49:58] @CAden Stonebrook, leader of the Blood Ring says, @c"@CHmm, hi KumoGami.  How are you?  We have quite a nice organization here.  If you would like to join just let me know..@c"
+@w[10 Oct 23:50:11] @GCLAN: At-ten-tion! Garence is here to get some training done!
+@w[10 Oct 23:51:10] @YZoth (@GCorpsman@Y) tells the CLAN: 'So I just mapped a cexit on a quest and it seemed to work fine.   '
+@w[10 Oct 23:51:19] @YZoth (@GCorpsman@Y) tells the CLAN: 'I just need to remember to diligently do this every time now'
+@w[10 Oct 23:51:27] @RGlobal Quest@Y:@w @gGlobal Quest # 7367@w has been won by @YGarrot@w - @Y796th@w win.
+@w[10 Oct 23:51:27] @RGlobal Quest@Y:@w @gGlobal Quest # 7367@w will go into extended time for 5 more minutes.
+@w[10 Oct 23:52:20] @YMadrox (@GGeneral@Y) tells the CLAN: 'when I got back i just made sure to make them as I came to places that needed them, wasnt long before I had them all set'
+@w[10 Oct 23:52:28] @RGlobal Quest@Y:@w Grbano has completed @gGlobal Quest # 7367@w.
+@w[10 Oct 23:52:53] @YZoth (@GCorpsman@Y) tells the CLAN: 'I didnt know it was that easy, now that I know, we'll see'
+@w[10 Oct 23:53:13] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 23:53:14] @YZoth (@GCorpsman@Y) tells the CLAN: 'Once I set that up a bit more I imagine I'll be doing more campaigns.'
+@w[10 Oct 23:53:15] @CConcerned citizen says, @c"@CPompeii thanks you for your help.@c"
+@w[10 Oct 23:53:37] @RGlobal Quest@Y:@w Kittenbane has completed @gGlobal Quest # 7367@w.
+@w[10 Oct 23:53:37] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7367@w is now over.
+@w[10 Oct 23:53:42] @YZoth (@GCorpsman@Y) tells the CLAN: 'At least stretching beyond level 10'
+@w[10 Oct 23:53:49] @CA helpful hostess says, @c"@CWelcome to the Museum of Wonders.@c"
+@w[10 Oct 23:54:43] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 23:54:53] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 23:54:58] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 23:55:14] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 23:55:14] @CA wounded miner says, @c"@CMy poor tools, left on those mountains. The stone is much too hard for them to do much good. Only way to move that rock is to blast...@c"
+@w[10 Oct 23:55:14] @CPete the warrior says, @c"@CWe keep getting attacked by Dragons. We lose more men every day.@c"
+@w[10 Oct 23:55:14] @CPete the warrior asks, @c"@CWill you help us?@c"
+@w[10 Oct 23:55:18] @CPete the warrior exclaims, @c"@CThank you so much.  I hate those snakes!@c"
+@w[10 Oct 23:55:28] @CA weary adventurer exclaims, @c"@CThey...They're coming!!! PLEASE! HELP ME! NOOOooo!@c"
+@w[10 Oct 23:56:58] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[11 Oct 00:00:13] @RINFO: The player rankings have been updated.@w
+@w[11 Oct 00:02:31] @RGlobal Quest@Y:@w @mGlobal Quest # 7366@w has been won by @YRoronoa@w - @Y133rd@w win.
+@w[11 Oct 00:02:51] @GShadedancer questions 'what is another weapon with vorpal for level 121+'
+@w[11 Oct 00:03:14] @GDmntdDuergar answers 'warhammer from...someone..'
+@w[11 Oct 00:03:28] @GDmntdDuergar answers 'warhammer of pure annihilation.'
+@w[11 Oct 00:03:40] @GShadedancer answers 'i am looking for daggers'
+@w[11 Oct 00:03:52] @GDmntdDuergar answers 'oh. sorry. '
+@w[11 Oct 00:04:13] @GOrphean answers 'a hammer is like a dagger, it just has a shoebox at the end of it'
+@w[11 Oct 00:04:15] @GShadedancer answers 'your good i should have specified'
+@w[11 Oct 00:04:36] @RGlobal Quest@Y:@w @gGlobal Quest # 7369@w has been won by @YKanaye@w - @Y731st@w win.
+@w[11 Oct 00:06:06] @GShadedancer questions 'is there a way to search for the vorpal flag in eqsearch'
+@w[11 Oct 00:06:45] @GCLAN: Serinqua falls out to take some much needed R & R.
+@w[11 Oct 00:07:49] @GDmntdDuergar answers 'isnt' there a website that lists weapons/armor you can use for that?'
+@w[11 Oct 00:07:52] @GDmntdDuergar answers 'i think in help www'
+@w[11 Oct 00:08:54] @GGraoldan answers 'you can add the vorpal flag to a weapon for 2 tp.. if your low tier, just use what you can until you gain some aard.. '
+@w[11 Oct 00:09:51] @GShadedancer answers 'i am all out of tp lol'
+@w[11 Oct 00:10:39] @GGraoldan answers 'you'll be better with a better damage weapon than using one that's 20 levels lower just cause it has the flag.. also eventually you'll get mastery that will boost a damage type.. when you have some of that.. the damage type may/maynot be better than another just because of your mastery'
+@w[11 Oct 00:11:29] @x239<@x238<@y|@x214G@x208hou@x202l-@x196aardian@y|@x238>@x239>@w Kittenbane: in case you somehow missed Scooter the Neutered Cat in the last 9 years. https://youtu.be/Iw1V--rp3ng?si=OCpXGbzlGbXEk9ha
+@w[11 Oct 00:11:53] @GShadedancer questions 'can i pay someone to do the tp thing if so how much would be appropriate for two daggers'
+@w[11 Oct 00:12:40] @RINFO: Kulton has been reborn as an Eldar Thief.@w
+@w[11 Oct 00:13:29] @GReyn answers 'TP generally sell for 10-11mil gold. but i really wouldn't recommend paying the gold or tp cost to add a vorpal flag to a regular weapon at your level/tier'
+@w[11 Oct 00:14:21] @GGraoldan answers 'until t3.. weapons will be just upgrade when ya can... and throw away when ya got something better.. it's not as significant as tiering and having more power'
+@w[11 Oct 00:14:30] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[11 Oct 00:14:41] @GCLAN: At-ten-tion! Blunt is here to get some training done!
+@w[11 Oct 00:14:58] @G(Friend)@c: @CFeast beams a smile at Grrdy.
+@w[11 Oct 00:15:07] @Y(@GSpecial Ops@Y) CLAN: It seems there is no nightcap for Kanaye tonight.
+@w[11 Oct 00:15:15] @GGraoldan answers 'every tier, you can use eq 10 levels x tier '
+@w[11 Oct 00:15:21] @Y(@GSpecial Ops@Y) CLAN: Lighted comforts Kanaye.
+@w[11 Oct 00:15:21] @Y(@GSpecial Ops@Y) CLAN: Kanaye tells everyone goodnight.
+@w[11 Oct 00:15:43] @Y(@GCorpsman@Y) CLAN: Zoth gets in Kanaye's face, thumps him in the chest and yells, "BOOYAH, grandma! BOOYAH!"
+@w[11 Oct 00:16:10] @C(@MWanGrp?!@C)@M [@wL191,@R-2500@w,W+3/T1@M] Feast: Anyone up for a drag to loud? :D
+@w[11 Oct 00:16:49] @RGlobal Quest@Y:@w @gGlobal Quest # 7372@w has been won by @YVandit@w - @Y387th@w win.
+@w[11 Oct 00:17:23] @YZoth (@GCorpsman@Y) tells the CLAN: 'Sorry I'm just using socials I found on random social.'
+@w[11 Oct 00:19:41] @CChief Nurse Executive Helene says, @c"@CHi there! Welcome to Ascension Bluff Nursing Home.@c"
+@w[11 Oct 00:19:58] @CChief Nurse Executive Helene says, @c"@CHi there! Welcome to Ascension Bluff Nursing Home.@c"
+@w[11 Oct 00:19:59] @CChief Nurse Executive Helene says, @c"@CPlease be careful while you are here.@c"
+@w[11 Oct 00:20:02] @CChief Nurse Executive Helene says, @c"@CHi there! Welcome to Ascension Bluff Nursing Home.@c"
+@w[11 Oct 00:22:39] @CRobert the Mock Millionaire says, @c"@CLike my monocle? It's an antique heirloom, you know.@c"
+@w[11 Oct 00:22:44] @CChief Nurse Executive Helene says, @c"@CHi there! Welcome to Ascension Bluff Nursing Home.@c"
+@w[11 Oct 00:22:46] @CPhil the Engineer exclaims, @c"@CI just can't stop tinkering, I love to tinker!@c"
+@w[11 Oct 00:22:51] @CPhil the Engineer exclaims, @c"@CI just can't stop tinkering, I love to tinker!@c"
+@w[11 Oct 00:22:52] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[11 Oct 00:23:32] @CGarrett the Retired Pirate asks, @c"@CYe look like a strong young scallywag, care t' join me in a drinkin' contest?@c"
+@w[11 Oct 00:23:37] @CCrusty old Jack asks, @c"@CHow do you like my unibrow? It's looking good today, isn't it?@c"
+@w[11 Oct 00:24:27] @w*Click*, the door opens.
+@w[11 Oct 00:24:44] @CAbigail the Pianist says, @c"@CHi there! You can listen to a new song I've been writing.@c"
+@w[11 Oct 00:24:53] @CAbigail the Pianist says, @c"@CHi there! You can listen to a new song I've been writing.@c"
+@w[11 Oct 00:25:09] @CPrincess Sarah asks, @c"@CCan't a princess ever get some peace and quiet around here?@c"
+@w[11 Oct 00:25:13] @CHarry the Fool asks, @c"@CYou look like a brave adventurer! What is your opinion on the best place in Andolor to visit?@c"
+@w[11 Oct 00:25:20] @w*Click*, the door opens.
+@w[11 Oct 00:25:35] @CJimmy the Cook says, @c"@CPlanning meals for an entire month is difficult.@c"
+@w[11 Oct 00:26:16] @CTaath the Mighty exclaims 'Hello there good adventurer!'
+@w[11 Oct 00:26:16] @CTaath the Mighty says 'Be wary, this area can be tough.'
+@w[11 Oct 00:26:20] @CA dark elf gatekeeper asks, @c"@CWhat?  Are you trying to sneak in, KumoGami?@c"
+@w[11 Oct 00:26:20] @CA dark elf gatekeeper exclaims, @c"@CYou'll have to answer to me first!@c"
+@w[11 Oct 00:26:48] @CA dying dwarf exclaims, @c"@CPlease!  Wait!  Hear my words before you go any further!@c"
+@w[11 Oct 00:26:52] @RINFO: All please welcome Inista, Aardwolf's newest Wolfen Bandit!@w
+@w[11 Oct 00:30:05] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[11 Oct 00:34:06] @RINFO: 1 minute of bonus experience remaining.@w
+@w[11 Oct 00:35:06] @RINFO: Bonus experience has now expired.@w
+@w[11 Oct 00:36:01] @YZoth (@GCorpsman@Y) tells the CLAN: 'Hey look deadlights popped up on my quests'
+@w[11 Oct 00:36:15] @YZoth (@GCorpsman@Y) tells the CLAN: 'So yeah 14 mins left on my timer'
+@w[11 Oct 00:36:37] @G(Friend) Feast@c:@C 'Is 'recites whispers of death' when someone tries to PK you during window of protection?'
+@w[11 Oct 00:36:42] @GCLAN: At-ten-tion! Winger is here to get some training done!
+@w[11 Oct 00:36:58] @RINFO: Zagyg has been reborn as a Vampire Cleric.@w
+@w[11 Oct 00:39:07] @RGlobal Quest@Y:@w @cGlobal quest # 7376@w has been declared for levels @c93@w to @c104@w - @c10 or fewer wins only@w.
+@w[11 Oct 00:39:07] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c90@w ticks.
+@w[11 Oct 00:39:07] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 7376@w' to take part.
+@w[11 Oct 00:41:07] @RGlobal Quest@Y:@w @cGlobal quest # 7376@w for levels @c93@w to @c104@w - @c10 or fewer wins only@w has now started.
+@w[11 Oct 00:41:10] @RINFO: The last post plays mournfully as Garence falls in battle to the bounty hunter.@w
+@w[11 Oct 00:42:10] @RINFO: The last post plays mournfully as Lighted falls in battle to a young blue dragon.@w
+@w[11 Oct 00:45:44] @RGlobal Quest@Y:@w @mGlobal Quest # 7377@w has been won by @YReroll@w - @Y47th@w win.
+@w[11 Oct 00:45:44] @RGlobal Quest@Y:@w @mGlobal Quest # 7377@w will go into extended time for 5 more minutes.
+@w[11 Oct 00:46:08] @RGlobal Quest@Y:@w @cGlobal quest # 7376@w has been cancelled due to lack of participants.
+@w[11 Oct 00:46:16] @GCLAN: At-ten-tion! Anssett is here to get some training done!
+@w[11 Oct 00:48:01] @RGlobal Quest@Y:@w SonnyQuinn has completed @mGlobal Quest # 7377@w.
+@w[11 Oct 00:48:01] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 7377@w is now over.
+@w[11 Oct 00:48:17] @RINFO: The Cwn Annwn emerge in a frenzy with Feast in their midst, savagely hunting down a kitten.@w
+@w[11 Oct 00:48:26] @RGlobal Quest@Y:@w @gGlobal Quest # 7378@w has been won by @YGuinness@w - @Y2853rd@w win.
+@w[11 Oct 00:48:48] @YZoth (@GCorpsman@Y) tells the CLAN: 'So I think I'm about to do it'
+@w[11 Oct 00:48:56] @Y(@GSpecial Ops@Y) CLAN: Anssett looks for Zoth to see if he would do it.
+@w[11 Oct 00:48:57] @YZoth (@GCorpsman@Y) tells the CLAN: 'Level 184'
+@w[11 Oct 00:48:58] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'which it'
+@w[11 Oct 00:49:06] @YElshar (@GRecruit@Y) tells the CLAN: 'just use protection, ok?'
+@w[11 Oct 00:49:16] @YZoth (@GCorpsman@Y) tells the CLAN: 'Oh yeah, you gotta cover up'
+@w[11 Oct 00:49:19] @Y(@GSpecial Ops@Y) CLAN: Anssett rapidly nods twice at Elshar, in complete agreement.
+@w[11 Oct 00:49:45] @RINFO: Elshar has helped complete a new ship for Captain Prosper.@w
+@w[11 Oct 00:49:55] @GFeron questions 'where would I find a flying saucer in the area that?s been murdering 19 civilians? I got this quest from the famous quester.'
+@w[11 Oct 00:51:19] @YZoth (@GCorpsman@Y) tells the CLAN: 'I feel like I should probably go sorc but I think venomist suits me for t1 and t2.'
+@w[11 Oct 00:51:24] @YDejavu (@GRecruit@Y) tells the CLAN: 'night!'
+@w[11 Oct 00:51:25] @GCLAN: Dejavu falls out to take some much needed R & R.
+@w[11 Oct 00:51:26] @YZoth (@GCorpsman@Y) tells the CLAN: 'Then I'll switch'
+@w[11 Oct 00:52:03] @GFeron questions 'my bad I meant to say that the flying saucer murdered 19 civilians.'
+@w[11 Oct 00:53:05] @GRusky answers 'typing quest info will give you the area and the vicinity.  typing where will tell you where you are currently'
+@w[11 Oct 00:53:27] @GCLAN: Zensch falls out to take some much needed R & R.
+@w[11 Oct 00:54:24] @RINFO: The last post plays mournfully as Zoth falls in battle to a crow.@w
+@w[11 Oct 00:54:30] @GRusky answers 'go to the relevant area and find the place whose title matches the title in quest info.  The flying saucer shoukd be there or there abouts'
+@w[11 Oct 00:55:00] @RINFO: The last post plays mournfully as Winger falls in battle to a Crystal Guard soldier and 2 others.@w
+@w[11 Oct 00:55:41] @YZoth (@GCorpsman@Y) tells the CLAN: 'I die once per mort in tol.'
+@w[11 Oct 00:56:02] @YYou tell the CLAN: '100 per mort for me'
+@w[11 Oct 00:56:06] @GFeron questions 'thanks, it?s too dark in here. Is there a way that I could get a lantern quickly around here?'
+@w[11 Oct 00:57:42] @YZoth (@GCorpsman@Y) tells the CLAN: 'I phone it in when I hit like lev 180'
+@w[11 Oct 00:58:07] @GRusky answers 'if you have the continual light spell, cast that'
+@w[11 Oct 00:58:10] @YElshar (@GRecruit@Y) tells the CLAN: 'me too. I just call up the pizza place and ask 'em "hey can I get a pizza with like 20 levels on it? tnx" :)'
+@w[11 Oct 00:58:36] @YZoth (@GCorpsman@Y) tells the CLAN: 'I'm like bs hawk, spam quaff, talk in channel '
+@w[11 Oct 00:58:38] @YZoth (@GCorpsman@Y) tells the CLAN: 'hehe'
+@w[11 Oct 00:58:40] @GCLAN: Spublofe falls out to take some much needed R & R.
+@w[11 Oct 00:58:53] @YZoth (@GCorpsman@Y) tells the CLAN: 'We all have our thing'
+@w[11 Oct 00:58:57] @YElshar (@GRecruit@Y) tells the CLAN: 'I think I'm gonna do thief next level, really want all the backstabbies'
+@w[11 Oct 00:59:05] @YElshar (@GRecruit@Y) tells the CLAN: 'i mean mort'
+@w[11 Oct 00:59:11] @YZoth (@GCorpsman@Y) tells the CLAN: 'I feel like thief is kinda crap these days unless you're primary?'
+@w[11 Oct 00:59:20] @GFeron answers 'I don?t think I do yet, I am a mage and socerer'
+@w[11 Oct 00:59:21] @YZoth (@GCorpsman@Y) tells the CLAN: 'But I dunno'
+@w[11 Oct 01:00:00] @GRusky answers 'its a lvl 5 mage spell as far as i can see but you might not have practiced it yet'
+@w[11 Oct 01:00:12] @RINFO: The player rankings have been updated.@w
+@w[11 Oct 01:00:42] @YZoth (@GCorpsman@Y) tells the CLAN: 'I'm primary thief and intend on doing it again'
+@w[11 Oct 01:02:20] @RGlobal Quest@Y:@w @gGlobal Quest # 7381@w has been won by @YNifto@w - @Y385th@w win.
+@w[11 Oct 01:02:20] @RGlobal Quest@Y:@w @gGlobal Quest # 7381@w will go into extended time for 5 more minutes.
+@w[11 Oct 01:04:55] @GAbig answers 'feron, it is not good sportmanship to ignore tells and even says while I am in your room'
+@w[11 Oct 01:06:25] @GMael answers 'sometimes people go afk you know'
+@w[11 Oct 01:06:42] @GAbig answers 'afk peaople do not wander around and kill mobs'
+@w[11 Oct 01:07:02] @GMael answers 'perhaps you should take the hint'
+@w[11 Oct 01:07:12] @GNifto answers 'Feron is new and it takes him a while to get through everything'
+@w[11 Oct 01:07:18] @RINFO: Ralyn has been reborn as a Vampire Mage.@w
+@w[11 Oct 01:08:12] @RINFO: Ralyn has entered (HARDCORE) mode!@w
+@w[11 Oct 01:08:37] @YZoth (@GCorpsman@Y) tells the CLAN: 'I'm about to level to 186 and could use your help'
+@w[11 Oct 01:10:14] @YZoth (@GCorpsman@Y) tells the CLAN: 'Anyone willing to newbie drag me to tier?'
+@w[11 Oct 01:10:19] @YZoth (@GCorpsman@Y) tells the CLAN: 'I'm 186'
+@w[11 Oct 01:10:19] @RINFO: Zxavier has been reborn as a Vampire Ranger.@w
+@w[11 Oct 01:11:09] @YZoth (@GCorpsman@Y) tells the CLAN: 'Before I level.'
+@w[11 Oct 01:13:22] @GCLAN: At-ten-tion! Kazm is here to get some training done!
+@w[11 Oct 01:14:56] @RGlobal Quest@Y:@w @mGlobal Quest # 7383@w has been won by @YBreathe@w - @Y66th@w win.
+@w[11 Oct 01:14:56] @RGlobal Quest@Y:@w @mGlobal Quest # 7383@w will go into extended time for 5 more minutes.
+@w[11 Oct 01:15:04] @RGlobal Quest@Y:@w Dartan has completed @mGlobal Quest # 7383@w.
+@w[11 Oct 01:15:28] @RGlobal Quest@Y:@w Kulton has completed @mGlobal Quest # 7383@w.
+@w[11 Oct 01:15:28] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 7383@w is now over.
+@w[11 Oct 01:16:44] @YZoth (@GCorpsman@Y) tells the CLAN: 'Anyone feel like leveling me?  sup'
+@w[11 Oct 01:17:05] @RINFO: The last post plays mournfully as Kitrana falls in battle to a gas demon and 1 other.@w
+@w[11 Oct 01:17:09] @YYou tell the CLAN: 'try wangrp, maybe? guess no one who can is around here atm'
+@w[11 Oct 01:21:15] @RGlobal Quest@Y:@w @gGlobal Quest # 7384@w has been won by @YBreathe@w - @Y67th@w win.
+@w[11 Oct 01:21:15] @RGlobal Quest@Y:@w @gGlobal Quest # 7384@w will go into extended time for 5 more minutes.
+@w[11 Oct 01:21:26] @RGlobal Quest@Y:@w Dixon has completed @gGlobal Quest # 7384@w.
+@w[11 Oct 01:21:38] @RGlobal Quest@Y:@w Dartan has completed @gGlobal Quest # 7384@w.
+@w[11 Oct 01:21:38] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7384@w is now over.
+@w[11 Oct 01:24:30] @RINFO: Dixon, cursing a lookout and 1 other, embraces death and returns to the Dark One.@w
+@w[11 Oct 01:27:00] @G(Friend)@w: @CGorsk has quit.
+@w[11 Oct 01:27:55] @RGlobal Quest@Y:@w @mGlobal Quest # 7386@w has been won by @YWinger@w - @Y112th@w win.
+@w[11 Oct 01:27:55] @RGlobal Quest@Y:@w @mGlobal Quest # 7386@w will go into extended time for 5 more minutes.
+@w[11 Oct 01:30:37] @GFeron questions 'I finished a quest, and I?ve explored 300 rooms but the wizard is not letting me graduate. What can I do?'
+@w[11 Oct 01:30:40] @RGlobal Quest@Y:@w Vettir has completed @mGlobal Quest # 7386@w.
+@w[11 Oct 01:30:40] @RGlobal Quest@Y:@w No active players remaining. @mGlobal Quest # 7386@w is now over.
+@w[11 Oct 01:31:12] @G(Friend)@w: @CGorsk has entered Aardwolf.
+@w[11 Oct 01:31:24] @G(Friend)@c: @CGorsk licks Vost.
+@w[11 Oct 01:32:12] @GAbig answers 'that does tasklist say?'
+@w[11 Oct 01:33:11] @GGuinness answers 'type 'tasks here' to see. you might have not completed all the requirements yet...'
+@w[11 Oct 01:33:32] @RINFO: Shadedancer has fallen, blood staining a zombie and 2 others's hands.@w
+@w[11 Oct 01:33:48] @RGlobal Quest@Y:@w @gGlobal Quest # 7387@w has been won by @YZxavier@w - @Y352nd@w win.
+@w[11 Oct 01:33:48] @RGlobal Quest@Y:@w @gGlobal Quest # 7387@w will go into extended time for 5 more minutes.
+@w[11 Oct 01:33:55] @RGlobal Quest@Y:@w Dixon has completed @gGlobal Quest # 7387@w.
+@w[11 Oct 01:33:55] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 7387@w is now over.
+@w[11 Oct 01:34:31] @YZoth (@GCorpsman@Y) tells the CLAN: 'cAN i GET A DRAG SO i CAN TIER?'
+@w[11 Oct 01:34:47] @YZoth (@GCorpsman@Y) tells the CLAN: 'caps shame'
+@w[11 Oct 01:34:53] @YWinger (@GSoldier@Y) tells the CLAN: 'I'm too smol, i'd ask on Wang channel, you'll have a larger audience'
+@w[11 Oct 01:35:03] @GFeron answers 'the only ones that I see is to shut up a dog, and to get some thing from a bartender. Nothing else.'
+@w[11 Oct 01:35:31] @GGuinness answers 'type 'tasks here''
+@w[11 Oct 01:37:20] @GFeron answers 'he says for me to complete at least two quest, and explore 300 rooms which I did explore 300 rooms. I will try to find another quest, but first I think I should find some food because I am dehydrated.'
+@w[11 Oct 01:37:57] @GGuinness answers 'yes, the fountain in the academy courtyard is good to drink from to replenish both hunger and thirst'
+@w[11 Oct 01:39:29] @C(@MWanGrp?!@C)@M [@wL188,@G2500@w,H+5/T9@M] Kazm: anyone have time for a quick drag?
+@w[11 Oct 01:40:14] @GFeron questions 'should I do another request?, I?m guessing that?s my only option left. thanks for the fountain, I managed to drink some water.'
+@w[11 Oct 01:43:30] @GAbig answers 'yes, do another quest'
+@w[11 Oct 01:44:15] @GFeron questions 'abig can I go to the same quester? Or does it have to be a different one?'
+@w[11 Oct 01:44:31] @GFeast answers 'The same one is fine '
+@w[11 Oct 01:44:31] @GWinger answers 'same one, '
+@w[11 Oct 01:45:01] @GFeast answers 'You just have to wait half an hour after you finish a quest before you can get a new one. '
+@w[11 Oct 01:45:48] @GXzx answers 'feron u should recreate and change race to wolfen for free hunt to find quest mobs and u can pick any class'
+@w[11 Oct 01:45:50] @GFeron answers 'thanks'
+@w[11 Oct 01:46:56] @GFeron answers 'xzx thanks, I will do that later on. I don?t wanna get overwhelmed with too many things.'
+@w[11 Oct 01:49:27] @CDmntdDuergar gossips 'i sit at level 1 and quest. then i get bored and level, then I regret levelling cause l1q is easy while I'm working... it's a vicious cycle'
+@w[11 Oct 01:49:44] @RGlobal Quest@Y:@w @gGlobal Quest # 7390@w has been won by @YHomerSimpson@w - @Y108th@w win.
+@w[11 Oct 01:50:47] @CFeast gossips 'Right there with you, Duergar'
+@w[11 Oct 01:51:39] @GCLAN: At-ten-tion! Spublofe is here to get some training done!
+@w[11 Oct 01:57:15] @RINFO: The valkyries come for Rezok who was slain by a goblin and 4 others.@w
+@w[11 Oct 01:58:51] @RINFO: HARDCORE Myrddin has been killed by Zathrus at level 84.@w
+@w[11 Oct 01:58:58] @RINFO: Myrddin has entered open PK (OPK) mode!@w
+@w[11 Oct 02:00:12] @RINFO: The player rankings have been updated.@w
+@w[11 Oct 02:00:45] @GCLAN: Kazm falls out to take some much needed R & R.
+@w[11 Oct 02:01:26] @GCLAN: KumoGami falls out to take some much needed R & R.
