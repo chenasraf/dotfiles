@@ -971,6 +971,16 @@ local maxL = lv + 5
 Send("mobdeaths " .. minL .. " " .. maxL .. " " .. align)</send>
   </alias>
   <alias
+   name="command_line_alias_bW5h"
+   match="mna *"
+   enabled="y"
+   group="command_line_aliases"
+   send_to="10"
+   sequence="100"
+  >
+  <send>mapper addnote %1</send>
+  </alias>
+  <alias
    match="mnh"
    enabled="y"
    group="mapper"
