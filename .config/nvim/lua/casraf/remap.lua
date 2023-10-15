@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.Ex()
 end, { desc = "Save and file explorer" })
 
-vim.keymap.set("n", "<leader>q", "<C-w>c", { desc = "Close pane" })
+vim.keymap.set("n", "gq", "<C-w>c", { desc = "Close pane" })
 
 vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location" })
 vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location" })
