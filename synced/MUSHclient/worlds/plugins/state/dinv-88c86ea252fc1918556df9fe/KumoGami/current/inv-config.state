@@ -1,22 +1,16 @@
 1
-b972ef4687697c88c1206e0b0c277622e2ced07e
+ed8795761476ed1673ccb5d7301843a1cc5adea6
 inv.config.table = {}
-  inv.config.table.priorityFormat = {}
-    inv.config.table.priorityFormat.minor = 1
-    inv.config.table.priorityFormat.major = 0
-  inv.config.table.setFormat = {}
-    inv.config.table.setFormat.minor = 1
-    inv.config.table.setFormat.major = 0
   inv.config.table.snapshotFormat = {}
     inv.config.table.snapshotFormat.minor = 1
     inv.config.table.snapshotFormat.major = 0
-  inv.config.table.isPromptEnabled = true
-  inv.config.table.isBackupEnabled = true
-  inv.config.table.doIgnoreKeyring = false
   inv.config.table.isRegenEnabled = false
+  inv.config.table.refreshEagerSec = 5
+  inv.config.table.doIgnoreKeyring = false
+  inv.config.table.isPromptEnabled = true
   inv.config.table.regenOrigObjId = 0
   inv.config.table.regenNewObjId = 0
-  inv.config.table.refreshEagerSec = 5
+  inv.config.table.isBackupEnabled = true
   inv.config.table.pluginVer = {}
     inv.config.table.pluginVer.minor = 56
     inv.config.table.pluginVer.major = 2
@@ -31,3 +25,9 @@ inv.config.table = {}
   inv.config.table.consumeFormat = {}
     inv.config.table.consumeFormat.minor = 1
     inv.config.table.consumeFormat.major = 0
+  inv.config.table.priorityFormat = {}
+    inv.config.table.priorityFormat.minor = 1
+    inv.config.table.priorityFormat.major = 0
+  inv.config.table.setFormat = {}
+    inv.config.table.setFormat.minor = 1
+    inv.config.table.setFormat.major = 0

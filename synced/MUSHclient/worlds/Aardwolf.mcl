@@ -430,7 +430,7 @@ Send("cast " .. sp)</send>
   </trigger>
   <trigger
    group="spellbook"
-   match="^Level ([\d]+)\s+: ([\w\s]+[\w])\s+([\d]+)\s+([\d]+)%\s+([\d]+)$"
+   match="^Level ([\d]+)\s*: ([\w\s]+[\w])\s+([\d]+)\s+([\d]+)%\s+([\d]+)$"
    omit_from_output="y"
    regexp="y"
    send_to="12"
@@ -904,10 +904,12 @@ end</send>
    match="kkp"
    enabled="y"
    group="atk"
-   send_to="10"
+   send_to="12"
    sequence="100"
   >
-  <send>kk;kp</send>
+  <send>Execute("kk;kp")
+SetCommandSelection(0, 2)
+PasteCommand("kp")</send>
   </alias>
   <alias
    match="kp"
@@ -1537,6 +1539,7 @@ group="keepawake" >
   </key>
 
   <key name="-" >
+  <send>sight</send>
   </key>
 
   <key name="+" >

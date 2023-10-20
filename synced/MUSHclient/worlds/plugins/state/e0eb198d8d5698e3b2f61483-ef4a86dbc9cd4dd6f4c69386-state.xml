@@ -17,14 +17,6 @@
   <variable name="background_colour">0</variable>
   <variable name="commas_in_gold">0</variable>
   <variable name="data_colors">data_colors = {}
-  data_colors.Alignment = 16777215
-  data_colors.Gold = 65535
-  data_colors["Quest Points"] = 16777215
-  data_colors.Trivia = 16777215
-  data_colors.TNL = 16777215
-  data_colors.Level = 16777215
-  data_colors.Trains = 16777215
-  data_colors.Pracs = 16777215
   data_colors.Strength = 16777215
   data_colors.Intelligence = 16777215
   data_colors.Wisdom = 16777215
@@ -35,7 +27,15 @@
   data_colors.Mana = 16777215
   data_colors.Moves = 16777215
   data_colors.Hitroll = 16777215
-  data_colors.Damroll = 16777215</variable>
+  data_colors.Damroll = 16777215
+  data_colors.Alignment = 16777215
+  data_colors.Gold = 65535
+  data_colors["Quest Points"] = 16777215
+  data_colors.Trivia = 16777215
+  data_colors.TNL = 16777215
+  data_colors.Level = 16777215
+  data_colors.Trains = 16777215
+  data_colors.Pracs = 16777215</variable>
   <variable name="enabled">true</variable>
   <variable name="font_name">MesloLGS NF</variable>
   <variable name="font_size">12</variable>
