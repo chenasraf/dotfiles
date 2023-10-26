@@ -24221,3 +24221,122 @@
 @w[20 Oct 03:06:14] @CTaath the Mighty exclaims 'Hello there good adventurer!'
 @w[20 Oct 03:06:14] @CTaath the Mighty says 'Be wary, this area can be tough.'
 @w[20 Oct 03:12:19] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[21 Oct 17:20:53] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[21 Oct 17:21:13] @Y(@GCorpsman@Y) CLAN: You wave.
+@w[21 Oct 17:21:18] @YZoth (@GCorpsman@Y) tells the CLAN: 'Hey'
+@w[21 Oct 17:21:18] @G(Friend)@c: @CYou wave.
+@w[21 Oct 17:21:19] @YQuroz (@GRecruit@Y) tells the CLAN: 'hi'
+@w[21 Oct 17:21:34] @YTalbor (@GGeneral@Y) tells the CLAN: 'heya'
+@w[21 Oct 17:22:10] @RINFO: Ytrams has saved Christmas.@w
+@w[21 Oct 17:22:18] @YYou tell the CLAN: 'how's it goin?'
+@w[21 Oct 17:22:31] @YQuroz (@GRecruit@Y) tells the CLAN: 'is it worth pupping at low lvl if I'm not going to stay SH?'
+@w[21 Oct 17:22:46] @YSaraid (@GGeneral@Y) tells the CLAN: 'no it won't be'
+@w[21 Oct 17:22:50] @YTalbor (@GGeneral@Y) tells the CLAN: 'you don't pup at low level'
+@w[21 Oct 17:22:52] @YSaraid (@GGeneral@Y) tells the CLAN: 'you will do better remorting and gathering up qpts '
+@w[21 Oct 17:22:54] @YTalbor (@GGeneral@Y) tells the CLAN: 'only sh'
+@w[21 Oct 17:23:04] @YQuroz (@GRecruit@Y) tells the CLAN: 'Ok'
+@w[21 Oct 17:23:07] @YTalbor (@GGeneral@Y) tells the CLAN: 'well 200, but thats not good odea'
+@w[21 Oct 17:23:07] @YZoth (@GCorpsman@Y) tells the CLAN: 'You could pup to boost your str/dex to be able to carry more  That's about it'
+@w[21 Oct 17:23:19] @YQuroz (@GRecruit@Y) tells the CLAN: 'that's what I thought'
+@w[21 Oct 17:23:25] @YQuroz (@GRecruit@Y) tells the CLAN: 'thank you'
+@w[21 Oct 17:23:33] @YTalbor (@GGeneral@Y) tells the CLAN: 'if you do want to sit for a bit then it'll be best at r7'
+@w[21 Oct 17:23:54] @YQuroz (@GRecruit@Y) tells the CLAN: 'gotcha, goal is to try and mort today'
+@w[21 Oct 17:24:05] @YTalbor (@GGeneral@Y) tells the CLAN: 'you can do it :)'
+@w[21 Oct 17:24:38] @YTalbor (@GGeneral@Y) tells the CLAN: 'need 108 levels then ask for drag'
+@w[21 Oct 17:24:43] @YQuroz (@GRecruit@Y) tells the CLAN: 'yup'
+@w[21 Oct 17:24:49] @YQuroz (@GRecruit@Y) tells the CLAN: 'just cp'ng upto like lvl 100'
+@w[21 Oct 17:24:54] @YQuroz (@GRecruit@Y) tells the CLAN: 'maybe further if I need CP still'
+@w[21 Oct 17:25:13] @RGlobal Quest@Y:@w @gGlobal Quest # 245@w has been won by @YZelog@w - @Y366th@w win.
+@w[21 Oct 17:25:48] @YZoth (@GCorpsman@Y) tells the CLAN: 'setting autohunt on cloaked man in chantry is a good way to get hunt to 100% lol'
+@w[21 Oct 17:26:02] @YTalbor (@GGeneral@Y) tells the CLAN: 'lol i bet'
+@w[21 Oct 17:27:56] @YYtrams (@GCorpsman@Y) tells the CLAN: 'have |@c8@Y[@cEight of Water@Y]@c8@Y|  auc it or somebody collect?'
+@w[21 Oct 17:28:16] @YSaraid (@GGeneral@Y) tells the CLAN: 'they give good gold to auction'
+@w[21 Oct 17:28:36] @YZoth (@GCorpsman@Y) tells the CLAN: 'Does int help you get skillups faster when using them?  I thought it did but it doesn't say anything in the helpfiles.'
+@w[21 Oct 17:29:27] @YTalbor (@GGeneral@Y) tells the CLAN: 'think it just increases the percentage more when you train'
+@w[21 Oct 17:30:38] @YZoth (@GCorpsman@Y) tells the CLAN: 'finally caught him'
+@w[21 Oct 17:30:46] @RINFO: Murder most foul; a corpse has been discovered in the Fellchantry alleyways, and Zoth is the prime suspect.@w
+@w[21 Oct 17:30:52] @YTalbor (@GGeneral@Y) tells the CLAN: 'nice'
+@w[21 Oct 17:30:55] @YSaraid (@GGeneral@Y) tells the CLAN: 'good job!'
+@w[21 Oct 17:31:19] @YLepdar (@GSoldier@Y) tells the CLAN: 'gratz'
+@w[21 Oct 17:31:36] @YYou tell the CLAN: 'nice!'
+@w[21 Oct 17:37:48] @CHighlord Koran says 'Welcome, child of the Light. The path of good will show the road to balance.'
+@w[21 Oct 17:38:07] @CHighlord Koran exclaims 'Balance cannot restore itself - choose your side!'
+@w[21 Oct 17:38:53] @GCLAN: Narwhal falls out to take some much needed R & R.
+@w[21 Oct 17:39:29] @G(Friend)@w: @CFeast has entered Aardwolf.
+@w[21 Oct 17:41:02] @CGuardian of the Loud'ra exclaims, @c"@CSo, you do know what you're talking about. That means you can help us!@c"
+@w[21 Oct 17:42:46] @CGuardian of the Dra'ork says, @c"@CThank you for your help.@c"
+@w[21 Oct 17:43:25] @CA supply distributor says, @c"@CYou will need something to collect the samples in.  A little piece of advice, large samples generally get contaminated.@c"
+@w[21 Oct 17:44:26] @w*Click*, the door opens.
+@w[21 Oct 17:44:37] @RGlobal Quest@Y:@w @cGlobal quest # 250@w has been declared for levels @c93@w to @c104@w - @c10 or fewer wins only@w.
+@w[21 Oct 17:44:37] @RGlobal Quest@Y:@w The quest will start in @c4@w ticks and will last for @c100@w ticks.
+@w[21 Oct 17:44:37] @RGlobal Quest@Y:@w See '@cHelp Global Quests@w', or, type '@cGquest Join 250@w' to take part.
+@w[21 Oct 17:44:46] @RINFO: Bedokman has fallen, blood staining an Empyrean patrol guard and 4 others's hands.@w
+@w[21 Oct 17:46:37] @RGlobal Quest@Y:@w @cGlobal quest # 250@w for levels @c93@w to @c104@w - @c10 or fewer wins only@w has now started.
+@w[21 Oct 17:47:37] @RGlobal Quest@Y:@w @gGlobal quest # 251@w has been declared for levels @g101@w to @g112@w.
+@w[21 Oct 17:47:37] @RGlobal Quest@Y:@w The quest will start in @g4@w ticks and will last for @g82@w ticks.
+@w[21 Oct 17:47:37] @RGlobal Quest@Y:@w See '@gHelp Global Quests@w', or, type '@gGquest Join 251@w' to take part.
+@w[21 Oct 17:49:38] @RGlobal Quest@Y:@w @gGlobal quest # 251@w for levels @g101@w to @g112@w has now started.
+@w[21 Oct 17:51:38] @RGlobal Quest@Y:@w @cGlobal quest # 250@w has been cancelled due to lack of participants.
+@w[21 Oct 17:52:32] @RINFO: Simetra has entered (HARDCORE) mode!@w
+@w[21 Oct 17:52:50] @RINFO: The last post plays mournfully as KumoGami falls in battle to a culinary assistant and 1 other.@w
+@w[21 Oct 17:54:36] @G-@g,@G-@g'@G-@g{@MWham@Y!@cazoN@g}@G-@g,@G-@R@@@w Providencia: Mushambo has guts.. He said he might dress as santa for halloween
+@w[21 Oct 17:54:39] @RGlobal Quest@Y:@w @gGlobal quest # 251@w has been cancelled due to lack of participants.
+@w[21 Oct 17:54:58] @GCLAN: KumoGami falls out to take some much needed R & R.
+@w[26 Oct 18:39:35] @GCLAN: At-ten-tion! KumoGami is here to get some training done!
+@w[26 Oct 18:39:47] @G(Friend)@c: @CGorsk smiles at you.
+@w[26 Oct 18:39:54] @G(Friend)@c: @CYou wave hello to Gorsk.
+@w[26 Oct 18:40:03] @YYou tell the CLAN: 'hi boot'
+@w[26 Oct 18:40:34] @YReroll (@GCorpsman@Y) tells the CLAN: 'Morning!'
+@w[26 Oct 18:40:39] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Heyo!'
+@w[26 Oct 18:43:40] @CA Templar guard says 'Welcome to Rosewood Castle...'
+@w[26 Oct 18:43:40] @CA Templar guard says 'Please step to the side so that we may inspect your equipment.'
+@w[26 Oct 18:44:13] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Nice, found a good staff shop finally!'
+@w[26 Oct 18:44:16] @CA cowering Templar exclaims 'Please! For the love of God, no more!'
+@w[26 Oct 18:44:16] @CA cowering Templar exclaims 'I'm not a traitor!'
+@w[26 Oct 18:44:16] @CA cowering Templar exclaims 'I'm a God-fearing soul!'
+@w[26 Oct 18:44:20] @CA cowering Templar exclaims 'Noooooooo! Please don't leave me!'
+@w[26 Oct 18:44:20] @CA cowering Templar exclaims 'Please! I'll do anything!'
+@w[26 Oct 18:44:20] @CA cowering Templar exclaims 'Just don't leave me with this monster!'
+@w[26 Oct 18:44:27] @YDejavu (@GCorpsman@Y) tells the CLAN: 'went 1 by 1 on every spell using potsearch lol'
+@w[26 Oct 18:44:31] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'amazonclan'
+@w[26 Oct 18:44:34] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Yeah :D'
+@w[26 Oct 18:44:39] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Or I could've asked you lmao'
+@w[26 Oct 18:48:01] @GCLAN: At-ten-tion! Nueve is here to get some training done!
+@w[26 Oct 18:48:02] @GCLAN: Serinqua falls out to take some much needed R & R.
+@w[26 Oct 18:49:16] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Is there a plugin that practices any unlearnt skill/spell?'
+@w[26 Oct 18:49:22] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'yes'
+@w[26 Oct 18:49:50] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Do ya know by whom?'
+@w[26 Oct 18:50:05] @YZensch (@GSpecial Ops@Y) tells the CLAN: '@wDixon equips @M<-@WL@M-> @BL@bifetime @BP@bass @Wt@wo @Wt@wh@We @mG@Mladiator@ms A@Mren@ma@w @M<-@WL@M->@w as a portal.'
+@w[26 Oct 18:50:11] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'ups :P'
+@w[26 Oct 18:50:15] @YDejavu (@GCorpsman@Y) tells the CLAN: 'lol'
+@w[26 Oct 18:50:19] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'https://github.com/aardlyworthit/aard-practice-skills-spells'
+@w[26 Oct 18:50:35] @RGlobal Quest@Y:@w @gGlobal Quest # 1624@w has been won by @YSokic@w - @Y626th@w win.
+@w[26 Oct 18:51:17] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Sweet, ty :)'
+@w[26 Oct 18:51:57] @YDejavu (@GCorpsman@Y) tells the CLAN: 'OP!'
+@w[26 Oct 18:52:12] @YZensch (@GSpecial Ops@Y) tells the CLAN: 'yeah it's awesome'
+@w[26 Oct 18:52:20] @YDejavu (@GCorpsman@Y) tells the CLAN: 'Clean and simple!'
+@w[26 Oct 18:54:21] @RINFO: Najin has entered open PK (OPK) mode!@w
+@w[26 Oct 18:59:00] @RINFO: New post #@W515706@R in forum @WPersonal@R from @WMadrox@R Subj: @WArea Goals Section@w
+@w[26 Oct 19:00:14] @RINFO: The player rankings have been updated.@w
+@w[26 Oct 19:01:24] @RINFO: HARDCORE Yuna has been killed by Dixon at level 15.@w
+@w[26 Oct 19:01:25] @RINFO: Yuna has entered open PK (OPK) mode!@w
+@w[26 Oct 19:02:00] @GCLAN: At-ten-tion! Serinqua is here to get some training done!
+@w[26 Oct 19:02:23] @RGlobal Quest@Y:@w @gGlobal Quest # 1627@w has been won by @YYuna@w - @Y742nd@w win.
+@w[26 Oct 19:02:23] @RGlobal Quest@Y:@w @gGlobal Quest # 1627@w will go into extended time for 5 more minutes.
+@w[26 Oct 19:02:55] @RGlobal Quest@Y:@w Kandorr has completed @gGlobal Quest # 1627@w.
+@w[26 Oct 19:02:55] @RGlobal Quest@Y:@w No active players remaining. @gGlobal Quest # 1627@w is now over.
+@w[26 Oct 19:05:37] @GYuna questions 'What happens when two people ask the same mobprog that transports you but only after a long pause to transport them at roughly the same time? Are both requests granted concurrently or will one mess the other up?'
+@w[26 Oct 19:06:35] @GMyth questions 'depends on mprog, probably'
+@w[26 Oct 19:07:05] @GSelitos answers 'suppose it depends on the mprog, but i would think in most cases the two people would be rteated independantly and not interact'
+@w[26 Oct 19:07:55] @YReroll (@GCorpsman@Y) tells the CLAN: 'Perhaps a dumb question, but is there a way to add napalm to the mudside spellup?'
+@w[26 Oct 19:08:28] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'alias spellup napalm;spellup'
+@w[26 Oct 19:08:31] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'well'
+@w[26 Oct 19:08:33] @YYou tell the CLAN: 'You can set an alias in the mud'
+@w[26 Oct 19:08:34] @YAnssett (@GSpecial Ops@Y) tells the CLAN: 'alias spellup napalm;;spellup'
+@w[26 Oct 19:08:38] @YMadrox (@GGeneral@Y) tells the CLAN: 'I made a macro that does napalm;spellup'
+@w[26 Oct 19:09:00] @YReroll (@GCorpsman@Y) tells the CLAN: 'Ty, figured that'd be the direction I would need to go'
+@w[26 Oct 19:12:36] @RINFO: 5 minutes of bonus experience remaining.@w
+@w[26 Oct 19:16:37] @RINFO: 1 minute of bonus experience remaining.@w
+@w[26 Oct 19:17:05] @CLyx says 'Is that really what you are here for? Enjoy your journey then.'
+@w[26 Oct 19:17:37] @RINFO: Bonus experience has now expired.@w
+@w[26 Oct 19:19:31] @GCLAN: KumoGami falls out to take some much needed R & R.

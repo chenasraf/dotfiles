@@ -1251,15 +1251,6 @@ else
 end</send>
   </alias>
   <alias
-   match="sspellup"
-   enabled="y"
-   group="spellup"
-   send_to="10"
-   sequence="100"
-  >
-  <send>hide;sight;spellup;napalm</send>
-  </alias>
-  <alias
    match="suit"
    enabled="y"
    echo_alias="y"
@@ -1543,7 +1534,7 @@ group="keepawake" >
   </key>
 
   <key name="+" >
-  <send>sspellup</send>
+  <send>spellup</send>
   </key>
 
   <key name="Ctrl+0" >
@@ -1659,6 +1650,7 @@ group="keepawake" >
 <include name="Search_and_Destroy.xml" plugin="y" />
 <include name="aard_inventory.xml" plugin="y" />
 <include name="Aardwolf_Showmap.xml" plugin="y" />
+<include name="Aard_Practice_Spellups.xml" plugin="y" />
 <include name="Hyperlink_URL2.xml" plugin="y" />
 <include name="aard_splitscreen_scrollback.xml" plugin="y" />
 </muclient>
