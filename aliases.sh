@@ -1,5 +1,20 @@
 #!/usr/bin/env zsh
 
+addalias() {
+  if [ -z "$1" ]; then
+    echo "Usage: addalias <alias> <command>"
+    return 1
+  fi
+
+  if [ -z "$2" ]; then
+    echo "Usage: addalias <alias> <command>"
+    return 1
+  fi
+
+  echo "alias $1=\"$2\"" >>"$HOME/.dotfiles/aliases.sh"
+  source "$HOME/.dotfiles/aliases.sh"
+}
+
 source "$HOME/.dotfiles/colors.sh"
 source "$HOME/.dotfiles/functions.sh"
 

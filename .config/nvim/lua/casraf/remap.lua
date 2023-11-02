@@ -113,8 +113,15 @@ vim.keymap.set("n", "<leader>Srv", function()
   vim.cmd("belowright split | terminal " .. cmd)
 end, { desc = "Serve working directory" })
 
-vim.cmd("command! Pwd :echo expand('%:p:h')<CR>")
-vim.cmd("command! Pwf :echo expand('%:p')<CR>")
+vim.api.nvim_create_user_command('Pwd', function()
+  local path = vim.fn.expand('%:p:h')
+  path = path:gsub('%n', '')
+  vim.cmd("echo '" .. path .. "'")
+end, { nargs = 0 })
+vim.api.nvim_create_user_command('Pwf', function()
+  local path = vim.fn.expand('%:p')
+  vim.cmd("echo '" .. path .. "'")
+end, { nargs = 0 })
 
 function RemoveQF()
   local curqfidx = vim.fn.line(".") - 1
