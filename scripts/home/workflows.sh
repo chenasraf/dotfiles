@@ -8,16 +8,19 @@ source $DOTFILES/scripts/home/_common.sh
 workflow_dirs=(
   "$HOME/Dev/heb-flip-alfred-workflow"
   "$HOME/Dev/gaardian-alfred-workflow"
+  "$HOME/Dev/gitlab-search-alfred-workflow"
 )
 # Repository of workflow to clone from (if dev directory is missing)
 workflow_sources=(
   "https://github.com/chenasraf/heb-flip-alfred-workflow.git"
   "https://github.com/chenasraf/gaardian-alfred-workflow.git"
+  "https://github.com/chenasraf/gitlab-search-alfred-workflow.git"
 )
 # IDs of workflows to use (same as in Alfred prefs directory)
 workflows_ids=(
   "3A312BFD-A5FC-4223-BBFC-400D03F10282"
   "55E2EF57-AB9F-45D9-AF04-B505E0D32238"
+  "B4D2FD01-74DA-4F9D-8CDC-55A0DA1BC793"
 )
 case "$1" in
 push | p)
