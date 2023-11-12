@@ -1,6 +1,3 @@
-# -*- coding: UTF-8 -*-
-
-
 """
 emoji for Python
 ~~~~~~~~~~~~~~~~
@@ -20,21 +17,23 @@ from emoji.unicode_codes import *
 
 __all__ = [
     # emoji.core
-    'emojize', 'demojize', 'emoji_count', 'emoji_list',
-    'distinct_emoji_list', 'replace_emoji', 'version', 'is_emoji',
+    'emojize', 'demojize', 'analyze', 'config',
+    'emoji_list', 'distinct_emoji_list', 'emoji_count',
+    'replace_emoji', 'is_emoji', 'purely_emoji', 'version',
+    'Token', 'EmojiMatch', 'EmojiMatchZWJ', 'EmojiMatchZWJNonRGI',
     # emoji.unicode_codes
     'EMOJI_DATA', 'STATUS', 'LANGUAGES',
 ]
 
-__version__ = '2.2.0'
-__author__ = 'Taehoon Kim, Kevin Wurster and Tahir Jalilov'
+__version__ = '2.8.0'
+__author__ = 'Taehoon Kim, Kevin Wurster'
 __email__ = 'carpedm20@gmail.com'
 # and wursterk@gmail.com, tahir.jalilov@gmail.com
 __source__ = 'https://github.com/carpedm20/emoji/'
 __license__ = '''
 New BSD License
 
-Copyright (c) 2014-2022, Taehoon Kim, Kevin Wurster and Tahir Jalilov
+Copyright (c) 2014-2023, Taehoon Kim, Kevin Wurster
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

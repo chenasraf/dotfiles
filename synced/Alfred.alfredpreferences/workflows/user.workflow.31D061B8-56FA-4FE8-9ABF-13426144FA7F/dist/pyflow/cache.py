@@ -1,9 +1,13 @@
 import os
+
 import requests
 
 
 class Cache:
     def __init__(self, cachedir: str):
+        if not os.path.exists(cachedir):
+            os.makedirs(cachedir)
+
         self.cachedir = cachedir
 
     def download_image(self, url: str, filename: str = None) -> str:
