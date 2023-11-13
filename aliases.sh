@@ -79,6 +79,11 @@ alias sync-config="rsync -vtr \$DOTFILES/.config/ \$HOME/.config/"
 alias sf="search-file"
 alias fnu="find-up"
 alias ascii-text=". \$DOTFILES/scripts/ascii_font/ascii_font.sh"
+alias dr="dotenv run"
+alias lua="luajit"
+if is_linux; then
+  alias md5="md5sum"
+fi
 
 # home
 alias h="home"
@@ -122,10 +127,6 @@ alias tks="tmux kill-server"
 # tmux - workspaces
 alias tn-general="tn-custom -d \$HOME/Dev -s general"
 alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
+alias tn-cetu="tn-prj cetu cacofonix asterix"
 
-alias dr="dotenv run"
-alias lua="luajit"
-
-if is_linux; then
-  alias md5="md5sum"
-fi
+# addalias commands
