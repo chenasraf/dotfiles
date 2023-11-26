@@ -44,8 +44,6 @@ vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
   { desc = "Search and replace current selection" })
 
-
-
 -- Jump to next block
 vim.keymap.set("n", "<Leader>]", "/{[^}]*$<CR>", { desc = "Jump to next block" })
 -- Jump to previous block
@@ -80,7 +78,9 @@ vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot p
 vim.keymap.set("n", "<leader>dp", "<esc>dawbx", { desc = "Delete JS property (forwards)" })
 vim.keymap.set("n", "<leader>dP", "<esc>dawx", { desc = "Delete JS property (back)" })
 
-local function nope() 
+vim.keymap.set({ "n", "v" }, "<F2>", vim.lsp.buf.rename)
+
+local function nope()
   vim.g.mapleader = " "
   -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
   vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "File explorer" })
