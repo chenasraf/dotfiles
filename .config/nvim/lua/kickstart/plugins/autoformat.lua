@@ -48,6 +48,15 @@ return {
         -- You can remove this line if you know what you're doing :)
         if client.name == 'tsserver' then
           return
+          -- local current_line = vim.api.nvim_win_get_cursor(0)[1]
+          -- local current_col = vim.api.nvim_win_get_cursor(0)[2]
+          -- vim.cmd('autocmd BufWritePre <buffer> :%!prettierd %')
+          -- -- wait for the buffer to be written
+          -- vim.wait(1000, function()
+          --   return vim.api.nvim_win_get_cursor(0)[1] ~= current_line or vim.api.nvim_win_get_cursor(0)[2] ~= current_col
+          -- end, 1)
+          -- print('Returning to ' .. current_line .. ':' .. current_col)
+          -- vim.api.nvim_win_set_cursor(0, { current_line, current_col })
         end
 
         -- Create an autocmd that will run *before* we save the buffer.
