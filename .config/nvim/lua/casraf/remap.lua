@@ -152,3 +152,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set("n", "<Leader>cp", ":Copilot panel<CR>", { desc = "Open Copilot panel" })
 vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
 
+-- TODO only apply on JS files
+vim.keymap.set("n", "<leader>dp", "<esc>dawbx", { desc = "Delete JS property (forwards)" })
+vim.keymap.set("n", "<leader>dP", "<esc>dawx", { desc = "Delete JS property (back)" })

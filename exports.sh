@@ -52,8 +52,8 @@ if [[ -f $(which npm) ]]; then
   export PATH="$(npm get prefix -g)/bin:$PATH"
 fi
 if [[ -f $(which pnpm) ]]; then
-  export PNPM_HOME="$HOME/Library/pnpm"
   export PATH="$PNPM_HOME:$PATH"
+  export PATH=$(pnpm bin --global):$PATH
 fi
 if [[ -f $(which yarn) ]]; then
   export PATH="$HOME/.yarn/bin:$PATH"

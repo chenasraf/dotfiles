@@ -83,6 +83,9 @@ alias dr="dotenv run"
 alias lua="luajit"
 if is_linux; then
   alias md5="md5sum"
+else
+  alias pushd="pushd -q"
+  alias popd="popd -q"
 fi
 
 # home
@@ -97,7 +100,7 @@ alias hp="home push"
 alias hl="home pull"
 alias hlog="home git log"
 alias hiv="home install; vim ."
-alias hv="prev=$(pwd); wd df; v; cd $prev"
+alias hv="pushd \$(wd path df); v; popd"
 alias spider="ssh root@spider.casraf.dev"
 
 # docker
