@@ -1,6 +1,47 @@
-function get_surrounding_quotes()
-
-end
+-- local function get_surrounding_quotes()
+--   local line = vim.api.nvim_win_get_cursor(0)[1]
+--   local col = vim.api.nvim_win_get_cursor(0)[2]
+--   local line_text = vim.api.nvim_buf_get_lines(0, line - 1, line, false)[1]
+--   local quotes = { ["'"] = '"', ['"'] = '`', ['`'] = "'" }
+--
+--   -- Find the nearest quote char to the left of the cursor position
+--   local left_quote_char = nil
+--   local i = col - 1
+--   while i >= 1 do
+--     if quotes[line_text:sub(i, i)] then
+--       left_quote_char = line_text:sub(i, i)
+--       break
+--     end
+--     i = i - 1
+--   end
+--
+--   -- Find the nearest quote char to the right of the cursor position
+--   local right_quote_char = nil
+--   i = col
+--   if left_quote_char then
+--     while i <= #line_text do
+--       if line_text:sub(i, i) == left_quote_char then
+--         right_quote_char = line_text:sub(i, i)
+--         break
+--       end
+--       i = i + 1
+--     end
+--
+--     if left_quote_char == right_quote_char then
+--       -- Determine the quote type to use for replacement
+--       local quote_type = left_quote_char or right_quote_char
+--       local next_quote_type = quotes[quote_type]
+--       return quote_type, next_quote_type
+--     else
+--       print("No quotes found on line " .. line .. ":" .. col)
+--     end
+--   end
+-- end
+--
+-- function ToggleQuotes()
+--   local quote, next_quote = get_surrounding_quotes()
+--   vim.api.nvim_command("normal! cs" .. quote .. next_quote)
+-- end
 
 function ToggleQuotes()
   local line = vim.api.nvim_win_get_cursor(0)[1]
@@ -63,6 +104,6 @@ end
 
 vim.cmd('command! ToggleQuotes lua ToggleQuotes()')
 
-vim.keymap.set("n", "<leader>'", ":ToggleQuotes<CR>", { desc = "Toggle nearest quote" })
+vim.keymap.set("n", "<leader>'", "<cmd>ToggleQuotes<cr>")
 
 return {}

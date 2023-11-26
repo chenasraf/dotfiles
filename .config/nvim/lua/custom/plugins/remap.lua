@@ -27,7 +27,6 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to s
 
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
 
-vim.keymap.set("n", "<leader>'", ":ToggleQuotes<CR>", { desc = "Toggle nearest quote" })
 -- who needs Q
 vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 
@@ -98,8 +97,6 @@ local function nope()
   vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous find buffer" })
 
   vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
-
-  vim.keymap.set("n", "<leader>'", ":ToggleQuotes<CR>", { desc = "Toggle nearest quote" })
 
   -- comment line
   -- vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { desc = "Comment line" })
