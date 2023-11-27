@@ -69,6 +69,7 @@ return {
     end
 
     vim.keymap.set("n", "<Leader>f", format, { desc = "[nolsp] format" })
+    vim.keymap.set("n", "=", format, { desc = "[nolsp] format" })
 
     nls.setup({
       ---@diagnostic disable-next-line: unused-local
