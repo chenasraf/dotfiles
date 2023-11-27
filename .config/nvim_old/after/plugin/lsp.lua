@@ -5,7 +5,6 @@ lsp.ensure_installed({
   -- 'lua-language-server',
   'tsserver',
   'eslint',
-  'rust_analyzer'
 })
 
 -- Fix Undefined global 'vim'
@@ -100,14 +99,15 @@ lsp.on_attach(function(client, bufnr)
   })
   vim.api.nvim_create_autocmd("FileType", {
     callback = function()
-        local gr_bufnr = vim.fn.bufnr('%')
-        vim.keymap.set("n", "e", function()
-            vim.api.nvim_command([[execute "normal! \<cr>"]])
-            vim.api.nvim_command(gr_bufnr .. 'bd')
-        end, { buffer = gr_bufnr })
+      ---@diagnostic disable-next-line: param-type-mismatch
+      local gr_bufnr = vim.fn.bufnr('%')
+      vim.keymap.set("n", "e", function()
+        vim.api.nvim_command([[execute "normal! \<cr>"]])
+        vim.api.nvim_command(gr_bufnr .. 'bd')
+      end, { buffer = gr_bufnr })
     end,
     pattern = "qf",
-})
+  })
 end)
 
 lspconfig.tailwindcss.setup({
@@ -116,7 +116,7 @@ lspconfig.tailwindcss.setup({
       experimental = {
         classRegex = {
           { "cva\\(([^)]*)\\)",
-           "[\"'`]([^\"'`]*).*?[\"'`]" },
+            "[\"'`]([^\"'`]*).*?[\"'`]" },
         },
       },
     },
