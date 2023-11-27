@@ -1,4 +1,5 @@
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[fugitive] status' })
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { silent = true, desc = "[fugitive] blame" })
 
 local casraf_fugitive = vim.api.nvim_create_augroup("casraf_fugitive", {})
 
