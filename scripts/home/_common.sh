@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source $DOTFILES/colors.sh
+# source $DOTFILES/plugins/colors.plugin.zsh
 source $DOTFILES/exports.sh
 
 __home_prepare_dir() {

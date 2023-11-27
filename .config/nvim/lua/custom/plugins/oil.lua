@@ -1,4 +1,4 @@
-vim.keymap.set("n", "-", ":Oil<CR>")
+vim.keymap.set("n", "-", ":Oil<CR>", { desc = "[Oil] Back to parent dir", silent = true })
 
 return {
   'stevearc/oil.nvim',

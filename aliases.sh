@@ -15,7 +15,7 @@ addalias() {
   source "$HOME/.dotfiles/aliases.sh"
 }
 
-source "$HOME/.dotfiles/colors.sh"
+# source $DOTFILES/plugins/colors.plugin.zsh
 source "$HOME/.dotfiles/functions.sh"
 
 # Aliases

@@ -359,13 +359,22 @@ vim.defer_fn(function()
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = {
       'c', 'cpp', 'go', 'python', 'rust', 'vimdoc', 'vim',
-      'lua', 'tsx', 'javascript', 'typescript', 'bash', 'astro', 'css'
+      'lua', 'tsx', 'javascript', 'typescript', 'bash', 'astro', 'css', 'dart', 'vimdoc', 'json', 'yaml',
     },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = true,
 
-    highlight = { enable = true },
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
+    },
+    ts_highlight = {
+      enable = true,
+      disable = {},
+      use_languagetree = true,
+    },
+    autotag = { enable = true },
     indent = { enable = true },
     incremental_selection = {
       enable = true,

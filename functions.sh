@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 source $DOTFILES/autoload_completions.sh
-source $DOTFILES/colors.sh
+# source $DOTFILES/plugins/colors.plugin.zsh
 source $DOTFILES/tmux.sh
 
 motd() {
