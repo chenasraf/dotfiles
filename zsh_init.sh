@@ -10,7 +10,7 @@ HIST_STAMPS="%d/%m/%Y %I:%M:%S"
 
 source ~/.zplug/init.zsh
 
-zplug "$DOTFILES/plugins", from:local
+zplug "$DOTFILES/plugins", use:"*.plugin.zsh", from:local
 
 zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 zplug "romkatv/powerlevel10k", as:theme, depth:1 
