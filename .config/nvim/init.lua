@@ -59,6 +59,26 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
+local function lsp_supported()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.buf_get_clients(bufnr)
+  if not clients then
+    return '× LSP'
+  end
+
+  local supported = {}
+  for _, client in pairs(clients) do
+    if client.supports_method 'textDocument/codeAction' then
+      table.insert(supported, client.name)
+    end
+  end
+
+  if #supported == 0 then
+    return '× LSP'
+  end
+
+  return '✓ LSP'
+end
 
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
@@ -162,6 +182,14 @@ require('lazy').setup({
         theme = 'onedark',
         component_separators = '|',
         section_separators = '',
+      },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename' },
+        lualine_x = { lsp_supported, 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
       },
     },
   },
