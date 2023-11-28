@@ -37,9 +37,6 @@ autocmd("BufWinEnter", {
         local date = vim.fn.strftime("%Y-%m-%d %H:%M:%S")
         local msg = "Fugitive rebase " .. date
         vim.cmd("Git stash save -u \"" .. msg .. "\"")
-        vim.wait(1000, function()
-          return vim.fn.system("git diff-index --quiet HEAD --") == 0
-        end)
       end
 
       vim.cmd [[ Git pull --rebase ]]
