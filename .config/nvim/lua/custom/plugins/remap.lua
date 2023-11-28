@@ -1,4 +1,5 @@
 vim.keymap.set("n", "gq", "<C-w>c", { desc = "Close pane" })
+vim.keymap.set("n", "gQ", ":qa!<CR>", { desc = "Close nvim" })
 
 vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location" })
 vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location" })
