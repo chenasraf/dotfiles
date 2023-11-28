@@ -5,16 +5,19 @@ SCAFFOLDS_DIR="$DOTFILES/scaffolds"
 function tpl() {
   tpl_name="$1"
   shift
-
+  if [[ "$#" -ne 0 ]]; then
+    sub_tpl_name="$1"
+    shift
+  fi
+  name=""
   case $tpl_name in
-    ef | editorfiles)
+    editorfiles | ef)
       tpl_name="editorfiles"
-      npx -y simple-scaffold@latest -t "$SCAFFOLDS_DIR/editorfiles" -o . - $@
-      ;;
-    *)
-      echo_red "Usage: tpl [editorfiles]"
+      name="editorfiles"
       ;;
   esac
+
+  npx -y simple-scaffold@latest -gh "chenasraf/templates#${tpl_name}.js" -k "${sub_tpl_name:-default}" $name $@
 }
 
 
