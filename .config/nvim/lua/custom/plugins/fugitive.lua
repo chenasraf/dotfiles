@@ -33,12 +33,9 @@ autocmd("BufWinEnter", {
     vim.keymap.set("n", "<leader>gl", function()
       vim.fn.system("git diff-index --quiet HEAD --")
       local has_changes = vim.v.shell_error == 1
-      print("shell error", vim.v.shell_error)
-      print("has changes", has_changes)
       if has_changes then
         local date = vim.fn.strftime("%Y-%m-%d %H:%M:%S")
         local msg = "Fugitive rebase " .. date
-        print("saving stash", msg)
         vim.cmd("Git stash save -u \"" .. msg .. "\"")
         vim.wait(1000, function()
           return vim.fn.system("git diff-index --quiet HEAD --") == 0
