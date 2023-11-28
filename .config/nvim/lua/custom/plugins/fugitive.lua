@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { silent = true, desc = "[fu
 
 local casraf_fugitive = vim.api.nvim_create_augroup("casraf_fugitive", {})
 
+vim.api.nvim_clear_autocmds({ group = casraf_fugitive })
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("BufWinEnter", {
@@ -30,7 +31,25 @@ autocmd("BufWinEnter", {
 
     -- rebase always
     vim.keymap.set("n", "<leader>gl", function()
+      vim.fn.system("git diff-index --quiet HEAD --")
+      local has_changes = vim.v.shell_error == 1
+      print("shell error", vim.v.shell_error)
+      print("has changes", has_changes)
+      if has_changes then
+        local date = vim.fn.strftime("%Y-%m-%d %H:%M:%S")
+        local msg = "Fugitive rebase " .. date
+        print("saving stash", msg)
+        vim.cmd("Git stash save -u \"" .. msg .. "\"")
+        vim.wait(1000, function()
+          return vim.fn.system("git diff-index --quiet HEAD --") == 0
+        end)
+      end
+
       vim.cmd [[ Git pull --rebase ]]
+
+      if has_changes then
+        vim.cmd [[ Git stash pop ]]
+      end
     end, optc("[fugitive] pu[l]l with rebase"))
 
     vim.keymap.set("n", "<leader>gaa", function()
