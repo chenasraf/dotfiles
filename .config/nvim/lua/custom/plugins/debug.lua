@@ -25,8 +25,6 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
-    print('Setting up DAP', vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter')
-
     dap.adapters["pwa-node"] = {
       type = "server",
       host = "localhost",

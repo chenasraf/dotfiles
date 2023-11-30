@@ -80,6 +80,14 @@ vim.keymap.set("n", "<leader>dP", "<esc>dawx", { desc = "Delete JS property (bac
 
 vim.keymap.set({ "n", "v" }, "<F2>", vim.lsp.buf.rename)
 
+local hl_search = vim.opt.hlsearch
+
+vim.keymap.set("n", "<leader>n", function()
+  hl_search = not hl_search
+  print("Search highlight: " .. (hl_search and "on" or "off"))
+  vim.opt.hlsearch = hl_search
+end, { desc = "Toggle search highlight" })
+
 local function nope()
   vim.g.mapleader = " "
   -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
