@@ -23,10 +23,7 @@ autocmd("BufWinEnter", {
     -- print("great success", vim.bo.ft, bufnr, vim.inspect(opts))
     vim.keymap.set("n", "<leader>gp", function()
       local current_branch = vim.fn.FugitiveHead()
-
-      local cmd = ":Git push origin @:refs/heads/" .. current_branch
-      local esc_cmd = vim.api.nvim_replace_termcodes(cmd, true, true, true)
-      vim.api.nvim_feedkeys(esc_cmd, "n", true)
+      vim.cmd("Git push origin @:refs/heads/" .. current_branch)
     end, optc("[fugitive] [P]ush all unpushed commits"))
 
     -- rebase always
