@@ -20,7 +20,15 @@ autocmd("BufWinEnter", {
     local function optc(desc)
       return vim.tbl_extend("force", opts, { desc = desc })
     end
-    -- print("great success", vim.bo.ft, bufnr, vim.inspect(opts))
+
+    vim.keymap.set("n", "<leader>gb", function()
+      vim.api.nvim_feedkeys(":Git checkout ", "n", true)
+    end, optc("[fugitive] checkout [b]ranch"))
+
+    vim.keymap.set("n", "<leader>gB", function()
+      vim.api.nvim_feedkeys(":Git checkout -b ", "n", true)
+    end, optc("[fugitive] create [B]ranch"))
+
     vim.keymap.set("n", "<leader>gp", function()
       local current_branch = vim.fn.FugitiveHead()
       vim.cmd("Git push origin @:refs/heads/" .. current_branch)
