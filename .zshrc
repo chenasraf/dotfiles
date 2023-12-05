@@ -3,7 +3,7 @@ export CFG="$DOTFILES/.config"
 export DOTBIN="$CFG/bin"
 
 # echo 'Loading '$DOTFILES/functions.sh
-source $DOTFILES/functions.sh
+source "$DOTFILES/functions.sh"
 
 motd
 
@@ -31,11 +31,11 @@ fi
 
 
 # echo 'Loading '$DOTFILES/exports.sh
-source $DOTFILES/exports.sh # must run before zsh_init
+source "$DOTFILES/exports.sh" # must run before zsh_init
 # echo 'Loading '$DOTFILES/aliases.sh
-source $DOTFILES/aliases.sh
+source "$DOTFILES/aliases.sh"
 # echo 'Loading '$DOTFILES/scripts/home/home.sh
-source $DOTFILES/scripts/home/home.sh
+source "$DOTFILES/scripts/home/home.sh"
 # echo 'Loading '$DOTFILES/zsh_init.sh
-source $DOTFILES/zsh_init.sh
+source "$DOTFILES/zsh_init.sh"
 

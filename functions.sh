@@ -329,3 +329,13 @@ bench() {
   echo "Benchmarking $command..."
   /usr/bin/time -v $command $@
 }
+
+strjoin() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: strjoin <delimiter> <string>..."
+    return 1
+  fi
+  delimiter=$1
+  shift
+  echo "$*" | tr ' ' $delimiter
+}

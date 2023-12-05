@@ -19,24 +19,12 @@ fi
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 export MANPATH="$HOME/.dotfiles/man:$MANPATH"
 
-if [[ -d $HOME/go ]]; then
-  export GOBIN="$HOME/go/bin"
-fi
-
 # Ruby User Install (for CocoaPods)
 export GEM_HOME="$HOME/.gem"
 
 # local bin
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$PATH:/$HOME/.local/bin"
-
-# pnpm start
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 # yamllint
 export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
@@ -48,35 +36,58 @@ export NVM_DIR="$HOME/.nvm"
 
 # Optionals
 
+# Node
 if [[ -f $(which npm) ]]; then
   export PATH="$(npm get prefix -g)/bin:$PATH"
 fi
+
+# PNPM
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 if [[ -f $(which pnpm) ]]; then
   export PATH="$PNPM_HOME:$PATH"
   export PATH=$(pnpm bin --global):$PATH
 fi
+
+# Yarn
 if [[ -f $(which yarn) ]]; then
   export PATH="$HOME/.yarn/bin:$PATH"
   export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
+
+# Python
 if [[ -f $(which ruby) ]]; then
   export PATH="$GEM_HOME/bin:$PATH"
   export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
 fi
+
+# Dart
+if [[ -f $(which dart) ]]; then
+  export PATH="$HOME/.pub-cache/bin:$PATH"
+fi
+
+# Flutter
 if [[ ! -f $(which flutter) ]]; then
   export PATH="$HOME/.flutter-src/bin:$PATH"
   export PATH="$HOME/.flutter-src/bin/cache/dart-sdk/bin:$PATH"
 fi
-if [[ -f $(which dart) ]]; then
-  export PATH="$HOME/.pub-cache/bin:$PATH"
-fi
-if [[ ! -z $GOBIN ]]; then
+
+# Go
+if [[ -d $HOME/go ]]; then
+  export GOBIN="$HOME/go/bin"
   export PATH="$GOBIN:$PATH"
 fi
+
+# Dotfiles bin
 if [[ ! -z $DOTBIN ]]; then
   export PATH="$DOTBIN:$PATH"
 fi
 
+# Rust cargo
 if [[ -f "$HOME/.cargo/env" ]]; then
   . "$HOME/.cargo/env"
 fi

@@ -129,6 +129,5 @@ alias tks="tmux kill-server"
 # tmux - workspaces
 alias tn-general="tn-custom -d \$HOME/Dev -s general"
 alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
-alias tn-cetu="tn-prj cetu cacofonix asterix"
 
 # addalias commands

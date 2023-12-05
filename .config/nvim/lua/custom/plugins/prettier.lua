@@ -32,8 +32,8 @@ return {
         local buftxt = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
 
         local command = format_cmd .. [[ <<-'EOF']] .. newline .. buftxt .. newline .. [[EOF]]
-        local output = vim.fn.system(command)
-        local err = vim.v.shell_error
+        local output = vim.system({ command })
+        local err = output ~= nil and output or 0
         if err ~= 0 or output == "" or string.find(output, "command not found:") then
           error("Error: " .. err .. ": " .. output)
         end
@@ -48,6 +48,9 @@ return {
     end
 
     local function format()
+      if not AutoFormatEnabled then
+        return
+      end
       local formatters = {
         -- ["lua"] = "lua-format -i",
         -- ["python"] = "black -",
