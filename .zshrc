@@ -17,17 +17,19 @@ fi
 export fpath=("$DOTFILES/completions" $fpath)
 zstyle ':completion:*:*:*:*:*' menu select
 
+# bindkey -e
 # Use ESC to edit the current command line:
 # check if edit-command-line not already loaded
-which edit-command-line &>/dev/null
-if [[ $? -ne 0 ]]; then
-  autoload -U edit-command-line
-  zle -N edit-command-line
-  bindkey -M vicmd V edit-command-line
-  # back/forward word
-  bindkey "^[[1;3C" forward-word
-  bindkey "^[[1;3D" backward-word
-fi
+# which edit-command-line &>/dev/null
+# if [[ $? -ne 0 ]]; then
+#   autoload -U edit-command-line
+#   zle -N edit-command-line
+#   bindkey -M vicmd V edit-command-line
+# fi
+
+# back/forward word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 
 # echo 'Loading '$DOTFILES/exports.sh

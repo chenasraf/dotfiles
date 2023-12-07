@@ -4,7 +4,7 @@
 -- end, { noremap = true, silent = true })
 
 local lsp_status = require('custom.lib.lsp_status')
-local json_keys = require('custom.lib.json_keys')
+local ts_keys = require('custom.lib.ts_keys')
 
 return {
   -- Set lualine as statusline
@@ -22,7 +22,7 @@ return {
       lualine_b = { 'branch', 'diff', 'diagnostics' },
       lualine_c = { 'filename' },
       -- lualine_x = { 'require"nvim-treesitter".statusline()', lsp_supported, 'encoding', 'fileformat', 'filetype' },
-      lualine_x = { json_keys.ts_statusline, lsp_status.lsp_supported, 'encoding', 'fileformat', 'filetype' },
+      lualine_x = { ts_keys.ts_statusline, lsp_status.lsp_supported, 'encoding', 'fileformat', 'filetype' },
       lualine_y = { 'progress' },
       lualine_z = { 'location' }
     },

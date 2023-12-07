@@ -67,11 +67,13 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 -- who needs Q
 vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 
--- file formatting
-vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "New buffer below" })
-vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "New buffer above" })
-vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "New buffer left" })
-vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "New buffer right" })
+-- window splits
+vim.keymap.set("n", "√", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "ß", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "Empty buffer below" })
+vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "Empty buffer above" })
+vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "Empty buffer left" })
+vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "Empty buffer right" })
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Next quickfix" })
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz", { desc = "Previous quickfix" })

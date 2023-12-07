@@ -31,11 +31,13 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboar
 -- who needs Q
 vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 
--- buffers
-vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "New buffer below" })
-vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "New buffer above" })
-vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "New buffer left" })
-vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "New buffer right" })
+-- window splits
+vim.keymap.set("n", "√", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "ß", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "Empty buffer below" })
+vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "Empty buffer above" })
+vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "Empty buffer left" })
+vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "Empty buffer right" })
 
 -- search and replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
@@ -134,20 +136,20 @@ local function nope()
 end
 
 -- copy json key to system clipboard
-local json_keys = require('custom.lib.json_keys')
+local ts_keys = require('custom.lib.ts_keys')
 vim.keymap.set("n", "<leader>jc", function()
-  local key = json_keys.get_current_keys()
+  local key = ts_keys.get_current_keys()
   if key then
     vim.fn.setreg("+", key)
     print('Copied "' .. key .. '" to system clipboard')
   else
     print("No key found")
   end
-end, { desc = "Copy [j]son key to system [c]lipboard" })
+end, { desc = "Copy key path under cursor to system clipboard" })
 
 vim.keymap.set("n", "<leader>jC", function()
-  local key = json_keys.get_ancestor_keys_yaml()
+  local key = ts_keys.get_current_keys()
   print("Key: " .. vim.inspect(key))
-end, { desc = "Copy [j]son key to system [c]lipboard" })
+end, { desc = "Print key path under cursor" })
 
 return {}
