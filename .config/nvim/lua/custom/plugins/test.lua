@@ -8,5 +8,12 @@ return {
     vim.keymap.set("n", "<leader>tl", "<cmd>TestLast<cr>", { noremap = true, desc = "[T]est [L]ast" })
     vim.keymap.set("n", "<leader>tf", "<cmd>TestVisit<cr>", { noremap = true, desc = "[T]est [V]isit Last Run" })
     vim.keymap.set("n", "<leader>te", "<cmd>TestEdit<cr>", { noremap = true, desc = "[T]est [E]dit File" })
+
+    --[[ require('nvim-test.runners.dart'):setup({
+      command = "dart",
+      args = { "test" },
+      file_pattern = "test/.*_test.dart$",
+      find_files = { "{name}_test.dart", "test/{name}_test.dart" },
+    }) ]]
   end
 }

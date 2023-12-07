@@ -51,9 +51,13 @@ key_bindings:
   - { chars: "\x02\e[B", key: Down, mods: Command|Shift }
   # move between vim panes
   - { chars: "\x17j", key: Down, mods: Command }
+  - { chars: "\x17j", key: J, mods: Command }
   - { chars: "\x17k", key: Up, mods: Command }
+  - { chars: "\x17k", key: K, mods: Command }
   - { chars: "\x17l", key: Right, mods: Command }
+  - { chars: "\x17l", key: L, mods: Command }
   - { chars: "\x17h", key: Left, mods: Command }
+  - { chars: "\x17h", key: H, mods: Command }
   - { chars: "\eggVG", key: A, mods: Command }
   # Delete entire row
   - { chars: "\x15", key: Back, mods: Command }

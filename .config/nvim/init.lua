@@ -59,7 +59,13 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
-
+vim.api.nvim_create_autocmd("WinLeave", {
+  callback = function()
+    if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
+    end
+  end,
+})
 -- [[ Configure plugins ]]
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
@@ -442,9 +448,9 @@ local on_attach = function(_, bufnr)
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-  -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction', silent = true })
-  -- vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction', silent = true })
-  -- vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction', silent = true })
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction', silent = true })
+  vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { desc = 'Code [A]ction', silent = true })
+  vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', vim.lsp.buf.code_action, { desc = 'Code Action', silent = true })
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')

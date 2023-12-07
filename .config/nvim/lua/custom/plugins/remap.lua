@@ -136,14 +136,18 @@ end
 -- copy json key to system clipboard
 local json_keys = require('custom.lib.json_keys')
 vim.keymap.set("n", "<leader>jc", function()
-  local keys = json_keys.get_ancestor_keys()
-  local key = table.concat(keys, '.')
+  local key = json_keys.get_current_keys()
   if key then
     vim.fn.setreg("+", key)
     print('Copied "' .. key .. '" to system clipboard')
   else
     print("No key found")
   end
+end, { desc = "Copy [j]son key to system [c]lipboard" })
+
+vim.keymap.set("n", "<leader>jC", function()
+  local key = json_keys.get_ancestor_keys_yaml()
+  print("Key: " .. vim.inspect(key))
 end, { desc = "Copy [j]son key to system [c]lipboard" })
 
 return {}
