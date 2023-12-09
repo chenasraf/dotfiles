@@ -4,13 +4,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<F5>", ":Telescope flutter commands<CR>", { buffer = true, desc = "Flutter commands" })
   end,
 })
-
 return {
   'akinsho/flutter-tools.nvim',
   lazy = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'stevearc/dressing.nvim',     -- optional for vim.ui.select
+    'stevearc/dressing.nvim', -- optional for vim.ui.select
   },
-  config = true,
+  -- config = true,
+  opts = {}
 }
