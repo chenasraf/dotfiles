@@ -138,14 +138,43 @@ end
 -- copy json key to system clipboard
 local ts_keys = require('custom.lib.ts_keys')
 vim.keymap.set("n", "<leader>jc", function()
-  local key = ts_keys.get_current_keys()
+  local key = ts_keys.get_current_keys() or ''
+  key = key:gsub("%(.*%)", "")
   if key then
     vim.fn.setreg("+", key)
     print('Copied "' .. key .. '" to system clipboard')
   else
     print("No key found")
   end
-end, { desc = "Copy key path under cursor to system clipboard" })
+end, { desc = "Copy key path under cursor to clipboard" })
+
+vim.keymap.set("n", "<leader>ji", function()
+  local key = ts_keys.get_current_keys() or ''
+  local input = vim.fn.input("Prefix path: ")
+  if input and key then
+    key = input .. '.' .. key
+  end
+  key = key:gsub("%(.*%)", "")
+  if key then
+    vim.fn.setreg("+", key)
+    print('Copied "' .. key .. '" to system clipboard')
+  else
+    print("No key found")
+  end
+end, { desc = "Copy key path under cursor to clipboard (with prefix)" })
+vim.keymap.set("n", "<leader>jt", function()
+  local key = ts_keys.get_current_keys() or ''
+  if key then
+    key = 'tr.' .. key
+  end
+  key = key:gsub("%(.*%)", "")
+  if key then
+    vim.fn.setreg("+", key)
+    print('Copied "' .. key .. '" to system clipboard')
+  else
+    print("No key found")
+  end
+end, { desc = "Copy key path under cursor to clipboard (tr prefix)" })
 
 vim.keymap.set("n", "<leader>jC", function()
   local key = ts_keys.get_current_keys()
