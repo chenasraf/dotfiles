@@ -13,6 +13,8 @@ if is_mac; then
   export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   export PATH="$HOME/.surrealdb:$PATH"
+  export FLUTTER_ROOT="$HOME/.flutter"
+  export FLUTTER_BIN="$FLUTTER_ROOT/bin"
 fi
 
 # Misc
@@ -59,10 +61,21 @@ if [[ -f $(which yarn) ]]; then
   export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
 
-# Python
+# Ruby
 if [[ -f $(which ruby) ]]; then
   export PATH="$GEM_HOME/bin:$PATH"
   export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
+fi
+
+# Python 3.11
+if [[ -f $(which python3) ]]; then
+  export PATH="$HOME/Library/Python/3.11/bin:$PATH"
+  export PATH="/usr/local/lib/python3.11/site-packages:$PATH"
+fi
+
+# Gcloud
+if [[ -d ~/.config/gcloud ]] && [[ -d ~/.gcloud ]]; then
+  export PATH="$HOME/.gcloud/google-cloud-sdk/bin:$PATH"
 fi
 
 # Dart
@@ -72,8 +85,8 @@ fi
 
 # Flutter
 if [[ ! -f $(which flutter) ]]; then
-  export PATH="$HOME/.flutter-src/bin:$PATH"
-  export PATH="$HOME/.flutter-src/bin/cache/dart-sdk/bin:$PATH"
+  export PATH="$FLUTTER_BIN:$PATH"
+  # export PATH="$FLUTTER_BIN/cache/dart-sdk/bin:$PATH"
 fi
 
 # Go
@@ -98,3 +111,6 @@ if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
 if [[ -f "$HOME/.dotfiles/_local.sh" ]]; then source "$HOME/.dotfiles/_local.sh"; fi
 
 export SHELLCHECK_OPTS='--shell=bash'
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/chen/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chen/.gcloud/google-cloud-sdk/completion.zsh.inc'; fi

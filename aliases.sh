@@ -131,3 +131,4 @@ alias tn-general="tn-custom -d \$HOME/Dev -s general"
 alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 
 # addalias commands
+alias prettypath="echo $PATH | tr ':' '\n'"
