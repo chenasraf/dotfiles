@@ -1,0 +1,20 @@
+{
+  "name": "utils",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tmux": "ts-node src/tmux.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.10.4",
+    "cosmiconfig": "^9.0.0",
+    "massarg": "1.0.7-pre.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

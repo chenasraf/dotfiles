@@ -1,0 +1,17 @@
+test:
+  root: ~/Dev
+  windows:
+    - tmp
+    - fp-max
+pwa:
+  root: ~/Dev/planck
+  windows:
+    - webapp-demo
+    - components
+    - umbrella
+    - react-components
+    - api
+    - storage
+    - typescript-utils
+    - build-tools
+    # - generator
