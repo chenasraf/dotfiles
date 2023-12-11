@@ -81,7 +81,7 @@ key_bindings:
   # Select a new tmux session for the attached client interactively
   - { chars: "\x02s", key: P, mods: Command|Shift }
   # vim pick file
-  - { chars: "\e pf", key: P, mods: Command }
+  - { chars: "\e sf", key: P, mods: Command }
   # Select window 1-9
   - { chars: "\x021", key: Key1, mods: Command }
   - { chars: "\x022", key: Key2, mods: Command }

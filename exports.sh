@@ -19,14 +19,10 @@ fi
 
 # Misc
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
-export MANPATH="$HOME/.dotfiles/man:$MANPATH"
-
-# Ruby User Install (for CocoaPods)
-export GEM_HOME="$HOME/.gem"
+export MANPATH="$DOTFILES/man:$MANPATH"
 
 # local bin
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export PATH="$PATH:/$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # yamllint
 export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
@@ -63,6 +59,7 @@ fi
 
 # Ruby
 if [[ -f $(which ruby) ]]; then
+  export GEM_HOME="$HOME/.gem"
   export PATH="$GEM_HOME/bin:$PATH"
   export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
 fi
@@ -108,9 +105,9 @@ fi
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
 if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then source /opt/homebrew/opt/chruby/share/chruby/chruby.sh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
-if [[ -f "$HOME/.dotfiles/_local.sh" ]]; then source "$HOME/.dotfiles/_local.sh"; fi
+if [[ -f "$DOTFILES/_local.sh" ]]; then source "$DOTFILES/_local.sh"; fi
 
 export SHELLCHECK_OPTS='--shell=bash'
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/chen/.gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chen/.gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi

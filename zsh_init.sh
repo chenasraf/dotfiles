@@ -27,4 +27,5 @@ fi
 
 export VISUAL="$EDITOR"
 
+tmux source-file ~/.config/.tmux.conf
 [[ ! -f ~/.config/.p10k.zsh ]] || source ~/.config/.p10k.zsh

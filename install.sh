@@ -117,6 +117,7 @@ fi
 
 # .config
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
+rsync -vtr --exclude ".git" --delete --exclude "node_modules" --exclude "mudlet" --exclude ".DS_Store" $DOTFILES/.config/nvim $HOME/.config/nvim
 rsync -vtr --exclude ".git" --exclude "node_modules" --exclude "mudlet" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
 
 echo_cyan "Copying home dir files..."
