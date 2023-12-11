@@ -87,12 +87,6 @@ if [[ ! -d $HOME/.zplug ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
-# packer
-if [[ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]]; then
-  echo_cyan "Installing packer.nvim..."
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-fi
-
 # tmux themepack
 if [[ ! -d ~/.tmux-themepack ]]; then
   echo_cyan "Installing tmux themepack..."
@@ -117,8 +111,12 @@ fi
 
 # .config
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
-rsync -vtr --exclude ".git" --delete --exclude "node_modules" --exclude "mudlet" --exclude ".DS_Store" $DOTFILES/.config/nvim $HOME/.config/nvim
-rsync -vtr --exclude ".git" --exclude "node_modules" --exclude "mudlet" --exclude ".DS_Store" $DOTFILES/.config/ $HOME/.config/
+rflags='-vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store"'
+rsync_template="rsync $rflags {}"
+# printf "%s\n" "--delete $DOTFILES/.config/nvim $HOME/.config/nvim" | xargs -I {} bash -c "$rsync_template"
+# printf "%s\n" "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" | xargs -I {} bash -c "$rsync_template"
+xrg "--delete $DOTFILES/.config/nvim $HOME/.config/nvim" "$rsync_template"
+xrg "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
 
 echo_cyan "Copying home dir files..."
 rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig

@@ -15,16 +15,6 @@ motd() {
 # e.g. mansect 7
 mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
 
-# TODO not working with custom commands...
-tcd() {
-  source $HOME/.zshrc
-  cd $1
-  shift
-  exec $@ 2>&1 | tee --
-  # command "$@" 2>&1
-  cd $OLDPWD
-}
-
 # mkdir -p then navigate to said directory
 mkcd() {
   mkdir -p -- "$1" && cd -P -- "$1"
@@ -258,17 +248,25 @@ find-up() {
 }
 
 prjd() {
+  sub="$@"
+  if [[ -z "$sub" ]]; then
+    read sub
+  fi
   dv=$(wd path dv)
   if [[ -z $dv ]]; then
     echo_red "Project base path not found. Navigate to directory and run \`wd path dv\`."
     return 1
   fi
 
-  cd "$dv/$@"
+  cd "$dv/$sub"
 }
 
 prj() {
-  prjd $@
+  if [[ $# -ge 1 ]]; then
+    prjd $@
+  else
+    ls $(wd path dv) | fzf | prjd -i
+  fi
   nvim .
 }
 
@@ -338,4 +336,13 @@ strjoin() {
   delimiter=$1
   shift
   echo "$*" | tr ' ' $delimiter
+}
+
+# short xarg
+# usage: xrg "[args]" "[template with {}]"
+xrg () {
+  if [[ $# -ne 2 ]]; then
+    echo_red "Usage: xrg \"[args]\" \"[template with {}]\""
+  fi
+  printf "%s\n" "$1" | xargs -I {} bash -c "$2"
 }
