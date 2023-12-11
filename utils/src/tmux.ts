@@ -1,8 +1,8 @@
+import { massarg } from 'massarg'
 import { cosmiconfig } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
 import { spawn } from 'node:child_process'
-import { promisify } from 'node:util'
 
 const explorer = cosmiconfig('tmux')
 
@@ -42,9 +42,18 @@ const defaultPanes = [
   { dir: '.' },
 ]
 
-async function main() {
+function log({ verbose }: Opts, ...content: any[]) {
+  if (!verbose) return
+  console.log(...content)
+}
+
+type Opts = {
+  key: string
+  verbose: boolean
+}
+async function main(opts: Opts) {
+  const { key } = opts
   const config = await getTmuxConfig()
-  const key = process.argv[2]
   const item = config[key]
   if (!item) {
     throw new Error(`tmux config item ${key} not found`)
@@ -52,7 +61,7 @@ async function main() {
 
   const tmuxConfig = parseConfig(item)
   const { root, windows } = tmuxConfig
-  console.log(tmuxConfig)
+  log(opts, tmuxConfig)
 
   const commands: string[] = []
 
@@ -62,15 +71,16 @@ async function main() {
   )
   for (const window of windows) {
     const dir = window.dir
-    const windowName = window.name || path.basename(dir)
+    const windowName = window.name || path.basename(dir).replaceAll(/[^a-z0-9_\-]+/i, '_')
     const [firstPane, ...restPanes] = window.panes
     commands.push(`tmux new-window -n ${windowName} -c ${dir}`)
-    if (firstPane.cmd) {
-      commands.push(`tmux send-keys -t ${sessionName}:${windowName} "${firstPane.cmd}"  Enter`)
+    const cmd = firstPane.cmd ? transformCmdToTmuxKeys(firstPane.cmd) : null
+    if (cmd) {
+      commands.push(`tmux send-keys -t ${sessionName}:${windowName} ${cmd} Enter`)
     }
     let direction = '-h'
     for (const pane of restPanes) {
-      const cmd = pane.cmd ? `"${pane.cmd}"` : ''
+      const cmd = pane.cmd ? transformCmdToTmuxKeys(pane.cmd) : ''
       commands.push(
         `tmux split-window ${direction} -t ${sessionName}:${windowName} -c ${dir} ${cmd}`.trim(),
       )
@@ -81,19 +91,18 @@ async function main() {
   }
 
   commands.push(`tmux select-window -t ${sessionName}:1`)
-  commands.push(`tmux attach`)
 
   for (const command of commands) {
-    await runCommand(command)
+    await runCommand(opts, command)
   }
+
+  await runCommand(opts, `tmux attach -t ${sessionName}`)
 }
 
-async function runCommand(command: string) {
+async function runCommand(opts: Opts, command: string) {
   const [cmd, ...args] = command.split(' ')
-  console.log('$ ' + command)
-  const proc = spawn(cmd, args, { stdio: 'overlapped' })
-  proc.stdout.pipe(process.stdout)
-  proc.stderr.pipe(process.stderr)
+  log(opts, '$ ' + command)
+  const proc = spawn(cmd, args, { stdio: 'inherit' })
   return new Promise((resolve, reject) => {
     proc.on('close', (code) => {
       if (code === 0) {
@@ -103,6 +112,18 @@ async function runCommand(command: string) {
       }
     })
   })
+}
+
+function transformCmdToTmuxKeys(cmd: string): string {
+  let string = ''
+  const map: Record<string, string> = {
+    ' ': 'Space',
+    '\n': 'Enter',
+  }
+  for (const letter of cmd.split('')) {
+    string += map[letter] ? ` ${map[letter]} ` : letter
+  }
+  return string.toString()
 }
 
 function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
@@ -121,16 +142,16 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
       dir: path.resolve(root, w.dir),
       panes: w.panes
         ? w.panes.map((p) => {
-          if (typeof p === 'string') {
-            return {
-              dir: dirFix(path.resolve(root, w.dir, p)),
+            if (typeof p === 'string') {
+              return {
+                dir: dirFix(path.resolve(root, w.dir, p)),
+              }
             }
-          }
-          return {
-            dir: dirFix(path.resolve(root, w.dir, p.dir)),
-            cmd: p.cmd,
-          }
-        })
+            return {
+              dir: dirFix(path.resolve(root, w.dir, p.dir)),
+              cmd: p.cmd,
+            }
+          })
         : defaultPanes,
     }
   })
@@ -152,4 +173,19 @@ async function getTmuxConfig() {
   throw new Error('tmux config file not found')
 }
 
-main()
+massarg<Opts>({ name: 'utils', description: 'RTFM' })
+  .main(main)
+  .flag({
+    name: 'verbose',
+    aliases: ['v'],
+    description: 'Verbose logs',
+    negatable: true,
+  })
+  .option({
+    name: 'key',
+    aliases: ['k'],
+    description: 'The tmux session to open',
+    isDefault: true,
+    required: true,
+  })
+  .parse(process.argv.slice(2))

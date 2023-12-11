@@ -1,8 +1,8 @@
 test:
   root: ~/Dev
   windows:
-    - tmp
-    - fp-max
+    - tst
+    - fp-max-extension
 pwa:
   root: ~/Dev/planck
   windows:

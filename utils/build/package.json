@@ -20,7 +20,6 @@
     "massarg": "2.0.0-pre.4",
     "prettier": "^3.1.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "utils": "file:build"
+    "typescript": "^5.3.3"
   }
 }

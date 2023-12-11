@@ -81,6 +81,41 @@ else
   echo_cyan "All pnpm packages already installed."
 fi
 
+# local npm packages
+check_npm_local=(
+  "tx"
+)
+
+install_npm_local=(
+  "utils@file:$DOTFILES/utils/build"
+)
+
+install_npm_final_local=()
+
+for ((i = 1; i <= $#install_npm_local; i++)); do
+  which $check_npm_local[$i] >/dev/null 2>&1
+  exit_code=$?
+  if [[ $exit_code -ne 0 ]]; then
+    install_npm_final_local+=("${install_npm_local[$i]}")
+  fi
+done
+
+if [[ $#install_npm_final_local -gt 0 ]]; then
+  echo_cyan "Building local pnpm packages ($install_npm_final_local)..."
+  for ((i = 1; i <= $#install_npm_final_local; i++)); do
+    dir="${install_npm_final_local[$i]}"
+    dir=$(dirname "${dir##*:}")
+    echo_cyan "Building $dir..."
+    pushd $dir
+    pnpm build
+    popd
+  done
+  echo_cyan "Installing local pnpm packages ($install_npm_final_local)..."
+  pnpm install -g $install_npm_final_local
+else
+  echo_cyan "All local pnpm packages already installed."
+fi
+
 # zplug
 if [[ ! -d $HOME/.zplug ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -122,6 +157,10 @@ rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig
 
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf
+
+echo_cyan "Reloading zplug..."
+zplug clear
+zplug load --verbose
 
 echo_cyan "Done"
 
