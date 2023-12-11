@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-cwd="${cwd}"
 source $DOTFILES/scripts/home/_common.sh
 
 home() {
@@ -54,9 +53,9 @@ home() {
       ;;
     workflows | w)
       shift
-      __home_prepare_dir
+      pushd $DOTFILES
       source $DOTFILES/scripts/home/workflows.sh $@
-      __home_revert_dir
+      popd
       ;;
     brew | b)
       if is_linux; then
@@ -67,14 +66,14 @@ home() {
       sub="$1"
       case $sub in
       d | dump)
-        __home_prepare_dir
+        pushd $DOTFILES
         brew bundle dump -f --describe
-        __home_revert_dir
+        popd
         ;;
       r | restore)
-        __home_prepare_dir
+        pushd $DOTFILES
         brew bundle
-        __home_revert_dir
+        popd
         ;;
       *) # unknown option
         echo_red "No command or invalid command supplied."

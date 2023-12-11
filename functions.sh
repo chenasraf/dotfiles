@@ -265,7 +265,7 @@ prj() {
   if [[ $# -ge 1 ]]; then
     prjd $@
   else
-    ls $(wd path dv) | fzf | prjd -i
+    ls $(wd path dv) | fzf | prjd
   fi
   nvim .
 }

@@ -4,17 +4,12 @@ source $DOTFILES/scripts/home/_common.sh
 source $DOTFILES/scripts/man.sh
 
 cwd="$(pwd)"
-__home_prepare_dir
+pushd $DOTFILES
 
 echo_cyan "Setting defaults..."
-source $DOTFILES/scripts/home/defaults.sh
+write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"
+write_default "NSScrollViewRubberbanding" "-bool FALSE"
 git config --global core.excludesfile ~/.config/.gitignore
-
-if [[ $? -ne 0 ]]; then
-  echo_red "Failed to set defaults."
-  __home_revert_dir
-  return 1
-fi
 
 # Manfile
 
@@ -34,7 +29,11 @@ if [[ "$existing_ver" != "$gi_ver" ]]; then
   mkdir -p $DOTBIN
   mkdir -p $HOME/.config/.bin
   if is_mac; then
-    curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
+    if [[ $(uname -m) == "arm64" ]]; then
+      curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
+    else
+      curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-intel -o $DOTBIN/gi_gen
+    fi
   else
     curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-linux-amd -o $DOTBIN/gi_gen
   fi
@@ -126,4 +125,4 @@ tmux source-file ~/.config/.tmux.conf
 
 echo_cyan "Done"
 
-__home_revert_dir
+popd
