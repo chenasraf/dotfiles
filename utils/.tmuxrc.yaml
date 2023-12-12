@@ -15,3 +15,9 @@ pwa:
     - typescript-utils
     - build-tools
     # - generator
+    #
+cetu:
+  root: ~/Dev/cetu
+  windows:
+    - cacofonix
+    - asterix

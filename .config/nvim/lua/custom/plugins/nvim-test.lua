@@ -1,7 +1,11 @@
 return {
   "klen/nvim-test",
   config = function()
-    require('nvim-test').setup()
+    require('nvim-test').setup({
+      -- termOpts = {
+      --   width = 120,
+      -- },
+    })
     vim.keymap.set("n", "<leader>tt", "<cmd>TestFile<cr>", { noremap = true, desc = "[T]est Current [F]ile" })
     vim.keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", { noremap = true, desc = "[T]est [N]earest" })
     vim.keymap.set("n", "<leader>ts", "<cmd>TestSuite<cr>", { noremap = true, desc = "[T]est [S]uite" })

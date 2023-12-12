@@ -38,6 +38,7 @@ bindkey "^[[1;3D" backward-word
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 HIST_STAMPS="%d/%m/%Y %I:%M:%S"
+HIST_FIND_NO_DUPS=true
 
 source ~/.zplug/init.zsh
 

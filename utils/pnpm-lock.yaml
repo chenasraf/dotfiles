@@ -12,8 +12,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0(typescript@5.3.3)
   massarg:
-    specifier: 2.0.0-pre.4
-    version: 2.0.0-pre.4
+    specifier: file:~/Dev/massarg/build
+    version: file:../../Dev/massarg/build
   prettier:
     specifier: ^3.1.1
     version: 3.1.1
@@ -23,9 +23,6 @@ dependencies:
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
-  utils:
-    specifier: file:build
-    version: file:build
 
 packages:
 
@@ -227,12 +224,6 @@ packages:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: false
 
-  /massarg@2.0.0-pre.4:
-    resolution: {integrity: sha512-H6wTQ67Ei3bQF21V/oRNvl24Maw6VigTGG1TD02ly/dyQEsEfxM0F/KN+omrv8tnoeJp80swpEhwvG3SPCL0ow==}
-    dependencies:
-      zod: 3.22.4
-    dev: false
-
   /parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -322,7 +313,9 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
-  file:build:
-    resolution: {directory: build, type: directory}
-    name: build
+  file:../../Dev/massarg/build:
+    resolution: {directory: ../../Dev/massarg/build, type: directory}
+    name: massarg
+    dependencies:
+      zod: 3.22.4
     dev: false

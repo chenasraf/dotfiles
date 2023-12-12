@@ -3,6 +3,7 @@ import { cosmiconfig } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
 import { spawn } from 'node:child_process'
+import { strConcat, format } from 'massarg/style'
 
 const explorer = cosmiconfig('tmux')
 
@@ -69,15 +70,19 @@ async function main(opts: Opts) {
   commands.push(
     `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}`,
   )
+  commands.push(`tmux split-window -h -t ${sessionName} -c ${root}`)
+  commands.push(`tmux select-pane -t 0`)
   for (const window of windows) {
     const dir = window.dir
     const windowName = window.name || path.basename(dir).replaceAll(/[^a-z0-9_\-]+/i, '_')
     const [firstPane, ...restPanes] = window.panes
-    commands.push(`tmux new-window -n ${windowName} -c ${dir}`)
+
     const cmd = firstPane.cmd ? transformCmdToTmuxKeys(firstPane.cmd) : null
+    commands.push(`tmux new-window -n ${windowName} -c ${dir}`)
     if (cmd) {
       commands.push(`tmux send-keys -t ${sessionName}:${windowName} ${cmd} Enter`)
     }
+
     let direction = '-h'
     for (const pane of restPanes) {
       const cmd = pane.cmd ? transformCmdToTmuxKeys(pane.cmd) : ''
@@ -172,8 +177,12 @@ async function getTmuxConfig() {
   }
   throw new Error('tmux config file not found')
 }
+const args = Array.from(process.argv).slice(2)
 
-massarg<Opts>({ name: 'utils', description: 'RTFM' })
+massarg<Opts>({
+  name: 'tmux',
+  description: 'Generate layouts for tmux using presets or on-the-fly args.',
+})
   .main(main)
   .flag({
     name: 'verbose',
@@ -188,4 +197,17 @@ massarg<Opts>({ name: 'utils', description: 'RTFM' })
     isDefault: true,
     required: true,
   })
-  .parse(process.argv.slice(2))
+  .help({
+    bindOption: true,
+    usageText: strConcat(
+      [
+        format('tmux', { color: 'yellow' }),
+        format('[options]', { color: 'gray' }),
+        format('[-k] <tmux session name>', { color: 'green' }),
+      ].join(' '),
+      [format('tmux', { color: 'yellow' }), format('<command> [options]', { color: 'gray' })].join(
+        ' ',
+      ),
+    ),
+  })
+  .parse(args)
