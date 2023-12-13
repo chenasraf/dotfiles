@@ -1,14 +1,17 @@
 import { massarg } from 'massarg'
-import { cosmiconfig } from 'cosmiconfig'
+import { cosmiconfig, getDefaultSearchPlaces } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
 import { spawn } from 'node:child_process'
 import { strConcat, format } from 'massarg/style'
+import { MassargCommand } from 'massarg/command'
+import { indent } from 'massarg/utils'
 
 const explorer = cosmiconfig('tmux')
 
 type TmuxConfigItem = {
   root: string
+  name: string
   windows: TmuxWindowType[]
 }
 
@@ -51,6 +54,7 @@ function log({ verbose }: Opts, ...content: any[]) {
 type Opts = {
   key: string
   verbose: boolean
+  dry: boolean
 }
 async function main(opts: Opts) {
   const { key } = opts
@@ -66,7 +70,16 @@ async function main(opts: Opts) {
 
   const commands: string[] = []
 
-  let sessionName = key
+  let sessionName = nameFix(tmuxConfig.name) || key
+
+  if (await sessionExists(opts, sessionName)) {
+    log(opts, `tmux session ${sessionName} already exists, attaching...`)
+    await runCommand(opts, `tmux attach -t ${sessionName}`)
+    return
+  }
+
+  log(opts, `tmux session ${sessionName} does not exist, creating...`)
+
   commands.push(
     `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}`,
   )
@@ -74,7 +87,7 @@ async function main(opts: Opts) {
   commands.push(`tmux select-pane -t 0`)
   for (const window of windows) {
     const dir = window.dir
-    const windowName = window.name || path.basename(dir).replaceAll(/[^a-z0-9_\-]+/i, '_')
+    const windowName = window.name || nameFix(path.basename(dir))
     const [firstPane, ...restPanes] = window.panes
 
     const cmd = firstPane.cmd ? transformCmdToTmuxKeys(firstPane.cmd) : null
@@ -107,11 +120,35 @@ async function main(opts: Opts) {
 async function runCommand(opts: Opts, command: string) {
   const [cmd, ...args] = command.split(' ')
   log(opts, '$ ' + command)
+  if (opts.dry) return 0
   const proc = spawn(cmd, args, { stdio: 'inherit' })
   return new Promise((resolve, reject) => {
     proc.on('close', (code) => {
       if (code === 0) {
         resolve(code)
+      } else {
+        reject(code)
+      }
+    })
+  })
+}
+
+async function getCommandOutput(
+  opts: Opts,
+  command: string,
+): Promise<{ code: number; output: string }> {
+  const [cmd, ...args] = command.split(' ')
+  log(opts, '$ ' + command)
+  if (opts.dry) return { code: 0, output: '' }
+  const proc = spawn(cmd, args, { stdio: 'pipe' })
+  return new Promise<{ code: number; output: string }>((resolve, reject) => {
+    let output = ''
+    proc.stdout.on('data', (data) => {
+      output += data.toString()
+    })
+    proc.on('close', (code) => {
+      if (code === 0) {
+        resolve({ code, output })
       } else {
         reject(code)
       }
@@ -137,13 +174,13 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
   const windows = item.windows.map((w) => {
     if (typeof w === 'string') {
       return {
-        name: w,
+        name: nameFix(path.basename(path.resolve(root, w))),
         dir: dirFix(path.resolve(root, w)),
         panes: defaultPanes,
       }
     }
     return {
-      name: w.name,
+      name: nameFix(w.name || dirFix(path.basename(path.resolve(root, w.dir)))),
       dir: path.resolve(root, w.dir),
       panes: w.panes
         ? w.panes.map((p) => {
@@ -161,10 +198,15 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
     }
   })
   const tmuxConfig = {
+    name: item.name,
     root,
     windows,
   }
   return tmuxConfig
+}
+
+function nameFix(name: string) {
+  return (name || '').match(/^[^.].*[. ].*$/) ? name.split(/[. ]/).filter(Boolean)[0] : name
 }
 
 async function getTmuxConfig() {
@@ -184,11 +226,67 @@ massarg<Opts>({
   description: 'Generate layouts for tmux using presets or on-the-fly args.',
 })
   .main(main)
+  .command({
+    name: 'list',
+    aliases: ['ls'],
+    description: 'List all tmux configurations and sessions',
+    run: async (opts) => {
+      const config = await getTmuxConfig()
+      const sessions = await getCommandOutput(opts, 'tmux ls')
+      console.log('tmux sessions:\n')
+      console.log(indent(sessions.output))
+      console.log('tmux configurations:\n')
+      console.log(' - ' + Object.keys(config).join('\n - '))
+    },
+  })
+  .command(
+    new MassargCommand<{ key: string }>({
+      name: 'show',
+      aliases: ['s'],
+      description: 'Show the tmux configuration file for a specific key',
+      run: async (opts) => {
+        const config = await getTmuxConfig()
+        const { key } = opts
+        const item = config[key]
+        if (!item) {
+          throw new Error(`tmux config item ${key} not found`)
+        }
+        console.log(item)
+      },
+    }).option({
+      name: 'key',
+      aliases: ['k'],
+      description: 'The tmux session to show',
+      isDefault: true,
+      required: true,
+    }),
+  )
+  .command({
+    name: 'edit',
+    aliases: ['e'],
+    description: 'Edit the tmux configuration file',
+    run: async (opts) => {
+      const config = await explorer.search()
+      if (!config) {
+        throw new Error(
+          'tmux config file not found, create one in one of:\n' +
+            getDefaultSearchPlaces('tmux').join('\n'),
+        )
+      }
+      const { filepath } = config
+      const editor = process.env.EDITOR || 'vim'
+      await runCommand(opts, `${editor} ${filepath}`)
+    },
+  })
   .flag({
     name: 'verbose',
     aliases: ['v'],
     description: 'Verbose logs',
-    negatable: true,
+  })
+  .flag({
+    name: 'dry',
+    aliases: ['d'],
+    description: 'Dry run',
   })
   .option({
     name: 'key',
@@ -211,3 +309,12 @@ massarg<Opts>({
     ),
   })
   .parse(args)
+
+async function sessionExists(opts: Opts, sessionName: string): Promise<boolean> {
+  try {
+    const code = await runCommand({ ...opts, dry: false }, `tmux has-session -t ${sessionName}`)
+    return code === 0
+  } catch (error) {
+    return false
+  }
+}

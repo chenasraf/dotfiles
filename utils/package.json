@@ -10,7 +10,8 @@
   "scripts": {
     "tmux": "ts-node src/tmux.ts",
     "build": "tsc && cp package.json build/",
-    "ginst": "pnpm build && pnpm i -g utils@file:$(pwd)/build"
+    "ginst": "pnpm build && pnpm i -g utils@file:$(pwd)/build",
+    "dev": "tsc -w"
   },
   "keywords": [],
   "author": "",

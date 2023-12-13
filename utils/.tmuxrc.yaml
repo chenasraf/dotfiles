@@ -1,8 +1,19 @@
+general:
+  root: ~/Dev
+
+df:
+  name: dotfiles
+  root: ~/.dotfiles
+  windows:
+    - .
+    - utils
+
 test:
   root: ~/Dev
   windows:
     - tst
     - fp-max-extension
+
 pwa:
   root: ~/Dev/planck
   windows:
@@ -15,9 +26,19 @@ pwa:
     - typescript-utils
     - build-tools
     # - generator
-    #
+
 cetu:
   root: ~/Dev/cetu
   windows:
     - cacofonix
     - asterix
+
+casraf:
+  root: ~/Dev/casraf.dev
+  windows:
+    - .
+
+massarg:
+  root: ~/Dev/massarg
+  windows:
+    - .
