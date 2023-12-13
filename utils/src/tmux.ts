@@ -18,7 +18,7 @@ type TmuxConfigItem = {
 type TmuxWindowType = string | TmuxWindow
 
 type TmuxWindow = {
-  name?: string
+  name: string
   dir: string
   layout?: 'default'
   panes: TmuxPaneType[]
@@ -37,6 +37,30 @@ type ParsedTmuxConfigItem = Omit<TmuxConfigItem, 'windows'> & { windows: ParsedT
 
 type ParsedTmuxWindow = Omit<TmuxWindow, 'panes'> & { panes: TmuxPane[] }
 
+const defaultLayout: TmuxLayout = {
+  type: 'row',
+  zoom: true,
+  children: [
+    {
+      type: 'column',
+      children: [{ type: 'pane' }, { type: 'pane' }],
+    },
+  ],
+}
+
+type TmuxLayoutType = 'row' | 'column' | 'pane'
+
+type TmuxLayout =
+  | {
+      type: Exclude<TmuxLayoutType, 'pane'>
+      children: TmuxLayout[]
+      zoom?: boolean
+    }
+  | {
+      type: 'pane'
+      zoom?: boolean
+    }
+
 const defaultPanes = [
   {
     dir: '.',
@@ -46,8 +70,8 @@ const defaultPanes = [
   { dir: '.' },
 ]
 
-function log({ verbose }: Opts, ...content: any[]) {
-  if (!verbose) return
+function log({ verbose, dry }: Opts, ...content: any[]) {
+  if (!verbose && !dry) return
   console.log(...content)
 }
 
@@ -66,11 +90,13 @@ async function main(opts: Opts) {
 
   const tmuxConfig = parseConfig(item)
   const { root, windows } = tmuxConfig
-  log(opts, tmuxConfig)
+  log(opts, 'Config:', tmuxConfig)
 
   const commands: string[] = []
 
-  let sessionName = nameFix(tmuxConfig.name) || key
+  let sessionName = tmuxConfig.name
+
+  log(opts, 'Session name:', sessionName)
 
   if (await sessionExists(opts, sessionName)) {
     log(opts, `tmux session ${sessionName} already exists, attaching...`)
@@ -89,6 +115,8 @@ async function main(opts: Opts) {
     const dir = window.dir
     const windowName = window.name || nameFix(path.basename(dir))
     const [firstPane, ...restPanes] = window.panes
+
+    log(opts, 'Window name:', windowName)
 
     const cmd = firstPane.cmd ? transformCmdToTmuxKeys(firstPane.cmd) : null
     commands.push(`tmux new-window -n ${windowName} -c ${dir}`)
@@ -171,7 +199,7 @@ function transformCmdToTmuxKeys(cmd: string): string {
 function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
   const dirFix = (dir: string) => dir.replace('~', os.homedir())
   const root = dirFix(item.root)
-  const windows = item.windows.map((w) => {
+  const windows = (item.windows || []).map((w) => {
     if (typeof w === 'string') {
       return {
         name: nameFix(path.basename(path.resolve(root, w))),
@@ -198,7 +226,7 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
     }
   })
   const tmuxConfig = {
-    name: item.name,
+    name: item.name || path.basename(root),
     root,
     windows,
   }
@@ -206,7 +234,7 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
 }
 
 function nameFix(name: string) {
-  return (name || '').match(/^[^.].*[. ].*$/) ? name.split(/[. ]/).filter(Boolean)[0] : name
+  return (name || '').includes('.') ? name.split('.').filter(Boolean)[0] : name
 }
 
 async function getTmuxConfig() {
@@ -231,7 +259,10 @@ massarg<Opts>({
     aliases: ['ls'],
     description: 'List all tmux configurations and sessions',
     run: async (opts) => {
-      const config = await getTmuxConfig()
+      const rawConfig = await getTmuxConfig()
+      const config = Object.fromEntries(
+        Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(item)]),
+      )
       const sessions = await getCommandOutput(opts, 'tmux ls')
       console.log('tmux sessions:\n')
       console.log(indent(sessions.output))
@@ -247,19 +278,24 @@ massarg<Opts>({
       run: async (opts) => {
         const config = await getTmuxConfig()
         const { key } = opts
-        const item = config[key]
+        const item = parseConfig(config[key])
         if (!item) {
           throw new Error(`tmux config item ${key} not found`)
         }
         console.log(item)
       },
-    }).option({
-      name: 'key',
-      aliases: ['k'],
-      description: 'The tmux session to show',
-      isDefault: true,
-      required: true,
-    }),
+    })
+      .option({
+        name: 'key',
+        aliases: ['k'],
+        description: 'The tmux session to show',
+        isDefault: true,
+        required: true,
+      })
+      .help({
+        bindOption: true,
+        bindCommand: true,
+      }),
   )
   .command({
     name: 'edit',
@@ -278,6 +314,34 @@ massarg<Opts>({
       await runCommand(opts, `${editor} ${filepath}`)
     },
   })
+  .command(
+    new MassargCommand<Opts>({
+      name: 'attach',
+      aliases: ['a'],
+      description: 'Attach to a tmux session',
+      run: async (opts) => {
+        const { key } = opts
+
+        if (key) {
+          const allConfigs = await getTmuxConfig()
+          const config = parseConfig(allConfigs[key])
+          const sessionName = parseConfig(config).name
+          if (!(await sessionExists(opts, sessionName))) {
+            throw new Error(`tmux session ${sessionName} does not exist`)
+          }
+          await runCommand(opts, `tmux attach -t ${sessionName}`)
+          return
+        }
+
+        await runCommand(opts, `tmux attach`)
+      },
+    }).option({
+      name: 'key',
+      aliases: ['k'],
+      description: 'The tmux session to attach to',
+      isDefault: true,
+    }),
+  )
   .flag({
     name: 'verbose',
     aliases: ['v'],
@@ -297,6 +361,7 @@ massarg<Opts>({
   })
   .help({
     bindOption: true,
+    bindCommand: true,
     usageText: strConcat(
       [
         format('tmux', { color: 'yellow' }),
