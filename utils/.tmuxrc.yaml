@@ -42,3 +42,11 @@ massarg:
   root: ~/Dev/massarg
   windows:
     - .
+
+dungeon-paper:
+  root: ~/Dev/dungeon_paper
+  windows:
+    - .
+    - ../dungeon_world_data
+    - ../dungeon-paper-website
+    - ../dungeon-paper-functions
