@@ -54,14 +54,14 @@ type TmuxLayoutType = 'row' | 'column' | 'pane'
 
 type TmuxLayout =
   | {
-      type: Exclude<TmuxLayoutType, 'pane'>
-      children: TmuxLayout[]
-      zoom?: boolean
-    }
+    type: Exclude<TmuxLayoutType, 'pane'>
+    children: TmuxLayout[]
+    zoom?: boolean
+  }
   | {
-      type: 'pane'
-      zoom?: boolean
-    }
+    type: 'pane'
+    zoom?: boolean
+  }
 
 const defaultPanes = [
   {
@@ -169,16 +169,16 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
       dir: path.resolve(root, w.dir),
       panes: w.panes
         ? w.panes.map((p) => {
-            if (typeof p === 'string') {
-              return {
-                dir: dirFix(path.resolve(root, w.dir, p)),
-              }
-            }
+          if (typeof p === 'string') {
             return {
-              dir: dirFix(path.resolve(root, w.dir, p.dir)),
-              cmd: p.cmd,
+              dir: dirFix(path.resolve(root, w.dir, p)),
             }
-          })
+          }
+          return {
+            dir: dirFix(path.resolve(root, w.dir, p.dir)),
+            cmd: p.cmd,
+          }
+        })
         : defaultPanes,
     }
   })
@@ -337,7 +337,7 @@ const editCmd = {
     if (!config) {
       throw new Error(
         'tmux config file not found, create one in one of:\n' +
-          getDefaultSearchPlaces('tmux').join('\n'),
+        getDefaultSearchPlaces('tmux').join('\n'),
       )
     }
     const { filepath } = config
@@ -345,6 +345,65 @@ const editCmd = {
     await runCommand(opts, `${editor} ${filepath}`)
   },
 }
+
+const rmCmd = new MassargCommand<Opts>({
+  name: 'remove',
+  aliases: ['rm'],
+  description: 'Remove a tmux workspace from the config file',
+  run: async (opts: Opts) => {
+    const { key } = opts
+    const allConfigs = await getTmuxConfig()
+    const configFile = await explorer.search()
+
+    if (!configFile) {
+      throw new Error('tmux config file not found')
+    }
+    if (!allConfigs[key]) {
+      throw new Error(`tmux config item ${key} not found`)
+    }
+    const strContents = await fs.readFile(configFile.filepath, 'utf-8')
+    const contents = strContents.split('\n')
+    const index = contents.findIndex((line) => line.startsWith(key + ':'))
+    log(opts, 'Index:', index)
+    if (index === -1) {
+      throw new Error(`tmux config item ${key} not found`)
+    }
+    let endIndex = contents.slice(index + 1).findIndex((line) => line.match(/^\S/))
+    log(opts, 'End index:', endIndex)
+    if (endIndex === -1) {
+      endIndex = contents.length - index
+      log(opts, 'End index set to end:', endIndex)
+    }
+
+    const newContents = contents
+      .slice(0, index)
+      .concat(contents.slice(index + endIndex))
+      .join('\n')
+      .trimEnd()
+
+    log(opts, 'New contents:', newContents)
+    log(opts, 'Filepath:', configFile.filepath)
+
+    await fs.writeFile(configFile.filepath, newContents)
+    console.log(`Removed tmux config item ${key}`)
+  },
+})
+  .option({
+    name: 'key',
+    aliases: ['k'],
+    description: 'The tmux session to remove',
+    isDefault: true,
+    required: true,
+  })
+  .option({
+    name: 'verbose',
+    aliases: ['v'],
+    description: 'Verbose logs',
+  })
+  .help({
+    bindOption: true,
+    bindCommand: true,
+  })
 
 const attachCmd = new MassargCommand<Opts>({
   name: 'attach',
@@ -376,9 +435,10 @@ const attachCmd = new MassargCommand<Opts>({
   .help({ bindOption: true, bindCommand: true })
 
 type CreateOpts = Opts & {
-  rootDir: string
-  window: string[]
+  rootDir?: string
+  window?: string[]
   save?: boolean
+  saveOnly?: boolean
 }
 
 const createCmd = new MassargCommand<CreateOpts>({
@@ -388,12 +448,15 @@ const createCmd = new MassargCommand<CreateOpts>({
   run: async (opts) => {
     log(opts, 'Options:', opts)
     const config = parseConfig({
-      name: nameFix(path.basename(opts.rootDir)),
-      root: opts.rootDir,
-      windows: opts.window,
+      name: nameFix(path.basename(opts.rootDir ?? process.cwd())),
+      root: opts.rootDir ?? process.cwd(),
+      windows: opts.window ?? ['.'],
     })
-    if (opts.save) {
+    if (opts.save || opts.saveOnly) {
       addSimpleConfigToFile(opts, config)
+    }
+    if (opts.saveOnly) {
+      return
     }
     createFromConfig(opts, config)
   },
@@ -415,6 +478,11 @@ const createCmd = new MassargCommand<CreateOpts>({
     description: 'Save the tmux session to the config file',
   })
   .flag({
+    name: 'save-only',
+    aliases: ['S'],
+    description: 'Save the tmux session to the config file without creating it',
+  })
+  .flag({
     name: 'verbose',
     aliases: ['v'],
     description: 'Verbose logs',
@@ -430,6 +498,7 @@ mainCmd
   .command(listCmd)
   .command(showCmd)
   .command(editCmd)
+  .command(rmCmd)
   .command(createCmd)
   .command(attachCmd)
   .parse()

@@ -50,3 +50,9 @@ dungeon-paper:
     - ../dungeon_world_data
     - ../dungeon-paper-website
     - ../dungeon-paper-functions
+
+Dekelscats:
+  root: /Users/chen/Dev/Dekelscats
+  windows:
+    - ./
+
