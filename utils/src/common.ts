@@ -1,14 +1,14 @@
 import { spawn } from 'node:child_process'
 
-export function log({ verbose, dry }: Opts, ...content: any[]) {
-  if (!verbose && !dry) return
-  console.log(...content)
-}
-
 export type Opts = {
   key: string
   verbose: boolean
   dry: boolean
+}
+
+export function log({ verbose, dry }: Opts, ...content: any[]) {
+  if (!verbose && !dry) return
+  console.log(...content)
 }
 
 export async function runCommand(opts: Opts, command: string) {

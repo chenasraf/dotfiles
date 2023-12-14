@@ -54,14 +54,14 @@ type TmuxLayoutType = 'row' | 'column' | 'pane'
 
 type TmuxLayout =
   | {
-    type: Exclude<TmuxLayoutType, 'pane'>
-    children: TmuxLayout[]
-    zoom?: boolean
-  }
+      type: Exclude<TmuxLayoutType, 'pane'>
+      children: TmuxLayout[]
+      zoom?: boolean
+    }
   | {
-    type: 'pane'
-    zoom?: boolean
-  }
+      type: 'pane'
+      zoom?: boolean
+    }
 
 const defaultPanes = [
   {
@@ -169,16 +169,16 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
       dir: path.resolve(root, w.dir),
       panes: w.panes
         ? w.panes.map((p) => {
-          if (typeof p === 'string') {
-            return {
-              dir: dirFix(path.resolve(root, w.dir, p)),
+            if (typeof p === 'string') {
+              return {
+                dir: dirFix(path.resolve(root, w.dir, p)),
+              }
             }
-          }
-          return {
-            dir: dirFix(path.resolve(root, w.dir, p.dir)),
-            cmd: p.cmd,
-          }
-        })
+            return {
+              dir: dirFix(path.resolve(root, w.dir, p.dir)),
+              cmd: p.cmd,
+            }
+          })
         : defaultPanes,
     }
   })
@@ -207,7 +207,10 @@ async function getTmuxConfig() {
 
 async function sessionExists(opts: Opts, sessionName: string): Promise<boolean> {
   try {
-    const code = await runCommand({ ...opts, dry: false }, `tmux has-session -t ${sessionName}`)
+    const { code } = await getCommandOutput(
+      { ...opts, dry: false },
+      `tmux has-session -t ${sessionName}`,
+    )
     return code === 0
   } catch (error) {
     return false
@@ -221,7 +224,7 @@ async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmuxConfigI
   }
   const { filepath } = file
   const existingConfig = await getTmuxConfig()
-  if (existingConfig[config.name]) {
+  if (existingConfig[config.name] && !opts.dry) {
     throw new Error(`tmux config item ${config.name} already exists`)
   }
 
@@ -233,6 +236,9 @@ ${config.name}:
 ${config.windows.map((w) => `    - ${w.dir.replace(config.root, './')}`).join('\n')}
 `
   if (opts.dry) {
+    if (existingConfig[config.name]) {
+      log(opts, 'Config item already exists, not saving')
+    }
     log(opts, 'Dry run, not saving config')
     log(opts, 'Would have saved config to', filepath)
     log(opts, 'Contents:')
@@ -331,7 +337,7 @@ const editCmd = {
     if (!config) {
       throw new Error(
         'tmux config file not found, create one in one of:\n' +
-        getDefaultSearchPlaces('tmux').join('\n'),
+          getDefaultSearchPlaces('tmux').join('\n'),
       )
     }
     const { filepath } = config
