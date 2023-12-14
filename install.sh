@@ -133,15 +133,15 @@ if [[ ! -d ~/.tmux-power ]]; then
   git clone git@github.com:wfxr/tmux-power.git ~/.tmux-power
 fi
 
-if [[ ! -f $(which tblf) ]]; then
-  echo_cyan "Installing tblf..."
-  file=$(mktemp -d)
-  git clone https://github.com/chenasraf/tblf --depth=1 $file/tblf
-  cd $file/tblf
-  make build && make install
-  cd $cwd
-  rm -rf $file
-fi
+# if [[ ! -f $(which tblf) ]]; then
+#   echo_cyan "Installing tblf..."
+#   file=$(mktemp -d)
+#   git clone https://github.com/chenasraf/tblf --depth=1 $file/tblf
+#   cd $file/tblf
+#   make build && make install
+#   cd $cwd
+#   rm -rf $file
+# fi
 
 # .config
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
