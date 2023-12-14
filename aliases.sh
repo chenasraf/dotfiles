@@ -133,3 +133,4 @@ alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 # addalias commands
 alias prettypath="echo $PATH | tr ':' '\n'"
 alias hli="hl && hi"
+alias keypresses="xxd -psd"
