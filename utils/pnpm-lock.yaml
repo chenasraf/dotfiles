@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@types/node':
     specifier: ^20.10.4
@@ -12,8 +8,8 @@ dependencies:
     specifier: ^9.0.0
     version: 9.0.0(typescript@5.3.3)
   massarg:
-    specifier: file:~/Dev/massarg/build
-    version: file:../../Dev/massarg/build
+    specifier: 2.0.0-pre.9
+    version: 2.0.0-pre.9
   prettier:
     specifier: ^3.1.1
     version: 3.1.1
@@ -224,6 +220,12 @@ packages:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: false
 
+  /massarg@2.0.0-pre.9:
+    resolution: {integrity: sha512-UXFr9YC5jli3oWNEeLn2BvU+7y++Mt9sWy+uTYOigMSNTdODBG/HRtEjHRB72E8FHeHGbzGG4x1ftYDL8/uVMg==}
+    dependencies:
+      zod: 3.22.4
+    dev: false
+
   /parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -313,9 +315,6 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
-  file:../../Dev/massarg/build:
-    resolution: {directory: ../../Dev/massarg/build, type: directory}
-    name: massarg
-    dependencies:
-      zod: 3.22.4
-    dev: false
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
