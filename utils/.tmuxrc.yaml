@@ -56,7 +56,6 @@ Dekelscats:
   windows:
     - ./
 
-
 script_runner:
   root: /Users/chen/Dev/script_runner
   windows:

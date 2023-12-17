@@ -54,14 +54,14 @@ type TmuxLayoutType = 'row' | 'column' | 'pane'
 
 type TmuxLayout =
   | {
-    type: Exclude<TmuxLayoutType, 'pane'>
-    children: TmuxLayout[]
-    zoom?: boolean
-  }
+      type: Exclude<TmuxLayoutType, 'pane'>
+      children: TmuxLayout[]
+      zoom?: boolean
+    }
   | {
-    type: 'pane'
-    zoom?: boolean
-  }
+      type: 'pane'
+      zoom?: boolean
+    }
 
 const defaultPanes = [
   {
@@ -173,16 +173,16 @@ function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
       dir: path.resolve(root, w.dir),
       panes: w.panes
         ? w.panes.map((p) => {
-          if (typeof p === 'string') {
-            return {
-              dir: dirFix(path.resolve(root, w.dir, p)),
+            if (typeof p === 'string') {
+              return {
+                dir: dirFix(path.resolve(root, w.dir, p)),
+              }
             }
-          }
-          return {
-            dir: dirFix(path.resolve(root, w.dir, p.dir)),
-            cmd: p.cmd,
-          }
-        })
+            return {
+              dir: dirFix(path.resolve(root, w.dir, p.dir)),
+              cmd: p.cmd,
+            }
+          })
         : defaultPanes,
     }
   })
@@ -198,13 +198,22 @@ function nameFix(name: string) {
   return (name || '').includes('.') ? name.split('.').filter(Boolean)[0] : name
 }
 
-async function getTmuxConfig() {
+async function getTmuxConfigFile() {
   const searchIn = [process.cwd(), os.homedir()]
   for (const dir of searchIn) {
     const result = await explorer.search(dir)
     if (result) {
-      return result.config as ConfigFile
+      return result
     }
+  }
+  throw new Error('tmux config file not found')
+}
+
+async function getTmuxConfig() {
+  const file = await getTmuxConfigFile()
+  if (file) {
+    const { config } = file
+    return config as ConfigFile
   }
   throw new Error('tmux config file not found')
 }
@@ -222,7 +231,7 @@ async function sessionExists(opts: Opts, sessionName: string): Promise<boolean> 
 }
 
 async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmuxConfigItem) {
-  const file = await explorer.search()
+  const file = await getTmuxConfigFile()
   if (!file) {
     throw new Error('tmux config file not found')
   }
@@ -337,11 +346,11 @@ const editCmd = {
   aliases: ['e'],
   description: 'Edit the tmux configuration file',
   run: async (opts: Opts) => {
-    const config = await explorer.search()
+    const config = await getTmuxConfigFile()
     if (!config) {
       throw new Error(
         'tmux config file not found, create one in one of:\n' +
-        getDefaultSearchPlaces('tmux').join('\n'),
+          getDefaultSearchPlaces('tmux').join('\n'),
       )
     }
     const { filepath } = config
@@ -356,8 +365,8 @@ const rmCmd = new MassargCommand<Opts>({
   description: 'Remove a tmux workspace from the config file',
   run: async (opts: Opts) => {
     const { key } = opts
+    const configFile = await getTmuxConfigFile()
     const allConfigs = await getTmuxConfig()
-    const configFile = await explorer.search()
 
     if (!configFile) {
       throw new Error('tmux config file not found')
