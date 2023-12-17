@@ -355,10 +355,11 @@ const listCmd = {
       Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(item)]),
     )
     const sessions = await getCommandOutput(opts, 'tmux ls')
+    const keys = Object.keys(config).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     console.log('tmux sessions:\n')
     console.log(indent(sessions.output))
     console.log('tmux configurations:\n')
-    console.log(' - ' + Object.keys(config).join('\n - '))
+    console.log(' - ' + keys.join('\n - '))
   },
 }
 
