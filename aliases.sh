@@ -131,6 +131,7 @@ alias tn-general="tn-custom -d \$HOME/Dev -s general"
 alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
 
 # addalias commands
-alias prettypath="echo $PATH | tr ':' '\n'"
+alias prettypath="echo \$PATH | tr ':' '\n'"
 alias hli="hl && hi"
 alias keypresses="xxd -psd"
+alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"

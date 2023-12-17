@@ -198,15 +198,29 @@ function nameFix(name: string) {
   return (name || '').includes('.') ? name.split('.').filter(Boolean)[0] : name
 }
 
+const searchIn = [
+  process.cwd(),
+  os.homedir(),
+  process.env.APPDATA,
+  path.join(os.homedir(), '.config'),
+  __dirname,
+].filter(Boolean) as string[]
+
 async function getTmuxConfigFile() {
-  const searchIn = [process.cwd(), os.homedir()]
   for (const dir of searchIn) {
     const result = await explorer.search(dir)
     if (result) {
       return result
     }
   }
-  throw new Error('tmux config file not found')
+  throw new Error(
+    [
+      'tmux config file not found. Searched in directories:',
+      searchIn.join('\n\t'),
+      'Files:',
+      getDefaultSearchPlaces('tmux').join('\n\t'),
+    ].join('\n'),
+  )
 }
 
 async function getTmuxConfig() {
@@ -215,7 +229,14 @@ async function getTmuxConfig() {
     const { config } = file
     return config as ConfigFile
   }
-  throw new Error('tmux config file not found')
+  throw new Error(
+    [
+      'tmux config file not found. Searched in directories:',
+      searchIn.join('\n\t'),
+      'Files:',
+      getDefaultSearchPlaces('tmux').join('\n\t'),
+    ].join('\n'),
+  )
 }
 
 async function sessionExists(opts: Opts, sessionName: string): Promise<boolean> {
