@@ -144,12 +144,13 @@ fi
 # fi
 
 # .config
-echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
 rflags='-vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store"'
 rsync_template="rsync $rflags {}"
 # printf "%s\n" "--delete $DOTFILES/.config/nvim $HOME/.config/nvim" | xargs -I {} bash -c "$rsync_template"
 # printf "%s\n" "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" | xargs -I {} bash -c "$rsync_template"
-xrg "--delete $DOTFILES/.config/nvim $HOME/.config/nvim" "$rsync_template"
+echo_cyan "Copying $DOTFILES/.config/nvim to $HOME/.config/nvim..."
+xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
+echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
 xrg "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
 
 echo_cyan "Copying home dir files..."

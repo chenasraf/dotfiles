@@ -102,14 +102,18 @@ async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigItem) {
 
   log(opts, `tmux session ${sessionName} does not exist, creating...`)
 
+  // Main window split
   commands.push(
     `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}`,
   )
   commands.push(`tmux split-window -h -t ${sessionName} -c ${root}`)
   commands.push(`tmux select-pane -t 0`)
+
+  // Create all other windows
   for (const window of windows) {
     const dir = window.dir
     const windowName = window.name || nameFix(path.basename(dir))
+
     const [firstPane, ...restPanes] = window.panes
 
     log(opts, 'Window name:', windowName)

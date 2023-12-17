@@ -14,8 +14,8 @@ vim.keymap.set("i", "<A-Del>", "<Esc>ldei", { desc = "Delete word backwards" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 
 -- insert newlines without insert mode
-vim.keymap.set("n", "<leader>o", "m`o<Esc>k``j", { desc = "Insert newline below" })
-vim.keymap.set("n", "<leader>O", "m`O<Esc>j``k", { desc = "Insert newline above" })
+vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert newline below" })
+vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -45,11 +45,6 @@ vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- search and replace current selection
 vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
   { desc = "Search and replace current selection" })
-
--- Jump to next block
-vim.keymap.set("n", "<Leader>]", "/{[^}]*$<CR>", { desc = "Jump to next block" })
--- Jump to previous block
-vim.keymap.set("n", "<Leader>[", "?{[^}]*$<CR>", { desc = "Jump to previous block" })
 
 vim.keymap.set("n", "<leader>Srv", function()
   local cmd = "http-server -p 5500"
@@ -82,12 +77,12 @@ vim.keymap.set("n", "<leader>dP", "<esc>dawx", { desc = "Delete JS property (bac
 
 vim.keymap.set({ "n", "v" }, "<F2>", vim.lsp.buf.rename)
 
-local hl_search = vim.opt.hlsearch
+local hl_search = vim.o.hlsearch
 
 vim.keymap.set("n", "<leader>n", function()
   hl_search = not hl_search
   print("Search highlight: " .. (hl_search and "on" or "off"))
-  vim.opt.hlsearch = hl_search
+  vim.o.hlsearch = hl_search
 end, { desc = "Toggle search highlight" })
 
 local function nope()

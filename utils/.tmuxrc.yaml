@@ -56,3 +56,18 @@ Dekelscats:
   windows:
     - ./
 
+
+script_runner:
+  root: /Users/chen/Dev/script_runner
+  windows:
+    - ./
+
+templates:
+  root: /Users/chen/Dev/templates
+  windows:
+    - ./
+
+license-gen:
+  root: /Users/chen/Dev/license-gen
+  windows:
+    - ./
