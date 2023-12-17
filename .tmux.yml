@@ -8,12 +8,6 @@ df:
     - .
     - utils
 
-test:
-  root: ~/Dev
-  windows:
-    - tst
-    - fp-max-extension
-
 cetu:
   root: ~/Dev/cetu
   windows:

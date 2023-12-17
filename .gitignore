@@ -4,5 +4,6 @@ man/
 bin/
 *.swp
 *.pyc
-_local.sh
 tests/
+_local.sh
+.tmux_local.yml

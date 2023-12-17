@@ -3,12 +3,20 @@ import * as path from 'node:path'
 import * as os from 'node:os'
 import { Opts, getCommandOutput } from '../common'
 
-function searchInFor(name: string) {
+const searchDirs = [
+  process.cwd(),
+  __dirname,
+  os.homedir(),
+  path.join(os.homedir(), '.dotfiles'),
+  process.env.APPDATA,
+].filter(Boolean) as string[]
+
+function searchPatterns(name: string) {
   return [`.${name}.yaml`, `.${name}.yml`, `.config/.${name}.yaml`, `.config/.${name}.yml`]
 }
 
-const globalExplorer = cosmiconfig('tmux', { searchPlaces: searchInFor('tmux') })
-const localExplorer = cosmiconfig('tmux_local', { searchPlaces: searchInFor('tmux_local') })
+const globalExplorer = cosmiconfig('tmux', { searchPlaces: searchPatterns('tmux') })
+const localExplorer = cosmiconfig('tmux_local', { searchPlaces: searchPatterns('tmux_local') })
 
 export type TmuxConfigItem = {
   root: string
@@ -112,10 +120,6 @@ export function nameFix(name: string) {
   return (name || '').includes('.') ? name.split('.').filter(Boolean)[0] : name
 }
 
-const searchIn = [process.cwd(), os.homedir(), process.env.APPDATA, __dirname].filter(
-  Boolean,
-) as string[]
-
 export type ConfigType = 'local' | 'global' | 'merged'
 
 function mergeConfigs(...configs: ConfigFile[]): ConfigFile {
@@ -145,7 +149,7 @@ export async function getTmuxConfigFileInfo(): Promise<
     global: null,
   }
 
-  for (const dir of searchIn) {
+  for (const dir of searchDirs) {
     const result = await globalExplorer.search(dir)
     if (result) {
       out.global = result
@@ -153,7 +157,7 @@ export async function getTmuxConfigFileInfo(): Promise<
     }
   }
 
-  for (const dir of searchIn) {
+  for (const dir of searchDirs) {
     const result = await localExplorer.search(dir)
     if (result) {
       out.local = result
@@ -180,17 +184,17 @@ export function throwNoConfigFound() {
     [
       'tmux config file not found, searched in:',
       '\t' +
-        searchIn
+        searchDirs
           .map((x) =>
-            searchInFor('tmux')
+            searchPatterns('tmux')
               .map((y) => path.join(x, y))
               .join('\n\t'),
           )
           .join('\n\t'),
       '\t' +
-        searchIn
+        searchDirs
           .map((x) =>
-            searchInFor('tmux_local')
+            searchPatterns('tmux_local')
               .map((y) => path.join(x, y))
               .join('\n\t'),
           )

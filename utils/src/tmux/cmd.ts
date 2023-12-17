@@ -86,6 +86,7 @@ const listCmd = {
   aliases: ['ls'],
   description: 'List all tmux configurations and sessions',
   run: async (opts: Opts) => {
+    const configs = await getTmuxConfigFileInfo()
     const rawConfig = await getTmuxConfig()
     const config = Object.fromEntries(
       Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(item)]),
@@ -94,6 +95,17 @@ const listCmd = {
     const keys = Object.keys(config).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     console.log('tmux sessions:\n')
     console.log(indent(sessions.output))
+    console.log('tmux config files:\n')
+    console.log(
+      ' - ' +
+      Object.entries(configs)
+        .map(([key, config]) =>
+          config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
+        )
+        .filter(Boolean)
+        .join('\n - ') +
+      '\n',
+    )
     console.log('tmux configurations:\n')
     console.log(' - ' + keys.join('\n - '))
   },
