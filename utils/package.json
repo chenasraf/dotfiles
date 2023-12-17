@@ -5,11 +5,11 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "tx": "tmux.js",
+    "tx": "tmux/cmd.js",
     "tblf": "tblf.js"
   },
   "scripts": {
-    "tx": "ts-node src/tmux.ts",
+    "tx": "ts-node src/tmux/cmd.ts",
     "tblf": "ts-node src/tblf.ts",
     "build": "tsc && cp package.json build/",
     "ginst": "pnpm build && pnpm i -g utils@file:$(pwd)/build",
