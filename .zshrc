@@ -5,7 +5,7 @@ export DOTBIN="$CFG/bin"
 # echo 'Loading '$DOTFILES/functions.sh
 source "$DOTFILES/functions.sh"
 
-motd
+[[ "$1" == "-q" ]] || motd
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -59,7 +59,7 @@ fi
 
 export VISUAL="$EDITOR"
 
-tmux source-file ~/.config/.tmux.conf
+tmux source-file "$HOME/.config/.tmux.conf"
 
 # echo 'Loading '$DOTFILES/exports.sh
 source "$DOTFILES/exports.sh" # must run before zsh_init

@@ -1,3 +1,4 @@
+import { MassargCommand } from 'massarg/command'
 import { spawn } from 'node:child_process'
 
 export type Opts = {
@@ -6,16 +7,39 @@ export type Opts = {
   dry: boolean
 }
 
+export function withDefaultOpts<T extends Opts, OT extends {} = {}>(
+  command: MassargCommand<OT>,
+): MassargCommand<OT & T> {
+  return (command as MassargCommand<OT & T>)
+    .flag({
+      name: 'verbose',
+      description: 'Verbose output',
+      aliases: ['v'],
+    })
+    .flag({
+      name: 'dry',
+      description: 'Dry run',
+      aliases: ['d'],
+    })
+    .help({
+      bindOption: true,
+      bindCommand: true,
+    })
+}
+
 export function log({ verbose, dry }: Opts, ...content: any[]) {
   if (!verbose && !dry) return
   console.log(...content)
 }
 
-export async function runCommand(opts: Opts, command: string) {
+export async function runCommand(opts: Opts, command: string | string[]): Promise<number> {
+  if (Array.isArray(command)) {
+    command = command.join('; ')
+  }
   const [cmd, ...args] = command.split(' ')
   log(opts, '$ ' + command)
   if (opts.dry) return 0
-  const proc = spawn(cmd, args, { stdio: 'inherit' })
+  const proc = spawn(cmd, args, { stdio: 'inherit', shell: '/bin/zsh' })
   return new Promise((resolve, reject) => {
     proc.on('close', (code) => {
       if (code === 0) {
@@ -29,8 +53,11 @@ export async function runCommand(opts: Opts, command: string) {
 
 export async function getCommandOutput(
   opts: Opts,
-  command: string,
+  command: string | string[],
 ): Promise<{ code: number; output: string }> {
+  if (Array.isArray(command)) {
+    command = command.join('; ')
+  }
   const [cmd, ...args] = command.split(' ')
   log(opts, '$ ' + command)
   if (opts.dry) return { code: 0, output: '' }
