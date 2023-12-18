@@ -17,6 +17,15 @@ const installCommand = new MassargCommand<HomeOpts>({
   run: install,
 })
 
+const editCommand = new MassargCommand<HomeOpts>({
+  name: 'edit',
+  aliases: ['e'],
+  description: 'Edit utilities',
+  run: async (opts: HomeOpts) => {
+    await runCommand(opts, [`pushd ${DF_DIR}/utils`, 'nvim .', 'popd'])
+  },
+})
+
 export const utilsCommand = massarg<HomeOpts>({
   name: 'utils',
   aliases: ['u'],
@@ -24,6 +33,7 @@ export const utilsCommand = massarg<HomeOpts>({
 })
   .main(install)
   .command(installCommand)
+  .command(editCommand)
   .help({
     bindCommand: true,
     bindOption: true,
