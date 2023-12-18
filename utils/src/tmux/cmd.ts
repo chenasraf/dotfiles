@@ -1,9 +1,6 @@
 import * as path from 'node:path'
 import * as util from 'node:util'
 import * as fs from 'node:fs/promises'
-// ================================================================================
-// Commands
-
 import { massarg } from 'massarg'
 import { Opts, getCommandOutput, log, runCommand } from '../common'
 import { indent, strConcat } from 'massarg/utils'
@@ -20,6 +17,8 @@ import {
 import { addSimpleConfigToFile, createFromConfig } from './command_builder'
 import { main } from './tmux'
 
+// ================================================================================
+// Commands
 // ================================================================================
 const mainCmd = massarg<Opts>({
   name: 'tmux',
