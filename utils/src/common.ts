@@ -61,7 +61,7 @@ export async function getCommandOutput(
   const [cmd, ...args] = command.split(' ')
   log(opts, '$ ' + command)
   if (opts.dry) return { code: 0, output: '' }
-  const proc = spawn(cmd, args, { stdio: 'pipe' })
+  const proc = spawn(cmd, args, { stdio: 'pipe', shell: '/bin/zsh' })
   return new Promise<{ code: number; output: string }>((resolve, reject) => {
     let output = ''
     proc.stdout.on('data', (data) => {

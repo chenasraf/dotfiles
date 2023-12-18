@@ -81,7 +81,7 @@ const showCmd = new MassargCommand<Opts>({
   })
   .help({ bindOption: true, bindCommand: true })
 
-const listCmd = new MassargCommand<Opts & { bare?: boolean }>({
+const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: boolean }>({
   name: 'list',
   aliases: ['ls'],
   description: 'List all tmux configurations and sessions',
@@ -96,9 +96,20 @@ const listCmd = new MassargCommand<Opts & { bare?: boolean }>({
       console.log(keys.join('\n'))
       return
     }
-    const sessions = await getCommandOutput(opts, 'tmux ls')
+    const sessionsOutput = await getCommandOutput(opts, 'tmux ls')
+    const sessions = sessionsOutput.output.replace(/\(created ([^)]+)\)/g, '$1')
+    const tbl = await getCommandOutput(
+      opts,
+      `echo ${JSON.stringify(
+        sessions,
+      )} | tblf -th "Name # Windows DDD MMM DD HH:MM:SS YYYY Status"`,
+    )
+    if (opts.sessions) {
+      console.log(tbl.output)
+      return
+    }
     console.log('tmux sessions:\n')
-    console.log(indent(sessions.output))
+    console.log(indent(tbl.output))
     console.log('tmux config files:\n')
     console.log(
       ' - ' +
@@ -115,10 +126,20 @@ const listCmd = new MassargCommand<Opts & { bare?: boolean }>({
   },
 })
   .flag({
+    name: 'verbose',
+    aliases: ['v'],
+    description: 'Verbose logs',
+  })
+  .flag({
     name: 'bare',
     aliases: ['b'],
     description:
-      'Show only the tmux session names, without the config or formatting (useful for scripting)',
+      'Show only the tmux configuration names, without the sessions or formatting (useful for scripting)',
+  })
+  .flag({
+    name: 'sessions',
+    aliases: ['s'],
+    description: 'Show only the tmux sessions',
   })
   .help({ bindOption: true, bindCommand: true })
 
