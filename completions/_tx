@@ -1,0 +1,24 @@
+#compdef tx
+
+names=($(tx ls -b))
+
+if [[ -z $names ]]; then
+  return 1
+fi
+
+sessions=(
+)
+cmds=(
+  'list:List all tmux configurations and sessions'
+  'show:Show the tmux configuration file for a specific key'
+  'edit:Edit the tmux configuration file'
+  'remove:Remove a tmux workspace from the config file'
+  'create:Create a new tmux session (temporary)'
+  'attach:Attach to a tmux session'
+)
+for i in $names; do
+  sessions+=("$i")
+done
+
+_describe 'session' sessions
+# _describe 'cmds' cmds

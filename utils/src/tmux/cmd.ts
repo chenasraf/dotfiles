@@ -81,35 +81,46 @@ const showCmd = new MassargCommand<Opts>({
   })
   .help({ bindOption: true, bindCommand: true })
 
-const listCmd = {
+const listCmd = new MassargCommand<Opts & { bare?: boolean }>({
   name: 'list',
   aliases: ['ls'],
   description: 'List all tmux configurations and sessions',
-  run: async (opts: Opts) => {
+  run: async (opts) => {
     const configs = await getTmuxConfigFileInfo()
     const rawConfig = await getTmuxConfig()
     const config = Object.fromEntries(
       Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(item)]),
     )
-    const sessions = await getCommandOutput(opts, 'tmux ls')
     const keys = Object.keys(config).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+    if (opts.bare) {
+      console.log(keys.join('\n'))
+      return
+    }
+    const sessions = await getCommandOutput(opts, 'tmux ls')
     console.log('tmux sessions:\n')
     console.log(indent(sessions.output))
     console.log('tmux config files:\n')
     console.log(
       ' - ' +
-      Object.entries(configs)
-        .map(([key, config]) =>
-          config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
-        )
-        .filter(Boolean)
-        .join('\n - ') +
-      '\n',
+        Object.entries(configs)
+          .map(([key, config]) =>
+            config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
+          )
+          .filter(Boolean)
+          .join('\n - ') +
+        '\n',
     )
     console.log('tmux configurations:\n')
     console.log(' - ' + keys.join('\n - '))
   },
-}
+})
+  .flag({
+    name: 'bare',
+    aliases: ['b'],
+    description:
+      'Show only the tmux session names, without the config or formatting (useful for scripting)',
+  })
+  .help({ bindOption: true, bindCommand: true })
 
 export type ConfigFileOpts = Opts & {
   local?: boolean

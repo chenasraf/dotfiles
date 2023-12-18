@@ -186,7 +186,6 @@ cmp.setup {
   },
 }
 return {
-
   'akinsho/flutter-tools.nvim',
   lazy = false,
   dependencies = {
@@ -224,6 +223,7 @@ return {
         -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
         -- see |:help dap.set_exception_breakpoints()| for more info
         exception_breakpoints = {},
+        ---@diagnostic disable-next-line: unused-local
         register_configurations = function(paths)
           require("dap").configurations.dart = {
             -- <put here config that you would find in .vscode/launch.json>
