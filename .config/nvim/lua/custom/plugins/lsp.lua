@@ -26,14 +26,28 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('<C-h>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, { buffer = true, desc = "Signature Documentation" })
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
   nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    local folders = vim.lsp.buf.list_workspace_folders()
+    require('telescope.pickers').new({}, {
+      prompt_title = "Workspace Folders",
+      finder = require('telescope.finders').new_table {
+        results = folders,
+        entry_maker = function(entry)
+          return {
+            value = entry,
+            display = entry,
+            ordinal = entry,
+          }
+        end,
+      },
+    }):find()
   end, '[W]orkspace [L]ist Folders')
 
   -- Create a command `:Format` local to the LSP buffer

@@ -64,6 +64,9 @@ vim.defer_fn(function()
     builtin.grep_string({ search = term })
   end)
 
+  local action_layout = require("telescope.actions.layout")
+  local actions = require("telescope.actions")
+
   vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
   vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
   vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
@@ -74,10 +77,26 @@ vim.defer_fn(function()
   vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
   vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
   vim.keymap.set('n', '<leader>st', "<Cmd>Telescope<CR>", { desc = '[S]earch [T]elescope Pickers' })
+  vim.keymap.set('n', '<leader>sq', "<Cmd>Telescope quickfix<CR>", { desc = '[S]earch [Q]uickfix' })
   pcall(require('telescope').load_extension, 'fzf')
   pcall(require('telescope').load_extension, 'media_files')
   require('telescope').setup {
     defaults = {
+      mappings = {
+        i = {
+          ['<C-u>'] = false,
+          ['<C-d>'] = false,
+          ['<C-h>'] = 'which_key',
+          ['<C-p>'] = action_layout.toggle_preview
+
+        },
+        n = {
+          ['<M-q>'] = false,
+          ['<C-q>'] = actions.add_selected_to_qflist + actions.open_qflist,
+          ['<C-p>'] = action_layout.toggle_preview
+
+        },
+      },
       file_ignore_patterns = {
         "node_modules"
       },
@@ -104,12 +123,6 @@ vim.defer_fn(function()
     pickers = {
       find_files = {
         find_command = { 'rg', '--files', '--hidden', '-g', '!.git', '-g', '!node_modules' },
-      },
-    },
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
       },
     },
   }
