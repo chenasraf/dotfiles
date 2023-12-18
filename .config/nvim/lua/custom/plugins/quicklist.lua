@@ -75,7 +75,7 @@ end
 
 local qf_dir = vim.fn.stdpath("data") .. "/qf_dump"
 
-function get_qf_dump()
+local function get_qf_dump()
   local prj_root = vim.fn.finddir(".git/..", vim.fn.expand("%:p:h") .. ";")
   if prj_root == "" then
     prj_root = vim.fn.getcwd()
@@ -85,7 +85,7 @@ function get_qf_dump()
   return file
 end
 
-function create_qf_dir()
+local function create_qf_dir()
   local file = get_qf_dump()
   local dir = file:gsub("/[^/]*$", "")
   if vim.fn.isdirectory(dir) == 0 then
@@ -102,7 +102,7 @@ function DumpQF()
     vim.cmd("echo 'Quickfix file not found: " .. file .. "'")
     return
   end
-  f:write(vim.inspect(qfall))
+  f:write("return " .. vim.inspect(qfall))
   f:close()
   vim.cmd("echo 'Quickfix dumped to " .. file .. "'")
 end
@@ -116,8 +116,7 @@ function LoadQF()
   end
   local qf = f:read("*all")
   f:close()
-  -- eval as lua
-  local tbl = vim.api.nvim_eval(qf)
+  local tbl = loadstring("return " .. qf)()
   vim.fn.setqflist(tbl, "r")
   vim.cmd("copen")
   vim.cmd("echo 'Quickfix loaded from " .. file .. "'")
