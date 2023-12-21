@@ -17,6 +17,10 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
 vim.keymap.set("n", "<leader>o", "o<Esc>k", { desc = "Insert newline below" })
 vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 
+vim.keymap.set("n", "<M-Left>", "b", { desc = "Move back word" })
+vim.keymap.set("n", "<M-Right>", "w", { desc = "Move forward word" })
+vim.keymap.set("n", "<C-m>", "<Plug>(VM-Add-Cursor-At-Pos)", { desc = "Add cursor at position" })
+
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
@@ -38,6 +42,7 @@ vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "Empty buf
 vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "Empty buffer above" })
 vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "Empty buffer left" })
 vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "Empty buffer right" })
+
 
 -- search and replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
