@@ -2,6 +2,7 @@ import { CosmiconfigResult, cosmiconfig } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
 import { Opts, getCommandOutput } from '../common'
+import { spawn } from 'node:child_process'
 
 const searchDirs = [
   process.cwd(),
@@ -220,4 +221,25 @@ export async function sessionExists(opts: Opts, sessionName: string): Promise<bo
   } catch (error) {
     return false
   }
+}
+
+export async function fzf(opts: Opts, inputs: string[]): Promise<string> {
+  const fzf = spawn(`echo "${inputs.join('\n')}" | fzf`, {
+    stdio: ['inherit', 'pipe', 'inherit'],
+    shell: true,
+  })
+
+  fzf.stdout.setEncoding('utf-8')
+
+  return new Promise((resolve, reject) => {
+    fzf.stdout.on('readable', function () {
+      const value = fzf.stdout.read()
+
+      if (value !== null) {
+        resolve(value.toString().trim())
+        return
+      }
+      reject()
+    })
+  })
 }

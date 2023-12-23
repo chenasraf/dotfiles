@@ -1,5 +1,5 @@
-import { Opts } from '../common'
-import { TmuxLayout, getTmuxConfig, parseConfig } from './utils'
+import { Opts, getCommandOutput } from '../common'
+import { TmuxLayout, fzf, getTmuxConfig, getTmuxConfigFileInfo, parseConfig } from './utils'
 import { createFromConfig } from './command_builder'
 
 const defaultLayout: TmuxLayout = {
@@ -14,7 +14,17 @@ const defaultLayout: TmuxLayout = {
 }
 
 export async function main(opts: Opts) {
-  const { key } = opts
+  let { key } = opts
+  if (!key) {
+    const {
+      merged: { config },
+    } = await getTmuxConfigFileInfo()
+    const output = await fzf(opts, Object.keys(config))
+    if (!output || !(output in config)) {
+      throw new Error('tmux config item not found')
+    }
+    key = output
+  }
   const config = await getTmuxConfig()
   const item = config[key]
   if (!item) {

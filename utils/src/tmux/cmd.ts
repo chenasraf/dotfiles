@@ -40,7 +40,6 @@ const mainCmd = massarg<Opts>({
     aliases: ['k'],
     description: 'The tmux session to open',
     isDefault: true,
-    required: true,
   })
   .help({
     bindOption: true,
