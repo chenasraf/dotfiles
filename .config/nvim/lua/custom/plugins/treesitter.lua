@@ -22,7 +22,10 @@ vim.defer_fn(function()
       use_languagetree = true,
     },
     autotag = { enable = true },
-    indent = { enable = true },
+    indent = {
+      enable = true,
+      disable = { "dart" },
+    },
     incremental_selection = {
       enable = true,
       keymaps = {

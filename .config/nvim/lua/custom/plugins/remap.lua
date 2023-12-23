@@ -20,6 +20,7 @@ vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 vim.keymap.set("n", "<M-Left>", "b", { desc = "Move back word" })
 vim.keymap.set("n", "<M-Right>", "w", { desc = "Move forward word" })
 vim.keymap.set("n", "<C-m>", "<Plug>(VM-Add-Cursor-At-Pos)", { desc = "Add cursor at position" })
+vim.keymap.set("x", "<leader>d", "yP", { desc = "Duplicate selection" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
