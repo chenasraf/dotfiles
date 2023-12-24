@@ -1,4 +1,4 @@
-import { Opts, getCommandOutput } from '../common'
+import { Opts } from '../common'
 import { TmuxLayout, fzf, getTmuxConfig, getTmuxConfigFileInfo, parseConfig } from './utils'
 import { createFromConfig } from './command_builder'
 
