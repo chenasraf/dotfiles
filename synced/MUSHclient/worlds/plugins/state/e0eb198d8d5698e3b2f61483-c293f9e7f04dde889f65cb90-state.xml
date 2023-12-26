@@ -18,9 +18,9 @@
   <variable name="enabled">true</variable>
   <variable name="hide_main_scroll">true</variable>
   <variable name="scrollbar_hidden_once">true</variable>
-  <variable name="trbottom">1220</variable>
+  <variable name="trbottom">1245</variable>
   <variable name="trleft">10</variable>
-  <variable name="trright">1574</variable>
+  <variable name="trright">1573</variable>
   <variable name="trtop">10</variable>
 </variables>
 </muclient>

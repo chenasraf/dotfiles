@@ -16,6 +16,9 @@
   >
   <variable name="background_colour">0</variable>
   <variable name="colorVals">colorVals = {}
+  colorVals.Mana = {}
+    colorVals.Mana[1] = 16733440
+    colorVals.Mana[2] = 4465152
   colorVals.Moves = {}
     colorVals.Moves[1] = 65535
     colorVals.Moves[2] = 17476
@@ -24,10 +27,7 @@
     colorVals.Align[2] = 65535
   colorVals.Health = {}
     colorVals.Health[1] = 65280
-    colorVals.Health[2] = 17408
-  colorVals.Mana = {}
-    colorVals.Mana[1] = 16733440
-    colorVals.Mana[2] = 4465152</variable>
+    colorVals.Health[2] = 17408</variable>
   <variable name="enabled">true</variable>
   <variable name="font_name">MesloLGS NF</variable>
   <variable name="font_size">8</variable>
