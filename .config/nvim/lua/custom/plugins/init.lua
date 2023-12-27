@@ -87,4 +87,6 @@ vim.o.termguicolors = true
 -- enable project-level lua files
 vim.o.exrc = true
 
+vim.o.gp = "git grep -n"
+
 return {}
