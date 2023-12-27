@@ -828,6 +828,22 @@ wait.make(function()
 end)</send>
   </alias>
   <alias
+   match="depos"
+   enabled="y"
+   group="inventory"
+   send_to="12"
+   sequence="100"
+  >
+  <send>require "gmcphelper"
+
+local gold = gmcp('char.worth.gold')
+local dep_gold = gold - 100000
+
+if dep_gold &gt; 0 then
+  Send("deposit " .. dep_gold)
+end</send>
+  </alias>
+  <alias
    match="di *"
    enabled="y"
    group="inventory"

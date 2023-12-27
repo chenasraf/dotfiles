@@ -15,6 +15,24 @@
    world_file_version="15"
   >
   <variable name="channels_table">channels_table = {}
+  channels_table.telepathy = {}
+    channels_table.telepathy.echo = true
+  channels_table.tell = {}
+    channels_table.tell.echo = true
+  channels_table.tiertalk = {}
+    channels_table.tiertalk.echo = true
+  channels_table.trivia = {}
+    channels_table.trivia.echo = true
+  channels_table.wangrp = {}
+    channels_table.wangrp.echo = true
+  channels_table.wardrums = {}
+    channels_table.wardrums.echo = true
+  channels_table.yell = {}
+    channels_table.yell.echo = true
+  channels_table.claninfo = {}
+    channels_table.claninfo.echo = true
+  channels_table.globalecho = {}
+    channels_table.globalecho.echo = true
   channels_table.answer = {}
     channels_table.answer.echo = true
   channels_table.auction = {}
@@ -92,26 +110,10 @@
   channels_table.spouse = {}
     channels_table.spouse.echo = true
   channels_table.tech = {}
-    channels_table.tech.echo = true
-  channels_table.telepathy = {}
-    channels_table.telepathy.echo = true
-  channels_table.tell = {}
-    channels_table.tell.echo = true
-  channels_table.tiertalk = {}
-    channels_table.tiertalk.echo = true
-  channels_table.trivia = {}
-    channels_table.trivia.echo = true
-  channels_table.wangrp = {}
-    channels_table.wangrp.echo = true
-  channels_table.wardrums = {}
-    channels_table.wardrums.echo = true
-  channels_table.yell = {}
-    channels_table.yell.echo = true
-  channels_table.claninfo = {}
-    channels_table.claninfo.echo = true
-  channels_table.globalecho = {}
-    channels_table.globalecho.echo = true</variable>
+    channels_table.tech.echo = true</variable>
   <variable name="nonchannels_table">nonchannels_table = {}
+  nonchannels_table.info = {}
+    nonchannels_table.info.echo = true
   nonchannels_table.raidinfo = {}
     nonchannels_table.raidinfo.echo = true
   nonchannels_table.claninfo = {}
@@ -123,8 +125,6 @@
   nonchannels_table.warfare = {}
     nonchannels_table.warfare.echo = true
   nonchannels_table.remort_auction = {}
-    nonchannels_table.remort_auction.echo = true
-  nonchannels_table.info = {}
-    nonchannels_table.info.echo = true</variable>
+    nonchannels_table.remort_auction.echo = true</variable>
 </variables>
 </muclient>
