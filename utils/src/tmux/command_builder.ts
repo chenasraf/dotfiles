@@ -1,5 +1,6 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
+import * as os from 'node:os'
 import { Opts, log, runCommand } from '../common'
 import {
   ParsedTmuxConfigItem,
@@ -84,12 +85,14 @@ export async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmux
     throw new Error(`tmux config item ${config.name} already exists`)
   }
 
+  const dirFix = (dir: string) => dir.replace(config.root, './').replace(os.homedir(), '~')
+
   // dump config as yaml
   const contents = `
 ${config.name}:
   root: ${config.root}
   windows:
-${config.windows.map((w) => `    - ${w.dir.replace(config.root, './')}`).join('\n')}
+${config.windows.map((w) => `    - ${dirFix(w.dir)}`).join('\n')}
 `
   if (opts.dry) {
     if (existingConfig[config.name]) {

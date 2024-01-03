@@ -2,8 +2,8 @@ export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
 export DOTBIN="$CFG/bin"
 
-# echo 'Loading '$DOTFILES/functions.sh
 source "$DOTFILES/functions.sh"
+source "$DOTFILES/exports.sh"
 
 [[ "$1" == "-q" ]] || motd
 

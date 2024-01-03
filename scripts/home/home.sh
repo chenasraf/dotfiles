@@ -32,7 +32,7 @@ home() {
     pull | l)
       shift
       git -C "$DOTFILES" pull
-      # if [[ $? -eq 0 ]]; then
+      # if [[ $? -eq 0 ]]; the
       #   reload-zsh
       # fi
       ;;

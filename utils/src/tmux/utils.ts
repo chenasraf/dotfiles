@@ -50,14 +50,14 @@ export type TmuxLayoutType = 'row' | 'column' | 'pane'
 
 export type TmuxLayout =
   | {
-      type: Exclude<TmuxLayoutType, 'pane'>
-      children: TmuxLayout[]
-      zoom?: boolean
-    }
+    type: Exclude<TmuxLayoutType, 'pane'>
+    children: TmuxLayout[]
+    zoom?: boolean
+  }
   | {
-      type: 'pane'
-      zoom?: boolean
-    }
+    type: 'pane'
+    zoom?: boolean
+  }
 
 const defaultPanes = [
   {
@@ -96,16 +96,16 @@ export function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
       dir: path.resolve(root, w.dir),
       panes: w.panes
         ? w.panes.map((p) => {
-            if (typeof p === 'string') {
-              return {
-                dir: dirFix(path.resolve(root, w.dir, p)),
-              }
-            }
+          if (typeof p === 'string') {
             return {
-              dir: dirFix(path.resolve(root, w.dir, p.dir)),
-              cmd: p.cmd,
+              dir: dirFix(path.resolve(root, w.dir, p)),
             }
-          })
+          }
+          return {
+            dir: dirFix(path.resolve(root, w.dir, p.dir)),
+            cmd: p.cmd,
+          }
+        })
         : defaultPanes,
     }
   })
@@ -185,21 +185,21 @@ export function throwNoConfigFound() {
     [
       'tmux config file not found, searched in:',
       '\t' +
-        searchDirs
-          .map((x) =>
-            searchPatterns('tmux')
-              .map((y) => path.join(x, y))
-              .join('\n\t'),
-          )
-          .join('\n\t'),
+      searchDirs
+        .map((x) =>
+          searchPatterns('tmux')
+            .map((y) => path.join(x, y))
+            .join('\n\t'),
+        )
+        .join('\n\t'),
       '\t' +
-        searchDirs
-          .map((x) =>
-            searchPatterns('tmux_local')
-              .map((y) => path.join(x, y))
-              .join('\n\t'),
-          )
-          .join('\n\t'),
+      searchDirs
+        .map((x) =>
+          searchPatterns('tmux_local')
+            .map((y) => path.join(x, y))
+            .join('\n\t'),
+        )
+        .join('\n\t'),
       // searchInFor('tmux').map(x => path.join(d)).join('\n\t'),
       // searchInFor('tmux_local').join('\n\t'),
     ].join('\n'),
@@ -232,7 +232,7 @@ export async function fzf(opts: Opts, inputs: string[]): Promise<string> {
   fzf.stdout.setEncoding('utf-8')
 
   return new Promise((resolve, reject) => {
-    fzf.stdout.on('readable', function () {
+    fzf.stdout.on('readable', function() {
       const value = fzf.stdout.read()
 
       if (value !== null) {

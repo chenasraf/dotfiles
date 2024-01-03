@@ -159,9 +159,11 @@ rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf
 
-echo_cyan "Reloading zplug..."
-zplug clear
-zplug load --verbose
+if ask_no "Reload zplug?"; then
+  echo_cyan "Reloading zplug..."
+  zplug clear
+  zplug load --verbose
+fi
 
 echo_cyan "Done"
 

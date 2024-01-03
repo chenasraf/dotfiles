@@ -3,6 +3,8 @@ import { Opts, runCommand, withDefaultOpts } from '../common'
 import { gitCommand, pullCommand, pushCommand, statusCommand } from './git_cmd'
 import { DF_DIR, HomeOpts } from './common'
 import { utilsCommand } from './utils_cmd'
+import { mushCommand } from './mush_cmd'
+import { brewCommand } from './brew_cmd'
 
 async function sourceRun(opts: Opts, cmd: string | string[]) {
   return runCommand(opts, [`source "${DF_DIR}/.zshrc" -q`, ...(Array.isArray(cmd) ? cmd : [cmd])])
@@ -19,6 +21,8 @@ withDefaultOpts(
   .command(pushCommand)
   .command(pullCommand)
   .command(utilsCommand)
+  .command(mushCommand)
+  .command(brewCommand)
   .command({
     name: 'install',
     aliases: ['i'],

@@ -8,3 +8,9 @@ df:
     - .
     - utils
 
+dotfiles:
+  name: dotfiles
+  root: ~/.dotfiles
+  windows:
+    - .
+    - utils

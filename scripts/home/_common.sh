@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
 # source $DOTFILES/plugins/colors.plugin.zsh
-source $DOTFILES/exports.sh
+source "$DOTFILES/exports.sh"
+source "$DOTFILES/functions.sh"
 
 __home_print_help_arg() {
   echo_yellow "    $1\t$2"

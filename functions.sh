@@ -346,3 +346,19 @@ xrg () {
   fi
   printf "%s\n" "$1" | xargs -I {} bash -c "$2"
 }
+
+ask() {
+  read -p "$1 [Y/n] " -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
+    return 0
+  fi
+  return 1
+}
+
+ask_no() {
+  read -p "$1 [y/N] " -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    return 0
+  fi
+  return 1
+}
