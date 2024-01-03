@@ -108,3 +108,5 @@ export SHELLCHECK_OPTS='--shell=bash'
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
+
+export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
