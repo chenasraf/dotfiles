@@ -348,7 +348,8 @@ xrg () {
 }
 
 ask() {
-  read -p "$1 [Y/n] " -n 1 -r
+  echo -n "$1 [Y/n] "
+  read REPLY
   if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
     return 0
   fi
@@ -356,7 +357,8 @@ ask() {
 }
 
 ask_no() {
-  read -p "$1 [y/N] " -n 1 -r
+  echo -n "$1 [y/N] "
+  read REPLY
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     return 0
   fi

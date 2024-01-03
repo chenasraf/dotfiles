@@ -2,6 +2,16 @@
 
 source $DOTFILES/scripts/home/_common.sh
 source $DOTFILES/scripts/man.sh
+ZPLUG=0
+shift
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -z | --zplug)
+      ZPLUG=1
+      ;;
+  esac
+  shift
+done
 
 cwd="$(pwd)"
 pushd $DOTFILES
@@ -12,10 +22,7 @@ write_default "NSScrollViewRubberbanding" "-bool FALSE"
 git config --global core.excludesfile ~/.config/.gitignore
 
 # Manfile
-
 man_install
-
-cd $cwd
 
 # gi_gen
 echo_cyan "Fetching gi_gen latest version..."
@@ -159,7 +166,7 @@ rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf
 
-if ask_no "Reload zplug?"; then
+if [[ $ZPLUG -eq 1 ]]; then
   echo_cyan "Reloading zplug..."
   zplug clear
   zplug load --verbose
