@@ -31,7 +31,9 @@ autocmd("BufWinEnter", {
 
     vim.keymap.set("n", "<leader>gp", function()
       local current_branch = vim.fn.FugitiveHead()
-      vim.cmd("Git push origin @:refs/heads/" .. current_branch)
+      local cmd = "Git push origin @:refs/heads/" .. current_branch
+      vim.print(cmd)
+      vim.cmd(cmd)
     end, optc("[fugitive] [P]ush all unpushed commits"))
 
     -- rebase always
@@ -59,9 +61,10 @@ autocmd("BufWinEnter", {
     vim.keymap.set("n", "<leader>gup", function()
       local current_branch = vim.fn.FugitiveHead()
 
-      local cmd = ":Git push -u origin " .. current_branch
-      local esc_cmd = vim.api.nvim_replace_termcodes(cmd, true, true, true)
-      vim.api.nvim_feedkeys(esc_cmd, "n", true)
+      local raw_cmd = ":Git push -u origin " .. current_branch
+      local cmd = vim.api.nvim_replace_termcodes(raw_cmd, true, true, true)
+      vim.print(cmd)
+      vim.api.nvim_feedkeys(cmd, "n", true)
     end, optc("[fugitive] [u]pstream push"))
 
     vim.keymap.set("n", "<leader>gf", ":Git fetch<CR>", optc("[fugitive] [f]etch"))
