@@ -7,6 +7,7 @@ import { indent, strConcat } from 'massarg/utils'
 import { format } from 'massarg/style'
 import { MassargCommand } from 'massarg/command'
 import {
+  attachToSession,
   getTmuxConfig,
   getTmuxConfigFileInfo,
   nameFix,
@@ -95,7 +96,11 @@ const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: boolean }
       return
     }
     const sessionsOutput = await getCommandOutput(opts, 'tmux ls')
-    const sessions = sessionsOutput.output.replace(/\(created ([^)]+)\)/g, '$1')
+    let sessions = sessionsOutput.output.replace(/\(created ([^)]+)\)/g, '$1')
+    sessions = sessions
+      .split('\n')
+      .map((line) => line.replace(/^([^:]+):/, '$1').trim())
+      .join('\n')
     const tbl = await getCommandOutput(
       opts,
       `echo ${JSON.stringify(
@@ -111,13 +116,13 @@ const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: boolean }
     console.log('tmux config files:\n')
     console.log(
       ' - ' +
-        Object.entries(configs)
-          .map(([key, config]) =>
-            config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
-          )
-          .filter(Boolean)
-          .join('\n - ') +
-        '\n',
+      Object.entries(configs)
+        .map(([key, config]) =>
+          config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
+        )
+        .filter(Boolean)
+        .join('\n - ') +
+      '\n',
     )
     console.log('tmux configurations:\n')
     console.log(' - ' + keys.join('\n - '))
@@ -244,7 +249,11 @@ const attachCmd = new MassargCommand<Opts>({
       if (!(await sessionExists(opts, sessionName))) {
         throw new Error(`tmux session ${sessionName} does not exist`)
       }
-      await runCommand(opts, `tmux attach -t ${sessionName}`)
+      return attachToSession(opts, sessionName)
+    }
+
+    if (process.env.TMUX) {
+      log(opts, 'Already in tmux and no key specified, not attaching')
       return
     }
 

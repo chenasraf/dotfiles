@@ -1,7 +1,7 @@
 import { CosmiconfigResult, cosmiconfig } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
-import { Opts, getCommandOutput } from '../common'
+import { Opts, getCommandOutput, runCommand } from '../common'
 import { spawn } from 'node:child_process'
 
 const searchDirs = [
@@ -223,7 +223,7 @@ export async function sessionExists(opts: Opts, sessionName: string): Promise<bo
   }
 }
 
-export async function fzf(opts: Opts, inputs: string[]): Promise<string> {
+export async function fzf(_opts: Opts, inputs: string[]): Promise<string> {
   const fzf = spawn(`echo "${inputs.join('\n')}" | fzf`, {
     stdio: ['inherit', 'pipe', 'inherit'],
     shell: true,
@@ -242,4 +242,13 @@ export async function fzf(opts: Opts, inputs: string[]): Promise<string> {
       reject()
     })
   })
+}
+
+export async function attachToSession(opts: Opts, sessionName: string): Promise<void> {
+  if (process.env.TMUX) {
+    await runCommand(opts, `tmux switch-client -t ${sessionName}`)
+    return
+  }
+  await runCommand(opts, `tmux attach -t ${sessionName}`)
+  return
 }

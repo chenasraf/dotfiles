@@ -1,5 +1,13 @@
 import { Opts } from '../common'
-import { TmuxLayout, fzf, getTmuxConfig, getTmuxConfigFileInfo, parseConfig } from './utils'
+import {
+  TmuxLayout,
+  attachToSession,
+  fzf,
+  getTmuxConfig,
+  getTmuxConfigFileInfo,
+  parseConfig,
+  sessionExists,
+} from './utils'
 import { createFromConfig } from './command_builder'
 
 const defaultLayout: TmuxLayout = {
@@ -31,6 +39,9 @@ export async function main(opts: Opts) {
     throw new Error(`tmux config item ${key} not found`)
   }
 
-  const tmuxConfig = parseConfig(item)
-  createFromConfig(opts, tmuxConfig)
+  const parsed = parseConfig(item)
+  if (await sessionExists(opts, parsed.name)) {
+    return attachToSession(opts, parsed.name)
+  }
+  return createFromConfig(opts, parsed)
 }
