@@ -27,12 +27,12 @@ man_install
 # gi_gen
 echo_cyan "Fetching gi_gen latest version..."
 gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
-ver_file="$HOME/.config/.bin/.gi_gen_version"
+ver_file="$HOME/.bin/.gi_gen_version"
 mkdir -p $(dirname $ver_file)
 touch $ver_file
 existing_ver=$(cat $ver_file)
 if [[ "$existing_ver" != "$gi_ver" ]]; then
-  echo_cyan "Downloading gi_gen $gi_ver..."
+  echo_cyan "Downloading gi_gen $gi_ver to $DOTBIN..."
   mkdir -p $DOTBIN
   mkdir -p $HOME/.config/.bin
   if is_mac; then
@@ -82,47 +82,23 @@ for ((i = 1; i <= $#install_npm; i++)); do
 done
 
 if [[ $#install_npm_final -gt 0 ]]; then
-  echo_cyan "Installing pnpm packages ($install_npm_final)..."
-  pnpm install -g $install_npm_final
+  if ask "Install npm packages $install_npm_final?"; then
+    echo_cyan "Installing pnpm packages ($install_npm_final)..."
+    pnpm install -g $install_npm_final
+  else
+    echo_cyan "Skipping npm packages installation."
+  fi
 else
   echo_cyan "All pnpm packages already installed."
 fi
 
-# local npm packages
-check_npm_local=(
-  "tx"
-)
-
-install_npm_local=(
-  "utils@file:$DOTFILES/utils/build"
-)
-
-install_npm_final_local=()
-
-for ((i = 1; i <= $#install_npm_local; i++)); do
-  which $check_npm_local[$i] >/dev/null 2>&1
-  exit_code=$?
-  if [[ $exit_code -ne 0 ]]; then
-    install_npm_final_local+=("${install_npm_local[$i]}")
-  fi
-done
-
-if [[ $#install_npm_final_local -gt 0 ]]; then
-  echo_cyan "Building local pnpm packages ($install_npm_final_local)..."
-  for ((i = 1; i <= $#install_npm_final_local; i++)); do
-    dir="${install_npm_final_local[$i]}"
-    dir=$(dirname "${dir##*:}")
-    echo_cyan "Building $dir..."
-    pushd $dir
-    pnpm build
-    popd
-  done
-  echo_cyan "Installing local pnpm packages ($install_npm_final_local)..."
-  pnpm install -g $install_npm_final_local
-else
-  echo_cyan "All local pnpm packages already installed."
+if [[ ! -f $(which tx) ]]; then
+  echo_cyan "Installing utils..."
+  pushd $DOTFILES/utils
+  pnpm install && pnpm build && pnpm ginst
+  popd
 fi
-
+  
 # zplug
 if [[ ! -d $HOME/.zplug ]]; then
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -140,23 +116,13 @@ if [[ ! -d ~/.tmux-power ]]; then
   git clone git@github.com:wfxr/tmux-power.git ~/.tmux-power
 fi
 
-# if [[ ! -f $(which tblf) ]]; then
-#   echo_cyan "Installing tblf..."
-#   file=$(mktemp -d)
-#   git clone https://github.com/chenasraf/tblf --depth=1 $file/tblf
-#   cd $file/tblf
-#   make build && make install
-#   cd $cwd
-#   rm -rf $file
-# fi
-
 # .config
 rflags='-vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store"'
 rsync_template="rsync $rflags {}"
-# printf "%s\n" "--delete $DOTFILES/.config/nvim $HOME/.config/nvim" | xargs -I {} bash -c "$rsync_template"
-# printf "%s\n" "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" | xargs -I {} bash -c "$rsync_template"
+
 echo_cyan "Copying $DOTFILES/.config/nvim to $HOME/.config/nvim..."
 xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
+
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
 xrg "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
 

@@ -1,6 +1,6 @@
 export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
-export DOTBIN="$CFG/bin"
+export DOTBIN="$HOME/bin"
 
 source "$DOTFILES/functions.sh"
 source "$DOTFILES/exports.sh"
