@@ -26,7 +26,7 @@ end ]]
 
 -- This is where you actually apply your config choices
 config.font = wezterm.font_with_fallback({
-  { family = "MesloLGS Nerd Font", weight = "Medium", harfbuzz_features = { 'zero' } },
+  { family = "MesloLGS Nerd Font", weight = "Medium" },
 
   { family = "FiraCode Nerd Font", weight = "Medium", harfbuzz_features = { 'zero' } },
 

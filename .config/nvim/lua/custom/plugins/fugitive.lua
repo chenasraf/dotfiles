@@ -1,5 +1,16 @@
+-- Global (non-buffer) fugitive mappings
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[fugitive] status' })
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { silent = true, desc = "[fugitive] blame" })
+vim.keymap.set("n", "<leader>gB", ":GBrowse<CR>", { silent = true, desc = "[G]it [B]rowse current file/line" })
+vim.api.nvim_create_user_command(
+  "Browse",
+  function(opts)
+    local current_row = vim.fn.line(".")
+    local current_col = vim.fn.col(".")
+    local cmd = [[!open -u "]] .. opts.args .. [[\#L]] .. current_row .. [[:]] .. current_col .. [["]]
+    vim.cmd(cmd, { silent = true })
+  end,
+  { nargs = 1, force = true })
 
 local casraf_fugitive = vim.api.nvim_create_augroup("casraf_fugitive", {})
 

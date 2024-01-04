@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[R]estart [L]SP" })
+vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart" })
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
