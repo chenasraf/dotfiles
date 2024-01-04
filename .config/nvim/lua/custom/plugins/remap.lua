@@ -92,8 +92,8 @@ vim.keymap.set("n", "<Leader>cp", ":Copilot panel<CR>", { desc = "Open Copilot p
 vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
 
 -- TODO only apply on JS files
-vim.keymap.set("n", "<leader>dp", "<esc>dawbx", { desc = "Delete JS property (forwards)" })
-vim.keymap.set("n", "<leader>dP", "<esc>dawx", { desc = "Delete JS property (back)" })
+vim.keymap.set("n", "<leader>db", "<esc>dawdb", { desc = "Delete JS property (back)" })
+vim.keymap.set("n", "<leader>dw", "<esc>dawdw", { desc = "Delete JS property (fowards)" })
 
 vim.keymap.set({ "n", "v" }, "<F2>", vim.lsp.buf.rename)
 
