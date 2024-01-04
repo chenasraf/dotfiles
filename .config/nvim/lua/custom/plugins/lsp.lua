@@ -1,3 +1,4 @@
+vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[R]estart [L]SP" })
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -199,6 +200,7 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
 return {
   'akinsho/flutter-tools.nvim',
   lazy = false,

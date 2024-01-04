@@ -88,8 +88,9 @@ else
 fi
 
 # home
+alias home="h_"
 alias h="home"
-alias hi="home install"
+alias hi="source \$DOTFILES/install.sh"
 alias rh="rhome"
 alias rt="home rt"
 alias hst="home status"
@@ -99,7 +100,7 @@ alias hp="home push"
 alias hl="home pull"
 alias hlog="home git log"
 alias hiv="home install; vim ."
-alias hv="pushd \$(wd path df); v; popd"
+alias hv="vi \$(wd path df)"
 alias spider="ssh root@spider.casraf.dev"
 
 # docker

@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
+[[ $(which echo_cyan) ]] && echo_cyan "Setting up..." || echo "Setting up..."
 source $DOTFILES/scripts/home/_common.sh
 source $DOTFILES/scripts/man.sh
 ZPLUG=0
-shift
 while [[ $# -gt 0 ]]; do
   case $1 in
     -z | --zplug)
@@ -17,8 +17,8 @@ cwd="$(pwd)"
 pushd $DOTFILES
 
 echo_cyan "Setting defaults..."
-write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"
-write_default "NSScrollViewRubberbanding" "-bool FALSE"
+is_mac && write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"
+is_mac && write_default "NSScrollViewRubberbanding" "-bool FALSE"
 git config --global core.excludesfile ~/.config/.gitignore
 
 # Manfile
