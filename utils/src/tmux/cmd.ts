@@ -13,6 +13,7 @@ import { attachCmd } from './attach_cmd'
 // ================================================================================
 // Commands
 // ================================================================================
+// TODO move to tmux.ts
 const mainCmd = massarg<Opts>({
   name: 'tmux',
   description: 'Generate layouts for tmux using presets or on-the-fly args.',

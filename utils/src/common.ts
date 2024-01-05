@@ -45,7 +45,7 @@ export async function runCommand(opts: Opts, command: string | string[]): Promis
       if (code === 0) {
         resolve(code)
       } else {
-        reject(code)
+        reject(new Error(`Command: \`${cmd} ${args.join(' ')}\` exited with code: ${code}`))
       }
     })
   })

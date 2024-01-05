@@ -4,13 +4,14 @@ import * as os from 'node:os'
 import { Opts, log, runCommand } from '../common'
 import {
   ParsedTmuxConfigItem,
+  attachToSession,
   getTmuxConfig,
   getTmuxConfigFileInfo,
   nameFix,
   sessionExists,
   transformCmdToTmuxKeys,
 } from './utils'
-import { CreateOpts } from './cmd'
+import { CreateOpts } from './create_cmd'
 
 export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigItem) {
   const { root, windows } = tmuxConfig
@@ -32,7 +33,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 
   // Main window split
   commands.push(
-    `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}`,
+    `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}; sleep 1`,
   )
   commands.push(`tmux split-window -h -t ${sessionName} -c ${root}`)
   commands.push(`tmux select-pane -t 0`)
@@ -47,7 +48,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
     log(opts, 'Window name:', windowName)
 
     const cmd = firstPane.cmd ? transformCmdToTmuxKeys(firstPane.cmd) : null
-    commands.push(`tmux new-window -n ${windowName} -c ${dir}`)
+    commands.push(`tmux new-window -t ${sessionName} -n ${windowName} -c ${dir}`)
     if (cmd) {
       commands.push(`tmux send-keys -t ${sessionName}:${windowName} ${cmd} Enter`)
     }
@@ -70,7 +71,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
     await runCommand(opts, command)
   }
 
-  await runCommand(opts, `tmux attach -t ${sessionName}`)
+  await attachToSession(opts, sessionName)
 }
 
 export async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmuxConfigItem) {

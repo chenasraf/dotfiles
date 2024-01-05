@@ -64,6 +64,13 @@ config.mouse_bindings = {
 }
 config.keys = {
   ----------------------------------------------------------------------------------
+  --- wezterm
+  ----------------------------------------------------------------------------------
+  -- Increase font size: Cmd+Shift+Equal
+  { key = "=", mods = "CMD|SHIFT", action = act.IncreaseFontSize },
+  -- Reset font size: Cmd+Shift+0
+  { key = "0", mods = "CMD|SHIFT", action = act.ResetFontSize },
+  ----------------------------------------------------------------------------------
   --- tmux
   ----------------------------------------------------------------------------------
   -- move between tmux panes: Cmd+Shift+(HJKL) or Cmd+Shift+(Left Down Up Right) Arrow
@@ -101,6 +108,8 @@ config.keys = {
   { key = "d", mods = "CMD|SHIFT", action = act { SendString = "\x02_" } },
   -- Create new window - Cmd+T
   { key = "t", mods = "CMD", action = act { SendString = "\x02c" } },
+  -- Set split equal - Cmd+=
+  { key = "=", mods = "CMD", action = act { SendString = "\x02E" } },
 
   ----------------------------------------------------------------------------------
   --- vim

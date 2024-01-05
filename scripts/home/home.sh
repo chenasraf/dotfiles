@@ -2,7 +2,7 @@
 
 source $DOTFILES/scripts/home/_common.sh
 
-home() {
+home_old() {
   if [[ $# -eq 0 ]]; then
     echo_red "No command provided. Use -h for options."
     return 0

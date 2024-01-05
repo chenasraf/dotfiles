@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import { Opts, log } from '../common'
 import { MassargCommand } from 'massarg/command'
-import { nameFix, parseConfig } from './utils'
+import { attachToSession, nameFix, parseConfig, sessionExists } from './utils'
 import { addSimpleConfigToFile, createFromConfig } from './command_builder'
 
 export type CreateOpts = Opts & {
@@ -23,6 +23,12 @@ export const createCmd = new MassargCommand<CreateOpts>({
       root: opts.rootDir ?? process.cwd(),
       windows: opts.window ?? ['.'],
     })
+
+    if (await sessionExists(opts, config.name)) {
+      log(opts, 'Session already exists, attaching')
+      return attachToSession(opts, config.name)
+    }
+
     if (opts.save || opts.saveOnly) {
       addSimpleConfigToFile(opts, config)
     }
