@@ -1,7 +1,7 @@
 import * as util from 'node:util'
 import { Opts } from '../common'
 import { MassargCommand } from 'massarg/command'
-import { getTmuxConfig, parseConfig } from './utils'
+import { fzf, getTmuxConfig, parseConfig } from './utils'
 
 export const showCmd = new MassargCommand<Opts>({
   name: 'show',
@@ -9,7 +9,10 @@ export const showCmd = new MassargCommand<Opts>({
   description: 'Show the tmux configuration file for a specific key',
   run: async (opts) => {
     const config = await getTmuxConfig()
-    const { key } = opts
+    let { key } = opts
+    if (!key) {
+      key = await fzf(opts, Object.keys(config))
+    }
     const item = parseConfig(config[key])
     if (!item) {
       throw new Error(`tmux config item ${key} not found`)
@@ -22,6 +25,5 @@ export const showCmd = new MassargCommand<Opts>({
     aliases: ['k'],
     description: 'The tmux session to show',
     isDefault: true,
-    required: true,
   })
   .help({ bindOption: true, bindCommand: true })
