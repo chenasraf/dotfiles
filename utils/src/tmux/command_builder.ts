@@ -4,6 +4,7 @@ import * as os from 'node:os'
 import { Opts, log, runCommand } from '../common'
 import {
   ParsedTmuxConfigItem,
+  TmuxPaneLayout,
   attachToSession,
   getTmuxConfig,
   getTmuxConfigFileInfo,
@@ -14,7 +15,7 @@ import {
 import { CreateOpts } from './create_cmd'
 
 export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigItem) {
-  const { root, windows } = tmuxConfig
+  const { root, windows: windows } = tmuxConfig
   log(opts, 'Config:', tmuxConfig)
 
   const commands: string[] = []
@@ -40,27 +41,11 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 
   // Create all other windows
   for (const window of windows) {
-    const dir = window.dir
+    const dir = window.cwd
     const windowName = window.name || nameFix(path.basename(dir))
 
-    const [firstPane, ...restPanes] = window.panes
-
-    log(opts, 'Window name:', windowName)
-
-    const cmd = firstPane.cmd ? transformCmdToTmuxKeys(firstPane.cmd) : null
-    commands.push(`tmux new-window -t ${sessionName} -n ${windowName} -c ${dir}`)
-    if (cmd) {
-      commands.push(`tmux send-keys -t ${sessionName}:${windowName} ${cmd} Enter`)
-    }
-
-    let direction = '-h'
-    for (const pane of restPanes) {
-      const cmd = pane.cmd ? transformCmdToTmuxKeys(pane.cmd) : ''
-      commands.push(
-        `tmux split-window ${direction} -t ${sessionName}:${windowName} -c ${dir} ${cmd}`.trim(),
-      )
-      direction = '-v'
-    }
+    const paneCommands: string[] = getPaneCommands(window.layout, { windowName, sessionName })
+    commands.push(...paneCommands)
     commands.push(`tmux select-pane -t 0`)
     commands.push(`tmux resize-pane -Z`)
   }
@@ -72,6 +57,32 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
   }
 
   await attachToSession(opts, sessionName)
+}
+
+function getPaneCommands(
+  pane: TmuxPaneLayout,
+  { windowName, sessionName }: { windowName: string; sessionName: string },
+): string[] {
+  const commands: string[] = []
+  const cmd = pane.cmd ? transformCmdToTmuxKeys(pane.cmd) : ''
+  if (cmd) {
+    commands.push(`tmux send-keys -t ${sessionName}:${windowName} ${cmd} Enter`)
+  }
+  if (pane.split) {
+    commands.push(
+      `tmux split-window ${pane.split.direction || 'h'}` +
+      ` -t ${sessionName}:${windowName} -c ${pane.cwd} ${cmd}`.trim(),
+    )
+    if (pane.split.child) {
+      commands.push(
+        ...getPaneCommands(pane.split.child, {
+          windowName,
+          sessionName,
+        }),
+      )
+    }
+  }
+  return commands
 }
 
 export async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmuxConfigItem) {
@@ -93,7 +104,7 @@ export async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmux
 ${config.name}:
   root: ${config.root}
   windows:
-${config.windows.map((w) => `    - ${dirFix(w.dir)}`).join('\n')}
+${config.windows.map((w) => `    - ${dirFix(w.cwd)}`).join('\n')}
 `
   if (opts.dry) {
     if (existingConfig[config.name]) {

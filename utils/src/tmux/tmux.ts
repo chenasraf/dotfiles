@@ -1,6 +1,7 @@
 import { Opts } from '../common'
 import {
   TmuxLayout,
+  TmuxPaneLayout,
   attachToSession,
   fzf,
   getTmuxConfig,
@@ -9,17 +10,6 @@ import {
   sessionExists,
 } from './utils'
 import { createFromConfig } from './command_builder'
-
-const defaultLayout: TmuxLayout = {
-  type: 'row',
-  zoom: true,
-  children: [
-    {
-      type: 'column',
-      children: [{ type: 'pane' }, { type: 'pane' }],
-    },
-  ],
-}
 
 export async function main(opts: Opts) {
   let { key } = opts
@@ -39,7 +29,7 @@ export async function main(opts: Opts) {
     throw new Error(`tmux config item ${key} not found`)
   }
 
-  const parsed = parseConfig(item)
+  const parsed = parseConfig(key, item)
   if (await sessionExists(opts, parsed.name)) {
     return attachToSession(opts, parsed.name)
   }

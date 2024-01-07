@@ -19,33 +19,35 @@ function searchPatterns(name: string) {
 const globalExplorer = cosmiconfig('tmux', { searchPlaces: searchPatterns('tmux') })
 const localExplorer = cosmiconfig('tmux_local', { searchPlaces: searchPatterns('tmux_local') })
 
-export type TmuxConfigItem = {
+export type TmuxConfigItemInput = {
   root: string
   name: string
-  windows: TmuxWindowType[]
+  blank_window?: boolean
+  windows: TmuxWindowInput[]
 }
 
-export type TmuxWindowType = string | TmuxWindow
+export type TmuxWindowInput = string | TmuxWindow
 
 export type TmuxWindow = {
   name: string
-  dir: string
-  layout?: 'default'
-  panes: TmuxPaneType[]
+  cwd: string
+  layout?: TmuxLayoutInput
 }
 
-export type TmuxPaneType = string | TmuxPane
+export type TmuxLayoutInput = string | string[] | TmuxPaneLayout
 
 export type TmuxPane = {
   dir: string
   cmd?: string
 }
 
-export type ConfigFile = Record<string, TmuxConfigItem>
+export type ConfigFile = Record<string, TmuxConfigItemInput>
 
-export type ParsedTmuxConfigItem = Omit<TmuxConfigItem, 'windows'> & { windows: ParsedTmuxWindow[] }
+export type ParsedTmuxConfigItem = Omit<TmuxConfigItemInput, 'windows'> & {
+  windows: ParsedTmuxWindow[]
+}
 
-export type ParsedTmuxWindow = Omit<TmuxWindow, 'panes'> & { panes: TmuxPane[] }
+export type ParsedTmuxWindow = Omit<TmuxWindow, 'layout'> & { layout: TmuxPaneLayout }
 export type TmuxLayoutType = 'row' | 'column' | 'pane'
 
 export type TmuxLayout =
@@ -59,16 +61,53 @@ export type TmuxLayout =
     zoom?: boolean
   }
 
-const defaultPanes = [
-  {
-    dir: '.',
-    cmd: 'nvim .',
+export type TmuxWindowLayout = {
+  name: string
+  cwd: string
+  panes: TmuxPaneLayout[]
+}
+
+type TmuxSplitLayout = {
+  direction: 'h' | 'v' | 'horizontal' | 'vertical'
+  child: TmuxPaneLayout
+}
+
+export type TmuxPaneLayout = {
+  cwd: string
+  cmd?: string
+  zoom?: boolean
+  split?: TmuxSplitLayout
+}
+
+const defaultEmptyPane: TmuxPaneLayout = {
+  cwd: '.',
+  cmd: 'nvim .',
+}
+
+const defaultLayoutNew: TmuxPaneLayout = {
+  //
+  cwd: '.',
+  cmd: 'nvim .',
+  zoom: true,
+  split: {
+    direction: 'h',
+    child: {
+      //
+      cwd: '.',
+      split: {
+        //
+        direction: 'v',
+        child: {
+          //
+          cwd: '.',
+        },
+      },
+    },
   },
-  { dir: '.' },
-  { dir: '.' },
-]
+}
 
 export function transformCmdToTmuxKeys(cmd: string): string {
+  if (!cmd.trim()) return ''
   let string = ''
   const map: Record<string, string> = {
     ' ': 'Space',
@@ -80,37 +119,33 @@ export function transformCmdToTmuxKeys(cmd: string): string {
   return string.toString()
 }
 
-export function parseConfig(item: TmuxConfigItem): ParsedTmuxConfigItem {
+export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxConfigItem {
   const dirFix = (dir: string) => dir.replace('~', os.homedir())
   const root = dirFix(item.root)
-  const windows = (item.windows || []).map((w) => {
+  const name = item.name || key || path.basename(root)
+  const _windows = item.windows || []
+  if (!_windows.length || (item.blank_window ?? true)) {
+    _windows.unshift({ ...defaultLayoutNew, name: name, cwd: root })
+  }
+  const windows = _windows.map((w): ParsedTmuxWindow => {
     if (typeof w === 'string') {
       return {
         name: nameFix(path.basename(path.resolve(root, w))),
-        dir: dirFix(path.resolve(root, w)),
-        panes: defaultPanes,
+        cwd: dirFix(path.resolve(root, w)),
+        layout: {
+          ...defaultLayoutNew,
+          cwd: dirFix(path.resolve(root, w)),
+        },
       }
     }
     return {
-      name: nameFix(w.name || dirFix(path.basename(path.resolve(root, w.dir)))),
-      dir: path.resolve(root, w.dir),
-      panes: w.panes
-        ? w.panes.map((p) => {
-          if (typeof p === 'string') {
-            return {
-              dir: dirFix(path.resolve(root, w.dir, p)),
-            }
-          }
-          return {
-            dir: dirFix(path.resolve(root, w.dir, p.dir)),
-            cmd: p.cmd,
-          }
-        })
-        : defaultPanes,
+      name: nameFix(w.name || dirFix(path.basename(path.resolve(root, w.cwd)))),
+      cwd: path.resolve(root, w.cwd),
+      layout: parseLayout(w.layout),
     }
   })
   const tmuxConfig = {
-    name: item.name || path.basename(root),
+    name,
     root,
     windows,
   }
@@ -251,4 +286,47 @@ export async function attachToSession(opts: Opts, sessionName: string): Promise<
   }
   await runCommand(opts, `tmux attach -t ${sessionName}`)
   return
+}
+
+function parseLayout(layoutInput: TmuxLayoutInput | undefined): TmuxPaneLayout {
+  const layout = layoutInput as TmuxPaneLayout
+  if (!layout) {
+    return {
+      cwd: '.',
+    }
+  }
+  if (typeof layoutInput === 'string') {
+    return {
+      cwd: layoutInput,
+    }
+  }
+  if (Array.isArray(layoutInput)) {
+    return {
+      ...defaultLayoutNew,
+      split: layoutInput.reduceRight(
+        (acc, cwd) => {
+          return {
+            direction: 'h',
+            child: {
+              cwd,
+              split: acc,
+            },
+          }
+        },
+        undefined as unknown as TmuxSplitLayout,
+      ),
+    }
+  }
+  return {
+    cwd: layout.cwd,
+    cmd: layout.cmd,
+    zoom: layout.zoom,
+    split: layout.split
+      ? ({
+        direction:
+          typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
+        child: parseLayout(layout.split.child),
+      } as TmuxSplitLayout)
+      : undefined,
+  }
 }

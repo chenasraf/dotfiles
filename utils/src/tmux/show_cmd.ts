@@ -13,7 +13,7 @@ export const showCmd = new MassargCommand<Opts>({
     if (!key) {
       key = await fzf(opts, Object.keys(config))
     }
-    const item = parseConfig(config[key])
+    const item = parseConfig(key, config[key])
     if (!item) {
       throw new Error(`tmux config item ${key} not found`)
     }

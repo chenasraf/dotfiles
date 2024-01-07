@@ -11,7 +11,7 @@ export const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: bo
     const configs = await getTmuxConfigFileInfo()
     const rawConfig = await getTmuxConfig()
     const config = Object.fromEntries(
-      Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(item)]),
+      Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(key, item)]),
     )
     const keys = Object.keys(config).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     if (opts.bare) {
@@ -39,13 +39,13 @@ export const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: bo
     console.log('tmux config files:\n')
     console.log(
       ' - ' +
-        Object.entries(configs)
-          .map(([key, config]) =>
-            config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
-          )
-          .filter(Boolean)
-          .join('\n - ') +
-        '\n',
+      Object.entries(configs)
+        .map(([key, config]) =>
+          config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
+        )
+        .filter(Boolean)
+        .join('\n - ') +
+      '\n',
     )
     console.log('tmux configurations:\n')
     console.log(' - ' + keys.join('\n - '))

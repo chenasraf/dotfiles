@@ -14,3 +14,16 @@ dotfiles:
   windows:
     - .
     - utils
+# df:
+#   name: dotfiles
+#   root: ~/.dotfiles
+#   windows:
+#     - .
+#     - utils
+#
+# dotfiles:
+#   name: dotfiles
+#   root: ~/.dotfiles
+#   windows:
+#     - .
+#     - utils

@@ -11,8 +11,8 @@ export const attachCmd = new MassargCommand<Opts>({
 
     if (key) {
       const allConfigs = await getTmuxConfig()
-      const config = parseConfig(allConfigs[key])
-      const sessionName = parseConfig(config).name
+      const config = parseConfig(key, allConfigs[key])
+      const sessionName = parseConfig(key, config).name
       if (!(await sessionExists(opts, sessionName))) {
         throw new Error(`tmux session ${sessionName} does not exist`)
       }

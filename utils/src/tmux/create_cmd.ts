@@ -18,8 +18,9 @@ export const createCmd = new MassargCommand<CreateOpts>({
   description: 'Create a new tmux session (temporary)',
   run: async (opts) => {
     log(opts, 'Options:', opts)
-    const config = parseConfig({
-      name: nameFix(path.basename(opts.rootDir ?? process.cwd())),
+    const name = nameFix(path.basename(opts.rootDir ?? process.cwd()))
+    const config = parseConfig(name, {
+      name,
       root: opts.rootDir ?? process.cwd(),
       windows: opts.window ?? ['.'],
     })
