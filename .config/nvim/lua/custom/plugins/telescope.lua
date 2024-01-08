@@ -78,6 +78,7 @@ vim.defer_fn(function()
   vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
   vim.keymap.set('n', '<leader>st', "<Cmd>Telescope<CR>", { desc = '[S]earch [T]elescope Pickers' })
   vim.keymap.set('n', '<leader>sq', "<Cmd>Telescope quickfix<CR>", { desc = '[S]earch [Q]uickfix' })
+  vim.keymap.set('n', '<leader>sn', '<Cmd>NoiceTelescope<CR>', { desc = '[S]earch [N]otifications' })
   pcall(require('telescope').load_extension, 'fzf')
   pcall(require('telescope').load_extension, 'media_files')
   require('telescope').setup {

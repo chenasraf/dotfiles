@@ -67,7 +67,6 @@ source "$DOTFILES/exports.sh" # must run before zsh_init
 # echo 'Loading '$DOTFILES/aliases.sh
 source "$DOTFILES/aliases.sh"
 # echo 'Loading '$DOTFILES/scripts/home/home.sh
-source "$DOTFILES/scripts/home/home.sh"
 # echo 'Loading '$DOTFILES/zsh_init.sh
 # source "$DOTFILES/zsh_init.sh"
 

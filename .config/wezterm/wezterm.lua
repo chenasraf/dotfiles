@@ -27,7 +27,6 @@ end ]]
 -- This is where you actually apply your config choices
 config.font = wezterm.font_with_fallback({
   { family = "MesloLGS Nerd Font", weight = "Medium" },
-
   { family = "FiraCode Nerd Font", weight = "Medium", harfbuzz_features = { 'zero' } },
 
   -- <built-in>, BuiltIn
@@ -94,8 +93,28 @@ config.keys = {
   { key = "9", mods = "CMD", action = act { SendString = "\x029" } },
   { key = "0", mods = "CMD", action = act { SendString = "\x020" } },
   -- Previous/Next tmux window: Cmd+Shift+{/}
-  { key = "[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  { key = "]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  -- { key = "[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
+  -- { key = "]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  { key = "[", mods = "CMD", action = act { SendString = "\x02p" } },
+  { key = "]", mods = "CMD", action = act { SendString = "\x02n" } },
+  --
+  -- { key = "phys:[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
+  -- { key = "phys:]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  -- { key = "phys:{", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
+  -- { key = "phys:}", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  -- { key = "phys:[", mods = "CMD", action = act { SendString = "\x02p" } },
+  -- { key = "phys:]", mods = "CMD", action = act { SendString = "\x02n" } },
+  -- { key = "phys:{", mods = "CMD", action = act { SendString = "\x02p" } },
+  -- { key = "phys:}", mods = "CMD", action = act { SendString = "\x02n" } },
+  -- { key = "raw:[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
+  -- { key = "raw:]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  -- { key = "raw:{", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
+  -- { key = "raw:}", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  -- { key = "raw:[", mods = "CMD", action = act { SendString = "\x02p" } },
+  -- { key = "raw:]", mods = "CMD", action = act { SendString = "\x02n" } },
+  -- { key = "raw:{", mods = "CMD", action = act { SendString = "\x02p" } },
+  -- { key = "raw:}", mods = "CMD", action = act { SendString = "\x02n" } },
+  --
   -- Zoom - Cmd+Z
   { key = "z", mods = "CMD", action = act { SendString = "\x02z" } },
   -- Kill the current pane/last window - Cmd+W
