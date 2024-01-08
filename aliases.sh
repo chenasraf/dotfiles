@@ -100,7 +100,7 @@ alias hp="home push"
 alias hl="home pull"
 alias hlog="home git log"
 alias hiv="home install; vim ."
-alias hv="vi \$(wd path df)"
+alias hv="pushd \$(wd path df); vi .; popd"
 alias spider="ssh root@spider.casraf.dev"
 
 # docker

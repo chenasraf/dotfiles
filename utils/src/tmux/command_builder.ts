@@ -18,8 +18,6 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
   const { root, windows: windows } = tmuxConfig
   log(opts, 'Config:', tmuxConfig)
 
-  const commands: string[] = []
-
   let sessionName = nameFix(tmuxConfig.name)
 
   log(opts, 'Session name:', sessionName)
@@ -32,22 +30,22 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 
   log(opts, `tmux session ${sessionName} does not exist, creating...`)
 
-  // Main window split
+  const commands: string[] = []
   commands.push(
     `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}; sleep 1`,
   )
-  commands.push(`tmux split-window -h -t ${sessionName} -c ${root}`)
-  commands.push(`tmux select-pane -t 0`)
 
-  // Create all other windows
-  for (const window of windows) {
+  // Create all windows
+  for (let i = 0; i < windows.length; i++) {
+    const window = windows[i]
     const dir = window.cwd
     const windowName = window.name || nameFix(path.basename(dir))
-
-    const paneCommands: string[] = getPaneCommands(window.layout, { windowName, sessionName })
+    log(opts, 'Creating window:', windowName)
+    commands.push(`tmux new-window -t ${sessionName} -n ${windowName} -c ${dir}`)
+    const paneCommands: string[] = getPaneCommands(opts, window.layout, { windowName, sessionName })
     commands.push(...paneCommands)
-    commands.push(`tmux select-pane -t 0`)
-    commands.push(`tmux resize-pane -Z`)
+    commands.push(`tmux select-pane -t ${sessionName}.0`)
+    commands.push(`tmux resize-pane -t ${sessionName} -Z`)
   }
 
   commands.push(`tmux select-window -t ${sessionName}:1`)
@@ -60,22 +58,38 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 }
 
 function getPaneCommands(
+  opts: Opts,
   pane: TmuxPaneLayout,
   { windowName, sessionName }: { windowName: string; sessionName: string },
 ): string[] {
   const commands: string[] = []
   const cmd = pane.cmd ? transformCmdToTmuxKeys(pane.cmd) : ''
   if (cmd) {
+    log(opts, 'Sending keys:', JSON.stringify(cmd))
     commands.push(`tmux send-keys -t ${sessionName}:${windowName} ${cmd} Enter`)
   }
   if (pane.split) {
-    commands.push(
-      `tmux split-window ${pane.split.direction || 'h'}` +
-      ` -t ${sessionName}:${windowName} -c ${pane.cwd} ${cmd}`.trim(),
+    log(
+      opts,
+      'Splitting pane:',
+      pane.split,
+      'with cmd:',
+      cmd,
+      'in session:window:',
+      `${sessionName}:${windowName}`,
+      'direction:',
+      pane.split.direction || 'h',
     )
+    commands.push(
+      `tmux split-window -${pane.split.direction || 'h'} ` +
+      ` -t ${sessionName}:${windowName} -c ${pane.cwd}`.trim(),
+    )
+
     if (pane.split.child) {
+      log(opts, 'Handling child pane:', pane.split.child)
+      // commands.push(`tmux select-pane -t ${sessionName}:${windowName}.0`)
       commands.push(
-        ...getPaneCommands(pane.split.child, {
+        ...getPaneCommands(opts, pane.split.child, {
           windowName,
           sessionName,
         }),

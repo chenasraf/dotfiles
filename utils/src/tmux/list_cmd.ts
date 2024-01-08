@@ -18,18 +18,25 @@ export const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: bo
       console.log(keys.join('\n'))
       return
     }
-    const sessionsOutput = await getCommandOutput(opts, 'tmux ls')
+    let sessionsOutput: { output: string; code: number } | null = null
+    try {
+      sessionsOutput = await getCommandOutput(opts, 'tmux ls')
+    } catch (e) {
+      sessionsOutput = { output: '', code: 1 }
+    }
     let sessions = sessionsOutput.output.replace(/\(created ([^)]+)\)/g, '$1')
     sessions = sessions
       .split('\n')
       .map((line) => line.replace(/^([^:]+):/, '$1').trim())
       .join('\n')
-    const tbl = await getCommandOutput(
-      opts,
-      `echo ${JSON.stringify(
-        sessions,
-      )} | tblf -th "Name # Windows DDD MMM DD HH:MM:SS YYYY Status"`,
-    )
+    const tbl = sessions
+      ? await getCommandOutput(
+          opts,
+          `echo ${JSON.stringify(
+            sessions,
+          )} | tblf -th "Name # Windows DDD MMM DD HH:MM:SS YYYY Status"`,
+        )
+      : { output: 'No tmux sessions\n', code: 0 }
     if (opts.sessions) {
       console.log(tbl.output)
       return
@@ -39,13 +46,13 @@ export const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: bo
     console.log('tmux config files:\n')
     console.log(
       ' - ' +
-      Object.entries(configs)
-        .map(([key, config]) =>
-          config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
-        )
-        .filter(Boolean)
-        .join('\n - ') +
-      '\n',
+        Object.entries(configs)
+          .map(([key, config]) =>
+            config && key !== 'merged' ? key + ': ' + config.filepath : undefined,
+          )
+          .filter(Boolean)
+          .join('\n - ') +
+        '\n',
     )
     console.log('tmux configurations:\n')
     console.log(' - ' + keys.join('\n - '))

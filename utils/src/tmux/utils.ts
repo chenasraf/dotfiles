@@ -52,14 +52,14 @@ export type TmuxLayoutType = 'row' | 'column' | 'pane'
 
 export type TmuxLayout =
   | {
-    type: Exclude<TmuxLayoutType, 'pane'>
-    children: TmuxLayout[]
-    zoom?: boolean
-  }
+      type: Exclude<TmuxLayoutType, 'pane'>
+      children: TmuxLayout[]
+      zoom?: boolean
+    }
   | {
-    type: 'pane'
-    zoom?: boolean
-  }
+      type: 'pane'
+      zoom?: boolean
+    }
 
 export type TmuxWindowLayout = {
   name: string
@@ -124,7 +124,7 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
   const root = dirFix(item.root)
   const name = item.name || key || path.basename(root)
   const _windows = item.windows || []
-  if (!_windows.length || (item.blank_window ?? true)) {
+  if (!_windows.length || item.blank_window) {
     _windows.unshift({ ...defaultLayoutNew, name: name, cwd: root })
   }
   const windows = _windows.map((w): ParsedTmuxWindow => {
@@ -220,21 +220,21 @@ export function throwNoConfigFound() {
     [
       'tmux config file not found, searched in:',
       '\t' +
-      searchDirs
-        .map((x) =>
-          searchPatterns('tmux')
-            .map((y) => path.join(x, y))
-            .join('\n\t'),
-        )
-        .join('\n\t'),
+        searchDirs
+          .map((x) =>
+            searchPatterns('tmux')
+              .map((y) => path.join(x, y))
+              .join('\n\t'),
+          )
+          .join('\n\t'),
       '\t' +
-      searchDirs
-        .map((x) =>
-          searchPatterns('tmux_local')
-            .map((y) => path.join(x, y))
-            .join('\n\t'),
-        )
-        .join('\n\t'),
+        searchDirs
+          .map((x) =>
+            searchPatterns('tmux_local')
+              .map((y) => path.join(x, y))
+              .join('\n\t'),
+          )
+          .join('\n\t'),
       // searchInFor('tmux').map(x => path.join(d)).join('\n\t'),
       // searchInFor('tmux_local').join('\n\t'),
     ].join('\n'),
@@ -267,7 +267,7 @@ export async function fzf(_opts: Opts, inputs: string[]): Promise<string> {
   fzf.stdout.setEncoding('utf-8')
 
   return new Promise((resolve, reject) => {
-    fzf.stdout.on('readable', function() {
+    fzf.stdout.on('readable', function () {
       const value = fzf.stdout.read()
 
       if (value !== null) {
@@ -323,10 +323,10 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined): TmuxPaneLayout {
     zoom: layout.zoom,
     split: layout.split
       ? ({
-        direction:
-          typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
-        child: parseLayout(layout.split.child),
-      } as TmuxSplitLayout)
+          direction:
+            typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
+          child: parseLayout(layout.split.child),
+        } as TmuxSplitLayout)
       : undefined,
   }
 }
