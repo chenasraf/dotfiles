@@ -1,7 +1,5 @@
 import { Opts } from '../common'
 import {
-  TmuxLayout,
-  TmuxPaneLayout,
   attachToSession,
   fzf,
   getTmuxConfig,

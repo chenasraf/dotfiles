@@ -48,18 +48,6 @@ export type ParsedTmuxConfigItem = Omit<TmuxConfigItemInput, 'windows'> & {
 }
 
 export type ParsedTmuxWindow = Omit<TmuxWindow, 'layout'> & { layout: TmuxPaneLayout }
-export type TmuxLayoutType = 'row' | 'column' | 'pane'
-
-export type TmuxLayout =
-  | {
-      type: Exclude<TmuxLayoutType, 'pane'>
-      children: TmuxLayout[]
-      zoom?: boolean
-    }
-  | {
-      type: 'pane'
-      zoom?: boolean
-    }
 
 export type TmuxWindowLayout = {
   name: string
@@ -68,7 +56,7 @@ export type TmuxWindowLayout = {
 }
 
 type TmuxSplitLayout = {
-  direction: 'h' | 'v' | 'horizontal' | 'vertical'
+  direction: 'h' | 'v'
   child: TmuxPaneLayout
 }
 
@@ -84,21 +72,16 @@ const defaultEmptyPane: TmuxPaneLayout = {
   cmd: 'nvim .',
 }
 
-const defaultLayoutNew: TmuxPaneLayout = {
-  //
-  cwd: '.',
-  cmd: 'nvim .',
+const defaultEmptyLayout: TmuxPaneLayout = {
+  ...defaultEmptyPane,
   zoom: true,
   split: {
     direction: 'h',
     child: {
-      //
       cwd: '.',
       split: {
-        //
         direction: 'v',
         child: {
-          //
           cwd: '.',
         },
       },
@@ -125,7 +108,7 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
   const name = item.name || key || path.basename(root)
   const _windows = item.windows || []
   if (!_windows.length || item.blank_window) {
-    _windows.unshift({ ...defaultLayoutNew, name: name, cwd: root })
+    _windows.unshift({ ...defaultEmptyLayout, name: name, cwd: root })
   }
   const windows = _windows.map((w): ParsedTmuxWindow => {
     if (typeof w === 'string') {
@@ -133,7 +116,7 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
         name: nameFix(path.basename(path.resolve(root, w))),
         cwd: dirFix(path.resolve(root, w)),
         layout: {
-          ...defaultLayoutNew,
+          ...defaultEmptyLayout,
           cwd: dirFix(path.resolve(root, w)),
         },
       }
@@ -302,7 +285,7 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined): TmuxPaneLayout {
   }
   if (Array.isArray(layoutInput)) {
     return {
-      ...defaultLayoutNew,
+      ...defaultEmptyLayout,
       split: layoutInput.reduceRight(
         (acc, cwd) => {
           return {
