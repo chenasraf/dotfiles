@@ -92,28 +92,9 @@ config.keys = {
   { key = "8", mods = "CMD", action = act { SendString = "\x028" } },
   { key = "9", mods = "CMD", action = act { SendString = "\x029" } },
   { key = "0", mods = "CMD", action = act { SendString = "\x020" } },
-  -- Previous/Next tmux window: Cmd+Shift+{/}
-  -- { key = "[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  -- { key = "]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  -- Previous/Next tmux window: Cmd+{/}
   { key = "[", mods = "CMD", action = act { SendString = "\x02p" } },
   { key = "]", mods = "CMD", action = act { SendString = "\x02n" } },
-  --
-  -- { key = "phys:[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  -- { key = "phys:]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
-  -- { key = "phys:{", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  -- { key = "phys:}", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
-  -- { key = "phys:[", mods = "CMD", action = act { SendString = "\x02p" } },
-  -- { key = "phys:]", mods = "CMD", action = act { SendString = "\x02n" } },
-  -- { key = "phys:{", mods = "CMD", action = act { SendString = "\x02p" } },
-  -- { key = "phys:}", mods = "CMD", action = act { SendString = "\x02n" } },
-  -- { key = "raw:[", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  -- { key = "raw:]", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
-  -- { key = "raw:{", mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  -- { key = "raw:}", mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
-  -- { key = "raw:[", mods = "CMD", action = act { SendString = "\x02p" } },
-  -- { key = "raw:]", mods = "CMD", action = act { SendString = "\x02n" } },
-  -- { key = "raw:{", mods = "CMD", action = act { SendString = "\x02p" } },
-  -- { key = "raw:}", mods = "CMD", action = act { SendString = "\x02n" } },
   --
   -- Zoom - Cmd+Z
   { key = "z", mods = "CMD", action = act { SendString = "\x02z" } },
