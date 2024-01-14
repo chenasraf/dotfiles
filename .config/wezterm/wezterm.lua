@@ -160,7 +160,10 @@ config.keys = {
   { key = "c", mods = "OPT", action = act { SendString = 'ç', } },
   -- Close all but current
   { key = "c", mods = "SHIFT|OPT", action = act { SendString = 'Ç', } },
-
+  -- Split pane horizontally - Opt+S
+  { key = "s", mods = "OPT", action = act { SendString = "\x17s" } },
+  -- Split pane vertically - Opt+V
+  { key = "v", mods = "OPT", action = act { SendString = "\x17v" } },
   ----------------------------------------------------------------------------------
   --- term
   ----------------------------------------------------------------------------------
