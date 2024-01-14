@@ -22,6 +22,7 @@ return {
     }
     require("notify").setup({
       background_colour = "#000000",
+      stages = "static",
     })
   end,
   dependencies = {

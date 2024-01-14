@@ -4,6 +4,7 @@ SCAFFOLDS_DIR="$DOTFILES/scaffolds"
 
 function tpl() {
   tpl_name="$1"
+  sub_tpl_name="default"
   shift
   if [[ "$#" -ne 0 ]]; then
     sub_tpl_name="$1"
@@ -21,7 +22,7 @@ function tpl() {
       ;;
   esac
 
-  npx -y simple-scaffold@latest -gh "chenasraf/templates#${tpl_name}.js" -k "${sub_tpl_name:-default}" $name $@
+  npx -y simple-scaffold@latest -gh "chenasraf/templates#${tpl_name}.js" -k "${sub_tpl_name}" $name $@
 }
 
  # tpl_name="$1"
