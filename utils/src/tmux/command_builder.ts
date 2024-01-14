@@ -42,7 +42,11 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
     const windowName = window.name || nameFix(path.basename(dir))
     log(opts, 'Creating window:', windowName)
     commands.push(`tmux new-window -a -t ${sessionName} -n ${windowName} -c ${dir}`)
-    const paneCommands: string[] = getPaneCommands(opts, window.layout, { windowName, sessionName })
+    const paneCommands: string[] = getPaneCommands(opts, window.layout, {
+      rootDir: root,
+      windowName,
+      sessionName,
+    })
     commands.push(...paneCommands)
     commands.push(`tmux select-pane -t ${sessionName}.0`)
     commands.push(`tmux resize-pane -t ${sessionName} -Z`)
@@ -60,7 +64,11 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 function getPaneCommands(
   opts: Opts,
   pane: TmuxPaneLayout,
-  { windowName, sessionName }: { windowName: string; sessionName: string },
+  {
+    windowName,
+    sessionName,
+    rootDir,
+  }: { windowName: string; sessionName: string; rootDir: string },
 ): string[] {
   const commands: string[] = []
   const cmd = pane.cmd ? transformCmdToTmuxKeys(pane.cmd) : ''
@@ -82,7 +90,7 @@ function getPaneCommands(
     )
     commands.push(
       `tmux split-window -${pane.split.direction || 'h'} ` +
-        ` -t ${sessionName}:${windowName} -c ${pane.cwd}`.trim(),
+        ` -t ${sessionName}:${windowName} -c ${pane.cwd || rootDir}`.trim(),
     )
 
     if (pane.split.child) {
@@ -92,6 +100,7 @@ function getPaneCommands(
         ...getPaneCommands(opts, pane.split.child, {
           windowName,
           sessionName,
+          rootDir,
         }),
       )
     }
