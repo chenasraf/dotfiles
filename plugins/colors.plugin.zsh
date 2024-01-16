@@ -1,7 +1,13 @@
 #!/usr/bin/env zsh
 
+export USE_COLORS=$(tput colors 2>/dev/null)
+
 # colors
 function color() {
+  if [[ -z "$USE_COLORS" || "$USE_COLORS" -lt 8 ]]; then
+    echo "$@"
+    return
+  fi
   local c="$1"
   shift
   echo -e "\033[0;${c}m$@\033[0m"

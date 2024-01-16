@@ -2,6 +2,11 @@
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+vim.keymap.set('n', '<leader>hi', '<cmd>!source $DOTFILES/install.sh<CR>', { desc = '[Home] [I]nstall' })
+vim.keymap.set('n', '<leader>hI', '<cmd>!source $DOTFILES/install.sh -z<CR>', {
+  desc = '[Home] [I]nstall (reload zplug)',
+})
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -57,7 +62,6 @@ vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "Empty buf
 vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "Empty buffer above" })
 vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "Empty buffer left" })
 vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "Empty buffer right" })
-
 
 -- search and replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
