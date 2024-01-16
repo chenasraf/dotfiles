@@ -159,7 +159,6 @@ local function trim(s)
   return s:gsub("^%s+", ""):gsub("%s+$", "")
 end
 
-print("Loading remaps")
 local function copy_wrapped(before, after)
   local key = ts_keys.get_current_keys()
   print("Key: " .. vim.inspect(key), "Before: " .. vim.inspect(before), "After: " .. vim.inspect(after))

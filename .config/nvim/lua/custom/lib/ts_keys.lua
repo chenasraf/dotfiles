@@ -49,8 +49,10 @@ end
 
 local map = {
   json = M.get_ancestor_keys_generic('pair', function(s) return s:sub(2, -2) end),
+  jsonc = M.get_ancestor_keys_generic('pair', function(s) return s:sub(2, -2) end),
   yaml = M.get_ancestor_keys_generic('block_mapping_pair'),
 }
+
 M.get_current_keys = function()
   local parser = vim.treesitter.get_parser()
   local lang = parser:lang()
@@ -69,7 +71,7 @@ M.ts_statusline = function()
   if not map[lang] then
     return ''
   end
-  return M.get_current_keys() or ('<no key: ' .. lang .. '>')
+  return M.get_current_keys() or ('<' .. lang .. ': no key>')
 end
 
 return M
