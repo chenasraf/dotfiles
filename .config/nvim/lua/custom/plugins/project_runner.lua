@@ -25,8 +25,9 @@ local function create_runner(cmds)
   end
   for _, cmd in ipairs(cmds) do
     local label, value = unpack(cmd)
-    table.insert(items, { label = label, value = { 'inline', value } })
-    table.insert(items, { label = label .. ' (terminal)', value = { 'terminal', value } })
+    -- table.insert(items, { label = label, value = { 'inline', value } })
+    -- table.insert(items, { label = label .. ' (terminal)', value = { 'terminal', value } })
+    table.insert(items, { label = 'Run: ' .. value, label, value = { 'terminal', value } })
   end
 
   local opts = {
