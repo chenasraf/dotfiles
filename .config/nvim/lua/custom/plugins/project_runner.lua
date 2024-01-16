@@ -30,9 +30,7 @@ local function create_runner(cmds)
     attach_mappings = run_selected,
     layout_config = {
       width = 0.3,
-      height = function(_, _, max_lines)
-        return math.min(math.floor(max_lines * 0.8), 8)
-      end,
+      -- height = math.floor(#cmds * 1.9),
     },
     finder = require('telescope.finders').new_table {
       results = cmds,
@@ -84,7 +82,7 @@ local function js()
   local scripts = get_json_scripts(contents)
   local cmds = {}
   for name, _ in pairs(scripts) do
-    table.insert(cmds, { name, pkg_manager .. ' ' .. name })
+    table.insert(cmds, { label = name, value = pkg_manager .. ' ' .. name })
   end
   if #cmds == 0 then
     return {
@@ -125,7 +123,7 @@ for lang, cmds in pairs(type_map) do
     group = group,
     pattern = lang,
     callback = function()
-      vim.keymap.set("n", "<F5>", create_runner(cmds), { buffer = true, desc = "Flutter commands" })
+      vim.keymap.set("n", "<F5>", create_runner(cmds), { buffer = true, desc = "Run commands for" .. lang })
     end,
   })
 end
