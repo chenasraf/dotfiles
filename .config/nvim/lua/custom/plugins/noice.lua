@@ -25,8 +25,9 @@ return {
       stages = "static",
     })
 
-    vim.keymap.set("n", "<leader>cn", "<Cmd>NoiceDismiss<CR>",
-      { noremap = true, silent = true, desc = '[C]lear [N]otifications' })
+    vim.keymap.set("n", "<leader>cn", "<Cmd>NoiceDismiss<CR>", {
+      silent = true, desc = '[C]lear [N]otifications'
+    })
   end,
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

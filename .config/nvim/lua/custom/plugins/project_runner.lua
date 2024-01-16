@@ -7,45 +7,41 @@ local function create_runner(cmds)
     actions.select_default:replace(function()
       local selection = action_state.get_selected_entry()
       actions.close(prompt_bufnr)
-      local value, cmd = unpack(selection.value)
-      if value == 'inline' then
-        vim.cmd('!' .. cmd)
+      local cmd = selection.value
+      local type = selection.type
+      if type == 'cmd' then
+        vim.cmd(cmd)
         return
-      elseif value == 'terminal' then
+      elseif type == 'terminal' then
         -- set new split height to 30
-        vim.cmd('split | wincmd J | resize 20 | terminal ' .. cmd)
+        cmd = 'terminal ' .. cmd
+        vim.cmd('split | wincmd J | resize 20 | ' .. cmd)
         return
       end
     end)
     return 1
   end
-  local items = {}
   if type(cmds) == 'function' then
-    cmds = cmds()
+    local filename = vim.fn.expand('%:p')
+    cmds = cmds(filename)
   end
-  for _, cmd in ipairs(cmds) do
-    local label, value = unpack(cmd)
-    -- table.insert(items, { label = label, value = { 'inline', value } })
-    -- table.insert(items, { label = label .. ' (terminal)', value = { 'terminal', value } })
-    table.insert(items, { label = 'Run: ' .. value, label, value = { 'terminal', value } })
-  end
-
   local opts = {
     prompt_title = 'Select run configuration',
     attach_mappings = run_selected,
     layout_config = {
       width = 0.3,
       height = function(_, _, max_lines)
-        return math.min(math.floor(max_lines * 0.8), 20)
+        return math.min(math.floor(max_lines * 0.8), 8)
       end,
     },
     finder = require('telescope.finders').new_table {
-      results = items,
+      results = cmds,
       entry_maker = function(entry)
         return {
           value = entry.value,
           display = entry.label,
           ordinal = entry.label,
+          type = entry.type or 'terminal',
         }
       end,
     },
@@ -92,9 +88,9 @@ local function js()
   end
   if #cmds == 0 then
     return {
-      { 'Start', pkg_manager .. ' start' },
-      { 'Build', pkg_manager .. ' build' },
-      { 'Test',  pkg_manager .. ' test' },
+      { label = 'Start', value = pkg_manager .. ' start' },
+      { label = 'Build', value = pkg_manager .. ' build' },
+      { label = 'Test',  value = pkg_manager .. ' test' },
     }
   else
     return cmds
@@ -103,17 +99,23 @@ end
 
 local type_map = {
   rust = {
-    { 'Run project',             'cargo run' },
-    { 'Test project',            'cargo test' },
-    { 'Build project',           'cargo build' },
-    { 'Run project (release)',   'cargo run --release' },
-    { 'Test project (release)',  'cargo test --release' },
-    { 'Build project (release)', 'cargo build --release' },
+    { label = 'Run project',             value = 'cargo run' },
+    { label = 'Test project',            value = 'cargo test' },
+    { label = 'Build project',           value = 'cargo build' },
+    { label = 'Run project (release)',   value = 'cargo run --release' },
+    { label = 'Test project (release)',  value = 'cargo test --release' },
+    { label = 'Build project (release)', value = 'cargo build --release' },
   },
   typescript = js,
   typescriptreact = js,
   javascript = js,
   javascriptreact = js,
+  lua = function(filename)
+    return {
+      { label = 'Run file',    value = 'lua ' .. filename,    type = 'cmd' },
+      { label = 'Source file', value = 'source ' .. filename, type = 'cmd' },
+    }
+  end,
 }
 local group = vim.api.nvim_create_augroup("casraf_project_runner", {})
 vim.api.nvim_clear_autocmds({ group = group })
