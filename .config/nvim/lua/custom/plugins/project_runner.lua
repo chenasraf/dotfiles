@@ -33,8 +33,10 @@ local function create_runner(cmds)
     prompt_title = 'Select run configuration',
     attach_mappings = run_selected,
     layout_config = {
-      width = 0.5,
-      height = 4 * #cmds,
+      width = 0.3,
+      height = function(_, _, max_lines)
+        return math.min(math.floor(max_lines * 0.8), 20)
+      end,
     },
     finder = require('telescope.finders').new_table {
       results = items,
@@ -78,18 +80,20 @@ end
 local function js()
   local pkg_root = find_package_root()
   local pkg_file = pkg_root .. '/package.json'
+  local lock_file_pnpm = pkg_root .. '/pnpm-lock.yaml'
+  local lock_exists = vim.fn.filereadable(lock_file_pnpm) == 1
+  local pkg_manager = lock_exists and 'pnpm' or 'yarn'
   local contents = vim.fn.readfile(pkg_file)
   local scripts = get_json_scripts(contents)
   local cmds = {}
   for name, _ in pairs(scripts) do
-    table.insert(cmds, { name, '[[ -f pnpm-lock.yaml ]] && pnpm ' .. name .. ' || yarn ' .. name })
+    table.insert(cmds, { name, pkg_manager .. ' ' .. name })
   end
   if #cmds == 0 then
     return {
-      { 'Start', '[[ -f pnpm-lock.yaml ]] && pnpm dev || yarn start' },
-      { 'Build', '[[ -f pnpm-lock.yaml ]] && pnpm build || yarn build' },
-      { 'Dev',   '[[ -f pnpm-lock.yaml ]] && pnpm dev || yarn dev' },
-      { 'Test',  '[[ -f pnpm-lock.yaml ]] && pnpm test || yarn test' },
+      { 'Start', pkg_manager .. ' start' },
+      { 'Build', pkg_manager .. ' build' },
+      { 'Test',  pkg_manager .. ' test' },
     }
   else
     return cmds
@@ -110,9 +114,12 @@ local type_map = {
   javascript = js,
   javascriptreact = js,
 }
+local group = vim.api.nvim_create_augroup("casraf_project_runner", {})
+vim.api.nvim_clear_autocmds({ group = group })
 
 for lang, cmds in pairs(type_map) do
   vim.api.nvim_create_autocmd("FileType", {
+    group = group,
     pattern = lang,
     callback = function()
       vim.keymap.set("n", "<F5>", create_runner(cmds), { buffer = true, desc = "Flutter commands" })
