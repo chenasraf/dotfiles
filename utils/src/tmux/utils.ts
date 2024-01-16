@@ -116,15 +116,15 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
         name: nameFix(path.basename(path.resolve(root, w))),
         cwd: dirFix(path.resolve(root, w)),
         layout: {
-          ...defaultEmptyLayout,
+          ...parseLayout(defaultEmptyLayout, root),
           cwd: dirFix(path.resolve(root, w)),
         },
       }
     }
     return {
       name: nameFix(w.name || dirFix(path.basename(path.resolve(root, w.cwd)))),
-      cwd: path.resolve(root, w.cwd),
-      layout: parseLayout(w.layout),
+      cwd: dirFix(path.resolve(root, w.cwd)),
+      layout: parseLayout(w.layout, root),
     }
   })
   const tmuxConfig = {
@@ -271,16 +271,16 @@ export async function attachToSession(opts: Opts, sessionName: string): Promise<
   return
 }
 
-function parseLayout(layoutInput: TmuxLayoutInput | undefined): TmuxPaneLayout {
+function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): TmuxPaneLayout {
   const layout = layoutInput as TmuxPaneLayout
   if (!layout) {
     return {
-      cwd: '.',
+      cwd: path.resolve(root),
     }
   }
   if (typeof layoutInput === 'string') {
     return {
-      cwd: layoutInput,
+      cwd: path.resolve(root, layoutInput),
     }
   }
   if (Array.isArray(layoutInput)) {
@@ -291,7 +291,7 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined): TmuxPaneLayout {
           return {
             direction: 'h',
             child: {
-              cwd,
+              cwd: path.resolve(root, cwd),
               split: acc,
             },
           }
@@ -301,14 +301,14 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined): TmuxPaneLayout {
     }
   }
   return {
-    cwd: layout.cwd,
+    cwd: path.resolve(root, layout.cwd),
     cmd: layout.cmd,
     zoom: layout.zoom,
     split: layout.split
       ? ({
           direction:
             typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
-          child: parseLayout(layout.split.child),
+          child: parseLayout(layout.split.child, layout.cwd),
         } as TmuxSplitLayout)
       : undefined,
   }
