@@ -116,7 +116,7 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
         name: nameFix(path.basename(path.resolve(root, w))),
         cwd: dirFix(path.resolve(root, w)),
         layout: {
-          ...parseLayout(defaultEmptyLayout, root),
+          ...parseLayout(defaultEmptyLayout, dirFix(path.resolve(root, w))),
           cwd: dirFix(path.resolve(root, w)),
         },
       }
@@ -124,7 +124,7 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
     return {
       name: nameFix(w.name || dirFix(path.basename(path.resolve(root, w.cwd)))),
       cwd: dirFix(path.resolve(root, w.cwd)),
-      layout: parseLayout(w.layout, root),
+      layout: parseLayout(w.layout, dirFix(path.resolve(root, w.cwd))),
     }
   })
   const tmuxConfig = {
@@ -275,7 +275,7 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): Tm
   const layout = layoutInput as TmuxPaneLayout
   if (!layout) {
     return {
-      cwd: path.resolve(root),
+      cwd: path.resolve(root, '.'),
     }
   }
   if (typeof layoutInput === 'string') {
@@ -285,7 +285,7 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): Tm
   }
   if (Array.isArray(layoutInput)) {
     return {
-      ...defaultEmptyLayout,
+      ...parseLayout(defaultEmptyLayout, root),
       split: layoutInput.reduceRight(
         (acc, cwd) => {
           return {
@@ -308,7 +308,7 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): Tm
       ? ({
           direction:
             typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
-          child: parseLayout(layout.split.child, layout.cwd),
+          child: parseLayout(layout.split.child, path.resolve(root, layout.cwd)),
         } as TmuxSplitLayout)
       : undefined,
   }
