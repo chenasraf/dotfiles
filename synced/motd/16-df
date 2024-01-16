@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-source ~/.dotfiles/functions.sh
-source ~/.dotfiles/aliases.sh
+source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
+source "$HOME/.dotfiles/aliases.sh"
 
 if is_mac; then
   df -h /System/Volumes/Data NE

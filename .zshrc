@@ -2,7 +2,7 @@ export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
 export DOTBIN="$HOME/bin"
 
-source "$DOTFILES/functions.sh"
+source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
 source "$DOTFILES/exports.sh"
 
 [[ "$1" == "-q" ]] || motd

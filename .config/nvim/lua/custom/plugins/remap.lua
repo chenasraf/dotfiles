@@ -2,6 +2,11 @@
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+-- save file
+vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save buffer", silent = true })
+vim.keymap.set("n", "<leader>W", "<Cmd>wa<CR>", { desc = "Save all buffers", silent = true })
+
+-- home install
 vim.keymap.set('n', '<leader>hi', '<cmd>!source $DOTFILES/install.sh<CR>', { desc = '[Home] [I]nstall' })
 vim.keymap.set('n', '<leader>hI', '<cmd>!source $DOTFILES/install.sh -z<CR>', {
   desc = '[Home] [I]nstall (reload zplug)',
@@ -47,10 +52,8 @@ vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste over selection, keep current yank" })
 
--- next greatest remap ever : asbjornHaland
+-- copy to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to system clipboard" })
-
-vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
 
 -- who needs Q
 vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
@@ -90,7 +93,6 @@ vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.write()
   vim.cmd.Ex()
 end, { desc = "Save and file explorer" })
-
 
 vim.keymap.set("n", "<Leader>cp", ":Copilot panel<CR>", { desc = "Open Copilot panel" })
 vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
@@ -148,51 +150,47 @@ local function nope()
 
   -- source file
   -- vim.keymap.set("n", "<leader><leader>", ":so<CR>", { desc = "Source current file" })
-
-  -- save file
-  vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer" })
-  vim.keymap.set("n", "<leader>W", ":wa<CR>", { desc = "Save all buffers" })
 end
 
 -- copy json key to system clipboard
 local ts_keys = require('custom.lib.ts_keys')
-vim.keymap.set("n", "<leader>jc", function()
-  local key = ts_keys.get_current_keys() or ''
-  key = key:gsub("%(.*%)", "")
+-- trim whitespace
+local function trim(s)
+  return s:gsub("^%s+", ""):gsub("%s+$", "")
+end
+
+print("Loading remaps")
+local function copy_wrapped(before, after)
+  local key = ts_keys.get_current_keys()
+  print("Key: " .. vim.inspect(key), "Before: " .. vim.inspect(before), "After: " .. vim.inspect(after))
   if key then
+    key = trim(key)
+    before = before and trim(before) or nil
+    after = after and trim(after) or nil
+    if before then
+      key = before .. '.' .. key
+    end
+    if after then
+      key = key .. '.' .. after
+    end
     vim.fn.setreg("+", key)
     print('Copied "' .. key .. '" to system clipboard')
   else
     print("No key found")
   end
+end
+
+vim.keymap.set("n", "<leader>jc", function()
+  copy_wrapped(nil, nil)
 end, { desc = "Copy key path under cursor to clipboard" })
 
 vim.keymap.set("n", "<leader>ji", function()
-  local key = ts_keys.get_current_keys() or ''
   local input = vim.fn.input("Prefix path: ")
-  if input and key then
-    key = input .. '.' .. key
-  end
-  key = key:gsub("%(.*%)", "")
-  if key then
-    vim.fn.setreg("+", key)
-    print('Copied "' .. key .. '" to system clipboard')
-  else
-    print("No key found")
-  end
+  copy_wrapped(input, nil)
 end, { desc = "Copy key path under cursor to clipboard (with prefix)" })
+
 vim.keymap.set("n", "<leader>jt", function()
-  local key = ts_keys.get_current_keys() or ''
-  if key then
-    key = 'tr.' .. key
-  end
-  key = key:gsub("%(.*%)", "")
-  if key then
-    vim.fn.setreg("+", key)
-    print('Copied "' .. key .. '" to system clipboard')
-  else
-    print("No key found")
-  end
+  copy_wrapped('tr', nil)
 end, { desc = "Copy key path under cursor to clipboard (tr prefix)" })
 
 vim.keymap.set("n", "<leader>jC", function()
