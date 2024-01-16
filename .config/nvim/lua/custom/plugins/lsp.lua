@@ -67,6 +67,67 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+local function run_rust()
+  -- telescope options:
+  --  Run current file
+  --  Run current file (terminal)
+  local actions = require('telescope.actions')
+  local action_state = require('telescope.actions.state')
+
+  local function run_selected(prompt_bufnr, map)
+    actions.select_default:replace(function()
+      local selection = action_state.get_selected_entry()
+      actions.close(prompt_bufnr)
+      if selection.value == 'inline' then
+        vim.cmd('!cargo run')
+      elseif selection.value == 'terminal' then
+        -- set new split height to 30
+        vim.cmd('split | wincmd J | resize 20 | terminal cargo run')
+      end
+    end)
+    return 1
+  end
+  local items = {
+    { label = 'Run project (terminal)', value = 'terminal' },
+    { label = 'Run project',            value = 'inline' },
+  }
+
+  local opts = {
+    prompt_title = 'Select run configuration',
+    attach_mappings = run_selected,
+    layout_config = {
+      width = 0.5,
+      height = 8,
+    },
+    finder = require('telescope.finders').new_table {
+      results = items,
+      entry_maker = function(entry)
+        return {
+          value = entry.value,
+          display = entry.label,
+          ordinal = entry.label,
+        }
+      end,
+    },
+  }
+
+  require('telescope.pickers').new(opts):find()
+end
+
+vim.api.nvim_create_user_command("RustRun", run_rust, {
+  nargs = 0,
+  -- complete = "customlist,v:lua.require('telescope.themes').get_dropdown({})",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rust",
+  callback = function()
+    vim.keymap.set("n", "<F5>", run_rust, { buffer = true, desc = "Flutter commands" })
+    vim.keymap.set("n", 'gd', vim.lsp.buf.declaration,
+      { buffer = true, desc = 'Type [D]efinition', remap = true })
+  end,
+})
+
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
@@ -83,7 +144,7 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   cssls = {},
