@@ -11,7 +11,9 @@ export const listCmd = new MassargCommand<Opts & { bare?: boolean; sessions?: bo
     const configs = await getTmuxConfigFileInfo()
     const rawConfig = await getTmuxConfig()
     const config = Object.fromEntries(
-      Object.entries(rawConfig).map(([key, item]) => [key, parseConfig(key, item)]),
+      Object.entries(rawConfig)
+        .map(([key, item]) => [key, parseConfig(key, item)])
+        .sort(([a], [b]) => (a as string).localeCompare(b as string)),
     )
     const keys = Object.keys(config).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
     if (opts.bare) {
