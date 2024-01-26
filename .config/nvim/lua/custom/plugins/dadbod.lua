@@ -29,5 +29,7 @@ return {
         vim.schedule(db_completion)
       end,
     })
+
+    vim.keymap.set("n", "<leader>B", "<cmd>DBUIToggle<CR>", { silent = true })
   end,
 }
