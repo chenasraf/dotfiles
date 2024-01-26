@@ -1,5 +1,5 @@
 -- Global (non-buffer) fugitive mappings
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[fugitive] status' })
+-- vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[fugitive] status' })
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { silent = true, desc = "[fugitive] blame" })
 vim.keymap.set("n", "<leader>gB", ":GBrowse<CR>", { silent = true, desc = "[G]it [B]rowse current file/line" })
 vim.api.nvim_create_user_command(

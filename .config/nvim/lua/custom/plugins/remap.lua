@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 vim.keymap.set("n", "<M-Left>", "b", { desc = "Move back word" })
 vim.keymap.set("n", "<M-Right>", "w", { desc = "Move forward word" })
 vim.keymap.set("n", "<C-m>", "<Plug>(VM-Add-Cursor-At-Pos)", { desc = "Add cursor at position" })
-vim.keymap.set("x", "<leader>d", "yP", { desc = "Duplicate selection" })
+vim.keymap.set("x", "<leader>db", "<Cmd>DBUIToggle<CR>", { desc = "[D]ad[B]od UI" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -61,10 +61,6 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
 -- window splits
 vim.keymap.set("n", "√", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "ß", "<C-w>s", { desc = "Split window horizontally" })
-vim.keymap.set("n", "<leader>nh", "<cmd>belowright new<CR>", { desc = "Empty buffer below" })
-vim.keymap.set("n", "<leader>nH", "<cmd>aboveleft new<CR>", { desc = "Empty buffer above" })
-vim.keymap.set("n", "<leader>nV", "<cmd>vnew<CR>", { desc = "Empty buffer left" })
-vim.keymap.set("n", "<leader>nv", "<cmd>belowright vnew<CR>", { desc = "Empty buffer right" })
 
 -- search and replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
@@ -81,7 +77,7 @@ end, { desc = "Serve working directory" })
 
 vim.api.nvim_create_user_command('Pwd', function()
   local path = vim.fn.expand('%:p:h')
-  path = path:gsub('%n', '')
+  path = tostring(path):gsub('%n', '')
   vim.cmd("echo '" .. path .. "'")
 end, { nargs = 0 })
 vim.api.nvim_create_user_command('Pwf', function()
@@ -101,7 +97,7 @@ vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot p
 vim.keymap.set("n", "<leader>db", "<esc>dawdb", { desc = "Delete JS property (back)" })
 vim.keymap.set("n", "<leader>dw", "<esc>dawdw", { desc = "Delete JS property (fowards)" })
 
-vim.keymap.set({ "n", "v" }, "<F2>", vim.lsp.buf.rename)
+vim.keymap.set({ "n", "v", "i" }, "<F2>", vim.lsp.buf.rename)
 
 local hl_search = vim.o.hlsearch
 
@@ -154,6 +150,7 @@ end
 
 -- copy json key to system clipboard
 local ts_keys = require('custom.lib.ts_keys')
+
 -- trim whitespace
 local function trim(s)
   return s:gsub("^%s+", ""):gsub("%s+$", "")
