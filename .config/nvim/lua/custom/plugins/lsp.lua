@@ -197,6 +197,9 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    -- Copilot Source
+    { name = "copilot" },
+    -- Other Sources
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },

@@ -1,6 +1,7 @@
 export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
-export DOTBIN="$HOME/bin"
+export DOTBIN="$HOME/.config/bin"
+export DOTBIN_META="$HOME/.config/.bin"
 
 source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
 source "$DOTFILES/exports.sh"
