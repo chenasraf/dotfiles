@@ -63,7 +63,7 @@ while [ $# -gt 0 ]; do
     echo "  -b, --bg          specify background color (default: 0)"
     echo "  -B, --bold        set font bold"
     echo "  -C, --no-center   Disable centering the text"
-    # echo "  -l, --list        list available fonts"
+    echo "  -l, --list        list available fonts"
     echo "  -v, --version     display version information and exit"
     echo
     echo "See color options at:"
