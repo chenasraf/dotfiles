@@ -3,7 +3,6 @@
 type echo_cyan >/dev/null || source "$DOTFILES/zplug.init.zsh"
 echo_cyan "Setting up..."
 
-source $DOTFILES/scripts/man.sh
 ZPLUG=0
 while [[ $# -gt 0 ]]; do
   case $1 in
