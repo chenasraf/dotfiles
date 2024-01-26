@@ -73,14 +73,14 @@ config.keys = {
   --- tmux
   ----------------------------------------------------------------------------------
   -- move between tmux panes: Cmd+Shift+(HJKL) or Cmd+Shift+(Left Down Up Right) Arrow
-  { key = "h", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[D" } },
-  { key = "j", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[B" } },
-  { key = "k", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[A" } },
-  { key = "l", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[C" } },
-  { key = "LeftArrow", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[D" } },
-  { key = "DownArrow", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[B" } },
-  { key = "UpArrow", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[A" } },
-  { key = "RightArrow", mods = "CTRL|SHIFT", action = act { SendString = "\x02\x1b[C" } },
+  { key = "h", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[D" } },
+  { key = "j", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[B" } },
+  { key = "k", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[A" } },
+  { key = "l", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[C" } },
+  { key = "LeftArrow", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[D" } },
+  { key = "DownArrow", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[B" } },
+  { key = "UpArrow", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[A" } },
+  { key = "RightArrow", mods = "CMD|SHIFT", action = act { SendString = "\x02\x1b[C" } },
   -- Select window 0-9
   { key = "1", mods = "CMD", action = act { SendString = "\x021" } },
   { key = "2", mods = "CMD", action = act { SendString = "\x022" } },
