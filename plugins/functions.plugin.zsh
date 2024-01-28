@@ -250,22 +250,14 @@ prjd() {
   if [[ -z "$sub" ]]; then
     read sub
   fi
-  dv=$(wd path dv)
-  if [[ -z $dv ]]; then
-    echo_red "Project base path not found. Navigate to directory and run \`wd path dv\`."
-    return 1
-  fi
-
-  cd "$dv/$sub"
+  dv="$(wd path dv $sub)"
+  pushd "$dv"
 }
 
 prj() {
-  if [[ $# -ge 1 ]]; then
-    prjd $@
-  else
-    ls $(wd path dv) | fzf | prjd
-  fi
+  pushd "$(wd path dv $@)"
   nvim .
+  popd
 }
 
 docker-log() {
