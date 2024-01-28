@@ -52,11 +52,6 @@ ucase() {
   echo "$@" | tr '[:lower:]' '[:upper:]'
 }
 
-# select random element from arguments
-randarg() {
-  echo "${${@}[$RANDOM % $# + 1]}"
-}
-
 int_res() {
   # get all but last
   c=$(($# - 1))
@@ -243,6 +238,9 @@ find-up() {
       return 0
     fi
     dir=$(dirname $dir)
+    if [[ $dir == "/" ]]; then
+      break
+    fi
   done
   return 1
 }
@@ -363,4 +361,9 @@ ask_no() {
     return 0
   fi
   return 1
+}
+
+# select random element from arguments
+randarg() {
+  echo "${${@}[$RANDOM % $# + 1]}"
 }

@@ -102,6 +102,7 @@ alias hlog="home git log"
 alias hiv="hi; vim ."
 alias hv="pushd \$(wd path df); vi .; popd"
 alias spider="ssh root@spider.casraf.dev"
+alias spider-new="ssh root@spider-new.casraf.dev"
 
 # docker
 alias de="docker-exec"
@@ -136,3 +137,4 @@ alias prettypath="echo \$PATH | tr ':' '\n'"
 alias hli="hl && hi"
 alias keypresses="xxd -psd"
 alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"
+alias lg="lazygit"
