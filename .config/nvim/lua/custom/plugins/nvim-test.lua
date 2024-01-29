@@ -2,9 +2,10 @@ return {
   "klen/nvim-test",
   config = function()
     require('nvim-test').setup({
-      -- termOpts = {
-      --   width = 120,
-      -- },
+      termOpts = {
+        width = 100,
+        go_back = true,
+      },
     })
     vim.keymap.set("n", "<leader>tt", "<cmd>TestFile<cr>", { noremap = true, desc = "[T]est Current [F]ile" })
     vim.keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", { noremap = true, desc = "[T]est [N]earest" })
