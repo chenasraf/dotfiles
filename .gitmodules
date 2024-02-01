@@ -1,0 +1,3 @@
+[submodule "synced"]
+	path = synced
+	url = git@github.com:chenasraf/synced.git
