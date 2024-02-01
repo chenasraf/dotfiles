@@ -85,3 +85,19 @@ Some (but not all) of the plugins/modifications are listed here:
    ```
 
    And reload the terminal
+
+## My Other Stuff
+
+See some of my other projects at [my website](https://casraf.dev/projects).
+
+Or some of my packages:
+
+NPM:
+
+- [Simple Scaffold](https://npmjs.com/package/simple-scaffold)
+- [Massarg](https://npmjs.com/package/massarg)
+
+Dart:
+
+- [Script Runner](https://pub.dev/packages/script_runner)
+- [Unaconfig](https://pub.dev/packages/unaconfig)
