@@ -57,7 +57,7 @@ alias igi_gen="go install && dgi_gen"
 # git
 alias gdiff="git diff"
 alias gpa="ga . && gc && gp"
-grac() { git remote add origin "https://github.com/chenasraf/$1.git"; }
+grac() { git remote add origin "git@github.com:chenasraf/$1.git"; }
 
 # general
 # from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/

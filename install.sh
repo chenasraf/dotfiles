@@ -121,10 +121,10 @@ echo_cyan "Copying $DOTFILES/.config/nvim to $HOME/.config/nvim..."
 xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
 
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
-xrg "--exclude 'mudlet' --exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
+xrg "--exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
 
 echo_cyan "Copying home dir files..."
-rsync -vtr $DOTFILES/synced/home/.gitconfig $HOME/.gitconfig
+rsync -vtr $DOTFILES/.config/home/.gitconfig $HOME/.gitconfig
 
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf

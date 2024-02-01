@@ -1,6 +1,0 @@
-1
-329105c63c21f2d9753165ac12a98930061cb2ab
-inv.cache.custom.table = {}
-  inv.cache.custom.table.name = "custom"
-  inv.cache.custom.table.maxEntries = 1500
-  inv.cache.custom.table.entries = {}

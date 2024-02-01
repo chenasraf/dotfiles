@@ -1,2 +1,0 @@
-return {{[ [[dual]] ] = [[flute]],[ [[group]] ] = [[2]],[ [[pbag]] ] = [[backpack]],[ [[debuff2]] ] = [[ca wither]],[ [[tdiff]] ] = -3,[ [[wield]] ] = [[erato]],[ [[port]] ] = [[cast 'word of recall']],[ [[mpot]] ] = [[moonlight]],[ [[hpot]] ] = [[breakfast]],[ [[speak]] ] = [[false]],[ [[vpot]] ] = [[refreshing]],[ [[cpexp]] ] = 700,[ [[attack2]] ] = [[ca vamp]],[ [[spellup]] ] = [[napalm;spellup]],[ [[debuff1]] ] = [[ca poison]],[ [[cplvl]] ] = 150,[ [[attack1]] ] = [[ca 'flame arrow']],},
-}

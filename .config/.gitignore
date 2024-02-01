@@ -1,3 +1,4 @@
 .nvmrc
 .nvim.lua
+haproxy.cfg
 

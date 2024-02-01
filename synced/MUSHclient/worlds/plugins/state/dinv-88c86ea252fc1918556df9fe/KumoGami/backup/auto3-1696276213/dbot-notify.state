@@ -1,4 +1,0 @@
-1
-2ac417613460de4cd68c609cf541b7e344bef378
-dbot.notify.table = {}
-  dbot.notify.table.notifyLevel = "standard"

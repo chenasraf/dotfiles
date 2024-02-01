@@ -1,6 +1,0 @@
-1
-4e29f5a1f7ec547bc5c59484ede09f7c94ddebb9
-inv.cache.recent.table = {}
-  inv.cache.recent.table.name = "recent"
-  inv.cache.recent.table.maxEntries = 1000
-  inv.cache.recent.table.entries = {}

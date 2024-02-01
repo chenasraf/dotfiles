@@ -5,7 +5,7 @@ source $DOTFILES/autoload_completions.sh
 source $DOTFILES/tmux.sh
 
 motd() {
-  out=$(run-parts $DOTFILES/synced/motd)
+  out=$(run-parts $DOTFILES/scripts/motd)
   echo $out
 }
 
