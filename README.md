@@ -4,10 +4,10 @@ These are my personal dotfiles.
 
 Some notable tools I use are:
 
-- Nvim
-- Tmux
-- WezTerm
-- Zplug
+- Nvim (`.config/nvim`)
+- Tmux (`.config/.tmux.conf`, `utils/tx`)
+- WezTerm (`.config/wezterm/wezterm.lua`)
+- Zplug (`zplug.init.sh`)
 
 ## Nvim Plugins
 
@@ -70,9 +70,10 @@ Some (but not all) of the plugins/modifications are listed here:
    echo 'source "$HOME/.dotfiles/.zshrc"' > ~/.zshrc
    ```
 
-4. In a new terminal, run install scripts:
+4. Run install scripts:
 
    ```bash
-   home install
-   home reload-terminal
+   hi # [h]ome [i]nstall
    ```
+
+   And reload the terminal
