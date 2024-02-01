@@ -2,6 +2,16 @@
 
 These are my personal dotfiles.
 
+![image](https://github.com/chenasraf/dotfiles/assets/167217/c19520c1-fb7e-4c6f-8181-6979979c593c)
+
+<details><summary>Screenshots</summary>
+ 
+![image](https://github.com/chenasraf/dotfiles/assets/167217/8fca7543-cdc1-45f9-92f0-fadf484077ba) ![image](https://github.com/chenasraf/dotfiles/assets/167217/3afaca9a-eda8-4625-b521-83e9946a099c) ![image](https://github.com/chenasraf/dotfiles/assets/167217/5dddef8e-92f9-4d67-860c-9b20c7074706) 
+
+</details>
+
+
+
 Some notable tools I use are:
 
 - Nvim (`.config/nvim`)
