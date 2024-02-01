@@ -61,7 +61,12 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
+  {
+    'nvim-lua/popup.nvim',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
