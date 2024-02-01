@@ -73,7 +73,7 @@ Some (but not all) of the plugins/modifications are listed here:
 4. Run install scripts:
 
    ```bash
-   hi # [h]ome [i]nstall
+   source ~/.dotfiles/install.sh
    ```
 
    And reload the terminal
