@@ -1,4 +1,105 @@
+local keymap = {
+  ['<leader>cc'] = {
+    name = "CopilotChat",
+    c = {
+      function()
+        local input = vim.fn.input("Ask Copilot: ")
+        if input ~= "" then
+          vim.cmd("CopilotChat " .. input)
+        end
+      end,
+      "Chat",
+      mode = { "x" },
+    },
+    e = { "<cmd>CopilotChatInPlace<CR>", "Edit with instruction", mode = { "n", "v" } },
+    t = { "<cmd>CopilotChatTests<CR>", "Generate tests", mode = { "n", "v" } },
+    v = { "<cmd>CopilotChatVisual<CR>", "Open in vertical split", mode = "x" },
+    a = { "<cmd>CopilotChatAutocmd<CR>", "Autocmd", mode = { "n", "v" } },
+    m = { "<cmd>CopilotChatMapping<CR>", "Map", mode = { "n", "v" } },
+    x = { "<cmd>CopilotChatExplain<CR>", "Explain code", mode = { "n", "v" } },
+    r = { "<cmd>CopilotChatReview<CR>", "Review", mode = { "n", "v" } },
+    f = { "<cmd>CopilotChatRefactor<CR>", "Refactor", mode = { "n", "v" } },
+  }
+}
+local keys = {}
+for key, tbl in pairs(keymap["<leader>cc"]) do
+  if type(tbl) == "table" and key ~= 'c' then
+    local cmd = tbl[1]
+    local desc = tbl[2]
+    local mode = tbl.mode
+    local out = {
+      "<leader>cc" .. key,
+      cmd,
+      desc = '[CopilotChat] ' .. desc,
+      mode = mode,
+    }
+    -- print(key, vim.inspect(out))
+    table.insert(keys, out)
+  end
+end
+
 return {
+  {
+    "zbirenbaum/copilot.lua",
+    dependencies = {
+      "zbirenbaum/copilot-cmp",
+    },
+    config = function()
+      -- See https://github.com/zbirenbaum/copilot.lua
+      require("copilot_cmp").setup({
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          help = false,
+          gitcommit = true,
+          gitrebase = false,
+          hgcommit = false,
+          svn = false,
+          cvs = false,
+          ["."] = false,
+        },
+      })
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  },
+  -- NOTE:
+  -- on new machine, run:
+  -- pip3 install python-dotenv requests pynvim==0.5.0 prompt-toolkit tiktoken
+  {
+    "jellydn/CopilotChat.nvim",
+    dependencies = { "zbirenbaum/copilot.lua" }, -- Or { "github/copilot.vim" }
+    opts = {
+      show_help = "yes",                         -- Show help text for CopilotChatInPlace, default: yes
+      debug = true,                              -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+      prompts = {
+        Explain = "Explain how it works.",
+        Review = "Review the following code and provide concise suggestions.",
+        Tests = "Briefly explain how the selected code works, then generate unit tests.",
+        Refactor = "Refactor the code to improve clarity and readability.",
+      },
+    },
+    build = function()
+      vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
+    end,
+    config = function()
+      require('CopilotChat').setup({
+        show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
+        debug = false,     -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+        prompts = {
+          Explain = "Explain how the selected code works, provide any documetation references or links.",
+          Review = "Review the following code and provide concise suggestions.",
+          Tests = "Briefly explain how the selected code works, then generate unit tests.",
+          Refactor = "Refactor the code to improve clarity and readability.",
+        },
+      })
+      require('which-key').register(keymap)
+    end,
+    event = "VeryLazy",
+    keys = keys,
+  },
   {
     "Exafunction/codeium.nvim",
     dependencies = {
@@ -17,9 +118,9 @@ return {
         api_key_cmd = os.getenv("OPENAI_API_KEY"),
       })
       require('which-key').register {
-        ['<leader>c'] = {
+        ['<leader>cC'] = {
           name = "ChatGPT",
-          c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
+          c = { "<cmd>ChatGPT<CR>", "Chat" },
           e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
           g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
           t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },

@@ -21,9 +21,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.11.11",
+    "@types/node": "^20.11.16",
     "cosmiconfig": "^9.0.0",
-    "massarg": "2.0.0-pre.13",
+    "massarg": "2.0.0",
     "prettier": "^3.2.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"

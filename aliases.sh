@@ -102,7 +102,6 @@ alias hlog="home git log"
 alias hiv="hi; vim ."
 alias hv="pushd \$(wd path df); vi .; popd"
 alias spider="ssh root@spider.casraf.dev"
-alias spider-new="ssh root@spider-new.casraf.dev"
 
 # docker
 alias de="docker-exec"
