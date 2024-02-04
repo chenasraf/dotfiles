@@ -68,6 +68,29 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+local dart_capabilities = vim.lsp.protocol.make_client_capabilities()
+dart_capabilities.textDocument.codeAction = {
+  dynamicRegistration = false,
+  codeActionLiteralSupport = {
+    codeActionKind = {
+      valueSet = {
+        "",
+        "quickfix",
+        "refactor",
+        "refactor.extract",
+        "refactor.inline",
+        "refactor.rewrite",
+        "source",
+        "source.organizeImports",
+      },
+    },
+  },
+}
+vim.tbl_extend('keep', dart_capabilities, capabilities)
 
 return {
   {
@@ -129,29 +152,6 @@ return {
       -- Setup neovim lua configuration
       require('neodev').setup()
 
-      -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-      local dart_capabilities = vim.lsp.protocol.make_client_capabilities()
-      dart_capabilities.textDocument.codeAction = {
-        dynamicRegistration = false,
-        codeActionLiteralSupport = {
-          codeActionKind = {
-            valueSet = {
-              "",
-              "quickfix",
-              "refactor",
-              "refactor.extract",
-              "refactor.inline",
-              "refactor.rewrite",
-              "source",
-              "source.organizeImports",
-            },
-          },
-        },
-      }
-      vim.tbl_extend('keep', dart_capabilities, capabilities)
       -- Ensure the servers above are installed
       local mason_lspconfig = require 'mason-lspconfig'
 
