@@ -1,5 +1,6 @@
+local notes_folder = os.getenv('HOME') .. '/Nextcloud/Notes'
+
 local function notes_search()
-  local notes_folder = os.getenv('HOME') .. '/Nextcloud/Notes'
   -- search for notes by file name
   require('telescope.builtin').find_files({
     prompt_title = 'Notes',
@@ -9,8 +10,7 @@ local function notes_search()
 end
 
 local function create_note()
-  local notes_folder = os.getenv('HOME') .. '/Nextcloud/Notes'
-  local filename = vim.fn.input('Filename: ')
+  local filename = vim.fn.input('Note Name: ')
   if filename == '' then
     return
   end
