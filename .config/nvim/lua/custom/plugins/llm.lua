@@ -1,5 +1,5 @@
 local keymap = {
-  ['<leader>cc'] = {
+  ['<leader>cx'] = {
     name = "CopilotChat",
     c = {
       function()
@@ -22,13 +22,13 @@ local keymap = {
   }
 }
 local keys = {}
-for key, tbl in pairs(keymap["<leader>cc"]) do
+for key, tbl in pairs(keymap["<leader>cx"]) do
   if type(tbl) == "table" and key ~= 'c' then
     local cmd = tbl[1]
     local desc = tbl[2]
     local mode = tbl.mode
     local out = {
-      "<leader>cc" .. key,
+      "<leader>cx" .. key,
       cmd,
       desc = '[CopilotChat] ' .. desc,
       mode = mode,
@@ -63,6 +63,8 @@ return {
         suggestion = { enabled = false },
         panel = { enabled = false },
       })
+      -- vim.keymap.set("n", "<leader>ccp", ":Copilot panel<CR>", { desc = "Open Copilot panel" })
+      -- vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
     end,
   },
   -- NOTE:
@@ -118,7 +120,7 @@ return {
         api_key_cmd = os.getenv("OPENAI_API_KEY"),
       })
       require('which-key').register {
-        ['<leader>cC'] = {
+        ['<leader>cc'] = {
           name = "ChatGPT",
           c = { "<cmd>ChatGPT<CR>", "Chat" },
           e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
