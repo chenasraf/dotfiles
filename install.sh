@@ -34,13 +34,14 @@ if [[ "$existing_ver" != "$gi_ver" ]]; then
   mkdir -p "$DOTBIN_META"
   if is_mac; then
     if [[ $(uname -m) == "arm64" ]]; then
-      curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-arm -o $DOTBIN/gi_gen
+      arch=macos-arm
     else
-      curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-macos-intel -o $DOTBIN/gi_gen
+      arch=macos-intel
     fi
   else
-    curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-linux-amd -o $DOTBIN/gi_gen
+    arch=linux-amd
   fi
+  curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-$arch -o $DOTBIN/gi_gen
   chmod +x $DOTBIN/gi_gen
   echo $gi_ver >$ver_file
 else
@@ -104,7 +105,7 @@ fi
 # tmux themepack
 if [[ ! -d ~/.tmux-themepack ]]; then
   echo_cyan "Installing tmux themepack..."
-  git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+  git clone git@github.com:jimeh/tmux-themepack.git ~/.tmux-themepack
 fi
 
 # tmux-power
