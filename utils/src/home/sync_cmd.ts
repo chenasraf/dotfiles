@@ -3,16 +3,11 @@ import { DF_DIR, HomeOpts } from './common'
 import { massarg } from 'massarg'
 import { getCommandOutput, runCommand } from '../common'
 
-// message: synced 2024-01-06T12:29:00.000Z
-const DEFAULT_MSG = `sync ${new Date().toISOString()}`
-
 type SyncOpts = HomeOpts & {
   message?: string
 }
 
-const push = async (opts: SyncOpts) => {
-  const { message } = opts
-  console.log('Pushing submodules to origin')
+async function getSubmodules(opts: SyncOpts) {
   const { output } = await getCommandOutput(opts, [
     `git -C "${DF_DIR}" submodule | awk '{ print $2 }'`,
   ])
@@ -20,6 +15,13 @@ const push = async (opts: SyncOpts) => {
     .split('\n')
     .map((s) => s.trim())
     .filter(Boolean)
+  return submodules
+}
+
+const push = async (opts: SyncOpts) => {
+  const { message } = opts
+  console.log('Pushing submodules to origin')
+  const submodules = await getSubmodules(opts)
 
   console.log('Submodules:', submodules, '\n')
   const syncDate = new Date().toISOString()
@@ -39,7 +41,7 @@ const push = async (opts: SyncOpts) => {
         `echo`,
       ]
     })
-    .flat() as any[]
+    .flat()
 
   const msg = `[sync] ${submodules.join(', ')} (${syncDate})`
 
@@ -50,7 +52,7 @@ const push = async (opts: SyncOpts) => {
     `git commit -m "chore(submodules): ${msg}"`,
     `git push origin master`,
     `popd`,
-  ] as any[]
+  ]
 
   await runCommand(opts, [...pushSubmodule, ...pushRoot])
 }
@@ -58,13 +60,13 @@ const push = async (opts: SyncOpts) => {
 const pushCommand = new MassargCommand<HomeOpts>({
   name: 'push',
   aliases: ['p'],
-  description: 'Backup (push) synced files',
+  description: 'Push submodules',
   run: push,
 })
 const pullCommand = new MassargCommand<HomeOpts>({
   name: 'pull',
   aliases: ['l'],
-  description: 'Update (pull) synced files',
+  description: 'Pull submodules',
   run: async (opts: HomeOpts) => {
     console.log('Pulling submodules from origin')
     await runCommand(opts, [`pushd ${DF_DIR}; git submodule update --remote; popd`])
@@ -72,9 +74,9 @@ const pullCommand = new MassargCommand<HomeOpts>({
 })
 
 export const syncCommand = massarg<HomeOpts>({
-  name: 'synced',
+  name: 'submodules',
   aliases: ['S'],
-  description: 'Manage Synced Files',
+  description: 'Manage Submodules',
 })
   .main(push)
   .command(pushCommand)
