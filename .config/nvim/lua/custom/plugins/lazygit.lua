@@ -1,8 +1,9 @@
 return {
-  dir = "/Users/Dev/lazygit.nvim",
+  -- "chenasraf/lazygit.nvim",
+  -- dir = "/Users/Dev/lazygit.nvim",
 
-  branch = "feat/resize",
-  -- "kdheepak/lazygit.nvim",
+  -- branch = "feat/resize",
+  "kdheepak/lazygit.nvim",
   -- optional for floating window border decoration
   dependencies = {
     "nvim-lua/plenary.nvim",
