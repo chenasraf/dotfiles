@@ -1,6 +1,7 @@
 import { CosmiconfigResult, cosmiconfig } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
+import * as fs from 'node:fs/promises'
 import { Opts, getCommandOutput, runCommand } from '../common'
 import { spawn } from 'node:child_process'
 
@@ -203,21 +204,21 @@ export function throwNoConfigFound() {
     [
       'tmux config file not found, searched in:',
       '\t' +
-        searchDirs
-          .map((x) =>
-            searchPatterns('tmux')
-              .map((y) => path.join(x, y))
-              .join('\n\t'),
-          )
-          .join('\n\t'),
+      searchDirs
+        .map((x) =>
+          searchPatterns('tmux')
+            .map((y) => path.join(x, y))
+            .join('\n\t'),
+        )
+        .join('\n\t'),
       '\t' +
-        searchDirs
-          .map((x) =>
-            searchPatterns('tmux_local')
-              .map((y) => path.join(x, y))
-              .join('\n\t'),
-          )
-          .join('\n\t'),
+      searchDirs
+        .map((x) =>
+          searchPatterns('tmux_local')
+            .map((y) => path.join(x, y))
+            .join('\n\t'),
+        )
+        .join('\n\t'),
       // searchInFor('tmux').map(x => path.join(d)).join('\n\t'),
       // searchInFor('tmux_local').join('\n\t'),
     ].join('\n'),
@@ -241,8 +242,20 @@ export async function sessionExists(opts: Opts, sessionName: string): Promise<bo
   }
 }
 
-export async function fzf(_opts: Opts, inputs: string[]): Promise<string> {
-  const fzf = spawn(`echo "${inputs.join('\n')}" | fzf`, {
+export type FzfOptions = {
+  allowCustom?: boolean
+}
+
+export async function fzf(
+  _opts: Opts,
+  inputs: string[],
+  fzfOpts: FzfOptions = {},
+): Promise<string> {
+  let cmd = `echo "${inputs.join('\n')}" | fzf`
+  if (fzfOpts.allowCustom) {
+    cmd += ' --print-query | tail -1'
+  }
+  const fzf = spawn(cmd, {
     stdio: ['inherit', 'pipe', 'inherit'],
     shell: true,
   })
@@ -250,14 +263,20 @@ export async function fzf(_opts: Opts, inputs: string[]): Promise<string> {
   fzf.stdout.setEncoding('utf-8')
 
   return new Promise((resolve, reject) => {
-    fzf.stdout.on('readable', function () {
+    fzf.stdout.on('readable', function() {
       const value = fzf.stdout.read()
 
       if (value !== null) {
         resolve(value.toString().trim())
         return
       }
-      reject()
+      reject(new Error('fzf cancelled or encountered an error'))
+    })
+
+    fzf.on('exit', (code) => {
+      if (code === 1) {
+        reject(new Error('fzf cancelled or encountered an error'))
+      }
     })
   })
 }
@@ -306,10 +325,28 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): Tm
     zoom: layout.zoom,
     split: layout.split
       ? ({
-          direction:
-            typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
-          child: parseLayout(layout.split.child, path.resolve(root, layout.cwd)),
-        } as TmuxSplitLayout)
+        direction:
+          typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
+        child: parseLayout(layout.split.child, path.resolve(root, layout.cwd)),
+      } as TmuxSplitLayout)
       : undefined,
   }
+}
+
+export async function pathExists(path: string) {
+  return fs.stat(path).catch(() => false)
+}
+
+export async function isDirectory(path: string) {
+  return fs
+    .stat(path)
+    .then((stat) => stat.isDirectory())
+    .catch(() => false)
+}
+
+export async function isFile(path: string) {
+  return fs
+    .stat(path)
+    .then((stat) => stat.isFile())
+    .catch(() => false)
 }

@@ -9,6 +9,7 @@ import { showCmd } from './show_cmd'
 import { editCmd } from './edit_cmd'
 import { rmCmd } from './rm_cmd'
 import { attachCmd } from './attach_cmd'
+import { prjCmd } from './prj_cmd'
 
 // ================================================================================
 // Commands
@@ -57,4 +58,5 @@ mainCmd
   .command(rmCmd)
   .command(createCmd)
   .command(attachCmd)
+  .command(prjCmd)
   .parse()
