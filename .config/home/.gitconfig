@@ -1,6 +1,7 @@
 [user]
 	name = Chen Asraf
 	email = casraf@pm.me
+  signingkey = ~/.ssh/github_rsa.pub
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -18,3 +19,14 @@
   unchanged = update-index --assume-unchanged
   changed = update-index --no-assume-unchanged
   show-unchanged = !"git ls-files -v | sed -e 's/^[a-z] //p; d'"
+[rerere]
+  enabled = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  allowedSignersFile = ~/.ssh/allowed_signers
+
+[commit]
+  gpgsign = true

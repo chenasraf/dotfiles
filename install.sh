@@ -122,7 +122,10 @@ echo_cyan "Copying $DOTFILES/.config/nvim to $HOME/.config/nvim..."
 xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
 
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
-xrg "--exclude 'nvim' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
+xrg "--exclude 'nvim' --exclude 'lazygit.yml' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
+
+echo_cyan "Copying $DOTFILES/.config/lazygit.yml to $HOME/Library/ApplicationSupport/lazygit/config.yml..."
+xrg "$DOTFILES/.config/lazygit.yml $HOME/Library/ApplicationSupport/lazygit/config.yml"  "$rsync_template"
 
 echo_cyan "Copying home dir files..."
 rsync -vtr $DOTFILES/.config/home/.gitconfig $HOME/.gitconfig

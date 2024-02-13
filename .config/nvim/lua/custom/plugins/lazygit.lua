@@ -1,9 +1,11 @@
+local home = os.getenv('HOME')
 return {
-  -- "chenasraf/lazygit.nvim",
-  -- dir = "/Users/Dev/lazygit.nvim",
+  "chenasraf/lazygit.nvim",
+  branch = "feat/resize",
 
-  -- branch = "feat/resize",
-  "kdheepak/lazygit.nvim",
+  -- dir = home .. "/Dev/lazygit.nvim",
+
+  -- "kdheepak/lazygit.nvim",
   -- optional for floating window border decoration
   dependencies = {
     "nvim-lua/plenary.nvim",
