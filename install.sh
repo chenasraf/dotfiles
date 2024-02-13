@@ -130,6 +130,10 @@ rsync -vtr $DOTFILES/.config/home/.gitconfig $HOME/.gitconfig
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf
 
+echo_cyan "Sourcing files..."
+src "aliases"
+src "plugins/functions.plugin.zsh"
+
 if [[ $ZPLUG -eq 1 ]]; then
   echo_cyan "Reloading zplug..."
   zplug clear
