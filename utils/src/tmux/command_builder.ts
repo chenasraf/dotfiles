@@ -24,7 +24,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 
   if (await sessionExists(opts, sessionName)) {
     log(opts, `tmux session ${sessionName} already exists, attaching...`)
-    await runCommand(opts, `tmux attach -t ${sessionName}`)
+    await attachToSession(opts, sessionName)
     return
   }
 
