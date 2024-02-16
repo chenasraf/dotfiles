@@ -105,13 +105,13 @@ fi
 # tmux themepack
 if [[ ! -d ~/.tmux-themepack ]]; then
   echo_cyan "Installing tmux themepack..."
-  git clone git@github.com:jimeh/tmux-themepack.git ~/.tmux-themepack
+  git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 fi
 
 # tmux-power
 if [[ ! -d ~/.tmux-power ]]; then
   echo_cyan "Installing tmux-power..."
-  git clone git@github.com:wfxr/tmux-power.git ~/.tmux-power
+  git clone https://github.com/wfxr/tmux-power.git ~/.tmux-power
 fi
 
 # .config

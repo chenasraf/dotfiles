@@ -17,6 +17,11 @@ Some notable tools I use are:
 - WezTerm (`.config/wezterm/wezterm.lua`)
 - Zplug (`zplug.init.sh`)
 
+### Requirements
+
+1. Node.js (PNPM will be installed)
+2. jq
+
 ## Nvim Plugins
 
 I have many many plugins and configurations going on.
@@ -68,7 +73,7 @@ Some (but not all) of the plugins/modifications are listed here:
 2. Clone this repository into `~/.dotfiles`:
 
    ```bash
-   git clone git@github.com:chenasraf/dotfiles.git ~/.dotfiles
+   git clone git@github.com:chenasraf/dotfiles.git --depth 1 ~/.dotfiles
    ```
 
 3. Replace entire contents of `~/.zshrc` to the new version using (`ln -s` does **not** work):
@@ -91,12 +96,45 @@ See some of my other projects at [my website](https://casraf.dev/projects).
 
 Or some of my packages:
 
-NPM:
+### NPM
 
-- [Simple Scaffold](https://npmjs.com/package/simple-scaffold)
-- [Massarg](https://npmjs.com/package/massarg)
+- [Simple Scaffold](https://chenasraf.github.io/simple-scaffold) - Generate any file structure -
+  from single components to entire app boilerplates, with a single command.
+- [Massarg](https://chenasraf.github.io/massarg) - Flexible, powerful, and simple command/argument
+  parser for CLI applications
 
-Dart:
+##### Dart/Flutter
 
-- [Script Runner](https://pub.dev/packages/script_runner)
-- [Unaconfig](https://pub.dev/packages/unaconfig)
+#### Apps
+
+- [Dungeon Paper](https://github.com/DungeonPaper/dungeon-paper-app) - A Dungeon World character
+  sheet app written with Flutter
+- [Mudblock](https://github.com/chenasraf/mudblock) - An MUD client for mobile & desktop
+
+#### Packages
+
+- [Script Runner](https://pub.dev/packages/script_runner) - Run all your project-related scripts in
+  a portable, simple config.
+- [Unaconfig](https://pub.dev/packages/unaconfig) - Load your user's config files for your package
+  easily, from multiple sources & formats. Like
+  [cosmiconfig](https://www.npmjs.com/package/cosmiconfig), but for Dart!
+- [CTelnet](https://pub.dev/packages/ctelnet) - A simple Telnet client for Dart/Flutter, parse
+  incoming and outgoing data easily and quickly.
+- [btool](https://pub.dev/packages/btool) - Generic build helper tools for Flutter/Dart such as
+  manipulating version, package name or application ID
+- [Wheel Spinner](https://pub.dev/packages/wheel_spinner) - A simple Flutter widget for updating a
+  number using a pitch bender-like spinner
+
+### Neovim
+
+- [text-transform.nvim](https://github.com/chenasraf/text-transform.nvim) - Common text transformers
+  for nvim - switch between camelCase, PascalCase, snake_case, and more!
+
+## Rust
+
+- [tblf](https://github.com/chenasraf/tblf) - Turns any CLI output lines into tables.
+
+### Go
+
+- [GI Gen](https://github.com/chenasraf/gi_gen) - Gitignore generator for any type of
+  projectackages/unaconfig)
