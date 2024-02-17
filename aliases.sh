@@ -22,7 +22,7 @@ alias ".."="cd .."
 alias "..."="cd ../.."
 
 # most used
-alias ls="ls -Gh"
+alias ls="ls -h --color"
 alias ll="ls -l"
 alias la="ls -la"
 alias l="ls -A"
