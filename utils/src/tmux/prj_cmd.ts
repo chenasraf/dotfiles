@@ -8,11 +8,7 @@ import { createFromConfig } from './command_builder'
 import { format } from 'massarg/style'
 
 export type CreateOpts = Opts & {
-  rootDir?: string
-  window?: string[]
-  save?: boolean
-  saveOnly?: boolean
-  local?: boolean
+  name?: string
 }
 
 export const prjCmd = new MassargCommand<CreateOpts>({
@@ -22,7 +18,7 @@ export const prjCmd = new MassargCommand<CreateOpts>({
   run: async (opts) => {
     try {
       const devProjects = await getProjects(opts)
-      const output = await fzf(opts, devProjects, { allowCustom: true })
+      const output = opts.name || (await fzf(opts, devProjects, { allowCustom: true }))
       if (!output) {
         throw new Error('No selection')
       }
@@ -43,6 +39,12 @@ export const prjCmd = new MassargCommand<CreateOpts>({
     }
   },
 })
+  .option({
+    name: 'name',
+    aliases: ['n'],
+    description: 'Name of the directory to open as session',
+    isDefault: true,
+  })
   .flag({
     name: 'verbose',
     aliases: ['v'],
