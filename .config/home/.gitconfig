@@ -35,3 +35,5 @@
 
 [fetch]
   writeCommitGraph = true
+[log]
+  showSignature = true
