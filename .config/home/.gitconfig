@@ -1,7 +1,7 @@
 [user]
 	name = Chen Asraf
 	email = casraf@pm.me
-  signingkey = ~/.ssh/git.pub
+  signingkey = ~/.ssh/id_casraf.pub
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
