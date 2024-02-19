@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>O", "O<Esc>j", { desc = "Insert newline above" })
 vim.keymap.set("n", "<M-Left>", "b", { desc = "Move back word" })
 vim.keymap.set("n", "<M-Right>", "w", { desc = "Move forward word" })
 vim.keymap.set("n", "<C-m>", "<Plug>(VM-Add-Cursor-At-Pos)", { desc = "Add cursor at position" })
-vim.keymap.set("x", "<leader>db", "<Cmd>DBUIToggle<CR>", { desc = "[D]ad[B]od UI" })
+vim.keymap.set("x", "<leader>dB", "<Cmd>DBUIToggle<CR>", { desc = "[D]ad[B]od UI" })
 
 -- redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
@@ -94,8 +94,8 @@ vim.keymap.set("n", "<Leader>cp", ":Copilot panel<CR>", { desc = "Open Copilot p
 vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
 
 -- TODO only apply on JS files
-vim.keymap.set("n", "<leader>db", "<esc>dawdb", { desc = "Delete JS property (back)" })
-vim.keymap.set("n", "<leader>dw", "<esc>dawdw", { desc = "Delete JS property (fowards)" })
+vim.keymap.set("n", "<leader>db", "<esc>dawbx", { desc = "Delete JS property (back)" })
+vim.keymap.set("n", "<leader>dw", "<esc>dawx", { desc = "Delete JS property (fowards)" })
 
 vim.keymap.set({ "n", "v", "i" }, "<F2>", vim.lsp.buf.rename)
 
