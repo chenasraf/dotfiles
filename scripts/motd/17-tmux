@@ -1,5 +1,3 @@
 #!/usr/bin/env zsh
-source ~/.dotfiles/plugins/tmux.plugin.zsh
-
 tls
 echo
