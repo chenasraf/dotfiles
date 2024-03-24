@@ -244,4 +244,4 @@ disableStartupPopups: false
 customCommands: []
 services: {}
 notARepository: prompt
-promptToReturnFromSubprocess: true
+promptToReturnFromSubprocess: false
