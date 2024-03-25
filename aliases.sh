@@ -139,3 +139,4 @@ alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm 
 alias lg="lazygit"
 alias txp="tx p"
 alias tls="tx ls -s"
+alias co="gh copilot suggest"
