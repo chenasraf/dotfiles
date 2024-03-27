@@ -355,7 +355,25 @@ ask_no() {
   return 1
 }
 
+pubkey() {
+  pubfile="$HOME/.ssh/id_casraf.pub"
+  if [[ ! -z "$1" && ! -f "$1" ]]; then
+    if [[ -f "$HOME/.ssh/$1" ]]; then
+      echo_red "File not found: $1"
+      return 1
+    fi
+    pubfile="$HOME/.ssh/$1.pub"
+  elif [[ -f "$1" ]]; then
+    pubfile="$1"
+  fi
+  more $pubfile | pbcopy | echo '=> Public key copied to pasteboard.'
+}
+
+# NOTE the syntax below breaks highlighting, so keep it last
+
 # select random element from arguments
 randarg() {
   echo "${${@}[$RANDOM % $# + 1]}"
 }
+
+
