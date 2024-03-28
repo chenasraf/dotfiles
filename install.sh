@@ -57,6 +57,7 @@ check_npm=(
   "prettier"
   "http-server"
   "licenseg"
+  "vscode-json-language-server"
 )
 
 install_npm=(
@@ -67,6 +68,7 @@ install_npm=(
   "prettier@latest"
   "http-server"
   "licenseg"
+  "vscode-langservers-extracted"
 )
 
 install_npm_final=()
