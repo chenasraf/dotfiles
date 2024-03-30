@@ -139,3 +139,4 @@ alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm 
 alias lg="lazygit"
 alias txp="tx p"
 alias tls="tx ls -s"
+alias allow-signing="echo \"\$(git config --get user.email) namespaces=\"git\" \$(cat ~/.ssh/id_casraf.pub)\" >> ~/.ssh/allowed_signers"
