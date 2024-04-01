@@ -98,6 +98,7 @@ alias hli="hl && hi"
 alias rh="rhome"
 alias rt="home rt"
 alias hst="home status"
+alias hlg="lg -p \$HOME/.dotfiles"
 alias hdiff="home git diff"
 alias hf="home fetch"
 alias hp="home push"
@@ -133,8 +134,13 @@ alias tks="tmux kill-server"
 alias txp="tx p"
 alias tls="tx ls -s"
 
+# copilot
+alias cos="gh copilot suggest"
+alias coss="cos -t shell"
+alias cosg="cos -t git"
+alias cosh="cos -t gh"
+alias coe="gh copilot explain"
+
 # unsorted
 
 # addalias commands
-alias hlg="lg -p \$HOME/.dotfiles"
-alias cos="gh copilot suggest"
