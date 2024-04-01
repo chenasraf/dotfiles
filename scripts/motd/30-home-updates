@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+source "$HOME/.dotfiles/plugins/colors.plugin.zsh"
+
+if [[ ! -z $(git -C $HOME/.dotfiles fetch --dry-run) ]]; then
+  echo_yellow "You have home updates waiting to be pulled.\nUse \`hli\` to pull & install the changes."
+  echo
+fi
