@@ -2,10 +2,13 @@
 
 source "$HOME/.dotfiles/plugins/colors.plugin.zsh"
 
-# update repo
-git -C $HOME/.dotfiles remote update
+local=$(git -C $HOME/.dotfiles rev-parse HEAD)
+remote=$(git -C $HOME/.dotfiles rev-parse @{u})
 
-if [[ ! -z $(git -C $HOME/.dotfiles status -uno) ]]; then
-  echo_yellow "You have home updates waiting to be pulled.\nUse \`hli\` to pull & install the changes."
+if [[ $local != $remote ]]; then
+  echo_yellow "You have home updates waiting to be pulled/pushed."
+  echo_yellow "Use \`hp\` to push the local changes, or \`hli\` to pull & install the remote changes."
+  echo_yellow "Git status:\n"
+  git -C $HOME/.dotfiles status
   echo
 fi

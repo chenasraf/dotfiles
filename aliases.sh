@@ -137,3 +137,4 @@ alias tls="tx ls -s"
 
 # addalias commands
 alias hlg="lg -p \$HOME/.dotfiles"
+alias cos="gh copilot suggest"
