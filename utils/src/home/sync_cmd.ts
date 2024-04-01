@@ -7,7 +7,7 @@ type SyncOpts = HomeOpts & {
   message?: string
 }
 
-async function getSubmodules(opts: SyncOpts) {
+async function getSubmoduleNames(opts: SyncOpts) {
   const { output } = await getCommandOutput(opts, [
     `git -C "${DF_DIR}" submodule | awk '{ print $2 }'`,
   ])
@@ -21,7 +21,7 @@ async function getSubmodules(opts: SyncOpts) {
 const push = async (opts: SyncOpts) => {
   const { message } = opts
   console.log('Pushing submodules to origin')
-  const submodules = await getSubmodules(opts)
+  const submodules = await getSubmoduleNames(opts)
 
   console.log('Submodules:', submodules, '\n')
   const syncDate = new Date().toISOString()
@@ -57,6 +57,16 @@ const push = async (opts: SyncOpts) => {
   await runCommand(opts, [...pushSubmodule, ...pushRoot])
 }
 
+const statusCommand = new MassargCommand<HomeOpts>({
+  name: 'status',
+  aliases: ['s'],
+  description: 'Show submodule status',
+  run: async (opts: HomeOpts) => {
+    const { output } = await getCommandOutput(opts, [`git -C "${DF_DIR}" submodule status`])
+    console.log(output)
+  },
+})
+
 const pushCommand = new MassargCommand<HomeOpts>({
   name: 'push',
   aliases: ['p'],
@@ -79,6 +89,7 @@ export const syncCommand = massarg<HomeOpts>({
   description: 'Manage Submodules',
 })
   .main(push)
+  .command(statusCommand)
   .command(pushCommand)
   .command(pullCommand)
   .flag({
