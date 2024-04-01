@@ -136,3 +136,4 @@ alias tls="tx ls -s"
 # unsorted
 
 # addalias commands
+alias hlg="lg -p \$HOME/.dotfiles"
