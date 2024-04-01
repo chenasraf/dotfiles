@@ -67,7 +67,6 @@ alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
 alias ip="iplocal; ip4; ip6"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 # alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo g em update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
-alias pubkey="more ~/.ssh/id_casraf.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias gundo="git reset --soft HEAD~1"
 alias unq="sudo xattr -rd com.apple.quarantine"
 alias scriptls="cat \$(find-up package.json) | jq '.scripts'"
@@ -80,6 +79,10 @@ alias fnu="find-up"
 alias ascii-text=". \$DOTFILES/scripts/ascii_font/ascii_font.sh"
 alias dr="dotenv run"
 alias lua="luajit"
+alias prettypath="echo \$PATH | tr ':' '\n'"
+alias keypresses="xxd -psd"
+alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"
+alias lg="lazygit"
 if is_linux; then
   alias md5="md5sum"
 else
@@ -91,6 +94,7 @@ fi
 alias home="h_"
 alias h="home"
 alias hi="source \$DOTFILES/install.sh"
+alias hli="hl && hi"
 alias rh="rhome"
 alias rt="home rt"
 alias hst="home status"
@@ -126,17 +130,9 @@ alias trn="tmux rename-session -t"
 alias trm="tmux kill-session -t"
 alias tk="trm"
 alias tks="tmux kill-server"
-
-# tmux - workspaces
-alias tn-general="tn-custom -d \$HOME/Dev -s general"
-alias tn-df="tn-custom -d \$DOTFILES -s dotfiles ."
-
-# addalias commands
-alias prettypath="echo \$PATH | tr ':' '\n'"
-alias hli="hl && hi"
-alias keypresses="xxd -psd"
-alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"
-alias lg="lazygit"
 alias txp="tx p"
 alias tls="tx ls -s"
-alias allow-signing="echo \"\$(git config --get user.email) namespaces=\"git\" \$(cat ~/.ssh/id_casraf.pub)\" >> ~/.ssh/allowed_signers"
+
+# unsorted
+
+# addalias commands
