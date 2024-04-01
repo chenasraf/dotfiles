@@ -355,6 +355,25 @@ ask_no() {
   return 1
 }
 
+
+pubkey_file() {
+  file="$HOME/.ssh/id_casraf.pub"
+  if [[ $# -eq 1 ]]; then
+    file="$HOME/.ssh/id_$1.pub"
+  fi
+  echo $file
+}
+
+pubkey() {
+  file=$(pubkey_file $1)
+  more $file | pbcopy | echo "=> Public key copied to pasteboard."
+}
+
+allow-signing() {
+  file=$(pubkey_file $1)
+  echo "$(git config --get user.email) namespaces=\"git\" $(cat $file)" >> ~/.ssh/allowed_signers
+}
+
 # select random element from arguments
 randarg() {
   echo "${${@}[$RANDOM % $# + 1]}"
