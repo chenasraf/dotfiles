@@ -3,6 +3,9 @@
 type echo_cyan >/dev/null || source "$DOTFILES/zplug.init.zsh"
 echo_cyan "Setting up..."
 
+rflags='-tr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store"'
+rsync_template="rsync $rflags {}"
+
 ZPLUG=0
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -16,13 +19,34 @@ done
 cwd="$(pwd)"
 pushd $DOTFILES
 
-echo_cyan "Setting defaults..."
-is_mac && write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"
-is_mac && write_default "NSScrollViewRubberbanding" "-bool FALSE"
+if is_mac; then
+  echo_cyan "Setting defaults..."
+  write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"
+  write_default "NSScrollViewRubberbanding" "-bool FALSE"
+fi
+
+echo_cyan "Setting up git..."
 git config --global core.excludesfile ~/.config/.gitignore
+xrg "$DOTFILES/.config/home/.gitconfig $HOME/.gitconfig" "$rsync_template"
+
+if [[ -z $(git config --global user.name) ]]; then
+  echo_cyan "Enter your name:"
+  read name
+  git config --global user.name "$name"
+fi
+
+if [[ -z $(git config --global user.email) ]]; then
+  echo_cyan "Enter your email:"
+  read email
+  git config --global user.email "$email"
+fi
+
+echo_cyan "Installing binaries..."
 
 # gi_gen
+echo_cyan "Installing gi_gen..."
 echo_cyan "Fetching gi_gen latest version..."
+
 gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
 ver_file="$DOTBIN_META/.gi_gen_version"
 mkdir -p $(dirname $ver_file)
@@ -48,7 +72,9 @@ else
   echo_cyan "Latest gi_gen version ($gi_ver) already installed."
 fi
 
-# npm packages
+echo_cyan "Installing global pnpm packages..."
+
+# pnpm packages
 check_npm=(
   "tsc"
   "tldr"
@@ -82,18 +108,18 @@ for ((i = 1; i <= $#install_npm; i++)); do
 done
 
 if [[ $#install_npm_final -gt 0 ]]; then
-  if ask "Install npm packages $install_npm_final?"; then
+  if ask "Install pnpm packages $install_npm_final?"; then
     echo_cyan "Installing pnpm packages ($install_npm_final)..."
     pnpm install -g $install_npm_final
   else
-    echo_cyan "Skipping npm packages installation."
+    echo_cyan "Skipping pnpm packages installation."
   fi
 else
   echo_cyan "All pnpm packages already installed."
 fi
 
 if [[ ! -f $(which tx) ]]; then
-  echo_cyan "Installing utils..."
+  echo_cyan "Installing home utils..."
   pushd $DOTFILES/utils
   pnpm install && pnpm build && pnpm ginst
   popd
@@ -101,24 +127,29 @@ fi
   
 # zplug
 if [[ ! -d $HOME/.zplug ]]; then
-  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  if ask "Install zplug?"; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  fi
 fi
 
 # tmux themepack
 if [[ ! -d ~/.tmux-themepack ]]; then
-  echo_cyan "Installing tmux themepack..."
-  git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+  if ask "Install tmux themepack?"; then
+    echo_cyan "Installing tmux themepack..."
+    git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
+  fi
 fi
 
 # tmux-power
 if [[ ! -d ~/.tmux-power ]]; then
-  echo_cyan "Installing tmux-power..."
-  git clone https://github.com/wfxr/tmux-power.git ~/.tmux-power
+  if ask "Install tmux-power?"; then
+    echo_cyan "Installing tmux-power..."
+    git clone https://github.com/wfxr/tmux-power.git ~/.tmux-power
+  fi
 fi
 
 # .config
-rflags='-vtr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store"'
-rsync_template="rsync $rflags {}"
+echo_cyan "Copying config files..."
 
 echo_cyan "Copying $DOTFILES/.config/nvim to $HOME/.config/nvim..."
 xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
@@ -129,18 +160,15 @@ xrg "--exclude 'nvim' --exclude 'lazygit.yml' $DOTFILES/.config/ $HOME/.config/"
 lgdir="$HOME/Library/ApplicationSupport/lazygit"
 if is_linux; then
   lgdir="$HOME/.config/lazygit"
-  fi
 fi
 echo_cyan "Copying $DOTFILES/.config/lazygit.yml to $lgdir/config.yml..."
 xrg "$DOTFILES/.config/lazygit.yml $lgdir/config.yml"  "$rsync_template"
-
-echo_cyan "Copying home dir files..."
-rsync -vtr $DOTFILES/.config/home/.gitconfig $HOME/.gitconfig
+unset lgdir
 
 echo_cyan "Reloading tmux..."
 tmux source-file ~/.config/.tmux.conf
 
-echo_cyan "Sourcing files..."
+echo_cyan "Sourcing alias/function files..."
 src "aliases"
 src "plugins/functions.plugin.zsh"
 

@@ -355,6 +355,12 @@ ask_no() {
   return 1
 }
 
+get_user_input() {
+  echo -n "$1 "
+  read REPLY
+  echo $REPLY
+}
+
 
 pubkey_file() {
   file="$HOME/.ssh/id_casraf.pub"
