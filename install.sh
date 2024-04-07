@@ -1,7 +1,11 @@
 #!/usr/bin/env zsh
 
 type echo_cyan >/dev/null || source "$DOTFILES/zplug.init.zsh"
-echo_cyan "Setting up..."
+echo_yellow "Preparing..."
+
+if is_mac && [[ ! -d "$HOME/Library/ApplicationSupport" ]]; then
+  ln -s "$HOME/Library/Application Support" "$HOME/Library/ApplicationSupport"
+fi
 
 rflags='-tr --exclude ".git" --exclude "node_modules" --exclude ".DS_Store"'
 rsync_template="rsync $rflags {}"
@@ -25,7 +29,7 @@ if is_mac; then
   write_default "NSScrollViewRubberbanding" "-bool FALSE"
 fi
 
-echo_cyan "Setting up git..."
+echo_yellow "Setting up git..."
 git config --global core.excludesfile ~/.config/.gitignore
 xrg "$DOTFILES/.config/home/.gitconfig $HOME/.gitconfig" "$rsync_template"
 
@@ -41,7 +45,7 @@ if [[ -z $(git config --global user.email) ]]; then
   git config --global user.email "$email"
 fi
 
-echo_cyan "Installing binaries..."
+echo_yellow "Installing binaries..."
 
 # gi_gen
 echo_cyan "Installing gi_gen..."
@@ -72,7 +76,7 @@ else
   echo_cyan "Latest gi_gen version ($gi_ver) already installed."
 fi
 
-echo_cyan "Installing global pnpm packages..."
+echo_yellow "Installing global pnpm packages..."
 
 # pnpm packages
 check_npm=(
@@ -119,7 +123,7 @@ else
 fi
 
 if [[ ! -f $(which tx) ]]; then
-  echo_cyan "Installing home utils..."
+  echo_yellow "Installing home utils..."
   pushd $DOTFILES/utils
   pnpm install && pnpm build && pnpm ginst
   popd
@@ -149,7 +153,7 @@ if [[ ! -d ~/.tmux-power ]]; then
 fi
 
 # .config
-echo_cyan "Copying config files..."
+echo_yellow "Copying config files..."
 
 echo_cyan "Copying $DOTFILES/.config/nvim to $HOME/.config/nvim..."
 xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
@@ -165,15 +169,15 @@ echo_cyan "Copying $DOTFILES/.config/lazygit.yml to $lgdir/config.yml..."
 xrg "$DOTFILES/.config/lazygit.yml $lgdir/config.yml"  "$rsync_template"
 unset lgdir
 
-echo_cyan "Reloading tmux..."
-tmux source-file ~/.config/.tmux.conf
+echo_yellow "Reloading tmux..."
+tmux source-file ~/.config/.tmux.conf 2>/dev/null
 
-echo_cyan "Sourcing alias/function files..."
+echo_yellow "Sourcing alias/function files..."
 src "aliases"
 src "plugins/functions.plugin.zsh"
 
 if [[ $ZPLUG -eq 1 ]]; then
-  echo_cyan "Reloading zplug..."
+  echo_yellow "Reloading zplug..."
   zplug clear
   zplug load --verbose
 fi
