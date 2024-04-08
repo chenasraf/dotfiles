@@ -53,14 +53,9 @@ fi
 
 export VISUAL="$EDITOR"
 
-tmux source-file "$HOME/.config/.tmux.conf"
+tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
 
-# echo 'Loading '$DOTFILES/exports.sh
 source "$DOTFILES/exports.sh" # must run before zsh_init
-# echo 'Loading '$DOTFILES/aliases.sh
 source "$DOTFILES/aliases.sh"
-# echo 'Loading '$DOTFILES/scripts/home/home.sh
-# echo 'Loading '$DOTFILES/zsh_init.sh
-# source "$DOTFILES/zsh_init.sh"
 
-[[ ! -f ~/.config/.p10k.zsh ]] || source ~/.config/.p10k.zsh
+[[ ! -f "$HOME/.config/.p10k.zsh" ]] || source "$HOME/.config/.p10k.zsh"

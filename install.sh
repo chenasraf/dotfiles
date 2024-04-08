@@ -47,6 +47,15 @@ fi
 
 echo_yellow "Installing binaries..."
 
+if [[ ! -f $(which fnm) ]]; then
+  if ask "Install fnm?"; then
+    echo_yellow "Installing fnm..."
+    curl -fsSL https://fnm.vercel.app/install | bash
+    fnm install lts
+    fnm use lts-latest
+  fi
+fi
+
 # gi_gen
 echo_cyan "Installing gi_gen..."
 echo_cyan "Fetching gi_gen latest version..."
@@ -170,7 +179,7 @@ xrg "$DOTFILES/.config/lazygit.yml $lgdir/config.yml"  "$rsync_template"
 unset lgdir
 
 echo_yellow "Reloading tmux..."
-tmux source-file ~/.config/.tmux.conf 2>/dev/null
+tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
 
 echo_yellow "Sourcing alias/function files..."
 src "aliases"
