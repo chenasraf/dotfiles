@@ -18,6 +18,8 @@ async function getSubmoduleNames(opts: SyncOpts) {
   return submodules
 }
 
+const yellow = (s: string) => `\x1b[33m${s}\x1b[0m`
+
 const push = async (opts: SyncOpts) => {
   const { message } = opts
   console.log('Pushing submodules to origin')
@@ -31,7 +33,7 @@ const push = async (opts: SyncOpts) => {
       const defaultMessage = `[sync] ${syncDate}`
 
       return [
-        `echo "Pushing submodule: ${sub}\n"`,
+        `echo "${yellow('Pushing submodule: ${sub}\n')}"`,
         `pushd ${DF_DIR}/${sub}`,
         `git add .`,
         `git commit -m "chore: ${message || defaultMessage}"`,
@@ -46,7 +48,7 @@ const push = async (opts: SyncOpts) => {
   const msg = `[sync] ${submodules.join(', ')} (${syncDate})`
 
   const pushRoot = [
-    `echo "Pushing dotfiles\n"`,
+    `echo "${yellow('Pushing dotfiles\n')}"`,
     `pushd ${DF_DIR}`,
     `git add ${submodules.join(' ')}`,
     `git commit -m "chore(submodules): ${msg}"`,
@@ -78,7 +80,7 @@ const pullCommand = new MassargCommand<HomeOpts>({
   aliases: ['l'],
   description: 'Pull submodules',
   run: async (opts: HomeOpts) => {
-    console.log('Pulling submodules from origin')
+    console.log(yellow('Pulling submodules from origin'))
     await runCommand(opts, [`pushd ${DF_DIR}; git submodule update --remote; popd`])
   },
 })
