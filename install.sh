@@ -51,7 +51,7 @@ if [[ ! -f $(which fnm) ]]; then
   if ask "Install fnm?"; then
     echo_yellow "Installing fnm..."
     curl -fsSL https://fnm.vercel.app/install | bash
-    fnm install lts
+    fnm install --lts
     fnm use lts-latest
   fi
 fi
