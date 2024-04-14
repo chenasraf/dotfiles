@@ -129,6 +129,11 @@ src() {
   return 1
 }
 
+srcp() {
+  src "plugins/$1.plugin"
+  return $?
+}
+
 # select random number between min and max
 rand() {
   if [[ $# -eq 0 ]]; then
