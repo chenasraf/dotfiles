@@ -81,7 +81,9 @@ const pullCommand = new MassargCommand<HomeOpts>({
   description: 'Pull submodules',
   run: async (opts: HomeOpts) => {
     console.log(yellow('Pulling submodules from origin'))
-    await runCommand(opts, [`pushd ${DF_DIR}; git submodule update --remote; popd`])
+    for (const sub of await getSubmoduleNames(opts)) {
+      await runCommand(opts, [`pushd ${DF_DIR}/${sub}; git pull; popd`])
+    }
   },
 })
 
