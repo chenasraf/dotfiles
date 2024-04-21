@@ -89,6 +89,8 @@ else
   alias pushd="pushd -q"
   alias popd="popd -q"
 fi
+alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezterm-nightly --force"
+alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 
 # home
 alias home="h_"
