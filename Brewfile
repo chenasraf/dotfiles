@@ -14,12 +14,6 @@ brew "jpeg-xl"
 brew "aom"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# C parser in Python
-brew "pycparser"
-# C Foreign Function Interface for Python
-brew "cffi"
-# Text processing system for reStructuredText
-brew "docutils"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Official Amazon AWS command-line interface
@@ -30,6 +24,10 @@ brew "bash"
 brew "bison"
 # Get/set bluetooth power and discoverable state
 brew "blueutil"
+# C parser in Python
+brew "pycparser"
+# C Foreign Function Interface for Python
+brew "cffi"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Library to render SVG files using Cairo
@@ -42,6 +40,8 @@ brew "curl"
 brew "node"
 # Reference implementation for the Development Containers specification
 brew "devcontainer"
+# Text processing system for reStructuredText
+brew "docutils"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # GNU compiler collection
@@ -156,7 +156,7 @@ brew "surrealdb/tap/surreal"
 cask "android-platform-tools"
 # Tools for the Android SDK
 cask "android-sdk"
-# Simple application that will prevent iTunes or Apple Music from launching
-cask "notunes"
+# Game development engine
+cask "godot"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm-nightly"
