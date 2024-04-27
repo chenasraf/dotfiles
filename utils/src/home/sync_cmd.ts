@@ -18,6 +18,13 @@ async function getSubmoduleNames(opts: SyncOpts) {
   return submodules
 }
 
+async function withSubmodule(fn: (sub: string) => Promise<void>, opts: SyncOpts) {
+  const submodules = await getSubmoduleNames(opts)
+  for (const sub of submodules) {
+    await fn(sub)
+  }
+}
+
 const yellow = (s: string) => `\x1b[33m${s}\x1b[0m`
 
 const push = async (opts: SyncOpts) => {
@@ -45,13 +52,13 @@ const push = async (opts: SyncOpts) => {
     })
     .flat()
 
-  const msg = `[sync] ${submodules.join(', ')} (${syncDate})`
+  const msg = `Update submodules: ${submodules.join(', ')} (${syncDate})`
 
   const pushRoot = [
     `echo "${yellow('Pushing dotfiles\n')}"`,
     `pushd ${DF_DIR}`,
     `git add ${submodules.join(' ')}`,
-    `git commit -m "chore(submodules): ${msg}"`,
+    `git commit -m "backup(submodules): ${msg}"`,
     `git push origin master`,
     `popd`,
   ]
