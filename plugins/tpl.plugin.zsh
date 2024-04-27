@@ -2,26 +2,34 @@
 
 SCAFFOLDS_DIR="$DOTFILES/scaffolds"
 
-function tpl() {
-  tpl_name="$1"
-  sub_tpl_name="default"
-  shift
-  if [[ "$#" -ne 0 ]]; then
-    sub_tpl_name="$1"
-    shift
-  fi
-  name=""
-  case $tpl_name in
-    ef)
-      tpl_name="editorfiles"
-      name="editorfiles"
-      ;;
-    gh)
-      tpl_name="github-workflows"
-      name="github-workflows"
-      ;;
-  esac
 
-  npx -y simple-scaffold@latest -gh "chenasraf/templates#${tpl_name}.js" -k "${sub_tpl_name}" $name $@
+tpl () {
+  declare -A tpl_aliases=(
+    ef "editorfiles"
+    gh "github"
+    ghp "github.pnpm"
+  )
+  declare -A tpl_no_name=(
+    editorfiles "1"
+    gh "1"
+    ghp "1"
+  )
+  key=$1
+  shift
+  args="$@"
+  if [[ ! -z "${tpl_aliases[$key]}" ]]; then
+    key=${tpl_aliases[$key]}
+  fi
+
+  if [[ "${tpl_no_name[$key]}" -eq 1 ]]; then
+    name="- $args"
+  else
+    if [[ -z "$args" ]]; then
+      echo_red "Usage: tpl $key <name>"
+      return 1
+    fi
+  fi
+
+  simple-scaffold -g chenasraf/templates -k $key $args
 }
 
