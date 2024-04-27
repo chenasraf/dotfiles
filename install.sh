@@ -88,35 +88,25 @@ fi
 echo_yellow "Installing global pnpm packages..."
 
 # pnpm packages
-check_npm=(
-  "tsc"
-  "tldr"
-  "simple-scaffold"
-  "firebase"
-  "prettier"
-  "http-server"
-  "licenseg"
-  "vscode-json-language-server"
-)
-
-install_npm=(
-  "typescript"
-  "tldr@latest"
-  "simple-scaffold@latest"
-  "firebase-tools@latest"
-  "prettier@latest"
-  "http-server"
-  "licenseg"
-  "vscode-langservers-extracted"
+# bin-lookup-name => npm-package-name
+declare -A check_npm=(
+  "tsc" "typescript"
+  "tldr" "tldr"
+  "simple-scaffold" "simple-scaffold"
+  "firebase" "firebase-tools"
+  "prettier" "prettier"
+  "http-server" "http-server"
+  "licenseg" "licenseg"
+  "vscode-json-language-server" "vscode-langservers-extracted"
 )
 
 install_npm_final=()
 
-for ((i = 1; i <= $#install_npm; i++)); do
-  which $check_npm[$i] >/dev/null 2>&1
+for key value in ${(kv)check_npm}; do
+  which $key >/dev/null 2>&1
   exit_code=$?
   if [[ $exit_code -ne 0 ]]; then
-    install_npm_final+=("${install_npm[$i]}")
+    install_npm_final+=("$value@latest")
   fi
 done
 
@@ -138,26 +128,10 @@ if [[ ! -f $(which tx) ]]; then
   popd
 fi
   
-# zplug
+# Zplug Install
 if [[ ! -d $HOME/.zplug ]]; then
   if ask "Install zplug?"; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-  fi
-fi
-
-# tmux themepack
-if [[ ! -d ~/.tmux-themepack ]]; then
-  if ask "Install tmux themepack?"; then
-    echo_cyan "Installing tmux themepack..."
-    git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
-  fi
-fi
-
-# tmux-power
-if [[ ! -d ~/.tmux-power ]]; then
-  if ask "Install tmux-power?"; then
-    echo_cyan "Installing tmux-power..."
-    git clone https://github.com/wfxr/tmux-power.git ~/.tmux-power
   fi
 fi
 
@@ -170,6 +144,7 @@ xrg "--delete $DOTFILES/.config/nvim/ $HOME/.config/nvim/" "$rsync_template"
 echo_cyan "Copying $DOTFILES/.config to $HOME/.config..."
 xrg "--exclude 'nvim' --exclude 'lazygit.yml' $DOTFILES/.config/ $HOME/.config/" "$rsync_template"
 
+# LazyGit
 lgdir="$HOME/Library/ApplicationSupport/lazygit"
 if is_linux; then
   lgdir="$HOME/.config/lazygit"
@@ -178,13 +153,16 @@ echo_cyan "Copying $DOTFILES/.config/lazygit.yml to $lgdir/config.yml..."
 xrg "$DOTFILES/.config/lazygit.yml $lgdir/config.yml"  "$rsync_template"
 unset lgdir
 
+# Tmux
 echo_yellow "Reloading tmux..."
 tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
 
+# Source files
 echo_yellow "Sourcing alias/function files..."
 src "aliases"
 src "plugins/functions.plugin.zsh"
 
+# Zplug packages reload
 if [[ $ZPLUG -eq 1 ]]; then
   echo_yellow "Reloading zplug..."
   zplug clear
