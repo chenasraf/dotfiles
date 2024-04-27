@@ -385,6 +385,15 @@ allow-signing() {
   echo "$(git config --get user.email) namespaces=\"git\" $(cat $file)" >> ~/.ssh/allowed_signers
 }
 
+trm() {
+  sess=$1
+  if [[ -z $sess ]]; then
+    tmux kill-session
+    return $?
+  fi
+  tmux kill-session -t $sess
+}
+
 # select random element from arguments
 randarg() {
   echo "${${@}[$RANDOM % $# + 1]}"
