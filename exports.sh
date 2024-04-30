@@ -108,3 +108,5 @@ export SHELLCHECK_OPTS='--shell=bash'
 if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
 
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+
+export GITHUB_GPG_KEY_ID="B5690EEEBB952194"

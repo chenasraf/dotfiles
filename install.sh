@@ -31,6 +31,10 @@ fi
 
 echo_yellow "Setting up git..."
 git config --global core.excludesfile ~/.config/.gitignore
+if ! gpg --list-keys | grep -q "$GITHUB_GPG_KEY_ID"; then
+  curl https://github.com/web-flow.gpg | gpg --import
+fi
+
 xrg "$DOTFILES/.config/home/.gitconfig $HOME/.gitconfig" "$rsync_template"
 
 if [[ -z $(git config --global user.name) ]]; then
