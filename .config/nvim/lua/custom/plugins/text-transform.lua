@@ -1,12 +1,14 @@
 return {
   "chenasraf/text-transform.nvim",
-  branch = "develop",
-  config = function()
-    require("text-transform").setup({
-      keymap = {
+  version = "*",
+  -- dir = "~/Dev/text-transform.nvim",
+  opts = {
+    debug = false,
+    keymap = {
+      telescope_popup = {
         ["n"] = "<Leader>~",
         ["v"] = "<Leader>~",
-      },
-    })
-  end,
+      }
+    },
+  },
 }
