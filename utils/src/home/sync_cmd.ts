@@ -18,7 +18,7 @@ async function getSubmoduleNames(opts: SyncOpts) {
   return submodules
 }
 
-async function withSubmodule(fn: (sub: string) => Promise<void>, opts: SyncOpts) {
+async function withSubmodules(fn: (sub: string) => Promise<void>, opts: SyncOpts) {
   const submodules = await getSubmoduleNames(opts)
   for (const sub of submodules) {
     await fn(sub)
@@ -71,8 +71,12 @@ const statusCommand = new MassargCommand<HomeOpts>({
   aliases: ['s'],
   description: 'Show submodule status',
   run: async (opts: HomeOpts) => {
-    const { output } = await getCommandOutput(opts, [`git -C "${DF_DIR}" submodule status`])
-    console.log(output)
+    withSubmodules(async (sub) => {
+      console.log('Submodule:', sub)
+      console.log()
+      await runCommand(opts, [`git -C "${DF_DIR}/${sub}" status`])
+      console.log()
+    }, opts)
   },
 })
 
