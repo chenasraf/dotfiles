@@ -366,6 +366,10 @@ get_user_input() {
   echo $REPLY
 }
 
+pbfile() {
+  file="$1"
+  more $file | pbcopy | echo "=> $file copied to clipboard."
+}
 
 pubkey_file() {
   file="$HOME/.ssh/id_casraf.pub"
@@ -377,7 +381,7 @@ pubkey_file() {
 
 pubkey() {
   file=$(pubkey_file $1)
-  more $file | pbcopy | echo "=> Public key copied to pasteboard."
+  more $file | pbcopy | echo "=> Public key copied to clipboard."
 }
 
 allow-signing() {

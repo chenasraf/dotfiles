@@ -170,6 +170,8 @@ src "plugins/functions.plugin.zsh"
 if [[ $ZPLUG -eq 1 ]]; then
   echo_yellow "Reloading zplug..."
   zplug clear
+  source "$DOTFILES/zplug.init.zsh"
+  zplug install
   zplug load --verbose
 fi
 
