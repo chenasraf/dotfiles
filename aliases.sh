@@ -147,3 +147,4 @@ alias coe="gh copilot explain"
 # unsorted
 
 # addalias commands
+alias occ="sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ"

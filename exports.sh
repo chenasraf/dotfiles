@@ -25,7 +25,9 @@ export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
 
 # FNM
-eval "$(fnm env --use-on-cd)"
+if [[ -f $(which fnm) ]]; then
+  eval "$(fnm env --use-on-cd)"
+fi
 
 # Optionals
 

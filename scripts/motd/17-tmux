@@ -1,3 +1,4 @@
 #!/usr/bin/env zsh
+source "$HOME/.dotfiles/aliases.sh"
 tls
 echo
