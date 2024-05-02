@@ -44,13 +44,21 @@ export const gitCommand = createGitCommand<GitOpts>(
   required: true,
 })
 
-export const pushCommand = createGitCommand<PushOpts>(
-  'push',
-  (opts) => [`add .`, `commit ${opts.message ? `-m "${opts.message}"` : ''}`, `push`],
-  {
-    description: 'Push all (incl. uncommitted) changes to remote',
+export const pushCommand = new MassargCommand<PushOpts>({
+  name: 'push',
+  run: async (opts) => {
+    const code = await runCommand(opts, `git -C ${DF_DIR} diff --quiet`)
+    if (code !== 0) {
+      await runCommand(opts, `git -C ${DF_DIR} add .`)
+      await runCommand(
+        opts,
+        `git -C ${DF_DIR} commit ${opts.message ? `-m "${opts.message}"` : ''}`,
+      )
+    }
+    await runCommand(opts, `git -C ${DF_DIR} push`)
   },
-).option({
+  description: 'Push all (incl. uncommitted) changes to remote',
+}).option({
   name: 'message',
   description: 'Commit message',
   aliases: ['m'],
