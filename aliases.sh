@@ -86,10 +86,9 @@ alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm 
 alias lg="lazygit"
 if is_linux; then
   alias md5="md5sum"
-else
-  alias pushd="pushd -q"
-  alias popd="popd -q"
 fi
+alias pushd="pushd -q"
+alias popd="popd -q"
 alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezterm@nightly --force"
 alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 
