@@ -1,14 +1,16 @@
 return {
   "chenasraf/text-transform.nvim",
-  version = "*",
-  -- dir = "~/Dev/text-transform.nvim",
+  branch = "develop",
+  -- version = "*",
+  dir = "~/Dev/text-transform.nvim",
   opts = {
-    debug = false,
+    -- debug = true,
     keymap = {
       telescope_popup = {
         ["n"] = "<Leader>~",
         ["v"] = "<Leader>~",
-      }
+      },
     },
+    -- popup_type = 'select',
   },
 }

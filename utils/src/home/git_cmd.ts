@@ -47,7 +47,7 @@ export const gitCommand = createGitCommand<GitOpts>(
 export const pushCommand = new MassargCommand<PushOpts>({
   name: 'push',
   run: async (opts) => {
-    const code = await runCommand(opts, `git -C ${DF_DIR} diff --quiet`)
+    const code = await runCommand(opts, `git -C ${DF_DIR} diff --quiet`).catch((code) => code)
     if (code !== 0) {
       await runCommand(opts, `git -C ${DF_DIR} add .`)
       await runCommand(
