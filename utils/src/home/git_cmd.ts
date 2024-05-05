@@ -1,5 +1,5 @@
 import { CommandConfig, MassargCommand } from 'massarg/command'
-import { DF_DIR, HomeOpts } from './common'
+import { DF_DIR, HomeOpts, checkGitChanges } from './common'
 import { runCommand } from '../common'
 
 type PushOpts = HomeOpts & {
@@ -47,8 +47,8 @@ export const gitCommand = createGitCommand<GitOpts>(
 export const pushCommand = new MassargCommand<PushOpts>({
   name: 'push',
   run: async (opts) => {
-    const code = await runCommand(opts, `git -C ${DF_DIR} diff --quiet`).catch((code) => code)
-    if (code !== 0) {
+    const gitHasChanges = await checkGitChanges(opts)
+    if (gitHasChanges) {
       await runCommand(opts, `git -C ${DF_DIR} add .`)
       await runCommand(
         opts,

@@ -23,6 +23,16 @@ done
 cwd="$(pwd)"
 pushd $DOTFILES
 
+
+if [[ ! -f "$DOTFILES/.device_uid" ||  -z $(cat "$DOTFILES/.device_uid") ]]; then
+  echo
+  echo_yellow "Unique device UID not set up. Enter device uid: "
+  read duid
+  echo
+  echo $duid >$DOTFILES/.device_uid
+  echo_cyan "Device UID set to \"$duid\""
+fi
+
 if is_mac; then
   echo_cyan "Setting defaults..."
   write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"

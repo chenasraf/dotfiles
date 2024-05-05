@@ -2,7 +2,7 @@ return {
   "chenasraf/text-transform.nvim",
   branch = "develop",
   -- version = "*",
-  dir = "~/Dev/text-transform.nvim",
+  -- dir = "~/Dev/text-transform.nvim",
   opts = {
     -- debug = true,
     keymap = {

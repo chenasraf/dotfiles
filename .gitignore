@@ -7,3 +7,4 @@ bin/
 tests/
 _local.sh
 .tmux_local.yml
+.device_uid

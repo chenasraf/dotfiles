@@ -1,6 +1,6 @@
 import * as os from 'node:os'
 import { MassargCommand } from 'massarg/command'
-import { DF_DIR, HomeOpts } from './common'
+import { DF_DIR, HomeOpts, checkGitChanges, getDeviceUID } from './common'
 import { massarg } from 'massarg'
 import { runCommand } from '../common'
 
@@ -11,11 +11,16 @@ async function backup(opts: HomeOpts) {
     return
   }
   const syncDate = new Date().toISOString()
+  const DEVICE_UID = await getDeviceUID()
+  const gitChanges = await checkGitChanges(opts)
+  if (gitChanges) {
+    console.error('There are other changes waiting to be pushed')
+    process.exit(1)
+  }
   await runCommand(opts, [
-    `pushd "${DF_DIR}"`,
-    `git diff --quiet`,
-    `[[ $? -ne 0 ]] && echo "There are other changes waiting to be pushed" && exit 1`,
-    `brew bundle dump -f --describe`,
+    `mkdir -p "${DF_DIR}/brew/${DEVICE_UID}"`,
+    `pushd "${DF_DIR}/brew/${DEVICE_UID}"`,
+    `brew bundle dump --formula --cask --tap --describe --force`,
     `git add Brewfile`,
     `git commit -m "backup(brew): Update Brewfile (${syncDate})"`,
     `git push`,
@@ -24,7 +29,8 @@ async function backup(opts: HomeOpts) {
 }
 
 async function restore(opts: HomeOpts) {
-  await runCommand(opts, [`pushd "${DF_DIR}"`, `brew bundle`, `popd`])
+  const DEVICE_UID = await getDeviceUID()
+  await runCommand(opts, [`pushd "${DF_DIR}/brew/${DEVICE_UID}"`, `brew bundle`, `popd`])
 }
 
 const backupCommand = new MassargCommand<HomeOpts>({
