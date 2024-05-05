@@ -40,7 +40,7 @@ alias -g M="| most"
 alias -g V="| nvim -"
 alias -g VH="| nvim -c 'setfiletype sh' -"
 alias -g LL="2>&1 | less"
-if is_macos; then
+if is_mac; then
   alias -g CA="2>&1 | cat -v"
 else
   alias -g CA="2>&1 | cat -A"
