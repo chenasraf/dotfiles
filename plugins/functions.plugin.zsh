@@ -398,6 +398,47 @@ trm() {
   tmux kill-session -t $sess
 }
 
+enable_touchid_sudo() {
+  # Navigate to the directory containing the PAM configuration files
+  cd /etc/pam.d || return
+
+  # Copy the template file to create a new sudo_local file
+  echo "Copying sudo_local.template to sudo_local. Please enter your sudo password if prompted."
+  sudo cp sudo_local.template sudo_local
+  if [ $? -ne 0 ]; then
+    echo "Failed to copy sudo_local.template. Ensure it exists and you have permissions."
+    return
+  fi
+
+  # Use sed to uncomment the line containing 'pam_tid.so'
+  echo "Enabling Touch ID in sudo_local. You might need to enter your sudo password again."
+  sudo sed -i '' 's/#\(.*pam_tid.so\)/\1/' sudo_local
+  if [ $? -ne 0 ]; then
+    echo "Failed to enable Touch ID in sudo_local. Check your permissions and file content."
+    return
+  fi
+
+  echo "Touch ID has been successfully enabled for sudo. Changes should persist through system updates."
+}
+
+disable_touchid_sudo() {
+  # Navigate to the directory containing the PAM configuration files
+  cd /etc/pam.d || return
+
+  # Check if sudo_local exists before attempting to remove it
+  if [ -f "sudo_local" ]; then
+    echo "Removing sudo_local to revert to default sudo configuration. Please enter your sudo password if prompted."
+    sudo rm sudo_local
+    if [ $? -ne 0 ]; then
+      echo "Failed to remove sudo_local. Ensure you have permissions."
+      return
+    fi
+    echo "sudo_local has been successfully removed. The system has reverted to the default sudo configuration."
+  else
+    echo "sudo_local does not exist. No changes needed."
+  fi
+}
+
 # select random element from arguments
 randarg() {
   echo "${${@}[$RANDOM % $# + 1]}"
