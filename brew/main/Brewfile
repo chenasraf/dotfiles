@@ -148,6 +148,8 @@ brew "yq"
 brew "heroku/brew/heroku"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
+# Command-line interface for 1Password
+cask "1password-cli"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 # A scalable, distributed, collaborative, document-graph database

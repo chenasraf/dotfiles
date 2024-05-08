@@ -168,6 +168,8 @@ brew "yq"
 brew "eddieantonio/eddieantonio/imgcat"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
+# Command-line interface for 1Password
+cask "1password-cli"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for the Android SDK
