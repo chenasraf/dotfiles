@@ -4,7 +4,9 @@ import { DF_DIR, HomeOpts, checkGitChanges, getDeviceUID } from './common'
 import { massarg } from 'massarg'
 import { runCommand } from '../common'
 
-async function backup(opts: HomeOpts) {
+export type BrewOpts = HomeOpts & { push: boolean }
+
+async function backup(opts: BrewOpts) {
   const isMacOS = os.platform() === 'darwin'
   if (!isMacOS) {
     console.log('Not on MacOS, skipping backup.')
@@ -21,32 +23,41 @@ async function backup(opts: HomeOpts) {
     `mkdir -p "${DF_DIR}/brew/${DEVICE_UID}"`,
     `pushd "${DF_DIR}/brew/${DEVICE_UID}"`,
     `brew bundle dump --formula --cask --tap --describe --force`,
-    `git add Brewfile`,
-    `git commit -m "backup(brew): Update Brewfile (${syncDate})"`,
-    `git push`,
+    ...(opts.push
+      ? [
+          `git add Brewfile`,
+          `git commit -m "backup(brew): Update Brewfile (${syncDate})"`,
+          `git push`,
+        ]
+      : []),
     `popd`,
   ])
 }
 
-async function restore(opts: HomeOpts) {
+async function restore(opts: BrewOpts) {
   const DEVICE_UID = await getDeviceUID()
   await runCommand(opts, [`pushd "${DF_DIR}/brew/${DEVICE_UID}"`, `brew bundle`, `popd`])
 }
 
-const backupCommand = new MassargCommand<HomeOpts>({
+const backupCommand = new MassargCommand<BrewOpts>({
   name: 'backup',
   aliases: ['b', 'p'],
   description: 'Backup brew state to Brewfile',
   run: backup,
+}).flag({
+  name: 'push',
+  aliases: ['p'],
+  description: 'Push changes to git',
+  defaultValue: true,
 })
-const restoreCommand = new MassargCommand<HomeOpts>({
+const restoreCommand = new MassargCommand<BrewOpts>({
   name: 'restore',
   aliases: ['r', 'l'],
   description: 'Restore brew state from Brewfile',
   run: restore,
 })
 
-export const brewCommand = massarg<HomeOpts>({
+export const brewCommand = massarg<BrewOpts>({
   name: 'brew',
   aliases: ['b'],
   description: 'Manage Brewfile',

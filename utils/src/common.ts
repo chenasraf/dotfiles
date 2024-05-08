@@ -32,9 +32,12 @@ export function log({ verbose, dry }: Opts, ...content: any[]) {
   console.log(...content)
 }
 
-export async function runCommand(opts: Opts, command: string | string[]): Promise<number> {
+export async function runCommand(
+  opts: Opts,
+  command: string | (string | false | number | null | undefined)[],
+): Promise<number> {
   if (Array.isArray(command)) {
-    command = command.join('; ')
+    command = command.filter(Boolean).join('; ')
   }
   const [cmd, ...args] = command.split(' ')
   log(opts, '$ ' + command)
