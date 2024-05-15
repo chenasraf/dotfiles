@@ -425,6 +425,7 @@ enable_touchid_sudo() {
     popd
     return
   fi
+  defaults write com.apple.security.authorization ignoreArd -bool TRUE
 
   echo "Touch ID has been successfully enabled for sudo. Changes should persist through system updates."
 }
@@ -442,6 +443,7 @@ disable_touchid_sudo() {
       popd
       return
     fi
+    defaults write com.apple.security.authorization ignoreArd -bool FALSE
     echo "sudo_local has been successfully removed. The system has reverted to the default sudo configuration."
   else
     echo "sudo_local does not exist. No changes needed."
