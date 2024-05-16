@@ -40,12 +40,56 @@ if is_mac; then
 fi
 
 echo_yellow "Setting up git..."
-git config --global core.excludesfile ~/.config/.gitignore
+
 if ! gpg --list-keys | grep -q "$GITHUB_GPG_KEY_ID"; then
   curl https://github.com/web-flow.gpg | gpg --import
 fi
 
-xrg "$DOTFILES/.config/home/.gitconfig $HOME/.gitconfig" "$rsync_template"
+git config --global user.name "Chen Asraf"
+git config --global user.email "casraf@pm.me"
+git config --global user.signingkey "~/.ssh/id_casraf.pub"
+git config --global filter.lfs.clean "git-lfs clean -- %f"
+git config --global filter.lfs.smudge "git-lfs smudge -- %f"
+git config --global filter.lfs.process "git-lfs filter-process"
+git config --global filter.lfs.required true
+git config --global init.defaultBranch "master"
+git config --global credential.helper "store"
+git config --global pull.rebase true
+git config --global core.excludesfile "~/.config/.gitignore"
+# git config --global core.untrackedCache true
+# git config --global core.fsmonitor true
+git config --global alias.unchanged "update-index --assume-unchanged"
+git config --global alias.changed "update-index --no-assume-unchanged"
+git config --global alias.show-unchanged "!git ls-files -v | sed -e 's/^[a-z] //p; d'"
+git config --global rerere.enabled true
+git config --global gpg.format "ssh"
+git config --global gpg.ssh.allowedSignersFile "~/.ssh/allowed_signers"
+git config --global commit.gpgsign true
+git config --global maintenance.repo "~/.dotfiles"
+git config --global fetch.writeCommitGraph true
+git config --global log.showSignature true
+git config --global core.excludesfile ~/.config/.gitignore
+
+if [[ ! -f $(which delta) ]]; then
+  if ask "Install delta?"; then
+    echo_yellow "Installing delta..."
+    brew install git-delta
+  fi
+fi
+
+existing_pager=$(git config --global core.pager)
+
+if [[ -z $existing_pager ]]; then
+  echo_yellow "Setting up delta as git pager..."
+  git config --global core.pager delta
+  git config --global interactive.diffFilter "delta --color-only"
+  # git config --global delta.side-by-side true
+  # git config --global delta.navigate true
+  # git config --global delta.dark true
+  git config --global merge.conflictStyle diff3
+  git config --global delta.line-numbers true
+  git config --global diff.colorMoved default
+fi
 
 if [[ -z $(git config --global user.name) ]]; then
   echo_cyan "Enter your name:"
