@@ -45,8 +45,18 @@ if ! gpg --list-keys | grep -q "$GITHUB_GPG_KEY_ID"; then
   curl https://github.com/web-flow.gpg | gpg --import
 fi
 
-git config --global user.name "Chen Asraf"
-git config --global user.email "casraf@pm.me"
+if [[ -z $(git config --global user.name) ]]; then
+  echo_cyan "Enter your name:"
+  read name
+  git config --global user.name "$name"
+fi
+
+if [[ -z $(git config --global user.email) ]]; then
+  echo_cyan "Enter your email:"
+  read email
+  git config --global user.email "$email"
+fi
+
 git config --global user.signingkey "~/.ssh/id_casraf.pub"
 git config --global filter.lfs.clean "git-lfs clean -- %f"
 git config --global filter.lfs.smudge "git-lfs smudge -- %f"
@@ -61,6 +71,9 @@ git config --global core.excludesfile "~/.config/.gitignore"
 git config --global alias.unchanged "update-index --assume-unchanged"
 git config --global alias.changed "update-index --no-assume-unchanged"
 git config --global alias.show-unchanged "!git ls-files -v | sed -e 's/^[a-z] //p; d'"
+git config --global alias.prs "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh prs"
+git config --global alias.pipelines "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh pipelines"
+git config --global alias.actions "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh pipelines"
 git config --global rerere.enabled true
 git config --global gpg.format "ssh"
 git config --global gpg.ssh.allowedSignersFile "~/.ssh/allowed_signers"
@@ -91,17 +104,6 @@ if [[ -z $existing_pager ]]; then
   git config --global diff.colorMoved default
 fi
 
-if [[ -z $(git config --global user.name) ]]; then
-  echo_cyan "Enter your name:"
-  read name
-  git config --global user.name "$name"
-fi
-
-if [[ -z $(git config --global user.email) ]]; then
-  echo_cyan "Enter your email:"
-  read email
-  git config --global user.email "$email"
-fi
 
 echo_yellow "Installing binaries..."
 
