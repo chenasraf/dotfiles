@@ -249,13 +249,13 @@ customCommands:
         title: 'Choose an action'
         key: 'action'
         options:
-          - name: 'Pull Requests'
-            description: 'Open pull requests'
-            value: 'pull_requests'
-          - name: 'Pipelines'
-            description: 'Open pipelines'
-            value: 'pipelines'
-    command: 'git {{.Form.action}} {{.SelectedLocalBranch.Name}}'
+          - name: 'Open Project'
+            value: 'project'
+          - name: 'Open Pull Requests'
+            value: 'prs'
+          - name: 'Open CI'
+            value: 'ci'
+    command: 'git open {{.Form.action}} {{.SelectedLocalBranch.Name}}'
     loadingText: 'Opening...'
 services: {}
 notARepository: prompt

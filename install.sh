@@ -68,12 +68,6 @@ git config --global pull.rebase true
 git config --global core.excludesfile "~/.config/.gitignore"
 # git config --global core.untrackedCache true
 # git config --global core.fsmonitor true
-git config --global alias.unchanged "update-index --assume-unchanged"
-git config --global alias.changed "update-index --no-assume-unchanged"
-git config --global alias.show-unchanged "!git ls-files -v | sed -e 's/^[a-z] //p; d'"
-git config --global alias.prs "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh prs"
-git config --global alias.pipelines "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh pipelines"
-git config --global alias.actions "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh pipelines"
 git config --global rerere.enabled true
 git config --global gpg.format "ssh"
 git config --global gpg.ssh.allowedSignersFile "~/.ssh/allowed_signers"
@@ -82,6 +76,20 @@ git config --global maintenance.repo "~/.dotfiles"
 git config --global fetch.writeCommitGraph true
 git config --global log.showSignature true
 git config --global core.excludesfile ~/.config/.gitignore
+
+# ================================================================================================
+# Aliases/Custom commands
+# ================================================================================================
+
+# Change status
+git config --global alias.unchanged "update-index --assume-unchanged"
+git config --global alias.changed "update-index --no-assume-unchanged"
+git config --global alias.show-unchanged "!git ls-files -v | sed -e 's/^[a-z] //p; d'"
+
+# Open
+git config --global alias.open "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh open"
+git config --global alias.pr "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh prs"
+git config --global alias.ci "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh ci"
 
 if [[ ! -f $(which delta) ]]; then
   if ask "Install delta?"; then

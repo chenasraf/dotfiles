@@ -38,6 +38,38 @@ git_get_remote_type() {
   return 0
 }
 
+git_open_project() {
+  remote=$(git_get_remote)
+  if [[ -z $remote ]]; then
+    echo "No remote found"
+    return 1
+  fi
+
+  remote_type=$(git_get_remote_type)
+  if [[ -z $remote_type ]]; then
+    echo "Unknown remote type for $remote"
+    return 1
+  fi
+
+  case $remote_type in
+    github)
+      open "https://github.com/$remote"
+      ;;
+    gitlab)
+      open "https://gitlab.com/$remote"
+      ;;
+    bitbucket)
+      open "https://bitbucket.org/$remote"
+      ;;
+    *)
+      echo "Unknown remote type: $remote_type"
+      return 2
+      ;;
+  esac
+
+  return 0
+}
+
 git_open_pr_list() {
   # branch=$1
   # if [[ -z $branch ]]; then
@@ -52,7 +84,7 @@ git_open_pr_list() {
 
   remote_type=$(git_get_remote_type)
   if [[ -z $remote_type ]]; then
-    echo "Unknown remote type"
+    echo "Unknown remote type for $remote"
     return 1
   fi
 
@@ -94,7 +126,7 @@ git_open_pipelines() {
 
   remote_type=$(git_get_remote_type)
   if [[ -z $remote_type ]]; then
-    echo "Unknown remote type"
+    echo "Unknown remote type for $remote"
     return 1
   fi
 
@@ -117,13 +149,21 @@ git_open_pipelines() {
   return 0
 }
 
-if [[ ! -z $1 ]]; then
+git_open() {
+  if [[ -z $1 ]]; then
+    echo "Usage: git open <command>"
+    return 1
+  fi
+
   case $1 in
+    project|repo|open)
+      git_open_project
+      ;;
     pr|prs)
       shift
       git_open_pr_list $@
       ;;
-    actions|pipelines)
+    actions|pipelines|ci)
       shift
       git_open_pipelines $@
       ;;
@@ -132,4 +172,11 @@ if [[ ! -z $1 ]]; then
       return 1
       ;;
   esac
-fi
+}
+
+case $1 in
+  open)
+    shift
+    git_open $@
+    ;;
+esac
