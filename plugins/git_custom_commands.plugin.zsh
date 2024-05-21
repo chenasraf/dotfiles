@@ -4,6 +4,7 @@ git_get_remote() {
 }
 
 git_get_repo_path() {
+  remote=$1
   repo_path=''
 
   if [[ $remote =~ ^git@ ]]; then
@@ -15,9 +16,19 @@ git_get_repo_path() {
   echo $repo_path
 }
 
+open_url() {
+  echo "Opening $1"
+  is_mac=$(uname | grep -i darwin)
+  is_linux=$(uname | grep -i linux)
+  if [[ ! -z $is_mac ]]; then
+    open $1
+  elif [[ ! -z $is_linux ]]; then
+    xdg-open $1
+  fi
+}
+
 git_get_remote_type() {
-  remote=$(git_get_remote)
-  url_pathname=$(echo $remote | sed 's/.*:\/\/[^\/]*\//\//')
+  repo_path=$(git_get_repo_path $remote)
   remote_type='github'
   case $remote in
     *github.com*) 
@@ -45,7 +56,8 @@ git_open_project() {
     return 1
   fi
 
-  remote_type=$(git_get_remote_type)
+  repo_path=$(git_get_repo_path $remote)
+  remote_type=$(git_get_remote_type $remote)
   if [[ -z $remote_type ]]; then
     echo "Unknown remote type for $remote"
     return 1
@@ -53,13 +65,13 @@ git_open_project() {
 
   case $remote_type in
     github)
-      open "https://github.com/$remote"
+      open_url "https://github.com/$repo_path"
       ;;
     gitlab)
-      open "https://gitlab.com/$remote"
+      open_url "https://gitlab.com/$repo_path"
       ;;
     bitbucket)
-      open "https://bitbucket.org/$remote"
+      open_url "https://bitbucket.org/$repo_path"
       ;;
     *)
       echo "Unknown remote type: $remote_type"
@@ -82,26 +94,26 @@ git_open_pr_list() {
     return 1
   fi
 
-  remote_type=$(git_get_remote_type)
+  remote_type=$(git_get_remote_type $remote)
   if [[ -z $remote_type ]]; then
     echo "Unknown remote type for $remote"
     return 1
   fi
 
-  repo_path=$(git_get_repo_path)
+  repo_path=$(git_get_repo_path $remote)
 
   case $remote_type in
     github)
-      # open "https://github.com/$repo_path/pulls?q=is%3Apr+is%3Aopen+head%3A$branch"
-      open "https://github.com/$repo_path/pulls?q=is%3Apr+is%3Aopen"
+      # open_url "https://github.com/$repo_path/pulls?q=is%3Apr+is%3Aopen+head%3A$branch"
+      open_url "https://github.com/$repo_path/pulls?q=is%3Apr+is%3Aopen"
       ;;
     gitlab)
-      # open "https://gitlab.com/$repo_path/merge_requests?scope=all&state=opened&search=$branch"
-      open "https://gitlab.com/$repo_path/merge_requests?scope=all&state=opened"
+      # open_url "https://gitlab.com/$repo_path/merge_requests?scope=all&state=opened&search=$branch"
+      open_url "https://gitlab.com/$repo_path/merge_requests?scope=all&state=opened"
       ;;
     bitbucket)
-      # open "https://bitbucket.org/$repo_path/pull-requests?state=OPEN&source=$branch"
-      open "https://bitbucket.org/$repo_path/pull-requests?state=OPEN"
+      # open_url "https://bitbucket.org/$repo_path/pull-requests?state=OPEN&source=$branch"
+      open_url "https://bitbucket.org/$repo_path/pull-requests?state=OPEN"
       ;;
     *)
       echo "Unknown remote type: $remote_type"
@@ -124,25 +136,25 @@ git_open_pipelines() {
     return 1
   fi
 
-  remote_type=$(git_get_remote_type)
+  remote_type=$(git_get_remote_type $remote)
   if [[ -z $remote_type ]]; then
     echo "Unknown remote type for $remote"
     return 1
   fi
 
-  repo_path=$(git_get_repo_path)
+  repo_path=$(git_get_repo_path $remote)
   case $remote_type in
     github)
-      # open "https://github.com/$repo_path/actions?query=branch%3A$branch"
-      open "https://github.com/$repo_path/actions"
+      # open_url "https://github.com/$repo_path/actions?query=branch%3A$branch"
+      open_url "https://github.com/$repo_path/actions"
       ;;
     gitlab)
-      # open "https://gitlab.com/$repo_path/pipelines?scope=all&ref=$branch"
-      open "https://gitlab.com/$repo_path/pipelines?scope=all"
+      # open_url "https://gitlab.com/$repo_path/pipelines?scope=all&ref=$branch"
+      open_url "https://gitlab.com/$repo_path/pipelines?scope=all"
       ;;
     bitbucket)
-      # open "https://bitbucket.org/$repo_path/addon/pipelines/home#!/results/$branch"
-      open "https://bitbucket.org/$repo_path/addon/pipelines/home"
+      # open_url "https://bitbucket.org/$repo_path/addon/pipelines/home#!/results/$branch"
+      open_url "https://bitbucket.org/$repo_path/addon/pipelines/home"
       ;;
   esac
 
@@ -151,7 +163,7 @@ git_open_pipelines() {
 
 git_open() {
   if [[ -z $1 ]]; then
-    echo "Usage: git open <command>"
+    echo "Usage: git open_url <command>"
     return 1
   fi
 
