@@ -14,10 +14,6 @@ brew "jpeg-xl"
 brew "aom"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
-# Official Amazon AWS command-line interface
-brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Parser generator
@@ -121,6 +117,8 @@ brew "pygments"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
 # Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.9", link: false
 # Install various Ruby versions and implementations
 brew "ruby-build"
@@ -154,6 +152,8 @@ brew "jesseduffield/lazygit/lazygit"
 brew "mongodb/brew/mongodb-community"
 # A scalable, distributed, collaborative, document-graph database
 brew "surrealdb/tap/surreal"
+# Command-line interface for 1Password
+cask "1password-cli"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for the Android SDK
