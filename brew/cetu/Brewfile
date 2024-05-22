@@ -54,6 +54,8 @@ brew "fnm"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
 # Render markdown on the CLI
@@ -68,6 +70,8 @@ brew "guile"
 brew "jq"
 # Rainbows and unicorns in your console!
 brew "lolcat"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Manage multiple Node.js versions
