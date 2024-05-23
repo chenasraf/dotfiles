@@ -28,6 +28,7 @@ open_url() {
 }
 
 git_get_remote_type() {
+  remote=$1
   repo_path=$(git_get_repo_path $remote)
   remote_type='github'
   case $remote in
