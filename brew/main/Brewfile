@@ -32,16 +32,10 @@ brew "librsvg"
 brew "chafa"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Platform built on V8 to build network applications
-brew "node"
-# Reference implementation for the Development Containers specification
-brew "devcontainer"
 # Text processing system for reStructuredText
 brew "docutils"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
-# GNU compiler collection
-brew "gcc"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -64,6 +58,8 @@ brew "fnm"
 brew "freetds"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
+brew "gcc"
 # Graphics library to dynamically manipulate images
 brew "gd"
 # GitHub command-line tool
@@ -98,6 +94,8 @@ brew "lolcat"
 brew "lpeg"
 # Utility for directing compilation
 brew "make"
+# Platform built on V8 to build network applications
+brew "node"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
 # Ambitious Vim-fork focused on extensibility and agility
