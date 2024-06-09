@@ -25,10 +25,10 @@ async function backup(opts: BrewOpts) {
     `brew bundle dump --formula --cask --tap --describe --force`,
     ...(opts.push
       ? [
-          `git add Brewfile`,
-          `git commit -m "backup(brew): Update Brewfile (${syncDate})"`,
-          `git push`,
-        ]
+        `git add Brewfile`,
+        `git commit -m "backup(brew): Update Brewfile for ${DEVICE_UID} (${syncDate})"`,
+        `git push`,
+      ]
       : []),
     `popd`,
   ])
