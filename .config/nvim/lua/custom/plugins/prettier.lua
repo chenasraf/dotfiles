@@ -59,6 +59,7 @@ return {
         -- ["typescript"] = "prettier --stdin-filepath ${INPUT}",
         -- ["typescriptreact"] = "prettier --stdin-filepath ${INPUT}",
         ["dart"] = "dart format --output show",
+        ["python"] = "black --quiet -",
       }
 
       for filetype, format_cmd in pairs(formatters) do
