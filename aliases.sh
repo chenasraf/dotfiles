@@ -29,6 +29,7 @@ alias l="ls -A"
 alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
+alias lvim="nvim -c':e#<1'"
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 
 # output pipes
@@ -74,7 +75,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g; sudo \$SHELL -c \"gem update; gem cleanup\""
 alias gundo="git reset --soft HEAD~1"
 alias unq="sudo xattr -rd com.apple.quarantine"
-alias scriptls="cat \$(find-up package.json) | jq '.scripts'"
+alias pyscriptls="cat \$(find-up pyproject.toml) | tomlq '.tool.poe.tasks'"
+alias jsscriptls="cat \$(find-up package.json) | jq '.scripts'"
+alias scriptls="find-up package.json && jsscriptls || find-up pyproject.toml && pyscriptls"
 alias depls="cat \$(find-up package.json) | jq '.dependencies'"
 alias devdepls="cat \$(find-up package.json) | jq '.devDependencies'"
 alias peerdepls="cat \$(find-up package.json) | jq '.peerDependencies'"
