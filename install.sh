@@ -35,8 +35,8 @@ fi
 
 if is_mac; then
   echo_cyan "Setting defaults..."
-  write_default "PMPrintingExpandedStateForPrint" "-bool TRUE"
-  write_default "NSScrollViewRubberbanding" "-bool FALSE"
+  write_default PMPrintingExpandedStateForPrint "-bool TRUE"
+  write_default NSScrollViewRubberbanding "-bool FALSE"
 fi
 
 echo_yellow "Setting up git..."
@@ -112,8 +112,7 @@ if [[ -z $existing_pager ]]; then
   git config --global diff.colorMoved default
 fi
 
-
-echo_yellow "Installing binaries..."
+echo_yellow "Installing general binaries..."
 
 if [[ ! -f $(which fnm) ]]; then
   if ask "Install fnm?"; then
@@ -121,6 +120,20 @@ if [[ ! -f $(which fnm) ]]; then
     curl -fsSL https://fnm.vercel.app/install | bash
     fnm install --lts
     fnm use lts-latest
+  fi
+fi
+
+if [[ ! -f $(which jq) ]]; then
+  if ask "Install jq?"; then
+    echo_yellow "Installing jq..."
+    brew install jq
+  fi
+fi
+
+if [[ ! -f $(which yq) ]]; then
+  if ask "Install yq?"; then
+    echo_yellow "Installing yq..."
+    pipx install yq
   fi
 fi
 
