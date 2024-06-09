@@ -17,7 +17,7 @@ brew "aom"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
+brew "python@3.11", link: false
 # Official Amazon AWS command-line interface
 brew "awscli", link: false
 # Bourne-Again SHell, a UNIX command interpreter
@@ -54,8 +54,6 @@ brew "devcontainer"
 brew "docutils"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
-# GNU compiler collection
-brew "gcc"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -64,8 +62,6 @@ brew "gnutls"
 brew "leptonica"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
-# Open Visual Inference And Optimization toolkit for AI inference
-brew "openvino"
 # OCR (Optical Character Recognition) engine
 brew "tesseract"
 # Play, record, convert, and stream audio and video
@@ -80,6 +76,8 @@ brew "fnm"
 brew "freetds"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
+brew "gcc"
 # Library for encoding and decoding .avif files
 brew "libavif"
 # Graphics library to dynamically manipulate images
@@ -88,6 +86,8 @@ brew "gd"
 brew "gdbm"
 # GitHub command-line tool
 brew "gh"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
 # Open-source GitLab command-line tool
@@ -126,8 +126,10 @@ brew "neovim"
 brew "nghttp2"
 # Platform built on V8 to build network applications
 brew "node@16"
+# Open Visual Inference And Optimization toolkit for AI inference
+brew "openvino"
 # General-purpose scripting language
-brew "php", restart_service: true, link: false
+brew "php", restart_service: true
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
 # Python version management
@@ -148,6 +150,8 @@ brew "rbenv"
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Python 2 and 3 compatibility utilities
+brew "six", link: false
 # Opinionated Lua code formatter
 brew "stylua"
 # Log file highlighter
@@ -162,14 +166,10 @@ brew "tree"
 brew "trunk"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
-# Process YAML, JSON, XML, CSV and properties documents from the CLI
-brew "yq"
 # It's like cat(1), but for images
 brew "eddieantonio/eddieantonio/imgcat"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
-# Command-line interface for 1Password
-cask "1password-cli"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for the Android SDK
