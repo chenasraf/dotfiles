@@ -29,6 +29,11 @@ local on_attach = function(_, bufnr)
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('H', vim.lsp.buf.signature_help, 'Signature Documentation')
+  nmap('<leader>h', function()
+    local new_val = not vim.lsp.inlay_hint.is_enabled({})
+    vim.lsp.inlay_hint.enable(new_val)
+    vim.api.nvim_echo({ { "Inlay Hints: " .. (new_val and "On" or "Off"), "Type" } }, true, {})
+  end, 'Toggle Inlay Hints')
   vim.keymap.set("i", "<C-H>", vim.lsp.buf.signature_help, { buffer = true, desc = "[LSP] Signature Documentation" })
 
   -- Lesser used LSP functionality
