@@ -143,7 +143,7 @@ git_open_new_pr() {
   fi
 
   repo_path=$(git_get_repo_path $remote)
-  branch=$(git branch --show-current)
+  branch=$([[ ! -z $1 ]] && echo "$1" || git branch --show-current)
   default_branch=$(git remote show $remote | grep "HEAD branch" | awk '{print $3}')
   if [[ -z $default_branch ]]; then
     default_branch="master"
@@ -221,7 +221,7 @@ git_open() {
       ;;
     prs)
       shift
-      git_open_pr_list $@
+      git_open_pr_list
       ;;
     pr)
       shift
@@ -229,7 +229,7 @@ git_open() {
       ;;
     actions|pipelines|ci)
       shift
-      git_open_pipelines $@
+      git_open_pipelines
       ;;
     *)
       echo "Unknown command: $1"

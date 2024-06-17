@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
-type echo_cyan >/dev/null || source "$DOTFILES/zplug.init.zsh"
+type src >/dev/null || source "$DOTFILES/zplug.init.zsh"
 echo_yellow "Preparing..."
+src exports
 
 if is_mac && [[ ! -d "$HOME/Library/ApplicationSupport" ]]; then
   ln -s "$HOME/Library/Application Support" "$HOME/Library/ApplicationSupport"
