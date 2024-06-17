@@ -5,13 +5,10 @@ out=()
 
 __read_dir() {
   dir="$1"
-  res=($(find $1 -print | sed "s/${1//\//\\/}\///"))
+  res=($(find $1 -print | sed "s/${1//\//\\/}\///" | grep -i "\.z\?sh$"))
 
   for i in $res; do
-    # echo "checking path: $1/$i"
-    if [[ -f "$1/$i" ]] && [[ ! $i =~ \b\.git\b ]]; then
-      out+=("$i")
-    fi
+    out+=("$i")
   done
 }
 
@@ -19,4 +16,3 @@ cd "$dfpath"
 __read_dir .
 
 _describe 'dotfile' out
-# echo $out
