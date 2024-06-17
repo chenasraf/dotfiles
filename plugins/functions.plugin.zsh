@@ -451,7 +451,18 @@ disable_touchid_sudo() {
   popd
 }
 
+strip-home() {
+  repl="~"
+  if [[ "$1" == "-e" ]]; then
+    repl=""
+    shift
+  fi
+  dir="$1"
+  echo ${dir/$HOME/$repl}
+}
+
 # select random element from arguments
+# always keep last, breaks syntax highlighting
 randarg() {
   echo "${${@}[$RANDOM % $# + 1]}"
 }
