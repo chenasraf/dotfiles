@@ -29,6 +29,11 @@ if [[ -f $(which fnm) ]]; then
   eval "$(fnm env --use-on-cd)"
 fi
 
+export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
+if is_linux; then
+  export LAZYGIT_HOME="$HOME/.config/lazygit"
+fi
+
 # Optionals
 
 # Node
@@ -62,9 +67,11 @@ if [[ -f $(which ruby) ]]; then
 fi
 
 # Python 3.11
-if [[ -f $(which python3) ]]; then
-  export PATH="$HOME/Library/Python/3.11/bin:$PATH"
-  export PATH="/usr/local/lib/python3.11/site-packages:$PATH"
+if [[ -d "$HOME/.pyenv" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # Gcloud
