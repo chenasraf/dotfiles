@@ -251,9 +251,11 @@ customCommands:
         options:
           - name: 'Open Project'
             value: 'project'
+          - name: 'Create Pull Request'
+            value: 'pr'
           - name: 'Open Pull Requests'
             value: 'prs'
-          - name: 'Open CI'
+          - name: 'Open CI/Actions'
             value: 'ci'
     command: 'git open {{.Form.action}} {{.SelectedLocalBranch.Name}}'
     loadingText: 'Opening...'

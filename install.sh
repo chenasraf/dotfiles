@@ -13,7 +13,7 @@ rsync_template="rsync $rflags {}"
 # CLI Args
 refresh_zplug=0
 refresh_tmux=0
-set_git_configs=$([[ -z $(git config --global user.signingkey) ]] && echo 1 || echo 0)
+set_git_configs=$(git config --global user.signingkey &>/dev/null && echo 0 || echo 1)
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -72,6 +72,7 @@ if [[ -z $(git config --global user.email) ]]; then
 fi
 
 if [[ $set_git_configs -eq 1 ]]; then
+  echo_cyan "Setting git global config..."
   git config --global user.signingkey "~/.ssh/id_casraf.pub"
   git config --global filter.lfs.clean "git-lfs clean -- %f"
   git config --global filter.lfs.smudge "git-lfs smudge -- %f"
@@ -100,11 +101,14 @@ if [[ $set_git_configs -eq 1 ]]; then
   git config --global alias.unchanged "update-index --assume-unchanged"
   git config --global alias.changed "update-index --no-assume-unchanged"
   git config --global alias.show-unchanged "!git ls-files -v | sed -e 's/^[a-z] //p; d'"
+  git config --global alias.list-aliases "!git config --global --list | grep --color alias\. | grep -v list-aliases | sed \"s/alias\./\$(tput setaf 1)/\" | sed \"s/=/\$(tput sgr0)=/\""
 
   # Open
-  git config --global alias.open "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh open"
-  git config --global alias.pr "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh prs"
-  git config --global alias.ci "!source $DOTFILES/plugins/git_custom_commands.plugin.zsh ci"
+  git config --global alias.open "!\$DOTFILES/plugins/git_custom_commands.plugin.zsh open"
+  git config --global alias.project "open project"
+  git config --global alias.pr "open pr"
+  git config --global alias.prs "open prs"
+  git config --global alias.ci "open ci"
 fi
 
 if [[ ! -f $(which delta) ]]; then

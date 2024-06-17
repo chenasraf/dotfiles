@@ -1,3 +1,7 @@
+#!/usr/bin/env zsh
+
+type uriencode >/dev/null || source "$DOTFILES/plugins/functions.plugin.zsh"
+
 git_get_remote() {
   remote=$(git remote -v | grep "(push)" | awk '{print $2}')
   echo $remote
@@ -125,6 +129,44 @@ git_open_pr_list() {
   return 0
 }
 
+git_open_new_pr() {
+  remote=$(git_get_remote)
+  if [[ -z $remote ]]; then
+    echo "No remote found"
+    return 1
+  fi
+
+  remote_type=$(git_get_remote_type $remote)
+  if [[ -z $remote_type ]]; then
+    echo "Unknown remote type for $remote"
+    return 1
+  fi
+
+  repo_path=$(git_get_repo_path $remote)
+  branch=$(git branch --show-current)
+  default_branch=$(git remote show $remote | grep "HEAD branch" | awk '{print $3}')
+  if [[ -z $default_branch ]]; then
+    default_branch="master"
+  fi
+
+  branch=$(uriencode $branch)
+  default_branch=$(uriencode $branch)
+
+  case $remote_type in
+    github)
+      open_url "https://github.com/$repo_path/compare/$branch...$default_branch"
+      ;;
+    gitlab)
+      open_url "https://gitlab.com/$repo_path/-/merge_requests/new?merge_request%5Bsource_branch%5D=$branch&merge_request%5Btarget_branch%5D=$default_branch"
+      ;;
+    bitbucket)
+      open_url "https://bitbucket.org/$repo_path/pull-requests/new?source=$branch&t=1"
+      ;;
+  esac
+
+  return 0
+}
+
 git_open_pipelines() {
   branch=$1
   if [[ -z $branch ]]; then
@@ -164,17 +206,26 @@ git_open_pipelines() {
 
 git_open() {
   if [[ -z $1 ]]; then
-    echo "Usage: git open_url <command>"
+    echo "Usage: git open <command>"
+    echo "Commands:"
+    echo "  project|repo|open|.       Open the project"
+    echo "  prs                       Open the PR list"
+    echo "  pr                        Open a new PR"
+    echo "  actions|pipelines|ci      Open the CI/CD pipelines"
     return 1
   fi
 
   case $1 in
-    project|repo|open)
+    project|repo|\.)
       git_open_project
       ;;
-    pr|prs)
+    prs)
       shift
       git_open_pr_list $@
+      ;;
+    pr)
+      shift
+      git_open_new_pr $@
       ;;
     actions|pipelines|ci)
       shift

@@ -461,6 +461,35 @@ strip-home() {
   echo ${dir/$HOME/$repl}
 }
 
+uriencode() {
+  len="${#1}"
+  for ((n = 0; n < len; n++)); do
+    c="${1:$n:1}"
+    case $c in
+      [a-zA-Z0-9.~_-]) printf "$c" ;;
+                    *) printf '%%%02X' "'$c"
+    esac
+  done
+}
+
+posix_compliant() {
+    strg="${*}"
+    printf '%s' "${strg%%[%+]*}"
+    j="${strg#"${strg%%[%+]*}"}"
+    strg="${j#?}"
+    case "${j}" in "%"* )
+        printf '%b' "\\0$(printf '%o' "0x${strg%"${strg#??}"}")"
+   	strg="${strg#??}"
+        ;; "+"* ) printf ' '
+        ;;    * ) return
+    esac
+    if [ -n "${strg}" ] ; then posix_compliant "${strg}"; fi
+}
+
+uridecode() {
+  posix_compliant "${*}"
+}
+
 # select random element from arguments
 # always keep last, breaks syntax highlighting
 randarg() {
