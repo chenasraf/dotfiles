@@ -1,5 +1,4 @@
 tap "eddieantonio/eddieantonio"
-tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
@@ -151,7 +150,7 @@ brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Python 2 and 3 compatibility utilities
-brew "six", link: false
+brew "six"
 # Opinionated Lua code formatter
 brew "stylua"
 # Log file highlighter
