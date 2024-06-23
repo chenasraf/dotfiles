@@ -10,6 +10,7 @@ vim.api.nvim_create_user_command('AutoFormat', function()
   AutoFormatEnabled = not AutoFormatEnabled
   print('Setting autoformatting to: ' .. tostring(AutoFormatEnabled))
 end, {})
+
 return {
   'neovim/nvim-lspconfig',
   config = function()
@@ -54,16 +55,9 @@ return {
           group = get_augroup(client),
           buffer = bufnr,
           callback = function()
-            if not AutoFormatEnabled then
-              return
-            end
-
-            vim.lsp.buf.format {
-              async = false,
-              filter = function(c)
-                return c.id == client.id
-              end,
-            }
+            local custom_formatting = require("custom.lib.custom_formatting")
+            local format_on_save = custom_formatting.format_on_save
+            format_on_save()
           end,
         })
       end,

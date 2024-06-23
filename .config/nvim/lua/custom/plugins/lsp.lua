@@ -59,7 +59,9 @@ local on_attach = function(_, bufnr)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
+    local custom_formatting = require("custom.lib.custom_formatting")
+    local format_manually = custom_formatting.format_manually
+    format_manually()
   end, { desc = 'Format current buffer with LSP' })
 end
 
