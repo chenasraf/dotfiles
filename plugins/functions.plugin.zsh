@@ -76,14 +76,23 @@ is_linux() {
 
 rc() {
   if [[ $# -eq 0 ]]; then
-    echo_red "Usage: rc [-n] <dotfile>"
+    echo_red "Usage: rc [-n] [-q] <dotfile>"
     return 1
   fi
+  no_src=0
+  quiet=0
 
-  if [[ $1 == '-n' ]]; then
-    no_src=1
+  while [[ $# -gt 1 ]]; do
+    case $1 in
+      -n)
+        no_src=1
+        ;;
+      -q)
+        quiet=1
+        ;;
+    esac
     shift
-  fi
+  done
 
   if [[ -f "$DOTFILES/$1.sh" ]]; then
     file="$DOTFILES/$1.sh"
@@ -98,9 +107,16 @@ rc() {
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      if [[ $no_src -ne 1 ]]; then src $1; fi
+      if [[ $no_src -ne 1 ]]; then 
+        if [[ $quiet -ne 1 ]]; then
+          src $1
+        else
+          src -q $1
+        fi
+      fi
     else
       echo "No changes made"
+      return 2
     fi
     return 0
   fi
@@ -110,9 +126,19 @@ rc() {
 
 src() {
   if [[ $# -eq 0 ]]; then
-    echo_red "Usage: src <dotfile>"
+    echo_red "Usage: src [-q] <dotfile>"
     return 1
   fi
+
+  while [[ $# -gt 1 ]]; do
+    case $1 in
+      -q)
+        quiet=1
+        ;;
+    esac
+    shift
+  done
+
 
   if [[ -f "$DOTFILES/$1.sh" ]]; then
     file="$DOTFILES/$1.sh"
@@ -121,7 +147,9 @@ src() {
   fi
 
   if [[ -f $file ]]; then
-    echo "Reloading $file..."
+    if [[ $quiet -ne 1 ]]; then
+      echo "Reloading $file..."
+    fi
     source "$file"
     return 0
   fi
@@ -314,13 +342,31 @@ reload-zsh() {
 
 bench() {
   if [[ $# -eq 0 ]]; then
-    echo_red "Usage: bench <command>"
+    echo_red "Usage: bench [-v] <command>"
     return 1
   fi
+  verbose=0
+  while [[ $# -gt 1 ]]; do
+    case $1 in
+      -v)
+        verbose=1
+        ;;
+    esac
+    shift
+  done
   command=$1
   shift
   echo "Benchmarking $command..."
-  /usr/bin/time -v $command $@
+  bin="/usr/bin/time"
+  flags=''
+  if [[ $verbose -eq 1 ]]; then
+    flags='-h -l'
+  fi
+
+  # TODO implement
+  # xargs $bin $flags $command $@
+
+  /usr/bin/time -h -l $command $@
 }
 
 strjoin() {

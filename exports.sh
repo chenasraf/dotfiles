@@ -106,6 +106,15 @@ if [[ -f "$HOME/.cargo/env" ]]; then
   . "$HOME/.cargo/env"
 fi
 
+if [[ -d "$HOME/Dev/gba/butano" ]]; then
+  export BUTANO_HOME="$HOME/Dev/gba/butano"
+fi
+
+if [[ -d "/opt/devkitpro" ]]; then
+  export DEVKITPRO="/opt/devkitpro"
+  export DEVKITARM="/opt/devkitpro/devkitARM"
+fi
+
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
 if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then source /opt/homebrew/opt/chruby/share/chruby/chruby.sh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi

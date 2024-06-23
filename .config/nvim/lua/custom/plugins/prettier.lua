@@ -85,7 +85,7 @@ return {
         vim.api.nvim_create_autocmd(event, {
           buffer = bufnr,
           group = group,
-          callback = function() format() end,
+          callback = format,
           desc = "[lsp] format on save",
         })
         -- end
