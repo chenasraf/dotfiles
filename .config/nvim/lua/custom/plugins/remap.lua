@@ -3,8 +3,8 @@
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- save file
-vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save buffer", silent = true })
-vim.keymap.set("n", "<leader>W", "<Cmd>wa<CR>", { desc = "Save all buffers", silent = true })
+-- vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save buffer", silent = true })
+-- vim.keymap.set("n", "<leader>W", "<Cmd>wa<CR>", { desc = "Save all buffers", silent = true })
 
 -- home install
 vim.keymap.set('n', '<leader>hi', '<cmd>!source $DOTFILES/install.sh<CR>', { desc = '[Home] [I]nstall' })
