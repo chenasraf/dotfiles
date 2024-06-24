@@ -46,7 +46,7 @@ return {
     -- Magic buffer-picking mode
     vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>')
     -- Sort automatically by...
-    vim.keymap.set('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>')
+    vim.keymap.set('n', '<leader>bn', '<Cmd>BufferOrderByBufferNumber<CR>')
     vim.keymap.set('n', '<leader>bd', '<Cmd>BufferOrderByDirectory<CR>')
     vim.keymap.set('n', '<leader>bl', '<Cmd>BufferOrderByLanguage<CR>')
     vim.keymap.set('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
