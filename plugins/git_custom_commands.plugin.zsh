@@ -1,6 +1,15 @@
 #!/usr/bin/env zsh
 
-type uriencode >/dev/null || source "$DOTFILES/plugins/functions.plugin.zsh"
+uriencode() {
+  len="${#1}"
+  for ((n = 0; n < len; n++)); do
+    c="${1:$n:1}"
+    case $c in
+      [a-zA-Z0-9.~_-]) printf "$c" ;;
+                    *) printf '%%%02X' "'$c"
+    esac
+  done
+}
 
 git_get_remote() {
   remote=$(git remote -v | grep "(push)" | awk '{print $2}')
@@ -150,7 +159,7 @@ git_open_new_pr() {
   fi
 
   branch=$(uriencode $branch)
-  default_branch=$(uriencode $branch)
+  default_branch=$(uriencode $default_branch)
 
   case $remote_type in
     github)
@@ -230,6 +239,18 @@ git_open() {
     actions|pipelines|ci)
       shift
       git_open_pipelines
+      ;;
+    _debug)
+      echo -n "Getting info..."
+      remote=$(git_get_remote)
+      info=$(git remote show $remote)
+      branch=$(git branch --show-current)
+      echo " Done"
+      echo "Remote: $remote"
+      echo "Repo Path: $(git_get_repo_path $remote)"
+      echo "Remote Type: $(git_get_remote_type $remote)"
+      echo "Branch: $branch"
+      echo "Default Branch: $(echo $info | grep "HEAD branch" | awk '{print $3}')"
       ;;
     *)
       echo "Unknown command: $1"
