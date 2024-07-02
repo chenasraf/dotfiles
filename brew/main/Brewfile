@@ -36,6 +36,8 @@ brew "curl"
 brew "docutils"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Validating, recursive, caching DNS resolver
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
@@ -56,6 +58,8 @@ brew "flex"
 brew "fnm"
 # Libraries to talk to Microsoft SQL Server and Sybase databases
 brew "freetds"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU compiler collection
@@ -99,7 +103,7 @@ brew "node"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
 # Platform built on V8 to build network applications
@@ -110,6 +114,10 @@ brew "nvm"
 brew "php", restart_service: true, link: false
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Python version management
+brew "pyenv"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
 # Generic syntax highlighter
 brew "pygments"
 # Interpreted, interactive, object-oriented programming language
@@ -159,4 +167,4 @@ cask "android-sdk"
 # Game development engine
 cask "godot"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm-nightly"
+cask "wezterm@nightly"
