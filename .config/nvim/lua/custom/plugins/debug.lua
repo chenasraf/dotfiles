@@ -68,6 +68,26 @@ return {
       },
     }
 
+    dap.adapters.gdb = {
+      type = "executable",
+      command = "gdb",
+      args = { "-i", "dap" }
+    }
+    dap.configurations.c = {
+      {
+        name = "Launch",
+        type = "gdb",
+        request = "launch",
+        program = vim.fn.getcwd() .. '/src/main.cpp',
+        -- program = function()
+        --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        -- end,
+        cwd = "${workspaceFolder}",
+        stopAtBeginningOfMainSubprogram = false,
+      },
+    }
+    dap.configurations.cpp = dap.configurations.c
+
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
