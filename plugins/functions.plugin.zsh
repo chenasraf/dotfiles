@@ -20,6 +20,7 @@ mkcd() {
   mkdir -p -- "$1" && cd -P -- "$1"
 }
 
+# find out which process is listening on a specific port
 listening() {
   if [[ $# -eq 0 ]]; then
     lsof -iTCP -sTCP:LISTEN -n -P
@@ -30,6 +31,7 @@ listening() {
   fi
 }
 
+# kill process listening on a specific port
 kill-listening() {
   if [[ $# -eq 0 ]]; then
     echo "Usage: kill-listening <port>"
@@ -44,14 +46,17 @@ prepend() {
   cat -
 }
 
+# transform to lowercase
 lcase() {
   echo "$@" | tr '[:upper:]' '[:lower:]'
 }
 
+# transform to uppercase
 ucase() {
   echo "$@" | tr '[:lower:]' '[:upper:]'
 }
 
+# return 0 or 1 based on result of command
 int_res() {
   # get all but last
   c=$(($# - 1))
@@ -64,16 +69,20 @@ int_res() {
   fi
 }
 
+# check if system is mac
 is_mac() {
   int_res "uname -s" "darwin"
   return $?
 }
 
+# check if system is linux
 is_linux() {
   int_res "uname -s" "linux"
   return $?
 }
 
+# edit a dotfile script and source if there were changes
+# supports autocomplete for any editable files
 rc() {
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: rc [-n] [-q] <dotfile>"
@@ -107,7 +116,7 @@ rc() {
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
-      if [[ $no_src -ne 1 ]]; then 
+      if [[ $no_src -ne 1 ]]; then
         if [[ $quiet -ne 1 ]]; then
           src $1
         else
@@ -124,6 +133,8 @@ rc() {
   return 1
 }
 
+# source a dotfile script
+# supports autocomplete for any editable files
 src() {
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: src [-q] <dotfile>"
@@ -139,9 +150,10 @@ src() {
     shift
   done
 
-
   if [[ -f "$DOTFILES/$1.sh" ]]; then
     file="$DOTFILES/$1.sh"
+  elif [[ -f "$DOTFILES/$1.zsh" ]]; then
+    file="$DOTFILES/$1.zsh"
   else
     file="$DOTFILES/$1"
   fi
@@ -157,6 +169,7 @@ src() {
   return 1
 }
 
+# same as src, but for plugin files
 srcp() {
   src "plugins/$1.plugin"
   return $?
@@ -188,6 +201,7 @@ randline() {
   echo $(cat $1 | head -n $linenum | tail -n 1)
 }
 
+# find $1 and replace with $2 in file $3, output to stdout
 find-replace() {
   if [[ $# -ne 3 || $1 == '-h' ]]; then
     echo_red "Find and replace text from file and output the result. Does not modify the file."
@@ -200,6 +214,7 @@ find-replace() {
   sed "s/$find/$replace/g" $file
 }
 
+# find $1 and replace with $2 in file $3, output to file
 find-replace-file() {
   if [[ $# -lt 3 || $1 == '-h' ]]; then
     echo_red "Find and replace text in file. Modifies the file."
@@ -242,6 +257,7 @@ if is_mac; then
   }
 fi
 
+# search for a file in a directory
 search-file() {
   if [[ $# -eq 0 ]]; then
     echo "Usage: find-file [dir] <file>"
@@ -258,6 +274,8 @@ search-file() {
   return $?
 }
 
+# find a file in the current directory or on one of its ancestors.
+# usefule for finding project root based on config file (e.g. package.json, pubspec.yaml, pyproject.toml)
 find-up() {
   if [[ $# -eq 0 ]]; then
     echo "Usage: find-up <file>"
@@ -278,6 +296,7 @@ find-up() {
   return 1
 }
 
+# open project directory
 prjd() {
   sub="$@"
   if [[ -z "$sub" ]]; then
@@ -287,18 +306,21 @@ prjd() {
   pushd "$dv"
 }
 
+# open project directory in nvim
 prj() {
   pushd "$(wd path dv $@)"
   nvim .
   popd
 }
 
+# open docker logs for specified container
 docker-log() {
   image="$1"
   shift
   docker logs --follow $@ "$image"
 }
 
+# docker exec command for specified container
 docker-exec() {
   image="$1"
   executable="$2"
@@ -307,39 +329,46 @@ docker-exec() {
   docker exec -ti $rest "$image" "$executable"
 }
 
+# open docker bash shell for specified container
 docker-bash() {
   image="$1"
   shift
   docker-exec "$image" /bin/bash $@
 }
 
+# open docker sh shell for specified container
 docker-sh() {
   image="$1"
   shift
   docker-exec "$image" /bin/sh $@
 }
 
+# get path of docker volume
 docker-volume-path() {
   image="$1"
   shift
   docker volume inspect "$image" | jq -r '.[0].Mountpoint'
 }
 
+# cd to docker volume
 docker-volume-cd() {
   image="$1"
   shift
   cd $(docker-volume-path "$image")
 }
 
+# autocompletions
 autoload _docker-exec
 autoload _docker-volume-path
 autoload _prj
 autoload _src
 
+# reload entire shell
 reload-zsh() {
   source $HOME/.zshrc
 }
 
+# run a command and report the time it took
 bench() {
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: bench [-v] <command>"
@@ -369,6 +398,7 @@ bench() {
   /usr/bin/time -h -l $command $@
 }
 
+# join strings with delimiter
 strjoin() {
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: strjoin <delimiter> <string>..."
@@ -388,6 +418,8 @@ xrg () {
   printf "%s\n" "$1" | xargs -I {} bash -c "$2"
 }
 
+# ask for confirmation before running a command, Y is default
+# returns 0 if confirmed or typed Y, 1 if not
 ask() {
   echo -n "$1 [Y/n] "
   read REPLY
@@ -397,6 +429,8 @@ ask() {
   return 1
 }
 
+# ask for confirmation before running a command, N is default
+# returns 0 if typed Y, 1 if not
 ask_no() {
   echo -n "$1 [y/N] "
   read REPLY
@@ -406,17 +440,20 @@ ask_no() {
   return 1
 }
 
+# get user input and output it
 get_user_input() {
   echo -n "$1 "
   read REPLY
   echo $REPLY
 }
 
+# copy file to clipboard
 pbfile() {
   file="$1"
   more $file | pbcopy | echo "=> $file copied to clipboard."
 }
 
+# output the main pubkey file or use $1 to output a specific one
 pubkey_file() {
   file="$HOME/.ssh/id_casraf.pub"
   if [[ $# -eq 1 ]]; then
@@ -425,16 +462,19 @@ pubkey_file() {
   echo $file
 }
 
+# copy pubkey to clipboard, use $1 to specify a specific key
 pubkey() {
   file=$(pubkey_file $1)
   more $file | pbcopy | echo "=> Public key copied to clipboard."
 }
 
+# add pubkey to allowed signers
 allow-signing() {
   file=$(pubkey_file $1)
   echo "$(git config --get user.email) namespaces=\"git\" $(cat $file)" >> ~/.ssh/allowed_signers
 }
 
+# kill tmux session by name, or running session
 trm() {
   sess=$1
   if [[ -z $sess ]]; then
@@ -444,6 +484,8 @@ trm() {
   tmux kill-session -t $sess
 }
 
+# enable touchID usage for sudo.
+# doesn't work inside a tmux session
 enable_touchid_sudo() {
   # Navigate to the directory containing the PAM configuration files
   pushd /etc/pam.d
@@ -476,6 +518,7 @@ enable_touchid_sudo() {
   echo "Touch ID has been successfully enabled for sudo. Changes should persist through system updates."
 }
 
+# disable touchID usage for sudo and reverts back to default sudo configuration
 disable_touchid_sudo() {
   # Navigate to the directory containing the PAM configuration files
   pushd /etc/pam.d
@@ -497,6 +540,7 @@ disable_touchid_sudo() {
   popd
 }
 
+# remove the home directory from a path
 strip-home() {
   repl="~"
   if [[ "$1" == "-e" ]]; then
@@ -507,6 +551,7 @@ strip-home() {
   echo ${dir/$HOME/$repl}
 }
 
+# encode a uri component
 uriencode() {
   len="${#1}"
   for ((n = 0; n < len; n++)); do
@@ -532,8 +577,45 @@ posix_compliant() {
     if [ -n "${strg}" ] ; then posix_compliant "${strg}"; fi
 }
 
+# decode a uri component
 uridecode() {
   posix_compliant "${*}"
+}
+
+# convert markdown to html and output to stdout
+md2html() {
+  file=${1:-README.md}
+  pandoc $file
+}
+
+# convert markdown to html and open in browser
+mdp() {
+  file=${1:-README.md}
+  html_prefix="
+  <html>
+    <head>
+      <title>$file</title>
+      <style>
+      * {
+        font-family:Helvetica;
+      }
+      body {
+        margin:40px auto 0;
+        max-width:800px;
+        font-size:16;
+      }
+      </style>
+    </head>
+    <body>
+  "
+  echo "Opening HTML preview for $file..."
+  f=$(mktemp).html
+  echo $html_prefix>$f
+  md2html $file >>$f
+  echo "</body></html>" >>$f
+  open -u "file:///$f"
+  # echo "Opening file:///$f"
+  ($SHELL -c "sleep 3; rm $f; exit 0" &)
 }
 
 # select random element from arguments
