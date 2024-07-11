@@ -105,6 +105,8 @@ rc() {
 
   if [[ -f "$DOTFILES/$1.sh" ]]; then
     file="$DOTFILES/$1.sh"
+  elif [[ -f "$DOTFILES/$1.zsh" ]]; then
+    file="$DOTFILES/$1.zsh"
   else
     file="$DOTFILES/$1"
   fi
@@ -169,8 +171,14 @@ src() {
   return 1
 }
 
+# same as rc, but for plugin files
+prc() {
+  rc "plugins/$1.plugin"
+  return $?
+}
+
 # same as src, but for plugin files
-srcp() {
+sprc() {
   src "plugins/$1.plugin"
   return $?
 }
@@ -362,6 +370,7 @@ autoload _docker-exec
 autoload _docker-volume-path
 autoload _prj
 autoload _src
+autoload _srcp
 
 # reload entire shell
 reload-zsh() {

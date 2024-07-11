@@ -1,11 +1,11 @@
-#compdef src rc
+#compdef rc src
 dfpath="$(wd path df)"
 
 out=()
 
 __read_dir() {
   dir="$1"
-  res=($(find $1 -print | sed "s/${1//\//\\/}\///" | grep -i "\.z\?sh$"))
+  res=($(find $dir -print | sed "s/${dir//\//\\/}\///" | grep -i "\.z\?sh$" | sed -E 's/\.z?sh//g'))
 
   for i in $res; do
     out+=("$i")

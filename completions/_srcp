@@ -1,0 +1,18 @@
+#compdef prc sprc
+dfpath="$(wd path df)"
+
+out=()
+
+__read_dir() {
+  dir="$1"
+  res=($(find $dir -print | sed "s/${dir//\//\\/}\///" | grep -i "\.z\?sh$" | sed -E 's/\.plugin\.z?sh//g'))
+
+  for i in $res; do
+    out+=("$i")
+  done
+}
+
+cd "$dfpath/plugins"
+__read_dir .
+
+_describe 'dotfile' out
