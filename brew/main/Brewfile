@@ -66,6 +66,8 @@ brew "fzf"
 brew "gcc"
 # Graphics library to dynamically manipulate images
 brew "gd"
+# GNU debugger
+brew "gdb"
 # GitHub command-line tool
 brew "gh"
 # Syntax-highlighting pager for git and diff output
@@ -96,6 +98,8 @@ brew "libyaml"
 brew "lolcat"
 # Parsing Expression Grammars For Lua
 brew "lpeg"
+# Text-based web browser
+brew "lynx"
 # Utility for directing compilation
 brew "make"
 # Platform built on V8 to build network applications
@@ -110,6 +114,8 @@ brew "nghttp2"
 brew "node@16"
 # Manage multiple Node.js versions
 brew "nvm"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # General-purpose scripting language
 brew "php", restart_service: true, link: false
 # Execute binaries from Python packages in isolated environments
