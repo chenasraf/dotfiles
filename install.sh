@@ -43,7 +43,7 @@ if [[ ! -f "$DOTFILES/.device_uid" ||  -z $(cat "$DOTFILES/.device_uid") ]]; the
     echo_red "Device UID cannot be empty. Exiting"
     exit 1
   fi
-      
+
   echo $duid >$DOTFILES/.device_uid
   echo_cyan "Device UID set to \"$duid\""
 fi
@@ -243,7 +243,7 @@ if [[ ! -f $(which tx) ]]; then
   pnpm install && pnpm build && pnpm ginst
   popd
 fi
-  
+
 # Zplug Install
 if [[ ! -d $HOME/.zplug ]]; then
   if ask "Install zplug?"; then
@@ -281,6 +281,20 @@ if [[ $refresh_zplug -eq 1 ]]; then
   source "$DOTFILES/zplug.init.zsh"
   zplug install
   zplug load --verbose
+fi
+
+if [[ -z "$OPENAI_API_KEY" ]]; then
+  if ask "OpenAI API key is not defined, set up?"; then
+    echo_cyan "You might be asked to authenticate using 1Password to retrieve the key."
+    key=$(op item get 'openai' --fields 'API Key')
+    if [[ ! -z "$key" ]]; then
+      echo_yellow "Key retrieved."
+      echo_yellow "Please run the following to persist the key for future sessions:"
+      echo "echo 'export OPENAI_API_KEY=\"$key\"' >> $(strip-home $DOTFILES)/_local.sh"
+    else
+      echo_red "No key found in 1Password. Exiting..."
+    fi
+  fi
 fi
 
 echo_cyan "Done"
