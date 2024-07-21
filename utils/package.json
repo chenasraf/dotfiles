@@ -21,11 +21,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^20.11.17",
+    "@types/node": "^20.14.11",
     "cosmiconfig": "^9.0.0",
-    "massarg": "2.0.0",
-    "prettier": "^3.2.5",
+    "massarg": "2.0.1",
+    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "typescript-eslint": "^7.16.1"
   }
 }
