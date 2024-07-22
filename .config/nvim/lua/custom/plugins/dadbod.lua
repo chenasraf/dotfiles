@@ -30,6 +30,7 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "<leader>B", "<cmd>DBUIToggle<CR>", { silent = true })
+    vim.keymap.set("x", "<leader>dB", "<Cmd>DBUIToggle<CR>", { desc = "[D]ad[B]od UI", silent = true })
+    vim.keymap.set("n", "<leader>B", "<Cmd>DBUIToggle<CR>", { desc = "Dad[B]od UI", silent = true })
   end,
 }

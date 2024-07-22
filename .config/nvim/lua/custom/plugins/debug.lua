@@ -114,7 +114,6 @@ return {
     vim.keymap.set('n', '<leader>bc', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Conditional Breakpoint' })
-
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {
