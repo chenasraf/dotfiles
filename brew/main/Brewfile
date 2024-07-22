@@ -174,3 +174,5 @@ cask "android-sdk"
 cask "godot"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
+# GPU-accelerated cross-platform terminal emulator and multiplexer
+cask "wezterm@nightly"
