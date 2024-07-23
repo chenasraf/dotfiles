@@ -107,6 +107,22 @@ require('lazy').setup({
   { import = 'custom.plugins' },
 }, {})
 
+-- document existing key chains
+require('which-key').add({
+  { '<leader>b', group = '[B]reakpoints/[B]uffer' },
+  { '<leader>c', group = '[C]ode/[C]hat/[C]reate' },
+  { '<leader>d', group = '[D]ocument' },
+  { '<leader>j', group = '[J]SON Keys' },
+  { '<leader>l', group = '[L]SP' },
+  { '<leader>g', group = '[G]it' },
+  { '<leader>h', group = 'More git' },
+  { '<leader>r', group = '[R]ename' },
+  { '<leader>s', group = '[S]earch' },
+  { '<leader>S', group = '[S]erve' },
+  { '<leader>t', group = '[T]ests' },
+  { '<leader>w', group = '[W]orkspace' },
+  { '<leader>x', group = 'Trouble' },
+})
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

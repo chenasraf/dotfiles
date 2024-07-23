@@ -80,13 +80,6 @@ return {
           end
           builtin.grep_string({ search = term, use_regex = true })
         end)
-        vim.keymap.set('n', '<leader>pi', function()
-          local term = vim.ui.input('Grep File Contents ⟩ ')
-          if term == '' then
-            return
-          end
-          builtin.grep_string({ search = term })
-        end)
 
         local action_layout = require("telescope.actions.layout")
         local actions = require("telescope.actions")
