@@ -1,43 +1,3 @@
-local keymap = {
-  ['<leader>cx'] = {
-    name = "CopilotChat",
-    c = {
-      function()
-        local input = vim.fn.input("Ask Copilot: ")
-        if input ~= "" then
-          vim.cmd("CopilotChat " .. input)
-        end
-      end,
-      "Chat",
-      mode = { "x" },
-    },
-    e = { "<cmd>CopilotChatInPlace<CR>", "Edit with instruction", mode = { "n", "v" } },
-    t = { "<cmd>CopilotChatTests<CR>", "Generate tests", mode = { "n", "v" } },
-    v = { "<cmd>CopilotChatVisual<CR>", "Open in vertical split", mode = "x" },
-    a = { "<cmd>CopilotChatAutocmd<CR>", "Autocmd", mode = { "n", "v" } },
-    m = { "<cmd>CopilotChatMapping<CR>", "Map", mode = { "n", "v" } },
-    x = { "<cmd>CopilotChatExplain<CR>", "Explain code", mode = { "n", "v" } },
-    r = { "<cmd>CopilotChatReview<CR>", "Review", mode = { "n", "v" } },
-    f = { "<cmd>CopilotChatRefactor<CR>", "Refactor", mode = { "n", "v" } },
-  }
-}
-local keys = {}
-for key, tbl in pairs(keymap["<leader>cx"]) do
-  if type(tbl) == "table" and key ~= 'c' then
-    local cmd = tbl[1]
-    local desc = tbl[2]
-    local mode = tbl.mode
-    local out = {
-      "<leader>cx" .. key,
-      cmd,
-      desc = '[CopilotChat] ' .. desc,
-      mode = mode,
-    }
-    -- print(key, vim.inspect(out))
-    table.insert(keys, out)
-  end
-end
-
 return {
   {
     "zbirenbaum/copilot.lua",
@@ -63,44 +23,48 @@ return {
         suggestion = { enabled = false },
         panel = { enabled = false },
       })
-      -- vim.keymap.set("n", "<leader>ccp", ":Copilot panel<CR>", { desc = "Open Copilot panel" })
-      -- vim.keymap.set("i", "<F6>", "<Esc>:Copilot panel<CR>i", { desc = "Open Copilot panel" })
     end,
   },
-  -- NOTE:
-  -- on new machine, run:
-  -- pip3 install python-dotenv requests pynvim==0.5.0 prompt-toolkit tiktoken
   {
-    "jellydn/CopilotChat.nvim",
-    dependencies = { "zbirenbaum/copilot.lua" }, -- Or { "github/copilot.vim" }
-    opts = {
-      show_help = "yes",                         -- Show help text for CopilotChatInPlace, default: yes
-      debug = true,                              -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
-      prompts = {
-        Explain = "Explain how it works.",
-        Review = "Review the following code and provide concise suggestions.",
-        Tests = "Briefly explain how the selected code works, then generate unit tests.",
-        Refactor = "Refactor the code to improve clarity and readability.",
-      },
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" }, -- Or { "github/copilot.vim" }
+      { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
     },
-    build = function()
-      vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
-    end,
-    config = function()
-      require('CopilotChat').setup({
-        show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
-        debug = false,     -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
-        prompts = {
-          Explain = "Explain how the selected code works, provide any documetation references or links.",
-          Review = "Review the following code and provide concise suggestions.",
-          Tests = "Briefly explain how the selected code works, then generate unit tests.",
-          Refactor = "Refactor the code to improve clarity and readability.",
+    opts = {
+      show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
+      debug = true,      -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+    },
+    config = function(opts)
+      require('CopilotChat').setup(opts)
+      require('which-key').add({
+        { "<leader>cx",  group = "CopilotChat" },
+        { "<leader>cxc", "<cmd>CopilotChat<CR>", desc = "Chat", mode = "n" },
+        {
+          "<leader>cxi",
+          function()
+            local input = vim.fn.input("Ask Copilot: ")
+            if input ~= "" then
+              vim.cmd("CopilotChat " .. input)
+            end
+          end,
+          desc = "Chat",
+          mode = "x"
+        },
+        {
+          mode = { "n", "v" },
+          { "<leader>cxx", "<cmd>CopilotChatExplain<CR>",       desc = "Explain code" },
+          { "<leader>cxf", "<cmd>CopilotChatFix<CR>",           desc = "Fix bugs" },
+          { "<leader>cxd", "<cmd>CopilotChatFixDiagnostic<CR>", desc = "Fix diagnostic issues" },
+          { "<leader>cxo", "<cmd>CopilotChatOptimize<CR>",      desc = "Optimize code" },
+          { "<leader>cxr", "<cmd>CopilotChatReview<CR>",        desc = "Review" },
+          { "<leader>cxC", "<cmd>CopilotChatCommit<CR>",        desc = "Generate commit message" },
+          { "<leader>cxt", "<cmd>CopilotChatTests<CR>",         desc = "Generate tests" },
+          { "<leader>cxd", "<cmd>CopilotChatDocs<CR>",          desc = "Generate docs" },
         },
       })
-      require('which-key').register(keymap)
     end,
     event = "VeryLazy",
-    keys = keys,
   },
   {
     "Exafunction/codeium.nvim",
@@ -115,89 +79,35 @@ return {
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = os.getenv("OPENAI_API_KEY"),
-      })
-      require('which-key').register {
-        ['<leader>cc'] = {
-          name = "ChatGPT",
-          c = { "<cmd>ChatGPT<CR>", "Chat" },
-          e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
-          g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
-          t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
-          k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
-          d = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
-          a = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
-          o = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
-          s = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
-          f = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
-          x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
-          r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
-          l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
-        }
-      }
-
-      --[[
-      -- GPT Key bindings
-      {
-        ['<C-Enter>'] = '[Both] to submit.',
-        ['<C-y>'] = '[Both] to copy/yank last answer.',
-        ['<C-o>'] = '[Both] Toggle settings window.',
-        ['<C-h>'] = '[Both] Toggle help window.',
-        ['<Tab>'] = '[Both] Cycle over windows.',
-        ['<C-f>'] = '[Chat] Cycle over modes (center, stick to right).',
-        ['<C-c>'] = '[Both] to close chat window.',
-        ['<C-p>'] = '[Chat] Toggle sessions list.',
-        ['<C-u>'] = '[Chat] scroll up chat window.',
-        ['<C-d>'] = '[Chat] scroll down chat window.',
-        ['<C-k>'] = '[Chat] to copy/yank code from last answer.',
-        ['<C-n>'] = '[Chat] Start new session.',
-        ['<C-r>'] = '[Chat] draft message (create message without submitting it to server)',
-        ['<C-r>'] = '[Chat] switch role (switch between user and assistant role to define a workflow)',
-        ['<C-s>'] = '[Both] Toggle system message window.',
-        ['<C-i>'] = '[Edit Window] use response as input.',
-        ['<C-d>'] = '[Edit Window] view the diff between left and right panes and use diff-mode commands',
-      }
-      ]]
-
-      -- -- telescope selector with all commands
-      -- local function telescope_selector()
-      --   local cmd_list = {
-      --     "ChatGPT",
-      --     "ChatGPTRun",
-      --     "ChatGPTActAs",
-      --     "ChatGPTEditWithInstruction",
-      --   }
-      --   local actions = require('telescope.actions')
-      --   local action_state = require('telescope.actions.state')
-      --   local finders = require('telescope.finders')
-      --   local pickers = require('telescope.pickers')
-      --   local sorters = require('telescope.sorters')
-      --
-      --   pickers.new({}, {
-      --     prompt_title = 'ChatGPT',
-      --     finder = finders.new_table(cmd_list),
-      --     sorter = sorters.get_generic_fuzzy_sorter(),
-      --     attach_mappings = function(bufnr, map)
-      --       actions.select_default:replace(function()
-      --         local selection = action_state.get_selected_entry()
-      --         print('selection', selection)
-      --         actions.close(bufnr)
-      --         vim.cmd(selection.value)
-      --       end)
-      --       return true
-      --     end,
-      --   }):find()
-      -- end
-      --
-      -- vim.keymap.set("n", "<leader>cc", telescope_selector, { desc = "ChatGPT" })
-    end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim"
-    }
+    },
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = os.getenv("OPENAI_API_KEY"),
+      })
+      require('which-key').add({
+        { "<leader>cc",  group = "ChatGPT" },
+        { "<leader>ccc", "<cmd>ChatGPT<CR>", desc = "Chat", mode = "n" },
+        {
+          mode = { "n", "v" },
+          { "<leader>cce", "<cmd>ChatGPTEditWithInstruction<CR>",           desc = "Edit with instruction" },
+          { "<leader>ccg", "<cmd>ChatGPTRun grammar_correction<CR>",        desc = "Grammar Correction" },
+          { "<leader>cct", "<cmd>ChatGPTRun translate<CR>",                 desc = "Translate" },
+          { "<leader>cck", "<cmd>ChatGPTRun keywords<CR>",                  desc = "Keywords" },
+          { "<leader>ccd", "<cmd>ChatGPTRun docstring<CR>",                 desc = "Docstring" },
+          { "<leader>cca", "<cmd>ChatGPTRun add_tests<CR>",                 desc = "Add Tests" },
+          { "<leader>cco", "<cmd>ChatGPTRun optimize_code<CR>",             desc = "Optimize Code" },
+          { "<leader>ccs", "<cmd>ChatGPTRun summarize<CR>",                 desc = "Summarize" },
+          { "<leader>ccf", "<cmd>ChatGPTRun fix_bugs<CR>",                  desc = "Fix Bugs" },
+          { "<leader>ccx", "<cmd>ChatGPTRun explain_code<CR>",              desc = "Explain Code" },
+          { "<leader>ccr", "<cmd>ChatGPTRun roxygen_edit<CR>",              desc = "Roxygen Edit" },
+          { "<leader>ccl", "<cmd>ChatGPTRun code_readability_analysis<CR>", desc = "Code Readability Analysis" },
+        }
+      })
+    end,
   }
 }

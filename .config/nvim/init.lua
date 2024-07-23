@@ -120,16 +120,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
--- document existing key chains
-require('which-key').register {
-  { '<leader>c', group = '[C]ode' },
-  { '<leader>d', group = '[D]ocument' },
-  { '<leader>g', group = '[G]it' },
-  { '<leader>h', group = 'More git' },
-  { '<leader>r', group = '[R]ename' },
-  { '<leader>s', group = '[S]earch' },
-  { '<leader>w', group = '[W]orkspace' },
-}
-
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -96,9 +96,9 @@ local function get_current_file_relative_path() return vim.fn.expand('%') end
 --- NOTE working directory/file utils
 
 -- print working directory/file
-vim.api.nvim_create_user_command('Pwd', function() vim.fn.echo(get_current_dir_path()) end, { nargs = 0 })
-vim.api.nvim_create_user_command('Pwf', function() vim.fn.echo(get_current_file_relative_path()) end, { nargs = 0 })
-vim.api.nvim_create_user_command('PwF', function() vim.fn.echo(get_current_file_path()) end, { nargs = 0 })
+vim.api.nvim_create_user_command('Pwd', function() print(get_current_dir_path()) end, { nargs = 0 })
+vim.api.nvim_create_user_command('Pwf', function() print(get_current_file_relative_path()) end, { nargs = 0 })
+vim.api.nvim_create_user_command('PwF', function() print(get_current_file_path()) end, { nargs = 0 })
 
 -- yank working directory/file to system clipboard
 vim.api.nvim_create_user_command('Ypd', function() vim.fn.setreg('+', get_current_dir_path()) end, { nargs = 0 })
