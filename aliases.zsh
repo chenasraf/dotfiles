@@ -96,7 +96,7 @@ alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --gree
 # home
 alias home="h_"
 alias h="home"
-alias hi="source \$DOTFILES/install.sh"
+alias hi="source \$DOTFILES/install.zsh"
 alias hli="hl && hi"
 alias rh="rhome"
 alias rt="home rt"

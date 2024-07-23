@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-source $DOTFILES/aliases.sh
+source "$DOTFILES/aliases.zsh"
 
 if [[ $(hostname) == 'spider.casraf.dev' ]]; then
   text='@spider'

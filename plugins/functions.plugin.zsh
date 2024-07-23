@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
-source $DOTFILES/autoload_completions.sh
-# source $DOTFILES/plugins/colors.plugin.zsh
-# source ~/.dotfiles/plugins/tmux.plugin.zsh
+source $DOTFILES/autoload_completions.zsh
 
 motd() {
   out=$(run-parts $DOTFILES/scripts/motd)

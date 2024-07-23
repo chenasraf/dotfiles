@@ -118,7 +118,7 @@ fi
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
 if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then source /opt/homebrew/opt/chruby/share/chruby/chruby.sh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
-if [[ -f "$DOTFILES/_local.sh" ]]; then source "$DOTFILES/_local.sh"; fi
+if [[ -f "$DOTFILES/_local.zsh" ]]; then source "$DOTFILES/_local.zsh"; fi
 
 export SHELLCHECK_OPTS='--shell=bash'
 

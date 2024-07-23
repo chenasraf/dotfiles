@@ -31,7 +31,7 @@ withDefaultOpts(
     description: 'Install dotfiles',
     run: async (opts) => {
       const vOpts = { ...opts, verbose: true }
-      await sourceRun(vOpts, `source "${DF_DIR}/install.sh"`)
+      await sourceRun(vOpts, `source "${DF_DIR}/install.zsh"`)
     },
   })
   .parse()

@@ -4,7 +4,7 @@ export DOTBIN="$HOME/.config/bin"
 export DOTBIN_META="$HOME/.config/.bin"
 
 source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
-source "$DOTFILES/exports.sh"
+source "$DOTFILES/exports.zsh"
 
 [[ "$1" == "-q" ]] || motd
 
@@ -55,7 +55,7 @@ export VISUAL="$EDITOR"
 
 tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
 
-source "$DOTFILES/exports.sh" # must run before zsh_init
-source "$DOTFILES/aliases.sh"
+source "$DOTFILES/exports.zsh" # must run before zsh_init
+source "$DOTFILES/aliases.zsh"
 
 [[ ! -f "$HOME/.config/.p10k.zsh" ]] || source "$HOME/.config/.p10k.zsh"

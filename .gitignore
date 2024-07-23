@@ -5,6 +5,6 @@ bin/
 *.swp
 *.pyc
 tests/
-_local.sh
+_local.zsh
 .tmux_local.yml
 .device_uid

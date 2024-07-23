@@ -85,7 +85,7 @@ Some (but not all) of the plugins/modifications are listed here:
 4. Run install scripts:
 
    ```bash
-   source ~/.dotfiles/install.sh
+   source ~/.dotfiles/install.zsh
    ```
 
    And reload the terminal
