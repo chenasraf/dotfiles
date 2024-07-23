@@ -3,24 +3,44 @@
 export USE_COLORS=$(tput colors 2>/dev/null)
 
 # colors
-function color() {
+function echo_color() {
   if [[ -z "$USE_COLORS" || "$USE_COLORS" -lt 8 ]]; then
     echo "$@"
     return
   fi
+  local n=""
+  if [[ "$1" == "-n" ]]; then
+    n="-n"
+    shift
+  fi
   local c="$1"
   shift
-  echo -e "\033[0;${c}m$@\033[0m"
+  case "$c" in
+    black) c=30 ;;
+    red) c=31 ;;
+    green) c=32 ;;
+    yellow) c=33 ;;
+    blue) c=34 ;;
+    purple) c=35 ;;
+    cyan) c=36 ;;
+    white) c=37 ;;
+    bold) c=1 ;;
+    underline) c=4 ;;
+    blink) c=5 ;;
+    reset) c=0 ;;
+    *) c
+  esac
+  echo -e $n "\033[0;${c}m$@\033[0m"
 }
-alias cecho="color"
-alias echo_gray="color 30"
-alias echo_red="color 31"
-alias echo_green="color 32"
-alias echo_yellow="color 33"
-alias echo_blue="color 34"
-alias echo_purple="color 35"
-alias echo_cyan="color 36"
-alias echo_white="color 37"
-alias echo_bold="color 1"
-alias echo_underline="color 4"
-alias echo_blink="color 5"
+alias cecho="echo_color"
+alias echo_gray="echo_color gray"
+alias echo_red="echo_color red"
+alias echo_green="echo_color green"
+alias echo_yellow="echo_color yellow"
+alias echo_blue="echo_color blue"
+alias echo_purple="echo_color purple"
+alias echo_cyan="echo_color cyan"
+alias echo_white="echo_color white"
+alias echo_bold="echo_color bold"
+alias echo_underline="echo_color underline"
+alias echo_blink="echo_color blink"

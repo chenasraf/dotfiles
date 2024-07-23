@@ -429,8 +429,19 @@ xrg () {
 
 # ask for confirmation before running a command, Y is default
 # returns 0 if confirmed or typed Y, 1 if not
+# flags: -c <color> or --color <color>
 ask() {
-  echo -n "$1 [Y/n] "
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: ask [-c <color>] <question>"
+    return 1
+  fi
+  if [[ $1 == "-c" || $1 == "--color" ]]; then
+    color=$2
+    shift 2
+  else
+    color="reset"
+  fi
+  echo_color -n $color "$1 [Y/n] "
   read REPLY
   if [[ $REPLY =~ ^[Yy]$ ]] || [[ -z $REPLY ]]; then
     return 0
@@ -572,6 +583,7 @@ uriencode() {
   done
 }
 
+# decodes a posix compliant string
 posix_compliant() {
     strg="${*}"
     printf '%s' "${strg%%[%+]*}"
@@ -646,8 +658,58 @@ set-pnpm-pkg-version() {
   fi
 }
 
+# list all scripts in project directory, supports package.json and poe pyproject.toml
+scriptls() {
+  if find-up package.json >/dev/null; then
+    jsscriptls
+  elif find-up pyproject.toml >/dev/null; then
+    pyscriptls
+  fi
+  return $?
+}
+
+# list all package.json scripts in project root
+jsscriptls() {
+  if ! find-up package.json >/dev/null; then
+    return 1
+  fi
+  cat $(find-up package.json) | jq '.scripts'
+}
+
+# list all poe pyproject.toml tasks in project root
+pyscriptls() {
+  if ! find-up pyproject.toml >/dev/null; then
+    return 1
+  fi
+  cat $(find-up pyproject.toml) | tomlq '.tool.poe.tasks'
+}
+
+# list all dependencies in package.json in project root
+depls() {
+  if ! find-up package.json >/dev/null; then
+    return 1
+  fi
+  cat $(find-up package.json) | jq '.dependencies'
+}
+
+# list all dev dependencies in package.json in project root
+devdepls() {
+  if ! find-up package.json >/dev/null; then
+    return 1
+  fi
+  cat $(find-up package.json) | jq '.devDependencies'
+}
+
+# list all peer dependencies in package.json in project root
+peerdepls() {
+  if ! find-up package.json >/dev/null; then
+    return 1
+  fi
+  cat $(find-up package.json) | jq '.peerDependencies'
+}
+
 # select random element from arguments
-# always keep last, breaks syntax highlighting
+# NOTE always keep this function last, breaks syntax highlighting
 randarg() {
   echo "${${@}[$RANDOM % $# + 1]}"
 }
