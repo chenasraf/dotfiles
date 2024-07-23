@@ -42,6 +42,7 @@ const push = async (opts: SyncOpts) => {
       return [
         `echo "${yellow('Pushing submodule: ${sub}\n')}"`,
         `pushd ${DF_DIR}/${sub}`,
+        `git status`,
         `git add .`,
         `git commit -m "chore: ${message || defaultMessage}"`,
         `git push origin master`,
@@ -55,9 +56,10 @@ const push = async (opts: SyncOpts) => {
   const msg = `Update submodules: ${submodules.join(', ')} (${syncDate})`
 
   const pushRoot = [
-    `echo "${yellow('Pushing dotfiles\n')}"`,
+    `echo "${yellow('Syncing repository with submodule changes\n')}"`,
     `pushd ${DF_DIR}`,
     `git add ${submodules.join(' ')}`,
+    `git status`,
     `git commit -m "backup(submodules): ${msg}"`,
     `git push origin master`,
     `popd`,
