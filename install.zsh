@@ -274,15 +274,6 @@ echo_yellow "Sourcing alias/function files..."
 src "aliases"
 src "plugins/functions.plugin.zsh"
 
-# Zplug packages reload
-if [[ $refresh_zplug -eq 1 ]]; then
-  echo_yellow "Reloading zplug..."
-  zplug clear
-  source "$DOTFILES/zplug.init.zsh"
-  zplug install
-  zplug load --verbose
-fi
-
 if [[ -z "$OPENAI_API_KEY" ]]; then
   if ask "OpenAI API key is not defined, set up?"; then
     echo_cyan "You might be asked to authenticate using 1Password to retrieve the key."
@@ -295,6 +286,15 @@ if [[ -z "$OPENAI_API_KEY" ]]; then
       echo_red "No key found in 1Password. Exiting..."
     fi
   fi
+fi
+
+# Zplug packages reload
+if [[ $refresh_zplug -eq 1 ]]; then
+  echo_yellow "Reloading zplug..."
+  zplug clear
+  source "$DOTFILES/zplug.init.zsh"
+  zplug install
+  zplug load --verbose
 fi
 
 echo_cyan "Done"

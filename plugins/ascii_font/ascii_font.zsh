@@ -1,5 +1,7 @@
+#!/usr/bin/env zsh
+
 # ascii-font() {
-dir="$DOTFILES/scripts/ascii_font"
+dir="$DOTFILES/plugins/ascii_font"
 font="$dir/fonts/Big-Money-ne"
 size=1
 color=""
