@@ -225,7 +225,8 @@ return {
           ---@diagnostic disable-next-line: unused-local
           register_configurations = function(paths)
             require("dap").configurations.dart = {
-              -- <put here config that you would find in .vscode/launch.json>
+              -- TODO explore this
+              -- NOTE <put here config that you would find in .vscode/launch.json>
             }
           end,
         },
@@ -234,6 +235,7 @@ return {
         -- root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
         fvm = true, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
         widget_guides = {
+          -- TODO what does this do?
           enabled = false,
         },
         closing_tags = {
@@ -245,6 +247,7 @@ return {
           enabled = true,
           notify_errors = false, -- if there is an error whilst running then notify the user
           -- open_cmd = "tabedit",  -- command to use to open the log buffer
+          open_cmd = "belowright vnew"
         },
         dev_tools = {
           autostart = false,         -- autostart devtools server if not detected
