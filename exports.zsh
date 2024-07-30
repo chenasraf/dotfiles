@@ -85,7 +85,7 @@ if [[ -f $(which dart) ]]; then
 fi
 
 # Flutter
-if [[ ! -f $(which flutter) ]]; then
+if [[ -d "$FLUTTER_BIN" ]]; then
   export PATH="$FLUTTER_BIN:$PATH"
   # export PATH="$FLUTTER_BIN/cache/dart-sdk/bin:$PATH"
 fi
