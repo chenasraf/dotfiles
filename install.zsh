@@ -115,7 +115,13 @@ fi
 if [[ ! -f $(which delta) ]]; then
   if ask "Install delta?"; then
     echo_yellow "Installing delta..."
-    platform_install git-delta
+    if is_mac; then
+      platform_install git-delta
+    else
+      tmpf=$(mktemp)/delta.deb
+      curl -L https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb > $tmpf
+      dpkg -i $tmpf
+    fi
   fi
 fi
 
@@ -147,7 +153,11 @@ fi
 if [[ ! -d "$HOME/.pyenv" ]]; then
   if ask "Install pyenv?"; then
     echo_yellow "Installing pyenv..."
-    platform_install pyenv
+    if is_mac; then
+      platform_install pyenv
+    else
+      curl https://pyenv.run | bash
+    fi
   fi
 fi
 
