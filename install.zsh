@@ -118,8 +118,8 @@ if [[ ! -f $(which delta) ]]; then
     if is_mac; then
       platform_install git-delta
     else
-      tmpf=$(mktemp)/delta.deb
-      curl -L https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb > $tmpf
+      tmpf=$(mktemp -d)/delta.deb
+      curl -L https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb -o $tmpf
       dpkg -i $tmpf
     fi
   fi
