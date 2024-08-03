@@ -115,7 +115,7 @@ fi
 if [[ ! -f $(which delta) ]]; then
   if ask "Install delta?"; then
     echo_yellow "Installing delta..."
-    brew install git-delta
+    platform_install git-delta
   fi
 fi
 
@@ -147,21 +147,24 @@ fi
 if [[ ! -d "$HOME/.pyenv" ]]; then
   if ask "Install pyenv?"; then
     echo_yellow "Installing pyenv..."
-    brew install pyenv
+    platform_install pyenv
   fi
 fi
 
 if [[ ! -f $(which pipx) ]]; then
   if ask "Install pipx?"; then
     echo_yellow "Installing pipx..."
-    brew install pipx
+    platform_install pipx
+    if is_linux; then
+      sudo pipx ensurepath --global
+    fi
   fi
 fi
 
 if [[ ! -f $(which jq) ]]; then
   if ask "Install jq?"; then
     echo_yellow "Installing jq..."
-    brew install jq
+    platform_install jq
   fi
 fi
 

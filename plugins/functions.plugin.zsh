@@ -706,6 +706,16 @@ peerdepls() {
   cat $(find-up package.json) | jq '.peerDependencies'
 }
 
+platform_install() {
+  pkg="$@"
+
+  if is_mac; then
+    brew install $pkg
+  elif is_linux; then
+    sudo apt install $pkg
+  fi
+}
+
 # select random element from arguments
 # NOTE always keep this function last, breaks syntax highlighting
 randarg() {
