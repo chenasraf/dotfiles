@@ -294,9 +294,11 @@ if [[ -z "$OPENAI_API_KEY" ]]; then
     if [[ ! -z "$key" ]]; then
       echo_yellow "Key retrieved."
       echo_yellow "Please run the following to persist the key for future sessions:"
-      echo "echo 'export OPENAI_API_KEY=\"$key\"' >> $(strip-home $DOTFILES)/_local.sh"
+      echo "echo 'export OPENAI_API_KEY=\"$key\"' >> $(strip-home $DOTFILES)/_local.zsh"
     else
       echo_red "No key found in 1Password. Exiting..."
+      echo_yellow "To add manually, please run the following to persist the key for future sessions:"
+      echo "echo 'export OPENAI_API_KEY=\"YOUR_OPEN_AI_KEY_HERE\"' >> $(strip-home $DOTFILES)/_local.zsh"
     fi
   fi
 fi
