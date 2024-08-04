@@ -115,8 +115,23 @@ fi
 if [[ ! -f $(which delta) ]]; then
   if ask "Install delta?"; then
     echo_yellow "Installing delta..."
+    # TODO get latest release
     dpkg_url="https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb"
     platform_install --dpkg-url $dpkg_url git-delta
+  fi
+fi
+
+if [[ ! -f $(which lazygit) ]]; then
+  if ask "Install LazyGit?"; then
+    if is_mac; then
+      brew install lazygit
+    else
+      cd $(mktemp -d)
+      lazygit_version=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+      curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${lazygit_version}_Linux_x86_64.tar.gz"
+      tar xf lazygit.tar.gz lazygit
+      sudo install lazygit /usr/local/bin
+    fi
   fi
 fi
 
