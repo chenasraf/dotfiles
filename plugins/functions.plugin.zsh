@@ -3,8 +3,7 @@
 source $DOTFILES/autoload_completions.zsh
 
 motd() {
-  out=$(run-parts $DOTFILES/plugins/motd)
-  echo $out
+  run-parts $DOTFILES/plugins/motd
 }
 
 # Functions
