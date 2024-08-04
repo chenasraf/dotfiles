@@ -115,13 +115,8 @@ fi
 if [[ ! -f $(which delta) ]]; then
   if ask "Install delta?"; then
     echo_yellow "Installing delta..."
-    if is_mac; then
-      platform_install git-delta
-    else
-      tmpf=$(mktemp -d)/delta.deb
-      curl -L https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb -o $tmpf
-      dpkg -i $tmpf
-    fi
+    dpkg_url="https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb"
+    platform_install --dpkg-url $dpkg_url git-delta
   fi
 fi
 

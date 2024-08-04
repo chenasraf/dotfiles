@@ -706,12 +706,30 @@ peerdepls() {
 }
 
 platform_install() {
+  if [[ $# -eq 0 ]]; then
+    echo_red "Usage: platform_install [--dpkg-url dpkg-url] <package>"
+    return 1
+  fi
+
+  if [[ $# -gt 1 ]]; then
+    case $1 in
+      --dpkg-url)
+        dpkg_url=$2
+        shift 2
+        ;;
+    esac
+  fi
+
   pkg="$@"
 
   if is_mac; then
     brew install $pkg
   elif is_linux; then
-    sudo apt install $pkg
+    if [[ ! -z "$dpkg_url" ]]; then
+      curl -sL $dpkg_url | sudo dpkg -i
+    else
+      sudo apt install $pkg
+    fi
   fi
 }
 
