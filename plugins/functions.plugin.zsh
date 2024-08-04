@@ -733,6 +733,11 @@ platform_install() {
   fi
 }
 
+get-gh-latest-tag() {
+  repo="$1"
+  curl -s "https://api.github.com/repos/$repo/tags" | jq -r '.[0].name'
+}
+
 # select random element from arguments
 # NOTE always keep this function last, breaks syntax highlighting
 randarg() {

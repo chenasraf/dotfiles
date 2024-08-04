@@ -166,6 +166,23 @@ if [[ ! -f $(which pipx) ]]; then
   fi
 fi
 
+if [[ ! -f $(which pandoc) ]]; then
+  if ask "Install pandoc?"; then
+    echo_yellow "Installing pandoc..."
+    pandoc_ver=$(get-gh-latest-tag "jgm/pandoc")
+    case $(uname -m) in
+      x86_64)
+        arch="amd64"
+        ;;
+      *)
+        arch=$(uname -m)
+        ;;
+    esac
+    dpkg_url="https://github.com/jgm/pandoc/releases/download/$pandoc_ver/pandoc-$pandoc_ver-1-$arch.deb"
+    platform_install --dpkg-url $dpkg_url pandoc
+  fi
+fi
+
 if [[ ! -f $(which jq) ]]; then
   if ask "Install jq?"; then
     echo_yellow "Installing jq..."
@@ -184,7 +201,7 @@ fi
 # echo_cyan "Installing gi_gen..."
 # echo_cyan "Fetching gi_gen latest version..."
 
-gi_ver=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/tags" | jq -r '.[0].name')
+gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
 ver_file="$DOTBIN_META/.gi_gen_version"
 mkdir -p $(dirname $ver_file)
 touch $ver_file
