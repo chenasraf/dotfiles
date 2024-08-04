@@ -169,7 +169,8 @@ fi
 if [[ ! -f $(which pandoc) ]]; then
   if ask "Install pandoc?"; then
     echo_yellow "Installing pandoc..."
-    pandoc_ver=$(get-gh-latest-tag "jgm/pandoc")
+    pandoc_ver=$(get-gh-latest-tag -f '.name | contains("cli")' "jgm/pandoc")
+    pandoc_ver=$(echo $pandoc_ver | sed 's/pandoc-cli-//')
     case $(uname -m) in
       x86_64)
         arch="amd64"
@@ -179,6 +180,7 @@ if [[ ! -f $(which pandoc) ]]; then
         ;;
     esac
     dpkg_url="https://github.com/jgm/pandoc/releases/download/$pandoc_ver/pandoc-$pandoc_ver-1-$arch.deb"
+    echo_cyan "Installing from $dpkg_url..."
     platform_install --dpkg-url $dpkg_url pandoc
   fi
 fi

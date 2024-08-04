@@ -726,7 +726,9 @@ platform_install() {
     brew install $pkg
   elif is_linux; then
     if [[ ! -z "$dpkg_url" ]]; then
-      curl -sL $dpkg_url | sudo dpkg -i
+      tmp=$(mktemp).deb
+      curl -sL $dpkg_url -o $tmp
+      sudo dpkg -i $tmp
     else
       sudo apt install $pkg
     fi
@@ -734,8 +736,22 @@ platform_install() {
 }
 
 get-gh-latest-tag() {
+  if [[ $# -gt 1 ]]; then
+    case $1 in
+      --filter|-f)
+        filter=$2
+        shift 2
+        ;;
+    esac
+  fi
   repo="$1"
-  curl -s "https://api.github.com/repos/$repo/tags" | jq -r '.[0].name'
+  jq_query='.[0].name'
+  if [[ ! -z $filter ]]; then
+    jq_query=".[] | select($filter) | .name"
+    curl -s "https://api.github.com/repos/$repo/tags" | jq -r "$jq_query" | head -n 1
+  else
+    curl -s "https://api.github.com/repos/$repo/tags" | jq -r "$jq_query"
+  fi
 }
 
 # select random element from arguments
