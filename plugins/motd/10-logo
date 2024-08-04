@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 source "$DOTFILES/aliases.zsh"
+ascii-text() { . $DOTFILES/plugins/ascii_font/ascii_font.zsh }
 
 if [[ $(hostname) == 'spider.casraf.dev' ]]; then
   text='@spider'
@@ -21,3 +22,4 @@ if [[ ! -z $extra_echo ]]; then
   echo
 fi
 
+unset -f ascii-text
