@@ -28,10 +28,53 @@ function echo_color() {
     underline) a="smul" ;;
     blink) a="blink" ;;
     reset) a="sgr0" ;;
-    *) a="$c";c="";;
+    *)
+      if [[ $c -ge 0 && $c -lt 256 ]]; then
+        a="setaf"
+        c="$c"
+      else
+        a="$c"
+        c=""
+      fi
+      ;;
   esac
   echo -e $n "$(tput $a $c)$@$(tput sgr0)"
 }
+
+all_colors() {
+  cache_file="$DOTFILES/plugins/colors.cache"
+  if [[ "$1" == "-f" ]]; then
+    rm -f $cache_file
+  fi
+  if [[ -f $cache_file ]]; then
+    cat $cache_file
+    return
+  fi
+  output() {
+    for i in {1..256}; do
+      c=$(printf "%03d" $i)
+      printf "$(tput setaf $c)$i$(tput sgr0) "
+      if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
+          printf "\n";
+      fi
+    done
+    printf "\n"
+    for i in {1..256}; do
+      c=$(printf "%03d" $i)
+      printf "$(tput setab $i)$c$(tput sgr0) "
+      if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
+          printf "\n";
+      fi
+    done
+    printf "\n"
+  }
+  echo "Generating colors cache..."
+  output | tee $cache_file
+  unset output
+  cat $cache_file
+}
+
+alias test_colors="msgcat --color=test"
 alias cecho="echo_color"
 alias echo_gray="echo_color gray"
 alias echo_red="echo_color red"
