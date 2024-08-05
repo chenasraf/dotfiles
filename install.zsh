@@ -1,12 +1,11 @@
 #!/usr/bin/env zsh
 
 type src >/dev/null || source "$DOTFILES/zplug.init.zsh"
-echo -e "\x1B[32mPreparing...\x1B[0m"
+echo "$(tput setaf 2)Preparing...$(tput sgr0)"
 
 # Source files
 source "$DOTFILES/exports.zsh"
 source "$DOTFILES/aliases.zsh"
-source "$DOTFILES/plugins/functions.plugin.zsh"
 
 if is_mac && [[ ! -d "$HOME/Library/ApplicationSupport" ]]; then
   ln -s "$HOME/Library/Application Support" "$HOME/Library/ApplicationSupport"
