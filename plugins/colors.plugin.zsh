@@ -16,21 +16,21 @@ function echo_color() {
   local c="$1"
   shift
   case "$c" in
-    black) c=30 ;;
-    red) c=31 ;;
-    green) c=32 ;;
-    yellow) c=33 ;;
-    blue) c=34 ;;
-    purple) c=35 ;;
-    cyan) c=36 ;;
-    white) c=37 ;;
-    bold) c=1 ;;
-    underline) c=4 ;;
-    blink) c=5 ;;
-    reset) c=0 ;;
-    *) c
+    black) a="setaf";c="0" ;;
+    red) a="setaf";c="1" ;;
+    green) a="setaf";c="2" ;;
+    yellow) a="setaf";c="3" ;;
+    blue) a="setaf";c="4" ;;
+    purple) a="setaf";c="5" ;;
+    cyan) a="setaf";c="6" ;;
+    white) a="setaf";c="7" ;;
+    bold) a="bold" ;;
+    underline) a="smul" ;;
+    blink) a="blink" ;;
+    reset) a="sgr0" ;;
+    *) a="$c";c="";;
   esac
-  echo -e $n "\033[0;${c}m$@\033[0m"
+  echo -e $n "$(tput $a $c)$@$(tput sgr0)"
 }
 alias cecho="echo_color"
 alias echo_gray="echo_color gray"

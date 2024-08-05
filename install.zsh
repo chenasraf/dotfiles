@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 type src >/dev/null || source "$DOTFILES/zplug.init.zsh"
-echo "$(tput setaf 2)Preparing...$(tput sgr0)"
+echo_green "Preparing..."
 
 # Source files
 source "$DOTFILES/exports.zsh"
