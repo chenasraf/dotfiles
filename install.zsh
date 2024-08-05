@@ -1,8 +1,12 @@
 #!/usr/bin/env zsh
 
 type src >/dev/null || source "$DOTFILES/zplug.init.zsh"
-echo_yellow "Preparing..."
-src -q exports
+echo -e "\x1B[32mPreparing...\x1B[0m"
+
+# Source files
+source "$DOTFILES/exports.zsh"
+source "$DOTFILES/aliases.zsh"
+source "$DOTFILES/plugins/functions.plugin.zsh"
 
 if is_mac && [[ ! -d "$HOME/Library/ApplicationSupport" ]]; then
   ln -s "$HOME/Library/Application Support" "$HOME/Library/ApplicationSupport"
@@ -311,10 +315,6 @@ if [[ $refresh_tmux -eq 1 ]]; then
   tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
 fi
 
-# Source files
-echo_yellow "Sourcing alias/function files..."
-src "aliases"
-src "plugins/functions.plugin.zsh"
 
 if [[ -z "$OPENAI_API_KEY" ]]; then
   if ask "OpenAI API key is not defined, set up?"; then
@@ -341,6 +341,6 @@ if [[ $refresh_zplug -eq 1 ]]; then
   zplug load --verbose
 fi
 
-echo_cyan "Done"
+echo_green "Done"
 
 popd
