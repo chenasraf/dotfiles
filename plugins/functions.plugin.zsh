@@ -614,26 +614,45 @@ mdp() {
     <head>
       <title>$file</title>
       <style>
-      * {
-        font-family:Helvetica;
+      :root {
+        --font-normal: Helvetica, Arial, sans-serif;
+        --font-mono: 'MesloLGS Nerd Font Mono', monospace;
+      }
+      html, body {
+        font-family: var(--font-normal);
       }
       body {
         margin:40px auto 0;
         max-width:800px;
         font-size:16;
       }
+      code, pre {
+        background-color:#f4f4f4;
+        padding:5px;
+        border-radius:5px;
+        font-family: var(--font-mono);
+      }
+      code {
+        display: inline-block;
+      }
+      pre > code {
+        background-color:unset;
+        font-family: var(--font-mono);
+        display: block;
+      }
       </style>
     </head>
     <body>
   "
-  echo "Opening HTML preview for $file..."
-  f=$(mktemp).html
+  echo "Opening HTML preview for $(basename $file)..."
+  filewoext="$(basename ${file%.*})"
+  f="$(mktemp)-$filewoext.html"
   echo $html_prefix>$f
   md2html $file >>$f
   echo "</body></html>" >>$f
   open -u "file:///$f"
   # echo "Opening file:///$f"
-  ($SHELL -c "sleep 3; rm $f; exit 0" &)
+  ($SHELL -c "sleep 10; rm $f; exit 0" &)
 }
 
 # sets pnpm version on closest package.json to current version
