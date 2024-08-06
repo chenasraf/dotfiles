@@ -367,7 +367,7 @@ autoload _docker-exec
 autoload _docker-volume-path
 autoload _prj
 autoload _src
-autoload _srcp
+autoload _psrc
 
 # reload entire shell
 reload-zsh() {
@@ -598,61 +598,6 @@ posix_compliant() {
 # decode a uri component
 uridecode() {
   posix_compliant "${*}"
-}
-
-# convert markdown to html and output to stdout
-md2html() {
-  file=${1:-README.md}
-  pandoc $file
-}
-
-# convert markdown to html and open in browser
-mdp() {
-  file=${1:-README.md}
-  html_prefix="
-  <html>
-    <head>
-      <title>$file</title>
-      <style>
-      :root {
-        --font-normal: Helvetica, Arial, sans-serif;
-        --font-mono: 'MesloLGS Nerd Font Mono', monospace;
-      }
-      html, body {
-        font-family: var(--font-normal);
-      }
-      body {
-        margin:40px auto 0;
-        max-width:800px;
-        font-size:16;
-      }
-      code, pre {
-        background-color:#f4f4f4;
-        padding:5px;
-        border-radius:5px;
-        font-family: var(--font-mono);
-      }
-      code {
-        display: inline-block;
-      }
-      pre > code {
-        background-color:unset;
-        font-family: var(--font-mono);
-        display: block;
-      }
-      </style>
-    </head>
-    <body>
-  "
-  echo "Opening HTML preview for $(basename $file)..."
-  filewoext="$(basename ${file%.*})"
-  f="$(mktemp)-$filewoext.html"
-  echo $html_prefix>$f
-  md2html $file >>$f
-  echo "</body></html>" >>$f
-  open -u "file:///$f"
-  # echo "Opening file:///$f"
-  ($SHELL -c "sleep 10; rm $f; exit 0" &)
 }
 
 # sets pnpm version on closest package.json to current version
