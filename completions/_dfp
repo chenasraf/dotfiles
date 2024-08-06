@@ -1,4 +1,4 @@
-#compdef prc sprc
+#compdef dfpe dfps
 dfpath="$(wd path df)"
 
 out=()

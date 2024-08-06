@@ -78,108 +78,6 @@ is_linux() {
   return $?
 }
 
-# edit a dotfile script and source if there were changes
-# supports autocomplete for any editable files
-rc() {
-  if [[ $# -eq 0 ]]; then
-    echo_red "Usage: rc [-n] [-q] <dotfile>"
-    return 1
-  fi
-  no_src=0
-  quiet=0
-
-  while [[ $# -gt 1 ]]; do
-    case $1 in
-      -n)
-        no_src=1
-        ;;
-      -q)
-        quiet=1
-        ;;
-    esac
-    shift
-  done
-
-  if [[ -f "$DOTFILES/$1.sh" ]]; then
-    file="$DOTFILES/$1.sh"
-  elif [[ -f "$DOTFILES/$1.zsh" ]]; then
-    file="$DOTFILES/$1.zsh"
-  else
-    file="$DOTFILES/$1"
-  fi
-
-  if [[ -f $file ]]; then
-    hash=$(md5 $file)
-    echo "Opening $file..."
-    nvim $file
-    newhash=$(md5 $file)
-
-    if [[ $? -eq 0 && $hash != $newhash ]]; then
-      if [[ $no_src -ne 1 ]]; then
-        if [[ $quiet -ne 1 ]]; then
-          src $1
-        else
-          src -q $1
-        fi
-      fi
-    else
-      echo "No changes made"
-      return 2
-    fi
-    return 0
-  fi
-  echo_red "File not found: $file"
-  return 1
-}
-
-# source a dotfile script
-# supports autocomplete for any editable files
-src() {
-  if [[ $# -eq 0 ]]; then
-    echo_red "Usage: src [-q] <dotfile>"
-    return 1
-  fi
-
-  while [[ $# -gt 1 ]]; do
-    case $1 in
-      -q)
-        quiet=1
-        ;;
-    esac
-    shift
-  done
-
-  if [[ -f "$DOTFILES/$1.sh" ]]; then
-    file="$DOTFILES/$1.sh"
-  elif [[ -f "$DOTFILES/$1.zsh" ]]; then
-    file="$DOTFILES/$1.zsh"
-  else
-    file="$DOTFILES/$1"
-  fi
-
-  if [[ -f $file ]]; then
-    if [[ $quiet -ne 1 ]]; then
-      echo "Reloading $file..."
-    fi
-    source "$file"
-    return 0
-  fi
-  echo_red "File not found: $file"
-  return 1
-}
-
-# same as rc, but for plugin files
-prc() {
-  rc "plugins/$1.plugin"
-  return $?
-}
-
-# same as src, but for plugin files
-sprc() {
-  src "plugins/$1.plugin"
-  return $?
-}
-
 # select random number between min and max
 rand() {
   if [[ $# -eq 0 ]]; then
@@ -196,10 +94,11 @@ rand() {
   echo $(($RANDOM % ($max - $min + 1) + $min))
 }
 
-# select random element from list
+# select random line from file
 randline() {
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: randline <file>"
+    echo_red "Select a random line from a file"
     return 1
   fi
   linenum=$(($RANDOM % $(wc -l <$1) + 1))
@@ -219,25 +118,7 @@ find-replace() {
   sed "s/$find/$replace/g" $file
 }
 
-# find $1 and replace with $2 in file $3, output to file
-find-replace-file() {
-  if [[ $# -lt 3 || $1 == '-h' ]]; then
-    echo_red "Find and replace text in file. Modifies the file."
-    echo_red "Usage: find-replace-file <find> <replace> <file> [file]..."
-    return 1
-  fi
-
-  files=( "${@:3}" )
-  find=$1
-  replace=$2
-
-  for file in $files; do
-    echo "Replacing $find with $replace in $file..."
-    out=$(find-replace $find $replace $file)
-    echo $out >$file
-  done
-}
-
+# runs all scripts in directory $1 in order
 # same as run-parts from debian, but for osx
 if is_mac; then
   run-parts() {
@@ -265,7 +146,8 @@ fi
 # search for a file in a directory
 search-file() {
   if [[ $# -eq 0 ]]; then
-    echo "Usage: find-file [dir] <file>"
+    echo "Usage: search-file [dir] <file>"
+    echo "Search for a file in a directory (recursively)"
     return 1
   fi
   if [[ $# -eq 1 ]]; then
@@ -284,6 +166,7 @@ search-file() {
 find-up() {
   if [[ $# -eq 0 ]]; then
     echo "Usage: find-up <file>"
+    echo "Finds a file in the current directory or on one of its ancestors"
     return 1
   fi
   file=$1
@@ -361,13 +244,6 @@ docker-volume-cd() {
   shift
   cd $(docker-volume-path "$image")
 }
-
-# autocompletions
-autoload _docker-exec
-autoload _docker-volume-path
-autoload _prj
-autoload _src
-autoload _psrc
 
 # reload entire shell
 reload-zsh() {

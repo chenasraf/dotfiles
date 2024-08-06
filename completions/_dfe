@@ -1,4 +1,4 @@
-#compdef rc src
+#compdef dfe dfs
 dfpath="$(wd path df)"
 
 out=()
