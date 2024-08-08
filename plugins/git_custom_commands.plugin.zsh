@@ -96,6 +96,100 @@ git_open_project() {
   return 0
 }
 
+git_open_branch() {
+  remote=$(git_get_remote)
+  if [[ -z $remote ]]; then
+    echo "No remote found"
+    return 1
+  fi
+
+  remote_type=$(git_get_remote_type $remote)
+  if [[ -z $remote_type ]]; then
+    echo "Unknown remote type for $remote"
+    return 1
+  fi
+
+  repo_path=$(git_get_repo_path $remote)
+  branch=$([[ ! -z $2 ]] && echo "$2" || git branch --show-current)
+
+  case $remote_type in
+    github)
+      open_url "https://github.com/$repo_path/tree/$branch"
+      ;;
+    gitlab)
+      open_url "https://gitlab.com/$repo_path/-/tree/$branch"
+      ;;
+    bitbucket)
+      open_url "https://bitbucket.org/$repo_path/branch/$branch"
+      ;;
+  esac
+
+  return 0
+}
+
+git_open_file() {
+  remote=$(git_get_remote)
+  if [[ -z $remote ]]; then
+    echo "No remote found"
+    return 1
+  fi
+
+  remote_type=$(git_get_remote_type $remote)
+  if [[ -z $remote_type ]]; then
+    echo "Unknown remote type for $remote"
+    return 1
+  fi
+
+  repo_path=$(git_get_repo_path $remote)
+  file=$([[ ! -z $2 ]] && echo "$2" || echo "")
+  branch=$([[ ! -z $3 ]] && echo "$3" || git branch --show-current)
+
+  case $remote_type in
+    github)
+      open_url "https://github.com/$repo_path/blob/$branch/$file"
+      ;;
+    gitlab)
+      open_url "https://gitlab.com/$repo_path/-/blob/$branch/$file"
+      ;;
+    bitbucket)
+      open_url "https://bitbucket.org/$repo_path/src/$file"
+      ;;
+  esac
+
+  return 0
+}
+
+git_open_commit() {
+  remote=$(git_get_remote)
+  if [[ -z $remote ]]; then
+    echo "No remote found"
+    return 1
+  fi
+
+  remote_type=$(git_get_remote_type $remote)
+  if [[ -z $remote_type ]]; then
+    echo "Unknown remote type for $remote"
+    return 1
+  fi
+
+  repo_path=$(git_get_repo_path $remote)
+  commit=$([[ ! -z $2 ]] && echo "$2" || git rev-parse HEAD)
+
+  case $remote_type in
+    github)
+      open_url "https://github.com/$repo_path/commit/$commit"
+      ;;
+    gitlab)
+      open_url "https://gitlab.com/$repo_path/-/commit/$commit"
+      ;;
+    bitbucket)
+      open_url "https://bitbucket.org/$repo_path/commit/$commit"
+      ;;
+  esac
+
+  return 0
+}
+
 git_open_pr_list() {
   # branch=$1
   # if [[ -z $branch ]]; then
@@ -218,6 +312,9 @@ git_open() {
     echo "Usage: git open <command>"
     echo "Commands:"
     echo "  project|repo|open|.       Open the project"
+    echo "  branch                    Open the project at given (or current) branch"
+    echo "  commit                    Open the project at given (or current) commit"
+    echo "  file                      Open the project at given file. Can also append ref hash"
     echo "  prs                       Open the PR list"
     echo "  pr                        Open a new PR"
     echo "  actions|pipelines|ci      Open the CI/CD pipelines"
@@ -227,6 +324,15 @@ git_open() {
   case $1 in
     project|repo|\.)
       git_open_project
+      ;;
+    branch)
+      git_open_branch $@
+      ;;
+    file)
+      git_open_file $@
+      ;;
+    commit)
+      git_open_commit $@
       ;;
     prs)
       shift
@@ -241,16 +347,26 @@ git_open() {
       git_open_pipelines
       ;;
     _debug)
-      echo -n "Getting info..."
+      inf="Getting info"
+      y=$(tput setaf 3)
+      g=$(tput setaf 2)
+      r=$(tput sgr0)
+
+      echo -n "$r- ${y}$inf\r"
       remote=$(git_get_remote)
+      echo -n "$r\\ ${y}$inf.\r"
       info=$(git remote show $remote)
+      echo -n "$r| ${y}$inf..\r"
       branch=$(git branch --show-current)
-      echo " Done"
+      echo -n "$r/ ${y}$inf...\r"
+      commit=$(git rev-parse HEAD)
+      echo "${g}Done\e[0K$r\n"
       echo "Remote: $remote"
       echo "Repo Path: $(git_get_repo_path $remote)"
       echo "Remote Type: $(git_get_remote_type $remote)"
       echo "Branch: $branch"
       echo "Default Branch: $(echo $info | grep "HEAD branch" | awk '{print $3}')"
+      echo "Commit: $commit"
       ;;
     *)
       echo "Unknown command: $1"

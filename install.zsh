@@ -109,10 +109,6 @@ if [[ $set_git_configs -eq 1 ]]; then
 
   # Open
   git config --global alias.open "!\$DOTFILES/plugins/git_custom_commands.plugin.zsh open"
-  git config --global alias.project "open project"
-  git config --global alias.pr "open pr"
-  git config --global alias.prs "open prs"
-  git config --global alias.ci "open ci"
 fi
 
 if [[ ! -f $(which delta) ]]; then

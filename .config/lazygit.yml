@@ -243,21 +243,27 @@ os:
 disableStartupPopups: false
 customCommands:
   - key: 'B'
-    context: 'localBranches'
+    context: 'global'
     prompts:
       - type: 'menu'
         title: 'Choose an action'
         key: 'action'
         options:
-          - name: 'Open Project'
+          - name: 'Open Branch'
+            value: 'branch'
+          - name: 'Open Default Branch'
             value: 'project'
+          - name: 'Open Commit'
+            value: 'commit'
+          - name: 'Open File'
+            value: 'file'
           - name: 'Create Pull Request'
             value: 'pr'
           - name: 'Open Pull Requests'
             value: 'prs'
           - name: 'Open CI/Actions'
             value: 'ci'
-    command: 'git open {{.Form.action}} {{.SelectedLocalBranch.Name}}'
+    command: 'git open {{.Form.action}} {{if .SelectedFile}}{{.SelectedFile.Name | quote}}{{else if .SelectedLocalBranch}}{{.SelectedLocalBranch.Name | quote}}{{else if .SelectedRemoteBranch}}{{.SelectedRemoteBranch.Name | quote}}{{end}}'
     loadingText: 'Opening...'
 services: {}
 notARepository: prompt
