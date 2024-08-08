@@ -6,7 +6,7 @@ export DOTBIN_META="$HOME/.config/.bin"
 source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
 source "$DOTFILES/exports.zsh"
 
-[[ "$1" == "-q" ]] || motd
+[[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]

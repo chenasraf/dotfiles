@@ -111,6 +111,7 @@ alias hlog="home git log"
 alias hiv="hi; vim ."
 alias hv="pushd \$(wd path df); vi .; popd"
 alias spider="ssh root@spider.casraf.dev"
+alias motd="run-parts \$DOTFILES/plugins/motd"
 
 # docker
 alias de="docker-exec"
