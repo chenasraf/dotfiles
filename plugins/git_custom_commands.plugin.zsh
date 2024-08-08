@@ -21,7 +21,7 @@ git_get_repo_path() {
   repo_path=''
 
   if [[ $remote =~ ^git@ ]]; then
-    repo_path=$(echo "$remote" | sed -E 's/^git@[^:]+:([^\.]+)\.git$/\1/')
+    repo_path=$(echo "$remote" | sed -E 's/^git@[^:]+:([^:]+)\.git$/\1/')
   elif [[ $remote =~ ^https?:// ]]; then
     repo_path=$(echo "$remote" | sed -E 's|^https?://[^/]+/([^\.]+)\.git$|\1|')
   fi
@@ -45,7 +45,7 @@ git_get_remote_type() {
   repo_path=$(git_get_repo_path $remote)
   remote_type='github'
   case $remote in
-    *github.com*) 
+    *github.com*)
       remote_type='github'
       ;;
     *gitlab.com*)
