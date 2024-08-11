@@ -263,7 +263,7 @@ customCommands:
             value: 'prs'
           - name: 'Open CI/Actions'
             value: 'ci'
-    command: 'git open {{.Form.action}} {{if .SelectedFile}}{{.SelectedFile.Name | quote}}{{else if .SelectedLocalBranch}}{{.SelectedLocalBranch.Name | quote}}{{else if .SelectedRemoteBranch}}{{.SelectedRemoteBranch.Name | quote}}{{end}}'
+    command: 'git open {{.Form.action}} {{if .SelectedFile}}{{.SelectedFile.Name | quote}}{{else if .SelectedRemoteBranch}}{{.SelectedRemoteBranch.Name | quote}}{{else if .SelectedLocalBranch}}{{.SelectedLocalBranch.Name | quote}}{{end}}'
     loadingText: 'Opening...'
 services: {}
 notARepository: prompt
