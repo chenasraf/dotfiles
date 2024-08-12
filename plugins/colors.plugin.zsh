@@ -42,7 +42,7 @@ function echo_color() {
 }
 
 all_colors() {
-  cache_file="$DOTFILES/plugins/colors.cache"
+  cache_file="$DOTFILES/plugins/.cache/colors.cache"
   if [[ "$1" == "-f" ]]; then
     rm -f $cache_file
   fi
@@ -50,7 +50,7 @@ all_colors() {
     cat $cache_file
     return
   fi
-  output() {
+  gen_all_colors() {
     for i in {1..256}; do
       c=$(printf "%03d" $i)
       printf "$(tput setaf $c)$i$(tput sgr0) "
@@ -69,8 +69,9 @@ all_colors() {
     printf "\n"
   }
   echo "Generating colors cache..."
-  output | tee $cache_file
-  unset output
+  mkdir -p $(dirname $cache_file)
+  gen_all_colors | tee $cache_file
+  unset -f gen_all_colors
   cat $cache_file
 }
 

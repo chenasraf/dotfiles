@@ -8,3 +8,4 @@ tests/
 _local.zsh
 .tmux_local.yml
 .device_uid
+plugins/.cache
