@@ -9,7 +9,7 @@ md2html() {
 # convert markdown to html and open in browser
 mdp() {
   filename=${1:-README.md}
-  html_file="$DOTFILES/plugins/templates/mdp-template.html"
+  html_file="$DOTFILES/plugins/assets/mdp-template.html"
   title=$(basename $filename)
   filewoext="$(basename ${filename%.*})"
 
