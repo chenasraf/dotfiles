@@ -11,7 +11,7 @@ addalias() {
     return 1
   fi
 
-  echo "alias $1=\"$2\"" >>"$HOME/.dotfiles/aliases.sh"
+  echo "alias $1=\"$2\"" >>"$HOME/.dotfiles/aliases.zsh"
   source "$HOME/.dotfiles/aliases.sh"
 }
 
@@ -145,3 +145,4 @@ alias occ="sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ"
 alias hh="home -h"
 alias pi="platform_install"
 alias get-gh-token="op item get github --fields 'CI Access Token'"
+alias txa="tx c -s -l -r"
