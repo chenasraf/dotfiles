@@ -7,7 +7,7 @@ export type Opts = {
   dry: boolean
 }
 
-export function withDefaultOpts<T extends Opts, OT extends {} = {}>(
+export function withDefaultOpts<T extends Opts, OT extends object = object>(
   command: MassargCommand<OT>,
 ): MassargCommand<OT & T> {
   return (command as MassargCommand<OT & T>)
@@ -27,7 +27,7 @@ export function withDefaultOpts<T extends Opts, OT extends {} = {}>(
     })
 }
 
-export function log({ verbose, dry }: Opts, ...content: any[]) {
+export function log({ verbose, dry }: Opts, ...content: unknown[]) {
   if (!verbose && !dry) return
   console.log(...content)
 }
@@ -45,8 +45,8 @@ export async function runCommand(
   const proc = spawn(cmd, args, { stdio: 'inherit', shell: '/bin/zsh' })
   return new Promise((resolve, reject) => {
     proc.on('close', (code) => {
-      if (code === 0) {
-        resolve(code)
+      if (code === 0 || code == null) {
+        resolve(code ?? 0)
       } else {
         reject(new Error(`Command: \`${cmd} ${args.join(' ')}\` exited with code: ${code}`))
       }
