@@ -43,9 +43,9 @@ dfe() {
     if [[ $? -eq 0 && $hash != $newhash ]]; then
       if [[ $no_src -ne 1 ]]; then
         if [[ $quiet -ne 1 ]]; then
-          src $1
+          dfs $1
         else
-          src -q $1
+          dfs -q $1
         fi
       fi
     else
@@ -122,7 +122,7 @@ dfpe() {
   return $?
 }
 
-# same as src, but for plugin files
+# same as dfs, but for plugin files
 dfps() {
   local flags=()
 
