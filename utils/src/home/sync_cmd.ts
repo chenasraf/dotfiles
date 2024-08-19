@@ -82,11 +82,15 @@ const statusCommand = new MassargCommand<HomeOpts>({
   },
 })
 
-const pushCommand = new MassargCommand<HomeOpts>({
+const pushCommand = new MassargCommand<SyncOpts>({
   name: 'push',
   aliases: ['p'],
   description: 'Push submodules',
   run: push,
+}).option({
+  name: 'message',
+  aliases: ['m'],
+  description: 'Commit message',
 })
 const pullCommand = new MassargCommand<HomeOpts>({
   name: 'pull',
