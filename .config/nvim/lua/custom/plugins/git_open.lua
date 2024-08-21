@@ -4,10 +4,18 @@ vim.api.nvim_create_user_command('GitOpen', function(opts)
   local cmd = "git open"
   if #args > 0 then
     cmd = cmd .. " " .. args
+    print("Running: " .. cmd)
     vim.cmd(":silent !" .. cmd)
   else
-    local types = { "branch", "repo", "commit", "file" }
-    local type_map = { repo = "Project", branch = "Current branch", commit = "Commit", file = "File" }
+    local types = { "branch", "pr", "prs", "repo", "commit", "file" }
+    local type_map = {
+      repo = "Project",
+      branch = "Current branch",
+      commit = "Commit",
+      file = "File",
+      pr = "Create/open Pull Request",
+      prs = "PRs list"
+    }
     vim.ui.select(types, {
       prompt = "Git open",
       format_item = function(item) return type_map[item] end
