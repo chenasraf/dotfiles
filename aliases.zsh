@@ -12,7 +12,7 @@ addalias() {
   fi
 
   echo "alias $1=\"$2\"" >>"$HOME/.dotfiles/aliases.zsh"
-  source "$HOME/.dotfiles/aliases.sh"
+  source "$HOME/.dotfiles/aliases.zsh"
 }
 
 source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
