@@ -106,33 +106,6 @@ vim.api.nvim_create_user_command('Ypf', function() vim.fn.setreg('+', get_curren
   { nargs = 0 })
 vim.api.nvim_create_user_command('YpF', function() vim.fn.setreg('+', get_current_file_path()) end, { nargs = 0 })
 
--- NOTE git open
--- usage: :GitOpen .|repo|branch|commit|file [...]
-vim.api.nvim_create_user_command('GitOpen', function(opts)
-  local args = opts.args
-  local cmd = "git open"
-  if #args > 0 then
-    cmd = cmd .. " " .. args
-    vim.cmd(":silent !" .. cmd)
-  else
-    local types = { "branch", "repo", "commit", "file" }
-    local type_map = { repo = "Project", branch = "Current branch", commit = "Commit", file = "File" }
-    vim.ui.select(types, {
-      prompt = "Git open",
-      format_item = function(item) return type_map[item] end
-    }, function(selected)
-      local extras = ""
-      if selected == "file" then
-        extras = vim.fn.expand("%")
-      end
-      if extras ~= "" then
-        selected = selected .. " " .. extras
-      end
-      vim.cmd("GitOpen " .. selected)
-    end)
-  end
-end, { nargs = '*' })
-
 -- NOTE toggle search highlight
 local hl_search = vim.o.hlsearch
 vim.keymap.set("n", "<leader>n", function()
