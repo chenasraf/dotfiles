@@ -522,7 +522,8 @@ platform_install() {
   mac_strategy="brew"
   linux_strategy="apt"
 
-  if [[ $# -gt 1 ]]; then
+  while [[ $# -gt 0 ]]; do
+    # echo "parsing: \"$1\", all: \"$@\""
     case $1 in
       --apt|-a) apt_pkg="$2"; shift 2; ;;
       --brew|-b) brew_pkg="$2"; shift 2; ;;
@@ -540,7 +541,16 @@ platform_install() {
         fi
         ;;
     esac
-  fi
+  done
+
+  # echo "mac_strategy=$mac_strategy"
+  # echo "linux_strategy=$linux_strategy"
+  # echo "brew_pkg=$brew_pkg"
+  # echo "apt_pkg=$apt_pkg"
+  # echo "dpkg_url=$dpkg_url"
+  # echo "install_cmd=$install_cmd"
+  # echo "is_mac=$(is_mac && echo true || echo false)"
+  # echo "is_linux=$(is_linux && echo true || echo false)"
 
   if is_mac; then
     strategy="$mac_strategy"
@@ -552,6 +562,7 @@ platform_install() {
     apt) [[ -z "$apt_pkg" ]] || pkg="$apt_pkg"; ;;
     brew) [[ -z "$brew_pkg" ]] || pkg="$brew_pkg"; ;;
     dpkg) [[ -z "$dpkg_url" ]] || pkg="$dpkg_url"; ;;
+    cmd) [[ -z "$install_cmd" ]] || pkg="$install_cmd" ;;
   esac
 
   if [[ -z "$pkg" ]]; then
@@ -570,7 +581,7 @@ platform_install() {
       sudo dpkg -i "$tmp"
       rm -rf "$tmp"
       ;;
-    cmd) . "$install_cmd" ;;
+    cmd) eval $pkg ;;
     *) echo_red "Unknown strategy $strategy"; return 1 ;;
   esac
 }
