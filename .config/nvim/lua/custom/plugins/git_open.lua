@@ -20,6 +20,7 @@ vim.api.nvim_create_user_command('GitOpen', function(opts)
       prompt = "Git open",
       format_item = function(item) return type_map[item] end
     }, function(selected)
+      if not selected then return end
       local extras = ""
       if selected == "file" then
         extras = vim.fn.expand("%")
@@ -31,10 +32,18 @@ vim.api.nvim_create_user_command('GitOpen', function(opts)
     end)
   end
 end, { nargs = '*' })
-vim.keymap.set("n", "<leader>go", ":GitOpen<CR>", { desc = "Git open", silent = true })
-vim.keymap.set("n", "<leader>gOp", ":GitOpen repo<CR>", { desc = "Git open repo", silent = true })
-vim.keymap.set("n", "<leader>gOb", ":GitOpen branch<CR>", { desc = "Git open branch", silent = true })
-vim.keymap.set("n", "<leader>gOc", ":GitOpen commit<CR>", { desc = "Git open commit", silent = true })
-vim.keymap.set("n", "<leader>gOf", ":GitOpen file<CR>", { desc = "Git open file", silent = true })
+
+vim.keymap.set("n", "<leader>gO", ":GitOpen<CR>", { desc = "Git open", silent = true })
+vim.keymap.set("n", "<leader>gor", ":GitOpen repo<CR>", { desc = "Git open repo", silent = true })
+vim.keymap.set("n", "<leader>gob", ":GitOpen branch<CR>", { desc = "Git open branch", silent = true })
+vim.keymap.set("n", "<leader>goc", ":GitOpen commit<CR>", { desc = "Git open commit", silent = true })
+vim.keymap.set("n", "<leader>gof", ":GitOpen file<CR>", { desc = "Git open file", silent = true })
+vim.keymap.set("n", "<leader>gop", ":GitOpen prs<CR>", { desc = "Git open PRs list", silent = true })
+vim.keymap.set("n", "<leader>goP", ":GitOpen pr<CR>", { desc = "Git open PR", silent = true })
+
+require('which-key').add({
+  { '<leader>go', group = '[G]it[O]pen ...' },
+  { '<leader>gO', group = '[G]it[O]pen' },
+})
 
 return {}
