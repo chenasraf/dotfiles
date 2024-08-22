@@ -26,8 +26,8 @@ function echo_color() {
     white) a="setaf";c="7" ;;
     bold) a="bold" ;;
     underline) a="smul" ;;
-    blink) a="blink" ;;
-    reset) a="sgr0" ;;
+    blink) a="blink";c="" ;;
+    reset) a="sgr0";c="" ;;
     *)
       if [[ $c -ge 0 && $c -lt 256 ]]; then
         a="setaf"
