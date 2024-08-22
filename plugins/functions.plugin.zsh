@@ -643,6 +643,33 @@ function print_centered {
    return 0
 }
 
+# returns a string based on current arch
+# usage: archmatch -l "linux" -mA "mac_arm" -mI "mac_intel" -m "all_macs"
+archmatch() {
+  while [[ "$#" -gt 0 ]]; do
+    case $1 in
+      -l|--linux) linux="$2"; shift ;;
+      -m|--mac) mac="$2"; shift ;;
+      -mA|--mac-arm) mac_arm="$2"; shift ;;
+      -mI|--mac-intel) mac_intel="$2"; shift ;;
+      *) echo_red "Unknown parameter passed: $1"; return 1 ;;
+    esac
+    shift
+  done
+
+  if is_mac; then
+    if [[ $(uname -m) == "arm64" ]]; then
+      [[ -n "$mac_arm" ]] || mac_arm="$mac"
+      echo "$mac_arm"
+    else
+      [[ -n "$mac_intel" ]] || mac_intel="$mac"
+      echo "$mac_intel"
+    fi
+  else
+    echo "$linux"
+  fi
+}
+
 # select random element from arguments
 # NOTE always keep this function last, breaks syntax highlighting
 randarg() {

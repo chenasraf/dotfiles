@@ -234,6 +234,25 @@ if [[ ! -f $(which dotenvx) ]]; then
   fi
 fi
 
+
+if [[ ! -f $(which ollama) && ! -d "/Applications/Ollama.app" ]]; then
+  if ask "Install ollama?"; then
+    echo_yellow "Installing ollama..."
+    mac_install='
+      # pushd $(mktemp -d)
+      pushd ~/Downloads
+      # curl -LO https://ollama.com/download/Ollama-darwin.zip
+      unzip Ollama-darwin.zip
+      mv Ollama.app /Applications/
+      popd
+    '
+    inst="$(is_mac && echo "$mac_install" || echo 'curl -fsSL https://ollama.com/install.sh | sh')"
+    platform_install \
+      -m cmd -l cmd \
+      -c "$inst"
+  fi
+fi
+
 # TODO update this
 gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
 ver_file="$DOTBIN_META/.gi_gen_version"
@@ -244,6 +263,7 @@ if [[ "$existing_ver" != "$gi_ver" ]]; then
   echo_cyan "Downloading gi_gen $gi_ver to $DOTBIN..."
   mkdir -p "$DOTBIN"
   mkdir -p "$DOTBIN_META"
+  arch=$(archmatch -mA "macos-arm" -mI "macos-intel" -l "linux-amd")
   if is_mac; then
     if [[ $(uname -m) == "arm64" ]]; then
       arch=macos-arm
