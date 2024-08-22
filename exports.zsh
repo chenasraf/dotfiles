@@ -110,9 +110,15 @@ if [[ -d "$HOME/Dev/gba/butano" ]]; then
   export BUTANO_HOME="$HOME/Dev/gba/butano"
 fi
 
+# DevkitPRO (GBA dev)
 if [[ -d "/opt/devkitpro" ]]; then
   export DEVKITPRO="/opt/devkitpro"
   export DEVKITARM="/opt/devkitpro/devkitARM"
+fi
+
+# Direnv
+if [[ -f $(which direnv) ]]; then
+  eval "$(direnv hook zsh)"
 fi
 
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi

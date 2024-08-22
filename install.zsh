@@ -115,8 +115,9 @@ if [[ ! -f $(which delta) ]]; then
   if ask "Install delta?"; then
     echo_yellow "Installing delta..."
     # TODO get latest release
-    dpkg_url="https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb"
-    platform_install --dpkg-url $dpkg_url git-delta
+    platform_install git-delta \
+      -l dpkg \
+      -d "https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb"
   fi
 fi
 
@@ -162,11 +163,9 @@ fi
 if [[ ! -d "$HOME/.pyenv" ]]; then
   if ask "Install pyenv?"; then
     echo_yellow "Installing pyenv..."
-    if is_mac; then
-      platform_install pyenv
-    else
-      curl https://pyenv.run | bash
-    fi
+    platform_install pyenv \
+      -l cmd \
+      -c 'curl https://pyenv.run | bash'
   fi
 fi
 
@@ -195,7 +194,9 @@ if [[ ! -f $(which pandoc) ]]; then
     esac
     dpkg_url="https://github.com/jgm/pandoc/releases/download/$pandoc_ver/pandoc-$pandoc_ver-1-$arch.deb"
     echo_cyan "Installing from $dpkg_url..."
-    platform_install --dpkg-url $dpkg_url pandoc
+    platform_install pandoc \
+      -l dpkg \
+      -d "$dpkg_url"
   fi
 fi
 
@@ -213,10 +214,27 @@ if [[ ! -f $(which yq) ]]; then
   fi
 fi
 
-# gi_gen
-# echo_cyan "Installing gi_gen..."
-# echo_cyan "Fetching gi_gen latest version..."
+if [[ ! -f $(which direnv) ]]; then
+  if ask "Install direnv?"; then
+    echo_yellow "Installing direnv..."
+    bin_path="/usr/local/bin" \
+    platform_install direnv \
+      -l cmd \
+      -c 'curl -sfL https://direnv.net/install.sh | bash'
+  fi
+fi
 
+if [[ ! -f $(which dotenvx) ]]; then
+  if ask "Install dotenvx?"; then
+    echo_yellow "Installing dotenvx..."
+    platform_install \
+      -b dotenvx/brew/dotenvx \
+      -l cmd \
+      -c 'curl -sfS https://dotenvx.sh | sh'
+  fi
+fi
+
+# TODO update this
 gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
 ver_file="$DOTBIN_META/.gi_gen_version"
 mkdir -p $(dirname $ver_file)

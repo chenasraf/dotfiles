@@ -499,32 +499,78 @@ peerdepls() {
 
 platform_install() {
   if [[ $# -eq 0 ]]; then
-    echo_red "Usage: platform_install [--dpkg-url dpkg-url] <package>"
+    echo "Usage: platform_install [flags] [package]"
+    echo
+    echo "Install a package using the platform's package manager"
+    echo
+    echo "Flags:"
+    echo "  --apt, -a <package>    Install package using apt"
+    echo "  --brew, -b <package>   Install package using brew"
+    echo "  --dpkg, -d <url>       Install package using dpkg"
+    echo "  --cmd, -c <cmd>        Run a command to install package"
+    echo "  --linux-strategy, -l  <strategy> Use a specific strategy for linux"
+    echo "  --mac-strategy, -m  <strategy> Use a specific strategy for mac"
+    echo
+    echo "Strategies:"
+    echo "  apt: Install package using apt"
+    echo "  brew: Install package using brew"
+    echo "  dpkg: Install package using dpkg"
+    echo "  cmd: Run a command to install package"
     return 1
   fi
 
+  mac_strategy="brew"
+  linux_strategy="apt"
+
   if [[ $# -gt 1 ]]; then
     case $1 in
-      --dpkg-url)
-        dpkg_url=$2
-        shift 2
+      --apt|-a) apt_pkg="$2"; shift 2; ;;
+      --brew|-b) brew_pkg="$2"; shift 2; ;;
+      --dpkg|-d) dpkg_url="$2"; shift 2; ;;
+      --cmd|-c) install_cmd="$2"; shift 2; ;;
+      --linux-strategy|-l) linux_strategy="$2"; shift 2; ;;
+      --mac-strategy|-m) mac_strategy="$2"; shift 2; ;;
+      *)
+        if [[ -z "$pkg" ]]; then
+          pkg="$1"
+          shift
+        else
+          echo_red "Unknown flag $1"
+          return 1
+        fi
         ;;
     esac
   fi
 
-  pkg="$@"
-
   if is_mac; then
-    brew install $pkg
-  elif is_linux; then
-    if [[ ! -z "$dpkg_url" ]]; then
-      tmp=$(mktemp).deb
-      curl -sL $dpkg_url -o $tmp
-      sudo dpkg -i $tmp
-    else
-      sudo apt install $pkg
-    fi
+    strategy="$mac_strategy"
+  else
+    strategy="$linux_strategy"
   fi
+
+  case "$strategy" in
+    apt) [[ -z "$apt_pkg" ]] || pkg="$apt_pkg"; ;;
+    brew) [[ -z "$brew_pkg" ]] || pkg="$brew_pkg"; ;;
+    dpkg) [[ -z "$dpkg_url" ]] || pkg="$dpkg_url"; ;;
+  esac
+
+  if [[ -z "$pkg" ]]; then
+    echo_red "No package specified"
+    return 1
+  fi
+
+  case "$strategy" in
+    apt) sudo apt install "$pkg" ;;
+    brew) brew install "$pkg" ;;
+    dpkg)
+      tmp="$(mktemp).deb"
+      curl -sL "$dpkg" -o "$tmp"
+      sudo dpkg -i "$tmp"
+      rm -rf "$tmp"
+      ;;
+    cmd) . "$install_cmd" ;;
+    *) echo_red "Unknown strategy $strategy"; return 1 ;;
+  esac
 }
 
 get-gh-latest-tag() {
@@ -538,7 +584,7 @@ get-gh-latest-tag() {
   fi
   repo="$1"
   jq_query='.[0].name'
-  if [[ ! -z $filter ]]; then
+  if [[ -n $filter ]]; then
     jq_query=".[] | select($filter) | .name"
     curl -s "https://api.github.com/repos/$repo/tags" | jq -r "$jq_query" | head -n 1
   else
