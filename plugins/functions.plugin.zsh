@@ -559,6 +559,8 @@ platform_install() {
     return 1
   fi
 
+  echo "Installing $pkg using $strategy"
+
   case "$strategy" in
     apt) sudo apt install "$pkg" ;;
     brew) brew install "$pkg" ;;
