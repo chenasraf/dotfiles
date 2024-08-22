@@ -37,7 +37,9 @@ dfe() {
   if [[ -f $file ]]; then
     hash=$(md5 $file)
     echo "Opening $(strip-home $file)..."
+    pushd $DOTFILES
     nvim $file
+    popd
     newhash=$(md5 $file)
 
     if [[ $? -eq 0 && $hash != $newhash ]]; then
