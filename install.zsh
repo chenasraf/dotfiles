@@ -330,18 +330,24 @@ fi
 
 
 if [[ -z "$OPENAI_API_KEY" ]]; then
-  if ask "OpenAI API key is not defined, set up?"; then
-    echo_cyan "You might be asked to authenticate using 1Password to retrieve the key."
-    key=$(op item get 'openai' --fields 'API Key')
-    if [[ ! -z "$key" ]]; then
-      echo_yellow "Key retrieved."
-      echo_yellow "Please run the following to persist the key for future sessions:"
-      echo "echo 'export OPENAI_API_KEY=\"$key\"' >> $(strip-home $DOTFILES)/_local.zsh"
-    else
-      echo_red "No key found in 1Password. Exiting..."
-      echo_yellow "To add manually, please run the following to persist the key for future sessions:"
-      echo "echo 'export OPENAI_API_KEY=\"YOUR_OPEN_AI_KEY_HERE\"' >> $(strip-home $DOTFILES)/_local.zsh"
+  if [[ -f $(which op) ]]; then
+    if ask "OpenAI API key is not defined, set up?"; then
+      echo_cyan "You might be asked to authenticate using 1Password to retrieve the key."
+      key=$(op item get 'openai' --fields 'API Key')
+      if [[ ! -z "$key" ]]; then
+        echo_yellow "Key retrieved."
+        echo_yellow "Please run the following to persist the key for future sessions:"
+        echo "echo 'export OPENAI_API_KEY=\"$key\"' >> $(strip-home $DOTFILES)/_local.zsh"
+      else
+        echo_red "No key found in 1Password. Exiting..."
+        echo_yellow "To add manually, please run the following to persist the key for future sessions:"
+        echo "echo 'export OPENAI_API_KEY=\"YOUR_OPEN_AI_KEY_HERE\"' >> $(strip-home $DOTFILES)/_local.zsh"
+      fi
     fi
+  else
+      echo_red "OpenAI API key is not defined and 1Password CLI not found."
+      echo_yellow "To add the OpenAPI key manually, please run the following to persist the key for future sessions:"
+      echo "echo 'export OPENAI_API_KEY=\"YOUR_OPEN_AI_KEY_HERE\"' >> $(strip-home $DOTFILES)/_local.zsh"
   fi
 fi
 
