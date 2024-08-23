@@ -220,7 +220,7 @@ if [[ ! -f $(which direnv) ]]; then
     bin_path="/usr/local/bin" \
     platform_install direnv \
       -l cmd \
-      -c 'curl -sfL https://direnv.net/install.sh | bash'
+      -c 'export bin_path=/usr/local/bin curl -sfL https://direnv.net/install.sh | bash'
   fi
 fi
 
@@ -236,12 +236,12 @@ fi
 
 
 if [[ ! -f $(which ollama) && ! -d "/Applications/Ollama.app" ]]; then
-  if ask "Install ollama?"; then
+  if ask_no "Install ollama?"; then
     echo_yellow "Installing ollama..."
     mac_install='
-      # pushd $(mktemp -d)
-      pushd ~/Downloads
-      # curl -LO https://ollama.com/download/Ollama-darwin.zip
+      pushd $(mktemp -d)
+      # pushd ~/Downloads
+      curl -LO https://ollama.com/download/Ollama-darwin.zip
       unzip Ollama-darwin.zip
       mv Ollama.app /Applications/
       popd
@@ -250,6 +250,13 @@ if [[ ! -f $(which ollama) && ! -d "/Applications/Ollama.app" ]]; then
     platform_install \
       -m cmd -l cmd \
       -c "$inst"
+    docker run -d \
+      -p 3300:8080 \
+      --add-host=host.docker.internal:host-gateway \
+      -v open-webui:/app/backend/data \
+      --name open-webui \
+      --restart always \
+      ghcr.io/open-webui/open-webui:main
   fi
 fi
 
@@ -355,7 +362,7 @@ if [[ -z "$OPENAI_API_KEY" ]]; then
       echo_cyan "You might be asked to authenticate using 1Password to retrieve the key."
       key=$(op item get 'openai' --fields 'API Key')
       if [[ ! -z "$key" ]]; then
-        echo_yellow "Key retrieved."
+        echo_cyan "Key retrieved."
         echo_yellow "Please run the following to persist the key for future sessions:"
         echo "echo 'export OPENAI_API_KEY=\"$key\"' >> $(strip-home $DOTFILES)/_local.zsh"
       else
@@ -365,7 +372,7 @@ if [[ -z "$OPENAI_API_KEY" ]]; then
       fi
     fi
   else
-      echo_red "OpenAI API key is not defined and 1Password CLI not found."
+      echo_yellow "OpenAI API key is not defined and 1Password CLI not found."
       echo_yellow "To add the OpenAPI key manually, please run the following to persist the key for future sessions:"
       echo "echo 'export OPENAI_API_KEY=\"YOUR_OPEN_AI_KEY_HERE\"' >> $(strip-home $DOTFILES)/_local.zsh"
   fi
