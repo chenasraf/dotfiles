@@ -22,7 +22,7 @@ mdp() {
   cat $html_file>$f
 
   # replace title
-  sed -E "s/<!--TITLE-->%/$title/" $f > $f.tmp
+  sed -E "s/<!--TITLE-->/$title/" $f > $f.tmp
   mv $f.tmp $f
 
   # generate md preview
@@ -37,5 +37,5 @@ mdp() {
   open -u "file:///$f"
 
   # remove temp files
-  ($SHELL -c "sleep 10; rm $f; exit 0" &)
+  # ($SHELL -c "sleep 10; rm $f; exit 0" &)
 }
