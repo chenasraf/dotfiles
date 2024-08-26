@@ -235,7 +235,7 @@ if [[ ! -f $(which dotenvx) ]]; then
 fi
 
 
-if [[ ! -f $(which ollama) && ! -d "/Applications/Ollama.app" ]]; then
+if [[ -n "$OLLAMA_ENABLED" && ! -f $(which ollama) && ! -d "/Applications/Ollama.app" ]]; then
   if ask_no "Install ollama?"; then
     echo_yellow "Installing ollama..."
     mac_install='
