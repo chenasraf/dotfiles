@@ -440,10 +440,12 @@ set-pnpm-pkg-version() {
   existing=$(echo "$?")
   if [[ $existing -eq 0 ]]; then
     if ask "pnpm version already exists. Overwrite?"; then
-      jq '.packageManager = $version' --arg version "pnpm@$(pnpm -v)" $fl >$fl.tmp && mv $fl.tmp $fl
+      jq '.packageManager = $version' --arg version "pnpm@$(pnpm -v)" $fl >$fl.tmp
+      mv $fl.tmp $fl
     fi
   else
-    jq '.packageManager = $version' --arg version "pnpm@$(pnpm -v)" $fl >$fl.tmp && mv $fl.tmp $fl
+    jq '.packageManager = $version' --arg version "pnpm@$(pnpm -v)" $fl >$fl.tmp
+    mv $fl.tmp $fl
   fi
 }
 
