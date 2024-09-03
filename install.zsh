@@ -260,31 +260,36 @@ if [[ -n "$OLLAMA_ENABLED" && ! -f $(which ollama) && ! -d "/Applications/Ollama
   fi
 fi
 
-# TODO update this
-gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
-ver_file="$DOTBIN_META/.gi_gen_version"
-mkdir -p $(dirname $ver_file)
-touch $ver_file
-existing_ver=$(cat $ver_file)
-if [[ "$existing_ver" != "$gi_ver" ]]; then
-  echo_cyan "Downloading gi_gen $gi_ver to $DOTBIN..."
-  mkdir -p "$DOTBIN"
-  mkdir -p "$DOTBIN_META"
-  arch=$(archmatch -mA "macos-arm" -mI "macos-intel" -l "linux-amd")
-  if is_mac; then
-    if [[ $(uname -m) == "arm64" ]]; then
-      arch=macos-arm
-    else
-      arch=macos-intel
+echo_cyan "Checking release binaries from GitHub..."
+
+if [[ ! -f $(gi_gen) ]]; then
+  if ask "Install gi_gen?"; then
+    if is_linux; then
+      gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
+      mkdir -p "$DOTBIN_META"
+      arch=$(archmatch -mA "macos-arm" -mI "macos-intel" -l "linux-amd")
     fi
-  else
-    arch=linux-amd
+    platform_install --brew "chenasraf/tap/gi_gen" \
+      -m brew \
+      -l cmd \
+      --cmd "curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-$arch -o $DOTBIN/gi_gen"
   fi
-  curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-$arch -o $DOTBIN/gi_gen
-  chmod +x $DOTBIN/gi_gen
-  echo $gi_ver >$ver_file
-# else
-#   echo_cyan "Latest gi_gen version ($gi_ver) already installed."
+fi
+
+if [[ ! -f $(which treelike) ]]; then
+  if ask "Install tree-like?"; then
+    echo_yellow "Installing treelike..."
+    if is_linux; then
+      treelike_ver=$(get-gh-latest-tag "chenasraf/treelike")
+      mkdir -p "$DOTBIN_META"
+      # arch=$(archmatch -mA "darwin-amd64" -mI "darwin-amd64" -l "linux-amd64")
+      arch="linux-amd64"
+    fi
+    platform_install --brew "chenasraf/tap/treelike" \
+      -m brew \
+      -l cmd \
+      --cmd "curl -L https://github.com/chenasraf/treelike/releases/download/$treelike_ver/treelike-$arch.tar.gz -o $DOTBIN/treelike.tar.gz"
+  fi
 fi
 
 echo_yellow "Installing pnpm globals..."

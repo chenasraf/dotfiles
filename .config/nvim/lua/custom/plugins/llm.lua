@@ -38,21 +38,10 @@ return {
     config = function(opts)
       require('CopilotChat').setup(opts)
       require('which-key').add({
-        { "<leader>cx",  group = "CopilotChat" },
-        { "<leader>cxc", "<cmd>CopilotChat<CR>", desc = "Chat", mode = "n" },
+        { "<leader>cx", group = "CopilotChat" },
         {
-          "<leader>cxi",
-          function()
-            local input = vim.fn.input("Ask Copilot: ")
-            if input ~= "" then
-              vim.cmd("CopilotChat " .. input)
-            end
-          end,
-          desc = "Chat",
-          mode = "x"
-        },
-        {
-          mode = { "n", "v" },
+          mode = { "n", "v", "x" },
+          { "<leader>cxc", "<cmd>CopilotChat<CR>",              desc = "Chat" },
           { "<leader>cxx", "<cmd>CopilotChatExplain<CR>",       desc = "Explain code" },
           { "<leader>cxf", "<cmd>CopilotChatFix<CR>",           desc = "Fix bugs" },
           { "<leader>cxd", "<cmd>CopilotChatFixDiagnostic<CR>", desc = "Fix diagnostic issues" },
@@ -61,6 +50,16 @@ return {
           { "<leader>cxC", "<cmd>CopilotChatCommit<CR>",        desc = "Generate commit message" },
           { "<leader>cxt", "<cmd>CopilotChatTests<CR>",         desc = "Generate tests" },
           { "<leader>cxd", "<cmd>CopilotChatDocs<CR>",          desc = "Generate docs" },
+          {
+            "<leader>cxi",
+            function()
+              local input = vim.fn.input("Ask Copilot: ")
+              if input ~= "" then
+                vim.cmd("CopilotChat " .. input)
+              end
+            end,
+            desc = "Ask",
+          },
         },
       })
     end,
@@ -86,9 +85,14 @@ return {
       "nvim-telescope/telescope.nvim"
     },
     config = function()
-      require("chatgpt").setup({
-        api_key_cmd = os.getenv("OPENAI_API_KEY"),
-      })
+      local API_KEY = os.getenv("OPENAI_API_KEY")
+      if not API_KEY then
+        print("OPENAI_API_KEY is not set")
+      else
+        require("chatgpt").setup({
+          api_key_cmd = API_KEY,
+        })
+      end
       require('which-key').add({
         { "<leader>cc",  group = "ChatGPT" },
         { "<leader>ccc", "<cmd>ChatGPT<CR>", desc = "Chat", mode = "n" },
