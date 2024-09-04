@@ -3,11 +3,31 @@
 # convert markdown to html and output to stdout
 md2html() {
   file=${1:-README.md}
+  if [[ ! -f $(which pandoc) ]]; then
+    echo "Pandoc not installed. Please install pandoc first."
+    return 1
+  fi
   pandoc $file
 }
 
 # convert markdown to html and open in browser
 mdp() {
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -h|--help)
+        echo "Usage: mdp [-k|-keep] [filename]"
+        echo "  -k, --keep    keep the generated html file (default: false)"
+        return 0
+        ;;
+      -k|--keep)
+        keep=1
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
   filename=${1:-README.md}
   html_file="$DOTFILES/plugins/assets/mdp-template.html"
   title=$(basename $filename)
@@ -37,5 +57,7 @@ mdp() {
   open -u "file:///$f"
 
   # remove temp files
-  # ($SHELL -c "sleep 10; rm $f; exit 0" &)
+  if [[ -z $keep ]]; then
+    ($SHELL -c "sleep 10; rm $f; exit 0" &)
+  fi
 }
