@@ -260,9 +260,9 @@ if [[ -n "$OLLAMA_ENABLED" && ! -f $(which ollama) && ! -d "/Applications/Ollama
   fi
 fi
 
-echo_cyan "Checking release binaries from GitHub..."
+echo_cyan "Checking personal tap..."
 
-if [[ ! -f $(gi_gen) ]]; then
+if [[ ! -f $(which gi_gen) ]]; then
   if ask "Install gi_gen?"; then
     if is_linux; then
       gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
