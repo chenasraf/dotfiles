@@ -144,7 +144,13 @@ return {
         cssls = {},
         -- prettier = {},
         tailwindcss = {},
-        tsserver = {},
+        tsserver = {
+          init_options = {
+            tsserver = {
+              disableSuggestions = true,
+            },
+          },
+        },
         lua_ls = {
           Lua = {
             workspace = { checkThirdParty = false },
