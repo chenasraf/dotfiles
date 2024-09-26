@@ -139,12 +139,12 @@ return {
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
-        -- tsserver = {},
+        -- ts_ls = {},
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
         cssls = {},
         -- prettier = {},
         tailwindcss = {},
-        tsserver = {
+        ts_ls = {
           init_options = {
             tsserver = {
               disableSuggestions = true,
