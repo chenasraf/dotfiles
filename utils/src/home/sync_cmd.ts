@@ -1,7 +1,7 @@
 import { MassargCommand } from 'massarg/command'
 import { DF_DIR, HomeOpts } from './common'
 import { massarg } from 'massarg'
-import { getCommandOutput, runCommand } from '../common'
+import { getCommandOutput, runCommand, yellow } from '../common'
 
 type SyncOpts = HomeOpts & {
   message?: string
@@ -24,8 +24,6 @@ async function withSubmodules(fn: (sub: string) => Promise<void>, opts: SyncOpts
     await fn(sub)
   }
 }
-
-const yellow = (s: string) => `\x1b[33m${s}\x1b[0m`
 
 const push = async (opts: SyncOpts) => {
   const { message } = opts

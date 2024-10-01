@@ -79,3 +79,5 @@ export async function getCommandOutput(
     })
   })
 }
+
+export const yellow = (s: string) => `\x1b[33m${s}\x1b[0m`

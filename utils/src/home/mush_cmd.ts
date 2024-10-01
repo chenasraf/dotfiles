@@ -2,18 +2,18 @@ import * as os from 'node:os'
 import { MassargCommand } from 'massarg/command'
 import { DF_DIR, HomeOpts } from './common'
 import { massarg } from 'massarg'
-import { runCommand } from '../common'
+import { runCommand, yellow } from '../common'
 
 const mushdir = `${os.homedir()}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient`
 
 const backup = async (opts: HomeOpts) => {
   await runCommand(opts, [
     `rsync -vtr "${mushdir}" "${DF_DIR}/synced/"`,
-    `echo_yellow "Copied Mushclient profile to synced folder."`,
-    `git -C "${DF_DIR}" add "${DF_DIR}/synced/MUSHclient"`,
-    `git -C "${DF_DIR}" commit -m "backup: mushclient"`,
-    `git -C "${DF_DIR}" push`,
-    `echo_yellow "Backup complete."`,
+    `echo ${yellow('Copied Mushclient profile to synced folder.')}"`,
+    `git - C "${DF_DIR}" add "${DF_DIR}/synced/MUSHclient"`,
+    `git - C "${DF_DIR}" commit - m "backup: mushclient"`,
+    `git - C "${DF_DIR}" push`,
+    `echo ${yellow('Backup complete.')}"`,
   ])
 }
 const backupCommand = new MassargCommand<HomeOpts>({
@@ -29,7 +29,7 @@ const restoreCommand = new MassargCommand<HomeOpts>({
   run: async (opts: HomeOpts) => {
     await runCommand(opts, [
       `rsync -vtr "${DF_DIR}/synced/MUSHclient/" "${mushdir}/"`,
-      `echo_yellow "Restored Mushclient profile from synced folder."`,
+      `echo "${yellow('Restored Mushclient profile from synced folder.')}"`,
     ])
   },
 })
@@ -43,12 +43,12 @@ const mapRestoreCommand = new MassargCommand<HomeOpts>({
     const dest = 'Aardwolf.db'
 
     await runCommand(opts, [
-      `echo_yellow "Renaming ${dest} to $bk"`,
+      `echo "${yellow(`Renaming ${dest} to ${bk}`)}"`,
       `pushd "${mushdir}"`,
       `mv "${dest}" "${bk}"`,
-      `echo_yellow "Copying ${mushdir}/db_backups/${src} to ${mushdir}/${dest}"`,
+      `echo "${yellow(`Copying ${mushdir}/db_backups/${src} to ${mushdir}/${dest}`)}"`,
       `cp "db_backups/${src}" "${DF_DIR}/synced/MUSHclient/${dest}"`,
-      `echo_yellow "Done."`,
+      `echo "${yellow('Done.')}"`,
       'popd',
     ])
   },
