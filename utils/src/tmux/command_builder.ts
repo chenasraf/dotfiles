@@ -18,7 +18,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
   const { root, windows: windows } = tmuxConfig
   log(opts, 'Config:', tmuxConfig)
 
-  let sessionName = nameFix(tmuxConfig.name)
+  const sessionName = nameFix(tmuxConfig.name)
 
   log(opts, 'Session name:', sessionName)
 

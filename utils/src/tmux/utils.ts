@@ -70,7 +70,7 @@ export type TmuxPaneLayout = {
 
 const defaultEmptyPane: TmuxPaneLayout = {
   cwd: '.',
-  cmd: 'nvim .',
+  cmd: '',
 }
 
 const defaultEmptyLayout: TmuxPaneLayout = {
@@ -204,21 +204,21 @@ export function throwNoConfigFound() {
     [
       'tmux config file not found, searched in:',
       '\t' +
-      searchDirs
-        .map((x) =>
-          searchPatterns('tmux')
-            .map((y) => path.join(x, y))
-            .join('\n\t'),
-        )
-        .join('\n\t'),
+        searchDirs
+          .map((x) =>
+            searchPatterns('tmux')
+              .map((y) => path.join(x, y))
+              .join('\n\t'),
+          )
+          .join('\n\t'),
       '\t' +
-      searchDirs
-        .map((x) =>
-          searchPatterns('tmux_local')
-            .map((y) => path.join(x, y))
-            .join('\n\t'),
-        )
-        .join('\n\t'),
+        searchDirs
+          .map((x) =>
+            searchPatterns('tmux_local')
+              .map((y) => path.join(x, y))
+              .join('\n\t'),
+          )
+          .join('\n\t'),
       // searchInFor('tmux').map(x => path.join(d)).join('\n\t'),
       // searchInFor('tmux_local').join('\n\t'),
     ].join('\n'),
@@ -263,7 +263,7 @@ export async function fzf(
   fzf.stdout.setEncoding('utf-8')
 
   return new Promise((resolve, reject) => {
-    fzf.stdout.on('readable', function() {
+    fzf.stdout.on('readable', function () {
       const value = fzf.stdout.read()
 
       if (value !== null) {
@@ -325,10 +325,10 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): Tm
     zoom: layout.zoom,
     split: layout.split
       ? ({
-        direction:
-          typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
-        child: parseLayout(layout.split.child, path.resolve(root, layout.cwd)),
-      } as TmuxSplitLayout)
+          direction:
+            typeof layout.split === 'string' ? layout.split : layout.split.direction || 'h',
+          child: parseLayout(layout.split.child, path.resolve(root, layout.cwd)),
+        } as TmuxSplitLayout)
       : undefined,
   }
 }
