@@ -7,13 +7,23 @@ import { runCommand, yellow } from '../common'
 const mushdir = `${os.homedir()}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient`
 
 const backup = async (opts: HomeOpts) => {
+  const sub = 'synced'
   await runCommand(opts, [
     `rsync -vtr "${mushdir}" "${DF_DIR}/synced/"`,
     `echo "${yellow('Copied Mushclient profile to synced folder.')}"`,
-    `git -C "${DF_DIR}" add "${DF_DIR}/synced/MUSHclient"`,
-    `git -C "${DF_DIR}" commit -m "backup: mushclient"`,
-    `git -C "${DF_DIR}" push`,
+    `pushd "${DF_DIR}/${sub}"`,
+    `git add MUSHclient`,
+    `git commit -m "backup: mushclient"`,
+    `git push`,
     `echo "${yellow('Backup complete.')}"`,
+    `echo "${yellow('Syncing repository with submodule changes\n')}"`,
+    `popd`,
+    `pushd ${DF_DIR}`,
+    `git add ${sub}`,
+    `git status`,
+    `git commit -m "backup: mushclient"`,
+    `git push origin master`,
+    `popd`,
   ])
 }
 const backupCommand = new MassargCommand<HomeOpts>({
