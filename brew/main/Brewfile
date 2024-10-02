@@ -1,9 +1,14 @@
+tap "chenasraf/tap"
 tap "dart-lang/dart"
+tap "dotenvx/brew"
 tap "heroku/brew"
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/cask-versions"
+tap "homebrew/core"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
+tap "leoafarias/fvm"
 tap "mongodb/brew"
 tap "surrealdb/tap"
 # Color management engine supporting ICC profiles
@@ -30,8 +35,12 @@ brew "harfbuzz"
 brew "librsvg"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
 brew "chafa"
+# Shell script to build fancy DMGs
+brew "create-dmg"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Load/unload environment variables based on $PWD
+brew "direnv"
 # Text processing system for reStructuredText
 brew "docutils"
 # Select default apps for documents and URL schemes on macOS
@@ -156,10 +165,20 @@ brew "trunk"
 brew "watch"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Gitignore generator for any type of project
+brew "chenasraf/tap/gi_gen"
+# Outputs a Tree-like representation from strings
+brew "chenasraf/tap/treelike"
+# SDK
+brew "dart-lang/dart/dart"
+# Better dotenv–from the creator of `dotenv`
+brew "dotenvx/brew/dotenvx"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
+# Simple cli to manage Flutter SDK versions per project
+brew "leoafarias/fvm/fvm"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 # A scalable, distributed, collaborative, document-graph database
@@ -170,6 +189,8 @@ cask "1password-cli"
 cask "android-platform-tools"
 # Tools for the Android SDK
 cask "android-sdk"
+# Multi-track audio editor and recorder
+cask "audacity"
 # Game development engine
 cask "godot"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
