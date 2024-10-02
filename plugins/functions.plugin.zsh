@@ -672,6 +672,24 @@ archmatch() {
   fi
 }
 
+largest-files() {
+  c="10"
+  if [[ -n "$1" ]]; then
+    c="$1"
+  fi
+  find . -type f -not -path './.git/*' -exec du -h {} + | sort -hr | head -n "$c"
+
+}
+
+largest-dirs() {
+  c="10"
+  if [[ -n "$1" ]]; then
+    c="$1"
+  fi
+  find . -type d -name ".git" -prune -o -type d -exec du -sh {} + | sort -rh | head -n "$c"
+}
+alias largest-folders='largest-dirs'
+
 # select random element from arguments
 # NOTE always keep this function last, breaks syntax highlighting
 randarg() {
