@@ -17,13 +17,13 @@ const backup = async (opts: HomeOpts) => {
 }
 const backupCommand = new MassargCommand<HomeOpts>({
   name: 'backup',
-  aliases: ['b'],
+  aliases: ['b', 'p'],
   description: 'Backup Mushclient profile',
   run: backup,
 })
 const restoreCommand = new MassargCommand<HomeOpts>({
   name: 'restore',
-  aliases: ['r'],
+  aliases: ['r', 'l'],
   description: 'Restore Mushclient profile',
   run: async (opts: HomeOpts) => {
     await runCommand(opts, [
@@ -34,7 +34,7 @@ const restoreCommand = new MassargCommand<HomeOpts>({
 })
 const mapRestoreCommand = new MassargCommand<HomeOpts>({
   name: 'map-restore',
-  aliases: ['mr'],
+  aliases: ['mr', 'm'],
   description: 'Restore Mushclient map database',
   run: async (opts: HomeOpts) => {
     const src = 'Aardwolf.db.Backup_Manual'
