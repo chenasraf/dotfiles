@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-ollama_prompt() {
+ollama-prompt() {
   prompt="$@"
   endpoint="http://localhost:11434"
 
@@ -17,4 +17,18 @@ ollama_prompt() {
       echo -n "$response"
   done
   echo
+}
+
+openwebui() {
+  open "http://localhost:3300"
+}
+
+openwebui-start() {
+  docker run -d \
+    -p 3300:8080 \
+    --add-host=host.docker.internal:host-gateway \
+    -v ~/.openwebui:/app/backend/data \
+    --name open-webui \
+    --restart always \
+    ghcr.io/open-webui/open-webui:main
 }
