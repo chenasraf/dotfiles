@@ -4,7 +4,7 @@ import { DF_DIR, HomeOpts, checkGitChanges, getDeviceUID } from './common'
 import { massarg } from 'massarg'
 import { runCommand } from '../common'
 
-export type BrewOpts = HomeOpts & { push: boolean }
+export type BrewOpts = HomeOpts & { push: boolean; arch?: string }
 
 async function backup(opts: BrewOpts) {
   const isMacOS = os.platform() === 'darwin'
@@ -36,7 +36,12 @@ async function backup(opts: BrewOpts) {
 
 async function restore(opts: BrewOpts) {
   const DEVICE_UID = await getDeviceUID()
-  await runCommand(opts, [`pushd "${DF_DIR}/brew/${DEVICE_UID}"`, `brew bundle`, `popd`])
+  console.log(`Restoring Brewfile for ${DEVICE_UID} (${opts.arch})`)
+  await runCommand(opts, [
+    `pushd "${DF_DIR}/brew/${DEVICE_UID}"`,
+    `${opts.arch === 'arm64' ? 'arch -arm64' : ''} brew bundle`,
+    `popd`,
+  ])
 }
 
 const backupCommand = new MassargCommand<BrewOpts>({
@@ -55,6 +60,11 @@ const restoreCommand = new MassargCommand<BrewOpts>({
   aliases: ['r', 'l'],
   description: 'Restore brew state from Brewfile',
   run: restore,
+}).option({
+  name: 'arch',
+  aliases: ['a'],
+  defaultValue: 'arm64',
+  description: 'Architecture to use',
 })
 
 export const brewCommand = massarg<BrewOpts>({

@@ -6,7 +6,7 @@
   "main": "index.js",
   "bin": {
     "tx": "tmux/cmd.js",
-    "h_": "home/home.js",
+    "home": "home/home.js",
     "tblf": "tblf.js"
   },
   "scripts": {

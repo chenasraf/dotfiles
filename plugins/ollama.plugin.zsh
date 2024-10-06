@@ -23,7 +23,7 @@ openwebui() {
   open "http://localhost:3300"
 }
 
-openwebui-start() {
+openwebui-create() {
   docker run -d \
     -p 3300:8080 \
     --add-host=host.docker.internal:host-gateway \
@@ -31,4 +31,8 @@ openwebui-start() {
     --name open-webui \
     --restart always \
     ghcr.io/open-webui/open-webui:main
+}
+
+openwebui-start() {
+  docker start open-webui
 }

@@ -29,6 +29,7 @@ alias l="ls -A"
 alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
+alias nvim="arch -arm64 nvim"
 alias lvim="nvim -c':e#<1'"
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 
@@ -93,7 +94,6 @@ alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezte
 alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 
 # home
-alias home="h_"
 alias h="home"
 alias hi="source \$DOTFILES/install.zsh"
 alias hli="hl && hi"
