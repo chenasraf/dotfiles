@@ -163,7 +163,7 @@ fi
 if [[ ! -d "$HOME/.pyenv" ]]; then
   if ask "Install pyenv?"; then
     echo_yellow "Installing pyenv..."
-    platform_install pyenv \
+    platform_install -b pyenv \
       -l cmd \
       -c 'curl https://pyenv.run | bash'
   fi
@@ -172,7 +172,7 @@ fi
 if [[ ! -f $(which pipx) ]]; then
   if ask "Install pipx?"; then
     echo_yellow "Installing pipx..."
-    platform_install pipx
+    platform_install -b pipx
     if is_linux; then
       sudo pipx ensurepath --global
     fi
@@ -194,7 +194,7 @@ if [[ ! -f $(which pandoc) ]]; then
     esac
     dpkg_url="https://github.com/jgm/pandoc/releases/download/$pandoc_ver/pandoc-$pandoc_ver-1-$arch.deb"
     echo_cyan "Installing from $dpkg_url..."
-    platform_install pandoc \
+    platform_install -b pandoc \
       -l dpkg \
       -d "$dpkg_url"
   fi
@@ -203,7 +203,7 @@ fi
 if [[ ! -f $(which jq) ]]; then
   if ask "Install jq?"; then
     echo_yellow "Installing jq..."
-    platform_install jq
+    platform_install -b jq
   fi
 fi
 
@@ -234,6 +234,7 @@ if [[ ! -f $(which dotenvx) ]]; then
   fi
 fi
 
+launchctl setenv OLLAMA_HOST "0.0.0.0"
 
 if [[ -n "$OLLAMA_ENABLED" && ! -f $(which ollama) && ! -d "/Applications/Ollama.app" ]]; then
   if ask_no "Install ollama?"; then

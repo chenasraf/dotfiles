@@ -134,3 +134,4 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gc
 export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
 
 export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
+export PATH="/usr/local/sbin:$PATH"

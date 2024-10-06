@@ -576,7 +576,12 @@ platform_install() {
 
   case "$strategy" in
     apt) sudo apt install "$pkg" ;;
-    brew) brew install "$pkg" ;;
+    brew)
+      if [[ -z "$ARCH" ]]; then
+        ARCH=$(uname -m)
+      fi
+      arch -arch $ARCH brew install "$pkg"
+      ;;
     dpkg)
       tmp="$(mktemp).deb"
       curl -sL "$dpkg" -o "$tmp"

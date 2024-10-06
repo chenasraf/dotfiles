@@ -53,6 +53,7 @@ const backupCommand = new MassargCommand<BrewOpts>({
   name: 'push',
   aliases: ['p'],
   description: 'Push changes to git',
+  negatable: true,
   defaultValue: true,
 })
 const restoreCommand = new MassargCommand<BrewOpts>({
