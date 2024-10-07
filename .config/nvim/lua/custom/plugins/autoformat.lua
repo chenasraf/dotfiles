@@ -45,7 +45,7 @@ return {
         end
 
         -- TS Server is handled by null-ls/prettier
-        if client.name == 'ts_ls' then
+        if client.name == 'ts_ls' or client.name == 'tsserver' then
           return
         end
 
