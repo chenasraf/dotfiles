@@ -41,7 +41,7 @@ const mapRestoreCommand = new MassargCommand<HomeOpts>({
   description: 'Restore Mushclient map database',
   run: async (opts: HomeOpts) => {
     const src = 'Aardwolf.db.Backup_Manual'
-    const bk = 'Aardwolf.db.bk'
+    const bk = `Aardwolf.db.${new Date().toISOString().replace(/:/g, '-')}.bk`
     const dest = 'Aardwolf.db'
 
     await runCommand(opts, [
