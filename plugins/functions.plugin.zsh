@@ -506,12 +506,12 @@ platform_install() {
     echo "Install a package using the platform's package manager"
     echo
     echo "Flags:"
-    echo "  --apt, -a <package>    Install package using apt"
-    echo "  --brew, -b <package>   Install package using brew"
-    echo "  --dpkg, -d <url>       Install package using dpkg"
-    echo "  --cmd, -c <cmd>        Run a command to install package"
-    echo "  --linux-strategy, -l  <strategy> Use a specific strategy for linux"
-    echo "  --mac-strategy, -m  <strategy> Use a specific strategy for mac"
+    echo "  --apt, -a <package>                Install package using apt"
+    echo "  --brew, -b <package>               Install package using brew"
+    echo "  --dpkg, -d <url>                   Install package using dpkg"
+    echo "  --cmd, -c <cmd>                    Run a command to install package"
+    echo "  --linux-strategy, -l  <strategy>   Use a specific strategy for linux"
+    echo "  --mac-strategy, -m  <strategy>     Use a specific strategy for mac"
     echo
     echo "Strategies:"
     echo "  apt: Install package using apt"
