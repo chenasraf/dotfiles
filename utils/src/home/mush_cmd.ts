@@ -5,14 +5,16 @@ import { massarg } from 'massarg'
 import { runCommand, yellow } from '../common'
 
 const home = os.homedir()
-const mushdir = `${home}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover`
+const mushBaseDir = `${home}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover`
+const mushDir = `${mushBaseDir}/MUSHclient`
 const syncedDir = `${home}/Nextcloud/synced`
 const backupDir = `${syncedDir}/MUSHclient`
 
 const backup = async (opts: HomeOpts) => {
   await runCommand(opts, [
-    `rsync -vtr "${mushdir}" "${syncedDir}"`,
-    `echo "${yellow('Copied Mushclient profile to synced folder.')}"`,
+    `echo "${yellow(`Copying "${mushDir}" to "${syncedDir}"`)}"`,
+    `rsync -vtr "${mushDir}" "${syncedDir}"`,
+    `echo "${yellow(`Backed up "${mushDir}" to "${syncedDir}"`)}"`,
   ])
 }
 const backupCommand = new MassargCommand<HomeOpts>({
@@ -27,8 +29,9 @@ const restoreCommand = new MassargCommand<HomeOpts>({
   description: 'Restore Mushclient profile',
   run: async (opts: HomeOpts) => {
     await runCommand(opts, [
-      `rsync -vtr --exclude .git "${backupDir}" "${mushdir}/"`,
-      `echo "${yellow('Restored Mushclient profile from synced folder.')}"`,
+      `echo "${yellow(`Copying "${backupDir}" to "${mushBaseDir}"`)}"`,
+      `rsync -vtr --exclude .git "${backupDir}" "${mushBaseDir}/"`,
+      `echo "${yellow(`Restored "${backupDir}" to "${mushBaseDir}"`)}"`,
     ])
   },
 })
@@ -42,11 +45,11 @@ const mapRestoreCommand = new MassargCommand<HomeOpts>({
     const dest = 'Aardwolf.db'
 
     await runCommand(opts, [
-      `pushd "${mushdir}"`,
+      `pushd "${mushBaseDir}"`,
       `echo "${yellow(`Renaming ${dest} to ${bk}`)}"`,
       `mv "${dest}" "${bk}"`,
-      `echo "${yellow(`Copying ${mushdir}/db_backups/${src} to ${mushdir}/${dest}`)}"`,
-      `cp "db_backups/${src}" "${mushdir}/${dest}"`,
+      `echo "${yellow(`Copying ${mushBaseDir}/db_backups/${src} to ${mushBaseDir}/${dest}`)}"`,
+      `cp "db_backups/${src}" "${mushBaseDir}/${dest}"`,
       `echo "${yellow('Done.')}"`,
       'popd',
     ])
