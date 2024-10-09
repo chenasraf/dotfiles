@@ -5,7 +5,7 @@ import { massarg } from 'massarg'
 import { runCommand, yellow } from '../common'
 
 const home = os.homedir()
-const mushdir = `${home}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover/MUSHclient`
+const mushdir = `${home}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover`
 const syncedDir = `${home}/Nextcloud/synced`
 const backupDir = `${syncedDir}/MUSHclient`
 
