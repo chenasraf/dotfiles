@@ -695,6 +695,10 @@ largest-dirs() {
 }
 alias largest-folders='largest-dirs'
 
+gclc() {
+  git clone --recurse-submodules git@github.com:chenasraf/$1.git
+}
+
 # select random element from arguments
 # NOTE always keep this function last, breaks syntax highlighting
 randarg() {

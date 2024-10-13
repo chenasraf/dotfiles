@@ -29,7 +29,7 @@ alias l="ls -A"
 alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
-alias nvim="arch -arm64 nvim"
+alias nvim="nvim"
 alias lvim="nvim -c':e#<1'"
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 

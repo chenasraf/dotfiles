@@ -14,6 +14,7 @@ const backup = async (opts: HomeOpts) => {
   await runCommand(opts, [
     `echo "${yellow(`Copying "${mushDir}" to "${syncedDir}"`)}"`,
     `rsync -vtr "${mushDir}" "${syncedDir}"`,
+    `sqlite3 "${syncedDir}/MUSHclient/Aardwolf.db" .dump > "${syncedDir}/Aardwolf.dump.sql"`,
     `echo "${yellow(`Backed up "${mushDir}" to "${syncedDir}"`)}"`,
   ])
 }
