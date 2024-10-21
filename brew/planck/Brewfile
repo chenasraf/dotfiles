@@ -1,11 +1,7 @@
 tap "chenasraf/tap"
-tap "dart-lang/dart"
 tap "dotenvx/brew"
 tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
-tap "leoafarias/fvm"
-# Shell script to build fancy DMGs
-brew "create-dmg"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Banner-like program prints strings as ASCII art
@@ -46,8 +42,6 @@ brew "ripgrep"
 brew "shellcheck"
 # Opinionated Lua code formatter
 brew "stylua"
-# Log file highlighter
-brew "tailspin"
 # Terminal multiplexer
 brew "tmux"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -56,25 +50,12 @@ brew "yq"
 brew "chenasraf/tap/gi_gen"
 # Outputs a Tree-like representation from strings
 brew "chenasraf/tap/treelike"
-# SDK
-brew "dart-lang/dart/dart"
 # Better dotenv–from the creator of `dotenv`
 brew "dotenvx/brew/dotenvx"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
-# Simple cli to manage Flutter SDK versions per project
-brew "leoafarias/fvm/fvm"
-# A scalable, distributed, collaborative, document-graph database
-brew "surrealdb/tap/surreal"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Android SDK component
-cask "android-platform-tools"
-# Tools for the Android SDK
-cask "android-sdk"
-# Multi-track audio editor and recorder
-cask "audacity"
-# Game development engine
-cask "godot"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
+

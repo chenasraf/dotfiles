@@ -92,7 +92,8 @@ fi
 
 # Go
 if [[ -d $HOME/go ]]; then
-  export GOBIN="$HOME/go/bin"
+  export GOPATH="$HOME/go"
+  export GOBIN="$GOPATH/bin"
   export PATH="$GOBIN:$PATH"
 fi
 
