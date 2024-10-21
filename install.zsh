@@ -160,7 +160,7 @@ if [[ ! -f $(which fnm) ]]; then
   fi
 fi
 
-if [[ ! -d "$HOME/.pyenv" ]]; then
+if [[ ! -f "$(which pyenv)" ]]; then
   if ask "Install pyenv?"; then
     echo_yellow "Installing pyenv..."
     platform_install -b pyenv \
