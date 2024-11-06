@@ -35,6 +35,7 @@ end, { nargs = '*' })
 
 vim.keymap.set("n", "<leader>gO", ":GitOpen<CR>", { desc = "Git open", silent = true })
 vim.keymap.set("n", "<leader>gor", ":GitOpen repo<CR>", { desc = "Git open repo", silent = true })
+vim.keymap.set("n", "<leader>goa", ":GitOpen actions<CR>", { desc = "Git open actions", silent = true })
 vim.keymap.set("n", "<leader>gob", ":GitOpen branch<CR>", { desc = "Git open branch", silent = true })
 vim.keymap.set("n", "<leader>goc", ":GitOpen commit<CR>", { desc = "Git open commit", silent = true })
 vim.keymap.set("n", "<leader>gof", ":GitOpen file<CR>", { desc = "Git open file", silent = true })
