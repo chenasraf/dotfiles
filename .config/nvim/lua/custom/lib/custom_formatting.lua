@@ -21,7 +21,7 @@ local function external_format_stdin(filetype, format_cmd)
   return false
 end
 
-local function format(force)
+local function format(force, async)
   if not force and not AutoFormatEnabled then
     return
   end
@@ -32,22 +32,33 @@ local function format(force)
     -- ["javascript"] = "prettier --stdin-filepath ${INPUT}",
     -- ["typescript"] = "prettier --stdin-filepath ${INPUT}",
     -- ["typescriptreact"] = "prettier --stdin-filepath ${INPUT}",
-    ["dart"] = "dart format --output show",
-    ["python"] = "black --quiet -",
+    ["dart"] = { "dart", "format --output show" },
+    ["python"] = { "black", "--quiet -" },
   }
 
+  local filename = vim.fn.expand("%:t")
+
   for filetype, format_cmd in pairs(formatters) do
-    if external_format_stdin(filetype, format_cmd) then
+    if external_format_stdin(filetype, format_cmd[1] .. " " .. format_cmd[2]) then
+      vim.api.nvim_echo({
+        { "Formatted ", },
+        { filename,                   "String" },
+        { " using " .. format_cmd[1], }
+      }, true, {})
       return
     end
   end
 
-  vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-  vim.api.nvim_echo({ { "Formatted", "Type" } }, true, {})
+  vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), async = async })
+  vim.api.nvim_echo({
+    { "Formatted ", },
+    { filename,     "String" },
+    { " using LSP", }
+  }, true, {})
 end
 
-local function format_on_save() format(false) end
-local function format_manually() format(true) end
+local function format_on_save() format(false, false) end
+local function format_manually() format(true, true) end
 
 S.format_on_save = format_on_save
 S.format_manually = format_manually
