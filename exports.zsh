@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
 if is_mac; then
-  export ANDROID_SDK_ROOT="/opt/homebrew/bin"
+  export BREW_HOME="/usr/local"
+  export ANDROID_SDK_ROOT="$BREW_HOME/bin"
   export ANDROID_HOME="$HOME/Library/Android/sdk"
-  export LDFLAGS="-L/opt/homebrew/opt/flex/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/flex/include"
-  export PATH="/opt/homebrew/opt/flex/bin:$PATH"
-  export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+  export LDFLAGS="-L$BREW_HOME/opt/flex/lib"
+  export CPPFLAGS="-I$BREW_HOME/opt/flex/include"
+  export PATH="$BREW_HOME/opt/flex/bin:$PATH"
+  export PATH="$BREW_HOME/opt/make/libexec/gnubin:$PATH"
   export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   export PATH="$HOME/.surrealdb:$PATH"
@@ -123,7 +124,7 @@ if [[ -f $(which direnv) ]]; then
 fi
 
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
-if [[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ]]; then source /opt/homebrew/opt/chruby/share/chruby/chruby.sh; fi
+if [[ -f $BREW_HOME/opt/chruby/share/chruby/chruby.sh ]]; then source $BREW_HOME/opt/chruby/share/chruby/chruby.sh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
 if [[ -f "$DOTFILES/_local.zsh" ]]; then source "$DOTFILES/_local.zsh"; fi
 
