@@ -9,4 +9,4 @@ _local.zsh
 .tmux_local.yml
 .device_uid
 plugins/.cache
-.config/.tmux_local.conf
+.config/local.tmux

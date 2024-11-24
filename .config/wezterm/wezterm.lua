@@ -41,12 +41,13 @@ config.font = wezterm.font_with_fallback({
   "Symbols Nerd Font Mono",
 })
 -- For example, changing the color scheme:
--- config.color_scheme = 'AdventureTime'
+config.color_scheme = 'catppuccin-mocha'
 -- config.font = wezterm.font("Menlo")
 config.font_size = 14.0
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 config.enable_tab_bar = false
+config.window_decorations = "RESIZE"
 config.mouse_bindings = {
   -- Disable the 'Down' event of Cmd-Click to avoid weird program behaviors
   {
