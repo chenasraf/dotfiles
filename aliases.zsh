@@ -34,6 +34,7 @@ alias lvim="nvim -c':e#<1'"
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 
 # output pipes
+alias -g C="| pbcopy"
 alias -g H="| head"
 alias -g T="| tail"
 alias -g G="| grep -i"
