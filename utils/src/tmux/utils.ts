@@ -75,7 +75,7 @@ const defaultEmptyPane: TmuxPaneLayout = {
 
 const defaultEmptyLayout: TmuxPaneLayout = {
   ...defaultEmptyPane,
-  zoom: true,
+  zoom: false,
   split: {
     direction: 'h',
     child: {
@@ -123,7 +123,7 @@ export function parseConfig(key: string, item: TmuxConfigItemInput): ParsedTmuxC
       }
     }
     return {
-      name: nameFix(w.name || dirFix(path.basename(path.resolve(root, w.cwd)))),
+      name: w.name || nameFix(dirFix(path.basename(path.resolve(root, w.cwd)))),
       cwd: dirFix(path.resolve(root, w.cwd)),
       layout: parseLayout(w.layout, dirFix(path.resolve(root, w.cwd))),
     }
@@ -294,11 +294,13 @@ function parseLayout(layoutInput: TmuxLayoutInput | undefined, root: string): Tm
   const layout = layoutInput as TmuxPaneLayout
   if (!layout) {
     return {
+      ...defaultEmptyLayout,
       cwd: path.resolve(root, '.'),
     }
   }
   if (typeof layoutInput === 'string') {
     return {
+      ...defaultEmptyPane,
       cwd: path.resolve(root, layoutInput),
     }
   }
