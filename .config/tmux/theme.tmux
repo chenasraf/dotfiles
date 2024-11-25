@@ -1,15 +1,18 @@
 run "${ZPLUG_REPOS}/catppuccin/tmux/catppuccin.tmux"
 
+# source -F "#{d:current_file}/modules/online_status.tmux"
+source -F "#{d:current_file}/modules/date.tmux"
+source -F "#{d:current_file}/modules/time.tmux"
+source -F "#{d:current_file}/modules/usage.tmux"
+
+set -g status-interval 5
+
 # Configure Catppuccin
 set -g @catppuccin_flavor "mocha"
 # set -g @catppuccin_status_background "none"
 set -g @catppuccin_window_status_style "rounded"
 set -g @catppuccin_pane_status_enabled "off"
 set -g @catppuccin_pane_border_status "off"
-
-# Configure Online
-set -g @online_icon "ok"
-set -g @offline_icon "nok"
 
 # NOTE Status Bar
 # set -g status-position top
@@ -30,16 +33,22 @@ set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  z
 # INFO Right Status
 set -g status-right-length 100
 set -g status-right ""
-set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_mauve}]#{?#{==:#{online_status},ok},#[reverse]󰖩 #[noreverse]#[fg=#{@thm_fg}] on ,#[fg=#{@thm_red},bold]#[reverse]󰖪 #[noreverse]#[fg=#{@thm_fg}] off }"
 
-set -ga status-right "#{E:@catppuccin_status_application}"
-set -agF status-right "#{E:@catppuccin_status_cpu}"
+set -gaF status-right "#{E:@catppuccin_status_application}"
+# set -gaF status-right "#{E:@catppuccin_status_usage}"
+set -gaF status-right "#{E:@catppuccin_status_cpu}"
 # set -ag status-right "#{E:@catppuccin_status_session}"
 set -ag status-right "#{E:@catppuccin_status_uptime}"
-set -agF status-right "#{E:@catppuccin_status_battery}"
+set -gaF status-right "#{E:@catppuccin_status_battery}"
 
-set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_blue}]#[reverse]󰭦 #[noreverse] #[fg=#{@thm_fg}]%Y-%m-%d "
-set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_blue}]#[reverse]󰅐 #[noreverse] #[fg=#{@thm_fg}]%H:%M "
+set -g @online_icon "ok"
+set -g @offline_icon "nok"
+set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_mauve}]#{?#{==:#{online_status},ok},#[reverse]󰖩 #[noreverse]#[fg=#{@thm_fg}] on ,#[fg=#{@thm_red},bold]#[reverse]󰖪 #[noreverse]#[fg=#{@thm_fg}] off }"
+
+# set -gaF status-right "#{E:@catppuccin_status_online}"
+
+set -ga status-right "#{E:@catppuccin_status_date}"
+set -ga status-right "#{E:@catppuccin_status_time}"
 
 # NOTE Pane Borders
 setw -g pane-border-status bottom

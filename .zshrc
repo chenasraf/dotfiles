@@ -53,7 +53,7 @@ fi
 
 export VISUAL="$EDITOR"
 
-tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
+tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
 
 source "$DOTFILES/exports.zsh" # must run before zsh_init
 source "$DOTFILES/aliases.zsh"

@@ -32,7 +32,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
 
   const commands: string[] = []
   commands.push(
-    `tmux -f ~/.config/.tmux.conf new-session -d -s ${sessionName} -n general -c ${root}; sleep 1`,
+    `tmux -f ~/.config/tmux/conf.tmux new-session -d -s ${sessionName} -n general -c ${root}; sleep 1`,
   )
 
   // Create all windows
@@ -90,7 +90,7 @@ function getPaneCommands(
     )
     commands.push(
       `tmux split-window -${pane.split.direction || 'h'} ` +
-        ` -t ${sessionName}:${windowName} -c ${pane.cwd || rootDir}`.trim(),
+      ` -t ${sessionName}:${windowName} -c ${pane.cwd || rootDir}`.trim(),
     )
 
     if (pane.split.child) {

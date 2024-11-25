@@ -360,7 +360,7 @@ xrg "--exclude 'nvim' --exclude 'lazygit.yml' $DOTFILES/.config/ $HOME/.config/"
 # Tmux
 if [[ $refresh_tmux -eq 1 ]]; then
   echo_yellow "Reloading tmux config..."
-  tmux source-file "$HOME/.config/.tmux.conf" 2>/dev/null
+  tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
 fi
 
 

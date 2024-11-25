@@ -31,9 +31,26 @@ bind -n C-M-w confirm-before kill-session
 # Enable mouse control
 set -g mouse on
 
+# List of plugins
+# set -g @plugin 'tmux-plugins/tpm'
+# set -g @plugin 'tmux-plugins/tmux-sensible'
+# set -g @plugin 'tmux-plugins/tmux-cpu'
+# set -g @plugin 'tmux-plugins/tmux-online-status'
+# set -g @plugin 'tmux-plugins/tmux-battery'
+# set -g @plugin ''
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'github_username/plugin_name#branch'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
 # Load local config if exists
-if-shell "[[ -f ~/.config/local.tmux ]]" {
-  source ~/.config/local.tmux
+if-shell "[[ -f ~/.config/tmux/local.tmux ]]" {
+  source -F "#{d:current_file}/local.tmux"
 }
 
-source ~/.config/theme.tmux
+source -F "#{d:current_file}/theme.tmux"
+
+# NOTE Initialize TMUX plugin manager (keep this line at the very bottom of tmux conf)
+run '~/.tmux/plugins/tpm/tpm'
