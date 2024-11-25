@@ -12,7 +12,6 @@ set -g status-interval 5
 
 # Configure Catppuccin
 set -g @catppuccin_flavor "mocha"
-# set -g @catppuccin_status_background "none"
 set -g @catppuccin_window_status_style "rounded"
 set -g @catppuccin_pane_status_enabled "off"
 set -g @catppuccin_pane_border_status "off"
@@ -30,13 +29,6 @@ set -ga status-left "#{E:@catppuccin_status_panecmd}"
 set -ga status-left "#{E:@catppuccin_status_sessdir}"
 set -ga status-left "#{?window_zoomed_flag,#{E:@catppuccin_status_panezoom},}"
 set -ga status-left "#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
-# set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  #S },#{#[bg=default,fg=#{@thm_green}]  #S }}"
-# set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
-# set -ga status-left "#[bg=default,fg=#{@thm_maroon}]  #{pane_current_command} "
-# set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
-# set -ga status-left "#[bg=default,fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
-# set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
-# set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  zoom ,}"
 
 # INFO Right Status
 set -g status-right-length 100
@@ -88,4 +80,3 @@ set -g window-status-current-style "bg=#{@thm_rosewater},fg=#{@thm_surface_0},bo
 run "${ZPLUG_REPOS}/tmux-plugins/tmux-online-status/online_status.tmux"
 run "${ZPLUG_REPOS}/tmux-plugins/tmux-battery/battery.tmux"
 run "${ZPLUG_REPOS}/tmux-plugins/tmux-cpu/cpu.tmux"
-# run '~/.tmux/plugins/tpm/tpm'

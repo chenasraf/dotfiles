@@ -8,12 +8,14 @@ set -g escape-time 0
 bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 bind _ split-window -v -c "#{pane_current_path}"
-bind j run-shell '~/.config/popuptmux'
+bind j run-shell '~/.config/tmux/popuptmux'
 unbind '"'
 unbind %
 
 # sort sessions by name in selector
-bind s choose-tree -sZ -O name
+bind sn choose-tree -sZ -O name
+# sort by recently used
+bind sr choose-tree -sZ -O time
 
 # switch panes using Ctrl-Alt-arrow without prefix
 # bind -n C-M-Left select-pane -L
@@ -32,8 +34,8 @@ bind -n C-M-w confirm-before kill-session
 set -g mouse on
 
 # List of plugins
-# set -g @plugin 'tmux-plugins/tpm'
-# set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
 # set -g @plugin 'tmux-plugins/tmux-cpu'
 # set -g @plugin 'tmux-plugins/tmux-online-status'
 # set -g @plugin 'tmux-plugins/tmux-battery'
@@ -52,4 +54,4 @@ if-shell "[[ -f ~/.config/tmux/local.tmux ]]" {
 source -F "#{d:current_file}/theme.tmux"
 
 # NOTE Initialize TMUX plugin manager (keep this line at the very bottom of tmux conf)
-# run '~/.tmux/plugins/tpm/tpm'
+run '~/.tmux/plugins/tpm/tpm'
