@@ -68,6 +68,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste, keep current yank" }
 -- yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to system clipboard" })
 
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file", silent = true })
+vim.keymap.set("n", "<leader>W", "<cmd>wa<CR>", { desc = "Save all files", silent = true })
+
 --
 -- NOTE find and replace
 --
@@ -96,15 +99,20 @@ local function get_current_file_relative_path() return vim.fn.expand('%') end
 --- NOTE working directory/file utils
 
 -- print working directory/file
-vim.api.nvim_create_user_command('Pwd', function() print(get_current_dir_path()) end, { nargs = 0 })
-vim.api.nvim_create_user_command('Pwf', function() print(get_current_file_relative_path()) end, { nargs = 0 })
-vim.api.nvim_create_user_command('PwF', function() print(get_current_file_path()) end, { nargs = 0 })
+vim.api.nvim_create_user_command('Pwd', function() print(get_current_dir_path()) end,
+  { nargs = 0, desc = "Print working dir" })
+vim.api.nvim_create_user_command('Pwf', function() print(get_current_file_relative_path()) end,
+  { nargs = 0, desc = "Print current file" })
+vim.api.nvim_create_user_command('PwF', function() print(get_current_file_path()) end,
+  { nargs = 0, desc = "Print current file (full path)" })
 
 -- yank working directory/file to system clipboard
-vim.api.nvim_create_user_command('Ypd', function() vim.fn.setreg('+', get_current_dir_path()) end, { nargs = 0 })
+vim.api.nvim_create_user_command('Ypd', function() vim.fn.setreg('+', get_current_dir_path()) end,
+  { nargs = 0, desc = "Yank working dir" })
 vim.api.nvim_create_user_command('Ypf', function() vim.fn.setreg('+', get_current_file_relative_path()) end,
-  { nargs = 0 })
-vim.api.nvim_create_user_command('YpF', function() vim.fn.setreg('+', get_current_file_path()) end, { nargs = 0 })
+  { nargs = 0, desc = "Yank current file" })
+vim.api.nvim_create_user_command('YpF', function() vim.fn.setreg('+', get_current_file_path()) end,
+  { nargs = 0, desc = "Yank current file (full path)" })
 
 -- NOTE toggle search highlight
 local hl_search = vim.o.hlsearch
