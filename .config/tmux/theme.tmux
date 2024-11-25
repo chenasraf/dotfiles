@@ -1,9 +1,12 @@
 run "${ZPLUG_REPOS}/catppuccin/tmux/catppuccin.tmux"
 
-# source -F "#{d:current_file}/modules/online_status.tmux"
 source -F "#{d:current_file}/modules/date.tmux"
+source -F "#{d:current_file}/modules/dir.tmux"
+# source -F "#{d:current_file}/modules/online_status.tmux"
+source -F "#{d:current_file}/modules/pane.tmux"
 source -F "#{d:current_file}/modules/time.tmux"
 source -F "#{d:current_file}/modules/usage.tmux"
+source -F "#{d:current_file}/modules/zoom.tmux"
 
 set -g status-interval 5
 
@@ -22,13 +25,18 @@ set -g status-justify "absolute-centre"
 # NOTE Status Left
 set -g status-left-length 100
 set -g status-left ""
-set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  #S },#{#[bg=default,fg=#{@thm_green}]  #S }}"
-set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
-set -ga status-left "#[bg=default,fg=#{@thm_maroon}]  #{pane_current_command} "
-set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
-set -ga status-left "#[bg=default,fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
-set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
-set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  zoom ,}"
+set -ga status-left "#{E:@catppuccin_status_session}"
+set -ga status-left "#{E:@catppuccin_status_panecmd}"
+set -ga status-left "#{E:@catppuccin_status_sessdir}"
+set -ga status-left "#{?window_zoomed_flag,#{E:@catppuccin_status_panezoom},}"
+set -ga status-left "#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
+# set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  #S },#{#[bg=default,fg=#{@thm_green}]  #S }}"
+# set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
+# set -ga status-left "#[bg=default,fg=#{@thm_maroon}]  #{pane_current_command} "
+# set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
+# set -ga status-left "#[bg=default,fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
+# set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
+# set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  zoom ,}"
 
 # INFO Right Status
 set -g status-right-length 100
@@ -49,6 +57,8 @@ set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_mauve}]#{?#{==:#{onlin
 
 set -ga status-right "#{E:@catppuccin_status_date}"
 set -ga status-right "#{E:@catppuccin_status_time}"
+
+set -ga status-right "#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
 
 # NOTE Pane Borders
 setw -g pane-border-status bottom
@@ -72,9 +82,10 @@ set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_surface_0}"
 set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_surface_0},bold"
 # set -gF window-status-separator "#[bg=#{@thm_surface_0},fg=#{@thm_overlay_0}]│"
 
-set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_peach}]"
-set -g window-status-current-style "bg=#{@thm_peach},fg=#{@thm_surface_0},bold"
+set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_rosewater}]"
+set -g window-status-current-style "bg=#{@thm_rosewater},fg=#{@thm_surface_0},bold"
 
 run "${ZPLUG_REPOS}/tmux-plugins/tmux-online-status/online_status.tmux"
 run "${ZPLUG_REPOS}/tmux-plugins/tmux-battery/battery.tmux"
 run "${ZPLUG_REPOS}/tmux-plugins/tmux-cpu/cpu.tmux"
+# run '~/.tmux/plugins/tpm/tpm'

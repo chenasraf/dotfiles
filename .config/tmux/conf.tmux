@@ -37,7 +37,6 @@ set -g mouse on
 # set -g @plugin 'tmux-plugins/tmux-cpu'
 # set -g @plugin 'tmux-plugins/tmux-online-status'
 # set -g @plugin 'tmux-plugins/tmux-battery'
-# set -g @plugin ''
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -53,4 +52,4 @@ if-shell "[[ -f ~/.config/tmux/local.tmux ]]" {
 source -F "#{d:current_file}/theme.tmux"
 
 # NOTE Initialize TMUX plugin manager (keep this line at the very bottom of tmux conf)
-run '~/.tmux/plugins/tpm/tpm'
+# run '~/.tmux/plugins/tpm/tpm'
