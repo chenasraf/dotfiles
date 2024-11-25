@@ -51,22 +51,9 @@ all_colors() {
     return
   fi
   gen_all_colors() {
-    for i in {1..256}; do
-      c=$(printf "%03d" $i)
-      printf "$(tput setaf $c)$i$(tput sgr0) "
-      if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
-          printf "\n";
-      fi
+    for i in {0..255}; do
+      print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}
     done
-    printf "\n"
-    for i in {1..256}; do
-      c=$(printf "%03d" $i)
-      printf "$(tput setab $i)$c$(tput sgr0) "
-      if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
-          printf "\n";
-      fi
-    done
-    printf "\n"
   }
   echo "Generating colors cache..."
   mkdir -p $(dirname $cache_file)
