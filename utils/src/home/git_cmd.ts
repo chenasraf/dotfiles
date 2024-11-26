@@ -31,6 +31,8 @@ function createGitCommand<O extends HomeOpts>(
     ...config,
   })
 }
+
+// NOTE git
 export const gitCommand = createGitCommand<GitOpts>(
   'git',
   (opts) => [opts.args.map((e) => (e.includes(' ') ? JSON.stringify(e) : e)).join(' ')],
@@ -44,6 +46,7 @@ export const gitCommand = createGitCommand<GitOpts>(
   required: true,
 })
 
+// NOTE push
 export const pushCommand = new MassargCommand<PushOpts>({
   name: 'push',
   run: async (opts) => {
@@ -64,8 +67,10 @@ export const pushCommand = new MassargCommand<PushOpts>({
   aliases: ['m'],
 })
 
+// NOTE pull
 export const pullCommand = createGitCommand('pull', undefined, { aliases: ['l'] })
 
+// NOTE status
 export const statusCommand = createGitCommand('status', undefined, {
   description: 'Show git status',
 })

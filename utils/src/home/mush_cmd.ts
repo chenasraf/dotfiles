@@ -5,38 +5,44 @@ import { massarg } from 'massarg'
 import { runCommand, yellow } from '../common'
 
 const home = os.homedir()
-const mushBaseDir = `${home}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover`
-const mushDir = `${mushBaseDir}/MUSHclient`
+const localBaseDir = `${home}/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover`
+const localDir = `${localBaseDir}/MUSHclient`
 const syncedDir = `${home}/Nextcloud/synced`
-const backupDir = `${syncedDir}/MUSHclient`
+const syncedBackupDir = `${syncedDir}/MUSHclient`
 
 const backup = async (opts: HomeOpts) => {
   await runCommand(opts, [
-    `echo "${yellow(`Dumping "${mushDir}/Aardwolf.db" to "${mushDir}/Aardwolf.dump.sql"`)}"`,
-    `sqlite3 "${syncedDir}/MUSHclient/Aardwolf.db" .dump > "${mushDir}/Aardwolf.dump.sql"`,
-    `echo "${yellow(`Copying "${mushDir}" to "${syncedDir}"`)}"`,
-    `rsync -vtr "${mushDir}" "${syncedDir}"`,
-    `echo "${yellow(`Backed up "${mushDir}" to "${syncedDir}"`)}"`,
+    `echo "${yellow(`Dumping "Aardwolf.db" to "Aardwolf.dump.sql"`)}"`,
+    `sqlite3 "${syncedBackupDir}/Aardwolf.db" .dump > "${localDir}/Aardwolf.dump.sql"`,
+    `echo "${yellow(`Copying to sync dir...`)}"`,
+    `rsync -vtr "${localDir}" "${syncedDir}"`,
+    `echo "${yellow(`Backed up "${localDir}" to "${syncedDir}"`)}"`,
   ])
 }
+
+// NOTE backup
 const backupCommand = new MassargCommand<HomeOpts>({
   name: 'backup',
   aliases: ['b', 'p'],
   description: 'Backup Mushclient profile',
   run: backup,
 })
+
+// NOTE restore
 const restoreCommand = new MassargCommand<HomeOpts>({
   name: 'restore',
   aliases: ['r', 'l'],
   description: 'Restore Mushclient profile',
   run: async (opts: HomeOpts) => {
     await runCommand(opts, [
-      `echo "${yellow(`Copying "${backupDir}" to "${mushBaseDir}"`)}"`,
-      `rsync -vtr --exclude .git "${backupDir}" "${mushBaseDir}/"`,
-      `echo "${yellow(`Restored "${backupDir}" to "${mushBaseDir}"`)}"`,
+      `echo "${yellow(`Copying "${syncedBackupDir}" to "${localBaseDir}"`)}"`,
+      `rsync -vtr --exclude .git "${syncedBackupDir}" "${localBaseDir}/"`,
+      `echo "${yellow(`Restored "${syncedBackupDir}" to "${localBaseDir}"`)}"`,
     ])
   },
 })
+
+// NOTE map-restore
 const mapRestoreCommand = new MassargCommand<HomeOpts>({
   name: 'map-restore',
   aliases: ['mr', 'm'],
@@ -47,17 +53,18 @@ const mapRestoreCommand = new MassargCommand<HomeOpts>({
     const dest = 'Aardwolf.db'
 
     await runCommand(opts, [
-      `pushd "${mushBaseDir}"`,
+      `pushd "${localBaseDir}"`,
       `echo "${yellow(`Renaming ${dest} to ${bk}`)}"`,
       `mv "${dest}" "${bk}"`,
-      `echo "${yellow(`Copying ${mushBaseDir}/db_backups/${src} to ${mushBaseDir}/${dest}`)}"`,
-      `cp "db_backups/${src}" "${mushBaseDir}/${dest}"`,
+      `echo "${yellow(`Copying ${localBaseDir}/db_backups/${src} to ${localBaseDir}/${dest}`)}"`,
+      `cp "db_backups/${src}" "${localBaseDir}/${dest}"`,
       `echo "${yellow('Done.')}"`,
       'popd',
     ])
   },
 })
 
+// NOTE main
 export const mushCommand = massarg<HomeOpts>({
   name: 'mush',
   aliases: ['m'],

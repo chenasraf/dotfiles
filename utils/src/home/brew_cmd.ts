@@ -44,6 +44,7 @@ async function restore(opts: BrewOpts) {
   ])
 }
 
+// NOTE backup
 const backupCommand = new MassargCommand<BrewOpts>({
   name: 'backup',
   aliases: ['b', 'p'],
@@ -56,6 +57,8 @@ const backupCommand = new MassargCommand<BrewOpts>({
   negatable: true,
   defaultValue: true,
 })
+
+// NOTE restore
 const restoreCommand = new MassargCommand<BrewOpts>({
   name: 'restore',
   aliases: ['r', 'l'],
@@ -68,6 +71,7 @@ const restoreCommand = new MassargCommand<BrewOpts>({
   description: 'Architecture to use',
 })
 
+// NOTE main
 export const brewCommand = massarg<BrewOpts>({
   name: 'brew',
   aliases: ['b'],
