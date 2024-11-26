@@ -1,1 +1,1 @@
-set-option default-command "arch -arm64 /bin/zsh"
+set-option -g default-command "arch -arm64 /bin/zsh"

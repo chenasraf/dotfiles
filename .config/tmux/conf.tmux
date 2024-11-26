@@ -13,9 +13,9 @@ unbind '"'
 unbind %
 
 # sort sessions by name in selector
-bind sn choose-tree -sZ -O name
+# bind sn choose-tree -sZ -O name
 # sort by recently used
-bind sr choose-tree -sZ -O time
+# bind sr choose-tree -sZ -O time
 
 # switch panes using Ctrl-Alt-arrow without prefix
 # bind -n C-M-Left select-pane -L
