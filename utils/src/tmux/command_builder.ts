@@ -48,8 +48,8 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
       sessionName,
     })
     commands.push(...paneCommands)
+    commands.push(`tmux clock-mode -t ${sessionName}:${windowName}`)
     commands.push(`tmux select-pane -t ${sessionName}.0`)
-    commands.push(`tmux resize-pane -t ${sessionName} -Z`)
   }
 
   commands.push(`tmux select-window -t ${sessionName}:1`)
@@ -103,6 +103,9 @@ function getPaneCommands(
           rootDir,
         }),
       )
+    }
+    if (pane.zoom) {
+      commands.push(`tmux resize-pane -t ${sessionName}:${windowName} -Z`)
     }
   }
   return commands
