@@ -135,22 +135,24 @@ return {
       --  If you want to override the default filetypes that your language server will attach to you can
       --  define the property 'filetypes' to the map in question.
       local servers = {
+        -- astro = {},
+        ast_grep = {},
+        bashls = {},
         -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        rust_analyzer = {},
-        -- ts_ls = {},
-        -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+        -- clangd = {},
         cssls = {},
-        -- prettier = {},
-        tailwindcss = {},
-        ts_ls = {
-          init_options = {
-            tsserver = {
-              disableSuggestions = true,
-            },
-          },
-        },
+        -- dartls = {
+        --   dart = {
+        --     cmd = { "dart", "language-server", "--protocol=lsp" },
+        --     telemetry = { enable = false },
+        --   },
+        -- },
+        eslint = {},
+        -- gopls = {},
+        -- graphql = {},
+        html = { filetypes = { 'html', 'twig', 'hbs' } },
+        -- jedi_language_server = {},
+        jsonls = {},
         lua_ls = {
           Lua = {
             workspace = { checkThirdParty = false },
@@ -159,12 +161,21 @@ return {
             diagnostics = { disable = { 'missing-fields' } },
           },
         },
-        -- dartls = {
-        --   dart = {
-        --     cmd = { "dart", "language-server", "--protocol=lsp" },
-        --     telemetry = { enable = false },
-        --   },
-        -- },
+        -- phpactor = {},
+        prettier = {},
+        -- ['pretty-php'] = {},
+        -- pyright = {},
+        rust_analyzer = {},
+        shfmt = {},
+        tailwindcss = {},
+        ts_ls = {
+          init_options = {
+            tsserver = {
+              disableSuggestions = true,
+            },
+          },
+        },
+        -- volar = {},
       }
 
 
@@ -172,7 +183,7 @@ return {
       require('neodev').setup()
 
       -- Ensure the servers above are installed
-      local mason_lspconfig = require 'mason-lspconfig'
+      local mason_lspconfig = require('mason-lspconfig')
 
       mason_lspconfig.setup {
         ensure_installed = vim.tbl_keys(servers),
