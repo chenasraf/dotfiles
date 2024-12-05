@@ -123,7 +123,7 @@ vim.keymap.set("n", "<leader>n", function()
 end, { desc = "Toggle search highlight" })
 
 -- NOTE copy json key to system clipboard
-local ts_keys = require('custom.lib.ts_keys')
+local ts_keys = require('casraf.lib.ts_keys')
 
 local function trim(s)
   return s:gsub("^%s+", ""):gsub("%s+$", "")

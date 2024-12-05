@@ -70,7 +70,5 @@ cask "android-platform-tools"
 cask "android-sdk"
 # Multi-track audio editor and recorder
 cask "audacity"
-# Game development engine
-cask "godot"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"

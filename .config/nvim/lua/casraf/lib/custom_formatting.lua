@@ -21,7 +21,7 @@ local function external_format_stdin(filetype, format_cmd)
   return false
 end
 
-local function format(force, async)
+local function format(force)
   if not force and not AutoFormatEnabled then
     return
   end
@@ -49,7 +49,7 @@ local function format(force, async)
     end
   end
 
-  vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), async = async })
+  vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), async = force })
   vim.api.nvim_echo({
     { "Formatted ", },
     { filename,     "String" },
@@ -57,8 +57,8 @@ local function format(force, async)
   }, true, {})
 end
 
-local function format_on_save() format(false, false) end
-local function format_manually() format(true, true) end
+local function format_on_save() format(false) end
+local function format_manually() format(true) end
 
 S.format_on_save = format_on_save
 S.format_manually = format_manually

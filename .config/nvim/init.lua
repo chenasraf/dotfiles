@@ -104,7 +104,7 @@ require('lazy').setup({
   -- sort lines of text with :Sort
   { 'sQVe/sort.nvim' },
   -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
+  { import = 'casraf.plugins' },
 }, {})
 
 -- document existing key chains

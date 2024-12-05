@@ -55,7 +55,7 @@ return {
           group = get_augroup(client),
           buffer = bufnr,
           callback = function()
-            local custom_formatting = require("custom.lib.custom_formatting")
+            local custom_formatting = require("casraf.lib.custom_formatting")
             local format_on_save = custom_formatting.format_on_save
             format_on_save()
           end,

@@ -3,8 +3,8 @@
 --   print(ts_statusline())
 -- end, { noremap = true, silent = true })
 
-local lsp_status = require('custom.lib.lsp_status')
-local ts_keys = require('custom.lib.ts_keys')
+local lsp_status = require('casraf.lib.lsp_status')
+local ts_keys = require('casraf.lib.ts_keys')
 
 return {
   -- Set lualine as statusline
