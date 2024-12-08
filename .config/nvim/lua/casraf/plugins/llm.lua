@@ -27,13 +27,13 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "main",
     dependencies = {
       { "zbirenbaum/copilot.lua" }, -- Or { "github/copilot.vim" }
       { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
     },
     opts = {
-      show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
-      debug = true,      -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+      debug = true, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
     },
     config = function(opts)
       require('CopilotChat').setup(opts)
