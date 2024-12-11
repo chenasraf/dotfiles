@@ -184,9 +184,12 @@ return {
 
       -- Ensure the servers above are installed
       local mason_lspconfig = require('mason-lspconfig')
+      local ensure_installed = vim.tbl_filter(function(server)
+        return server ~= 'shfmt' and server ~= 'prettier'
+      end, vim.tbl_keys(servers))
 
       mason_lspconfig.setup {
-        ensure_installed = vim.tbl_keys(servers),
+        ensure_installed = ensure_installed,
       }
 
       mason_lspconfig.setup_handlers {
