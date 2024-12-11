@@ -138,10 +138,12 @@ config.keys = {
   { key = "s",          mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b W\n" } },
   -- save and cloe pane: Cmd+Opt+S
   { key = "s",          mods = "CMD|OPT",   action = act { SendString = "\x1b\x1bZZ" } },
-  -- open file search in neovim: Cmd+Shift+F
+  -- open file text search in neovim: Cmd+Shift+F
   { key = "f",          mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b fg\n" } },
   -- open file picker in neovim: Cmd+P
   { key = "p",          mods = "CMD",       action = act { SendString = "\x1b\x1b ff\n" } },
+  -- open lazygit in neovim: Cmd+G
+  { key = "g",          mods = "CMD",       action = act { SendString = "\x1b\x1b gs\n" } },
   -- Cmd+Shift+P - Select tmux session
   { key = "p",          mods = "CMD|SHIFT", action = act { SendString = "\x02s" } },
 
