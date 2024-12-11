@@ -16,9 +16,7 @@ return {
           return vim.fn.executable 'make' == 1
         end,
       },
-      {
-        'nvim-telescope/telescope-media-files.nvim'
-      },
+      { 'nvim-telescope/telescope-media-files.nvim' },
     },
     config = function()
       -- [[ Configure Telescope ]]
@@ -54,11 +52,9 @@ return {
       -- Custom live_grep function to search in git root
       local function live_grep_git_root()
         local git_root = find_git_root()
-        if git_root then
-          require('telescope.builtin').live_grep({
-            search_dirs = { git_root },
-          })
-        end
+        require('casraf.lib.telescope_multigrep').live_multigrep({
+          cwd = { git_root },
+        })
       end
 
       vim.defer_fn(function()
@@ -84,18 +80,41 @@ return {
         local action_layout = require("telescope.actions.layout")
         local actions = require("telescope.actions")
 
-        vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles', silent = true })
-        vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles', silent = true })
-        vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp', silent = true })
-        vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord', silent = true })
-        vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep', silent = true })
-        vim.keymap.set('n', '<leader>sG', live_grep_git_root, { desc = '[S]earch by [G]rep on Git Root', silent = true })
-        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics', silent = true })
-        vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume', silent = true })
-        vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps', silent = true })
-        vim.keymap.set('n', '<leader>st', "<Cmd>Telescope<CR>", { desc = '[S]earch [T]elescope Pickers', silent = true })
-        vim.keymap.set('n', '<leader>sq', "<Cmd>Telescope quickfix<CR>", { desc = '[S]earch [Q]uickfix', silent = true })
-        vim.keymap.set('n', '<leader>sn', '<Cmd>NoiceTelescope<CR>', { desc = '[S]earch [N]otifications', silent = true })
+        vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind [G]it [F]iles', silent = true })
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles', silent = true })
+        vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp', silent = true })
+        vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord', silent = true })
+        vim.keymap.set('n', '<leader>fg', require('casraf.lib.telescope_multigrep').live_multigrep,
+          { desc = '[F]ind by [G]rep', silent = true })
+        vim.keymap.set('n', '<leader>fG', live_grep_git_root, { desc = '[F]ind by [G]rep on Git Root', silent = true })
+        vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics', silent = true })
+        vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume', silent = true })
+        vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps', silent = true })
+        vim.keymap.set('n', '<leader>ft', "<Cmd>Telescope<CR>", { desc = '[F]ind [T]elescope Pickers', silent = true })
+        vim.keymap.set('n', '<leader>fq', "<Cmd>Telescope quickfix<CR>", { desc = '[F]ind [Q]uickfix', silent = true })
+        vim.keymap.set('n', '<leader>fn', '<Cmd>NoiceTelescope<CR>', { desc = '[F]ind [N]otifications', silent = true })
+        vim.keymap.set('n', '<leader>fp', function()
+          builtin.find_files({
+            prompt_title = 'Find Package Files',
+            -- cwd = vim.fs.joinpath(vim.fn.getcwd(), 'node_modules'),
+            cwd = vim.fn.getcwd(),
+            find_command = { 'rg', '--files', '--no-ignore', '--hidden', '-g', '**/node_modules/**' },
+            file_ignore_patterns = {},
+          })
+        end, { desc = '[F]ind [P]ackage Files', silent = true })
+        vim.keymap.set('n', '<leader>fP', function()
+          builtin.find_files({
+            prompt_title = 'Find Plugins',
+            ---@diagnostic disable-next-line: param-type-mismatch
+            cwd = vim.fs.joinpath(vim.fn.stdpath('data'), 'lazy')
+          })
+        end, { desc = '[F]ind [P]lugins', silent = true })
+        vim.keymap.set('n', '<leader>f.', function()
+          builtin.find_files({
+            prompt_title = 'Find Dotfiles',
+            cwd = os.getenv('DOTFILES'),
+          })
+        end, { desc = '[F]ind [.]dotfiles', silent = true })
         pcall(require('telescope').load_extension, 'fzf')
         pcall(require('telescope').load_extension, 'media_files')
         require('telescope').setup {
@@ -133,7 +152,7 @@ return {
             preview = {
               mime_hook = function(filepath, bufnr, opts)
                 local is_image = function(fp)
-                  local image_extensions = { 'png', 'jpg' } -- Supported image formats
+                  local image_extensions = { 'png', 'jpg', 'jpeg', 'gif' } -- Supported image formats
                   local split_path = vim.split(fp:lower(), '.', { plain = true })
                   local extension = split_path[#split_path]
                   return vim.tbl_contains(image_extensions, extension)
@@ -146,9 +165,7 @@ return {
                     end
                   end
                   vim.fn.jobstart(
-                    {
-                      'catimg', filepath -- Terminal image viewer command
-                    },
+                    { 'catimg', filepath }, -- Terminal image viewer command
                     { on_stdout = send_output, stdout_buffered = true, pty = true })
                 else
                   require("telescope.previewers.utils").set_preview_message(bufnr, opts.winid,
@@ -159,7 +176,8 @@ return {
           },
           extensions = {
             media_files = {
-              filetypes = { "png", "webp", "jpg", "jpeg", "svg", "gif", "mp4", "webm", "pdf" },
+              -- filetypes = { "png", "webp", "jpg", "jpeg", "svg", "gif", "mp4", "webm", "pdf" },
+              filetypes = { 'png', 'jpg', 'jpeg', 'gif' },
               -- find command (defaults to `fd`)
               find_cmd = "rg"
             },

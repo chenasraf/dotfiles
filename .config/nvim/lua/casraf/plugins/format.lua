@@ -29,7 +29,6 @@ return {
     local event = "BufWritePre" -- or "BufWritePost"
     -- local async = event == "BufWritePost"
 
-    vim.keymap.set("n", "<Leader>f", format_manually, { desc = "[nolsp] format" })
     vim.keymap.set("n", "=", format_manually, { desc = "[nolsp] format" })
 
     nls.setup({
