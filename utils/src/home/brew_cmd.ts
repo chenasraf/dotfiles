@@ -50,13 +50,18 @@ const backupCommand = new MassargCommand<BrewOpts>({
   aliases: ['b', 'p'],
   description: 'Backup brew state to Brewfile',
   run: backup,
-}).flag({
-  name: 'push',
-  aliases: ['p'],
-  description: 'Push changes to git',
-  negatable: true,
-  defaultValue: true,
 })
+  .help({
+    bindOption: true,
+    bindCommand: true,
+  })
+  .flag({
+    name: 'push',
+    aliases: ['p'],
+    description: 'Push changes to git',
+    negatable: true,
+    defaultValue: true,
+  })
 
 // NOTE restore
 const restoreCommand = new MassargCommand<BrewOpts>({
@@ -64,12 +69,17 @@ const restoreCommand = new MassargCommand<BrewOpts>({
   aliases: ['r', 'l'],
   description: 'Restore brew state from Brewfile',
   run: restore,
-}).option({
-  name: 'arch',
-  aliases: ['a'],
-  defaultValue: 'arm64',
-  description: 'Architecture to use',
 })
+  .help({
+    bindOption: true,
+    bindCommand: true,
+  })
+  .option({
+    name: 'arch',
+    aliases: ['a'],
+    defaultValue: 'arm64',
+    description: 'Architecture to use',
+  })
 
 // NOTE main
 export const brewCommand = massarg<BrewOpts>({
