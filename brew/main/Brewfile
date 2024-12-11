@@ -4,12 +4,17 @@ tap "dotenvx/brew"
 tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
 tap "leoafarias/fvm"
+tap "surrealdb/tap"
+# Insanely fast image printing in your terminal
+brew "catimg"
 # Shell script to build fancy DMGs
 brew "create-dmg"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
+# Fast and simple Node.js version manager
+brew "fnm"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # Command-line fuzzy finder written in Go
@@ -20,24 +25,38 @@ brew "gh"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Rainbows and unicorns in your console!
 brew "lolcat"
+# General-purpose lossless data-compression library
+brew "zlib"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# General-purpose scripting language
+brew "php"
+# Python dependency management tool
+brew "pipenv"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Python version management
-brew "pyenv"
+# Python package management tool
+brew "poetry"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
 # Generic syntax highlighter
 brew "pygments"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Ruby version manager
 brew "rbenv"
 # Search tool like grep and The Silver Searcher
@@ -46,8 +65,12 @@ brew "ripgrep"
 brew "shellcheck"
 # Opinionated Lua code formatter
 brew "stylua"
+# Log file highlighter
+brew "tailspin"
 # Terminal multiplexer
-brew "tmux"
+brew "tmux", args: ["HEAD"]
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Gitignore generator for any type of project
@@ -58,17 +81,15 @@ brew "chenasraf/tap/treelike"
 brew "dart-lang/dart/dart"
 # Better dotenv–from the creator of `dotenv`
 brew "dotenvx/brew/dotenvx"
-# A simple terminal UI for git commands, written in Go
-brew "jesseduffield/lazygit/lazygit"
 # Simple cli to manage Flutter SDK versions per project
 brew "leoafarias/fvm/fvm"
+# A scalable, distributed, collaborative, document-graph database
+brew "surrealdb/tap/surreal"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Android SDK component
 cask "android-platform-tools"
 # Tools for the Android SDK
 cask "android-sdk"
-# Multi-track audio editor and recorder
-cask "audacity"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
