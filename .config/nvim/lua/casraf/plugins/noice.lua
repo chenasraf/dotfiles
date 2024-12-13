@@ -25,7 +25,7 @@ return {
       stages = "static",
     })
 
-    vim.keymap.set("n", "<leader>cn", "<Cmd>NoiceDismiss<CR>", {
+    vim.keymap.set("n", "<leader><leader>c", "<Cmd>NoiceDismiss<CR>", {
       silent = true, desc = '[C]lear [N]otifications'
     })
   end,

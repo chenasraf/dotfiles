@@ -18,7 +18,7 @@ local function create_note()
   vim.cmd('e ' .. filepath)
 end
 
-vim.keymap.set('n', '<leader>sN', notes_search, { desc = '[S]earch [N]otes' })
+vim.keymap.set('n', '<leader>fN', notes_search, { desc = '[F]ind [N]otes' })
 vim.keymap.set('n', '<leader>cn', create_note, { desc = '[C]reate [N]ote' })
 
 return {}

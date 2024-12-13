@@ -1,11 +1,11 @@
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set("n", "Q", "<nop>", { desc = "No Q" })
+vim.keymap.set("n", "Q", "<nop>", { desc = "No Q", silent = true })
 vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.write()
   vim.cmd.Ex()
-end, { desc = "Save and file explorer", silent = true })
+end, { desc = "Save and file explorer", silent = true, silent = true })
 
 --
 -- NOTE Remap for dealing with word wrap
@@ -16,57 +16,57 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 --
 -- NOTE pane controls
 --
-vim.keymap.set("n", "gq", "<C-w>c", { desc = "Close pane" })
-vim.keymap.set("n", "gQ", ":qa!<CR>", { desc = "Close nvim" })
+vim.keymap.set("n", "gq", "<C-w>c", { desc = "Close pane", silent = true })
+vim.keymap.set("n", "gQ", ":qa!<CR>", { desc = "Close nvim", silent = true })
 
-vim.keymap.set("n", "√", "<C-w>v", { desc = "Split window vertically" })
-vim.keymap.set("n", "ß", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "√", "<C-w>v", { desc = "Split window vertically", silent = true })
+vim.keymap.set("n", "ß", "<C-w>s", { desc = "Split window horizontally", silent = true })
 
 --
 -- NOTE cursor control
 --
-vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location" })
-vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location" })
+vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location", silent = true })
+vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location", silent = true })
 
-vim.keymap.set({ "i", "n" }, "<M-Left>", "b", { desc = "Move back word" })
-vim.keymap.set({ "i", "n" }, "<M-Right>", "w", { desc = "Move forward word" })
+vim.keymap.set({ "i", "n" }, "<M-Left>", "b", { desc = "Move back word", silent = true })
+vim.keymap.set({ "i", "n" }, "<M-Right>", "w", { desc = "Move forward word", silent = true })
 
 --
 -- NOTE line manipulations
 --
 -- move lines up/down
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down", silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up", silent = true })
 -- join line - stay on current column
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line", silent = true })
 
 -- insert newlines without insert mode
-vim.keymap.set("n", "<M-o>", "o<Esc>k", { desc = "Insert newline below" })
-vim.keymap.set("n", "<M-S-O>", "O<Esc>j", { desc = "Insert newline above" })
+vim.keymap.set("n", "<M-o>", "o<Esc>k", { desc = "Insert newline below", silent = true })
+vim.keymap.set("n", "<M-S-O>", "O<Esc>j", { desc = "Insert newline above", silent = true })
 
 -- insert newlines in insert mode, keep cursor position
-vim.keymap.set("i", "<M-o>", "<Esc>o<Esc>gi", { desc = "Insert newline below" })
-vim.keymap.set("i", "<M-S-O>", "<Esc>O<Esc>gi", { desc = "Insert newline above" })
+vim.keymap.set("i", "<M-o>", "<Esc>o<Esc>gi", { desc = "Insert newline below", silent = true })
+vim.keymap.set("i", "<M-S-O>", "<Esc>O<Esc>gi", { desc = "Insert newline above", silent = true })
 
 -- delete words
-vim.keymap.set("i", "<A-Backspace>", "<Esc>dbi", { desc = "Delete word backwards" })
-vim.keymap.set("i", "<A-Del>", "<Esc>dei", { desc = "Delete word backwards" })
+vim.keymap.set("i", "<A-Backspace>", "<Esc>dbi", { desc = "Delete word backwards", silent = true })
+vim.keymap.set("i", "<A-Del>", "<Esc>dei", { desc = "Delete word backwards", silent = true })
 
 -- TODO only apply on JS files
-vim.keymap.set("n", "<leader>db", "<esc>dawbx", { desc = "Delete JS property (back)" })
-vim.keymap.set("n", "<leader>dw", "<esc>dawx", { desc = "Delete JS property (fowards)" })
+vim.keymap.set("n", "<leader>db", "<esc>dawbx", { desc = "Delete JS property (back)", silent = true })
+vim.keymap.set("n", "<leader>dw", "<esc>dawx", { desc = "Delete JS property (fowards)", silent = true })
 
 --
 -- NOTE history & clipboard
 --
 -- redo
-vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
+vim.keymap.set("n", "U", "<C-r>", { desc = "Redo", silent = true })
 
 -- yank without overwriting register
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste, keep current yank" })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste, keep current yank", silent = true })
 
 -- yank to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to system clipboard", silent = true })
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file", silent = true })
 vim.keymap.set("n", "<leader>W", "<cmd>wa<CR>", { desc = "Save all files", silent = true })
@@ -76,10 +76,10 @@ vim.keymap.set("n", "<leader>W", "<cmd>wa<CR>", { desc = "Save all files", silen
 --
 -- search and replace current word
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Search and replace current word" })
+  { desc = "Search and replace current word", silent = true })
 -- search and replace current selection
 vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
-  { desc = "Search and replace current selection" })
+  { desc = "Search and replace current selection", silent = true })
 
 ---
 --- NOTE general utils/cmds

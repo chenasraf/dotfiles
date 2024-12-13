@@ -1,4 +1,4 @@
-local home = os.getenv('HOME')
+-- local home = os.getenv('HOME')
 return {
   "chenasraf/lazygit.nvim",
   branch = "feat/resize",
