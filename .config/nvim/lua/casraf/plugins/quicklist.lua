@@ -1,4 +1,4 @@
-function RemoveQF()
+local function qf_remove()
   local curqfidx = vim.fn.line(".")
   local qfall = vim.fn.getqflist()
   table.remove(qfall, curqfidx)
@@ -31,7 +31,7 @@ end
   valid  recognized error message
 ]]
 
-function AddToQF()
+local function qf_add()
   local bufnr = vim.fn.bufnr()
   local filename = vim.fn.expand("%:p")
   local module = vim.fn.expand("%:t")
@@ -47,6 +47,7 @@ function AddToQF()
   local text = vim.fn.getline(".")
   local type = "I"
   local valid = 1
+
   local item = {
     bufnr = bufnr,
     filename = filename,
@@ -68,7 +69,7 @@ function AddToQF()
   vim.cmd("copen")
 end
 
-function ClearQF()
+local function qf_clear()
   vim.fn.setqflist({}, "r")
   vim.cmd("cclose")
 end
@@ -93,7 +94,7 @@ local function create_qf_dir()
   end
 end
 
-function DumpQF()
+local function qf_dump()
   local qfall = vim.fn.getqflist()
   create_qf_dir()
   local file = get_qf_dump()
@@ -107,7 +108,7 @@ function DumpQF()
   vim.cmd("echo 'Quickfix dumped to " .. file .. "'")
 end
 
-function LoadQF()
+local function qf_load()
   local file = get_qf_dump()
   local f = io.open(file, "r")
   if f == nil then
@@ -122,21 +123,23 @@ function LoadQF()
   vim.cmd("echo 'Quickfix loaded from " .. file .. "'")
 end
 
-vim.api.nvim_create_user_command("RemoveQFItem", RemoveQF, { force = true, desc = "Remove quickfix item" })
-vim.api.nvim_create_user_command("AddToQF", AddToQF, { force = true, desc = "Add to quickfix" })
-vim.api.nvim_create_user_command("ClearQF", ClearQF, { force = true, desc = "Clear quickfix" })
-vim.api.nvim_create_user_command("DumpQF", DumpQF, { force = true, desc = "Dump quickfix" })
-vim.api.nvim_create_user_command("LoadQF", LoadQF, { force = true, desc = "Load quickfix" })
+vim.api.nvim_create_user_command("QFRemove", qf_remove, { force = true, desc = "Remove quickfix item" })
+vim.api.nvim_create_user_command("QFAdd", qf_add, { force = true, desc = "Add to quickfix" })
+vim.api.nvim_create_user_command("QFClear", qf_clear, { force = true, desc = "Clear quickfix" })
+vim.api.nvim_create_user_command("QFDump", qf_dump, { force = true, desc = "Dump quickfix" })
+vim.api.nvim_create_user_command("QFLoad", qf_load, { force = true, desc = "Load quickfix" })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "qf",
   callback = function()
-    vim.keymap.set("n", "dd", ":RemoveQFItem<CR>", { buffer = true, desc = "Remove quickfix item" })
+    vim.keymap.set("n", "dd", ":QFRemove<CR>", { buffer = true, desc = "Remove quickfix item" })
   end,
 })
 
-vim.keymap.set("n", "<leader>q", ":AddToQF<CR>", { desc = "Add to quickfix" })
-vim.keymap.set("n", "<leader>cq", ":ClearQF<CR>", { desc = "Clear quickfix" })
-vim.keymap.set("n", "<leader>Q", ":copen<CR>", { desc = "Open quickfix" })
+vim.keymap.set("n", "<leader>qq", "<Cmd>QFAdd<CR>", { desc = "Add to quickfix", silent = true })
+vim.keymap.set("n", "<leader>qc", "<Cmd>QFClear<CR>", { desc = "Clear quickfix", silent = true })
+vim.keymap.set("n", "<leader>Q", "<Cmd>copen<CR>", { desc = "Open quickfix", silent = true })
+vim.keymap.set("n", "<M-j>", "<Cmd>cnext<CR>", { desc = "Next quickfix item", silent = true })
+vim.keymap.set("n", "<M-k>", "<Cmd>cprev<CR>", { desc = "Previous quickfix item", silent = true })
 
 return {}
