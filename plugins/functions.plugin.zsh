@@ -699,6 +699,10 @@ gclc() {
   git clone --recurse-submodules git@github.com:chenasraf/$1.git
 }
 
+nc-dev() {
+ (cd "$HOME/Dev/nextcloud-docker-dev" && docker compose $@)
+}
+
 # select random element from arguments
 # NOTE always keep this function last, breaks syntax highlighting
 randarg() {
