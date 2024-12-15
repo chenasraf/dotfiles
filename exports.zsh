@@ -1,26 +1,51 @@
 #!/usr/bin/env zsh
 
-if is_mac; then
-  export BREW_HOME="/usr/local"
-  export ANDROID_SDK_ROOT="$BREW_HOME/bin"
-  export ANDROID_HOME="$HOME/Library/Android/sdk"
-  export LDFLAGS="-L$BREW_HOME/opt/flex/lib"
-  export CPPFLAGS="-I$BREW_HOME/opt/flex/include"
-  export PATH="$BREW_HOME/opt/flex/bin:$PATH"
-  export PATH="$BREW_HOME/opt/make/libexec/gnubin:$PATH"
-  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-  export PATH="$HOME/.surrealdb:$PATH"
-  export FLUTTER_ROOT="$HOME/.flutter"
-  export FLUTTER_BIN="$FLUTTER_ROOT/bin"
-fi
-
 # Misc
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 export MANPATH="$DOTFILES/man:$MANPATH"
+[[ ! -f "$DOTFILES/_local.zsh" ]] || source "$DOTFILES/_local.zsh"
+export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
 
 # local bin
-export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Lazygit
+if [[ -d "$HOME/Library/ApplicationSupport/lazygit" ]]; then
+  export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
+elif [[ -d "$HOME/.config/lazygit" ]]; then
+  export LAZYGIT_HOME="$HOME/.config/lazygit"
+fi
+
+# Postgres.app
+if [[ -d "/Applications/Postgres.app" ]]; then
+  export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+fi
+
+# Visual Studio Code
+if [[ -d "/Applications/Visual Studio Code.app" ]]; then
+  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+fi
+
+if [[ -d "/Applications/WezTerm.app" ]]; then
+  export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
+fi
+
+# Homebrew
+if [[ -d "/opt/homebrew" ]]; then
+  export BREW_HOME="/usr/local"
+
+  if [[ -d "$HOME/Library/Android/sdk" ]]; then
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export ANDROID_SDK_ROOT="$BREW_HOME/bin"
+  fi
+
+  if [[ -d "$BREW_HOME/opt/flex" ]]; then
+    export LDFLAGS="-L$BREW_HOME/opt/flex/lib"
+    export CPPFLAGS="-I$BREW_HOME/opt/flex/include"
+    export PATH="$BREW_HOME/opt/flex/bin:$PATH"
+    export PATH="$BREW_HOME/opt/make/libexec/gnubin:$PATH"
+  fi
+fi
 
 # yamllint
 export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
@@ -30,12 +55,10 @@ if [[ -f $(which fnm) ]]; then
   eval "$(fnm env --use-on-cd)"
 fi
 
-export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
-if is_linux; then
-  export LAZYGIT_HOME="$HOME/.config/lazygit"
+# SurrealDB
+if [[ -d "$HOME/.surrealdb" ]]; then
+  export PATH="$HOME/.surrealdb:$PATH"
 fi
-
-# Optionals
 
 # Node
 if [[ -f $(which npm) ]]; then
@@ -86,7 +109,9 @@ if [[ -f $(which dart) ]]; then
 fi
 
 # Flutter
-if [[ -d "$FLUTTER_BIN" ]]; then
+if [[ -d "$HOME/.flutter" ]]; then
+  export FLUTTER_ROOT="$HOME/.flutter"
+  export FLUTTER_BIN="$FLUTTER_ROOT/bin"
   export PATH="$FLUTTER_BIN:$PATH"
   # export PATH="$FLUTTER_BIN/cache/dart-sdk/bin:$PATH"
 fi
@@ -124,16 +149,10 @@ if [[ -f $(which direnv) ]]; then
 fi
 
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
-if [[ -f $BREW_HOME/opt/chruby/share/chruby/chruby.sh ]]; then source $BREW_HOME/opt/chruby/share/chruby/chruby.sh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
-if [[ -f "$DOTFILES/_local.zsh" ]]; then source "$DOTFILES/_local.zsh"; fi
 
 export SHELLCHECK_OPTS='--shell=bash'
 
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"; fi
-
-export PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
-
-export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
-export PATH="/usr/local/sbin:$PATH"
+# Auto completion
+# [[ ! -f $BREW_HOME/opt/chruby/share/chruby/chruby.sh ]] || source $BREW_HOME/opt/chruby/share/chruby/chruby.sh
+# [[ ! -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]] || . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"
