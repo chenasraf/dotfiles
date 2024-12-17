@@ -142,7 +142,8 @@ alias tls="tx ls -s"
 # unsorted
 
 # addalias commands
-alias occ="sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ"
+alias nc-aio-occ="sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ"
+alias nc-dev-occ="nc-dev nextcloud sudo su - www-data occ"
 alias hh="home -h"
 alias pi="platform_install"
 alias get-gh-token="op item get github --fields 'CI Access Token' --reveal"
