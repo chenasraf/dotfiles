@@ -85,6 +85,8 @@ vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
 --- NOTE general utils/cmds
 ---
 
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 --- serve working directory as web server & open in browser
 vim.keymap.set("n", "<leader>Srv", function()
   local cmd = "http-server -p 5500"
