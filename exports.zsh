@@ -68,8 +68,8 @@ fi
 # PNPM
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 if [[ -f $(which pnpm) ]]; then
@@ -152,6 +152,7 @@ if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
 if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
 
 export SHELLCHECK_OPTS='--shell=bash'
+export DOCKER_CLI_HINTS=false
 
 # Auto completion
 # [[ ! -f $BREW_HOME/opt/chruby/share/chruby/chruby.sh ]] || source $BREW_HOME/opt/chruby/share/chruby/chruby.sh

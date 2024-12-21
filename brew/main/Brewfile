@@ -33,6 +33,8 @@ brew "gnupg"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Simple terminal UI for docker
+brew "lazydocker"
 # Rainbows and unicorns in your console!
 brew "lolcat"
 # General-purpose lossless data-compression library
