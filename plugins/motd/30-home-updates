@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-source "$HOME/.dotfiles/plugins/colors.plugin.zsh"
-
 updfile="$HOME/.cache/.df_last_update"
 touch $updfile
 lastupdate=$(cat $updfile)

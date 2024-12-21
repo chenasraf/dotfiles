@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source "${0:A:h}/string_utils.zsh"
+
 # return 0 or 1 based on result of command
 int_res() {
   # get all but last

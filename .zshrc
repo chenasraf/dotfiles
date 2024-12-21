@@ -3,7 +3,7 @@ export CFG="$DOTFILES/.config"
 export DOTBIN="$HOME/.config/bin"
 export DOTBIN_META="$HOME/.config/.bin"
 
-source "$HOME/.dotfiles/plugins/os_utils.plugin.zsh"
+source "$DOTFILES/zplug.init.zsh"
 source "$DOTFILES/exports.zsh"
 
 [[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"
@@ -41,8 +41,6 @@ bindkey "^[[1;3D" backward-word
 export HIST_STAMPS="%d/%m/%Y %I:%M:%S"
 export HIST_FIND_NO_DUPS=true
 setopt histignoredups
-
-source "$DOTFILES/zplug.init.zsh"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then

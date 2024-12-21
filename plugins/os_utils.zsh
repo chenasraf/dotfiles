@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source "${0:A:h}/number_utils.zsh"
+
 # show all man entries under a specific section
 # e.g. mansect 7
 mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
