@@ -35,16 +35,37 @@ local function create_floating_window(opts)
   return { buf = buf, win = win }
 end
 
+local function enter_insert_mode_after_window_setup(buf, win)
+  vim.api.nvim_create_autocmd({ "WinEnter" }, {
+    buffer = buf,
+    once = true, -- Only trigger this once
+    callback = function()
+      if vim.api.nvim_get_current_win() == win and vim.bo[buf].buftype == "terminal" then
+        vim.cmd("startinsert")
+      end
+    end,
+  })
+
+  vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    buffer = buf,
+    callback = function()
+      if vim.api.nvim_win_is_valid(win) and vim.bo[buf].buftype == "terminal" then
+        vim.cmd("startinsert")
+      end
+    end,
+  })
+end
+
 local function toggle_lazygit()
   if not vim.api.nvim_win_is_valid(state.floating.win) then
     state.floating = create_floating_window({ buf = state.floating.buf })
+
     if vim.bo[state.floating.buf].buftype ~= "terminal" then
       vim.cmd.terminal("lazygit")
       vim.keymap.set({ 'n', 'i', 't' }, 'q', toggle_lazygit, { buffer = state.floating.buf })
     end
-    vim.defer_fn(function()
-      vim.cmd('startinsert')
-    end, 100)
+
+    enter_insert_mode_after_window_setup(state.floating.buf, state.floating.win)
   else
     vim.api.nvim_win_hide(state.floating.win)
   end
@@ -53,6 +74,7 @@ end
 local function setup(opts)
   opts = opts or {}
   vim.api.nvim_create_user_command('LazyGit', toggle_lazygit, { force = true })
+
   vim.api.nvim_create_autocmd('WinResized', {
     callback = function()
       if not vim.api.nvim_win_is_valid(state.floating.win) then
@@ -69,3 +91,4 @@ local M = {}
 M.toggle_lazygit = toggle_lazygit
 M.setup = setup
 return M
+
