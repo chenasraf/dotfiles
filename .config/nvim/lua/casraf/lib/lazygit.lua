@@ -91,4 +91,3 @@ local M = {}
 M.toggle_lazygit = toggle_lazygit
 M.setup = setup
 return M
-
