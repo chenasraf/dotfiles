@@ -56,7 +56,7 @@ local function load_session()
     return
   end
   local argc = vim.fn.argc()
-  if argc > 0 then
+  if argc == 1 then
     ---@diagnostic disable-next-line: param-type-mismatch
     if vim.startswith(vim.fn.argv(0), 'oil://') then
       return

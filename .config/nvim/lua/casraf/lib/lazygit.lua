@@ -18,6 +18,8 @@ local function create_floating_window(opts)
     buf = opts.buf
   else
     buf = vim.api.nvim_create_buf(false, true) -- No file, scratch buffer
+    -- hide from tabline
+    vim.bo[buf].buflisted = false
   end
 
   local win_config = {
@@ -35,13 +37,20 @@ local function create_floating_window(opts)
   return { buf = buf, win = win }
 end
 
-local function enter_insert_mode_after_window_setup(buf, win)
+local function start_insert()
+  -- vim.cmd("startinsert")
+  vim.defer_fn(function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<esc><esc>i", true, false, true), "n", true)
+  end, 100)
+end
+
+local function attach_events(buf, win)
   vim.api.nvim_create_autocmd({ "WinEnter" }, {
     buffer = buf,
     once = true, -- Only trigger this once
     callback = function()
       if vim.api.nvim_get_current_win() == win and vim.bo[buf].buftype == "terminal" then
-        vim.cmd("startinsert")
+        start_insert()
       end
     end,
   })
@@ -50,7 +59,7 @@ local function enter_insert_mode_after_window_setup(buf, win)
     buffer = buf,
     callback = function()
       if vim.api.nvim_win_is_valid(win) and vim.bo[buf].buftype == "terminal" then
-        vim.cmd("startinsert")
+        start_insert()
       end
     end,
   })
@@ -61,11 +70,12 @@ local function toggle_lazygit()
     state.floating = create_floating_window({ buf = state.floating.buf })
 
     if vim.bo[state.floating.buf].buftype ~= "terminal" then
-      vim.cmd.terminal("lazygit")
+      vim.cmd([[ setlocal nobuflisted | terminal lazygit ]])
       vim.keymap.set({ 'n', 'i', 't' }, 'q', toggle_lazygit, { buffer = state.floating.buf })
     end
 
-    enter_insert_mode_after_window_setup(state.floating.buf, state.floating.win)
+    attach_events(state.floating.buf, state.floating.win)
+    start_insert()
   else
     vim.api.nvim_win_hide(state.floating.win)
   end

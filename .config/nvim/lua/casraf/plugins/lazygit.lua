@@ -1,6 +1,8 @@
--- local lazygit = require('casraf.lib.lazygit')
---
--- lazygit.setup({})
+local custom = false
+if custom then
+  local lazygit = require('casraf.lib.lazygit')
+  lazygit.setup({})
+end
 
 vim.keymap.set('n', '<leader>gs', '<Cmd>LazyGit<CR>', { desc = 'Lazy[G]it', silent = true })
 
@@ -8,7 +10,7 @@ return {
   {
     "chenasraf/lazygit.nvim",
     branch = "feat/resize",
-    -- enabled = false,
+    enabled = not custom,
 
     -- dir = home .. "/Dev/lazygit.nvim",
 
