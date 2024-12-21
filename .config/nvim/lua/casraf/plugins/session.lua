@@ -39,7 +39,11 @@ local function save_session()
   end
   local sess_file = get_session_file()
   local open_buffers = vim.fn.len(vim.fn.getbufinfo({ buflisted = 1 }))
-  if open_buffers == 0 then
+  local no_buffers = open_buffers == 0
+  local all_buffers_empty =
+      vim.fn.len(vim.fn.filter(vim.fn.getbufinfo({ buflisted = 1 }), 'v:val.changed == 0')) ==
+      open_buffers
+  if no_buffers or all_buffers_empty then
     vim.fn.delete(sess_file)
     return
   end
@@ -50,6 +54,13 @@ end
 local function load_session()
   if not M.enabled then
     return
+  end
+  local argc = vim.fn.argc()
+  if argc > 0 then
+    ---@diagnostic disable-next-line: param-type-mismatch
+    if vim.startswith(vim.fn.argv(0), 'oil://') then
+      return
+    end
   end
   local sess_file = get_session_file()
   if vim.fn.filereadable(sess_file) == 1 then
