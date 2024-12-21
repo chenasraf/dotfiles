@@ -1,3 +1,7 @@
+local M = {
+  enabled = true,
+}
+
 local function simple_hash(input)
   -- Convert the input string to a basic hash
   local hash = 0
@@ -30,12 +34,23 @@ local function get_session_file()
 end
 
 local function save_session()
+  if not M.enabled then
+    return
+  end
   local sess_file = get_session_file()
+  local open_buffers = vim.fn.len(vim.fn.getbufinfo({ buflisted = 1 }))
+  if open_buffers == 0 then
+    vim.fn.delete(sess_file)
+    return
+  end
   vim.cmd('mksession! ' .. sess_file)
   print('Session saved to ' .. sess_file)
 end
 
 local function load_session()
+  if not M.enabled then
+    return
+  end
   local sess_file = get_session_file()
   if vim.fn.filereadable(sess_file) == 1 then
     vim.cmd('source ' .. sess_file)
@@ -43,8 +58,15 @@ local function load_session()
   end
 end
 
+local function toggle_session_autosave()
+  M.enabled = not M.enabled
+  local status = M.enabled and 'enabled' or 'disabled'
+  print('Session autosave ' .. status)
+end
+
 vim.api.nvim_create_user_command('SessionSave', save_session, { nargs = 0, force = true })
 vim.api.nvim_create_user_command('SessionLoad', load_session, { nargs = 0, force = true })
+vim.api.nvim_create_user_command('SessionAutoSave', toggle_session_autosave, { nargs = 0, force = true })
 
 vim.api.nvim_create_autocmd('VimLeavePre', {
   pattern = "*",
