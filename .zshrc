@@ -3,7 +3,7 @@ export CFG="$DOTFILES/.config"
 export DOTBIN="$HOME/.config/bin"
 export DOTBIN_META="$HOME/.config/.bin"
 
-source "$HOME/.dotfiles/plugins/functions.plugin.zsh"
+source "$HOME/.dotfiles/plugins/os_utils.plugin.zsh"
 source "$DOTFILES/exports.zsh"
 
 [[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"
