@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-source "$DOTFILES/plugins/functions.plugin.zsh"
-source "$DOTFILES/aliases.zsh"
-
 if is_mac; then
   df -h /System/Volumes/Data NE
 else
