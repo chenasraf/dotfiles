@@ -165,55 +165,31 @@ install:
             curl -L https://github.com/chenasraf/treelike/releases/download/$treelike_ver/treelike-$arch.tar.gz -o $DOTBIN/treelike.tar.gz
   - name: pnpm
     type: group
-    check_installed: |
-      [[ \
-        $(which pnpm) && \
-        $(which tsc) && \
-        $(which tldr) && \
-        $(which simple-scaffold) && \
-        $(which firebase) && \
-        $(which prettier) && \
-        $(which http-server) && \
-        $(which licenseg) && \
-        $(which vscode-json-language-server) \
-      ]]; exit $?
+    check_installed: exit "1"
     steps:
       - name: pnpm
-        type: shell
-        opts:
-          command: npm i -g pnpm
-      - name: tsc
-        type: shell
+        type: npm
+      - name: typescript
+        bin_name: tsc
+        type: pnpm
         opts:
           command: pnpm i -g typescript
       - name: tldr
-        type: shell
-        opts:
-          command: pnpm i -g tldr
+        type: pnpm
       - name: simple-scaffold
-        type: shell
-        opts:
-          command: pnpm i -g simple-scaffold
-      - name: firebase
-        type: shell
-        opts:
-          command: pnpm i -g firebase-tools
+        type: pnpm
+      - name: firebase-tools
+        bin_name: firebase
+        type: pnpm
       - name: prettier
-        type: shell
-        opts:
-          command: pnpm i -g prettier
+        type: pnpm
       - name: http-server
-        type: shell
-        opts:
-          command: pnpm i -g http-server
+        type: pnpm
       - name: licenseg
-        type: shell
-        opts:
-          command: pnpm i -g licenseg
-      - name: vscode-json-language-server
-        type: shell
-        opts:
-          command: pnpm i -g vscode-langservers-extracted
+        type: pnpm
+      - name: vscode-langservers-extracted
+        bin_name: vscode-json-language-server
+        type: pnpm
   - name: home
     type: shell
     opts:
