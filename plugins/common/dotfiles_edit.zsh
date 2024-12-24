@@ -16,12 +16,12 @@ dfe() {
 
   while [[ $# -gt 1 ]]; do
     case $1 in
-      -n)
-        no_src=1
-        ;;
-      -q)
-        quiet=1
-        ;;
+    -n)
+      no_src=1
+      ;;
+    -q)
+      quiet=1
+      ;;
     esac
     shift
   done
@@ -72,9 +72,9 @@ dfs() {
 
   while [[ $# -gt 1 ]]; do
     case $1 in
-      -q)
-        quiet=1
-        ;;
+    -q)
+      quiet=1
+      ;;
     esac
     shift
   done
@@ -144,6 +144,6 @@ dfps() {
   fi
 
   # Call dfs with flags and transformed file argument
-  dfs "${flags[@]}" "plugins/$file.plugin"
+  dfs "${flags[@]}" "plugins/$file"
   return $?
 }
