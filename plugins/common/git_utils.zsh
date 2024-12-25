@@ -22,3 +22,21 @@ get-gh-latest-tag() {
 gclc() {
   git clone --recurse-submodules git@github.com:chenasraf/$1.git
 }
+
+get-gh-latest-release() {
+  if [[ $# -lt 2 ]]; then
+    echo "Usage: get-gh-latest-release <repo> <filename>"
+    echo "  filename: the name of the file to download"
+    echo "            may contain {tag} to be replaced with the latest tag"
+  fi
+  repo="$1"
+  filename="$2"
+  tag_pattern="$3"
+  if [[ -z "$tag_pattern" ]]; then
+    tag_pattern='v\K[^"]*'
+  fi
+  latest=$(get-gh-latest-tag "$repo")
+  filename=$(sed 's/{tag}/'"$latest"'/g' <<< "$filename")
+  url="https://github.com/$repo/releases/latest/download/$filename"
+  echo "$url"
+}
