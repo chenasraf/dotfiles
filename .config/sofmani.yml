@@ -5,23 +5,26 @@ defaults:
     brew:
       platforms:
         only: ['macos']
+env:
+  DOTFILES: ~/.dotfiles
+  LAZYGIT_HOME: ~/Library/ApplicationSupport/lazygit
 
 install:
   - name: nvim
     type: rsync
     opts:
-      source: ~/.dotfiles/.config/nvim/
+      source: $DOTFILES/.config/nvim/
       destination: ~/.config/nvim/
       flags: --delete --exclude .git --exclude .DS_Store
   - name: lazygit
     type: rsync
     opts:
-      source: ~/.dotfiles/.config/lazygit.yml
-      destination: ~/Library/ApplicationSupport/lazygit/config.yml
+      source: $DOTFILES/.config/lazygit.yml
+      destination: $LAZYGIT_HOME/config.yml
   - name: config
     type: rsync
     opts:
-      source: ~/.dotfiles/.config/
+      source: $DOTFILES/.config/
       destination: ~/.config/
       flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
   - name: sofmani
