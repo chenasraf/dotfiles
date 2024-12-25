@@ -24,6 +24,10 @@ install:
       source: ~/.dotfiles/.config/
       destination: ~/.config/
       flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
+  - name: sofmani
+    type: brew
+    opts:
+      tap: chenasraf/tap
   - name: treelike
     type: brew
     opts:
