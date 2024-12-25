@@ -91,7 +91,9 @@ dfs() {
     if [[ $quiet -ne 1 ]]; then
       echo "Reloading $(strip-home $file)..."
     fi
+    curdir=$(pwd)
     source "$file"
+    cd $curdir
     return 0
   fi
   echo_red "File not found: $(strip-home $file)"
