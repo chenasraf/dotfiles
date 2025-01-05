@@ -55,7 +55,7 @@ return {
             function()
               local input = vim.fn.input("Ask Copilot: ")
               if input ~= "" then
-                vim.cmd("CopilotChat " .. input)
+                vim.cmd("CopilotChat " .. input .. ". DO NOT INCLUDE LINE NUMBERS IN THE OUTPUT.")
               end
             end,
             desc = "Ask",
