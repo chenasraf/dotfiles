@@ -7,7 +7,8 @@ defaults:
         only: ['macos']
 env:
   DOTFILES: ~/.dotfiles
-  LAZYGIT_HOME: ~/Library/ApplicationSupport/lazygit
+  LAZYGIT_HOME_OSX: ~/Library/ApplicationSupport/lazygit
+  LAZYGIT_HOME_LINUX: ~/.config/lazygit
 
 install:
   - name: nvim
@@ -17,10 +18,22 @@ install:
       destination: ~/.config/nvim/
       flags: --delete --exclude .git --exclude .DS_Store
   - name: lazygit
-    type: rsync
-    opts:
-      source: $DOTFILES/.config/lazygit.yml
-      destination: $LAZYGIT_HOME/config.yml
+    type: group
+    steps:
+      - name: lazygit
+        type: rsync
+        opts:
+          source: $DOTFILES/.config/lazygit.yml
+          destination: $LAZYGIT_HOME_OSX/config.yml
+        platforms:
+          only: ['macos']
+      - name: lazygit
+        type: rsync
+        opts:
+          source: $DOTFILES/.config/lazygit.yml
+          destination: $LAZYGIT_HOME_LINUX/config.yml
+        platforms:
+          only: ['linux']
   - name: config
     type: rsync
     opts:
