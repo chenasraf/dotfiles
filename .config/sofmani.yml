@@ -5,6 +5,10 @@ defaults:
     brew:
       platforms:
         only: ['macos']
+    # shell:
+    #   env_shell:
+    #     linux: zsh
+    #     macos: zsh
 env:
   DOTFILES: ~/.dotfiles
   LAZYGIT_HOME_OSX: ~/Library/ApplicationSupport/lazygit
@@ -216,5 +220,9 @@ install:
   - name: zplug
     type: shell
     check_installed: test -d ~/.zplug; exit $?
+    check_has_update: exit 0
     opts:
       command: curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+      update_command: |
+        source $HOME/.dotfiles/zplug.init.zsh
+        zplug update
