@@ -35,7 +35,7 @@ return {
       ---@diagnostic disable-next-line: unused-local
       on_attach = function(client, bufnr)
         -- if client.supports_method("textDocument/formatting") then
-        vim.keymap.set("n", "<Leader>f", format_manually, { buffer = bufnr, desc = "[lsp] format" })
+        vim.keymap.set("n", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
         -- format on save
         vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
         vim.api.nvim_create_autocmd(event, {
@@ -47,7 +47,7 @@ return {
         -- end
 
         -- if client.supports_method("textDocument/rangeFormatting") then
-        vim.keymap.set("x", "<Leader>f", format_manually, { buffer = bufnr, desc = "[lsp] format" })
+        vim.keymap.set("x", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
         -- end
       end,
     })
