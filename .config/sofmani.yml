@@ -114,6 +114,18 @@ install:
             curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${VERSION}_Linux_x86_64.tar.gz"
             tar xf lazydocker.tar.gz lazydocker
             sudo install lazydocker /usr/local/bin
+  - name: delta
+    type: group
+    steps:
+      - name: delta
+        type: shell
+        platforms:
+          only: ['linux']
+        opts:
+          command: |
+            curl https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb | dpkg -i
+      - name: git-delta
+        type: brew
   - name: fnm
     type: shell
     post_install: |
