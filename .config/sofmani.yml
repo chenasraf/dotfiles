@@ -15,6 +15,26 @@ env:
   LAZYGIT_HOME_LINUX: ~/.config/lazygit
 
 install:
+  - name: device_uid
+    type: shell
+    check_installed: test -f $DOTFILES/.device_uid
+    check_has_update: exit 1
+    opts:
+      command: |
+        source $DOTFILES/plugins/common/colors.zsh
+        echo
+        echo_yellow "Unique device UID not set up. Enter device uid: "
+        read duid
+        echo
+
+        if [[ -z $duid ]]; then
+          echo_red "Device UID cannot be empty. Exiting"
+          exit 1
+        fi
+
+        echo $duid >$DOTFILES/.device_uid
+        echo_cyan "Device UID set to \"$duid\""
+
   - name: nvim
     type: rsync
     opts:
@@ -24,6 +44,8 @@ install:
   - name: lazygit
     type: group
     steps:
+      - name: lazygit
+        type: brew
       - name: lazygit
         type: rsync
         opts:
@@ -63,11 +85,15 @@ install:
         type: shell
         platforms:
           only: ['linux']
+        check_has_update: |
+          LATEST=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+          CURRENT=$(lazygit --version | awk -F'[,=]' '{print $6}')
+          test "$LATEST" != "$CURRENT"
         opts:
           command: |
             cd $(mktemp -d)
-            lazygit_version=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-            curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${lazygit_version}_Linux_x86_64.tar.gz"
+            VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+            curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${VERSION}_Linux_x86_64.tar.gz"
             tar xf lazygit.tar.gz lazygit
             sudo install lazygit /usr/local/bin
   - name: lazydocker
@@ -84,8 +110,8 @@ install:
         opts:
           command: |
             cd $(mktemp -d)
-            lazydocker_version=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-            curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${lazydocker_version}_Linux_x86_64.tar.gz"
+            VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+            curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${VERSION}_Linux_x86_64.tar.gz"
             tar xf lazydocker.tar.gz lazydocker
             sudo install lazydocker /usr/local/bin
   - name: fnm
@@ -185,7 +211,7 @@ install:
             curl -L https://github.com/chenasraf/treelike/releases/download/$treelike_ver/treelike-$arch.tar.gz -o $DOTBIN/treelike.tar.gz
   - name: pnpm
     type: group
-    check_installed: exit "1"
+    check_installed: exit 1
     steps:
       - name: pnpm
         type: npm
@@ -219,7 +245,7 @@ install:
         pnpm i && pnpm build && pnpm ginst
   - name: zplug
     type: shell
-    check_installed: test -d ~/.zplug; exit $?
+    check_installed: test -d ~/.zplug
     check_has_update: exit 0
     opts:
       command: curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
