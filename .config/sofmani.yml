@@ -99,25 +99,6 @@ install:
       source: $DOTFILES/.config/nvim/
       destination: ~/.config/nvim/
       flags: --delete --exclude .git --exclude .DS_Store
-  - name: lazygit
-    type: group
-    steps:
-      - name: lazygit
-        type: brew
-      - name: lazygit
-        type: rsync
-        opts:
-          source: $DOTFILES/.config/lazygit.yml
-          destination: $LAZYGIT_HOME_OSX/config.yml
-        platforms:
-          only: ['macos']
-      - name: lazygit
-        type: rsync
-        opts:
-          source: $DOTFILES/.config/lazygit.yml
-          destination: $LAZYGIT_HOME_LINUX/config.yml
-        platforms:
-          only: ['linux']
   - name: config
     type: rsync
     opts:
@@ -155,6 +136,14 @@ install:
             tar xf lazygit.tar.gz lazygit
             sudo install lazygit /usr/local/bin
             rm -rf lazygit.tar.gz lazygit
+  - name: lazygit-config
+    type: group
+    steps:
+      - name: lazygit
+        type: rsync
+        opts:
+          source: $DOTFILES/.config/lazygit.yml
+          destination: $LAZYGIT_HOME/config.yml
   - name: lazydocker
     type: group
     steps:

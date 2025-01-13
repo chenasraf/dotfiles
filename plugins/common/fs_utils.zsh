@@ -47,13 +47,13 @@ prjd() {
   if [[ -z "$sub" ]]; then
     read sub
   fi
-  dv="$(wd path dv $sub)"
+  dv="$(wd path dv)/$sub"
   pushd "$dv"
 }
 
 # open project directory in nvim
 prj() {
-  pushd "$(wd path dv $@)"
+  pushd "$(wd path dv)/$@"
   nvim .
   popd
 }

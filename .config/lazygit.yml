@@ -263,7 +263,23 @@ customCommands:
             value: 'prs'
           - name: 'Open CI/Actions'
             value: 'ci'
-    command: 'git open {{.Form.action}} {{if .SelectedFile}}{{.SelectedFile.Name | quote}}{{else if .SelectedRemoteBranch}}{{.SelectedRemoteBranch.Name | quote}}{{else if .SelectedLocalBranch}}{{.SelectedLocalBranch.Name | quote}}{{end}}'
+    command: |
+      ACTION={{.Form.action | quote}}
+      FILE={{.SelectedFile.Name | quote}}
+      REMOTE_BRANCH={{.SelectedRemoteBranch.Name | quote}}
+      LOCAL_BRANCH={{.SelectedLocalBranch.Name | quote}}
+      COMMIT={{.SelectedCommit.Sha | quote}}
+      case "$ACTION" in
+        branch) ARG="$REMOTE_BRANCH";;
+        commit) ARG="$COMMIT";;
+        file) ARG="$FILE";;
+        pr) ARG="$LOCAL_BRANCH $REMOTE_BRANCH";;
+        project) ARG="";;
+        prs) ARG="";;
+        ci) ARG="";;
+        *) ARG="";;
+      esac
+      git open $ACTION $ARG
     loadingText: 'Opening...'
 services: {}
 notARepository: prompt
