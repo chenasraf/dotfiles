@@ -175,6 +175,7 @@ install:
             curl https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb | dpkg -i
       - name: git-delta
         type: brew
+        bin_name: delta
   - name: fnm
     type: shell
     post_install: |
