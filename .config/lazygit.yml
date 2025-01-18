@@ -265,10 +265,10 @@ customCommands:
             value: 'ci'
     command: |
       ACTION={{.Form.action | quote}}
-      FILE={{.SelectedFile.Name | quote}}
-      REMOTE_BRANCH={{.SelectedRemoteBranch.Name | quote}}
-      LOCAL_BRANCH={{.SelectedLocalBranch.Name | quote}}
-      COMMIT={{.SelectedCommit.Sha | quote}}
+      FILE={{if .SelectedFile}}{{.SelectedFile.Name | quote}}{{end}}
+      REMOTE_BRANCH={{if .SelectedRemoteBranch}}{{.SelectedRemoteBranch.Name | quote}}{{end}}
+      LOCAL_BRANCH={{if .SelectedLocalBranch}}{{.SelectedLocalBranch.Name | quote}}{{end}}
+      COMMIT={{if .SelectedCommit}}{{.SelectedCommit.Sha | quote}}{{end}}
       case "$ACTION" in
         branch) ARG="$REMOTE_BRANCH";;
         commit) ARG="$COMMIT";;
