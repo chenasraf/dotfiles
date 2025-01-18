@@ -83,7 +83,7 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = '[F]ind [G]it [F]iles', silent = true })
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles', silent = true })
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp', silent = true })
-        vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord', silent = true })
+        vim.keymap.set({ 'n', 'v' }, '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord', silent = true })
         vim.keymap.set('n', '<leader>fg', require('casraf.lib.telescope_multigrep').live_multigrep,
           { desc = '[F]ind by [G]rep', silent = true })
         vim.keymap.set('n', '<leader>fG', live_grep_git_root, { desc = '[F]ind by [G]rep on Git Root', silent = true })
