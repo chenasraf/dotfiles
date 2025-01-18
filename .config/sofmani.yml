@@ -5,20 +5,13 @@ defaults:
     brew:
       platforms:
         only: ['macos']
-    # shell:
-    #   env_shell:
-    #     linux: zsh
-    #     macos: zsh
-# env:
-#   DOTFILES: ~/.dotfiles
-#   LAZYGIT_HOME_OSX: ~/Library/ApplicationSupport/lazygit
-#   LAZYGIT_HOME_LINUX: ~/.config/lazygit
 
 install:
   - name: device_uid
     type: shell
     check_installed: test -f $DOTFILES/.device_uid
     check_has_update: exit 1
+    tags: system
     opts:
       command: |
         source $DOTFILES/plugins/common/colors.zsh
@@ -36,11 +29,13 @@ install:
         echo_cyan "Device UID set to \"$duid\""
   - name: git-gpg
     type: shell
+    tags: git
     check_installed: 'gpg --list-keys | grep -q "$GITHUB_GPG_KEY_ID"'
     opts:
       command: curl https://github.com/web-flow.gpg | gpg --import
   - name: git-config
     type: shell
+    tags: git
     check_installed: git config --global user.name && git config --global user.email && git config --global user.signingkey
     opts:
       command: |
@@ -86,6 +81,7 @@ install:
 
   - name: osx-defaults
     type: shell
+    tags: system
     platforms:
       only: ['macos']
     opts:
@@ -95,12 +91,14 @@ install:
 
   - name: nvim
     type: rsync
+    tags: config nvim-config
     opts:
       source: $DOTFILES/.config/nvim/
       destination: ~/.config/nvim/
       flags: --delete --exclude .git --exclude .DS_Store
   - name: config
     type: rsync
+    tags: config dotfiles sofmani-config
     opts:
       source: $DOTFILES/.config/
       destination: ~/.config/
@@ -138,6 +136,7 @@ install:
             rm -rf lazygit.tar.gz lazygit
   - name: lazygit-config
     type: group
+    tags: config
     steps:
       - name: lazygit
         type: rsync
@@ -278,12 +277,18 @@ install:
         type: shell
         platforms:
           only: ['linux']
+        check_has_update: |
+          VERSION=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+          if [[ "$VERSION" != $(cat $DOTBIN_META/gi_gen) ]]; then
+            exit 0
+          fi
+          exit 1
         opts:
           command: |
-            gi_ver=$(get-gh-latest-tag "chenasraf/gi_gen")
+            VERSION=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
             mkdir -p "$DOTBIN_META"
-            arch=$(archmatch -mA "macos-arm" -mI "macos-intel" -l "linux-amd")
-            curl -L https://github.com/chenasraf/gi_gen/releases/download/$gi_ver/gi_gen-$gi_ver-$arch -o $DOTBIN/gi_gen
+            echo $VERSION > $DOTBIN_META/gi_gen
+            curl -L https://github.com/chenasraf/gi_gen/releases/download/${VERSION}/gi_gen-${VERSION}-linux-amd -o $DOTBIN/gi_gen
   - name: treelike
     type: group
     steps:
@@ -295,12 +300,18 @@ install:
         type: shell
         platforms:
           only: ['linux']
+        check_has_update: |
+          VERSION=$(curl -s "https://api.github.com/repos/chenasraf/treelike/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+          if [[ "$VERSION" != $(cat $DOTBIN_META/treelike) ]]; then
+            exit 0
+          fi
+          exit 1
         opts:
           command: |
-            gi_ver=$(get-gh-latest-tag "chenasraf/treelike")
+            VERSION=$(curl -s "https://api.github.com/repos/chenasraf/treelike/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
             mkdir -p "$DOTBIN_META"
-            arch=$(archmatch -mA "macos-arm" -mI "macos-intel" -l "linux-amd")
-            curl -L https://github.com/chenasraf/treelike/releases/download/$treelike_ver/treelike-$arch.tar.gz -o $DOTBIN/treelike.tar.gz
+            echo $VERSION > $DOTBIN_META/treelike
+            curl -L https://github.com/chenasraf/treelike/releases/download/${VERSION}/gi_gen-${VERSION}-linux-amd -o $DOTBIN/gi_gen
   - name: pnpm
     type: group
     check_installed: exit 1
@@ -353,4 +364,3 @@ install:
       update_command: |
         source $HOME/.dotfiles/zplug.init.zsh
         zplug update
-        zplug load --verbose
