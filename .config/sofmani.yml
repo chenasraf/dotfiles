@@ -9,10 +9,10 @@ defaults:
     #   env_shell:
     #     linux: zsh
     #     macos: zsh
-env:
-  DOTFILES: ~/.dotfiles
-  LAZYGIT_HOME_OSX: ~/Library/ApplicationSupport/lazygit
-  LAZYGIT_HOME_LINUX: ~/.config/lazygit
+# env:
+#   DOTFILES: ~/.dotfiles
+#   LAZYGIT_HOME_OSX: ~/Library/ApplicationSupport/lazygit
+#   LAZYGIT_HOME_LINUX: ~/.config/lazygit
 
 install:
   - name: device_uid
@@ -256,6 +256,8 @@ install:
   - name: openwebui
     type: shell
     check_installed: docker inspect open-webui
+    platforms:
+      only: ['macos']
     opts:
       command: |
         docker run -d \
@@ -335,6 +337,8 @@ install:
         pnpm i && pnpm build && pnpm ginst
   - name: tmux-config
     type: shell
+    platforms:
+      only: ['macos']
     opts:
       command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
   - name: zplug
