@@ -222,9 +222,7 @@ install:
   - name: jq
     type: brew
   - name: yq
-    type: shell
-    opts:
-      command: pipx install yq
+    type: pipx
   - name: direnv
     type: group
     steps:
@@ -352,6 +350,12 @@ install:
       only: ['macos']
     opts:
       command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
+  - name: jedi-language-server
+    type: pipx
+  - name: black
+    type: pipx
+  - name: black
+    type: pipx
   - name: zplug
     type: shell
     check_installed: test -d ~/.zplug
