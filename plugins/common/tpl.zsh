@@ -2,15 +2,14 @@
 
 SCAFFOLDS_DIR="$DOTFILES/scaffolds"
 
-
-tpl () {
+tpl() {
   declare -A tpl_aliases=(
-    ef "editorfiles"
+    ef "editorfile"
     gh "github"
     ghp "github.pnpm"
   )
   declare -A tpl_no_name=(
-    editorfiles "1"
+    editorfile "1"
     gh "1"
     ghp "1"
   )
@@ -22,7 +21,7 @@ tpl () {
   fi
 
   if [[ "${tpl_no_name[$key]}" -eq 1 ]]; then
-    name="- $args"
+    name="$args -"
   else
     if [[ -z "$args" ]]; then
       echo_red "Usage: tpl $key <name>"
@@ -32,4 +31,3 @@ tpl () {
 
   simple-scaffold -g chenasraf/templates -k $key $args
 }
-

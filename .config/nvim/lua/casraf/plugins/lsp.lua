@@ -267,7 +267,13 @@ return {
           enabled = true,
           notify_errors = false, -- if there is an error whilst running then notify the user
           -- open_cmd = "tabedit",  -- command to use to open the log buffer
-          open_cmd = "belowright vnew"
+          open_cmd = "belowright vnew",
+          filter = function(line)
+            if line:match("^D/EGL") or line:match("^E/libEGL") then
+              return false
+            end
+            return true
+          end,
         },
         dev_tools = {
           autostart = false,         -- autostart devtools server if not detected

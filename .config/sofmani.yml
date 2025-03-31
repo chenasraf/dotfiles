@@ -119,21 +119,31 @@ install:
         opts:
           tap: jesseduffield/lazygit
       - name: lazygit
-        type: shell
-        platforms:
-          only: ['linux']
-        check_has_update: |
-          LATEST=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-          CURRENT=$(lazygit --version | awk -F'[,=]' '{print $6}')
-          test "$LATEST" != "$CURRENT"
+        type: github-release
+        # platforms:
+        #   only: ['linux']
         opts:
-          command: |
-            cd $(mktemp -d)
-            VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-            curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${VERSION}_Linux_x86_64.tar.gz"
-            tar xf lazygit.tar.gz lazygit
-            sudo install lazygit /usr/local/bin
-            rm -rf lazygit.tar.gz lazygit
+          repository: jesseduffield/lazygit
+          strategy: tar
+          destination: ~/.cache/bin
+          # destination: /usr/local/bin
+          download_filename: lazygit_{tag}_Linux_x86_64.tar.gz
+      # - name: lazygit
+      #   type: shell
+      #   platforms:
+      #     only: ['linux']
+      #   check_has_update: |
+      #     LATEST=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+      #     CURRENT=$(lazygit --version | awk -F'[,=]' '{print $6}')
+      #     test "$LATEST" != "$CURRENT"
+      #   opts:
+      #     command: |
+      #       cd $(mktemp -d)
+      #       VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+      #       curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${VERSION}_Linux_x86_64.tar.gz"
+      #       tar xf lazygit.tar.gz lazygit
+      #       sudo install lazygit /usr/local/bin
+      #       rm -rf lazygit.tar.gz lazygit
   - name: lazygit-config
     type: group
     tags: config
