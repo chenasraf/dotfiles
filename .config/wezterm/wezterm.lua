@@ -133,9 +133,9 @@ config.keys = {
   -- Select all in nvim: Cmd+A
   { key = "a",          mods = "CMD",       action = act { SendString = "\x1bggVG" } },
   -- save in nvim: Cmd+S
-  { key = "s",          mods = "CMD",       action = act { SendString = "\x1b\x1b w\n" } },
+  { key = "s",          mods = "CMD",       action = act { SendString = "\x1b\x1b w" } },
   -- save all in nvim: Cmd+Shift+S
-  { key = "s",          mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b W\n" } },
+  { key = "s",          mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b W" } },
   -- save and cloe pane: Cmd+Opt+S
   { key = "s",          mods = "CMD|OPT",   action = act { SendString = "\x1b\x1bZZ" } },
   -- open file text search in neovim: Cmd+Shift+F
