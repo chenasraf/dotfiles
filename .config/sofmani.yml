@@ -325,7 +325,11 @@ install:
     check_installed: exit 1
     steps:
       - name: pnpm
-        type: npm
+        type: shell
+        check_has_update: exit 0
+        opts:
+          command: npm i -g pnpm
+          update_command: pnpm self-update
       - name: typescript
         bin_name: tsc
         type: pnpm
