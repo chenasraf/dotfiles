@@ -1,9 +1,9 @@
-vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart" })
-vim.keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo" })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>tE', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>tQ', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart", silent = true })
+vim.keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo", silent = true })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message', silent = true })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message', silent = true })
+vim.keymap.set('n', '<leader>tE', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message', silent = true })
+vim.keymap.set('n', '<leader>tQ', vim.diagnostic.setloclist, { desc = 'Open diagnostics list', silent = true })
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
