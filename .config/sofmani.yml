@@ -120,8 +120,8 @@ install:
           tap: jesseduffield/lazygit
       - name: lazygit
         type: github-release
-        # platforms:
-        #   only: ['linux']
+        platforms:
+          only: ['linux']
         opts:
           repository: jesseduffield/lazygit
           strategy: tar
