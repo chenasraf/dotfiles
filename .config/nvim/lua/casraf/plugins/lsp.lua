@@ -269,6 +269,9 @@ return {
           -- open_cmd = "tabedit",  -- command to use to open the log buffer
           open_cmd = "belowright vnew",
           filter = function(line)
+            if line == nil then
+              return false
+            end
             if line:match("^D/EGL") or line:match("^E/libEGL") then
               return false
             end

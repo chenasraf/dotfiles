@@ -31,25 +31,25 @@ return {
 
     vim.keymap.set("n", "=", format_manually, { desc = "[nolsp] format" })
 
-    nls.setup({
-      ---@diagnostic disable-next-line: unused-local
-      on_attach = function(client, bufnr)
-        -- if client.supports_method("textDocument/formatting") then
-        vim.keymap.set("n", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
-        -- format on save
-        vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-        vim.api.nvim_create_autocmd(event, {
-          buffer = bufnr,
-          group = group,
-          callback = format_on_save,
-          desc = "[lsp] format on save",
-        })
-        -- end
-
-        -- if client.supports_method("textDocument/rangeFormatting") then
-        vim.keymap.set("x", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
-        -- end
-      end,
+    -- format on save
+    vim.api.nvim_clear_autocmds({ group = group })
+    vim.api.nvim_create_autocmd(event, {
+      group = group,
+      callback = format_on_save,
+      desc = "[lsp] format on save",
     })
+
+    -- nls.setup({
+    --   ---@diagnostic disable-next-line: unused-local
+    --   on_attach = function(client, bufnr)
+    --     -- if client.supports_method("textDocument/formatting") then
+    --     vim.keymap.set("n", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
+    --     -- end
+    --
+    --     -- if client.supports_method("textDocument/rangeFormatting") then
+    --     vim.keymap.set("x", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
+    --     -- end
+    --   end,
+    -- })
   end
 }
