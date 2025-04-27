@@ -1,6 +1,6 @@
 return {
   'MunifTanjim/prettier.nvim',
-  dependencies = { 'jose-elias-alvarez/null-ls.nvim' },
+  -- dependencies = { 'jose-elias-alvarez/null-ls.nvim' },
   config = function()
     require("prettier").setup({
       bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
@@ -20,7 +20,7 @@ return {
       },
     })
 
-    local nls = require("null-ls")
+    -- local nls = require("null-ls")
     local custom_formatting = require("casraf.lib.custom_formatting")
     local format_on_save = custom_formatting.format_on_save
     local format_manually = custom_formatting.format_manually
