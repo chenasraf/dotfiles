@@ -239,7 +239,7 @@ keybinding:
     update: u
     bulkMenu: b
 os:
-  openLink: open "$(echo "{{link}}" | sed 's/\[/\%5B/g; s/\]/\%5D/g')"
+  openLink: open "$(echo {{link}} | sed 's/\[/\%5B/g; s/\]/\%5D/g')"
 disableStartupPopups: false
 customCommands:
   - key: 'B'
