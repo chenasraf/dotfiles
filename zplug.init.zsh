@@ -4,7 +4,7 @@ source ~/.zplug/init.zsh
 zplug "$DOTFILES/plugins", from:local
 
 # Remote
-zplug "chenasraf/git-open", at:develop
+zplug "chenasraf/git-open", at:master
 zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "zsh-users/zsh-autosuggestions"
