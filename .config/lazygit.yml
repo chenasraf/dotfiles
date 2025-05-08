@@ -273,7 +273,12 @@ customCommands:
         branch) ARG="$REMOTE_BRANCH";;
         commit) ARG="$COMMIT";;
         file) ARG="$FILE";;
-        pr) ARG="$LOCAL_BRANCH $REMOTE_BRANCH";;
+        pr)
+          ARG="$LOCAL_BRANCH"
+          if [[ -n "$REMOTE_BRANCH" ]]; then
+            ARG=$ARG $REMOTE_BRANCH
+          fi
+          ;;
         project) ARG="";;
         prs) ARG="";;
         ci) ARG="";;

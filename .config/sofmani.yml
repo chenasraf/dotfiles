@@ -85,6 +85,8 @@ install:
     platforms:
       only: ['macos']
     opts:
+      check_installed: exit 1
+      check_has_update: exit 0
       command: |
         defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
         defaults write -g NSScrollViewRubberbanding -bool FALSE
