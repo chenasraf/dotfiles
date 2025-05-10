@@ -151,9 +151,9 @@ local function copy_wrapped(before, after)
   end
 end
 
-vim.keymap.set('n', '<leader><leader>x', "<Cmd>source %<CR>", { desc = "Source current file" })
-vim.keymap.set('n', '<leader>x', "<Cmd>.lua<CR>", { desc = "Execute current line" })
-vim.keymap.set('v', '<leader>x', "<Cmd>lua<CR>", { desc = "Execute selection" })
+vim.keymap.set('n', '<leader><leader>x', ":%source<CR>", { desc = "Source current file", silent = true })
+vim.keymap.set('n', '<leader>x', "<Cmd>.lua<CR>", { desc = "Execute current line", silent = true })
+vim.keymap.set('v', '<leader>x', ":lua<CR>", { desc = "Execute selection", silent = true })
 
 vim.keymap.set("n", "<leader>jc", function()
   copy_wrapped(nil, nil)

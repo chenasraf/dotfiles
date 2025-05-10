@@ -71,10 +71,34 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
+local group = vim.api.nvim_create_augroup("flutter", {})
+vim.api.nvim_clear_autocmds({ group = group })
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = group,
+  callback = function(args)
+    local fname = vim.api.nvim_buf_get_name(args.buf)
+    -- if not fname:match("%.dart$") then return end
+
+    local pubspec = vim.fs.find("pubspec.yaml", {
+      upward = true,
+      path = fname,
+      stop = vim.loop.os_homedir(),
+      type = "file",
+    })[1]
+
+    if pubspec then
+      vim.keymap.set("n", "<F5>", ":Telescope flutter commands<CR>", {
+        buffer = args.buf,
+        desc = "Flutter commands",
+        silent = true,
+      })
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "dart",
   callback = function()
-    vim.keymap.set("n", "<F5>", ":Telescope flutter commands<CR>", { buffer = true, desc = "Flutter commands" })
     vim.keymap.set("n", 'gd', vim.lsp.buf.declaration,
       { buffer = true, desc = 'Type [D]efinition', remap = true })
   end,
