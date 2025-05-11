@@ -148,14 +148,11 @@ install:
       #       sudo install lazygit /usr/local/bin
       #       rm -rf lazygit.tar.gz lazygit
   - name: lazygit-config
-    type: group
-    tags: config
-    steps:
-      - name: lazygit
-        type: rsync
-        opts:
-          source: $DOTFILES/.config/lazygit.yml
-          destination: $LAZYGIT_HOME/config.yml
+    type: rsync
+    tags: lazygit lazygit-config config
+    opts:
+      source: $DOTFILES/.config/lazygit.yml
+      destination: $LAZYGIT_HOME/config.yml
   - name: lazydocker
     type: group
     steps:
