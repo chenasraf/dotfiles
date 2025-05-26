@@ -257,6 +257,10 @@ install:
           only: ['linux']
         opts:
           command: curl -sfS https://dotenvx.sh | sh
+  - name: easy-move-plus-resize
+    type: brew
+  - name: ffmpeg
+    type: brew
   - name: ollama
     type: brew
     post_install: brew services start ollama
