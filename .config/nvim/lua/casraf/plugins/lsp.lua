@@ -1,7 +1,9 @@
 vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart", silent = true })
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo", silent = true })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message', silent = true })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message', silent = true })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, wrap = true, float = true }) end,
+  { desc = 'Go to previous diagnostic message', silent = true })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, wrap = true, float = true }) end,
+  { desc = 'Go to next diagnostic message', silent = true })
 vim.keymap.set('n', '<leader>tE', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message', silent = true })
 vim.keymap.set('n', '<leader>tQ', vim.diagnostic.setloclist, { desc = 'Open diagnostics list', silent = true })
 
@@ -131,101 +133,68 @@ vim.tbl_extend('keep', dart_capabilities, capabilities)
 
 return {
   {
-    -- LSP Configuration & Plugins
-    -- 'neovim/nvim-lspconfig',
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
     dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', opts = {} },
-      -- 'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
       { 'j-hui/fidget.nvim',       opts = {} },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
     config = function()
-      -- mason-lspconfig requires that these setup functions are called in this order
-      -- before setting up the servers.
       require('mason').setup()
-      require('mason-lspconfig').setup()
-      -- Enable the following language servers
-      --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      --
-      --  Add any additional override configuration in the following tables. They will be passed to
-      --  the `settings` field of the server config. You must look up that documentation yourself.
-      --
-      --  If you want to override the default filetypes that your language server will attach to you can
-      --  define the property 'filetypes' to the map in question.
-      local servers = {
-        -- astro = {},
-        ast_grep = {},
-        bashls = {},
-        -- clangd = {},
-        -- clangd = {},
-        cssls = {},
-        -- dartls = {
-        --   dart = {
-        --     cmd = { "dart", "language-server", "--protocol=lsp" },
-        --     telemetry = { enable = false },
-        --   },
-        -- },
-        eslint = {},
-        -- gopls = {},
-        -- graphql = {},
-        html = { filetypes = { 'html', 'twig', 'hbs' } },
-        -- jedi_language_server = {},
-        jsonls = {},
-        lua_ls = {
+      require('mason-lspconfig').setup {
+        ensure_installed = {
+          'ast_grep',
+          'bashls',
+          'cssls',
+          'eslint',
+          'html',
+          'jsonls',
+          'lua_ls',
+          'rust_analyzer',
+          'tailwindcss',
+          'ts_ls',
+        },
+        automatic_enable = true,
+      }
+
+      require('neodev').setup()
+
+      -- Replace `on_attach` and `capabilities` with your own if needed
+      local mason_on_attach = function(_, _) end
+      local mason_capabilities = vim.lsp.protocol.make_client_capabilities()
+
+      -- Configure individual servers using new API
+      local lsp = vim.lsp
+
+      lsp.config('lua_ls', {
+        on_attach = mason_on_attach,
+        capabilities = mason_capabilities,
+        settings = {
           Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
-            -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
             diagnostics = { disable = { 'missing-fields' } },
           },
         },
-        -- phpactor = {},
-        prettier = {},
-        -- ['pretty-php'] = {},
-        -- pyright = {},
-        rust_analyzer = {},
-        shfmt = {},
-        tailwindcss = {},
-        ts_ls = {
-          init_options = {
-            tsserver = {
-              disableSuggestions = true,
-            },
+      })
+
+      lsp.config('ts_ls', {
+        on_attach = mason_on_attach,
+        capabilities = mason_capabilities,
+        init_options = {
+          tsserver = {
+            disableSuggestions = true,
           },
         },
-        -- volar = {},
-      }
+      })
 
-
-      -- Setup neovim lua configuration
-      require('neodev').setup()
-
-      -- Ensure the servers above are installed
-      local mason_lspconfig = require('mason-lspconfig')
-      local ensure_installed = vim.tbl_filter(function(server)
-        return server ~= 'shfmt' and server ~= 'prettier'
-      end, vim.tbl_keys(servers))
-
-      mason_lspconfig.setup {
-        ensure_installed = ensure_installed,
-      }
-
-      mason_lspconfig.setup_handlers {
-        function(server_name)
-          require('lspconfig')[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-            filetypes = (servers[server_name] or {}).filetypes,
-          }
-        end,
-      }
+      -- Example: generic ones without custom settings
+      for _, server in ipairs({ 'ast_grep', 'bashls', 'cssls', 'eslint', 'html', 'jsonls', 'rust_analyzer', 'tailwindcss' }) do
+        lsp.config(server, {
+          on_attach = mason_on_attach,
+          capabilities = mason_capabilities,
+        })
+      end
     end,
   },
   {
