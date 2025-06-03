@@ -362,12 +362,6 @@ install:
       command: |
         cd $DOTFILES/utils
         pnpm i && pnpm build && pnpm ginst
-  - name: tmux-config
-    type: shell
-    platforms:
-      only: ['macos']
-    opts:
-      command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
   - name: jedi-language-server
     type: pipx
   - name: black
@@ -417,36 +411,44 @@ install:
   # tmux plugins
   - name: tmux-plugins/tpm
     type: git
-    tags: plugin
+    tags: plugin tmux
     opts:
       destination: ~/.tmux/plugins
 
   - name: catppuccin/tmux
     type: git
-    tags: plugin
+    tags: plugin tmux
     opts:
       destination: ~/.tmux/plugins
 
   - name: tmux-plugins/tmux-online-status
     type: git
-    tags: plugin
+    tags: plugin tmux
     opts:
       destination: ~/.tmux/plugins
 
   - name: tmux-plugins/tmux-battery
     type: git
-    tags: plugin
+    tags: plugin tmux
     opts:
       destination: ~/.tmux/plugins
 
   - name: tmux-plugins/tmux-cpu
     type: git
-    tags: plugin
+    tags: plugin tmux
     opts:
       destination: ~/.tmux/plugins
 
   - name: catppuccin/tmux
     type: git
-    tags: plugin
+    tags: plugin tmux
     opts:
       destination: ~/.tmux/plugins
+
+  - name: tmux-config
+    type: shell
+    tags: config tmux
+    platforms:
+      only: ['macos']
+    opts:
+      command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
