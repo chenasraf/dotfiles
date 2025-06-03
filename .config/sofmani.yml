@@ -259,6 +259,7 @@ install:
           command: curl -sfS https://dotenvx.sh | sh
   - name: easy-move-plus-resize
     type: brew
+    check_installed: test -d "/Applications/Easy Move+Resize.app"
   - name: ffmpeg
     type: brew
   - name: ollama
