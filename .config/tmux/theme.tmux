@@ -1,4 +1,4 @@
-run "${ZPLUG_REPOS}/catppuccin/tmux/catppuccin.tmux"
+run "${TMUX_PLUGINS_DIR}/tmux/catppuccin.tmux"
 
 source -F "#{d:current_file}/modules/date.tmux"
 source -F "#{d:current_file}/modules/dir.tmux"
@@ -77,6 +77,6 @@ set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_surface_0},bold"
 set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_rosewater}]"
 set -g window-status-current-style "bg=#{@thm_rosewater},fg=#{@thm_surface_0},bold"
 
-run "${ZPLUG_REPOS}/tmux-plugins/tmux-online-status/online_status.tmux"
-run "${ZPLUG_REPOS}/tmux-plugins/tmux-battery/battery.tmux"
-run "${ZPLUG_REPOS}/tmux-plugins/tmux-cpu/cpu.tmux"
+run "${TMUX_PLUGINS_DIR}/tmux-online-status/online_status.tmux"
+run "${TMUX_PLUGINS_DIR}/tmux-battery/battery.tmux"
+run "${TMUX_PLUGINS_DIR}/tmux-cpu/cpu.tmux"

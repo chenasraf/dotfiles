@@ -15,7 +15,6 @@ Some notable tools I use are:
 - Nvim (`.config/nvim`)
 - Tmux (`.config/tmux`, `utils/tx`)
 - WezTerm (`.config/wezterm/wezterm.lua`)
-- Zplug (`zplug.init.sh`)
 
 ### Requirements
 

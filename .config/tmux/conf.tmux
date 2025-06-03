@@ -1,3 +1,5 @@
+set-environment -g TMUX_PLUGINS_DIR "$HOME/.tmux/plugins"
+
 # remap prefix from 'C-b' to 'C-space'
 # unbind C-b
 # set-option -g prefix C-space
@@ -54,4 +56,4 @@ if-shell "[[ -f ~/.config/tmux/local.tmux ]]" {
 source -F "#{d:current_file}/theme.tmux"
 
 # NOTE Initialize TMUX plugin manager (keep this line at the very bottom of tmux conf)
-run '${ZPLUG_REPOS}/tmux-plugins/tpm/tpm'
+run '${TMUX_PLUGINS_DIR}/tpm/tpm'

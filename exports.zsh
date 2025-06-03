@@ -9,6 +9,10 @@ export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
 # local bin
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
+# local plugins
+export PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
+export TMUX_PLUGINS_DIR="$HOME/.tmux/plugins"
+
 # Lazygit
 if [[ -d "$HOME/Library/ApplicationSupport/lazygit" ]]; then
   export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"

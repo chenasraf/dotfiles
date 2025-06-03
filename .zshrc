@@ -3,7 +3,16 @@ export CFG="$DOTFILES/.config"
 export DOTBIN="$HOME/.config/bin"
 export DOTBIN_META="$HOME/.config/.bin"
 
-source "$DOTFILES/zplug.init.zsh"
+# Load sofmani-managed zsh plugins
+setopt +o nomatch
+for plugin in ~/.local/share/zsh/plugins/**/**/*.plugin.zsh; do
+  [ -e "$plugin" ] && source "$plugin"
+done
+source ~/.local/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+setopt -o nomatch
+
+wd() { . ~/.local/share/zsh/plugins/wd/wd.sh }
+
 source "$DOTFILES/exports.zsh"
 
 [[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"

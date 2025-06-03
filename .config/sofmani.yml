@@ -374,15 +374,79 @@ install:
     type: pipx
   - name: black
     type: pipx
-  - name: zplug
-    type: shell
-    check_installed: test -d ~/.zplug
-    check_has_update: exit 0
+
+  # Local dotfiles plugin folder
+  - name: local-plugins
+    type: rsync
+    tags: plugin
     opts:
-      command: |
-        curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-        zplug install
-        zplug load --verbose
-      update_command: |
-        source $HOME/.dotfiles/zplug.init.zsh
-        zplug update
+      source: ~/.dotfiles/plugins
+      destination: ~/.local/share/zsh/plugins
+      flags: --delete
+
+  # chenasraf/git-open plugin
+  - name: chenasraf/git-open
+    type: git
+    tags: plugin
+    opts:
+      ref: master
+      destination: ~/.local/share/zsh/plugins
+
+  # mfaerevaag/wd
+  - name: mfaerevaag/wd
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.local/share/zsh/plugins
+
+  # powerlevel10k theme
+  - name: romkatv/powerlevel10k
+    type: git
+    tags: plugin
+    opts:
+      ref: master
+      destination: ~/.local/share/zsh/plugins
+
+  # zsh-autosuggestions
+  - name: zsh-users/zsh-autosuggestions
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.local/share/zsh/plugins
+
+  # tmux plugins
+  - name: tmux-plugins/tpm
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.tmux/plugins
+
+  - name: catppuccin/tmux
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.tmux/plugins
+
+  - name: tmux-plugins/tmux-online-status
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.tmux/plugins
+
+  - name: tmux-plugins/tmux-battery
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.tmux/plugins
+
+  - name: tmux-plugins/tmux-cpu
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.tmux/plugins
+
+  - name: catppuccin/tmux
+    type: git
+    tags: plugin
+    opts:
+      destination: ~/.tmux/plugins

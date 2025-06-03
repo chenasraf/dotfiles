@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-type src >/dev/null || source "$DOTFILES/zplug.init.zsh"
 echo_green "Preparing..."
 
 # Source files
@@ -16,9 +15,6 @@ set_git_configs=$(git config --global user.signingkey &>/dev/null && echo 0 || e
 
 while [[ $# -gt 0 ]]; do
   case $1 in
-  -z | --zplug)
-    refresh_zplug=1
-    ;;
   -t | --tmux)
     refresh_tmux=1
     ;;
@@ -67,15 +63,6 @@ if [[ -z "$OPENAI_API_KEY" ]]; then
     echo_yellow "To add the OpenAPI key manually, please run the following to persist the key for future sessions:"
     echo "echo 'export OPENAI_API_KEY=\"YOUR_OPEN_AI_KEY_HERE\"' >> $(strip-home $DOTFILES)/_local.zsh"
   fi
-fi
-
-# Zplug packages reload
-if [[ $refresh_zplug -eq 1 ]]; then
-  echo_yellow "Reloading zplug..."
-  zplug clear
-  source "$DOTFILES/zplug.init.zsh"
-  zplug install
-  zplug load --verbose
 fi
 
 echo_green "Done"
