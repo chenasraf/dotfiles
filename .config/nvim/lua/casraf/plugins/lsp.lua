@@ -160,14 +160,13 @@ return {
       require('neodev').setup()
 
       -- Replace `on_attach` and `capabilities` with your own if needed
-      local mason_on_attach = function(_, _) end
       local mason_capabilities = vim.lsp.protocol.make_client_capabilities()
 
       -- Configure individual servers using new API
       local lsp = vim.lsp
 
       lsp.config('lua_ls', {
-        on_attach = mason_on_attach,
+        on_attach = on_attach,
         capabilities = mason_capabilities,
         settings = {
           Lua = {
@@ -179,7 +178,7 @@ return {
       })
 
       lsp.config('ts_ls', {
-        on_attach = mason_on_attach,
+        on_attach = on_attach,
         capabilities = mason_capabilities,
         init_options = {
           tsserver = {
@@ -191,7 +190,7 @@ return {
       -- Example: generic ones without custom settings
       for _, server in ipairs({ 'ast_grep', 'bashls', 'cssls', 'eslint', 'html', 'jsonls', 'rust_analyzer', 'tailwindcss' }) do
         lsp.config(server, {
-          on_attach = mason_on_attach,
+          on_attach = on_attach,
           capabilities = mason_capabilities,
         })
       end
