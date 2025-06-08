@@ -74,7 +74,7 @@ git:
   autoRefresh: true
   fetchAll: true
   branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
-  overrideGpg: false
+  overrideGpg: true
   disableForcePushing: false
   commitPrefixes: {}
   parseEmoji: false

@@ -233,6 +233,8 @@ install:
     type: brew
   - name: yq
     type: pipx
+  - name: catimg
+    type: brew
   - name: direnv
     type: group
     steps:

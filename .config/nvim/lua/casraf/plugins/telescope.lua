@@ -191,4 +191,18 @@ return {
       end, 0)
     end
   },
+  {
+    'chenasraf/telescope-glyph.nvim',
+    config = function()
+      require('telescope').load_extension('glyph')
+      vim.keymap.set('n', '<leader>fc', '<Cmd>Telescope glyph<CR>', { desc = '[F]ind [G]lyphs' })
+    end,
+  },
+  {
+    'xiyaowong/telescope-emoji.nvim',
+    config = function()
+      require('telescope').load_extension('emoji')
+      vim.keymap.set('n', '<leader>fe', '<Cmd>Telescope emoji<CR>', { desc = '[F]ind [E]mojis' })
+    end,
+  }
 }
