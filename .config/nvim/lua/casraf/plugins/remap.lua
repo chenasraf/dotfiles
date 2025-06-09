@@ -151,9 +151,34 @@ local function copy_wrapped(before, after)
   end
 end
 
-vim.keymap.set('n', '<leader><leader>x', ":%source<CR>", { desc = "Source current file", silent = true })
-vim.keymap.set('n', '<leader>x', "<Cmd>.lua<CR>", { desc = "Execute current line", silent = true })
-vim.keymap.set('v', '<leader>x', ":lua<CR>", { desc = "Execute selection", silent = true })
+vim.keymap.set('n', '<leader><leader>x', function()
+  vim.cmd('%source')
+  vim.notify('Sourced current file: ' .. vim.fn.expand('%'), vim.log.levels.INFO)
+end, { desc = "Source current file", silent = true })
+
+vim.keymap.set('n', '<leader>x', function()
+  vim.cmd('.lua')
+  vim.notify('Executed current line as Lua', vim.log.levels.INFO)
+end, { desc = "Execute current line", silent = true })
+
+vim.keymap.set('v', '<leader>x', function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local start_row, start_col = table.unpack(vim.api.nvim_buf_get_mark(bufnr, '<'))
+  local end_row, end_col = table.unpack(vim.api.nvim_buf_get_mark(bufnr, '>'))
+
+  local lines = vim.api.nvim_buf_get_lines(bufnr, start_row - 1, end_row, false)
+  lines[1] = string.sub(lines[1], start_col)
+  lines[#lines] = string.sub(lines[#lines], 1, end_col)
+
+  local chunk = table.concat(lines, '\n')
+  vim.notify('Executed Lua selection', vim.log.levels.INFO)
+  ---@diagnostic disable-next-line: param-type-mismatch
+  local ok, err = pcall(load(chunk))
+  if not ok then
+    vim.notify('Lua error: ' .. err, vim.log.levels.ERROR)
+  end
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
+end, { desc = 'Execute selection', silent = true })
 
 vim.keymap.set("n", "<leader>jc", function()
   copy_wrapped(nil, nil)

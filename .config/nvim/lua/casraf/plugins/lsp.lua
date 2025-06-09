@@ -170,9 +170,20 @@ return {
         capabilities = mason_capabilities,
         settings = {
           Lua = {
-            workspace = { checkThirdParty = false },
+            workspace = {
+              checkThirdParty = false,
+              library = {
+                vim.env.VIMRUNTIME, -- helps recognize `vim` global
+                '${3rd}/luv/library',
+                '${3rd}/busted/library',
+              },
+            },
             telemetry = { enable = false },
-            diagnostics = { disable = { 'missing-fields' } },
+            diagnostics = {
+              disable = { 'missing-fields' },
+              globals = { 'vim' },
+
+            },
           },
         },
       })
@@ -184,6 +195,22 @@ return {
           tsserver = {
             disableSuggestions = true,
           },
+        },
+      })
+
+      lsp.config('vue_ls', {
+        filetypes = { 'vue', 'typescript', 'javascript' },
+        init_options = {
+          typescript = {
+            tsdk = (function()
+              local project_ts = vim.fn.getcwd() .. '/node_modules/typescript/lib'
+              if vim.fn.isdirectory(project_ts) == 1 then
+                return project_ts
+              else
+                return '' -- fallback: Volar will try global TS
+              end
+            end)(),
+          }
         },
       })
 
