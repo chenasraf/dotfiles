@@ -50,7 +50,7 @@ gui:
   showIcons: true
   nerdFontsVersion: ''
   showBranchCommitHash: false
-  commandLogSize: 8
+  commandLogSize: 10
   splitDiff: auto
   skipRewordInEditorWarning: false
   screenMode: ''
