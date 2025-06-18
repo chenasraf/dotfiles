@@ -92,14 +92,14 @@ install:
         defaults write -g NSScrollViewRubberbanding -bool FALSE
         defaults write cc.ffitch.shottr growingToolbar 1
 
-  - name: nvim
+  - name: nvim-config
     type: rsync
     tags: config nvim-config
     opts:
       source: $DOTFILES/.config/nvim/
       destination: ~/.config/nvim/
       flags: --delete --exclude .git --exclude .DS_Store
-  - name: config
+  - name: .config
     type: rsync
     tags: config dotfiles sofmani-config
     opts:
@@ -267,6 +267,7 @@ install:
   - name: ollama
     type: brew
     post_install: brew services start ollama
+    post_update: brew services restart ollama
   - name: openwebui
     type: shell
     check_installed: docker inspect open-webui
