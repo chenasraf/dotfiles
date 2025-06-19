@@ -7,8 +7,42 @@ defaults:
         only: ['macos']
 
 install:
+  # ----------------------------------------------------------------------
+  # 🧰 Configs & Dotfiles
+  # ----------------------------------------------------------------------
+  # Installers that sync dotfiles or apply local system configurations.
 
-  ### Configs & Main
+  - name: .config
+    type: rsync
+    tags: config dotfiles sofmani-config
+    opts:
+      source: $DOTFILES/.config/
+      destination: ~/.config/
+      flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
+
+  - name: nvim-config
+    type: rsync
+    tags: config nvim-config
+    opts:
+      source: $DOTFILES/.config/nvim/
+      destination: ~/.config/nvim/
+      flags: --delete --exclude .git --exclude .DS_Store
+
+  - name: tmux-config
+    type: shell
+    tags: config tmux
+    platforms:
+      only: ['macos']
+    opts:
+      command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
+
+  - name: lazygit-config
+    type: rsync
+    tags: lazygit lazygit-config config
+    opts:
+      source: $DOTFILES/.config/lazygit.yml
+      destination: $LAZYGIT_HOME/config.yml
+
   - name: device_uid
     type: shell
     check_installed: test -f $DOTFILES/.device_uid
@@ -29,12 +63,39 @@ install:
 
         echo $duid >$DOTFILES/.device_uid
         echo_cyan "Device UID set to \"$duid\""
+
+  - name: osx-defaults
+    type: shell
+    tags: system
+    platforms:
+      only: ['macos']
+    opts:
+      check_installed: exit 1
+      check_has_update: exit 0
+      command: |
+        defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
+        defaults write -g NSScrollViewRubberbanding -bool FALSE
+        defaults write cc.ffitch.shottr growingToolbar 1
+
+  # ----------------------------------------------------------------------
+  # 🧾 Git Setup
+  # ----------------------------------------------------------------------
+  # Installers for git config, GPG setup, aliases, delta integration, etc.
+
   - name: git-gpg
     type: shell
     tags: git
     check_installed: 'gpg --list-keys | grep -q "$GITHUB_GPG_KEY_ID"'
     opts:
       command: curl https://github.com/web-flow.gpg | gpg --import
+
+  - name: chenasraf/git-open
+    type: git
+    tags: plugin
+    opts:
+      ref: master
+      destination: ~/.local/share/zsh/plugins
+
   - name: git-config
     type: shell
     tags: git
@@ -81,43 +142,56 @@ install:
         git config --global delta.line-numbers true
         git config --global diff.colorMoved default
 
-  - name: osx-defaults
-    type: shell
-    tags: system
-    platforms:
-      only: ['macos']
-    opts:
-      check_installed: exit 1
-      check_has_update: exit 0
-      command: |
-        defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
-        defaults write -g NSScrollViewRubberbanding -bool FALSE
-        defaults write cc.ffitch.shottr growingToolbar 1
+  # ----------------------------------------------------------------------
+  # 🍺 Custom Homebrew Taps
+  # ----------------------------------------------------------------------
+  # Taps that provide custom tools or host your own formulas.
 
-  - name: nvim-config
-    type: rsync
-    tags: config nvim-config
-    opts:
-      source: $DOTFILES/.config/nvim/
-      destination: ~/.config/nvim/
-      flags: --delete --exclude .git --exclude .DS_Store
-  - name: .config
-    type: rsync
-    tags: config dotfiles sofmani-config
-    opts:
-      source: $DOTFILES/.config/
-      destination: ~/.config/
-      flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
-
-  ### My Taps
   - name: sofmani
     type: brew
     opts:
       tap: chenasraf/tap
+
   - name: treelike
-    type: brew
-    opts:
-      tap: chenasraf/tap
+    type: group
+    steps:
+      - name: treelike
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: treelike
+        type: shell
+        platforms:
+          only: ['linux']
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/treelike
+          destination: ~/.cache/bin
+          download_filename: treelike-{tag}-linux-amd64
+
+  - name: gi_gen
+    type: group
+    steps:
+      - name: gi_gen
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: gi_gen
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/gi_gen
+          destination: ~/.cache/bin
+          download_filename: gi_gen-{tag}-linux-amd64
+
+  # ----------------------------------------------------------------------
+  # 🛠️ Dev Tools & Utilities
+  # ----------------------------------------------------------------------
+  # CLI utilities and general tools used in your workflows.
+
   - name: lazygit
     type: group
     steps:
@@ -135,28 +209,7 @@ install:
           destination: ~/.cache/bin
           # destination: /usr/local/bin
           download_filename: lazygit_{tag}_Linux_x86_64.tar.gz
-      # - name: lazygit
-      #   type: shell
-      #   platforms:
-      #     only: ['linux']
-      #   check_has_update: |
-      #     LATEST=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-      #     CURRENT=$(lazygit --version | awk -F'[,=]' '{print $6}')
-      #     test "$LATEST" != "$CURRENT"
-      #   opts:
-      #     command: |
-      #       cd $(mktemp -d)
-      #       VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-      #       curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${VERSION}_Linux_x86_64.tar.gz"
-      #       tar xf lazygit.tar.gz lazygit
-      #       sudo install lazygit /usr/local/bin
-      #       rm -rf lazygit.tar.gz lazygit
-  - name: lazygit-config
-    type: rsync
-    tags: lazygit lazygit-config config
-    opts:
-      source: $DOTFILES/.config/lazygit.yml
-      destination: $LAZYGIT_HOME/config.yml
+
   - name: lazydocker
     type: group
     steps:
@@ -174,20 +227,10 @@ install:
           destination: ~/.cache/bin
           # destination: /usr/local/bin
           download_filename: lazydocker_{tag}_Linux_x86_64.tar.gz
-      # - name: lazydocker
-      #   type: shell
-      #   platforms:
-      #     only: ['linux']
-      #   opts:
-      #     command: |
-      #       cd $(mktemp -d)
-      #       VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-      #       curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${VERSION}_Linux_x86_64.tar.gz"
-      #       tar xf lazydocker.tar.gz lazydocker
-      #       sudo install lazydocker /usr/local/bin
-      #       rm -rf lazydocker.tar.gz lazydocker
+
   - name: atuin
     type: brew
+
   - name: delta
     type: group
     steps:
@@ -201,56 +244,13 @@ install:
       - name: git-delta
         type: brew
         bin_name: delta
-  - name: fnm
-    type: shell
-    post_install: |
-      fnm install --lts
-      fnm use lts-latest
-    opts:
-      command: curl -fsSL https://fnm.vercel.app/install | bash
-  - name: pyenv
-    type: group
-    steps:
-      - name: pyenv
-        type: brew
-      - name: pyenv
-        type: shell
-        platforms:
-          only: ['linux']
-        opts:
-          command: 'curl https://pyenv.run | bash'
-  - name: pipx
-    type: group
-    post_install: sudo pipx ensurepath --global
-    steps:
-      - name: pipx
-        type: brew
-      - name: pipx
-        type: apt
-        platforms:
-          only: ['linux']
-  - name: pandoc
-    type: group
-    steps:
-      - name: pandoc
-        type: brew
-      - name: pandoc
-        type: shell
-        platforms:
-          only: ['linux']
-        opts:
-          command: |
-            cd $(mktemp -d)
-            VERSION=$(curl -s "https://api.github.com/repos/jgm/pandoc/tags" | jq -r ".[] | select(.name | contains('cli')) | .name" | head -n 1)
-            curl -Lo pandoc.deb "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-${VERSION}-1-amd64.deb"
-            dpkg -i pandoc.deb
-            rm -rf pandoc.deb
+
   - name: jq
     type: brew
+
   - name: yq
     type: pipx
-  - name: catimg
-    type: brew
+
   - name: direnv
     type: group
     steps:
@@ -262,6 +262,7 @@ install:
           only: ['linux']
         opts:
           command: export bin_path=/usr/local/bin curl -sfL https://direnv.net/install.sh | bash
+
   - name: dotenvx
     type: group
     steps:
@@ -275,15 +276,15 @@ install:
           only: ['linux']
         opts:
           command: curl -sfS https://dotenvx.sh | sh
-  - name: easy-move-plus-resize
-    type: brew
-    check_installed: test -d "/Applications/Easy Move+Resize.app"
+
   - name: ffmpeg
     type: brew
+
   - name: ollama
     type: brew
     post_install: brew services start ollama
     post_update: brew services restart ollama
+
   - name: openwebui
     type: shell
     check_installed: docker inspect open-webui
@@ -298,83 +299,10 @@ install:
           --name open-webui \
           --restart always \
           ghcr.io/open-webui/open-webui:main
-  - name: gi_gen
-    type: group
-    steps:
-      - name: gi_gen
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: gi_gen
-        type: shell
-        platforms:
-          only: ['linux']
-        check_has_update: |
-          VERSION=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-          if [[ "$VERSION" != $(cat $DOTBIN_META/gi_gen) ]]; then
-            exit 0
-          fi
-          exit 1
-        opts:
-          command: |
-            VERSION=$(curl -s "https://api.github.com/repos/chenasraf/gi_gen/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-            mkdir -p "$DOTBIN_META"
-            echo $VERSION > $DOTBIN_META/gi_gen
-            curl -L https://github.com/chenasraf/gi_gen/releases/download/${VERSION}/gi_gen-${VERSION}-linux-amd -o $DOTBIN/gi_gen
-  - name: treelike
-    type: group
-    steps:
-      - name: treelike
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: treelike
-        type: shell
-        platforms:
-          only: ['linux']
-        check_has_update: |
-          VERSION=$(curl -s "https://api.github.com/repos/chenasraf/treelike/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-          if [[ "$VERSION" != $(cat $DOTBIN_META/treelike) ]]; then
-            exit 0
-          fi
-          exit 1
-        opts:
-          command: |
-            VERSION=$(curl -s "https://api.github.com/repos/chenasraf/treelike/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-            mkdir -p "$DOTBIN_META"
-            echo $VERSION > $DOTBIN_META/treelike
-            curl -L https://github.com/chenasraf/treelike/releases/download/${VERSION}/gi_gen-${VERSION}-linux-amd -o $DOTBIN/gi_gen
-  - name: pnpm
-    type: group
-    check_installed: exit 1
-    steps:
-      - name: pnpm
-        type: shell
-        check_has_update: exit 0
-        opts:
-          command: npm i -g pnpm
-          update_command: pnpm self-update
-      - name: typescript
-        bin_name: tsc
-        type: pnpm
-        opts:
-          command: pnpm i -g typescript
-      - name: tldr
-        type: pnpm
-      - name: simple-scaffold
-        type: pnpm
-      - name: firebase-tools
-        bin_name: firebase
-        type: pnpm
-      - name: prettier
-        type: pnpm
-      - name: http-server
-        type: pnpm
-      - name: licenseg
-        type: pnpm
-      - name: vscode-langservers-extracted
-        bin_name: vscode-json-language-server
-        type: pnpm
+
+  - name: catimg
+    type: brew
+
   - name: home
     type: shell
     opts:
@@ -382,14 +310,132 @@ install:
       command: |
         cd $DOTFILES/utils
         pnpm i && pnpm build && pnpm ginst
-  - name: jedi-language-server
-    type: pipx
-  - name: black
-    type: pipx
-  - name: black
-    type: pipx
 
-  # Local dotfiles plugin folder
+  - name: pandoc
+    type: group
+    steps:
+      - name: pandoc
+        type: brew
+      - name: pandoc
+        # type: github-release
+        # platforms:
+        #   only: ['linux']
+        # opts:
+        #   repository: jgm/pandoc
+        #   destination: ~/.cache/bin
+        #   download_filename: pandoc-{tag}-linux-amd64
+        type: shell
+        platforms:
+          only: ['linux']
+        opts:
+          command: |
+            cd $(mktemp -d)
+            VERSION=$(curl -s "https://api.github.com/repos/jgm/pandoc/tags" | jq -r ".[] | select(.name | contains('cli')) | .name" | head -n 1)
+            curl -Lo pandoc.deb "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-${VERSION}-1-amd64.deb"
+            dpkg -i pandoc.deb
+            rm -rf pandoc.deb
+
+  # ----------------------------------------------------------------------
+  # 💻 Language Runtimes & Package Managers
+  # ----------------------------------------------------------------------
+  # Installers for language version managers like pyenv, fnm, etc.
+
+  - name: fnm
+    type: shell
+    post_install: |
+      fnm install --lts
+      fnm use lts-latest
+    opts:
+      command: curl -fsSL https://fnm.vercel.app/install | bash
+
+  - name: pyenv
+    type: group
+    steps:
+      - name: pyenv
+        type: brew
+      - name: pyenv
+        type: shell
+        platforms:
+          only: ['linux']
+        opts:
+          command: 'curl https://pyenv.run | bash'
+
+  # ----------------------------------------------------------------------
+  # 📦 PNPM Ecosystem
+  # ----------------------------------------------------------------------
+  # Global CLI tools and utilities installed via pnpm.
+
+  - name: pnpm
+    type: group
+    steps:
+
+      - name: pnpm
+        type: shell
+        check_has_update: exit 0
+        opts:
+          command: npm i -g pnpm
+          update_command: pnpm self-update
+
+      - name: typescript
+        bin_name: tsc
+        type: pnpm
+        opts:
+          command: pnpm i -g typescript
+
+      - name: tldr
+        type: pnpm
+
+      - name: simple-scaffold
+        type: pnpm
+
+      - name: firebase-tools
+        bin_name: firebase
+        type: pnpm
+
+      - name: prettier
+        type: pnpm
+
+      - name: http-server
+        type: pnpm
+
+      - name: licenseg
+        type: pnpm
+
+      - name: vscode-langservers-extracted
+        bin_name: vscode-json-language-server
+        type: pnpm
+
+  # ----------------------------------------------------------------------
+  # 🐍 Python Tools (via pipx)
+  # ----------------------------------------------------------------------
+  # Python tools and utilities installed via pipx.
+
+  - name: pipx
+    type: group
+    post_install: sudo pipx ensurepath --global
+    steps:
+      - name: pipx
+        type: brew
+
+      - name: pipx
+        type: apt
+        platforms:
+          only: ['linux']
+
+      - name: jedi-language-server
+        type: pipx
+
+      - name: black
+        type: pipx
+
+      - name: black
+        type: pipx
+
+  # ----------------------------------------------------------------------
+  # 🔌 Zsh & Tmux Plugins
+  # ----------------------------------------------------------------------
+  # Git-based plugins and themes for Zsh shell and Tmux.
+
   - name: local-plugins
     type: rsync
     tags: plugin
@@ -398,37 +444,25 @@ install:
       destination: ~/.local/share/zsh/plugins
       flags: --delete
 
-  # chenasraf/git-open plugin
-  - name: chenasraf/git-open
-    type: git
-    tags: plugin
-    opts:
-      ref: master
-      destination: ~/.local/share/zsh/plugins
-
-  # mfaerevaag/wd
   - name: mfaerevaag/wd
     type: git
-    tags: plugin
+    tags: plugin zsh
     opts:
       destination: ~/.local/share/zsh/plugins
 
-  # powerlevel10k theme
   - name: romkatv/powerlevel10k
     type: git
-    tags: plugin
+    tags: plugin zsh
     opts:
       ref: master
       destination: ~/.local/share/zsh/plugins
 
-  # zsh-autosuggestions
   - name: zsh-users/zsh-autosuggestions
     type: git
-    tags: plugin
+    tags: plugin zsh
     opts:
       destination: ~/.local/share/zsh/plugins
 
-  # tmux plugins
   - name: tmux-plugins/tpm
     type: git
     tags: plugin tmux
@@ -459,16 +493,11 @@ install:
     opts:
       destination: ~/.tmux/plugins
 
-  - name: catppuccin/tmux
-    type: git
-    tags: plugin tmux
-    opts:
-      destination: ~/.tmux/plugins
+  # ----------------------------------------------------------------------
+  # 🧭 Desktop Productivity Tools
+  # ----------------------------------------------------------------------
+  # Your own tools or other GitHub binaries not installed via a package manager.
 
-  - name: tmux-config
-    type: shell
-    tags: config tmux
-    platforms:
-      only: ['macos']
-    opts:
-      command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
+  - name: easy-move-plus-resize
+    type: brew
+    check_installed: test -d "/Applications/Easy Move+Resize.app"
