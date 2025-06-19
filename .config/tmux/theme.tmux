@@ -1,4 +1,4 @@
-run "${TMUX_PLUGINS_DIR}/tmux/catppuccin.tmux"
+run "${TMUX_PLUGINS_DIR}/catppuccin/tmux/catppuccin.tmux"
 
 source -F "#{d:current_file}/modules/date.tmux"
 source -F "#{d:current_file}/modules/dir.tmux"

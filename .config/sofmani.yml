@@ -1,5 +1,5 @@
 # debug: true
-# check_updates: true
+check_updates: true
 defaults:
   type:
     brew:
@@ -473,7 +473,7 @@ install:
     type: git
     tags: plugin tmux
     opts:
-      destination: ~/.tmux/plugins
+      destination: ~/.tmux/plugins/catppuccin
 
   - name: tmux-plugins/tmux-online-status
     type: git
