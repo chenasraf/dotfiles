@@ -7,6 +7,8 @@ defaults:
         only: ['macos']
 
 install:
+
+  ### Configs & Main
   - name: device_uid
     type: shell
     check_installed: test -f $DOTFILES/.device_uid
@@ -106,6 +108,8 @@ install:
       source: $DOTFILES/.config/
       destination: ~/.config/
       flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
+
+  ### My Taps
   - name: sofmani
     type: brew
     opts:
@@ -161,17 +165,29 @@ install:
         opts:
           tap: jesseduffield/lazydocker
       - name: lazydocker
-        type: shell
+        type: github-release
         platforms:
           only: ['linux']
         opts:
-          command: |
-            cd $(mktemp -d)
-            VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-            curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${VERSION}_Linux_x86_64.tar.gz"
-            tar xf lazydocker.tar.gz lazydocker
-            sudo install lazydocker /usr/local/bin
-            rm -rf lazydocker.tar.gz lazydocker
+          repository: jesseduffield/lazydocker
+          strategy: tar
+          destination: ~/.cache/bin
+          # destination: /usr/local/bin
+          download_filename: lazydocker_{tag}_Linux_x86_64.tar.gz
+      # - name: lazydocker
+      #   type: shell
+      #   platforms:
+      #     only: ['linux']
+      #   opts:
+      #     command: |
+      #       cd $(mktemp -d)
+      #       VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazydocker/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+      #       curl -Lo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/releases/latest/download/lazydocker_${VERSION}_Linux_x86_64.tar.gz"
+      #       tar xf lazydocker.tar.gz lazydocker
+      #       sudo install lazydocker /usr/local/bin
+      #       rm -rf lazydocker.tar.gz lazydocker
+  - name: atuin
+    type: brew
   - name: delta
     type: group
     steps:

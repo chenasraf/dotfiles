@@ -9,6 +9,11 @@ export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
 # local bin
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
+# Atuin
+export PATH="$HOME/.atuin/bin:$PATH"
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
 # local plugins
 export PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.tmux/plugins"
