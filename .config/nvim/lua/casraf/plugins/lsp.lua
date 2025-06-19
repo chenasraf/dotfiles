@@ -140,8 +140,10 @@ return {
       'folke/neodev.nvim',
     },
     config = function()
+      local mason_lspconfig = require('mason-lspconfig')
       require('mason').setup()
-      require('mason-lspconfig').setup {
+      mason_lspconfig.setup {
+        on_attach = on_attach,
         ensure_installed = {
           'ast_grep',
           'bashls',
@@ -165,61 +167,65 @@ return {
       -- Configure individual servers using new API
       local lsp = vim.lsp
 
-      lsp.config('lua_ls', {
-        on_attach = on_attach,
-        capabilities = mason_capabilities,
-        settings = {
-          Lua = {
-            workspace = {
-              checkThirdParty = false,
-              library = {
-                vim.env.VIMRUNTIME, -- helps recognize `vim` global
-                '${3rd}/luv/library',
-                '${3rd}/busted/library',
+      -- Configurations for servers with custom settings
+      local settings = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.env.VIMRUNTIME, -- helps recognize `vim` global
+                  '${3rd}/luv/library',
+                  '${3rd}/busted/library',
+                },
+              },
+              telemetry = { enable = false },
+              diagnostics = {
+                disable = { 'missing-fields' },
+                globals = { 'vim' },
+
               },
             },
-            telemetry = { enable = false },
-            diagnostics = {
-              disable = { 'missing-fields' },
-              globals = { 'vim' },
-
+          },
+        },
+        ts_ls = {
+          init_options = {
+            tsserver = {
+              disableSuggestions = true,
             },
           },
         },
-      })
-
-      lsp.config('ts_ls', {
-        on_attach = on_attach,
-        capabilities = mason_capabilities,
-        init_options = {
-          tsserver = {
-            disableSuggestions = true,
+        vue_ls = {
+          init_options = {
+            typescript = {
+              tsdk = (function()
+                local project_ts = vim.fn.getcwd() .. '/node_modules/typescript/lib'
+                if vim.fn.isdirectory(project_ts) == 1 then
+                  return project_ts
+                else
+                  return '' -- fallback: Volar will try global TS
+                end
+              end)(),
+            }
           },
         },
-      })
+      }
 
-      lsp.config('vue_ls', {
-        filetypes = { 'vue', 'typescript', 'javascript' },
-        init_options = {
-          typescript = {
-            tsdk = (function()
-              local project_ts = vim.fn.getcwd() .. '/node_modules/typescript/lib'
-              if vim.fn.isdirectory(project_ts) == 1 then
-                return project_ts
-              else
-                return '' -- fallback: Volar will try global TS
-              end
-            end)(),
-          }
-        },
-      })
-
-      -- Example: generic ones without custom settings
-      for _, server in ipairs({ 'ast_grep', 'bashls', 'cssls', 'eslint', 'html', 'jsonls', 'rust_analyzer', 'tailwindcss' }) do
+      -- Configure all installed servers using the default settings
+      for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
         lsp.config(server, {
           on_attach = on_attach,
           capabilities = mason_capabilities,
         })
+      end
+
+      -- Configure servers with custom settings
+      for server, config in pairs(settings) do
+        lsp.config(server, vim.tbl_deep_extend('force', {
+          on_attach = on_attach,
+          capabilities = mason_capabilities,
+        }, config))
       end
     end,
   },
