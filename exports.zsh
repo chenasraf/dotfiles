@@ -11,7 +11,6 @@ export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Atuin
 export PATH="$HOME/.atuin/bin:$PATH"
-. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
 # local plugins

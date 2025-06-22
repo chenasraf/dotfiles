@@ -229,7 +229,10 @@ install:
           download_filename: lazydocker_{tag}_Linux_x86_64.tar.gz
 
   - name: atuin
-    type: brew
+    type: shell
+    opts:
+      command: curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+      update_command: atuin-update
 
   - name: delta
     type: group
