@@ -99,7 +99,7 @@ install:
   - name: git-config
     type: shell
     tags: git
-    check_installed: git config --global user.name && git config --global user.email && git config --global user.signingkey
+    check_installed: (git config --global user.name && git config --global user.email && git config --global user.signingkey) > /dev/null 2>&1
     opts:
       command: |
         git config --global user.signingkey "~/.ssh/id_casraf.pub"
@@ -290,18 +290,25 @@ install:
 
   - name: openwebui
     type: shell
-    check_installed: docker inspect open-webui
-    platforms:
-      only: ['macos']
+    check_installed: docker inspect open-webui > /dev/null 2>&1
+    check_has_update: |
+      docker pull -q ghcr.io/open-webui/open-webui:main > /dev/null 2>&1
+      LOCAL=$(docker image inspect ghcr.io/open-webui/open-webui:main --format '{{index .RepoDigests 0}}')
+      REMOTE=$(docker manifest inspect ghcr.io/open-webui/open-webui:main --insecure | grep -o '"digest": *"[^"]*"' | head -1 | cut -d'"' -f4)
+      [ "$LOCAL" != "$REMOTE" ]
     opts:
       command: |
-        docker run -d \
-          -p 3300:8080 \
-          --add-host=host.docker.internal:host-gateway \
-          -v open-webui:/app/backend/data \
-          --name open-webui \
-          --restart always \
-          ghcr.io/open-webui/open-webui:main
+        if ! docker container inspect open-webui > /dev/null 2>&1; then
+          docker run -d \
+            -p 3300:8080 \
+            --add-host=host.docker.internal:host-gateway \
+            -v open-webui:/app/backend/data \
+            --name open-webui \
+            --restart always \
+            "ghcr.io/open-webui/open-webui:main"
+        else
+          docker start open-webui
+        fi
 
   - name: catimg
     type: brew
