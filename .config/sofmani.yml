@@ -288,27 +288,16 @@ install:
     post_install: brew services start ollama
     post_update: brew services restart ollama
 
-  - name: openwebui
-    type: shell
-    check_installed: docker inspect open-webui > /dev/null 2>&1
-    check_has_update: |
-      docker pull -q ghcr.io/open-webui/open-webui:main > /dev/null 2>&1
-      LOCAL=$(docker image inspect ghcr.io/open-webui/open-webui:main --format '{{index .RepoDigests 0}}')
-      REMOTE=$(docker manifest inspect ghcr.io/open-webui/open-webui:main --insecure | grep -o '"digest": *"[^"]*"' | head -1 | cut -d'"' -f4)
-      [ "$LOCAL" != "$REMOTE" ]
+  - name: ghcr.io/open-webui/open-webui:main
+    bin_name: open-webui
+    tag: openwebui
+    type: docker
     opts:
-      command: |
-        if ! docker container inspect open-webui > /dev/null 2>&1; then
-          docker run -d \
-            -p 3300:8080 \
-            --add-host=host.docker.internal:host-gateway \
-            -v open-webui:/app/backend/data \
-            --name open-webui \
-            --restart always \
-            "ghcr.io/open-webui/open-webui:main"
-        else
-          docker start open-webui
-        fi
+      flags: >
+        -d
+        -p 3300:8080
+        --add-host=host.docker.internal:host-gateway
+        -v open-webui:/app/backend/data
 
   - name: catimg
     type: brew
@@ -413,6 +402,10 @@ install:
 
       - name: vscode-langservers-extracted
         bin_name: vscode-json-language-server
+        type: pnpm
+
+      - name: "@google/gemini-cli"
+        bin_name: gemini
         type: pnpm
 
   # ----------------------------------------------------------------------
