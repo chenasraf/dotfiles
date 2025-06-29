@@ -334,6 +334,9 @@ install:
             dpkg -i pandoc.deb
             rm -rf pandoc.deb
 
+  - name: nextcloud-talk
+    type: brew
+
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
   # ----------------------------------------------------------------------
