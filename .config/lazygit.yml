@@ -250,6 +250,12 @@ customCommands:
         title: 'Choose an action'
         key: 'action'
         options:
+          - name: 'Create Pull Request'
+            value: 'pr'
+          - name: 'Open Pull Requests'
+            value: 'prs'
+          - name: 'Open CI/Actions'
+            value: 'ci'
           - name: 'Open Branch'
             value: 'branch'
           - name: 'Open Default Branch'
@@ -258,12 +264,6 @@ customCommands:
             value: 'commit'
           - name: 'Open File'
             value: 'file'
-          - name: 'Create Pull Request'
-            value: 'pr'
-          - name: 'Open Pull Requests'
-            value: 'prs'
-          - name: 'Open CI/Actions'
-            value: 'ci'
     command: |
       ACTION={{.Form.action | quote}}
       FILE={{if .SelectedFile}}{{.SelectedFile.Name | quote}}{{end}}
