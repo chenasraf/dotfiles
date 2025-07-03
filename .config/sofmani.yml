@@ -34,7 +34,10 @@ install:
     platforms:
       only: ['macos']
     opts:
-      command: tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
+      command: |
+        if ! tmux source-file "$HOME/.config/tmux/conf.tmux"; then
+          echo "⚠️  Failed to source tmux config"
+        fi
 
   - name: lazygit-config
     type: rsync
@@ -336,6 +339,7 @@ install:
 
   - name: nextcloud-talk
     type: brew
+    check_installed: test -d "/Applications/Nextcloud Talk.app"
 
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
