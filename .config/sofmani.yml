@@ -171,7 +171,7 @@ install:
           only: ['linux']
         opts:
           repository: chenasraf/treelike
-          destination: ~/.cache/bin
+          destination: ~/.local/bin
           download_filename: treelike-{tag}-linux-amd64
 
   - name: gi_gen
@@ -187,7 +187,7 @@ install:
           only: ['linux']
         opts:
           repository: chenasraf/gi_gen
-          destination: ~/.cache/bin
+          destination: ~/.local/bin
           download_filename: gi_gen-{tag}-linux-amd64
 
   # ----------------------------------------------------------------------
@@ -209,7 +209,7 @@ install:
         opts:
           repository: jesseduffield/lazygit
           strategy: tar
-          destination: ~/.cache/bin
+          destination: ~/.local/bin
           # destination: /usr/local/bin
           download_filename: lazygit_{tag}_Linux_x86_64.tar.gz
 
@@ -230,6 +230,24 @@ install:
           destination: ~/.cache/bin
           # destination: /usr/local/bin
           download_filename: lazydocker_{tag}_Linux_x86_64.tar.gz
+
+  - name: lazysql
+    type: group
+    steps:
+      - name: lazysql
+        type: brew
+        opts:
+          tap: jorgerojas26/lazysql
+      - name: lazysql
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: jorgerojas26/lazysql
+          strategy: tar
+          destination: ~/.local/bin
+          # destination: /usr/local/bin
+          download_filename: lazysql_{tag}_Linux_x86_64.tar.gz
 
   - name: atuin
     type: shell
@@ -296,6 +314,7 @@ install:
     tag: openwebui
     type: docker
     opts:
+      skip_if_unavailable: true
       flags: >
         -d
         -p 3300:8080
@@ -324,7 +343,7 @@ install:
         #   only: ['linux']
         # opts:
         #   repository: jgm/pandoc
-        #   destination: ~/.cache/bin
+        #   destination: ~/.local/bin
         #   download_filename: pandoc-{tag}-linux-amd64
         type: shell
         platforms:
