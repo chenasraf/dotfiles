@@ -360,6 +360,44 @@ install:
     type: brew
     check_installed: test -d "/Applications/Nextcloud Talk.app"
 
+  - name: aseprite
+    type: group
+    enabled: false
+    steps:
+      - name: cmake
+        type: brew
+      - name: ninja
+        type: brew
+      - name: aseprite/aseprite
+        type: git
+        post_install: |
+          cd ~/.local/build/aseprite
+          rm -f build/CMakeCache.txt
+          ./build.sh --auto --norun
+          cp bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
+
+          RAW_TAG=$(git describe --tags --abbrev=0)
+          VERSION=${RAW_TAG#v}
+          PLIST="/Applications/Aseprite.app/Contents/Info.plist"
+          plutil -convert xml1 "$PLIST"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $VERSION" "$PLIST"
+        post_update: |
+          cd ~/.local/build/aseprite
+          rm -f build/CMakeCache.txt
+          ./build.sh --auto --norun
+          cp bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
+
+          RAW_TAG=$(git describe --tags --abbrev=0)
+          VERSION=${RAW_TAG#v}
+          PLIST="/Applications/Aseprite.app/Contents/Info.plist"
+          plutil -convert xml1 "$PLIST"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $VERSION" "$PLIST"
+        opts:
+          destination: ~/.local/build
+          clone_flags: --depth=1
+
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
   # ----------------------------------------------------------------------
