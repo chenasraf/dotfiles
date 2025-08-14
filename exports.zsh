@@ -9,10 +9,6 @@ export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
 # local bin
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Atuin
-export PATH="$HOME/.atuin/bin:$PATH"
-eval "$(atuin init zsh)"
-
 # local plugins
 export PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.tmux/plugins"
@@ -58,9 +54,22 @@ fi
 # yamllint
 export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
 
+# Atuin
+export PATH="$HOME/.atuin/bin:$PATH"
+eval "$(atuin init zsh)"
+# atuin() {
+#   unset -f atuin
+#   eval "$(command atuin init zsh)"
+#   atuin "$@"
+# }
+
 # FNM
 if [[ -f $(which fnm) ]]; then
-  eval "$(fnm env --use-on-cd)"
+  fnm() {
+    unset -f fnm
+    eval "$(command fnm env)"
+    fnm "$@"
+  }
 fi
 
 # SurrealDB
@@ -70,7 +79,11 @@ fi
 
 # Node
 if [[ -f $(which npm) ]]; then
-  export PATH="$(npm get prefix -g)/bin:$PATH"
+  npm() {
+    unset -f npm
+    export PATH="$(npm get prefix -g)/bin:$PATH"
+    npm "$@"
+  }
 fi
 
 # PNPM
@@ -82,14 +95,15 @@ esac
 
 if [[ -f $(which pnpm) ]]; then
   export PATH="$PNPM_HOME:$PATH"
-  export PATH=$(pnpm bin --global):$PATH
+  export PATH="$HOME/Library/pnpm:$PATH"
+  # export PATH=$(pnpm bin --global):$PATH
 fi
 
 # Yarn
-if [[ -f $(which yarn) ]]; then
-  export PATH="$HOME/.yarn/bin:$PATH"
-  export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-fi
+# if [[ -f $(which yarn) ]]; then
+#   export PATH="$HOME/.yarn/bin:$PATH"
+#   export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# fi
 
 # Ruby
 if [[ -f $(which ruby) ]]; then
@@ -102,8 +116,13 @@ fi
 if [[ -d "$HOME/.pyenv" ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  pyenv() {
+    unset -f pyenv
+    eval "$(command pyenv init -)"
+    eval "$(command pyenv virtualenv-init -)"
+    pyenv "$@"
+  }
 fi
 
 # Gcloud
@@ -137,9 +156,9 @@ if [[ ! -z $DOTBIN ]]; then
 fi
 
 # Rust cargo
-if [[ -f "$HOME/.cargo/env" ]]; then
-  . "$HOME/.cargo/env"
-fi
+# if [[ -f "$HOME/.cargo/env" ]]; then
+#   . "$HOME/.cargo/env"
+# fi
 
 if [[ -d "$HOME/Dev/gba/butano" ]]; then
   export BUTANO_HOME="$HOME/Dev/gba/butano"
@@ -157,7 +176,13 @@ if [[ -f $(which direnv) ]]; then
 fi
 
 if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
-if [[ -f $(which rbenv) ]]; then eval "$(rbenv init - zsh)"; fi
+if [[ -f $(which rbenv) ]]; then
+  rbenv() {
+    unset -f rbenv
+    eval "$(command rbenv init - zsh)"
+    rbenv "$@"
+  }
+fi
 
 export SHELLCHECK_OPTS='--shell=bash'
 export DOCKER_CLI_HINTS=false

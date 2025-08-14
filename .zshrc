@@ -1,3 +1,23 @@
+# NOTE profiling code
+# typeset -gA __t_start __t_end
+# setstartk() { __t_start[$1]=$EPOCHREALTIME; }
+# setendk()   { __t_end[$1]=$EPOCHREALTIME; }
+# outputmsk() {  # key [label...]
+#   local k=$1; shift
+#   float ms=$(( ( ${__t_end[$k]:-0} - ${__t_start[$k]:-0} ) * 1000.0 ))
+#   if [[ -n $* ]]; then
+#     printf "%s %.2fms\n" "$*" "$ms"
+#   else
+#     printf "%.2f\n" "$ms"
+#   fi
+# }
+#
+# setstartk zshrc
+# export PROFILING_MODE=1
+# if [ $PROFILING_MODE -ne 0 ]; then
+#     zmodload zsh/zprof
+# fi
+
 export DOTFILES="$HOME/.dotfiles"
 export CFG="$DOTFILES/.config"
 export DOTBIN="$HOME/.config/bin"
@@ -5,7 +25,7 @@ export DOTBIN_META="$HOME/.config/.bin"
 
 # Load sofmani-managed zsh plugins
 setopt +o nomatch
-for plugin in ~/.local/share/zsh/plugins/**/**/*.plugin.zsh; do
+for plugin in ~/.local/share/zsh/plugins/**/*.plugin.zsh; do
   [ -e "$plugin" ] && source "$plugin"
 done
 source ~/.local/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
@@ -47,22 +67,22 @@ bindkey "^[[1;3D" backward-word
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-export HIST_STAMPS="%d/%m/%Y %I:%M:%S"
-export HIST_FIND_NO_DUPS=true
-setopt histignoredups
+# export HIST_STAMPS="%d/%m/%Y %I:%M:%S"
+# export HIST_FIND_NO_DUPS=true
+# setopt histignoredups
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='nvim'
+# else
+#   export EDITOR='nvim'
+# fi
 
 export VISUAL="$EDITOR"
 
-tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
+# tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
 
-source "$DOTFILES/exports.zsh" # must run before zsh_init
 source "$DOTFILES/aliases.zsh"
 
 [[ ! -f "$HOME/.config/.p10k.zsh" ]] || source "$HOME/.config/.p10k.zsh"
+
