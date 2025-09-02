@@ -1,4 +1,7 @@
-vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { desc = "[L]SP [R]estart", silent = true })
+vim.keymap.set("n", "<leader>lr", function()
+  vim.cmd("LspRestart")
+  vim.notify("LSP Restarted")
+end, { desc = "[L]SP [R]estart", silent = true })
 vim.keymap.set("n", "<leader>li", ":LspInfo<CR>", { desc = "[L]SP [I]nfo", silent = true })
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, wrap = true, float = true }) end,
   { desc = 'Go to previous diagnostic message', silent = true })
