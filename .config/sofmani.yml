@@ -211,7 +211,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazygit_{tag}_Linux_x86_64.tar.gz
+          download_filename: lazygit_{version}_linux_x86_64.tar.gz
 
   - name: lazydocker
     type: group
@@ -227,9 +227,9 @@ install:
         opts:
           repository: jesseduffield/lazydocker
           strategy: tar
-          destination: ~/.cache/bin
+          destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazydocker_{tag}_Linux_x86_64.tar.gz
+          download_filename: lazydocker_{version}_linux_x86_64.tar.gz
 
   - name: lazysql
     type: group
@@ -247,7 +247,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazysql_{tag}_Linux_x86_64.tar.gz
+          download_filename: lazysql_Linux_x86_64.tar.gz
 
   - name: atuin
     type: shell
