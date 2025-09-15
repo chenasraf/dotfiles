@@ -5,6 +5,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 export MANPATH="$DOTFILES/man:$MANPATH"
 [[ ! -f "$DOTFILES/_local.zsh" ]] || source "$DOTFILES/_local.zsh"
 export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
+export EDITOR='nvim'
 
 # local bin
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
