@@ -30,12 +30,32 @@ local on_attach = function(_, bufnr)
   vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', vim.lsp.buf.code_action, { desc = 'Code [A]ction', silent = true })
   vim.keymap.set({ "n", "v", "i" }, "<F2>", vim.lsp.buf.rename)
 
-  nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-  nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  local tsb = require('telescope.builtin')
+
+  local function goto_declaration_fallback()
+    local params = vim.lsp.util.make_position_params(0, 'utf-8')
+
+    -- try definition first
+    vim.lsp.buf_request(0, 'textDocument/definition', params, function(err, result)
+      if not err and result and #result > 0 then
+        vim.lsp.util.show_document(result[1], 'utf-8', { focus = true })
+      else
+        -- fallback for Dart: use references or workspace symbol
+        if vim.bo.filetype == 'dart' then
+          tsb.lsp_references()
+        else
+          vim.notify("No definition found", vim.log.levels.WARN)
+        end
+      end
+    end)
+  end
+
+  nmap('gd', goto_declaration_fallback, '[G]oto [D]efinition')
+  nmap('gr', tsb.lsp_references, '[G]oto [R]eferences')
+  nmap('gI', tsb.lsp_implementations, '[G]oto [I]mplementation')
+  nmap('<leader>D', tsb.lsp_type_definitions, 'Type [D]efinition')
+  nmap('<leader>ds', tsb.lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ws', tsb.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
