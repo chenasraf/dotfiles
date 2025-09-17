@@ -176,7 +176,9 @@ if [[ -f $(which direnv) ]]; then
   eval "$(direnv hook zsh)"
 fi
 
-if [[ -f ~/.fzf.zsh ]]; then source ~/.fzf.zsh; fi
+if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+fi
 if [[ -f $(which rbenv) ]]; then
   rbenv() {
     unset -f rbenv
