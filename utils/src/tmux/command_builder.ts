@@ -41,7 +41,7 @@ export async function createFromConfig(opts: Opts, tmuxConfig: ParsedTmuxConfigI
     const dir = window.cwd
     const windowName = window.name || nameFix(path.basename(dir))
     log(opts, 'Creating window:', windowName)
-    commands.push(`tmux new-window -a -t ${sessionName} -n ${windowName} -c ${dir}`)
+    commands.push(`tmux new-window -t ${sessionName}:${i + 1} -n ${windowName} -c ${dir}`)
     const paneCommands: string[] = getPaneCommands(opts, window.layout, {
       rootDir: root,
       windowName,
