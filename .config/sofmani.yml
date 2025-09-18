@@ -313,6 +313,8 @@ install:
         post_update: brew services restart ollama
       - name: ollama
         type: shell
+        platforms:
+          only: ['linux']
         check_installed: ollama --version
         check_has_update: true
         opts:
