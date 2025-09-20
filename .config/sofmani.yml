@@ -155,6 +155,11 @@ install:
     opts:
       tap: chenasraf/tap
 
+  - name: vstask
+    type: brew
+    opts:
+      tap: chenasraf/tap
+
   - name: treelike
     type: group
     steps:
