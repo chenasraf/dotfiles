@@ -326,17 +326,17 @@ install:
           command: curl -fsSL https://ollama.com/install.sh | sh
           update_command: curl -fsSL https://ollama.com/install.sh | sh
 
-  - name: ghcr.io/open-webui/open-webui:main
-    bin_name: open-webui
-    tag: openwebui
-    type: docker
-    opts:
-      skip_if_unavailable: true
-      flags: >
-        -d
-        -p 3300:8080
-        --add-host=host.docker.internal:host-gateway
-        -v open-webui:/app/backend/data
+  # - name: ghcr.io/open-webui/open-webui:main
+  #   bin_name: open-webui
+  #   tag: openwebui
+  #   type: docker
+  #   opts:
+  #     skip_if_unavailable: true
+  #     flags: >
+  #       -d
+  #       -p 3300:8080
+  #       --add-host=host.docker.internal:host-gateway
+  #       -v open-webui:/app/backend/data
 
   - name: catimg
     type: brew
