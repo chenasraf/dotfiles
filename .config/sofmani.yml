@@ -309,22 +309,20 @@ install:
   - name: ffmpeg
     type: brew
 
-  - name: ollama
-    type: group
-    steps:
-      - name: ollama
-        type: brew
-        post_install: brew services start ollama
-        post_update: brew services restart ollama
-      - name: ollama
-        type: shell
-        platforms:
-          only: ['linux']
-        check_installed: ollama --version
-        check_has_update: true
-        opts:
-          command: curl -fsSL https://ollama.com/install.sh | sh
-          update_command: curl -fsSL https://ollama.com/install.sh | sh
+  # - name: ollama
+  #   type: group
+  #   steps:
+  #     - name: ollama
+  #       type: brew
+  #       post_install: brew services start ollama
+  #       post_update: brew services restart ollama
+  #     - name: ollama
+  #       type: shell
+  #       check_installed: ollama --version
+  #       check_has_update: true
+  #       opts:
+  #         command: curl -fsSL https://ollama.com/install.sh | sh
+  #         update_command: curl -fsSL https://ollama.com/install.sh | sh
 
   # - name: ghcr.io/open-webui/open-webui:main
   #   bin_name: open-webui
