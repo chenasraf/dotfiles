@@ -483,6 +483,10 @@ install:
     bin_name: gemini
     type: pnpm
 
+  - name: "@anthropic-ai/claude-code"
+    bin_name: claude
+    type: pnpm
+
   # ----------------------------------------------------------------------
   # 🐍 Python Tools (via pipx)
   # ----------------------------------------------------------------------
