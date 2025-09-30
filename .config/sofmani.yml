@@ -487,6 +487,10 @@ install:
     bin_name: claude
     type: pnpm
 
+  - name: "@openai/codex"
+    bin_name: codex
+    type: pnpm
+
   # ----------------------------------------------------------------------
   # 🐍 Python Tools (via pipx)
   # ----------------------------------------------------------------------
