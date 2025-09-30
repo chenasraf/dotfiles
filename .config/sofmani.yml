@@ -444,48 +444,44 @@ install:
   # Global CLI tools and utilities installed via pnpm.
 
   - name: pnpm
-    type: group
-    steps:
+    type: shell
+    check_has_update: exit 0
+    opts:
+      command: npm i -g pnpm
+      update_command: pnpm self-update
 
-      - name: pnpm
-        type: shell
-        check_has_update: exit 0
-        opts:
-          command: npm i -g pnpm
-          update_command: pnpm self-update
+  - name: typescript
+    bin_name: tsc
+    type: pnpm
+    opts:
+      command: pnpm i -g typescript
 
-      - name: typescript
-        bin_name: tsc
-        type: pnpm
-        opts:
-          command: pnpm i -g typescript
+  - name: tldr
+    type: pnpm
 
-      - name: tldr
-        type: pnpm
+  - name: simple-scaffold
+    type: pnpm
 
-      - name: simple-scaffold
-        type: pnpm
+  - name: firebase-tools
+    bin_name: firebase
+    type: pnpm
 
-      - name: firebase-tools
-        bin_name: firebase
-        type: pnpm
+  - name: prettier
+    type: pnpm
 
-      - name: prettier
-        type: pnpm
+  - name: http-server
+    type: pnpm
 
-      - name: http-server
-        type: pnpm
+  - name: licenseg
+    type: pnpm
 
-      - name: licenseg
-        type: pnpm
+  - name: vscode-langservers-extracted
+    bin_name: vscode-json-language-server
+    type: pnpm
 
-      - name: vscode-langservers-extracted
-        bin_name: vscode-json-language-server
-        type: pnpm
-
-      - name: "@google/gemini-cli"
-        bin_name: gemini
-        type: pnpm
+  - name: "@google/gemini-cli"
+    bin_name: gemini
+    type: pnpm
 
   # ----------------------------------------------------------------------
   # 🐍 Python Tools (via pipx)
