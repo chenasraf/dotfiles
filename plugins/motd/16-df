@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
-if is_mac; then
-  df -h /System/Volumes/Data NE
+if [[ "$(uname -s)" =~ "darwin" ]]; then
+  df -h /System/Volumes/Data 2>/dev/null
 else
-  df -h /dev/sda NE
+  df -h /dev/sd* -x devtmpfs 2>/dev/null
 fi
 echo
