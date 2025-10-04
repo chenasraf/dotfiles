@@ -3,10 +3,8 @@ autoload_completions() {
   autoload bashcompinit
   bashcompinit
   autoload -Uz compinit
-  # autocompletions
-  for i in $(ls $DOTFILES/completions); do
-    autoload $i
-  done
+  # Add completions directory to fpath
+  fpath=($DOTFILES/completions $fpath)
   compinit
 }
 
