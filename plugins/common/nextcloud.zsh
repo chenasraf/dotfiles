@@ -1,5 +1,5 @@
-alias nc-dev-start="pushd \$HOME/Dev/nextcloud-docker-dev && docker compose up -d nextcloud && popd"
-alias nc-dev-stop="pushd \$HOME/Dev/nextcloud-docker-dev && docker compose stop && popd"
+alias nc-dev-start="pushd \$HOME/Dev/nextcloud-docker-dev && docker compose up -d nextcloud; popd"
+alias nc-dev-stop="pushd \$HOME/Dev/nextcloud-docker-dev && docker compose stop; popd"
 alias nc-aio="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
 alias nc-aio-occ="nc-aio php occ"
 alias nc-aio-debug="nc-aio-occ config:system:set debug --type bool --value"
@@ -9,6 +9,14 @@ alias nc-dev-occ="nc-dev php occ"
 
 nc-dev-logs() {
   nc-dev tail $@ /var/www/html/data/nextcloud.log
+}
+
+nc-dev-pretty-logs() {
+  # Forward all args (e.g., -f) to nc-dev-logs
+  nc-dev-logs "$@" | while IFS= read -r line; do
+    printf '%s\n' "$line" | jq -C -c --unbuffered .
+    printf '\n'
+  done
 }
 
 # --- CONFIG (edit if your paths/names differ) ---
@@ -33,11 +41,11 @@ enable_nc_db_proxy() {
   local DBTYPE="" DBHOST_RAW="" DBUSER="" DBPASS="" DBNAME=""
   while IFS='=' read -r k v; do
     case "$k" in
-      dbtype)     DBTYPE="$v" ;;
-      dbhost)     DBHOST_RAW="$v" ;;
-      dbuser)     DBUSER="$v" ;;
-      dbpassword) DBPASS="$v" ;;
-      dbname)     DBNAME="$v" ;;
+    dbtype) DBTYPE="$v" ;;
+    dbhost) DBHOST_RAW="$v" ;;
+    dbuser) DBUSER="$v" ;;
+    dbpassword) DBPASS="$v" ;;
+    dbname) DBNAME="$v" ;;
     esac
   done < <(_nc_read_cfg_via_awk)
 
@@ -49,12 +57,18 @@ enable_nc_db_proxy() {
   # 2) Determine scheme and default port
   local SCHEME DBPORT DEFAULT_PORT
   case "$DBTYPE" in
-    pgsql)         SCHEME="postgres"; DEFAULT_PORT=5432 ;;
-    mysql|mariadb) SCHEME="mysql";    DEFAULT_PORT=3306 ;;
-    *)
-      echo "Unknown dbtype '$DBTYPE' (expected pgsql/mysql/mariadb)" >&2
-      return 1
-      ;;
+  pgsql)
+    SCHEME="postgres"
+    DEFAULT_PORT=5432
+    ;;
+  mysql | mariadb)
+    SCHEME="mysql"
+    DEFAULT_PORT=3306
+    ;;
+  *)
+    echo "Unknown dbtype '$DBTYPE' (expected pgsql/mysql/mariadb)" >&2
+    return 1
+    ;;
   esac
 
   # 3) Split dbhost into host[:port]
@@ -89,9 +103,9 @@ enable_nc_db_proxy() {
   # 6) Start localhost-only proxy: 127.0.0.1:$LOCALPORT -> INTERNAL_HOST:$DBPORT (inside Docker net)
   docker rm -f "$NC_PROXY_NAME" >/dev/null 2>&1 || true
   if ! docker run -d --rm --name "$NC_PROXY_NAME" --network "$NET" \
-      -p 127.0.0.1:${LOCALPORT}:${DBPORT} \
-      alpine/socat \
-      tcp-listen:${DBPORT},fork,reuseaddr tcp:${INTERNAL_HOST}:${DBPORT} >/dev/null; then
+    -p 127.0.0.1:${LOCALPORT}:${DBPORT} \
+    alpine/socat \
+    tcp-listen:${DBPORT},fork,reuseaddr tcp:${INTERNAL_HOST}:${DBPORT} >/dev/null; then
     echo "Failed to start proxy container." >&2
     return 1
   fi
@@ -115,4 +129,3 @@ disable_nc_db_proxy() {
     echo "No proxy running."
   fi
 }
-
