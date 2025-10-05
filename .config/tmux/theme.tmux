@@ -17,7 +17,7 @@ set -g @catppuccin_pane_status_enabled "off"
 set -g @catppuccin_pane_border_status "off"
 
 # NOTE Status Bar
-# set -g status-position top
+set -g status-position top
 set -g status-style ""
 set -g status-justify "absolute-centre"
 
@@ -39,16 +39,16 @@ set -gaF status-right "#{E:@catppuccin_status_application}"
 set -gaF status-right "#{E:@catppuccin_status_cpu}"
 # set -ag status-right "#{E:@catppuccin_status_session}"
 set -ag status-right "#{E:@catppuccin_status_uptime}"
-set -gaF status-right "#{E:@catppuccin_status_battery}"
+# set -gaF status-right "#{E:@catppuccin_status_battery}"
 
 set -g @online_icon "ok"
 set -g @offline_icon "nok"
-set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_mauve}]#{?#{==:#{online_status},ok},#[reverse]󰖩 #[noreverse]#[fg=#{@thm_fg}] on ,#[fg=#{@thm_red},bold]#[reverse]󰖪 #[noreverse]#[fg=#{@thm_fg}] off }"
+# set -ga status-right "#[bg=#{@thm_surface_0},fg=#{@thm_mauve}]#{?#{==:#{online_status},ok},#[reverse]󰖩 #[noreverse]#[fg=#{@thm_fg}] on ,#[fg=#{@thm_red},bold]#[reverse]󰖪 #[noreverse]#[fg=#{@thm_fg}] off }"
 
 # set -gaF status-right "#{E:@catppuccin_status_online}"
 
-set -ga status-right "#{E:@catppuccin_status_date}"
-set -ga status-right "#{E:@catppuccin_status_time}"
+# set -ga status-right "#{E:@catppuccin_status_date}"
+# set -ga status-right "#{E:@catppuccin_status_time}"
 
 set -ga status-right "#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
 
@@ -77,6 +77,6 @@ set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_surface_0},bold"
 set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_rosewater}]"
 set -g window-status-current-style "bg=#{@thm_rosewater},fg=#{@thm_surface_0},bold"
 
-run "${TMUX_PLUGINS_DIR}/tmux-online-status/online_status.tmux"
-run "${TMUX_PLUGINS_DIR}/tmux-battery/battery.tmux"
+# run "${TMUX_PLUGINS_DIR}/tmux-online-status/online_status.tmux"
+# run "${TMUX_PLUGINS_DIR}/tmux-battery/battery.tmux"
 run "${TMUX_PLUGINS_DIR}/tmux-cpu/cpu.tmux"
