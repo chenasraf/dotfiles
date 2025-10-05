@@ -6,6 +6,14 @@ return {
   opts = {
     flavor = "mocha",
     transparent_background = true,
+    custom_highlights = function(C)
+      return {
+        NormalFloat = { bg = "NONE" },
+        FloatBorder = { bg = "NONE", fg = C.surface1 },
+        TelescopeNormal = { bg = "NONE" },
+        TelescopeBorder = { bg = "NONE", fg = C.surface1 },
+      }
+    end,
   },
   config = function(_, opts)
     require("catppuccin").setup(opts)
