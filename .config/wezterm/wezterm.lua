@@ -177,6 +177,8 @@ config.keys = {
   { key = "Backspace",  mods = "CMD",       action = act { SendString = "\x15" } },
   -- Delete entire word - Opt+Backspace
   { key = "Backspace",  mods = "OPT",       action = act { SendString = "\x17" } },
+  -- Shift+Enter to send \x1b\r (some programs require this)
+  { key = "Enter",      mods = "SHIFT",     action = wezterm.action { SendString = "\x1b\r" } },
 }
 
 -- config.bidi_enabled = true
