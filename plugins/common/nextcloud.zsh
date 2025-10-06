@@ -36,7 +36,7 @@ _nc_read_cfg_via_awk() {
   ' "$NC_CFG_PATH"
 }
 
-enable_nc_db_proxy() {
+nc-enable-db-proxy() {
   # 1) Read values from config.php using the proven awk filter
   local DBTYPE="" DBHOST_RAW="" DBUSER="" DBPASS="" DBNAME=""
   while IFS='=' read -r k v; do
@@ -122,7 +122,7 @@ enable_nc_db_proxy() {
   echo "When done, run: disable_nc_db_proxy"
 }
 
-disable_nc_db_proxy() {
+nc-disable-db-proxy() {
   if docker rm -f "$NC_PROXY_NAME" >/dev/null 2>&1; then
     echo "Proxy stopped."
   else
