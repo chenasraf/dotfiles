@@ -95,8 +95,11 @@ vim.keymap.set("n", "<leader>Srv", function()
 end, { desc = "Serve working directory" })
 
 local function get_current_file_path() return vim.fn.expand('%:p') end
-local function get_current_dir_path() return vim.fn.expand('%:p:h') end
-local function get_current_file_relative_path() return vim.fn.expand('%') end
+local function get_current_dir_path() return vim.fn.expand('%:h') end
+local function get_current_file_relative_path()
+  local file = vim.api.nvim_buf_get_name(0)
+  return file == "" and "" or vim.fn.fnamemodify(file, ":.")
+end
 
 --- NOTE working directory/file utils
 
@@ -108,13 +111,43 @@ vim.api.nvim_create_user_command('Pwf', function() print(get_current_file_relati
 vim.api.nvim_create_user_command('PwF', function() print(get_current_file_path()) end,
   { nargs = 0, desc = "Print current file (full path)" })
 
+local function with_notify(fn, msg)
+  return function()
+    local result = fn()
+    msg = string.gsub(msg, "%%s", result or "")
+    vim.notify(msg, vim.log.levels.INFO)
+    return result
+  end
+end
+
 -- yank working directory/file to system clipboard
-vim.api.nvim_create_user_command('Ypd', function() vim.fn.setreg('+', get_current_dir_path()) end,
-  { nargs = 0, desc = "Yank working dir" })
-vim.api.nvim_create_user_command('Ypf', function() vim.fn.setreg('+', get_current_file_relative_path()) end,
-  { nargs = 0, desc = "Yank current file" })
-vim.api.nvim_create_user_command('YpF', function() vim.fn.setreg('+', get_current_file_path()) end,
-  { nargs = 0, desc = "Yank current file (full path)" })
+vim.api.nvim_create_user_command(
+  'Ypd',
+  with_notify(function()
+    local res = get_current_dir_path()
+    vim.fn.setreg('+', res)
+    return res
+  end, 'Yanked dir: %s'),
+  { nargs = 0, desc = "Yank working dir" }
+)
+vim.api.nvim_create_user_command(
+  'Ypf',
+  with_notify(function()
+    local res = get_current_file_relative_path()
+    vim.fn.setreg('+', res)
+    return res
+  end, 'Yanked file: %s'),
+  { nargs = 0, desc = "Yank current file" }
+)
+vim.api.nvim_create_user_command(
+  'YpF',
+  with_notify(function()
+    local res = get_current_file_path()
+    vim.fn.setreg('+', res)
+    return res
+  end, 'Yanked file: %s'),
+  { nargs = 0, desc = "Yank current file (full path)" }
+)
 
 -- NOTE toggle search highlight
 local hl_search = vim.o.hlsearch
