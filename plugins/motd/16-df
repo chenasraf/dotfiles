@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ "$(uname -s)" =~ "darwin" ]]; then
+if [[ "$(uname -s)" =~ "Darwin" ]]; then
   df -h /System/Volumes/Data 2>/dev/null
 else
   df -h /dev/sd* -x devtmpfs 2>/dev/null
