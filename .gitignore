@@ -10,3 +10,4 @@ _local.zsh
 .device_uid
 plugins/.cache
 .config/local.tmux
+var/log/sofmani
