@@ -19,6 +19,25 @@ nc-dev-pretty-logs() {
   done
 }
 
+nc-backup() {
+  if [ ! -d "/Volumes/2T SSD/Nextcloud/" ]; then
+    echo "Mount the 2T SSD first!"
+    exit 1
+  fi
+
+  rsync -avhz --delete --delete-excluded --partial --progress -e ssh \
+    --exclude 'appdata_*/' \
+    spider.casraf.dev:/mnt/ncdata/ \
+    "/Volumes/2T SSD/Nextcloud/"
+}
+
+nc-aio-force-update() {
+  app_name="$1"
+  nc-aio-occ config:app:set core lastupdatedat 0
+  nc-aio-occ config:app:set "$app_name" last_updated 0
+  nc-aio-occ app:update "$app_name"
+}
+
 # --- CONFIG (edit if your paths/names differ) ---
 NC_CFG_PATH="/var/lib/docker/volumes/nextcloud_aio_nextcloud/_data/config/config.php"
 NC_DB_CONTAINER="nextcloud-aio-database"
