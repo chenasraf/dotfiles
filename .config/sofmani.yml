@@ -527,8 +527,8 @@ install:
     tags: plugin
     opts:
       source: ~/.dotfiles/plugins
-      destination: ~/.local/share/zsh/plugins
-      flags: --delete
+      destination: ~/.local/share/zsh/
+      # flags: --delete
 
   - name: mfaerevaag/wd
     type: git
