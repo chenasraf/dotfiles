@@ -34,7 +34,7 @@ set -ga status-left "#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
 set -g status-right-length 100
 set -g status-right ""
 
-set -gaF status-right "#{E:@catppuccin_status_application}"
+# set -gaF status-right "#{E:@catppuccin_status_application}"
 # set -gaF status-right "#{E:@catppuccin_status_usage}"
 set -gaF status-right "#{E:@catppuccin_status_cpu}"
 # set -ag status-right "#{E:@catppuccin_status_session}"
