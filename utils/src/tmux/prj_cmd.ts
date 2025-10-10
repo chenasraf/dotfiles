@@ -4,11 +4,13 @@ import * as fs from 'node:fs/promises'
 import { Opts, log } from '../common'
 import { MassargCommand } from 'massarg/command'
 import { fzf, isDirectory, nameFix, parseConfig, pathExists } from './utils'
-import { createFromConfig } from './command_builder'
+import { addSimpleConfigToFile, createFromConfig } from './command_builder'
 import { format } from 'massarg/style'
 
 export type CreateOpts = Opts & {
   name?: string
+  save?: boolean
+  local?: boolean
 }
 
 export const prjCmd = new MassargCommand<CreateOpts>({
@@ -33,6 +35,10 @@ export const prjCmd = new MassargCommand<CreateOpts>({
         root: projectDir,
         windows: ['.'],
       })
+      if (opts.save) {
+        addSimpleConfigToFile(opts, config)
+      }
+
       return createFromConfig(opts, config)
     } catch (error) {
       console.log(format(error?.toString() ?? 'Unknown error', { color: 'red' }))
@@ -55,13 +61,23 @@ export const prjCmd = new MassargCommand<CreateOpts>({
     aliases: ['d'],
     description: 'Dry run',
   })
+  .flag({
+    name: 'save',
+    aliases: ['s'],
+    description: 'Save the session in config file',
+  })
+  .flag({
+    name: 'local',
+    aliases: ['l'],
+    description: 'Save the session in local config file',
+  })
   .help({ bindOption: true, bindCommand: true })
 
 async function getProjects(_opts: Opts) {
   const devDir = path.join(os.homedir(), 'Dev')
 
   const devFiles = await fs.readdir(devDir)
-  let devProjects = [] as string[]
+  const devProjects = [] as string[]
 
   for (const file of devFiles) {
     if (await isDirectory(path.join(devDir, file))) {
