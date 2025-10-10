@@ -136,7 +136,7 @@ alias trn="tmux rename-session -t"
 alias tk="trm"
 alias tks="tmux kill-server"
 alias txp="tx p"
-alias tls="tx ls -s"
+alias tls='command -v node >/dev/null || eval "$(fnm env)"; tx ls -s'
 
 # unsorted
 
