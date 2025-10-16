@@ -20,15 +20,18 @@ nc-dev-pretty-logs() {
 }
 
 nc-backup() {
-  if [ ! -d "/Volumes/2T SSD/Nextcloud/" ]; then
+  drive="/Volumes/2T SSD"
+  if [ ! -d "$drive/Nextcloud/" ]; then
     echo "Mount the 2T SSD first!"
     exit 1
   fi
 
   rsync -avhz --delete --delete-excluded --partial --progress -e ssh \
     --exclude 'appdata_*/' \
+    --exclude '._*' \
     spider.casraf.dev:/mnt/ncdata/ \
-    "/Volumes/2T SSD/Nextcloud/"
+    "$drive/Nextcloud/"
+  find "$drive" -type f -name '._*' -exec rm -f -- {} +
 }
 
 nc-aio-force-update() {
