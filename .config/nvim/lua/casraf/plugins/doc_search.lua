@@ -6,6 +6,7 @@ return {
     local npm = { name = "NPM", url = "https://www.npmjs.com/search?q={query}" }
     local dart = { name = "Dart", url = "https://dart.dev/search?q={query}" }
     local pub = { name = "Pub.dev", url = "https://pub.dev/search?q={query}" }
+    local lua = { name = "Lua", url = "https://www.lua.org/search.html?q={query}" }
 
     require("casraf.lib.doc_search").setup({
       keymap = "<leader>dd",
@@ -16,6 +17,7 @@ return {
         typescriptreact = { mdn, react, npm },
         dart = { dart, pub },
         css = { mdn },
+        lua = { lua },
       },
     })
   end,
