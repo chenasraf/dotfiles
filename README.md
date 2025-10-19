@@ -2,11 +2,13 @@
 
 These are my personal dotfiles.
 
-![image](https://github.com/chenasraf/dotfiles/assets/167217/c19520c1-fb7e-4c6f-8181-6979979c593c)
+<img width="1744" height="1081" alt="image" src="https://github.com/user-attachments/assets/51f81f88-91e9-46ad-a080-4de5541927b8" />
 
 <details><summary>Screenshots</summary>
- 
-![image](https://github.com/chenasraf/dotfiles/assets/167217/9caa45f3-586b-40f1-bcd5-8165bf7c1107) ![image](https://github.com/chenasraf/dotfiles/assets/167217/8fca7543-cdc1-45f9-92f0-fadf484077ba) ![image](https://github.com/chenasraf/dotfiles/assets/167217/3afaca9a-eda8-4625-b521-83e9946a099c) ![image](https://github.com/chenasraf/dotfiles/assets/167217/5dddef8e-92f9-4d67-860c-9b20c7074706)
+
+<img width="1744" height="1081" alt="image" src="https://github.com/user-attachments/assets/48d1629e-5330-4423-9644-dbdd30884c42" />
+<img width="1744" height="1081" alt="image" src="https://github.com/user-attachments/assets/8b236741-74f7-42b6-b2a9-ed39866e45f4" />
+<img width="1744" height="1081" alt="image" src="https://github.com/user-attachments/assets/678d44e2-49a9-407b-a8ae-74cf4f8dfd01" />
 
 </details>
 
