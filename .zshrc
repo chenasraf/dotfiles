@@ -55,12 +55,15 @@ zstyle ':completion:*:*:*:*:*' menu select
 # bindkey -e
 # Use ESC to edit the current command line:
 # check if edit-command-line not already loaded
-# which edit-command-line &>/dev/null
-# if [[ $? -ne 0 ]]; then
-#   autoload -U edit-command-line
-#   zle -N edit-command-line
-#   bindkey -M vicmd V edit-command-line
-# fi
+which edit-command-line &>/dev/null
+if [[ $? -ne 0 ]]; then
+  autoload -U edit-command-line
+  zle -N edit-command-line
+fi
+
+bindkey '^X' edit-command-line
+bindkey -M viins '^X' edit-command-line
+bindkey -M vicmd '^X' edit-command-line
 
 # back/forward word
 bindkey "^[[1;3C" forward-word
