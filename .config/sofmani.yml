@@ -524,7 +524,8 @@ install:
 
   - name: local-plugins
     type: rsync
-    tags: plugin
+    tags: plugin config
+    post_install: source "$DOTFILES/plugins/loader.zsh"
     opts:
       source: ~/.dotfiles/plugins
       destination: ~/.local/share/zsh/
