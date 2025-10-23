@@ -6,7 +6,6 @@ watchr() {
     return 1
   fi
 
-  # Raw argv -> safely quoted string for zsh
   local -a CMD=( "$@" )
   local CMD_STR="${(j: :)${(q@)CMD}}"
 
@@ -15,22 +14,21 @@ watchr() {
     return 2
   fi
 
-  # We'll run the command through zsh so pipes/globs work, then number lines with nl
   local RUNNER="zsh -o pipefail -c"
-  # Escape single quotes for safe embedding inside single quotes
   local CMD_ESC=${CMD_STR//\'/\'"\'"\'}
-  # Compose the reload command: run your command, then add line numbers
   local RELOAD_CMD="${RUNNER} '${CMD_ESC} | nl -ba -w6 -s\"  \"'"
 
   fzf --disabled \
       --no-sort \
       --ansi \
       --no-mouse \
-      --preview-window=hidden \
+      --preview 'printf "%s\n" {} | cut -c9-' \
+      --preview-window 'hidden,down,40%,wrap' \
       --height=100% \
       --layout=reverse-list \
-      --header=$'Press r to reload • q/ESC to quit • j/k to move • g/G first/last' \
+      --header=$'Press r to reload • q/ESC to quit • j/k to move • g/G first/last • p preview' \
       --prompt='watchr> ' \
+      --bind 'p:toggle-preview' \
       --bind 'change:clear-query' \
       --bind 'ctrl-s:ignore,/:ignore,alt-/:ignore' \
       --bind "start:reload:$RELOAD_CMD" \
