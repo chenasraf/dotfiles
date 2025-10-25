@@ -260,6 +260,10 @@ return {
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = function()
+      -- @type string
+      local homedir = vim.loop.os_homedir()
+      vim.notify("homedir: " .. homedir, vim.log.levels.INFO)
+
       require('flutter-tools').setup({
         ui = {
           -- the border type to use for all floating windows, the same options/formats
@@ -320,7 +324,13 @@ return {
             if line == nil then
               return false
             end
-            if line:match("^D/EGL") or line:match("^E/libEGL") then
+            if line:match("^D/EGL") or
+                line:match("^E/libEGL") or
+                ---@diagnostic disable-next-line: param-type-mismatch
+                line:match("^flutter: " .. homedir .. "/Library/Containers/") or
+                ---@diagnostic disable-next-line: param-type-mismatch
+                line:match("^" .. homedir .. "/Library/Containers/")
+            then
               return false
             end
             return true
