@@ -262,7 +262,6 @@ return {
     config = function()
       -- @type string
       local homedir = vim.loop.os_homedir()
-      vim.notify("homedir: " .. homedir, vim.log.levels.INFO)
 
       require('flutter-tools').setup({
         ui = {
