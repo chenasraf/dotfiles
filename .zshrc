@@ -60,6 +60,9 @@ bindkey -M vicmd '^X' edit-command-line
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
+# Customize word characters for navigation (remove / and = to make them word delimiters)
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
