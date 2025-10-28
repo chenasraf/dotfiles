@@ -195,6 +195,24 @@ install:
           destination: ~/.local/bin
           download_filename: gi_gen-{tag}-linux-amd64
 
+  - name: yabai
+    type: brew
+    tags: yabai
+    post_install: |
+      echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+    post_update: |
+      echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+    opts:
+      tap: koekeishiya/formulae
+
+  # - name: skhd
+  #   type: brew
+  #   tags: yabai
+  #   post_install: skhd --start-service
+  #   post_update: skhd --start-service
+  #   opts:
+  #     tap: koekeishiya/formulae
+
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
   # ----------------------------------------------------------------------
@@ -370,6 +388,22 @@ install:
             curl -Lo pandoc.deb "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-${VERSION}-1-amd64.deb"
             dpkg -i pandoc.deb
             rm -rf pandoc.deb
+
+  - name: koekeishiya/skhd
+    type: git
+    tags: yabai
+    post_install: |
+      cd ~/.local/opt/skhd
+      make install
+      cp bin/skhd ~/.local/bin/
+      skhd --start-service
+    post_update: |
+      cd ~/.local/opt/skhd
+      make install
+      cp bin/skhd ~/.local/bin/
+      skhd --start-service
+    opts:
+      destination: ~/.local/opt
 
   - name: nextcloud-talk
     type: brew

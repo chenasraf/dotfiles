@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+yabai -m config layout bsp
+
+PADDING=20
+yabai -m config top_padding    $PADDING
+yabai -m config bottom_padding $PADDING
+yabai -m config left_padding   $PADDING
+yabai -m config right_padding  $PADDING
+yabai -m config window_gap     $PADDING
