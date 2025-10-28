@@ -309,6 +309,9 @@ install:
   - name: ffmpeg
     type: brew
 
+  - name: fd
+    type: brew
+
   # - name: ollama
   #   type: group
   #   steps:
@@ -585,6 +588,6 @@ install:
   # ----------------------------------------------------------------------
   # Your own tools or other GitHub binaries not installed via a package manager.
 
-  - name: easy-move-plus-resize
-    type: brew
-    check_installed: test -d "/Applications/Easy Move+Resize.app"
+  # - name: easy-move-plus-resize
+  #   type: brew
+  #   check_installed: test -d "/Applications/Easy Move+Resize.app"
