@@ -63,6 +63,9 @@ bindkey "^[[1;3D" backward-word
 # Customize word characters for navigation (remove / and = to make them word delimiters)
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
+# Allow comments on interactive command lines
+setopt interactive_comments
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
