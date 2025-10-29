@@ -1,10 +1,32 @@
-alias nc-dev-start="pushd \$HOME/Dev/nextcloud-docker-dev && docker compose up -d nextcloud; popd"
-alias nc-dev-stop="pushd \$HOME/Dev/nextcloud-docker-dev && docker compose stop; popd"
+#!/usr/bin/env zsh
+
+NC_VERSION_FILE="$HOME/.nc-dev-version"
+NC_DEV_DIR="$HOME/Dev/nextcloud-docker-dev"
+
+nc-dev-start() {
+  local version="$1"
+  if [[ -z "$version" ]]; then
+    version="$(tr -d '\n' < $NC_VERSION_FILE)"
+    [ -z "$version" ] && version="nextcloud"
+  else
+    if [[ "$version" != "master" ]]; then
+      version="stable$version"
+    else
+      version="nextcloud"
+    fi
+  fi
+  echo "$version" > $NC_VERSION_FILE
+  pushd $HOME/Dev/nextcloud-docker-dev
+  docker compose up -d $version
+  popd
+}
+
+alias nc-dev-stop="pushd \$NC_DEV_DIR && docker compose stop; popd"
 alias nc-aio="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
 alias nc-aio-occ="nc-aio php occ"
 alias nc-aio-debug="nc-aio-occ config:system:set debug --type bool --value"
 
-alias nc-dev="docker exec --user www-data -it nextcloud-dev-nextcloud-1"
+alias nc-dev="docker exec --user www-data -it nextcloud-dev-\$(tr -d '\n' < $NC_VERSION_FILE)-1"
 alias nc-dev-occ="nc-dev php occ"
 
 nc-dev-logs() {
