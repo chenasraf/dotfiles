@@ -9,7 +9,7 @@ nc-dev-start() {
     version="$(tr -d '\n' < $NC_VERSION_FILE)"
     [ -z "$version" ] && version="nextcloud"
   else
-    if [[ "$version" != "master" ]]; then
+    if [[ "$version" != "master" && "$version" != "latest" && "$version" != "dev" ]]; then
       version="stable$version"
     else
       version="nextcloud"
