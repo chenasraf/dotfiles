@@ -26,7 +26,7 @@ alias nc-aio="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
 alias nc-aio-occ="nc-aio php occ"
 alias nc-aio-debug="nc-aio-occ config:system:set debug --type bool --value"
 
-alias nc-dev="docker exec --user www-data -it nextcloud-dev-\$(tr -d '\n' < $NC_VERSION_FILE)-1"
+alias nc-dev="docker exec --user www-data -it nextcloud-\$(tr -d '\n' < $NC_VERSION_FILE)-1"
 alias nc-dev-occ="nc-dev php occ"
 
 nc-dev-logs() {
