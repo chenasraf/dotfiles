@@ -61,6 +61,7 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
 # Customize word characters for navigation (remove / and = to make them word delimiters)
+stty werase undef
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 # Allow comments on interactive command lines
