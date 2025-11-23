@@ -57,10 +57,10 @@ gui:
   border: single
   animateExplosion: true
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
-    useConfig: false
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
+      useConfig: false
   commit:
     signOff: false
   merging:
@@ -85,6 +85,7 @@ git:
   diffContextSize: 3
   allBranchesLogCmds:
     - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
+  ignoreWhitespaceInDiffView: true
 update:
   method: prompt
   days: 14
@@ -180,7 +181,7 @@ keybinding:
     viewResetOptions: D
     fetch: f
     toggleTreeView: '`'
-    openMergeTool: M
+    openMergeOptions: M
     openStatusFilter: <c-b>
   branches:
     createPullRequest: o
