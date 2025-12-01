@@ -173,3 +173,4 @@ alias geminif="gemini -m gemini-2.5-flash"
 alias cfg-edit="vi ~/.dotfiles/.config/sofmani.yml; cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
 alias vst="vstask"
 alias lsq="lazysql"
+alias gchen="git config user.name 'Chen Asraf'; git config user.email casraf@pm.me'
