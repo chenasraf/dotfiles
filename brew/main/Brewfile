@@ -2,15 +2,34 @@ tap "chenasraf/tap"
 tap "dart-lang/dart"
 tap "dotenvx/brew"
 tap "homebrew/bundle"
+tap "homebrew/services"
+tap "homebrew/test-bot"
+tap "jesseduffield/lazydocker"
 tap "jesseduffield/lazygit"
+tap "jorgerojas26/lazysql"
+tap "koekeishiya/formulae"
 tap "leoafarias/fvm"
 tap "surrealdb/tap"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
 # Insanely fast image printing in your terminal
 brew "catimg"
+# Cross-platform make
+brew "cmake"
 # Shell script to build fancy DMGs
 brew "create-dmg"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
 # Fast and simple Node.js version manager
@@ -33,38 +52,56 @@ brew "gnupg"
 brew "jq"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Simple terminal UI for docker
-brew "lazydocker"
 # Rainbows and unicorns in your console!
 brew "lolcat"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Implementation of the Vulkan graphics and compute API on top of Metal
+brew "molten-vk"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Open source relational database management system
+brew "mysql"
+# Clean C library for processing UTF-8 Unicode data
+brew "utf8proc", args: ["HEAD"]
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Create, run, and share large language models (LLMs)
-brew "ollama"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Libraries for security-enabled client and server applications
+brew "nss", link: false
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # General-purpose scripting language
-brew "php"
+brew "php", restart_service: :changed
 # Python dependency management tool
 brew "pipenv"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# CLI for the Pkl programming language
+brew "pkl"
 # Python package management tool
 brew "poetry"
+# Python version management
+brew "pyenv"
 # Pyenv plugin to manage virtualenv
 brew "pyenv-virtualenv"
 # Generic syntax highlighter
 brew "pygments"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10", link: false
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.12"
 # Ruby version manager
 brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Static analysis and lint tool, for (ba)sh scripts
-brew "shellcheck"
+# Substitute for classic 'make' tool with autoconf/automake functionality
+brew "scons"
+# Autoformat shell script source code
+brew "shfmt"
+# Package any app for every Linux desktop, server, cloud or device
+brew "snapcraft"
 # Opinionated Lua code formatter
 brew "stylua"
 # Log file highlighter
@@ -75,14 +112,25 @@ brew "tmux", args: ["HEAD"]
 brew "tree"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Plugin for direnv to load .env files using dotenvx
+brew "chenasraf/tap/direnv-dotenvx"
 # Gitignore generator for any type of project
 brew "chenasraf/tap/gi_gen"
+# Installs software from a declerative config on any system
+brew "chenasraf/tap/sofmani"
 # Outputs a Tree-like representation from strings
 brew "chenasraf/tap/treelike"
+# Run VS Code tasks.json from the terminal with deps and OS-aware execution
+brew "chenasraf/tap/vstask"
 # SDK
 brew "dart-lang/dart/dart"
-# Better dotenv–from the creator of `dotenv`
+# Secure dotenv–from the creator of `dotenv`
 brew "dotenvx/brew/dotenvx"
+# A simple terminal UI for docker, written in Go
+brew "jesseduffield/lazydocker/lazydocker"
+brew "jorgerojas26/lazysql/lazysql"
+# A tiling window manager for macOS based on binary space partitioning.
+brew "koekeishiya/formulae/yabai"
 # Simple cli to manage Flutter SDK versions per project
 brew "leoafarias/fvm/fvm"
 # A scalable, distributed, collaborative, document-graph database
@@ -93,5 +141,7 @@ cask "1password-cli"
 cask "android-platform-tools"
 # Tools for the Android SDK
 cask "android-sdk"
+# Official Nextcloud Talk Desktop client
+cask "nextcloud-talk"
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm@nightly"
