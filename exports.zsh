@@ -66,32 +66,33 @@ eval "$(atuin init zsh)"
 
 # FNM
 if [[ -f $(which fnm) ]]; then
-  fnm() {
-    unset -f fnm
-    eval "$(command fnm env)"
-    fnm "$@"
-  }
-  npm() {
-    unset -f npm
-    if [[ -z $(fnm current) ]]; then
-      fnm default lts-latest
-    fi
-    npm "$@"
-  }
-  pnpm() {
-    unset -f pnpm
-    if [[ -z $(fnm current) ]]; then
-      fnm default lts-latest
-    fi
-    pnpm "$@"
-  }
-  node() {
-    unset -f node
-    if [[ -z $(fnm current) ]]; then
-      fnm default lts-latest
-    fi
-    node "$@"
-  }
+  fnm default lts-latest
+  # fnm() {
+  #   unset -f fnm
+  #   eval "$(command fnm env)"
+  #   fnm "$@"
+  # }
+  # npm() {
+  #   unset -f npm
+  #   if [[ -z $(fnm current) ]]; then
+  #     fnm default lts-latest
+  #   fi
+  #   npm "$@"
+  # }
+  # pnpm() {
+  #   unset -f pnpm
+  #   if [[ -z $(fnm current) ]]; then
+  #     fnm default lts-latest
+  #   fi
+  #   pnpm "$@"
+  # }
+  # node() {
+  #   unset -f node
+  #   if [[ -z $(fnm current) ]]; then
+  #     fnm default lts-latest
+  #   fi
+  #   node "$@"
+  # }
 fi
 
 # SurrealDB
