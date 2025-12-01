@@ -17,20 +17,24 @@ addalias() {
 
 source "$HOME/.dotfiles/plugins/common/os_utils.zsh"
 
-# Aliases
+# navigation
 alias ".."="cd .."
 alias "..."="cd ../.."
+alias p..="pushd .."
+alias pushd="pushd -q"
+alias popd="popd -q"
 
-# most used
+# file listing
 alias ls="ls -h --color=auto"
 alias ll="ls -l"
 alias la="ls -la"
 alias l="ls -A"
+
+# editor
 alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
 alias lvim="nvim -c':e#<1'"
-alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 
 # output pipes
 alias -g C="| pbcopy"
@@ -51,52 +55,29 @@ alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize"
 alias -g J="| jq"
+alias to-clipboard="pbcopy"
 
+# architecture
 alias arm="arch -arm64"
 alias x86="arch -x86_64"
-# [d]ev gi_gen
-alias dgi_gen="\$GOBIN/gi_gen"
-# [g]lobal gi_gen
-alias ggi_gen="\$DOTBIN/gi_gen"
-# go [i]nstall & run gi_gen
-alias igi_gen="go install && dgi_gen"
 
 # git
 alias gdiff="git diff"
 alias gpa="ga . && gc && gp"
+alias gundo="git reset --soft HEAD~1"
+alias grao="git remote add origin"
+alias gchen="git config user.name 'Chen Asraf'; git config user.email casraf@pm.me"
+alias lg="lazygit"
 grac() { git remote add origin "git@github.com:chenasraf/$1.git"; }
 
-# general
-# from https://jarv.is/notes/cool-bash-tricks-for-your-terminal-dotfiles/
-alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
-alias ip6="curl -6 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv6: '"
-alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
-alias ip="iplocal; ip4; ip6"
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-# alias pkgupdate="brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo g em update --system; sudo gem update; sudo gem cleanup; sudo softwareupdate -i -a;"
-alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g --latest; sudo \$SHELL -c \"gem update; gem cleanup\""
-alias gundo="git reset --soft HEAD~1"
-alias unq="sudo xattr -rd com.apple.quarantine"
-alias sf="search-file"
-alias fnu="find-up"
-alias dr="dotenv run"
-alias lua="luajit"
-alias prettypath="echo \$PATH | tr ':' '\n'"
-alias keypresses="xxd -psd"
-alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"
-alias lg="lazygit"
-if is_linux; then
-  alias md5="md5sum"
-fi
-alias pushd="pushd -q"
-alias popd="popd -q"
-alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezterm@nightly --force"
-alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
-
-# home
+# home/dotfiles
 alias h="home"
+alias hh="home -h"
 alias hi="source \$DOTFILES/install.zsh"
 alias hli="hl && hi"
+alias hiv="hi; vim ."
+alias hihv="hi && hv"
+alias hv="pushd \$(wd path df); vi .; popd"
 alias rh="rhome"
 alias rt="home rt"
 alias hst="home status"
@@ -108,10 +89,8 @@ alias hf="home git fetch"
 alias hp="home push"
 alias hl="home pull"
 alias hlog="home git log"
-alias hiv="hi; vim ."
-alias hv="pushd \$(wd path df); vi .; popd"
-alias spider="ssh root@spider.casraf.dev"
 alias motd="run-parts \$DOTFILES/plugins/motd"
+alias spider="ssh root@spider.casraf.dev"
 
 # docker
 alias dex="docker-exec"
@@ -123,6 +102,7 @@ alias dvolc="docker-volume-cd"
 alias dvc="docker-volume-cd"
 alias dvolp="docker-volume-path"
 alias dvp="docker-volume-path"
+alias ldc="lazydocker"
 
 # tmux
 alias tmux="tmux -f ~/.config/tmux/conf.tmux"
@@ -136,41 +116,78 @@ alias trn="tmux rename-session -t"
 alias tk="trm"
 alias tks="tmux kill-server"
 alias txp="tx p"
+alias txa="tx c -s -l -r"
 alias tls='command -v node >/dev/null || eval "$(fnm env)"; tx ls -s'
 
-# unsorted
+# network/ip
+alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
+alias ip6="curl -6 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv6: '"
+alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
+alias ip="iplocal; ip4; ip6"
 
-# addalias commands
-alias hh="home -h"
+# package management
+alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g --latest; sudo \$SHELL -c \"gem update; gem cleanup\""
 alias pi="platform_install"
-alias get-gh-token="op item get github --fields 'CI Access Token' --reveal"
-alias txa="tx c -s -l -r"
-alias hihv="hi && hv"
-alias ol="ollama"
+alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"
+alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezterm@nightly --force"
+alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
+
+# environment
+alias dr="dotenv run"
 alias dx="dotenvx"
-alias de="direnv"
 alias dxr="dx run --"
 alias dxro="dx run --overload --"
-alias olt="ollama run llama3.1"
-alias olp="ollama-prompt"
 alias dxp="dx get -pp"
 alias dx2env="dxp | jq -r 'to_entries[] | \"\\(.key)=\\\"\\(.value)\\\"\"'"
-alias to-clipboard="pbcopy"
-alias grao="git remote add origin"
-alias dotclean="find . -type f -name '._*' -delete"
-alias p..="pushd .."
+alias de="direnv"
+
+# ai
+alias ol="ollama"
+alias olt="ollama run llama3.1"
+alias olp="ollama-prompt"
 alias ollama-serve="brew services start ollama"
-alias ldc="lazydocker"
-alias opsign="eval \$(op signin)"
+alias geminif="gemini -m gemini-2.5-flash"
+
+# android emulator
 alias emulator="\$HOME/Library/Android/sdk/emulator/emulator"
 alias pixel9="emulator -avd Pixel_9_API_35"
+alias pixelwatch="emulator -avd Wear_OS_Small_Round_API_34"
+
+# 1password
+alias get-gh-token="op item get github --fields 'CI Access Token' --reveal"
+alias opsign="eval \$(op signin)"
+
+# sofmani/config
 alias cfg-update-sofmani="sofmani -u -f tag:sofmani-config"
 alias cfg-update="sofmani -u -f tag:config"
-alias pixelwatch="emulator -avd Wear_OS_Small_Round_API_34"
+alias cfg-edit="vi ~/.dotfiles/.config/sofmani.yml; cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
+
+# atuin
 alias asc="atuin script run"
 alias atu="atuin"
-alias geminif="gemini -m gemini-2.5-flash"
-alias cfg-edit="vi ~/.dotfiles/.config/sofmani.yml; cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
-alias vst="vstask"
+
+# database
 alias lsq="lazysql"
-alias gchen="git config user.name 'Chen Asraf'; git config user.email casraf@pm.me'
+
+# gi_gen
+# [d]ev gi_gen
+alias dgi_gen="\$GOBIN/gi_gen"
+# [g]lobal gi_gen
+alias ggi_gen="\$DOTBIN/gi_gen"
+# go [i]nstall & run gi_gen
+alias igi_gen="go install && dgi_gen"
+
+# general
+alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias unq="sudo xattr -rd com.apple.quarantine"
+alias sf="search-file"
+alias fnu="find-up"
+alias lua="luajit"
+alias prettypath="echo \$PATH | tr ':' '\n'"
+alias keypresses="xxd -psd"
+alias dotclean="find . -type f -name '._*' -delete"
+alias vst="vstask"
+if is_linux; then
+  alias md5="md5sum"
+fi
