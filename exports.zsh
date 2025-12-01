@@ -71,6 +71,27 @@ if [[ -f $(which fnm) ]]; then
     eval "$(command fnm env)"
     fnm "$@"
   }
+  npm() {
+    unset -f npm
+    if [[ -z $(fnm current) ]]; then
+      fnm default lts-latest
+    fi
+    npm "$@"
+  }
+  pnpm() {
+    unset -f pnpm
+    if [[ -z $(fnm current) ]]; then
+      fnm default lts-latest
+    fi
+    pnpm "$@"
+  }
+  node() {
+    unset -f node
+    if [[ -z $(fnm current) ]]; then
+      fnm default lts-latest
+    fi
+    node "$@"
+  }
 fi
 
 # SurrealDB
