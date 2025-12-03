@@ -160,6 +160,22 @@ install:
     opts:
       tap: chenasraf/tap
 
+  - name: watchr
+    type: group
+    steps:
+      - name: watchr
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: watchr
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/watchr
+          destination: ~/.local/bin
+          download_filename: watchr-{tag}-linux-amd64
+
   - name: treelike
     type: group
     steps:
