@@ -151,14 +151,36 @@ install:
   # Taps that provide custom tools or host your own formulas.
 
   - name: sofmani
-    type: brew
-    opts:
-      tap: chenasraf/tap
+    type: group
+    steps:
+      - name: sofmani
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: sofmani
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/sofmani
+          destination: ~/.local/bin
+          download_filename: sofmani-{tag}-linux-amd64
 
   - name: vstask
-    type: brew
-    opts:
-      tap: chenasraf/tap
+    type: group
+    steps:
+      - name: vstask
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: vstask
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/vstask
+          destination: ~/.local/bin
+          download_filename: vstask-{tag}-linux-amd64
 
   - name: watchr
     type: group
