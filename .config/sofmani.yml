@@ -243,8 +243,6 @@ install:
     steps:
       - name: lazygit
         type: brew
-        opts:
-          tap: jesseduffield/lazygit
       - name: lazygit
         type: github-release
         platforms:
@@ -334,7 +332,7 @@ install:
     type: brew
 
   - name: yq
-    type: pipx
+    type: brew
 
   - name: direnv
     type: group

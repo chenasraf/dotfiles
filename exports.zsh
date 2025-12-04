@@ -37,6 +37,7 @@ fi
 
 # Homebrew
 if [[ -d "/opt/homebrew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   export BREW_HOME="/usr/local"
 
   if [[ -d "$HOME/Library/Android/sdk" ]]; then
