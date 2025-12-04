@@ -292,6 +292,24 @@ install:
           # destination: /usr/local/bin
           download_filename: lazysql_Linux_x86_64.tar.gz
 
+  - name: lazyssh
+    type: group
+    steps:
+      - name: lazyssh
+        type: brew
+        opts:
+          tap: Adembc/tap
+      - name: lazyssh
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: Adembc/lazyssh
+          strategy: tar
+          destination: ~/.local/bin
+          # destination: /usr/local/bin
+          download_filename: lazysql_Linux_x86_64.tar.gz
+
   - name: atuin
     type: shell
     opts:

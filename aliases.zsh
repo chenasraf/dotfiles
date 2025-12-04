@@ -191,3 +191,4 @@ alias vst="vstask"
 if is_linux; then
   alias md5="md5sum"
 fi
+alias lssh="lazyssh"
