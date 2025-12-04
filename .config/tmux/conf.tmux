@@ -11,6 +11,7 @@ bind | split-window -h -c "#{pane_current_path}"
 bind - split-window -v -c "#{pane_current_path}"
 bind _ split-window -v -c "#{pane_current_path}"
 bind j run-shell '~/.config/tmux/popuptmux'
+bind m run-shell 'tmux setenv -g MOVE_PANE_SESSION "#{session_name}" \; setenv -g MOVE_PANE_WINDOW "#{window_index}" \; setenv -g MOVE_PANE_ID "#{pane_id}" \; popup -E ~/.config/tmux/move-pane'
 unbind '"'
 unbind %
 

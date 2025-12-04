@@ -1,0 +1,69 @@
+#!/usr/bin/env zsh
+
+# Move the current pane to a different window or session interactively
+# Uses fzf for selection
+# Reads pane info from tmux environment variables set by keybinding
+
+# Read from tmux environment (set by keybinding before popup opens)
+current_session=$(tmux show-environment -g MOVE_PANE_SESSION 2>/dev/null | cut -d= -f2)
+current_window=$(tmux show-environment -g MOVE_PANE_WINDOW 2>/dev/null | cut -d= -f2)
+current_pane=$(tmux show-environment -g MOVE_PANE_ID 2>/dev/null | cut -d= -f2)
+
+if [[ -z "$current_session" || -z "$current_window" || -z "$current_pane" ]]; then
+  exit 1
+fi
+
+# Build list of all possible targets
+targets=()
+
+# Add special options
+targets+=("[new window in $current_session]")
+targets+=("[new session]")
+
+# Add all existing windows from all sessions
+while IFS= read -r line; do
+  session=${line%%:*}
+  rest=${line#*:}
+  window_idx=${rest%%:*}
+  window_name=${rest#*:}
+
+  # Skip current window
+  if [[ "$session" == "$current_session" && "$window_idx" == "$current_window" ]]; then
+    continue
+  fi
+
+  targets+=("$session:$window_idx ($window_name)")
+done < <(tmux list-windows -a -F '#{session_name}:#{window_index}:#{window_name}')
+
+# Use fzf to select target
+selected=$(printf '%s\n' "${targets[@]}" | fzf --prompt="Move pane to: " --height=100% --reverse)
+
+if [[ -z "$selected" ]]; then
+  exit 0
+fi
+
+case "$selected" in
+  "[new window in $current_session]")
+    # Break pane into a new window in original session
+    tmux break-pane -s "$current_pane" -t "$current_session:"
+    ;;
+  "[new session]")
+    # Prompt for session name
+    echo -n "New session name: "
+    read new_session
+    if [[ -z "$new_session" ]]; then
+      new_session="pane-$(date +%s)"
+    fi
+    # Break pane into new window, capture the new window target
+    new_target=$(tmux break-pane -s "$current_pane" -P -F '#{session_name}:#{window_id}')
+    # Move that window to a new session
+    tmux new-session -d -s "$new_session"
+    tmux move-window -s "$new_target" -t "$new_session:" -k
+    ;;
+  *)
+    # Extract session:window from selection (remove the window name in parens)
+    target=$(echo "$selected" | sed 's/ (.*$//')
+    # Join pane to existing window
+    tmux join-pane -s "$current_pane" -t "$target"
+    ;;
+esac
