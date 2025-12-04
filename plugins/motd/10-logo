@@ -15,7 +15,7 @@ if [[ ! -z $extra_echo ]]; then
   echo
 fi
 
-ascii-text -B -c rainbow $text
+ascii-text -W -B -c rainbow $text
 
 if [[ ! -z $extra_echo ]]; then
   echo

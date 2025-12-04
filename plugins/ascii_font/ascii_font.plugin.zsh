@@ -8,10 +8,15 @@ ascii-text() {
   color=""
   bg=""
   bold=""
+  nowrap=""
   reset="$(tput sgr0)"
 
   while [ $# -gt 0 ]; do
     case "$1" in
+    -W | --no-wrap)
+      nowrap=1
+      shift
+      ;;
     -f | --font)
       if [[ -f "$dir/fonts/$2.flf" ]]; then
         font="$dir/fonts/$2"
@@ -65,6 +70,7 @@ ascii-text() {
       echo "  -c, --color       specify font color (default: 0)"
       echo "  -b, --bg          specify background color (default: 0)"
       echo "  -B, --bold        set font bold"
+      echo "  -W, --no-wrap     disable text wrapping"
       echo "  -C, --no-center   Disable centering the text"
       echo "  -l, --list        list available fonts"
       echo "  -v, --version     display version information and exit"
@@ -114,9 +120,14 @@ ascii-text() {
     fi
   fi
 
+  local width_opts=""
+  if [[ -z $nowrap ]]; then
+    width_opts="-w $(tput cols)"
+  fi
+
   if [[ $color != "rainbow" ]]; then
-    echo "$bold$color$bg$(figlet -f $font -w $(tput cols) -c "$@")$reset"
+    echo "$bold$color$bg$(figlet -f $font $width_opts -c "$@")$reset"
   else
-    echo "$bold$bg$(figlet -f $font -w $(tput cols) -c "$@" | lolcat -f)$reset"
+    echo "$bold$bg$(figlet -f $font $width_opts -c "$@" | lolcat -f)$reset"
   fi
 }
