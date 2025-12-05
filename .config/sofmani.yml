@@ -306,7 +306,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazysql_Linux_x86_64.tar.gz
+          download_filename: lazyssh_Linux_x86_64.tar.gz
 
   - name: atuin
     type: shell
@@ -478,6 +478,11 @@ install:
   - name: fnm
     type: shell
     post_install: |
+      FNM_PATH="/root/.local/share/fnm"
+      if [ -d "$FNM_PATH" ]; then
+        export PATH="$FNM_PATH:$PATH"
+        eval "`fnm env`"
+      fi
       fnm install --lts
       fnm use lts-latest
     opts:
