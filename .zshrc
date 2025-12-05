@@ -62,7 +62,9 @@ bindkey "^[[1;3D" backward-word
 
 # Customize word characters for navigation (remove / and = to make them word delimiters)
 stty werase undef
-export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+autoload -U select-word-style
+select-word-style shell
+export WORDCHARS='*?[]~&;!#$%^(){}<>'
 
 # Allow comments on interactive command lines
 setopt interactive_comments
