@@ -66,7 +66,12 @@ eval "$(atuin init zsh)"
 # }
 
 # FNM
+if [ -d "$HOME/.local/share/fnm" ]; then
+  FNM_PATH="$HOME/.local/share/fnm"
+  export PATH="$FNM_PATH:$PATH"
+fi
 if [[ -f $(which fnm) ]]; then
+  eval "`fnm env`"
   fnm default lts-latest
   # fnm() {
   #   unset -f fnm
