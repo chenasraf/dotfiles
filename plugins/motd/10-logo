@@ -3,8 +3,8 @@
 source "$DOTFILES/aliases.zsh"
 source $DOTFILES/plugins/ascii_font/ascii_font.plugin.zsh
 
-if [[ $(hostname) == 'spider.casraf.dev' ]]; then
-  text='@spider'
+if [[ $(hostname) == 'spider.casraf.dev' || $(hostname) == 'spider' ]]; then
+  text='spider'
   extra_echo=1
 else
   text='casraf'
