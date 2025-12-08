@@ -5,6 +5,9 @@ defaults:
     brew:
       platforms:
         only: ['macos']
+    github-release:
+      opts:
+        github_token: $GITHUB_TOKEN
 
 install:
   # ----------------------------------------------------------------------
@@ -164,7 +167,7 @@ install:
         opts:
           repository: chenasraf/sofmani
           destination: ~/.local/bin
-          download_filename: sofmani-{tag}-linux-amd64
+          download_filename: sofmani-{{ .Tag }}-linux-amd64
 
   - name: vstask
     type: group
@@ -180,7 +183,7 @@ install:
         opts:
           repository: chenasraf/vstask
           destination: ~/.local/bin
-          download_filename: vstask-{tag}-linux-amd64
+          download_filename: vstask-{{ .Tag }}-linux-amd64
 
   - name: watchr
     type: group
@@ -196,7 +199,7 @@ install:
         opts:
           repository: chenasraf/watchr
           destination: ~/.local/bin
-          download_filename: watchr-{tag}-linux-amd64
+          download_filename: watchr-{{ .Tag }}-linux-amd64
 
   - name: treelike
     type: group
@@ -215,7 +218,7 @@ install:
         opts:
           repository: chenasraf/treelike
           destination: ~/.local/bin
-          download_filename: treelike-{tag}-linux-amd64
+          download_filename: treelike-{{ .Tag }}-linux-amd64
 
   - name: gi_gen
     type: group
@@ -231,7 +234,7 @@ install:
         opts:
           repository: chenasraf/gi_gen
           destination: ~/.local/bin
-          download_filename: gi_gen-{tag}-linux-amd64
+          download_filename: gi_gen-{{ .Tag }}-linux-amd64
 
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
@@ -252,7 +255,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazygit_{version}_linux_x86_64.tar.gz
+          download_filename: lazygit_{{ .Version }}_linux_x86_64.tar.gz
 
   - name: lazydocker
     type: group
@@ -270,7 +273,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazydocker_{version}_linux_x86_64.tar.gz
+          download_filename: lazydocker_{{ .Version }}_linux_x86_64.tar.gz
 
   - name: lazysql
     type: group
@@ -416,7 +419,7 @@ install:
         # opts:
         #   repository: jgm/pandoc
         #   destination: ~/.local/bin
-        #   download_filename: pandoc-{tag}-linux-amd64
+        #   download_filename: pandoc-{{ .Tag }}-linux-amd64
         type: shell
         platforms:
           only: ['linux']
