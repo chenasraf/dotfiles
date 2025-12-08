@@ -167,7 +167,8 @@ install:
         opts:
           repository: chenasraf/sofmani
           destination: ~/.local/bin
-          download_filename: sofmani-{{ .Tag }}-linux-amd64
+          strategy: tar
+          download_filename: sofmani-linux-amd64.tar.gz
 
   - name: vstask
     type: group
@@ -183,7 +184,8 @@ install:
         opts:
           repository: chenasraf/vstask
           destination: ~/.local/bin
-          download_filename: vstask-{{ .Tag }}-linux-amd64
+          strategy: tar
+          download_filename: vstask-linux-amd64.tar.gz
 
   - name: watchr
     type: group
@@ -199,7 +201,8 @@ install:
         opts:
           repository: chenasraf/watchr
           destination: ~/.local/bin
-          download_filename: watchr-{{ .Tag }}-linux-amd64
+          strategy: tar
+          download_filename: watchr-linux-amd64.tar.gz
 
   - name: treelike
     type: group
@@ -218,7 +221,7 @@ install:
         opts:
           repository: chenasraf/treelike
           destination: ~/.local/bin
-          download_filename: treelike-{{ .Tag }}-linux-amd64
+          download_filename: treelike-linux-amd64.tar.gz
 
   - name: gi_gen
     type: group
