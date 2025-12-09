@@ -1,1 +1,3 @@
-preview-size: 20
+preview-size: 10
+interactive: true
+shell: "zsh"
