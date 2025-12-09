@@ -30,7 +30,7 @@ alias nc-dev="docker exec --user www-data -it nextcloud-\$(tr -d '\n' < $NC_VERS
 alias nc-dev-occ="nc-dev php occ"
 
 nc-dev-logs() {
-  nc-dev tail $@ /var/www/html/data/nextcloud.log
+  docker exec --user www-data nextcloud-$(tr -d '\n' < $NC_VERSION_FILE)-1 tail $@ /var/www/html/data/nextcloud.log
 }
 
 nc-dev-pretty-logs() {
