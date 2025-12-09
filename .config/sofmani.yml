@@ -314,6 +314,9 @@ install:
           # destination: /usr/local/bin
           download_filename: lazyssh_Linux_x86_64.tar.gz
 
+  - name: opencode
+    type: brew
+
   - name: atuin
     type: shell
     opts:
