@@ -31,7 +31,9 @@ wd() { . ~/.local/share/zsh/plugins/wd/wd.sh }
 
 source "$DOTFILES/exports.zsh"
 
-[[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"
+if [[ -t 0 && -t 1 ]]; then
+  [[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -61,7 +63,9 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
 # Customize word characters for navigation (remove / and = to make them word delimiters)
-stty werase undef
+if [[ -t 0 ]]; then
+  stty werase undef
+fi
 autoload -U select-word-style
 select-word-style shell
 export WORDCHARS='*?[]~&;!#$%^(){}<>'
