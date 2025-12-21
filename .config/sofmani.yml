@@ -550,17 +550,17 @@ install:
     bin_name: vscode-json-language-server
     type: pnpm
 
-  - name: "@google/gemini-cli"
-    bin_name: gemini
-    type: pnpm
-
-  - name: "@anthropic-ai/claude-code"
-    bin_name: claude
-    type: pnpm
-
-  - name: "@openai/codex"
-    bin_name: codex
-    type: pnpm
+  # - name: "@google/gemini-cli"
+  #   bin_name: gemini
+  #   type: pnpm
+  #
+  # - name: "@anthropic-ai/claude-code"
+  #   bin_name: claude
+  #   type: pnpm
+  #
+  # - name: "@openai/codex"
+  #   bin_name: codex
+  #   type: pnpm
 
   # ----------------------------------------------------------------------
   # 🐍 Python Tools (via pipx)
