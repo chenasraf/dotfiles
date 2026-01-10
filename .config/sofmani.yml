@@ -9,6 +9,9 @@ defaults:
       opts:
         github_token: $GITHUB_TOKEN
 
+machine_aliases:
+  m1: 5fa2a8e8193868df
+
 install:
   # ----------------------------------------------------------------------
   # 🧰 Configs & Dotfiles
@@ -48,27 +51,6 @@ install:
     opts:
       source: $DOTFILES/.config/lazygit.yml
       destination: $LAZYGIT_HOME/config.yml
-
-  - name: device_uid
-    type: shell
-    check_installed: test -f $DOTFILES/.device_uid
-    check_has_update: exit 1
-    tags: system
-    opts:
-      command: |
-        source $DOTFILES/plugins/common/colors.zsh
-        echo
-        echo_yellow "Unique device UID not set up. Enter device uid: "
-        read duid
-        echo
-
-        if [[ -z $duid ]]; then
-          echo_red "Device UID cannot be empty. Exiting"
-          exit 1
-        fi
-
-        echo $duid >$DOTFILES/.device_uid
-        echo_cyan "Device UID set to \"$duid\""
 
   - name: osx-defaults
     type: shell
