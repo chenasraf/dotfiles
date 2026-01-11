@@ -12,6 +12,7 @@ defaults:
 machine_aliases:
   m1: 5fa2a8e8193868df
   spider: d0de2a71060c023e
+  planck: 0f5d6c09c377537f
 
 install:
   # ----------------------------------------------------------------------
