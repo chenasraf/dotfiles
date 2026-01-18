@@ -463,6 +463,17 @@ install:
           destination: ~/.local/build
           clone_flags: --depth=1
 
+  - name: regex-tui
+    type: github-release
+    opts:
+      repository: vitor-mariano/regex-tui
+      strategy: none
+      destination: ~/.local/bin
+      download_filename:
+        macos: regex-tui_{{ .Tag }}_darwin.{{ .Arch }}
+        linux: regex-tui_{{ .Tag }}_linux.{{ .Arch }}
+        windows: regex-tui_{{ .Tag }}_windows.{{ .Arch }}.exe
+
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
   # ----------------------------------------------------------------------
@@ -538,9 +549,9 @@ install:
   #   bin_name: gemini
   #   type: pnpm
   #
-  # - name: "@anthropic-ai/claude-code"
-  #   bin_name: claude
-  #   type: pnpm
+  - name: claude-code
+    bin_name: claude
+    type: brew
   #
   # - name: "@openai/codex"
   #   bin_name: codex
