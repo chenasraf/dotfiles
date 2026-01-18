@@ -510,10 +510,8 @@ install:
   # Global CLI tools and utilities installed via pnpm.
 
   - name: pnpm
-    type: shell
-    check_has_update: exit 0
+    type: npm
     opts:
-      command: npm i -g pnpm
       update_command: pnpm self-update
 
   - name: typescript
