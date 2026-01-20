@@ -76,10 +76,14 @@ local function js()
   local pkg_root = find_package_root()
   local pkg_file = pkg_root .. '/package.json'
   local lock_file_pnpm = pkg_root .. '/pnpm-lock.yaml'
-  local lock_exists = vim.fn.filereadable(lock_file_pnpm) == 1
-  local pkg_manager = lock_exists and 'pnpm' or 'yarn'
+  local lock_file_yarn = pkg_root .. '/yarn.lock'
+  local lock_file_npm = pkg_root .. '/package-lock.json'
+  local pnpm_lock_exists = vim.fn.filereadable(lock_file_pnpm) == 1
+  local yarn_lock_exists = vim.fn.filereadable(lock_file_yarn) == 1
+  local npm_lock_exists = vim.fn.filereadable(lock_file_npm) == 1
+  local pkg_manager = pnpm_lock_exists and 'pnpm' or yarn_lock_exists and 'yarn' or npm_lock_exists and 'npm run'
   local file_exists = vim.fn.filereadable(pkg_file) == 1
-  if not file_exists then
+  if not file_exists or not pkg_manager then
     return {}
   end
   local contents = vim.fn.readfile(pkg_file)
