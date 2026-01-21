@@ -116,6 +116,7 @@ local type_map = {
   typescriptreact = js,
   javascript = js,
   javascriptreact = js,
+  vue = js,
   lua = function(filename)
     return {
       { label = 'Run file',    value = 'lua ' .. filename,    type = 'cmd' },
