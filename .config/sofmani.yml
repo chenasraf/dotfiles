@@ -550,6 +550,8 @@ install:
   - name: claude-code
     bin_name: claude
     type: brew
+    opts:
+      cask: true
   #
   # - name: "@openai/codex"
   #   bin_name: codex
