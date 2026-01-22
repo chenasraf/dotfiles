@@ -23,6 +23,8 @@ install:
   - name: .config
     type: rsync
     tags: config dotfiles sofmani-config
+    skip_summary:
+      update: true
     opts:
       source: $DOTFILES/.config/
       destination: ~/.config/
@@ -31,6 +33,8 @@ install:
   - name: nvim-config
     type: rsync
     tags: config nvim-config
+    skip_summary:
+      update: true
     opts:
       source: $DOTFILES/.config/nvim/
       destination: ~/.config/nvim/
@@ -39,6 +43,7 @@ install:
   - name: tmux-config
     type: shell
     tags: config tmux
+    skip_summary: true
     platforms:
       only: ['macos']
     opts:
@@ -50,6 +55,8 @@ install:
   - name: lazygit-config
     type: rsync
     tags: lazygit lazygit-config config
+    skip_summary:
+      update: true
     opts:
       source: $DOTFILES/.config/lazygit.yml
       destination: $LAZYGIT_HOME/config.yml
@@ -57,11 +64,12 @@ install:
   - name: osx-defaults
     type: shell
     tags: system
+    skip_summary: true
     platforms:
       only: ['macos']
     opts:
-      check_installed: exit 1
-      check_has_update: exit 0
+      check_installed: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
+      check_has_update: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
       command: |
         defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
         defaults write -g NSScrollViewRubberbanding -bool FALSE
