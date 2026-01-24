@@ -10,6 +10,7 @@ term = xterm-256color
 # Window
 # ==============================================================================
 background-opacity = 0.85
+background-blur-radius = 30
 window-decoration = false
 macos-option-as-alt = true
 window-padding-x = 8
