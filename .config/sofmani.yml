@@ -380,10 +380,23 @@ install:
     type: brew
 
   - name: aerospace
-    type: brew
-    opts:
-      tap: nikitabobko/tap
-      cask: true
+    type: group
+    steps:
+      - name: aerospace
+        type: brew
+        post_update: aerospace reload-config
+        opts:
+          tap: nikitabobko/tap
+          cask: true
+      - name: aerospace-config
+        type: shell
+        tags: aerospace-config config aerospace
+        check_installed: which aerospace
+        skip_summary:
+          update: true
+        opts:
+          command: exit 1
+          update_command: aerospace reload-config
 
   - name: borders
     type: brew

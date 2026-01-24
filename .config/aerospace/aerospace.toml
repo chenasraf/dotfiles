@@ -12,7 +12,7 @@ after-startup-command = [
 ]
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -213,6 +213,9 @@ on-mode-changed = []
     alt-shift-z = 'exec-and-forget open -a "Zen Browser"'
     alt-shift-t = 'exec-and-forget open -a "WezTerm"'
     alt-shift-o = 'exec-and-forget open -a "Obsidian"'
+
+    alt-shift-r = 'resize width 2560'
+    alt-shift-b = 'balance-sizes'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
