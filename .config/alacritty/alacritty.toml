@@ -230,13 +230,13 @@ chars = "\u00020"
 
 # Previous tmux window: Cmd+Shift+[  (which is Cmd+{)
 [[keyboard.bindings]]
-key = "["
+key = "{"
 mods = "Command|Shift"
 chars = "\u0002p"
 
 # Next tmux window: Cmd+Shift+]  (which is Cmd+})
 [[keyboard.bindings]]
-key = "]"
+key = "}"
 mods = "Command|Shift"
 chars = "\u0002n"
 
