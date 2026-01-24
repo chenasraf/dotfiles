@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh
-
-source "$DOTFILES/aliases.zsh"
-
-tls
-echo
