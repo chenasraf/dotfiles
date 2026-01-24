@@ -210,9 +210,11 @@ on-mode-changed = []
     ## Custom
     alt-f = 'fullscreen'
 
-    alt-shift-z = 'exec-and-forget open -a "Zen Browser"'
-    alt-shift-t = 'exec-and-forget open -a "WezTerm"'
     alt-shift-o = 'exec-and-forget open -a "Obsidian"'
+    alt-shift-s = 'exec-and-forget open -a "Stremio"'
+    alt-shift-t = 'exec-and-forget open -a "Alacritty"'
+    alt-shift-w = 'exec-and-forget open -a "WhatsApp"'
+    alt-shift-z = 'exec-and-forget open -a "Zen Browser"'
 
     alt-shift-r = 'resize width 2560'
     alt-shift-b = 'balance-sizes'

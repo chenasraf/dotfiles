@@ -706,6 +706,12 @@ install:
   - category: Desktop Productivity Tools
     desc: Custom tools and GitHub binaries not installed via a package manager.
 
+  - name: wezterm
+    type: brew
+
+  - name: alacritty
+    type: brew
+
   # - name: easy-move-plus-resize
   #   type: brew
   #   check_installed: test -d "/Applications/Easy Move+Resize.app"
