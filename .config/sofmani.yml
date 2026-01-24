@@ -379,6 +379,16 @@ install:
   - name: fd
     type: brew
 
+  - name: aerospace
+    type: brew
+    opts:
+      tap: nikitabobko/tap
+      cask: true
+
+  - name: borders
+    type: brew
+    opts:
+      tap: FelixKratz/formulae
   # - name: ollama
   #   type: group
   #   steps:
