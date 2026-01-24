@@ -191,3 +191,4 @@ if is_linux; then
   alias md5="md5sum"
 fi
 alias lssh="lazyssh"
+alias lvim="nvim -c':e#<1'"

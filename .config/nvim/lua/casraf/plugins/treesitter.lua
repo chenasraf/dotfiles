@@ -38,9 +38,9 @@ return {
           enable = true,
           keymaps = {
             init_selection = '<c-space>',
-            node_incremental = '<c-space>',
+            node_incremental = '<CR>',
             scope_incremental = '<c-s>',
-            node_decremental = '<M-space>',
+            node_decremental = '<BS>',
           },
         },
         matchup = {

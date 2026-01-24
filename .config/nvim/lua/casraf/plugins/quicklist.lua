@@ -138,8 +138,14 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.keymap.set("n", "<leader>qq", "<Cmd>QFAdd<CR>", { desc = "Add to quickfix", silent = true })
 vim.keymap.set("n", "<leader>qc", "<Cmd>QFClear<CR>", { desc = "Clear quickfix", silent = true })
-vim.keymap.set("n", "<leader>Q", "<Cmd>copen<CR>", { desc = "Open quickfix", silent = true })
-vim.keymap.set("n", "<M-j>", "<Cmd>cnext<CR>", { desc = "Next quickfix item", silent = true })
-vim.keymap.set("n", "<M-k>", "<Cmd>cprev<CR>", { desc = "Previous quickfix item", silent = true })
+vim.keymap.set("n", "]q", "<Cmd>cnext<CR>", { desc = "Next quickfix item", silent = true })
+vim.keymap.set("n", "[q", "<Cmd>cprev<CR>", { desc = "Previous quickfix item", silent = true })
+vim.keymap.set("n", "<leader>Q", function()
+  if vim.bo.filetype == "qf" then
+    vim.cmd("cclose")
+  else
+    vim.cmd("copen")
+  end
+end, { desc = "Toggle quickfix", silent = true })
 
 return {}

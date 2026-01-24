@@ -21,6 +21,7 @@ return {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
       lualine_c = { 'filename' },
+      lualine_d = { 'quickfix' },
       -- lualine_x = { 'require"nvim-treesitter".statusline()', lsp_supported, 'encoding', 'fileformat', 'filetype' },
       lualine_x = { ts_keys.ts_statusline, lsp_status.lsp_supported, 'encoding', 'fileformat', 'filetype' },
       lualine_y = { 'progress' },
