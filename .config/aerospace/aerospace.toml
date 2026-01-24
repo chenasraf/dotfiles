@@ -212,7 +212,7 @@ on-mode-changed = []
 
     alt-shift-o = 'exec-and-forget open -a "Obsidian"'
     alt-shift-s = 'exec-and-forget open -a "Stremio"'
-    alt-shift-t = 'exec-and-forget open -a "Alacritty"'
+    alt-shift-t = 'exec-and-forget open -a "Ghostty"'
     alt-shift-w = 'exec-and-forget open -a "WhatsApp"'
     alt-shift-z = 'exec-and-forget open -a "Zen Browser"'
 

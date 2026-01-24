@@ -24,7 +24,8 @@ set -g status-justify "absolute-centre"
 # NOTE Status Left
 set -g status-left-length 100
 # Add spacing for window buttons (Alacritty transparent decorations)
-set -g status-left "        "
+set -g status-left ""
+# set -g status-left "        "
 set -ga status-left "#{E:@catppuccin_status_session}"
 set -ga status-left "#{E:@catppuccin_status_panecmd}"
 set -ga status-left "#{E:@catppuccin_status_sessdir}"

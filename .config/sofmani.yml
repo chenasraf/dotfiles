@@ -712,6 +712,11 @@ install:
   - name: alacritty
     type: brew
 
+  - name: ghostty
+    type: brew
+    opts:
+      cask: true
+
   # - name: easy-move-plus-resize
   #   type: brew
   #   check_installed: test -d "/Applications/Easy Move+Resize.app"

@@ -1,0 +1,186 @@
+# Ghostty Configuration
+# Migrated from Alacritty/WezTerm config
+
+# ==============================================================================
+# General
+# ==============================================================================
+term = xterm-256color
+
+# ==============================================================================
+# Window
+# ==============================================================================
+background-opacity = 0.85
+window-decoration = false
+macos-option-as-alt = true
+window-padding-x = 8
+window-padding-y = 0
+window-padding-balance = true
+
+# ==============================================================================
+# Font
+# ==============================================================================
+font-family = FiraCode Nerd Font Mono
+font-size = 14
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Regular
+font-thicken = true
+font-thicken-strength = 128
+
+# ==============================================================================
+# Catppuccin Mocha theme
+# ==============================================================================
+background = 1e1e2e
+foreground = cdd6f4
+cursor-color = f5e0dc
+cursor-text = 1e1e2e
+selection-background = f5e0dc
+selection-foreground = 1e1e2e
+
+# Normal colors
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#bac2de
+
+# Bright colors
+palette = 8=#585b70
+palette = 9=#f38ba8
+palette = 10=#a6e3a1
+palette = 11=#f9e2af
+palette = 12=#89b4fa
+palette = 13=#f5c2e7
+palette = 14=#94e2d5
+palette = 15=#a6adc8
+
+# Extended colors
+palette = 16=#fab387
+palette = 17=#f5e0dc
+
+# ==============================================================================
+# Key bindings - WezTerm style
+# ==============================================================================
+
+# Increase font size: Cmd+Shift+=
+keybind = super+shift+equal=increase_font_size:1
+
+# Reset font size: Cmd+Shift+0
+keybind = super+shift+zero=reset_font_size
+
+# ==============================================================================
+# tmux bindings
+# ==============================================================================
+
+# Move between tmux panes: Cmd+Shift+H/J/K/L
+keybind = super+shift+h=text:\x02\x1b[D
+keybind = super+shift+j=text:\x02\x1b[B
+keybind = super+shift+k=text:\x02\x1b[A
+keybind = super+shift+l=text:\x02\x1b[C
+
+# Move between tmux panes: Cmd+Shift+Arrow keys
+keybind = super+shift+left=text:\x02\x1b[D
+keybind = super+shift+down=text:\x02\x1b[B
+keybind = super+shift+up=text:\x02\x1b[A
+keybind = super+shift+right=text:\x02\x1b[C
+
+# Select tmux window 0-9: Cmd+1-9,0
+keybind = super+one=text:\x021
+keybind = super+two=text:\x022
+keybind = super+three=text:\x023
+keybind = super+four=text:\x024
+keybind = super+five=text:\x025
+keybind = super+six=text:\x026
+keybind = super+seven=text:\x027
+keybind = super+eight=text:\x028
+keybind = super+nine=text:\x029
+keybind = super+zero=text:\x020
+
+# Previous tmux window: Cmd+Shift+[
+keybind = super+shift+left_bracket=text:\x02p
+
+# Next tmux window: Cmd+Shift+]
+keybind = super+shift+right_bracket=text:\x02n
+
+# Zoom tmux pane: Cmd+Z
+keybind = super+z=text:\x02z
+
+# Kill tmux pane: Cmd+W
+keybind = super+w=text:\x02x
+
+# Detach tmux: Cmd+Shift+W
+keybind = super+shift+w=text:\x02d
+
+# Split tmux pane horizontally: Cmd+D
+keybind = super+d=text:\x02|
+
+# Split tmux pane vertically: Cmd+Shift+D
+keybind = super+shift+d=text:\x02_
+
+# Create new tmux window: Cmd+T
+keybind = super+t=text:\x02c
+
+# Set tmux split equal: Cmd+=
+keybind = super+equal=text:\x02E
+
+# Select tmux session: Cmd+Shift+P
+keybind = super+shift+p=text:\x02s
+
+# ==============================================================================
+# vim bindings
+# ==============================================================================
+
+# Move between vim panes: Cmd+H/J/K/L
+keybind = super+h=text:\x17h
+keybind = super+j=text:\x17j
+keybind = super+k=text:\x17k
+keybind = super+l=text:\x17l
+
+# Move between vim panes: Cmd+Arrow keys
+keybind = super+left=text:\x17h
+keybind = super+down=text:\x17j
+keybind = super+up=text:\x17k
+keybind = super+right=text:\x17l
+
+# Split vim pane horizontally: Opt+S
+keybind = alt+s=text:\x17s
+
+# Split vim pane vertically: Opt+V
+keybind = alt+v=text:\x17v
+
+# Select all in nvim: Cmd+A
+keybind = super+a=text:\x1bggVG
+
+# Save in nvim: Cmd+S
+keybind = super+s=text:\x1b\x1b w
+
+# Save all in nvim: Cmd+Shift+S
+keybind = super+shift+s=text:\x1b\x1b W
+
+# Save and close pane in nvim: Cmd+Opt+S
+keybind = super+alt+s=text:\x1b\x1bZZ
+
+# Open file text search in neovim: Cmd+Shift+F
+keybind = super+shift+f=text:\x1b\x1b fg\n
+
+# Open file picker in neovim: Cmd+P
+keybind = super+p=text:\x1b\x1b ff\n
+
+# Open lazygit in neovim: Cmd+G
+keybind = super+g=text:\x1b\x1b gs\n
+
+# ==============================================================================
+# Terminal bindings
+# ==============================================================================
+
+# Delete entire row: Cmd+Backspace
+keybind = super+backspace=text:\x15
+
+# Delete entire word: Opt+Backspace
+keybind = alt+backspace=text:\x17
+
+# Shift+Enter to send escape+return
+keybind = shift+enter=text:\x1b\r
