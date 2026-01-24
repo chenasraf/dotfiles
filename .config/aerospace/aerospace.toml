@@ -239,6 +239,6 @@ on-mode-changed = []
 if.app-id = 'com.DanPristupov.Fork'
 run = ['layout floating']
 
-[[on-window-detected]]
-if.app-id = 'com.berserk-games.tabletop-simulator'
-run = ['layout floating']
+# [[on-window-detected]]
+# if.app-id = 'com.berserk-games.tabletop-simulator'
+# run = ['layout floating']
