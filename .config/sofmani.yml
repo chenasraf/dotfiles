@@ -384,6 +384,12 @@ install:
     machines:
       except: ['spider']
     steps:
+      - name: borders
+        type: brew
+        skip_summary:
+          install: true
+        opts:
+          tap: FelixKratz/formulae
       - name: aerospace
         type: brew
         post_update: aerospace reload-config
@@ -399,11 +405,6 @@ install:
         opts:
           command: exit 1
           update_command: aerospace reload-config
-
-  - name: borders
-    type: brew
-    opts:
-      tap: FelixKratz/formulae
   # - name: ollama
   #   type: group
   #   steps:
