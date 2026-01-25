@@ -29,6 +29,9 @@ unbind %
 # Ctrl+Shift+W to close session
 bind -n C-M-w confirm-before kill-session
 
+# Clear screen and scrollback
+bind L clear-history \; send-keys C-l
+
 # Enable mouse control
 set -g mouse on
 

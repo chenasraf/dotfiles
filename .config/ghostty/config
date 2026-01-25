@@ -170,8 +170,8 @@ keybind = super+backspace=text:\x15
 # Delete entire word: Opt+Backspace
 keybind = alt+backspace=text:\x17
 
-# Clear screen: Ctrl+Shift+L
-keybind = ctrl+shift+l=text:\x0c
+# Clear screen: Ctrl+Backspace (sends prefix+L to tmux)
+keybind = ctrl+backspace=text:\x02L
 
 # Word movement: Opt+Left/Right
 keybind = alt+left=text:\x1b[1;3D
