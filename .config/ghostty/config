@@ -183,5 +183,9 @@ keybind = super+backspace=text:\x15
 # Delete entire word: Opt+Backspace
 keybind = alt+backspace=text:\x17
 
+# Word movement: Opt+Left/Right
+keybind = alt+left=text:\x1b[1;3D
+keybind = alt+right=text:\x1b[1;3C
+
 # Shift+Enter to send escape+return
 keybind = shift+enter=text:\x1b\r
