@@ -122,18 +122,6 @@ keybind = super+shift+p=text:\x02s
 # vim bindings
 # ==============================================================================
 
-# Move between vim panes: Cmd+H/J/K/L
-keybind = super+h=text:\x17h
-keybind = super+j=text:\x17j
-keybind = super+k=text:\x17k
-keybind = super+l=text:\x17l
-
-# Move between vim panes: Cmd+Arrow keys
-keybind = super+left=text:\x17h
-keybind = super+down=text:\x17j
-keybind = super+up=text:\x17k
-keybind = super+right=text:\x17l
-
 # Split vim pane horizontally: Opt+S
 keybind = alt+s=text:\x17s
 

@@ -244,48 +244,6 @@ chars = "\u0002E"
 # vim bindings
 # ==============================================================================
 
-# Move between vim panes: Cmd+H/J/K/L
-[[keyboard.bindings]]
-key = "H"
-mods = "Command"
-chars = "\u0017h"
-
-[[keyboard.bindings]]
-key = "J"
-mods = "Command"
-chars = "\u0017j"
-
-[[keyboard.bindings]]
-key = "K"
-mods = "Command"
-chars = "\u0017k"
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Command"
-chars = "\u0017l"
-
-# Move between vim panes: Cmd+Arrow keys
-[[keyboard.bindings]]
-key = "Left"
-mods = "Command"
-chars = "\u0017h"
-
-[[keyboard.bindings]]
-key = "Down"
-mods = "Command"
-chars = "\u0017j"
-
-[[keyboard.bindings]]
-key = "Up"
-mods = "Command"
-chars = "\u0017k"
-
-[[keyboard.bindings]]
-key = "Right"
-mods = "Command"
-chars = "\u0017l"
-
 # Split vim pane horizontally: Opt+S
 [[keyboard.bindings]]
 key = "S"

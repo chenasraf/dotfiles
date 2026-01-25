@@ -67,76 +67,66 @@ config.keys = {
   --- wezterm
   ----------------------------------------------------------------------------------
   -- Increase font size: Cmd+Shift+Equal
-  { key = "=",          mods = "CMD|SHIFT", action = act.IncreaseFontSize },
+  { key = "=",         mods = "CMD|SHIFT", action = act.IncreaseFontSize },
   -- Reset font size: Cmd+Shift+0
-  { key = "0",          mods = "CMD|SHIFT", action = act.ResetFontSize },
+  { key = "0",         mods = "CMD|SHIFT", action = act.ResetFontSize },
   ----------------------------------------------------------------------------------
   --- tmux
   ----------------------------------------------------------------------------------
   -- Select window 0-9
-  { key = "1",          mods = "CMD",       action = act { SendString = "\x021" } },
-  { key = "2",          mods = "CMD",       action = act { SendString = "\x022" } },
-  { key = "3",          mods = "CMD",       action = act { SendString = "\x023" } },
-  { key = "4",          mods = "CMD",       action = act { SendString = "\x024" } },
-  { key = "5",          mods = "CMD",       action = act { SendString = "\x025" } },
-  { key = "6",          mods = "CMD",       action = act { SendString = "\x026" } },
-  { key = "7",          mods = "CMD",       action = act { SendString = "\x027" } },
-  { key = "8",          mods = "CMD",       action = act { SendString = "\x028" } },
-  { key = "9",          mods = "CMD",       action = act { SendString = "\x029" } },
-  { key = "0",          mods = "CMD",       action = act { SendString = "\x020" } },
+  { key = "1",         mods = "CMD",       action = act { SendString = "\x021" } },
+  { key = "2",         mods = "CMD",       action = act { SendString = "\x022" } },
+  { key = "3",         mods = "CMD",       action = act { SendString = "\x023" } },
+  { key = "4",         mods = "CMD",       action = act { SendString = "\x024" } },
+  { key = "5",         mods = "CMD",       action = act { SendString = "\x025" } },
+  { key = "6",         mods = "CMD",       action = act { SendString = "\x026" } },
+  { key = "7",         mods = "CMD",       action = act { SendString = "\x027" } },
+  { key = "8",         mods = "CMD",       action = act { SendString = "\x028" } },
+  { key = "9",         mods = "CMD",       action = act { SendString = "\x029" } },
+  { key = "0",         mods = "CMD",       action = act { SendString = "\x020" } },
   -- Previous/Next tmux window: Cmd+{/}
-  { key = "{",          mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
-  { key = "}",          mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
+  { key = "{",         mods = "CMD|SHIFT", action = act { SendString = "\x02p" } },
+  { key = "}",         mods = "CMD|SHIFT", action = act { SendString = "\x02n" } },
   --
   -- Zoom - Cmd+Z
-  { key = "z",          mods = "CMD",       action = act { SendString = "\x02z" } },
+  { key = "z",         mods = "CMD",       action = act { SendString = "\x02z" } },
   -- Kill the current pane/last window - Cmd+W
-  { key = "w",          mods = "CMD",       action = act { SendString = "\x02x" } },
+  { key = "w",         mods = "CMD",       action = act { SendString = "\x02x" } },
   -- Detach - Cmd+Shift+W
-  { key = "w",          mods = "CMD|SHIFT", action = act { SendString = "\x02d" } },
+  { key = "w",         mods = "CMD|SHIFT", action = act { SendString = "\x02d" } },
   -- Split pane horizontally - Cmd+D
-  { key = "d",          mods = "CMD",       action = act { SendString = "\x02|" } },
+  { key = "d",         mods = "CMD",       action = act { SendString = "\x02|" } },
   -- Split pane vertically - Cmd+Shift+D
-  { key = "d",          mods = "CMD|SHIFT", action = act { SendString = "\x02_" } },
+  { key = "d",         mods = "CMD|SHIFT", action = act { SendString = "\x02_" } },
   -- Create new window - Cmd+T
-  { key = "t",          mods = "CMD",       action = act { SendString = "\x02c" } },
+  { key = "t",         mods = "CMD",       action = act { SendString = "\x02c" } },
   -- Set split equal - Cmd+=
-  { key = "=",          mods = "CMD",       action = act { SendString = "\x02E" } },
+  { key = "=",         mods = "CMD",       action = act { SendString = "\x02E" } },
 
   ----------------------------------------------------------------------------------
   --- vim
   ----------------------------------------------------------------------------------
-  -- move between vim panes: Cmd+(HJKL) or Cmd+(Left Down Up Right) Arrow
-  { key = "h",          mods = "CMD",       action = act { SendString = "\x17h" } },
-  { key = "j",          mods = "CMD",       action = act { SendString = "\x17j" } },
-  { key = "k",          mods = "CMD",       action = act { SendString = "\x17k" } },
-  { key = "l",          mods = "CMD",       action = act { SendString = "\x17l" } },
-  { key = "LeftArrow",  mods = "CMD",       action = act { SendString = "\x17h" } },
-  { key = "DownArrow",  mods = "CMD",       action = act { SendString = "\x17j" } },
-  { key = "UpArrow",    mods = "CMD",       action = act { SendString = "\x17k" } },
-  { key = "RightArrow", mods = "CMD",       action = act { SendString = "\x17l" } },
-
   -- Split pane horizontally - Opt+S
-  { key = "s",          mods = "OPT",       action = act { SendString = "\x17s" } },
+  { key = "s",         mods = "OPT",       action = act { SendString = "\x17s" } },
   -- Split pane vertically - Opt+V
-  { key = "v",          mods = "OPT",       action = act { SendString = "\x17v" } },
+  { key = "v",         mods = "OPT",       action = act { SendString = "\x17v" } },
 
   -- Select all in nvim: Cmd+A
-  { key = "a",          mods = "CMD",       action = act { SendString = "\x1bggVG" } },
+  { key = "a",         mods = "CMD",       action = act { SendString = "\x1bggVG" } },
   -- save in nvim: Cmd+S
-  { key = "s",          mods = "CMD",       action = act { SendString = "\x1b\x1b w" } },
+  { key = "s",         mods = "CMD",       action = act { SendString = "\x1b\x1b w" } },
   -- save all in nvim: Cmd+Shift+S
-  { key = "s",          mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b W" } },
+  { key = "s",         mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b W" } },
   -- save and cloe pane: Cmd+Opt+S
-  { key = "s",          mods = "CMD|OPT",   action = act { SendString = "\x1b\x1bZZ" } },
+  { key = "s",         mods = "CMD|OPT",   action = act { SendString = "\x1b\x1bZZ" } },
   -- open file text search in neovim: Cmd+Shift+F
-  { key = "f",          mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b fg\n" } },
+  { key = "f",         mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b fg\n" } },
   -- open file picker in neovim: Cmd+P
-  { key = "p",          mods = "CMD",       action = act { SendString = "\x1b\x1b ff\n" } },
+  { key = "p",         mods = "CMD",       action = act { SendString = "\x1b\x1b ff\n" } },
   -- open lazygit in neovim: Cmd+G
-  { key = "g",          mods = "CMD",       action = act { SendString = "\x1b\x1b gs\n" } },
+  { key = "g",         mods = "CMD",       action = act { SendString = "\x1b\x1b gs\n" } },
   -- Cmd+Shift+P - Select tmux session
-  { key = "p",          mods = "CMD|SHIFT", action = act { SendString = "\x02s" } },
+  { key = "p",         mods = "CMD|SHIFT", action = act { SendString = "\x02s" } },
 
   -- bar bar
   -- { key = ",", mods = "OPT", action = act { SendString = '≤', } },
@@ -165,11 +155,11 @@ config.keys = {
   --- term
   ----------------------------------------------------------------------------------
   -- Delete entire row - Cmd+Backspace
-  { key = "Backspace",  mods = "CMD",       action = act { SendString = "\x15" } },
+  { key = "Backspace", mods = "CMD",       action = act { SendString = "\x15" } },
   -- Delete entire word - Opt+Backspace
-  { key = "Backspace",  mods = "OPT",       action = act { SendString = "\x17" } },
+  { key = "Backspace", mods = "OPT",       action = act { SendString = "\x17" } },
   -- Shift+Enter to send \x1b\r (some programs require this)
-  { key = "Enter",      mods = "SHIFT",     action = wezterm.action { SendString = "\x1b\r" } },
+  { key = "Enter",     mods = "SHIFT",     action = wezterm.action { SendString = "\x1b\r" } },
 }
 
 -- config.bidi_enabled = true
