@@ -3,7 +3,9 @@ import { Opts } from '../common'
 import { MassargCommand } from 'massarg/command'
 import { fzf, getTmuxConfig, parseConfig } from './utils'
 
-export const showCmd = new MassargCommand<Opts>({
+type ShowOpts = Opts & { json?: boolean }
+
+export const showCmd = new MassargCommand<ShowOpts>({
   name: 'show',
   aliases: ['s'],
   description: 'Show the tmux configuration file for a specific key',
@@ -17,7 +19,11 @@ export const showCmd = new MassargCommand<Opts>({
     if (!item) {
       throw new Error(`tmux config item ${key} not found`)
     }
-    console.log(util.inspect(item, { depth: Infinity, colors: true }))
+    if (opts.json) {
+      console.log(JSON.stringify(item))
+    } else {
+      console.log(util.inspect(item, { depth: Infinity, colors: true }))
+    }
   },
 })
   .option({
@@ -25,5 +31,10 @@ export const showCmd = new MassargCommand<Opts>({
     aliases: ['k'],
     description: 'The tmux session to show',
     isDefault: true,
+  })
+  .flag({
+    name: 'json',
+    aliases: ['j'],
+    description: 'Output as JSON',
   })
   .help({ bindOption: true, bindCommand: true })
