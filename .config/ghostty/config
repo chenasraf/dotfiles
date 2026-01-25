@@ -165,13 +165,13 @@ keybind = super+shift+s=text:\x1b\x1b W
 keybind = super+alt+s=text:\x1b\x1bZZ
 
 # Open file text search in neovim: Cmd+Shift+F
-keybind = super+shift+f=text:\x1b\x1b fg\n
+keybind = super+shift+f=text:\x1b\x1b fg
 
 # Open file picker in neovim: Cmd+P
-keybind = super+p=text:\x1b\x1b ff\n
+keybind = super+p=text:\x1b\x1b ff
 
 # Open lazygit in neovim: Cmd+G
-keybind = super+g=text:\x1b\x1b gs\n
+keybind = super+g=text:\x1b\x1b gs
 
 # ==============================================================================
 # Terminal bindings

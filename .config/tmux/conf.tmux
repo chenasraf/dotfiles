@@ -55,6 +55,7 @@ if-shell "[[ -f ~/.config/tmux/local.tmux ]]" {
 }
 
 source -F "#{d:current_file}/theme.tmux"
+source -F "#{d:current_file}/modules/vim-tmux-navigator.tmux"
 
 # NOTE Initialize TMUX plugin manager (keep this line at the very bottom of tmux conf)
 run '${TMUX_PLUGINS_DIR}/tpm/tpm'
