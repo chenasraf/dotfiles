@@ -435,6 +435,9 @@ install:
   - name: catimg
     type: brew
 
+  - name: bat
+    type: brew
+
   - name: home
     type: shell
     opts:
