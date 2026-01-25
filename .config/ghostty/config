@@ -76,18 +76,6 @@ keybind = super+shift+zero=reset_font_size
 # tmux bindings
 # ==============================================================================
 
-# Move between tmux panes: Cmd+Shift+H/J/K/L
-keybind = super+shift+h=text:\x02\x1b[D
-keybind = super+shift+j=text:\x02\x1b[B
-keybind = super+shift+k=text:\x02\x1b[A
-keybind = super+shift+l=text:\x02\x1b[C
-
-# Move between tmux panes: Cmd+Shift+Arrow keys
-keybind = super+shift+left=text:\x02\x1b[D
-keybind = super+shift+down=text:\x02\x1b[B
-keybind = super+shift+up=text:\x02\x1b[A
-keybind = super+shift+right=text:\x02\x1b[C
-
 # Select tmux window 0-9: Cmd+1-9,0
 keybind = super+one=text:\x021
 keybind = super+two=text:\x022
@@ -182,6 +170,9 @@ keybind = super+backspace=text:\x15
 
 # Delete entire word: Opt+Backspace
 keybind = alt+backspace=text:\x17
+
+# Clear screen: Ctrl+Shift+L
+keybind = ctrl+shift+l=text:\x0c
 
 # Word movement: Opt+Left/Right
 keybind = alt+left=text:\x1b[1;3D

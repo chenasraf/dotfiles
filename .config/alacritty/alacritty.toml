@@ -135,48 +135,6 @@ action = "ResetFontSize"
 # tmux bindings
 # ==============================================================================
 
-# Move between tmux panes: Cmd+Shift+H/J/K/L
-[[keyboard.bindings]]
-key = "H"
-mods = "Command|Shift"
-chars = "\u0002\u001b[D"
-
-[[keyboard.bindings]]
-key = "J"
-mods = "Command|Shift"
-chars = "\u0002\u001b[B"
-
-[[keyboard.bindings]]
-key = "K"
-mods = "Command|Shift"
-chars = "\u0002\u001b[A"
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Command|Shift"
-chars = "\u0002\u001b[C"
-
-# Move between tmux panes: Cmd+Shift+Arrow keys
-[[keyboard.bindings]]
-key = "Left"
-mods = "Command|Shift"
-chars = "\u0002\u001b[D"
-
-[[keyboard.bindings]]
-key = "Down"
-mods = "Command|Shift"
-chars = "\u0002\u001b[B"
-
-[[keyboard.bindings]]
-key = "Up"
-mods = "Command|Shift"
-chars = "\u0002\u001b[A"
-
-[[keyboard.bindings]]
-key = "Right"
-mods = "Command|Shift"
-chars = "\u0002\u001b[C"
-
 # Select tmux window 0-9: Cmd+1-9,0
 [[keyboard.bindings]]
 key = "Key1"

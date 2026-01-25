@@ -26,10 +26,6 @@ unbind %
 # bind -n C-M-Up select-pane -U
 # bind -n C-M-Down select-pane -D
 
-# Ctrl+Shift+K to clear
-bind -n C-M-k send-keys -R \; send-keys C-l \; clear-history
-# bind -n C-k send-keys C-l
-
 # Ctrl+Shift+W to close session
 bind -n C-M-w confirm-before kill-session
 
