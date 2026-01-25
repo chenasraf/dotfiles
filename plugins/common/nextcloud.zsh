@@ -3,7 +3,7 @@
 NC_VERSION_FILE="$HOME/.nc-dev-version"
 NC_DEV_DIR="$HOME/Dev/nextcloud-docker-dev"
 
-nc-dev-start() {
+nc-dev-use() {
   local version="$1"
   if [[ -z "$version" ]]; then
     version="$(tr -d '\n' < $NC_VERSION_FILE)"
@@ -16,6 +16,22 @@ nc-dev-start() {
     fi
   fi
   echo "$version" > $NC_VERSION_FILE
+  echo "Set Nextcloud dev version to: $version"
+}
+
+nc-dev-get-version() {
+  local version
+  version="$(tr -d '\n' < $NC_VERSION_FILE)"
+  if [[ -z "$version" ]]; then
+    version="nextcloud"
+  fi
+  echo "$version"
+}
+
+nc-dev-start() {
+  local version="$1"
+  nc-dev-use "$version"
+  version="$(nc-dev-get-version)"
   pushd $HOME/Dev/nextcloud-docker-dev
   docker compose up -d $version
   popd
@@ -26,11 +42,11 @@ alias nc-aio="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
 alias nc-aio-occ="nc-aio php occ"
 alias nc-aio-debug="nc-aio-occ config:system:set debug --type bool --value"
 
-alias nc-dev="docker exec --user www-data -it nextcloud-\$(tr -d '\n' < $NC_VERSION_FILE)-1"
+alias nc-dev="docker exec --user www-data -it nextcloud-\$(nc-dev-get-version)-1"
 alias nc-dev-occ="nc-dev php occ"
 
 nc-dev-logs() {
-  docker exec --user www-data nextcloud-$(tr -d '\n' < $NC_VERSION_FILE)-1 tail $@ /var/www/html/data/nextcloud.log
+  docker exec --user www-data nextcloud-$(nc-dev-get-version)-1 tail $@ /var/www/html/data/nextcloud.log
 }
 
 nc-dev-pretty-logs() {
@@ -51,6 +67,7 @@ nc-backup() {
   rsync -avhz --delete --delete-excluded --partial --progress -e ssh \
     --exclude 'appdata_*/' \
     --exclude '._*' \
+    --exclude '.pnpm-store/' \
     spider.casraf.dev:/mnt/ncdata/ \
     "$drive/Nextcloud/"
   find "$drive" -type f -name '._*' -exec rm -f -- {} +
@@ -163,7 +180,7 @@ nc-enable-db-proxy() {
   echo "LazySQL connection URI:"
   echo "  ${URI}"
   echo
-  echo "When done, run: disable_nc_db_proxy"
+  echo "When done, run: nc-disable-db-proxy"
 }
 
 nc-disable-db-proxy() {
