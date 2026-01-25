@@ -381,6 +381,8 @@ install:
 
   - name: aerospace
     type: group
+    machines:
+      except: ['spider']
     steps:
       - name: aerospace
         type: brew
@@ -708,12 +710,15 @@ install:
 
   - name: wezterm
     type: brew
+    machines: {except: ['spider']}
 
   - name: alacritty
     type: brew
+    machines: {except: ['spider']}
 
   - name: ghostty
     type: brew
+    machines: {except: ['spider']}
     opts:
       cask: true
 
