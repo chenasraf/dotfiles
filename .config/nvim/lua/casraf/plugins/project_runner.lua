@@ -1,54 +1,42 @@
 local function create_runner(cmds)
-  local actions = require('telescope.actions')
-  local action_state = require('telescope.actions.state')
-  local conf = require('telescope.config').values
-
-  local function run_selected(prompt_bufnr, map)
-    actions.select_default:replace(function()
-      local selection = action_state.get_selected_entry()
-      actions.close(prompt_bufnr)
-      local cmd = selection.value
-      local type = selection.type
-      if type == 'cmd' then
-        vim.cmd(cmd)
-        return
-      elseif type == 'terminal' then
-        -- set new split height to 30
-        cmd = 'terminal ' .. cmd
-        vim.cmd('split | wincmd J | resize 20 | ' .. cmd)
-        return
-      end
-    end)
-    return 1
+  local function run_cmd(cmd, cmd_type)
+    if cmd_type == 'cmd' then
+      vim.cmd(cmd)
+    elseif cmd_type == 'terminal' then
+      vim.cmd('split | wincmd J | resize 20 | terminal ' .. cmd)
+    end
   end
+
   if type(cmds) == 'function' then
     local filename = vim.fn.expand('%:p')
     cmds = cmds(filename)
   end
-  local opts = {
-    prompt_title = 'Select run configuration',
-    attach_mappings = run_selected,
-    layout_config = {
-      width = 0.3,
-      -- height = math.floor(#cmds * 1.9),
-    },
-    finder = require('telescope.finders').new_table {
-      results = cmds,
-      entry_maker = function(entry)
-        return {
-          value = entry.value,
-          display = entry.label,
-          ordinal = entry.label,
-          type = entry.type or 'terminal',
-        }
-      end,
-    },
-  }
+
+  local entries = {}
+  for _, entry in ipairs(cmds) do
+    table.insert(entries, entry.label)
+  end
 
   return function()
-    require('telescope.pickers').new(opts, {
-      sorter = conf.generic_sorter(opts),
-    }):find()
+    require('fzf-lua').fzf_exec(entries, {
+      prompt = 'Select run configuration> ',
+      winopts = {
+        width = 0.3,
+        height = 0.4,
+      },
+      actions = {
+        ['default'] = function(selected)
+          if selected and selected[1] then
+            for _, cmd_entry in ipairs(cmds) do
+              if cmd_entry.label == selected[1] then
+                run_cmd(cmd_entry.value, cmd_entry.type or 'terminal')
+                break
+              end
+            end
+          end
+        end,
+      },
+    })
   end
 end
 

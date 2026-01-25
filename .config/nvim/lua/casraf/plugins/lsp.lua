@@ -30,7 +30,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', vim.lsp.buf.code_action, { desc = 'Code [A]ction', silent = true })
   vim.keymap.set({ "n", "v", "i" }, "<F2>", vim.lsp.buf.rename)
 
-  local tsb = require('telescope.builtin')
+  local fzf = require('fzf-lua')
 
   local function goto_declaration_fallback()
     local params = vim.lsp.util.make_position_params(0, 'utf-8')
@@ -42,7 +42,7 @@ local on_attach = function(_, bufnr)
       else
         -- fallback for Dart: use references or workspace symbol
         if vim.bo.filetype == 'dart' then
-          tsb.lsp_references()
+          fzf.lsp_references()
         else
           vim.notify("No definition found", vim.log.levels.WARN)
         end
@@ -51,11 +51,11 @@ local on_attach = function(_, bufnr)
   end
 
   nmap('gd', goto_declaration_fallback, '[G]oto [D]efinition')
-  nmap('gr', tsb.lsp_references, '[G]oto [R]eferences')
-  nmap('gI', tsb.lsp_implementations, '[G]oto [I]mplementation')
-  nmap('<leader>D', tsb.lsp_type_definitions, 'Type [D]efinition')
-  nmap('<leader>ds', tsb.lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', tsb.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  nmap('gr', fzf.lsp_references, '[G]oto [R]eferences')
+  nmap('gI', fzf.lsp_implementations, '[G]oto [I]mplementation')
+  nmap('<leader>D', fzf.lsp_typedefs, 'Type [D]efinition')
+  nmap('<leader>ds', fzf.lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ws', fzf.lsp_live_workspace_symbols, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -73,19 +73,16 @@ local on_attach = function(_, bufnr)
   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
   nmap('<leader>wl', function()
     local folders = vim.lsp.buf.list_workspace_folders()
-    require('telescope.pickers').new({}, {
-      prompt_title = "Workspace Folders",
-      finder = require('telescope.finders').new_table {
-        results = folders,
-        entry_maker = function(entry)
-          return {
-            value = entry,
-            display = entry,
-            ordinal = entry,
-          }
+    require('fzf-lua').fzf_exec(folders, {
+      prompt = 'Workspace Folders> ',
+      actions = {
+        ['default'] = function(selected)
+          if selected and selected[1] then
+            vim.cmd('cd ' .. selected[1])
+          end
         end,
       },
-    }):find()
+    })
   end, '[W]orkspace [L]ist Folders')
 
   -- Create a command `:Format` local to the LSP buffer
@@ -112,7 +109,33 @@ vim.api.nvim_create_autocmd("BufEnter", {
     })[1]
 
     if pubspec then
-      vim.keymap.set("n", "<F5>", ":Telescope flutter commands<CR>", {
+      vim.keymap.set("n", "<F5>", function()
+        local commands = {
+          'FlutterRun',
+          'FlutterDevices',
+          'FlutterEmulators',
+          'FlutterReload',
+          'FlutterRestart',
+          'FlutterQuit',
+          'FlutterDetach',
+          'FlutterOutlineToggle',
+          'FlutterDevTools',
+          'FlutterCopyProfilerUrl',
+          'FlutterLspRestart',
+          'FlutterSuper',
+          'FlutterReanalyze',
+        }
+        require('fzf-lua').fzf_exec(commands, {
+          prompt = 'Flutter> ',
+          actions = {
+            ['default'] = function(selected)
+              if selected and selected[1] then
+                vim.cmd(selected[1])
+              end
+            end,
+          },
+        })
+      end, {
         buffer = args.buf,
         desc = "Flutter commands",
         silent = true,

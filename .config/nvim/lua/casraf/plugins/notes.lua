@@ -2,10 +2,10 @@ local notes_folder = os.getenv('HOME') .. '/Nextcloud/Notes'
 
 local function notes_search()
   -- search for notes by file name
-  require('telescope.builtin').find_files({
-    prompt_title = 'Notes',
+  require('fzf-lua').files({
+    prompt = 'Notes> ',
     cwd = notes_folder,
-    find_command = { 'rg', '--files', '-g', '*.md' },
+    cmd = 'rg --files -g "*.md"',
   })
 end
 
