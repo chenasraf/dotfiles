@@ -723,6 +723,14 @@ install:
     opts:
       cask: true
 
-  # - name: easy-move-plus-resize
-  #   type: brew
-  #   check_installed: test -d "/Applications/Easy Move+Resize.app"
+
+  # ----------------------------------------------------------------------
+  # 🆎 Fonts
+  # ----------------------------------------------------------------------
+
+  - category: Fonts
+
+  - name: font-meslo-lg-nerd-font
+    type: brew
+  - name: font-fira-code-nerd-font
+    type: brew
