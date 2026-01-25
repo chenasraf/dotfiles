@@ -745,6 +745,11 @@ install:
   - category: 🆎 Fonts
 
   - name: font-meslo-lg-nerd-font
+    check_installed: fc-list | grep -q "Meslo"
     type: brew
+    tags: font
+
   - name: font-fira-code-nerd-font
+    check_installed: fc-list | grep -q "Fira"
     type: brew
+    tags: font
