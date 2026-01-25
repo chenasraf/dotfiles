@@ -76,6 +76,17 @@ keybind = super+shift+zero=reset_font_size
 # tmux bindings
 # ==============================================================================
 
+# Unbind default tab switching to allow tmux bindings
+keybind = super+digit_1=unbind
+keybind = super+digit_2=unbind
+keybind = super+digit_3=unbind
+keybind = super+digit_4=unbind
+keybind = super+digit_5=unbind
+keybind = super+digit_6=unbind
+keybind = super+digit_7=unbind
+keybind = super+digit_8=unbind
+keybind = super+digit_9=unbind
+
 # Select tmux window 0-9: Cmd+1-9,0
 keybind = super+one=text:\x021
 keybind = super+two=text:\x022
