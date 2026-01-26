@@ -2,7 +2,7 @@ import * as os from 'node:os'
 import { MassargCommand } from 'massarg/command'
 import { DF_DIR, HomeOpts, checkGitChanges, getDeviceUID } from './common'
 import { massarg } from 'massarg'
-import { runCommand } from '../common'
+import { UserError, runCommand } from '../common'
 
 export type BrewOpts = HomeOpts & { push: boolean; arch?: string }
 
@@ -16,8 +16,7 @@ async function backup(opts: BrewOpts) {
   const DEVICE_UID = await getDeviceUID()
   const gitChanges = await checkGitChanges(opts)
   if (gitChanges) {
-    console.error('There are other changes waiting to be pushed')
-    process.exit(1)
+    throw new UserError('There are other changes waiting to be pushed')
   }
   await runCommand(opts, [
     `mkdir -p "${DF_DIR}/brew/${DEVICE_UID}"`,

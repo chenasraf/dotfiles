@@ -1,4 +1,4 @@
-import { Opts, log, runCommand } from '../common'
+import { Opts, UserError, log, runCommand } from '../common'
 import { MassargCommand } from 'massarg/command'
 import { attachToSession, getTmuxConfig, parseConfig, sessionExists } from './utils'
 
@@ -11,12 +11,14 @@ export const attachCmd = new MassargCommand<Opts>({
 
     if (key) {
       const allConfigs = await getTmuxConfig()
-      const config = parseConfig(key, allConfigs[key])
-      const sessionName = parseConfig(key, config).name
-      if (!(await sessionExists(opts, sessionName))) {
-        throw new Error(`tmux session ${sessionName} does not exist`)
+      if (!allConfigs[key]) {
+        throw new UserError(`tmux config item '${key}' not found`)
       }
-      return attachToSession(opts, sessionName)
+      const config = parseConfig(key, allConfigs[key])
+      if (!(await sessionExists(opts, config.name))) {
+        throw new UserError(`tmux session '${config.name}' does not exist`)
+      }
+      return attachToSession(opts, config.name)
     }
 
     if (process.env.TMUX) {

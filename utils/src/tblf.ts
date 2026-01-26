@@ -1,5 +1,5 @@
 import { massarg } from 'massarg'
-import { Opts as _Opts, log } from './common'
+import { Opts as _Opts, UserError, log } from './common'
 
 type Opts = _Opts & {
   input?: string
@@ -27,7 +27,7 @@ async function main(opts: Opts) {
   }
 
   if (!input) {
-    throw new Error('No input provided.')
+    throw new UserError('No input provided')
   }
 
   log(opts, 'Input:', input + '\n')

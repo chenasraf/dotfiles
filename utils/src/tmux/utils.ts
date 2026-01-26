@@ -2,7 +2,7 @@ import { CosmiconfigResult, cosmiconfig } from 'cosmiconfig'
 import * as path from 'node:path'
 import * as os from 'node:os'
 import * as fs from 'node:fs/promises'
-import { Opts, getCommandOutput, runCommand } from '../common'
+import { Opts, UserError, getCommandOutput, runCommand } from '../common'
 import { spawn } from 'node:child_process'
 
 const searchDirs = [
@@ -199,8 +199,8 @@ export async function getTmuxConfigFileInfo(): Promise<
   // return results
 }
 
-export function throwNoConfigFound() {
-  throw new Error(
+export function throwNoConfigFound(): never {
+  throw new UserError(
     [
       'tmux config file not found, searched in:',
       '\t' +
@@ -219,8 +219,6 @@ export function throwNoConfigFound() {
               .join('\n\t'),
           )
           .join('\n\t'),
-      // searchInFor('tmux').map(x => path.join(d)).join('\n\t'),
-      // searchInFor('tmux_local').join('\n\t'),
     ].join('\n'),
   )
 }
@@ -270,12 +268,12 @@ export async function fzf(
         resolve(value.toString().trim())
         return
       }
-      reject(new Error('fzf cancelled or encountered an error'))
+      reject(new UserError('Selection cancelled'))
     })
 
     fzf.on('exit', (code) => {
       if (code === 1) {
-        reject(new Error('fzf cancelled or encountered an error'))
+        reject(new UserError('Selection cancelled'))
       }
     })
   })

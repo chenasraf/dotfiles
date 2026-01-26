@@ -1,6 +1,14 @@
 import { MassargCommand } from 'massarg/command'
 import { spawn } from 'node:child_process'
 
+// Custom error class for user-friendly errors
+export class UserError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'UserError'
+  }
+}
+
 export type Opts = {
   key: string
   verbose: boolean

@@ -1,5 +1,5 @@
 import * as util from 'node:util'
-import { Opts } from '../common'
+import { Opts, UserError } from '../common'
 import { MassargCommand } from 'massarg/command'
 import { fzf, getTmuxConfig, parseConfig } from './utils'
 
@@ -15,10 +15,10 @@ export const showCmd = new MassargCommand<ShowOpts>({
     if (!key) {
       key = await fzf(opts, Object.keys(config))
     }
-    const item = parseConfig(key, config[key])
-    if (!item) {
-      throw new Error(`tmux config item ${key} not found`)
+    if (!config[key]) {
+      throw new UserError(`tmux config item '${key}' not found`)
     }
+    const item = parseConfig(key, config[key])
     if (opts.json) {
       console.log(JSON.stringify(item))
     } else {

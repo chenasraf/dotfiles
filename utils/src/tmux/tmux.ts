@@ -1,4 +1,4 @@
-import { Opts } from '../common'
+import { Opts, UserError } from '../common'
 import {
   attachToSession,
   fzf,
@@ -17,14 +17,14 @@ export async function main(opts: Opts) {
     } = await getTmuxConfigFileInfo()
     const output = await fzf(opts, Object.keys(config))
     if (!output || !(output in config)) {
-      throw new Error('tmux config item not found')
+      throw new UserError(`tmux config item '${output || '(none)'}' not found`)
     }
     key = output
   }
   const config = await getTmuxConfig()
   const item = config[key]
   if (!item) {
-    throw new Error(`tmux config item ${key} not found`)
+    throw new UserError(`tmux config item '${key}' not found`)
   }
 
   const parsed = parseConfig(key, item)

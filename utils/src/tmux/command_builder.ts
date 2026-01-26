@@ -1,7 +1,7 @@
 import * as path from 'node:path'
 import * as fs from 'node:fs/promises'
 import * as os from 'node:os'
-import { Opts, log, runCommand } from '../common'
+import { Opts, UserError, log, runCommand } from '../common'
 import {
   ParsedTmuxConfigItem,
   TmuxPaneLayout,
@@ -115,12 +115,12 @@ export async function addSimpleConfigToFile(opts: CreateOpts, config: ParsedTmux
   const files = await getTmuxConfigFileInfo()
   const file = opts.local ? files.local : files.global
   if (!file) {
-    throw new Error('tmux config file not found')
+    throw new UserError('tmux config file not found')
   }
   const { filepath } = file
   const existingConfig = await getTmuxConfig()
   if (existingConfig[config.name] && !opts.dry) {
-    throw new Error(`tmux config item ${config.name} already exists`)
+    throw new UserError(`tmux config item '${config.name}' already exists`)
   }
 
   const dirFix = (dir: string) => dir.replace(config.root, './').replace(os.homedir(), '~')

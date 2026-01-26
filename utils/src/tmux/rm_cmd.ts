@@ -1,5 +1,5 @@
 import * as fs from 'node:fs/promises'
-import { Opts, log } from '../common'
+import { Opts, UserError, log } from '../common'
 import { MassargCommand } from 'massarg/command'
 import { getTmuxConfig, getTmuxConfigFileInfo } from './utils'
 
@@ -16,17 +16,17 @@ export const rmCmd = new MassargCommand<ConfigFileOpts>({
     const allConfigs = await getTmuxConfig()
     const configFile = opts.local ? configFiles.local : configFiles.global
     if (!configFile) {
-      throw new Error('tmux config file not found')
+      throw new UserError('tmux config file not found')
     }
     if (!allConfigs[key]) {
-      throw new Error(`tmux config item ${key} not found`)
+      throw new UserError(`tmux config item '${key}' not found`)
     }
     const strContents = await fs.readFile(configFile.filepath, 'utf-8')
     const contents = strContents.split('\n')
     const index = contents.findIndex((line) => line.startsWith(key + ':'))
     log(opts, 'Index:', index)
     if (index === -1) {
-      throw new Error(`tmux config item ${key} not found`)
+      throw new UserError(`tmux config item '${key}' not found in config file`)
     }
     let endIndex = contents.slice(index + 1).findIndex((line) => line.match(/^\S/))
     log(opts, 'End index:', endIndex)
