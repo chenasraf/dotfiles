@@ -193,4 +193,5 @@ fi
 alias lssh="lazyssh"
 alias lvim="nvim -c':e#<1'"
 alias cfg-reload="cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
-alias util-rebuild="pushd \\$DOTFILES/utils; pnpm ginst; popd"
+alias utils-rebuild="pushd \\$DOTFILES/utils; pnpm ginst; popd"
+alias sm="sofmani"
