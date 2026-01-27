@@ -105,7 +105,9 @@ local function run_in_terminal(cmd)
           'Failed (exit ' .. exit_code .. '). Press any key to close...'
       vim.schedule(function()
         if vim.api.nvim_buf_is_valid(buf) then
+          vim.bo[buf].modifiable = true
           vim.api.nvim_buf_set_lines(buf, -1, -1, false, { '', msg })
+          vim.bo[buf].modifiable = false
           vim.keymap.set('n', '<CR>', ':bd!<CR>', { buffer = buf, silent = true })
           vim.keymap.set('n', 'q', ':bd!<CR>', { buffer = buf, silent = true })
           vim.keymap.set('n', '<Esc>', ':bd!<CR>', { buffer = buf, silent = true })
