@@ -71,6 +71,21 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to s
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file", silent = true })
 vim.keymap.set("n", "<leader>W", "<cmd>wa<CR>", { desc = "Save all files", silent = true })
 
+-- reload buffer from disk
+vim.keymap.set("n", "<C-r>", function()
+  if vim.bo.modified then
+    vim.ui.select({ "Yes", "No" }, { prompt = "Buffer has unsaved changes. Reload anyway?" }, function(choice)
+      if choice == "Yes" then
+        vim.cmd("e!")
+        vim.notify("Buffer reloaded", vim.log.levels.INFO)
+      end
+    end)
+  else
+    vim.cmd("e!")
+    vim.notify("Buffer reloaded", vim.log.levels.INFO)
+  end
+end, { desc = "Reload buffer from disk", silent = true })
+
 --
 -- NOTE find and replace
 --
