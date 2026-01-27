@@ -109,28 +109,71 @@ vim.api.nvim_create_autocmd("BufEnter", {
     })[1]
 
     if pubspec then
+      local function ensure_dart_buffer()
+        -- Check if current buffer is dart
+        if vim.bo.filetype == 'dart' then
+          return true
+        end
+
+        -- Look for an existing buffer with a dart file
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_loaded(buf) then
+            local name = vim.api.nvim_buf_get_name(buf)
+            if name:match("%.dart$") then
+              vim.api.nvim_set_current_buf(buf)
+              return true
+            end
+          end
+        end
+
+        -- Try to load lib/main.dart
+        local main_dart = vim.fn.getcwd() .. '/lib/main.dart'
+        if vim.fn.filereadable(main_dart) == 1 then
+          vim.cmd('edit ' .. main_dart)
+          return true
+        end
+
+        vim.notify("No dart file found", vim.log.levels.WARN)
+        return false
+      end
+
       vim.keymap.set("n", "<F5>", function()
+        if not ensure_dart_buffer() then
+          return
+        end
+
         local commands = {
-          'FlutterRun',
-          'FlutterDevices',
-          'FlutterEmulators',
-          'FlutterReload',
-          'FlutterRestart',
-          'FlutterQuit',
-          'FlutterDetach',
-          'FlutterOutlineToggle',
-          'FlutterDevTools',
-          'FlutterCopyProfilerUrl',
-          'FlutterLspRestart',
-          'FlutterSuper',
-          'FlutterReanalyze',
+          { label = 'Run',              cmd = 'FlutterRun' },
+          { label = 'Devices',          cmd = 'FlutterDevices' },
+          { label = 'Emulators',        cmd = 'FlutterEmulators' },
+          { label = 'Reload',           cmd = 'FlutterReload' },
+          { label = 'Restart',          cmd = 'FlutterRestart' },
+          { label = 'Quit',             cmd = 'FlutterQuit' },
+          { label = 'Detach',           cmd = 'FlutterDetach' },
+          { label = 'Toggle Outline',   cmd = 'FlutterOutlineToggle' },
+          { label = 'Dev Tools',        cmd = 'FlutterDevTools' },
+          { label = 'Copy Profiler URL', cmd = 'FlutterCopyProfilerUrl' },
+          { label = 'LSP Restart',      cmd = 'FlutterLspRestart' },
+          { label = 'Go to Super',      cmd = 'FlutterSuper' },
+          { label = 'Reanalyze',        cmd = 'FlutterReanalyze' },
         }
-        require('fzf-lua').fzf_exec(commands, {
+
+        local labels = {}
+        local cmd_map = {}
+        for _, item in ipairs(commands) do
+          table.insert(labels, item.label)
+          cmd_map[item.label] = item.cmd
+        end
+
+        require('fzf-lua').fzf_exec(labels, {
           prompt = 'Flutter> ',
           actions = {
             ['default'] = function(selected)
               if selected and selected[1] then
-                vim.cmd(selected[1])
+                local cmd = cmd_map[selected[1]]
+                if cmd then
+                  vim.cmd(cmd)
+                end
               end
             end,
           },

@@ -157,6 +157,12 @@ vim.keymap.set("n", "<leader>n", function()
   vim.o.hlsearch = hl_search
 end, { desc = "Toggle search highlight" })
 
+-- NOTE toggle text wrap
+vim.keymap.set("n", "<leader>z", function()
+  vim.wo.wrap = not vim.wo.wrap
+  print("Text wrap: " .. (vim.wo.wrap and "on" or "off"))
+end, { desc = "Toggle text wrap", silent = true })
+
 -- NOTE copy json key to system clipboard
 local ts_keys = require('casraf.lib.ts_keys')
 

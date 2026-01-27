@@ -6,6 +6,10 @@
 local lsp_status = require('casraf.lib.lsp_status')
 local ts_keys = require('casraf.lib.ts_keys')
 
+local function wrap_status()
+  return 'TW: ' .. (vim.wo.wrap and '✓' or '✗')
+end
+
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
@@ -23,7 +27,14 @@ return {
       lualine_c = { 'filename' },
       lualine_d = { 'quickfix' },
       -- lualine_x = { 'require"nvim-treesitter".statusline()', lsp_supported, 'encoding', 'fileformat', 'filetype' },
-      lualine_x = { ts_keys.ts_statusline, lsp_status.lsp_supported, 'encoding', 'fileformat', 'filetype' },
+      lualine_x = {
+        ts_keys.ts_statusline,
+        lsp_status.lsp_supported,
+        wrap_status,
+        'encoding',
+        'fileformat',
+        'filetype'
+      },
       lualine_y = { 'progress' },
       lualine_z = { 'location' }
     },
