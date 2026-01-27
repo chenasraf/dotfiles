@@ -117,6 +117,10 @@ adb-connect-device() {
     read -r device_octet
   fi
 
+  if [[ -z "$device_octet" ]]; then
+    device_octet="100"
+  fi
+
   if [[ -z "$device_port" ]]; then
     printf "Device adb TCP/IP port [default 5555]: "
     read -r device_port
