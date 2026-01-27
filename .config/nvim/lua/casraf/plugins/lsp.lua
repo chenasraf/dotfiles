@@ -143,19 +143,27 @@ vim.api.nvim_create_autocmd("BufEnter", {
         end
 
         local commands = {
-          { label = 'Run',              cmd = 'FlutterRun' },
-          { label = 'Devices',          cmd = 'FlutterDevices' },
-          { label = 'Emulators',        cmd = 'FlutterEmulators' },
-          { label = 'Reload',           cmd = 'FlutterReload' },
-          { label = 'Restart',          cmd = 'FlutterRestart' },
-          { label = 'Quit',             cmd = 'FlutterQuit' },
-          { label = 'Detach',           cmd = 'FlutterDetach' },
-          { label = 'Toggle Outline',   cmd = 'FlutterOutlineToggle' },
-          { label = 'Dev Tools',        cmd = 'FlutterDevTools' },
+          { label = 'Run',               cmd = 'FlutterRun' },
+          { label = 'Debug',             cmd = 'FlutterDebug' },
+          { label = 'Attach',            cmd = 'FlutterAttach' },
+          { label = 'Detach',            cmd = 'FlutterDetach' },
+          { label = 'Reload',            cmd = 'FlutterReload' },
+          { label = 'Restart',           cmd = 'FlutterRestart' },
+          { label = 'Quit',              cmd = 'FlutterQuit' },
+          { label = 'Install',           cmd = 'belowright split | terminal flutter install' },
+          { label = 'Devices',           cmd = 'FlutterDevices' },
+          { label = 'Emulators',         cmd = 'FlutterEmulators' },
+          { label = 'Toggle Outline',    cmd = 'FlutterOutlineToggle' },
+          { label = 'Open Outline',      cmd = 'FlutterOutlineOpen' },
+          { label = 'Dev Tools',         cmd = 'FlutterDevTools' },
+          { label = 'Dev Tools Activate', cmd = 'FlutterDevToolsActivate' },
           { label = 'Copy Profiler URL', cmd = 'FlutterCopyProfilerUrl' },
-          { label = 'LSP Restart',      cmd = 'FlutterLspRestart' },
-          { label = 'Go to Super',      cmd = 'FlutterSuper' },
-          { label = 'Reanalyze',        cmd = 'FlutterReanalyze' },
+          { label = 'Log Toggle',        cmd = 'FlutterLogToggle' },
+          { label = 'Log Clear',         cmd = 'FlutterLogClear' },
+          { label = 'Rename',            cmd = 'FlutterRename' },
+          { label = 'Go to Super',       cmd = 'FlutterSuper' },
+          { label = 'Reanalyze',         cmd = 'FlutterReanalyze' },
+          { label = 'LSP Restart',       cmd = 'FlutterLspRestart' },
         }
 
         local labels = {}
@@ -191,7 +199,11 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "dart",
   callback = function()
     vim.keymap.set("n", 'gd', vim.lsp.buf.declaration,
-      { buffer = true, desc = 'Type [D]efinition', remap = true })
+      { buffer = true, desc = '[G]oto [D]efinition', remap = true })
+    vim.keymap.set("n", 'gD', ':FlutterSuper<CR>',
+      { buffer = true, desc = '[G]oto Super Class', silent = true })
+    vim.keymap.set("n", '<F2>', ':FlutterRename<CR>',
+      { buffer = true, desc = 'Flutter Rename', silent = true })
   end,
 })
 
