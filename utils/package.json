@@ -5,12 +5,10 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "tx": "tmux/cmd.js",
     "home": "home/home.js",
     "tblf": "tblf.js"
   },
   "scripts": {
-    "tx": "ts-node src/tmux/cmd.ts",
     "h": "ts-node src/home/home.ts",
     "tblf": "ts-node src/tblf.ts",
     "build": "tsc && cp package.json build/",

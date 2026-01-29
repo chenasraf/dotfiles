@@ -116,7 +116,7 @@ alias tk="trm"
 alias tks="tmux kill-server"
 alias txp="tx p"
 alias txa="tx c -s -l -r"
-alias tls='command -v node >/dev/null || eval "$(fnm env)"; tx ls -s'
+alias tls="tx ls -s"
 
 # network/ip
 alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
