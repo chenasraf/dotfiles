@@ -100,6 +100,9 @@ install:
       ref: master
       destination: ~/.local/share/zsh/plugins
 
+  - name: gh
+    type: brew
+
   - name: git-config
     type: shell
     tags: git
@@ -169,7 +172,7 @@ install:
           repository: chenasraf/sofmani
           destination: ~/.local/bin
           strategy: tar
-          download_filename: sofmani-linux-amd64.tar.gz
+          download_filename: sofmani-linux-{{ .Arch }}.tar.gz
 
   - name: vstask
     type: group
@@ -186,7 +189,7 @@ install:
           repository: chenasraf/vstask
           destination: ~/.local/bin
           strategy: tar
-          download_filename: vstask-linux-amd64.tar.gz
+          download_filename: vstask-linux-{{ .Arch }}.tar.gz
 
   - name: watchr
     type: group
@@ -203,7 +206,7 @@ install:
           repository: chenasraf/watchr
           destination: ~/.local/bin
           strategy: tar
-          download_filename: watchr-linux-amd64.tar.gz
+          download_filename: watchr-linux-{{ .Arch }}.tar.gz
 
   - name: treelike
     type: group
@@ -222,7 +225,7 @@ install:
         opts:
           repository: chenasraf/treelike
           destination: ~/.local/bin
-          download_filename: treelike-linux-amd64.tar.gz
+          download_filename: treelike-linux-{{ .Arch }}.tar.gz
 
   - name: gi_gen
     type: group
@@ -238,7 +241,24 @@ install:
         opts:
           repository: chenasraf/gi_gen
           destination: ~/.local/bin
-          download_filename: gi_gen-{{ .Tag }}-linux-amd64
+          download_filename: gi_gen-{{ .Tag }}-linux-{{ .Arch }}
+
+  - name: tx
+    type: group
+    steps:
+      - name: tx
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: tx
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/tx
+          destination: ~/.local/bin
+          strategy: tar
+          download_filename: tx-linux-{{ .Arch }}.tar.gz
 
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
@@ -431,7 +451,7 @@ install:
         # opts:
         #   repository: jgm/pandoc
         #   destination: ~/.local/bin
-        #   download_filename: pandoc-{{ .Tag }}-linux-amd64
+        #   download_filename: pandoc-{{ .Tag }}-linux-{{ .Arch }}
         type: shell
         platforms:
           only: ['linux']
@@ -748,8 +768,10 @@ install:
     check_installed: fc-list | grep -q "Meslo"
     type: brew
     tags: font
+    platforms: {only: ['macos']}
 
   - name: font-fira-code-nerd-font
     check_installed: fc-list | grep -q "Fira"
     type: brew
     tags: font
+    platforms: {only: ['macos']}
