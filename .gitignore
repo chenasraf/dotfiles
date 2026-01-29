@@ -6,8 +6,8 @@ bin/
 *.pyc
 tests/
 _local.zsh
-.tmux_local.yml
 .device_uid
 plugins/.cache
 .config/local.tmux
 var/log/sofmani
+.config/tmux_local.yml
