@@ -1,5 +1,18 @@
 .config:
   projects_path: ~/Dev
+  named_layouts:
+    claude:
+      cwd: .
+      split:
+        direction: h
+        child:
+          cwd: .
+          cmd: claude
+          split:
+            direction: v
+            child:
+              cwd: .
+              clock: true
 
 general:
   root: ~/Dev
