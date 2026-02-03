@@ -177,6 +177,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
           { label = 'Install',            cmd = 'FlutterInstall' },
           { label = 'Devices',            cmd = 'FlutterDevices' },
           { label = 'Emulators',          cmd = 'FlutterEmulators' },
+          { label = 'Connect to Device',  cmd = 'FlutterConnectDevice' },
           { label = 'Toggle Outline',     cmd = 'FlutterOutlineToggle' },
           { label = 'Open Outline',       cmd = 'FlutterOutlineOpen' },
           { label = 'Dev Tools',          cmd = 'FlutterDevTools' },
@@ -228,9 +229,60 @@ vim.api.nvim_create_autocmd("FileType", {
       { buffer = true, desc = '[G]oto Super Class', silent = true })
     vim.keymap.set("n", '<F2>', ':FlutterRename<CR>',
       { buffer = true, desc = 'Flutter Rename', silent = true })
+    vim.keymap.set("n", '<C-S-r>', ':FlutterReload<CR>',
+      { buffer = true, desc = 'Flutter Reload', silent = true })
+    vim.keymap.set("n", '<C-S-l>', ':FlutterRestart<CR>',
+      { buffer = true, desc = 'Flutter Restart', silent = true })
     vim.api.nvim_buf_create_user_command(0, 'FlutterInstall', function()
       run_in_terminal('flutter build apk && flutter install')
     end, { desc = 'Build APK and install on device' })
+
+    vim.api.nvim_buf_create_user_command(0, 'FlutterConnectDevice', function()
+      local function attempt_connect(octet, port)
+        local target = "192.168.68." .. octet .. ":" .. port
+        vim.notify("Connecting to " .. target .. "...", vim.log.levels.INFO)
+        vim.fn.jobstart({ "adb", "connect", target }, {
+          on_exit = function(_, exit_code)
+            vim.schedule(function()
+              if exit_code == 0 then
+                vim.notify("Successfully connected to " .. target, vim.log.levels.INFO)
+              else
+                vim.notify("Connection failed to " .. target, vim.log.levels.ERROR)
+                vim.ui.select({ "Retry", "Cancel" }, { prompt = "Connection failed. What would you like to do?" }, function(choice)
+                  if choice == "Retry" then
+                    vim.cmd("FlutterConnectDevice")
+                  end
+                end)
+              end
+            end)
+          end,
+        })
+      end
+
+      local function ask_port(octet)
+        vim.ui.input({ prompt = "Device port (required, Esc to cancel): " }, function(port)
+          if port == nil then
+            vim.notify("Cancelled.", vim.log.levels.INFO)
+            return
+          end
+          if port == "" then
+            vim.notify("Port is required.", vim.log.levels.WARN)
+            ask_port(octet)
+            return
+          end
+          attempt_connect(octet, port)
+        end)
+      end
+
+      vim.ui.input({ prompt = "Device octet (192.168.68.X) [default 100, empty to cancel]: " }, function(octet)
+        if octet == nil then
+          vim.notify("Cancelled.", vim.log.levels.INFO)
+          return
+        end
+        octet = octet == "" and "100" or octet
+        ask_port(octet)
+      end)
+    end, { desc = 'Connect to Android device via ADB over TCP/IP' })
   end,
 })
 
