@@ -260,6 +260,25 @@ install:
           strategy: tar
           download_filename: tx-linux-{{ .Arch }}.tar.gz
 
+  - name: cospend-cli
+    type: group
+    steps:
+      - name: cospend-cli
+        bin_name: cospend
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: cospend-cli
+        bin_name: cospend
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/cospend-cli
+          destination: ~/.local/bin
+          strategy: tar
+          download_filename: cospend-cli-linux-{{ .Arch }}.tar.gz
+
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
   # ----------------------------------------------------------------------
