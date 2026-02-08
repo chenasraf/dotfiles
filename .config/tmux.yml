@@ -30,3 +30,8 @@ dotfiles:
   windows:
     - .
     - utils
+
+Notes:
+  root: ~/Nextcloud/Notes
+  windows:
+    - ./
