@@ -17,16 +17,9 @@
 general:
   root: ~/Dev
 
-df:
-  name: dotfiles
-  root: ~/.dotfiles
-  windows:
-    - .
-    - utils
-
 dotfiles:
-  name: dotfiles
   root: ~/.dotfiles
+  aliases: [df]
   windows:
     - .
     - utils
