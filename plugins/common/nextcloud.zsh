@@ -80,6 +80,11 @@ nc-aio-force-update() {
   nc-aio-occ app:update "$app_name"
 }
 
+nc-aio-upgrade() {
+  nc-aio-occ maintenance:mode --on
+  nc-aio php updater/updater.phar --no-interaction
+}
+
 # --- CONFIG (edit if your paths/names differ) ---
 NC_CFG_PATH="/var/lib/docker/volumes/nextcloud_aio_nextcloud/_data/config/config.php"
 NC_DB_CONTAINER="nextcloud-aio-database"
