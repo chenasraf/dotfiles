@@ -92,6 +92,9 @@ return {
           },
         },
       }
+
+      vim.filetype.add({ extension = { ejs = "ejs" } })
+      vim.treesitter.language.register("embedded_template", "ejs")
     end, 0)
   end
 }
