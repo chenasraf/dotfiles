@@ -203,3 +203,4 @@ alias stremio-start="docker run -d -p 11470:11470 -p 12470:12470 --name stremio 
 alias stremio-stop="docker stop \$(docker ps -q --filter ancestor=stremio/server)"
 alias stremio-logs="docker logs -f \$(docker ps -q --filter ancestor=stremio/server)"
 alias stremio-restart="stremio-stop && stremio-start"
+alias addbill="exp add -c bill -m card -b common -f common"
