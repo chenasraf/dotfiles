@@ -95,6 +95,37 @@ return {
 
       vim.filetype.add({ extension = { ejs = "ejs" } })
       vim.treesitter.language.register("embedded_template", "ejs")
+
+      -- Firestore Rules tree-sitter parser
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+      parser_config.firestore_rules = {
+        install_info = {
+          url = "https://github.com/grimsteel/tree-sitter-firestore-rules",
+          files = { "src/parser.c" },
+          branch = "main",
+          generate_requires_npm = false,
+          requires_generate_from_grammar = false,
+        },
+        filetype = "firestorerules",
+      }
+      vim.filetype.add({
+        pattern = {
+          ["firestore%.rules"] = "firestorerules",
+          ["storage%.rules"] = "firestorerules",
+          [".*%.rules"] = {
+            priority = -1,
+            function(path, bufnr)
+              local content = vim.api.nvim_buf_get_lines(bufnr, 0, 5, false)
+              for _, line in ipairs(content) do
+                if line:match("service%s+cloud%.firestore") or line:match("service%s+firebase%.storage") then
+                  return "firestorerules"
+                end
+              end
+            end,
+          },
+        },
+      })
+      vim.treesitter.language.register("firestore_rules", "firestorerules")
     end, 0)
   end
 }
