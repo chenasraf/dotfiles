@@ -204,3 +204,14 @@ alias stremio-stop="docker stop \$(docker ps -q --filter ancestor=stremio/server
 alias stremio-logs="docker logs -f \$(docker ps -q --filter ancestor=stremio/server)"
 alias stremio-restart="stremio-stop && stremio-start"
 alias addbill="exp add -c bill -m card -b common -f common"
+alias get-soj-pwd="op item get sojourny --format json --fields 'superuser id token' --reveal | jq -r .value | tr -d '\n'"
+fbcurl() {
+  if [ -z "$FBPWD" ]; then
+    printf "Enter password: "
+    read FBPWD
+    echo
+    export FBPWD
+  fi
+  curl -fsSL -H "Authorization: Bearer $FBPWD" "$@"
+}
+
