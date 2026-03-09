@@ -540,6 +540,11 @@ install:
         linux: regex-tui_{{ .Tag }}_linux.{{ .Arch }}
         windows: regex-tui_{{ .Tag }}_windows.{{ .Arch }}.exe
 
+  - name: fastlane
+    type: brew
+    machines:
+      only: ['m1']
+
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
   # ----------------------------------------------------------------------
