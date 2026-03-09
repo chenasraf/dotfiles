@@ -215,3 +215,4 @@ fbcurl() {
   curl -fsSL -H "Authorization: Bearer $FBPWD" "$@"
 }
 
+alias fdg="fd --glob"
