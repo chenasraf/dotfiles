@@ -8,3 +8,5 @@ au BufRead,BufNewFile *.mdx             set filetype=markdown
 au BufRead,BufNewFile *.tmux            set filetype=tmux
 au BufRead,BufNewFile Tiltfile          set filetype=python
 au BufRead,BufNewFile */ghostty/config  set filetype=toml
+au BufRead,BufNewFile Appfile           set filetype=ruby
+au BufRead,BufNewFile Fastfile          set filetype=ruby
