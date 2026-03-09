@@ -103,6 +103,11 @@ install:
   - name: gh
     type: brew
 
+  - name: glab
+    type: brew
+    machines:
+      only: ['planck']
+
   - name: git-config
     type: shell
     tags: git
