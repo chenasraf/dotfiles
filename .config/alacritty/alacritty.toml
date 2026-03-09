@@ -135,55 +135,55 @@ action = "ResetFontSize"
 # tmux bindings
 # ==============================================================================
 
-# Select tmux window 0-9: Cmd+1-9,0
+# Select tmux window 0-9: Ctrl+1-9,0
 [[keyboard.bindings]]
 key = "Key1"
-mods = "Command"
+mods = "Control"
 chars = "\u00021"
 
 [[keyboard.bindings]]
 key = "Key2"
-mods = "Command"
+mods = "Control"
 chars = "\u00022"
 
 [[keyboard.bindings]]
 key = "Key3"
-mods = "Command"
+mods = "Control"
 chars = "\u00023"
 
 [[keyboard.bindings]]
 key = "Key4"
-mods = "Command"
+mods = "Control"
 chars = "\u00024"
 
 [[keyboard.bindings]]
 key = "Key5"
-mods = "Command"
+mods = "Control"
 chars = "\u00025"
 
 [[keyboard.bindings]]
 key = "Key6"
-mods = "Command"
+mods = "Control"
 chars = "\u00026"
 
 [[keyboard.bindings]]
 key = "Key7"
-mods = "Command"
+mods = "Control"
 chars = "\u00027"
 
 [[keyboard.bindings]]
 key = "Key8"
-mods = "Command"
+mods = "Control"
 chars = "\u00028"
 
 [[keyboard.bindings]]
 key = "Key9"
-mods = "Command"
+mods = "Control"
 chars = "\u00029"
 
 [[keyboard.bindings]]
 key = "Key0"
-mods = "Command"
+mods = "Control"
 chars = "\u00020"
 
 # Previous tmux window: Cmd+Shift+[  (which is Cmd+{)

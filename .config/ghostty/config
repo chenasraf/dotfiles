@@ -82,28 +82,17 @@ keybind = super+shift+zero=reset_font_size
 # tmux bindings
 # ==============================================================================
 
-# Unbind default tab switching to allow tmux bindings
-keybind = super+digit_1=unbind
-keybind = super+digit_2=unbind
-keybind = super+digit_3=unbind
-keybind = super+digit_4=unbind
-keybind = super+digit_5=unbind
-keybind = super+digit_6=unbind
-keybind = super+digit_7=unbind
-keybind = super+digit_8=unbind
-keybind = super+digit_9=unbind
-
-# Select tmux window 0-9: Cmd+1-9,0
-keybind = super+one=text:\x021
-keybind = super+two=text:\x022
-keybind = super+three=text:\x023
-keybind = super+four=text:\x024
-keybind = super+five=text:\x025
-keybind = super+six=text:\x026
-keybind = super+seven=text:\x027
-keybind = super+eight=text:\x028
-keybind = super+nine=text:\x029
-keybind = super+zero=text:\x020
+# Select tmux window 0-9: Ctrl+1-9,0
+keybind = ctrl+one=text:\x021
+keybind = ctrl+two=text:\x022
+keybind = ctrl+three=text:\x023
+keybind = ctrl+four=text:\x024
+keybind = ctrl+five=text:\x025
+keybind = ctrl+six=text:\x026
+keybind = ctrl+seven=text:\x027
+keybind = ctrl+eight=text:\x028
+keybind = ctrl+nine=text:\x029
+keybind = ctrl+zero=text:\x020
 
 # Previous tmux window: Ctrl+[
 keybind = ctrl+left_bracket=text:\x02p

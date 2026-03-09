@@ -74,16 +74,16 @@ config.keys = {
   --- tmux
   ----------------------------------------------------------------------------------
   -- Select window 0-9
-  { key = "1",         mods = "CMD",       action = act { SendString = "\x021" } },
-  { key = "2",         mods = "CMD",       action = act { SendString = "\x022" } },
-  { key = "3",         mods = "CMD",       action = act { SendString = "\x023" } },
-  { key = "4",         mods = "CMD",       action = act { SendString = "\x024" } },
-  { key = "5",         mods = "CMD",       action = act { SendString = "\x025" } },
-  { key = "6",         mods = "CMD",       action = act { SendString = "\x026" } },
-  { key = "7",         mods = "CMD",       action = act { SendString = "\x027" } },
-  { key = "8",         mods = "CMD",       action = act { SendString = "\x028" } },
-  { key = "9",         mods = "CMD",       action = act { SendString = "\x029" } },
-  { key = "0",         mods = "CMD",       action = act { SendString = "\x020" } },
+  { key = "1",         mods = "CTRL",      action = act { SendString = "\x021" } },
+  { key = "2",         mods = "CTRL",      action = act { SendString = "\x022" } },
+  { key = "3",         mods = "CTRL",      action = act { SendString = "\x023" } },
+  { key = "4",         mods = "CTRL",      action = act { SendString = "\x024" } },
+  { key = "5",         mods = "CTRL",      action = act { SendString = "\x025" } },
+  { key = "6",         mods = "CTRL",      action = act { SendString = "\x026" } },
+  { key = "7",         mods = "CTRL",      action = act { SendString = "\x027" } },
+  { key = "8",         mods = "CTRL",      action = act { SendString = "\x028" } },
+  { key = "9",         mods = "CTRL",      action = act { SendString = "\x029" } },
+  { key = "0",         mods = "CTRL",      action = act { SendString = "\x020" } },
   -- Previous/Next tmux window: Ctrl+[/]
   { key = "[",         mods = "CTRL",      action = act { SendString = "\x02p" } },
   { key = "]",         mods = "CTRL",      action = act { SendString = "\x02n" } },
