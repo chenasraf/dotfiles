@@ -33,6 +33,15 @@ install:
       destination: ~/.config/
       flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
 
+  - name: editorconfig
+    type: rsync
+    tags: config dotfiles
+    skip_summary:
+      update: true
+    opts:
+      source: $DOTFILES/.editorconfig.global
+      destination: ~/.editorconfig
+
   - name: nvim-config
     type: rsync
     tags: config nvim-config
