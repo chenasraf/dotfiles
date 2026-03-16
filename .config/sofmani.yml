@@ -20,8 +20,8 @@ install:
   # ----------------------------------------------------------------------
   # Installers that sync dotfiles or apply local system configurations.
 
-  - category: 🧰 Configs & Dotfiles
-    desc: Installers that sync dotfiles or apply local system configurations.
+  # - category: 🧰 Configs & Dotfiles
+  #   desc: Installers that sync dotfiles or apply local system configurations.
 
   - name: .config
     type: rsync
@@ -83,8 +83,8 @@ install:
   # ----------------------------------------------------------------------
   # Installers for git config, GPG setup, aliases, delta integration, etc.
 
-  - category: 🧾 Git Setup
-    desc: Installers for git config, GPG setup, aliases, delta integration, etc.
+  # - category: 🧾 Git Setup
+  #   desc: Installers for git config, GPG setup, aliases, delta integration, etc.
 
   - name: git-gpg
     type: shell
@@ -159,8 +159,8 @@ install:
   # ----------------------------------------------------------------------
   # Taps that provide custom tools or host additional formulas.
 
-  - category: 🍺 Custom Homebrew Taps
-    desc: Taps that provide custom tools or host additional formulas.
+  # - category: 🍺 Custom Homebrew Taps
+  #   desc: Taps that provide custom tools or host additional formulas.
 
   - name: sofmani
     type: group
@@ -289,8 +289,8 @@ install:
   # ----------------------------------------------------------------------
   # CLI utilities and general tools for development workflows.
 
-  - category: 🛠️ Dev Tools & Utilities
-    desc: CLI utilities and general tools for development workflows.
+  # - category: 🛠️ Dev Tools & Utilities
+  #   desc: CLI utilities and general tools for development workflows.
 
   - name: lazygit
     type: group
@@ -550,8 +550,8 @@ install:
   # ----------------------------------------------------------------------
   # Installers for language version managers like pyenv, fnm, etc.
 
-  - category: 💻 Language Runtimes & Package Managers
-    desc: Installers for language version managers like pyenv, fnm, etc.
+  # - category: 💻 Language Runtimes & Package Managers
+  #   desc: Installers for language version managers like pyenv, fnm, etc.
 
   - name: fnm
     type: shell
@@ -583,8 +583,8 @@ install:
   # ----------------------------------------------------------------------
   # Global CLI tools and utilities installed via pnpm.
 
-  - category: 📦 PNPM Ecosystem
-    desc: Global CLI tools and utilities installed via pnpm.
+  # - category: 📦 PNPM Ecosystem
+  #   desc: Global CLI tools and utilities installed via pnpm.
 
   - name: pnpm
     type: npm
@@ -625,8 +625,8 @@ install:
   # ----------------------------------------------------------------------
   # AI-related apps/tools
 
-  - category: 🤖 AI
-    desc: AI-related apps/tools
+  # - category: 🤖 AI
+  #   desc: AI-related apps/tools
 
   - name: claude-code
     bin_name: claude
@@ -680,8 +680,8 @@ install:
   # ----------------------------------------------------------------------
   # Python tools and utilities installed via pipx.
 
-  - category: 🐍 Python Tools (via pipx)
-    desc: Python tools and utilities installed via pipx.
+  # - category: 🐍 Python Tools (via pipx)
+  #   desc: Python tools and utilities installed via pipx.
 
   - name: pipx
     type: group
@@ -706,8 +706,8 @@ install:
   # ----------------------------------------------------------------------
   # Git-based plugins and themes for Zsh shell and Tmux.
 
-  - category: 🔌 Zsh & Tmux Plugins
-    desc: Git-based plugins and themes for Zsh shell and Tmux.
+  # - category: 🔌 Zsh & Tmux Plugins
+  #   desc: Git-based plugins and themes for Zsh shell and Tmux.
 
   - name: local-plugins
     type: rsync
@@ -773,8 +773,8 @@ install:
   # ----------------------------------------------------------------------
   # Custom tools and GitHub binaries not installed via a package manager.
 
-  - category: 🧭 Desktop Productivity Tools
-    desc: Custom tools and GitHub binaries not installed via a package manager.
+  # - category: 🧭 Desktop Productivity Tools
+  #   desc: Custom tools and GitHub binaries not installed via a package manager.
 
   - name: wezterm
     type: brew
@@ -792,7 +792,7 @@ install:
   # 🆎 Fonts
   # ----------------------------------------------------------------------
 
-  - category: 🆎 Fonts
+  # - category: 🆎 Fonts
 
   - name: font-meslo-lg-nerd-font
     check_installed: fc-list | grep -q "Meslo"
