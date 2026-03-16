@@ -209,6 +209,7 @@ on-mode-changed = []
     ## Custom
     alt-f = 'fullscreen'
 
+    alt-shift-m = 'exec-and-forget open -a "Proton Mail"'
     alt-shift-o = 'exec-and-forget open -a "Obsidian"'
     alt-shift-s = 'exec-and-forget open -a "Stremio"'
     alt-shift-t = 'exec-and-forget open -a "Ghostty"'
