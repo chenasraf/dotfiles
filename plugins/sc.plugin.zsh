@@ -82,7 +82,7 @@ _sc_collect_make() {
   local makefile="$1"
   # parse targets that aren't hidden (no leading dot/underscore) and aren't variable assignments
   grep -oE '^[a-zA-Z0-9][a-zA-Z0-9_-]*:' "$makefile" 2>/dev/null | sed 's/:$//' | while read -r target; do
-    echo "make -f $makefile $target"
+    echo "make $target"
   done
 }
 
@@ -102,9 +102,10 @@ sc() {
     lines+=("${(@f)$(_sc_collect_py "$pyproject")}")
   fi
 
-  local makefile
+  local makefile make_dir
   makefile=$(find-up Makefile 2>/dev/null)
   if [[ -n "$makefile" ]]; then
+    make_dir="${makefile:h}"
     lines+=("${(@f)$(_sc_collect_make "$makefile")}")
   fi
 
@@ -117,7 +118,13 @@ sc() {
   selected=$(printf '%s\n' "${lines[@]}" | grep -v '^$' | fzf --prompt="Run script: ")
 
   if [[ -n "$selected" ]]; then
-    echo "→ $selected"
-    eval "$selected"
+    # for make targets, run from the Makefile's directory
+    if [[ "$selected" == make\ * && -n "$make_dir" ]]; then
+      echo "→ $selected (in $make_dir)"
+      make -C "$make_dir" "${selected#make }"
+    else
+      echo "→ $selected"
+      eval "$selected"
+    fi
   fi
 }
