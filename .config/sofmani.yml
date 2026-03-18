@@ -292,6 +292,7 @@ install:
           destination: ~/.local/bin
           strategy: tar
           download_filename: cospend-cli-linux-{{ .Arch }}.tar.gz
+          archive_bin_name: cospend-cli
 
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
