@@ -294,6 +294,23 @@ install:
           download_filename: cospend-cli-linux-{{ .Arch }}.tar.gz
           archive_bin_name: cospend-cli
 
+  - name: direnv-dotenvx
+    type: group
+    steps:
+      - name: direnv-dotenvx
+        type: brew
+        post_install: ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        opts:
+          tap: chenasraf/tap
+      - name: chenasraf/direnv-dotenvx
+        type: git
+        platforms:
+          only: ['linux']
+        post_install: cp ~/.local/bin/direnv-dotenvx/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        post_update: cp ~/.local/bin/direnv-dotenvx/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        opts:
+          destination: ~/.local/bin
+
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
   # ----------------------------------------------------------------------
