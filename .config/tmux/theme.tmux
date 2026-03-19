@@ -70,14 +70,14 @@ setw -g pane-border-lines single
 # NOTE Window Status
 # set -g window-status-format " #I#{?#{!=:#{window_name},Window},: #W,} "
 set -g window-status-format "#[reverse]#I#{?#{!=:#{window_name},Window}, #[noreverse] #W,}#[fg=#{@thm_surface_0},bg=#{@thm_bg}]"
-set -g window-status-style "bg=#{@thm_surface_0},fg=#{@thm_rosewater}"
+set -g window-status-style "bg=#{@thm_surface_0},fg=#{@thm_teal}"
 # set -g window-status-last-style "bg=#{@thm_surface_0},fg=#{@thm_peach}"
 set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_surface_0}"
 set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_surface_0},bold"
 # set -gF window-status-separator "#[bg=#{@thm_surface_0},fg=#{@thm_overlay_0}]│"
 
-set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_rosewater}]"
-set -g window-status-current-style "bg=#{@thm_rosewater},fg=#{@thm_surface_0},bold"
+set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_teal}]"
+set -g window-status-current-style "bg=#{@thm_teal},fg=#{@thm_surface_0},bold"
 
 # run "${TMUX_PLUGINS_DIR}/tmux-online-status/online_status.tmux"
 # run "${TMUX_PLUGINS_DIR}/tmux-battery/battery.tmux"
