@@ -21,6 +21,7 @@ vim.cmd(table.concat({
   'nnoremenu PopUp.' .. labels.open_url .. '         gx',
 }, '\n'))
 
+vim.api.nvim_create_augroup("nvim.popupmenu", { clear = true })
 local group = vim.api.nvim_create_augroup("nvim_popupmenu", { clear = true })
 
 vim.api.nvim_create_autocmd("MenuPopup", {
@@ -28,12 +29,15 @@ vim.api.nvim_create_autocmd("MenuPopup", {
   group = group,
   desc = "Custom PopUp Setup",
   callback = function()
-    vim.cmd(table.concat({
+    local ok, _ = pcall(vim.cmd, table.concat({
       'amenu disable PopUp.' .. labels.go_to_definition,
       'amenu disable PopUp.' .. labels.go_to_references,
-      'nmenu disable PopUp.' .. labels.open_url
+      'nmenu disable PopUp.' .. labels.open_url,
     }, '\n'))
-    if #vim.lsp.get_clients({ bufnr = 0 }) then
+    if not ok then
+      return
+    end
+    if #vim.lsp.get_clients({ bufnr = 0 }) > 0 then
       vim.cmd(table.concat({
         'amenu enable PopUp.' .. labels.go_to_definition,
         'amenu enable PopUp.' .. labels.go_to_references,
