@@ -1,0 +1,311 @@
+# cetu:
+#   root: ~/Dev/cetu
+#   windows:
+#     - cacofonix
+#     - asterix
+
+casraf:
+  root: ~/Dev/casraf.dev
+  windows:
+    - ./
+    - ./functions
+
+massarg:
+  root: ~/Dev/massarg
+  windows:
+    - ./
+
+weary_talkie:
+  root: ~/Dev/weary_talkie
+  windows:
+    - .
+    - ./server
+
+playpet:
+  root: ~/Dev/playpet
+  windows:
+    - .
+    - ../flame_ui
+
+dungeon-paper:
+  root: ~/Dev/dungeon_paper
+  aliases: [dp]
+  windows:
+    - .
+    - ../dungeon_world_data
+    - ../dungeon-paper-website
+    - ../dungeon-paper-functions
+
+Dekelscats:
+  root: ~/Dev/Dekelscats
+  aliases: [dekel]
+  windows:
+    - ./
+    - ../casraf.dev/functions
+
+script_runner:
+  root: ~/Dev/script_runner
+  aliases: [scr]
+  windows:
+    - ./
+
+templates:
+  root: ~/Dev/templates
+  aliases: [tpl]
+  windows:
+    - ./
+
+license-gen:
+  root: ~/Dev/license-gen
+  aliases: [licenseg]
+  windows:
+    - ./
+
+btool:
+  root: ~/Dev/btool
+  windows:
+    - ./
+
+catroar:
+  root: ~/Dev/catroar
+  windows:
+    - ./
+
+mudblock:
+  root: ~/Dev/mudblock
+  windows:
+    - ./
+    - ../ctelnet
+    - ../terminal_color_parser
+
+text-transform:
+  root: ~/Dev/text-transform.nvim
+  aliases: [tt]
+  windows:
+    - ./
+
+simple-scaffold:
+  root: ~/Dev/simple-scaffold
+  windows:
+    - ./
+
+Evolution_new:
+  root: ~/Dev/Godot/Evolution_new
+  windows:
+    - ./
+
+unaconfig:
+  root: ~/Dev/unaconfig
+  windows:
+    - ./
+
+wand:
+  root: ~/Dev/wand
+  windows:
+    - ./
+
+# ovalix:
+#   root: ~/Dev/ovalix_webapp
+#   windows:
+#     - ./frontend
+#     - ./
+
+gba:
+  root: ~/Dev/gba
+  windows:
+    - ./games/gba_game_01
+    - ./butano/examples
+
+fisheye:
+  root: ~/Dev/redot/games/fish-eye
+  windows:
+    - ./
+
+Spellcrafter:
+  root: ~/Dev/redot/games/Spellcrafter
+  aliases: [spl]
+  windows:
+    - ./
+
+venom:
+  root: ~/Dev/venom
+  windows:
+    - ./
+    - ../megahal.js
+
+git-open:
+  root: ~/Dev/git-open
+  aliases: [gop]
+  windows:
+    - ./
+
+imgprep:
+  root: ~/Dev/imgprep
+  windows:
+    - ./
+
+treelike:
+  root: ~/Dev/go/src/github.com/chenasraf/treelike
+  windows:
+    - ./
+
+gi_gen:
+  root: ~/Dev/go/src/github.com/chenasraf/gi_gen
+  aliases: [gi, gig]
+  windows:
+    - ./
+
+flexy:
+  root: ~/Dev/go/src/github.com/chenasraf/flexy
+  windows:
+    - ./
+
+sofmani:
+  root: ~/Dev/go/src/github.com/chenasraf/sofmani
+  aliases: [sm]
+  windows:
+    - ./
+
+tap:
+  root: /opt/homebrew/Library/Taps/chenasraf/homebrew-tap
+  windows:
+    - ./
+
+redot:
+  root: ~/Dev/redot
+  windows:
+    - ./redot-engine
+    - name: org_redotengine_Redot
+      cwd: ./org.redotengine.Redot
+
+stimvisor:
+  root: ~/Dev/stimvisor
+  windows:
+    - ./
+    - ./frontend
+
+nextcloud-app-template:
+  root: ~/Dev/nextcloud-apps/nextcloud-app-template
+  aliases: [ntpl, nextcloud-template]
+  windows:
+    - ./
+
+habitica:
+  root: ~/Dev/nextcloud-apps/habitica
+  windows:
+    - ./
+
+autocurrency:
+  root: ~/Dev/nextcloud-apps/autocurrency
+  windows:
+    - ./
+    - ../cospend-nc
+
+fedicloud:
+  root: ~/Dev/nextcloud-apps/fedicloud
+  windows:
+    - ./
+    - ../mastodon
+
+abcdl:
+  root: ~/Dev/abcdl
+  windows:
+    - ./
+
+jukebox:
+  root: ~/Dev/nextcloud-apps/jukebox
+  windows:
+    - ./
+
+time_track:
+  root: ~/Dev/time_track
+  aliases: [timetrack]
+  windows:
+    - ./
+    - ./functions
+
+coffeegrade:
+  root: ~/Dev/coffeegrade
+  windows:
+    - ./
+
+ketu:
+  root: ~/Dev/ketu
+  windows:
+    - ./
+
+wildex:
+  root: ~/Dev/wildex
+  windows:
+    - ./
+
+# ballerine:
+#   root: ~/Dev/ballerine
+#   windows:
+#     - ./
+#     - ./apps/backoffice-v2/
+#     - ./apps/unified-api/
+#     - ./services/workflows-service/
+#     - ./apps/admin-dashboard/
+#     - ./apps/kyb-app/
+#     - ./apps/workflows-dashboard/
+
+vstask:
+  root: ~/Dev/go/src/github.com/chenasraf/vstask
+  aliases: [vst]
+  windows:
+    - ./
+
+archanomachy:
+  root: ~/Dev/Godot/archanomachy
+  windows:
+    - ./
+
+forum:
+  root: ~/Dev/nextcloud-apps/forum
+  windows:
+    - ./
+
+ncapps:
+  root: ~/Dev/nextcloud-apps/
+  aliases: [nc]
+  windows:
+    - ./forum
+    - ./autocurrency
+    - ./jukebox
+    - ./habitica
+
+nextcloud-deck-tools:
+  root: ~/Dev/nextcloud-deck-tools
+  aliases: [decktools, deck]
+  windows:
+    - ./
+
+orrans:
+  root: ~/Dev/orrans
+  windows:
+    - ./
+
+watchr:
+  root: ~/Dev/go/src/github.com/chenasraf/watchr
+  windows:
+    - ./
+
+sojourny:
+  root: ~/Dev/sojourny
+  aliases: [soj]
+  windows:
+    - layout: claude
+
+tx:
+  root: ~/Dev/go/src/github.com/chenasraf/tx
+  windows:
+    - ./
+
+proton-mail-manager:
+  root: ~/Dev/protonmail-pro-mcp
+  aliases: [proton]
+  windows:
+    - ./
+    - cwd: ../proton-mail-manager
+      layout: claude

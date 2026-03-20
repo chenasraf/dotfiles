@@ -31,7 +31,7 @@ install:
     opts:
       source: $DOTFILES/.config/
       destination: ~/.config/
-      flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store
+      flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store --exclude 'tmux_*.yml'
 
   - name: editorconfig
     type: rsync
@@ -63,6 +63,16 @@ install:
         if ! tmux source-file "$HOME/.config/tmux/conf.tmux"; then
           echo "⚠️  Failed to source tmux config"
         fi
+
+  - name: tx-config
+    type: shell
+    tags: config tmux
+    enabled: test -f "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml"
+    check_installed: test -f ~/.config/tmux_local.yml
+    check_has_update: '! diff -q "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml > /dev/null 2>&1'
+    opts:
+      command: cp "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
+      update_command: cp "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
 
   - name: lazygit-config
     type: rsync

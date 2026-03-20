@@ -1,4 +1,6 @@
 .config:
+  include:
+    - ./tmux_local.yml
   projects_path: ~/Dev
   named_layouts:
     claude:
