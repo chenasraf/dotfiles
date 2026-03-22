@@ -1,0 +1,53 @@
+.config:
+  named_layouts:
+    fe:
+      cwd: .
+      split:
+        direction: h
+        child:
+          cwd: .
+          cmd: claude
+          split:
+            direction: v
+            child:
+              cwd: .
+              cmd: npm start
+              split:
+                direction: v
+                child:
+                  cwd: .
+                  clock: true
+mwb:
+  root: ~/Dev/planck
+  windows:
+    - cwd: ./mwb-ui
+      layout: fe
+    - cwd: ./mwb-services
+      layout: claude
+    - cwd: ./mwb-data-services
+      layout: claude
+    - cwd: ./asi-configcat
+    - cwd: ./mwb-manifests
+pwa:
+  root: ~/Dev/planck
+  windows:
+    - ./mwb-ui
+    - ./mwb-services
+    - ./webapp-demo
+    - ./components
+    - ./react-components
+    - ./planckme
+pwa-deps:
+  root: ~/Dev/planck
+  windows:
+    - api
+    - storage
+    - typescript-utils
+    - build-tools
+    - generator
+    - docs
+
+git-open:
+  root: /Users/planck/Dev/git-open
+  windows:
+    - ./
