@@ -8,6 +8,8 @@ defaults:
     github-release:
       opts:
         github_token: $GITHUB_TOKEN
+    rsync:
+      verbose: true
 
 machine_aliases:
   m1: 5fa2a8e8193868df
