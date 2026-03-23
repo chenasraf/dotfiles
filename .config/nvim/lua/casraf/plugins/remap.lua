@@ -5,7 +5,7 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "No Q", silent = true })
 vim.keymap.set("n", "<leader>ps", function()
   vim.cmd.write()
   vim.cmd.Ex()
-end, { desc = "Save and file explorer", silent = true, silent = true })
+end, { desc = "Save and file explorer", silent = true, })
 
 --
 -- NOTE Remap for dealing with word wrap
@@ -42,15 +42,15 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line", silent = true })
 
 -- insert newlines without insert mode
 vim.keymap.set("n", "<M-o>", "o<Esc>k", { desc = "Insert newline below", silent = true })
-vim.keymap.set("n", "<M-S-O>", "O<Esc>j", { desc = "Insert newline above", silent = true })
+vim.keymap.set("n", "<M-C-O>", "O<Esc>j", { desc = "Insert newline above", silent = true })
 
 -- insert newlines in insert mode, keep cursor position
 vim.keymap.set("i", "<M-o>", "<Esc>o<Esc>gi", { desc = "Insert newline below", silent = true })
 vim.keymap.set("i", "<M-S-O>", "<Esc>O<Esc>gi", { desc = "Insert newline above", silent = true })
 
 -- delete words
-vim.keymap.set("i", "<A-Backspace>", "<Esc>dbi", { desc = "Delete word backwards", silent = true })
-vim.keymap.set("i", "<A-Del>", "<Esc>dei", { desc = "Delete word backwards", silent = true })
+vim.keymap.set("i", "<A-Backspace>", "<C-o>db", { desc = "Delete word backwards", silent = true })
+vim.keymap.set("i", "<A-Del>", "<C-o>de", { desc = "Delete word forwards", silent = true })
 
 -- TODO only apply on JS files
 vim.keymap.set("n", "<leader>db", "<esc>dawbx", { desc = "Delete JS property (back)", silent = true })
@@ -253,6 +253,7 @@ vim.keymap.set("n", "<leader>jC", function()
 end, { desc = "Print key path under cursor" })
 
 --- NOTE unused remaps
+---@diagnostic disable-next-line: unused-local, unused-function
 local function nope()
   vim.g.mapleader = " "
   -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
