@@ -759,7 +759,7 @@ install:
     post_update: source "$DOTFILES/plugins/loader.zsh"
     opts:
       source: ~/.dotfiles/plugins/
-      destination: ~/.local/share/zsh/plugins/
+      destination: ~/.local/share/zsh/plugins/local/
       flags: --delete
 
   - name: mfaerevaag/wd
