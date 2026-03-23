@@ -2,7 +2,14 @@
 
 SCAFFOLDS_DIR="$DOTFILES/scaffolds"
 
+# scaffold a project from a template
 tpl() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: tpl <template> [name] [args...]"
+    echo "Scaffold a project from a template"
+    echo "Aliases: ef=editorfile, gh=github, ghp=github.pnpm"
+    return 0
+  fi
   declare -A tpl_aliases=(
     ef "editorfile"
     gh "github"

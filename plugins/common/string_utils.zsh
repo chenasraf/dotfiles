@@ -2,17 +2,32 @@
 
 # example echo '1' | prepend 'result: '
 prepend() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: echo '1' | prepend 'result: '"
+    echo "Prepend a string to stdin"
+    return 0
+  fi
   echo -n "$@"
   cat -
 }
 
 # transform to lowercase
 lcase() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: lcase <text>"
+    echo "Transform text to lowercase"
+    return 0
+  fi
   echo "$@" | tr '[:upper:]' '[:lower:]'
 }
 
 # transform to uppercase
 ucase() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: ucase <text>"
+    echo "Transform text to uppercase"
+    return 0
+  fi
   echo "$@" | tr '[:lower:]' '[:upper:]'
 }
 
@@ -31,6 +46,11 @@ find-replace() {
 
 # join strings with delimiter
 strjoin() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: strjoin <delimiter> <string>..."
+    echo "Join strings with delimiter"
+    return 0
+  fi
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: strjoin <delimiter> <string>..."
     return 1
@@ -43,6 +63,11 @@ strjoin() {
 # short xarg
 # usage: xrg "[args]" "[template with {}]"
 xrg() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: xrg \"[args]\" \"[template with {}]\""
+    echo "Short xarg - run a template command for each argument"
+    return 0
+  fi
   if [[ $# -ne 2 ]]; then
     echo_red "Usage: xrg \"[args]\" \"[template with {}]\""
   fi
@@ -51,6 +76,11 @@ xrg() {
 
 # encode a uri component
 uriencode() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: uriencode <string>"
+    echo "Encode a URI component"
+    return 0
+  fi
   len="${#1}"
   for ((n = 0; n < len; n++)); do
     c="${1:$n:1}"
@@ -82,7 +112,13 @@ posix_compliant() {
 # decode a uri component
 alias uridecode=posix_compliant
 
+# center text in terminal
 center() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: center <text>"
+    echo "Center text in terminal"
+    return 0
+  fi
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: center <text>"
     return 1
@@ -91,7 +127,13 @@ center() {
   print_centered "$@"
 }
 
+# print a horizontal rule across the terminal
 hr() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: hr"
+    echo "Print a horizontal rule across the terminal"
+    return 0
+  fi
   print_centered "-" "-"
 }
 

@@ -4,6 +4,13 @@
 # returns 0 if confirmed or typed Y, 1 if not
 # flags: -c <color> or --color <color>
 ask() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Ask for confirmation before running a command, Y is default."
+    echo "Returns 0 if confirmed or typed Y, 1 if not."
+    echo "Usage: ask [-c <color>] <question>"
+    echo "Flags: -c <color> or --color <color>"
+    return 0
+  fi
   if [[ $# -eq 0 ]]; then
     echo_red "Usage: ask [-c <color>] <question>"
     return 1
@@ -25,6 +32,12 @@ ask() {
 # ask for confirmation before running a command, N is default
 # returns 0 if typed Y, 1 if not
 ask_no() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Ask for confirmation before running a command, N is default."
+    echo "Returns 0 if typed Y, 1 if not."
+    echo "Usage: ask_no <question>"
+    return 0
+  fi
   echo -n "$1 [y/N] "
   read REPLY
   if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -35,6 +48,11 @@ ask_no() {
 
 # get user input and output it
 get_user_input() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Get user input and output it."
+    echo "Usage: get_user_input <prompt>"
+    return 0
+  fi
   echo -n "$1 "
   read REPLY
   echo $REPLY

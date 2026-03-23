@@ -22,6 +22,13 @@ function spinner() {
   # (that way it works for any locale as long as the font supports the characters)
   local LC_CTYPE=C
 
+  # Show help
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "Usage: spinner [-N] <command> [args...]"
+    echo "  -N    Select spinner style 0-11 (default: random)"
+    return 0
+  fi
+
   # Parse optional -<number> to select spinner style
   local spin_index
   if [[ "$1" =~ ^-([0-9]+)$ ]]; then

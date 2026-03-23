@@ -4,10 +4,22 @@ source "${0:A:h}/number_utils.zsh"
 
 # show all man entries under a specific section
 # e.g. mansect 7
-mansect() { man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u; }
+mansect() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: mansect <section>"
+    echo "Show all man entries under a specific section"
+    return 0
+  fi
+  man -aWS ${1?man section not provided} \* | xargs basename | sed "s/\.[^.]*$//" | sort -u
+}
 
 # mkdir -p then navigate to said directory
 mkcd() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: mkcd <dir>"
+    echo "Create a directory and navigate to it"
+    return 0
+  fi
   mkdir -p -- "$1" && cd -P -- "$1"
 }
 
@@ -28,8 +40,9 @@ is_linux() {
 if is_mac; then
   run-parts() {
     verbose=0
-    if [[ $# -eq 0 ]]; then
-      echo "Usage: run-parts <dir>"
+    if [[ $# -eq 0 || "$1" == "-h" || "$1" == "--help" ]]; then
+      echo "Usage: run-parts [-v] <dir>"
+      echo "Run all executable scripts in a directory in order"
       return 1
     fi
     if [[ $1 == "-v" ]]; then
@@ -51,6 +64,11 @@ fi
 # enable touchID usage for sudo.
 # doesn't work inside a tmux session
 enable_touchid_sudo() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: enable_touchid_sudo"
+    echo "Enable Touch ID usage for sudo (doesn't work inside tmux)"
+    return 0
+  fi
   # Navigate to the directory containing the PAM configuration files
   pushd /etc/pam.d
 
@@ -84,6 +102,11 @@ enable_touchid_sudo() {
 
 # disable touchID usage for sudo and reverts back to default sudo configuration
 disable_touchid_sudo() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: disable_touchid_sudo"
+    echo "Disable Touch ID usage for sudo and revert to default configuration"
+    return 0
+  fi
   # Navigate to the directory containing the PAM configuration files
   pushd /etc/pam.d
 
@@ -107,6 +130,11 @@ disable_touchid_sudo() {
 # returns a string based on current arch
 # usage: archmatch -l "linux" -mA "mac_arm" -mI "mac_intel" -m "all_macs"
 archmatch() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: archmatch -l <linux> -mA <mac_arm> -mI <mac_intel> -m <all_macs>"
+    echo "Return a string based on current architecture"
+    return 0
+  fi
   while [[ "$#" -gt 0 ]]; do
     case $1 in
     -l | --linux)

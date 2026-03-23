@@ -2,6 +2,13 @@
 
 # convert markdown to html and output to stdout
 md2html() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: md2html [filename]"
+    echo "  Converts a markdown file to HTML and outputs to stdout."
+    echo "  Defaults to README.md if no filename is provided."
+    return 0
+  fi
+
   file=${1:-README.md}
   if [[ ! -f $(which pandoc) ]]; then
     echo "Pandoc not installed. Please install pandoc first."

@@ -14,6 +14,14 @@ killproc() {
   local -a rest
   for arg in "$@"; do
     case "$arg" in
+      -h|--help)
+        echo "Kill processes by (partial) name with optional confirmation."
+        echo "Usage: killproc [-f|--force] <name fragment>"
+        echo "Examples:"
+        echo "  killproc node"
+        echo '  killproc --force "my-long-running script.py"'
+        return 0
+        ;;
       -f|--force) force=1 ;;
       --) shift; rest+=("$@"); break ;;
       -*) print -u2 "killproc: unknown option: $arg"; return 2 ;;

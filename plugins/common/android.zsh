@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
 
+# Build a release APK from a Flutter project and optionally install on a remote device.
 build-apk() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: build-apk"
+    echo "Build a release APK from the current Flutter project and optionally install on a remote device."
+    return 0
+  fi
+
   set -euo pipefail
 
   # --- Helpers ---
@@ -81,7 +88,14 @@ build-apk() {
   esac
 }
 
+# Pair with an Android device over wireless debugging.
 adb-pair-device() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: adb-pair-device [device_octet] [port] [pairing_code]"
+    echo "Pair with an Android device at 192.168.68.<octet>:<port> using a pairing code."
+    return 0
+  fi
+
   device_octet="$1"
   device_port="$2"
   pairing_code="$3"
@@ -108,7 +122,14 @@ adb-pair-device() {
   }
 }
 
+# Connect to an Android device over ADB TCP/IP.
 adb-connect-device() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: adb-connect-device [device_octet] [port]"
+    echo "Connect to an Android device at 192.168.68.<octet>:<port> via ADB."
+    return 0
+  fi
+
   device_octet="$1"
   device_port="$2"
 
@@ -132,7 +153,14 @@ adb-connect-device() {
   }
 }
 
+# Install the release APK from the current Flutter project via ADB.
 adb-flutter-install() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: adb-flutter-install"
+    echo "Install the release APK from the nearest Flutter project onto a connected device."
+    return 0
+  fi
+
   proj_file="$(find-up pubspec.yaml)"
   if [[ -z "$proj_file" ]]; then
     echo "pubspec.yaml not found in any parent directory"

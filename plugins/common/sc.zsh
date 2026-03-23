@@ -88,6 +88,13 @@ _sc_collect_make() {
 
 # interactive script runner
 sc() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: sc"
+    echo "Interactive script runner"
+    echo "Collects scripts from package.json, pyproject.toml, and Makefile, then lets you pick one with fzf"
+    return 0
+  fi
+
   local lines=()
 
   local pkg_json

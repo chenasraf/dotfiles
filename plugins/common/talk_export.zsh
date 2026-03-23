@@ -1,6 +1,12 @@
 #!/usr/bin/env zsh
 
+# export links from a Nextcloud Talk chat as GPG-encrypted file
 nctalk-export-links() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nctalk-export-links [chat_id]"
+    echo "Export links from a Nextcloud Talk chat as GPG-encrypted file"
+    return 0
+  fi
   FPR="$(op item get 'gpg key' --format json --fields 'Fingerprint' | jq -r .value | tr -d '\n')"
   CHAT="${1:-y9osnnt2}"
 
@@ -21,7 +27,13 @@ nctalk-export-links() {
   [ $? -eq 0 ] && echo "Exported to $HOME/Downloads/talk-export-$(date +%Y%m%d).csv.gpg"
 }
 
+# decrypt a Nextcloud Talk export file
 nctalk-decrypt() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nctalk-decrypt [filename]"
+    echo "Decrypt a Nextcloud Talk export file"
+    return 0
+  fi
   FILE="${1:-talk-export-$(date +%Y%m%d).csv.gpg}"
   gpg --decrypt \
       --batch --yes --pinentry-mode loopback \

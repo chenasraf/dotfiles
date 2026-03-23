@@ -3,7 +3,13 @@
 NC_VERSION_FILE="$HOME/.nc-dev-version"
 NC_DEV_DIR="$HOME/Dev/nextcloud-docker-dev"
 
+# set or reset the Nextcloud dev version
 nc-dev-use() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-dev-use [version]"
+    echo "Set or reset the Nextcloud dev version"
+    return 0
+  fi
   local version="$1"
   if [[ -z "$version" ]]; then
     version="$(tr -d '\n' < $NC_VERSION_FILE)"
@@ -19,7 +25,13 @@ nc-dev-use() {
   echo "Set Nextcloud dev version to: $version"
 }
 
+# get the current Nextcloud dev version
 nc-dev-get-version() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-dev-get-version"
+    echo "Get the current Nextcloud dev version"
+    return 0
+  fi
   local version
   version="$(tr -d '\n' < $NC_VERSION_FILE)"
   if [[ -z "$version" ]]; then
@@ -28,7 +40,13 @@ nc-dev-get-version() {
   echo "$version"
 }
 
+# start the Nextcloud dev container for a given version
 nc-dev-start() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-dev-start [version]"
+    echo "Start the Nextcloud dev container for a given version"
+    return 0
+  fi
   local version="$1"
   nc-dev-use "$version"
   version="$(nc-dev-get-version)"
@@ -37,19 +55,35 @@ nc-dev-start() {
   popd
 }
 
+# stop the Nextcloud dev container
 alias nc-dev-stop="pushd \$NC_DEV_DIR && docker compose stop; popd"
+
+# Nextcloud AIO aliases
 alias nc-aio="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
 alias nc-aio-occ="nc-aio php occ"
 alias nc-aio-debug="nc-aio-occ config:system:set debug --type bool --value"
 
+# Nextcloud dev aliases
 alias nc-dev="docker exec --user www-data -it nextcloud-\$(nc-dev-get-version)-1"
 alias nc-dev-occ="nc-dev php occ"
 
+# tail the Nextcloud dev log file
 nc-dev-logs() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-dev-logs [args...]"
+    echo "Tail the Nextcloud dev log file"
+    return 0
+  fi
   docker exec --user www-data nextcloud-$(nc-dev-get-version)-1 tail $@ /var/www/html/data/nextcloud.log
 }
 
+# tail and pretty-print the Nextcloud dev log as JSON
 nc-dev-pretty-logs() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-dev-pretty-logs [args...]"
+    echo "Tail and pretty-print the Nextcloud dev log as JSON"
+    return 0
+  fi
   # Forward all args (e.g., -f) to nc-dev-logs
   nc-dev-logs "$@" | while IFS= read -r line; do
     printf '%s\n' "$line" | jq -C -c --unbuffered .
@@ -57,7 +91,13 @@ nc-dev-pretty-logs() {
   done
 }
 
+# rsync Nextcloud data from remote server to external drive
 nc-backup() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-backup"
+    echo "Rsync Nextcloud data from remote server to external drive"
+    return 0
+  fi
   drive="/Volumes/2T SSD"
   if [ ! -d "$drive/Nextcloud/" ]; then
     echo "Mount the 2T SSD first!"
@@ -73,14 +113,26 @@ nc-backup() {
   find "$drive" -type f -name '._*' -exec rm -f -- {} +
 }
 
+# force update a Nextcloud AIO app
 nc-aio-force-update() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-aio-force-update <app_name>"
+    echo "Force update a Nextcloud AIO app"
+    return 0
+  fi
   app_name="$1"
   nc-aio-occ config:app:set core lastupdatedat 0
   nc-aio-occ config:app:set "$app_name" last_updated 0
   nc-aio-occ app:update "$app_name"
 }
 
+# put Nextcloud AIO into maintenance mode and run the updater
 nc-aio-upgrade() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-aio-upgrade"
+    echo "Put Nextcloud AIO into maintenance mode and run the updater"
+    return 0
+  fi
   nc-aio-occ maintenance:mode --on
   nc-aio php updater/updater.phar --no-interaction
 }
@@ -102,7 +154,13 @@ _nc_read_cfg_via_awk() {
   ' "$NC_CFG_PATH"
 }
 
+# start a local proxy to the Nextcloud AIO database container
 nc-enable-db-proxy() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-enable-db-proxy"
+    echo "Start a local proxy to the Nextcloud AIO database container"
+    return 0
+  fi
   # 1) Read values from config.php using the proven awk filter
   local DBTYPE="" DBHOST_RAW="" DBUSER="" DBPASS="" DBNAME=""
   while IFS='=' read -r k v; do
@@ -188,7 +246,13 @@ nc-enable-db-proxy() {
   echo "When done, run: nc-disable-db-proxy"
 }
 
+# stop the Nextcloud AIO database proxy
 nc-disable-db-proxy() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: nc-disable-db-proxy"
+    echo "Stop the Nextcloud AIO database proxy"
+    return 0
+  fi
   if docker rm -f "$NC_PROXY_NAME" >/dev/null 2>&1; then
     echo "Proxy stopped."
   else

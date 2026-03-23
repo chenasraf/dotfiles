@@ -1,6 +1,14 @@
 #!/usr/bin/env zsh
 
+# list exported functions from given files, excluding internal/unset ones
 list_exported_functions() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: list_exported_functions <file>..."
+    echo "  Lists exported function names from the given shell script files."
+    echo "  Functions that are unset or internal (prefixed with _) are excluded."
+    return 0
+  fi
+
   local file
   for file in "$@"; do
     # Get unset functions from this file
@@ -23,7 +31,14 @@ list_exported_functions() {
   done
 }
 
+# list all shell functions from dotfiles plugins
 hscl() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: hscl"
+    echo "  Lists all exported shell functions from dotfiles plugins."
+    return 0
+  fi
+
   # Get the plugins directory (directory of this script)
   local plugins_dir="$DOTFILES/plugins"
 
@@ -34,7 +49,14 @@ hscl() {
   list_exported_functions "${script_files[@]}"
 }
 
+# interactive function selector using fzf
 hsc() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: hsc"
+    echo "  Interactively select a shell function using fzf and prefill it in the shell."
+    return 0
+  fi
+
   selected=$(hscl | sort -u | fzf --prompt="Select function: ")
 
   # If a function was selected, prefill it in the shell

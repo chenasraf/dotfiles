@@ -6,6 +6,15 @@
 #   gpge -o out.gpg file.csv       # -> explicit output file
 #   echo "secret" | gpge -o s.asc  # -> stdin to output (use --armor in $EXTRA)
 gpge() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Encrypt to your 1Password-stored fingerprint."
+    echo "Usage:"
+    echo "  gpge file.csv                  # -> creates file.csv.gpg"
+    echo "  gpge -o out.gpg file.csv       # -> explicit output file"
+    echo '  echo "secret" | gpge -o s.asc  # -> stdin to output (use --armor in $EXTRA)'
+    return 0
+  fi
+
   local fp
   fp=$(op item get 'gpg key' --format json --fields 'Fingerprint' \
         | jq -r .value | tr -d '\n') || { echo "Fingerprint not found" >&2; return 1; }
@@ -28,6 +37,15 @@ gpge() {
 #   gpgd -o out.csv path/to/file.gpg   # -> outputs to out.csv
 #   cat file.gpg | gpgd -o out.csv     # -> reads from stdin
 gpgd() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Decrypt a GPG-encrypted file using the passphrase from 1Password."
+    echo "Usage:"
+    echo "  gpgd path/to/file.csv.gpg          # -> outputs to path/to/file.csv"
+    echo "  gpgd -o out.csv path/to/file.gpg   # -> outputs to out.csv"
+    echo "  cat file.gpg | gpgd -o out.csv     # -> reads from stdin"
+    return 0
+  fi
+
   local pass
   pass=$(op item get 'gpg key' --format json --fields password --reveal \
           | jq -r .value | tr -d '\n') || {

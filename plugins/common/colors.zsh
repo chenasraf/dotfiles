@@ -2,8 +2,14 @@
 
 export USE_COLORS=$(tput colors 2>/dev/null)
 
-# colors
+# Print text with a specified color or style attribute.
+# Usage: echo_color [-n] <color|style|0-255> <text...>
 function echo_color() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: echo_color [-n] <color|style|0-255> <text...>"
+    echo "Print text with a specified color or terminal attribute."
+    return 0
+  fi
   if [[ -z "$USE_COLORS" || "$USE_COLORS" -lt 8 ]]; then
     echo "$@"
     return
@@ -41,7 +47,14 @@ function echo_color() {
   echo -e $n "$(tput $a $c)$@$(tput sgr0)"
 }
 
+# Display all 256 terminal colors (cached).
+# Usage: all_colors [-f]
 all_colors() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: all_colors [-f]"
+    echo "Display all 256 terminal colors. Use -f to force regenerate the cache."
+    return 0
+  fi
   cache_file="$DOTFILES/plugins/.cache/colors.cache"
   if [[ "$1" == "-f" ]]; then
     rm -f $cache_file
@@ -62,6 +75,7 @@ all_colors() {
   cat $cache_file
 }
 
+# Convenience aliases for common color outputs.
 alias test_colors="msgcat --color=test"
 alias cecho="echo_color"
 alias echo_gray="echo_color gray"

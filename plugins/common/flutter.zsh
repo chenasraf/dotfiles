@@ -1,6 +1,13 @@
 #!/usr/bin/env zsh
 
+# build a Flutter APK and optionally install to a remote ADB device
 build-apk() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: build-apk"
+    echo "Build a Flutter APK and optionally install to a remote ADB device"
+    return 0
+  fi
+
   set -euo pipefail
 
   # --- Helpers ---

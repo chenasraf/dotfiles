@@ -352,6 +352,8 @@ function grename() {
   fi
 }
 
+# Internal helper: search for an open PR in chenasraf/homebrew-tap by title
+# and add the "pr-pull" label if not already present.
 function _gtp_label() {
   local search="$1"
   local pr_data
@@ -373,7 +375,16 @@ function _gtp_label() {
   echo "Added \"pr-pull\" label to PR #$pr_number"
 }
 
+# Search for an open PR in chenasraf/homebrew-tap by title and add the "pr-pull" label.
 function gtp() {
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "Usage: gtp <search_term>"
+    echo ""
+    echo "Search for an open PR in chenasraf/homebrew-tap whose title matches"
+    echo "<search_term> and add the \"pr-pull\" label to it."
+    return 0
+  fi
+
   if [[ -z "$1" ]]; then
     echo "Usage: gtp <search_term>"
     return 1
@@ -385,7 +396,20 @@ function gtp() {
   fi
 }
 
+# Find a release PR in chenasraf/<repo>, wait for checks to pass, merge via
+# rebase, then poll for a homebrew-tap PR and add the "pr-pull" label.
 function grl() {
+  if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "Usage: grl <repo_name> [tap_search_term]"
+    echo ""
+    echo "Find an open release PR (titled \"chore release\") in chenasraf/<repo_name>,"
+    echo "wait for all CI checks to pass, merge it via rebase, then poll for a"
+    echo "matching homebrew-tap PR and add the \"pr-pull\" label."
+    echo ""
+    echo "If <tap_search_term> is omitted, <repo_name> is used to search the tap PR."
+    return 0
+  fi
+
   if [[ -z "$1" ]]; then
     echo "Usage: grl <repo_name> [tap_search_term]"
     return 1
