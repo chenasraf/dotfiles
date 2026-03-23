@@ -309,3 +309,9 @@ proton-mail-manager:
     - ./
     - cwd: ../proton-mail-manager
       layout: claude
+
+cospend-cli:
+  root: ~/Dev/go/src/github.com/chenasraf/cospend-cli
+  aliases: [cospend]
+  windows:
+    - ./
