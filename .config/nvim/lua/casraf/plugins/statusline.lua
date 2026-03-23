@@ -7,7 +7,7 @@ local lsp_status = require('casraf.lib.lsp_status')
 local ts_keys = require('casraf.lib.ts_keys')
 
 local function wrap_status()
-  return 'TW: ' .. (vim.wo.wrap and '✓' or '✗')
+  return (vim.wo.wrap and '✓' or '✗') .. ' TW'
 end
 
 return {

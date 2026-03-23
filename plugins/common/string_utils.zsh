@@ -80,9 +80,7 @@ posix_compliant() {
 }
 
 # decode a uri component
-uridecode() {
-  posix_compliant "${*}"
-}
+alias uridecode=posix_compliant
 
 center() {
   if [[ $# -eq 0 ]]; then

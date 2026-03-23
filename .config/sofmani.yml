@@ -758,9 +758,9 @@ install:
     post_install: source "$DOTFILES/plugins/loader.zsh"
     post_update: source "$DOTFILES/plugins/loader.zsh"
     opts:
-      source: ~/.dotfiles/plugins
-      destination: ~/.local/share/zsh/
-      # flags: --delete
+      source: ~/.dotfiles/plugins/
+      destination: ~/.local/share/zsh/plugins/
+      flags: --delete
 
   - name: mfaerevaag/wd
     type: git

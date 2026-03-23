@@ -55,6 +55,9 @@ local map = {
 
 M.get_current_keys = function()
   local parser = vim.treesitter.get_parser()
+  if not parser then
+    return nil
+  end
   local lang = parser:lang()
   if map[lang] then
     local ancestor_keys = map[lang]()

@@ -22,11 +22,21 @@ function spinner() {
   # (that way it works for any locale as long as the font supports the characters)
   local LC_CTYPE=C
 
-  # Run the provided command in background
+  # Parse optional -<number> to select spinner style
+  local spin_index
+  if [[ "$1" =~ ^-([0-9]+)$ ]]; then
+    spin_index=${match[1]}
+    shift
+  else
+    spin_index=$(($RANDOM % 12))
+  fi
+
+  # Run the provided command in background (disable monitor to suppress job notifications)
+  setopt local_options no_monitor
   "$@" &
   local pid=$! # Process Id of the previous running command
 
-  case $(($RANDOM % 12)) in
+  case $spin_index in
     0)
       local spin='⠁⠂⠄⡀⢀⠠⠐⠈'
       local charwidth=3
@@ -78,13 +88,15 @@ function spinner() {
   esac
 
   local i=0
+  local label="Running '$*'..."
   tput civis # cursor invisible
   while kill -0 "$pid" 2>/dev/null; do
     local i=$(((i + $charwidth) % ${#spin}))
-    printf "%s" "${spin:$i:$charwidth}"
-    cursorBack 1
+    printf "%s %s" "${spin:$i:$charwidth}" "$label"
+    cursorBack $((1 + ${#label} + 1))
     sleep .1
   done
+  printf "\r%*s\r" $((${#label} + 2)) "" # clear the line
   tput cnorm
   wait "$pid" # capture exit code
   return $?

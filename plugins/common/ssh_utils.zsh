@@ -18,5 +18,9 @@ pubkey() {
 # add pubkey to allowed signers
 allow-signing() {
   file=$(pubkey_file $1)
+  if [[ ! -f $file ]]; then
+    echo_red "Public key file not found: $file"
+    return 1
+  fi
   echo "$(git config --get user.email) namespaces=\"git\" $(cat $file)" >>~/.ssh/allowed_signers
 }
