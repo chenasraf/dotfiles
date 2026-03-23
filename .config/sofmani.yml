@@ -308,16 +308,19 @@ install:
     type: group
     steps:
       - name: direnv-dotenvx
+        check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
         type: brew
         post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        post_update: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
         opts:
           tap: chenasraf/tap
       - name: chenasraf/direnv-dotenvx
         type: git
+        check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
         platforms:
           only: ['linux']
-        post_install: cp ~/.local/bin/direnv-dotenvx/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
-        post_update: cp ~/.local/bin/direnv-dotenvx/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        post_update: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
         opts:
           destination: ~/.local/bin
 
