@@ -399,9 +399,6 @@ install:
           # destination: /usr/local/bin
           download_filename: lazyssh_Linux_x86_64.tar.gz
 
-  - name: opencode
-    type: brew
-
   - name: atuin
     type: shell
     opts:
@@ -672,6 +669,10 @@ install:
     post_update: xattr -rd com.apple.quarantine $(which claude)
     opts:
       cask: true
+
+  - name: opencode
+    type: brew
+    enabled: false
 
   - name: "@google/gemini-cli"
     bin_name: gemini
