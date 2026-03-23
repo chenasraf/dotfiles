@@ -352,4 +352,96 @@ function grename() {
   fi
 }
 
+function _gtp_label() {
+  local search="$1"
+  local pr_data
+  pr_data=$(gh pr list --repo chenasraf/homebrew-tap --state open --search "$search in:title" --json number,title,labels --jq "[.[] | select(.title | test(\"$search\"; \"i\"))][0] | {number, labels: [.labels[].name]}" 2>/dev/null)
+
+  if [[ -z "$pr_data" || "$pr_data" == "null" ]]; then
+    return 1
+  fi
+
+  local pr_number
+  pr_number=$(echo "$pr_data" | jq -r '.number')
+
+  if echo "$pr_data" | jq -e '.labels | index("pr-pull")' &>/dev/null; then
+    echo "PR #$pr_number already has the \"pr-pull\" label"
+    return 0
+  fi
+
+  gh pr edit "$pr_number" --repo chenasraf/homebrew-tap --add-label "pr-pull"
+  echo "Added \"pr-pull\" label to PR #$pr_number"
+}
+
+function gtp() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: gtp <search_term>"
+    return 1
+  fi
+
+  if ! _gtp_label "$1"; then
+    echo "No open PR found matching \"$1\""
+    return 1
+  fi
+}
+
+function grl() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: grl <repo_name> [tap_search_term]"
+    return 1
+  fi
+
+  local repo="chenasraf/$1"
+  local tap_search="${2:-$1}"
+
+  # Find release PR
+  local pr_number
+  pr_number=$(gh pr list --repo "$repo" --state open --search "chore release in:title" --json number,title --jq '.[0].number')
+
+  if [[ -z "$pr_number" ]]; then
+    echo "No open release PR found in $repo"
+    return 1
+  fi
+
+  echo "Found release PR #$pr_number in $repo"
+
+  # Poll until all checks pass
+  echo "Waiting for checks to pass..."
+  while true; do
+    local status
+    status=$(gh pr checks "$pr_number" --repo "$repo" 2>&1)
+    local rc=$?
+
+    if [[ $rc -eq 0 ]]; then
+      echo "All checks passed!"
+      break
+    fi
+
+    if echo "$status" | grep -q "fail"; then
+      echo "Checks failed:"
+      echo "$status"
+      return 1
+    fi
+
+    sleep 15
+  done
+
+  # Merge using rebase
+  echo "Merging PR #$pr_number via rebase..."
+  if ! gh pr merge "$pr_number" --repo "$repo" --rebase; then
+    echo "Failed to merge PR #$pr_number"
+    return 1
+  fi
+  echo "Merged successfully!"
+
+  # Poll for homebrew-tap PR
+  echo "Waiting for homebrew-tap PR matching \"$tap_search\"..."
+  while true; do
+    if _gtp_label "$tap_search"; then
+      return 0
+    fi
+    sleep 15
+  done
+}
+
 unset git_version
