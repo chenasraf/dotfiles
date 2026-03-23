@@ -309,7 +309,7 @@ install:
     steps:
       - name: direnv-dotenvx
         type: brew
-        post_install: ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+        post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
         opts:
           tap: chenasraf/tap
       - name: chenasraf/direnv-dotenvx
