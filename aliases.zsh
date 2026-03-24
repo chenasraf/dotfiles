@@ -216,3 +216,4 @@ fbcurl() {
 }
 
 alias fdg="fd --glob"
+alias mdf="prettier --config \$HOME/.prettierrc --ignore-path \$HOME/.prettierignore --write '**/*.md'"
