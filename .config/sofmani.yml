@@ -348,7 +348,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazygit_{{ .Version }}_linux_x86_64.tar.gz
+          download_filename: lazygit_{{ .Version }}_Linux_{{ .ArchAlias }}.tar.gz
 
   - name: lazydocker
     type: group
@@ -366,7 +366,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazydocker_{{ .Version }}_linux_x86_64.tar.gz
+          download_filename: lazydocker_{{ .Version }}_Linux_{{ .ArchAlias }}.tar.gz
 
   - name: lazysql
     type: group
@@ -384,7 +384,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazysql_Linux_x86_64.tar.gz
+          download_filename: lazysql_Linux_{{ .ArchAlias }}.tar.gz
 
   - name: lazyssh
     type: group
@@ -402,7 +402,7 @@ install:
           strategy: tar
           destination: ~/.local/bin
           # destination: /usr/local/bin
-          download_filename: lazyssh_Linux_x86_64.tar.gz
+          download_filename: lazyssh_Linux_{{ .ArchAlias }}.tar.gz
 
   - name: atuin
     type: shell
