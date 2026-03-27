@@ -62,6 +62,8 @@ alias nc-dev-stop="pushd \$NC_DEV_DIR && docker compose stop; popd"
 alias nc-aio="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
 alias nc-aio-occ="nc-aio php occ"
 alias nc-aio-debug="nc-aio-occ config:system:set debug --type bool --value"
+alias nc-aio-upgrade="nc-aio php updater/updater.phar --no-interaction"
+alias nc-aio-upgrade-beta="nc-aio-occ config:system:set updater.release.channel --value=beta && nc-aio-upgrade; nc-aio-occ config:system:set updater.release.channel --value=stable"
 
 # Nextcloud dev aliases
 alias nc-dev="docker exec --user www-data -it nextcloud-\$(nc-dev-get-version)-1"

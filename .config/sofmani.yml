@@ -317,6 +317,7 @@ install:
         opts:
           tap: chenasraf/tap
       - name: chenasraf/direnv-dotenvx
+        enabled: false
         type: git
         check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
         platforms:
