@@ -115,30 +115,6 @@ nc-backup() {
   find "$drive" -type f -name '._*' -exec rm -f -- {} +
 }
 
-# force update a Nextcloud AIO app
-nc-aio-force-update() {
-  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    echo "Usage: nc-aio-force-update <app_name>"
-    echo "Force update a Nextcloud AIO app"
-    return 0
-  fi
-  app_name="$1"
-  nc-aio-occ config:app:set core lastupdatedat 0
-  nc-aio-occ config:app:set "$app_name" last_updated 0
-  nc-aio-occ app:update "$app_name"
-}
-
-# put Nextcloud AIO into maintenance mode and run the updater
-nc-aio-upgrade() {
-  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    echo "Usage: nc-aio-upgrade"
-    echo "Put Nextcloud AIO into maintenance mode and run the updater"
-    return 0
-  fi
-  nc-aio-occ maintenance:mode --on
-  nc-aio php updater/updater.phar --no-interaction
-}
-
 # --- CONFIG (edit if your paths/names differ) ---
 NC_CFG_PATH="/var/lib/docker/volumes/nextcloud_aio_nextcloud/_data/config/config.php"
 NC_DB_CONTAINER="nextcloud-aio-database"
@@ -260,4 +236,25 @@ nc-disable-db-proxy() {
   else
     echo "No proxy running."
   fi
+}
+
+nc-aio-force-appupdate() {
+  JOB_CLASS="OCA\\UpdateNotification\\BackgroundJob\\UpdateAvailableNotifications"
+
+  echo "Busting appstore cache..."
+  INSTANCE_ID=$(nc-aio-occ config:system:get instanceid | tr -d "\n" | tr -d "\r")
+  echo "Instance ID: $INSTANCE_ID"
+  mv "/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json" "/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json.bk"
+  echo '{}' > "/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json"
+
+  echo "Looking up job ID for UpdateAvailableNotifications..."
+  JOB_ID=$(nc-aio-occ background-job:list --output=json 2>/dev/null \
+    | jq -r --arg class "$JOB_CLASS" '.[] | select(.class == $class) | .id')
+  if [[ -z "$JOB_ID" ]]; then
+    echo "Error: could not find job for $JOB_CLASS" >&2
+    return 1
+  fi
+
+  echo "Found job ID: $JOB_ID — running update check..."
+  nc-aio-occ background-job:execute --force-execute "$JOB_ID" && echo "Done." || echo "Job exited with an error (see above)."
 }
