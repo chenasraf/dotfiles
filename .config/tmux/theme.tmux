@@ -73,8 +73,8 @@ setw -g pane-border-lines single
 set -g window-status-format "#[reverse]#I#{?#{!=:#{window_name},Window}, #[noreverse] #W,}#[fg=#{@thm_surface_0},bg=#{@thm_bg}]"
 set -g window-status-style "bg=#{@thm_surface_0},fg=#{@thm_teal}"
 # set -g window-status-last-style "bg=#{@thm_surface_0},fg=#{@thm_peach}"
-set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_surface_0}"
-set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_surface_0},bold"
+set -g window-status-activity-style "bg=#{@thm_surface_0},fg=#{@thm_red}"
+set -g window-status-bell-style "bg=#{@thm_surface_0},fg=#{@thm_red},bold"
 # set -gF window-status-separator "#[bg=#{@thm_surface_0},fg=#{@thm_overlay_0}]│"
 
 set -g window-status-current-format "#[reverse]#[noreverse]#I#{?#{!=:#{window_name},Window},  #W,}#[bg=#{@thm_surface_0},fg=#{@thm_teal}]"

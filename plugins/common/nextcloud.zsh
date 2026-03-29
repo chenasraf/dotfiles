@@ -238,6 +238,7 @@ nc-disable-db-proxy() {
   fi
 }
 
+# NOTE not working
 nc-aio-force-appupdate() {
   JOB_CLASS="OCA\\UpdateNotification\\BackgroundJob\\UpdateAvailableNotifications"
 
