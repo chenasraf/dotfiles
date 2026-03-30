@@ -94,9 +94,9 @@ hp() {
 alias hl="home pull && stow -R -t ~ ."
 
 # stow
-alias stow-deploy="stow -v -R -t ~ ."
-alias stow-adopt="stow -v --adopt -t ~ ."
-alias stow-clean="stow -v -D -t ~ ."
+alias stow-deploy="stow -v -R -d \$DOTFILES -t ~ ."
+alias stow-adopt="stow -v --adopt -d \$DOTFILES -t ~ ."
+alias stow-clean="stow -v -D -d \$DOTFILES -t ~ ."
 alias swd="stow-deploy"
 alias swa="stow-adopt"
 alias swc="stow-clean"
