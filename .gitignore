@@ -1,7 +1,9 @@
 .DS_Store
 man/
-.bin/
-bin/
+/.bin/
+/bin/
+.config/bin/
+.config/dotfiles/
 *.swp
 *.pyc
 tests/

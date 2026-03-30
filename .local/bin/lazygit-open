@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ACTION=$1
+FILE=${2:-}
+REMOTE_BRANCH=${3:-}
+LOCAL_BRANCH=${4:-}
+COMMIT=${5:-}
+
+case "$ACTION" in
+  branch) ARG="$REMOTE_BRANCH" ;;
+  commit) ARG="$COMMIT" ;;
+  file) ARG="$FILE" ;;
+  pr)
+    ARG="$LOCAL_BRANCH"
+    if [[ -n "$REMOTE_BRANCH" ]]; then
+      ARG="$ARG $REMOTE_BRANCH"
+    fi
+    ;;
+  project | prs | ci) ARG="" ;;
+  *) ARG="" ;;
+esac
+
+git open "$ACTION" $ARG
