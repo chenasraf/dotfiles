@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "home": "home/home.js",
+    "hutil": "home/home.js",
     "tblf": "tblf.js"
   },
   "scripts": {

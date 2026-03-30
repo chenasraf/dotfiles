@@ -71,22 +71,26 @@ alias lg="lazygit"
 grac() { git remote add origin "git@github.com:chenasraf/$1.git"; }
 
 # home/dotfiles
+alias home="git -C \$DOTFILES"
 alias h="home"
-alias hh="home -h"
 alias hi="source \$DOTFILES/install.zsh"
 alias hli="hl && hi"
 alias hiv="hi; vim ."
 alias hihv="hi && hv"
 alias hv="pushd \$(wd path df); vi .; popd"
 alias rh="rhome"
-alias rt="home rt"
 alias hst="home status"
 alias hlg="lg -p \$HOME/.dotfiles"
-alias hg="home git"
-alias hdiff="home git diff"
-alias hdiff1="home git diff HEAD~1"
-alias hf="home git fetch"
-alias hp="home push"
+alias hg="home"
+alias hdiff="home diff"
+alias hdiff1="home diff HEAD~1"
+alias hf="home fetch"
+hp() {
+  if ! home diff --quiet HEAD 2>/dev/null || [ -n "$(home status --porcelain)" ]; then
+    home add . && home commit ${1:+-m "$1"}
+  fi
+  home push
+}
 alias hl="home pull && stow -R -t ~ ."
 
 # stow
@@ -96,7 +100,7 @@ alias stow-clean="stow -v -D -t ~ ."
 alias swd="stow-deploy"
 alias swa="stow-adopt"
 alias swc="stow-clean"
-alias hlog="home git log"
+alias hlog="home log"
 alias motd="run-parts \$DOTFILES/_plugins/motd"
 alias spider="ssh root@spider.casraf.dev"
 
