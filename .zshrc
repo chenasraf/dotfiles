@@ -25,14 +25,14 @@ export DOTBIN_META="$HOME/.config/.bin"
 
 # Load sofmani-managed zsh plugins
 
-source "$DOTFILES/plugins/loader.zsh"
+source "$DOTFILES/_plugins/loader.zsh"
 
 wd() { . ~/.local/share/zsh/plugins/wd/wd.sh }
 
 source "$DOTFILES/exports.zsh"
 
 if [[ -t 0 && -t 1 ]]; then
-  [[ "$1" == "-q" ]] || run-parts "$DOTFILES/plugins/motd"
+  [[ "$1" == "-q" ]] || run-parts "$DOTFILES/_plugins/motd"
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

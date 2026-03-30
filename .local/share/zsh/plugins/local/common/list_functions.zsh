@@ -40,7 +40,7 @@ hscl() {
   fi
 
   # Get the plugins directory (directory of this script)
-  local plugins_dir="$DOTFILES/plugins"
+  local plugins_dir="$PLUGINS_DIR/local"
 
   # Find all script files in plugins directory and subdirectories
   local script_files=("${plugins_dir}"/**/*.zsh(N))

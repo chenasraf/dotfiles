@@ -284,9 +284,9 @@ local function nope()
   vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
   vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { silent = true, desc = "Make file not executable" })
 
-  vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/packer.lua<CR>",
-    { desc = "Edit packer config" });
-  vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.dotfiles/.config/nvim/lua/casraf/remap.lua<CR>",
+  vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/casraf/plugins/init.lua<CR>",
+    { desc = "Edit plugins config" });
+  vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.config/nvim/lua/casraf/plugins/remap.lua<CR>",
     { desc = "Edit remaps" });
   -- vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it rain" });
   -- vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "Game of life" });

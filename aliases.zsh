@@ -87,9 +87,9 @@ alias hdiff="home git diff"
 alias hdiff1="home git diff HEAD~1"
 alias hf="home git fetch"
 alias hp="home push"
-alias hl="home pull && cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
+alias hl="home pull && stow -R -t ~ ."
 alias hlog="home git log"
-alias motd="run-parts \$DOTFILES/plugins/motd"
+alias motd="run-parts \$DOTFILES/_plugins/motd"
 alias spider="ssh root@spider.casraf.dev"
 
 # docker

@@ -25,35 +25,6 @@ install:
   # - category: 🧰 Configs & Dotfiles
   #   desc: Installers that sync dotfiles or apply local system configurations.
 
-  - name: .config
-    type: rsync
-    tags: config dotfiles sofmani-config
-    skip_summary:
-      update: true
-    opts:
-      source: $DOTFILES/.config/
-      destination: ~/.config/
-      flags: --exclude lazygit.yml --exclude nvim --exclude .git --exclude .DS_Store --exclude 'tmux_*.yml'
-
-  - name: editorconfig
-    type: rsync
-    tags: config dotfiles
-    skip_summary:
-      update: true
-    opts:
-      source: $DOTFILES/.editorconfig.global
-      destination: ~/.editorconfig
-
-  - name: nvim-config
-    type: rsync
-    tags: config nvim-config
-    skip_summary:
-      update: true
-    opts:
-      source: $DOTFILES/.config/nvim/
-      destination: ~/.config/nvim/
-      flags: --delete --exclude .git --exclude .DS_Store
-
   - name: tmux-config
     type: shell
     tags: config tmux
@@ -69,21 +40,22 @@ install:
   - name: tx-config
     type: shell
     tags: config tmux
-    enabled: test -f "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml"
+    enabled: test -f "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml"
     check_installed: test -f ~/.config/tmux_local.yml
-    check_has_update: '! diff -q "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml > /dev/null 2>&1'
+    check_has_update: '! diff -q "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml > /dev/null 2>&1'
     opts:
-      command: cp "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
-      update_command: cp "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
+      command: cp "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
+      update_command: cp "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
 
   - name: lazygit-config
-    type: rsync
+    type: shell
     tags: lazygit lazygit-config config
     skip_summary:
       update: true
     opts:
-      source: $DOTFILES/.config/lazygit.yml
-      destination: $LAZYGIT_HOME/config.yml
+      check_installed: test -L "$LAZYGIT_HOME/config.yml"
+      command: ln -sf "$HOME/.config/lazygit.yml" "$LAZYGIT_HOME/config.yml"
+      update_command: ln -sf "$HOME/.config/lazygit.yml" "$LAZYGIT_HOME/config.yml"
 
   - name: osx-defaults
     type: shell
@@ -150,7 +122,7 @@ install:
         git config --global gpg.format "ssh"
         git config --global gpg.ssh.allowedSignersFile "~/.ssh/allowed_signers"
         git config --global commit.gpgsign true
-        git config --global maintenance.repo "~/.dotfiles"
+        git config --global maintenance.repo "$HOME/.dotfiles.git"
         git config --global fetch.writeCommitGraph true
         git config --global log.showSignature true
         git config --global core.excludesfile ~/.config/.gitignore
@@ -500,7 +472,7 @@ install:
     opts:
       bin_name: tx
       command: |
-        cd $DOTFILES/utils
+        cd $HOME/.config/dotfiles/utils
         pnpm i && pnpm build && pnpm ginst
 
   - name: pandoc
@@ -755,15 +727,7 @@ install:
   # - category: 🔌 Zsh & Tmux Plugins
   #   desc: Git-based plugins and themes for Zsh shell and Tmux.
 
-  - name: local-plugins
-    type: rsync
-    tags: plugin config
-    post_install: source "$DOTFILES/plugins/loader.zsh"
-    post_update: source "$DOTFILES/plugins/loader.zsh"
-    opts:
-      source: ~/.dotfiles/plugins/
-      destination: ~/.local/share/zsh/plugins/local/
-      flags: --delete
+  # local-plugins: no longer needed — tracked in-place by bare repo at ~/.local/share/zsh/plugins/local/
 
   - name: mfaerevaag/wd
     type: git

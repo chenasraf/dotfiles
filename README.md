@@ -78,26 +78,60 @@ Some (but not all) of the plugins/modifications are listed here:
 
 ## How to install
 
-1. Install zsh
+1. Install zsh and [GNU Stow](https://www.gnu.org/software/stow/)
+
+   ```bash
+   brew install stow
+   ```
+
 2. Clone this repository into `~/.dotfiles`:
 
    ```bash
    git clone git@github.com:chenasraf/dotfiles.git --depth 1 ~/.dotfiles
    ```
 
-3. Replace entire contents of `~/.zshrc` to the new version using (`ln -s` does **not** work):
+3. Symlink configs into your home directory using stow:
 
    ```bash
-   echo 'source "$HOME/.dotfiles/.zshrc"' > ~/.zshrc
+   cd ~/.dotfiles
+   stow -t ~ .
    ```
 
-4. Run install scripts:
+   This creates symlinks for `.zshrc`, `.editorconfig`, `.config/*`, `.local/share/zsh/plugins/local/*`, etc.
+   Files listed in `.stow-local-ignore` (scripts, utilities, repo metadata) are excluded.
+
+   To restow after pulling changes:
 
    ```bash
-   source ~/.dotfiles/install.zsh
+   cd ~/.dotfiles
+   stow -R -t ~ .
    ```
 
-   And reload the terminal
+4. Install tools via [sofmani](https://github.com/chenasraf/sofmani):
+
+   ```bash
+   sofmani
+   ```
+
+   This handles brew packages, git plugins, language runtimes, and other dependencies.
+
+### Structure
+
+```
+~/.dotfiles/
+├── .config/          # App configs (aerospace, alacritty, ghostty, lazygit, nvim, tmux, wezterm, ...)
+├── .local/           # Zsh plugins (stowed to ~/.local/share/zsh/plugins/local/)
+├── .editorconfig     # Global editorconfig (stowed to ~/.editorconfig)
+├── .zshrc            # Shell config (stowed to ~/.zshrc)
+├── exports.zsh       # Environment variables (sourced by .zshrc)
+├── aliases.zsh       # Shell aliases (sourced by .zshrc)
+├── completions/      # Zsh completions (added to fpath by .zshrc)
+├── _plugins/         # Plugin loader and MOTD scripts (sourced from $DOTFILES)
+├── utils/            # Build utilities
+└── .stow-local-ignore
+```
+
+Stow symlinks everything in the repo root into `~`, except items in `.stow-local-ignore` (scripts, utilities, and repo metadata that are sourced directly from `$DOTFILES`).
 
 ## My Other Stuff
 

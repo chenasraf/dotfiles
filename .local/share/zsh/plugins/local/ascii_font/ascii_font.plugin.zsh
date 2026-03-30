@@ -2,7 +2,7 @@
 
 ascii-text() {
   # ascii-font() {
-  dir="$DOTFILES/plugins/ascii_font"
+  dir="${0:A:h}"
   font="$dir/fonts/Big-Money-ne"
   size=1
   color=""

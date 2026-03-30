@@ -55,7 +55,7 @@ all_colors() {
     echo "Display all 256 terminal colors. Use -f to force regenerate the cache."
     return 0
   fi
-  cache_file="$DOTFILES/plugins/.cache/colors.cache"
+  cache_file="$PLUGINS_DIR/local/.cache/colors.cache"
   if [[ "$1" == "-f" ]]; then
     rm -f $cache_file
   fi

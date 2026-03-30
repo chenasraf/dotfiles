@@ -36,7 +36,7 @@ mdp() {
   done
 
   filename=${1:-README.md}
-  html_file="$DOTFILES/plugins/assets/mdp-template.html"
+  html_file="$PLUGINS_DIR/local/assets/mdp-template.html"
   title=$(basename $filename)
   filewoext="$(basename ${filename%.*})"
 

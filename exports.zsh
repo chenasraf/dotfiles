@@ -15,10 +15,10 @@ export PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.tmux/plugins"
 
 # Lazygit
-if [[ -d "$HOME/Library/ApplicationSupport/lazygit" ]]; then
-  export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
-elif [[ -d "$HOME/.config/lazygit" ]]; then
+if [[ -d "$HOME/.config/lazygit" ]]; then
   export LAZYGIT_HOME="$HOME/.config/lazygit"
+elif [[ -d "$HOME/Library/ApplicationSupport/lazygit" ]]; then
+  export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
 fi
 
 # Postgres.app
