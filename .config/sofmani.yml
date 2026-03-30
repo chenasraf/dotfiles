@@ -83,6 +83,16 @@ install:
       ref: master
       destination: ~/.local/share/zsh/plugins
 
+  - name: stow
+    type: group
+    steps:
+      - name: stow
+        type: brew
+      - name: stow
+        type: apt
+        platforms:
+          only: ['linux']
+
   - name: gh
     type: brew
 
