@@ -15,7 +15,7 @@ addalias() {
   source "$HOME/.dotfiles/aliases.zsh"
 }
 
-source "$HOME/.dotfiles/plugins/common/os_utils.zsh"
+source "$HOME/.local/share/zsh/plugins/local/common/os_utils.zsh"
 
 # navigation
 alias ".."="cd .."

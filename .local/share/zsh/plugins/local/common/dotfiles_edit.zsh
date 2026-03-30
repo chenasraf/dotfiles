@@ -144,7 +144,7 @@ dfpe() {
   fi
 
   # Call dfe with flags and transformed file argument
-  dfe "${flags[@]}" "plugins/$file.plugin"
+  dfe "${flags[@]}" ".local/share/zsh/plugins/local/$file.plugin"
   return $?
 }
 
@@ -174,6 +174,6 @@ dfps() {
   fi
 
   # Call dfs with flags and transformed file argument
-  dfs "${flags[@]}" "plugins/$file"
+  dfs "${flags[@]}" ".local/share/zsh/plugins/local/$file"
   return $?
 }
