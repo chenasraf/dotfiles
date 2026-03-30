@@ -47,16 +47,6 @@ install:
       command: cp "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
       update_command: cp "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
 
-  - name: lazygit-config
-    type: shell
-    tags: lazygit lazygit-config config
-    skip_summary:
-      update: true
-    opts:
-      check_installed: test -L "$LAZYGIT_HOME/config.yml"
-      command: ln -sf "$HOME/.config/lazygit.yml" "$LAZYGIT_HOME/config.yml"
-      update_command: ln -sf "$HOME/.config/lazygit.yml" "$LAZYGIT_HOME/config.yml"
-
   - name: osx-defaults
     type: shell
     tags: system
