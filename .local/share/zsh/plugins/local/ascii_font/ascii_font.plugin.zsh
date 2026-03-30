@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
+_ascii_font_dir="${0:A:h}"
+
 ascii-text() {
   # ascii-font() {
-  dir="${0:A:h}"
+  dir="${_ascii_font_dir}"
   font="$dir/fonts/Big-Money-ne"
   size=1
   color=""
