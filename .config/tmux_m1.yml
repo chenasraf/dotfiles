@@ -99,11 +99,6 @@ unaconfig:
   windows:
     - ./
 
-wand:
-  root: ~/Dev/wand
-  windows:
-    - ./
-
 # ovalix:
 #   root: ~/Dev/ovalix_webapp
 #   windows:
@@ -157,6 +152,11 @@ gi_gen:
 
 flexy:
   root: ~/Dev/go/src/github.com/chenasraf/flexy
+  windows:
+    - ./
+
+wand:
+  root: ~/Dev/go/src/github.com/chenasraf/wand
   windows:
     - ./
 

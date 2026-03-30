@@ -140,7 +140,6 @@ alias ip="iplocal; ip4; ip6"
 # package management
 alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g --latest; sudo \$SHELL -c \"gem update; gem cleanup\""
 alias pi="platform_install"
-alias install-utils="pushd \$DOTFILES/utils; pnpm install && pnpm build && pnpm ginst; popd"
 alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezterm@nightly --force"
 alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 
@@ -206,7 +205,6 @@ fi
 alias lssh="lazyssh"
 alias lvim="nvim -c':e#<1'"
 alias cfg-reload="cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
-alias utils-rebuild="pushd \\$DOTFILES/utils; pnpm ginst; popd"
 alias sm="sofmani"
 alias gop="git open"
 alias exp="cospend -p home-2026"

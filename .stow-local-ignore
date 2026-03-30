@@ -11,7 +11,6 @@ _local\.zsh
 autoload_completions\.zsh
 completions
 _plugins
-utils
 brew
 node_modules
 pnpm-lock\.yaml
@@ -20,5 +19,3 @@ README\.md
 \.prettierignore
 \.eslintignore
 \.shellcheckrc
-\.config/tmux_m1\.yml
-\.config/tmux_planck\.yml

@@ -248,6 +248,23 @@ install:
           strategy: tar
           download_filename: tx-linux-{{ .Arch }}.tar.gz
 
+  - name: wand
+    type: group
+    steps:
+      - name: wand
+        type: brew
+        opts:
+          tap: chenasraf/tap
+      - name: wand
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: chenasraf/wand
+          destination: ~/.local/bin
+          strategy: tar
+          download_filename: wand-linux-{{ .Arch }}.tar.gz
+
   - name: cospend-cli
     type: group
     steps:
@@ -456,14 +473,6 @@ install:
 
   - name: bat
     type: brew
-
-  - name: home
-    type: shell
-    opts:
-      bin_name: tx
-      command: |
-        cd $HOME/.config/dotfiles/utils
-        pnpm i && pnpm build && pnpm ginst
 
   - name: pandoc
     type: group

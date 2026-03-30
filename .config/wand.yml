@@ -1,0 +1,101 @@
+brew:
+  description: Manage Brewfile
+  children:
+    backup:
+      description: Backup brew state to Brewfile
+      flags:
+        no-push:
+          description: Skip pushing changes to git
+          type: bool
+      cmd: |
+        set -euo pipefail
+        if [ "$(uname)" != "Darwin" ]; then
+          echo "Not on macOS, skipping backup."
+          exit 0
+        fi
+
+        DEVICE_UID=$(cat "$DOTFILES/.device_uid")
+        SYNC_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+        BREW_DIR="$DOTFILES/brew/$DEVICE_UID"
+
+        if [ "$WAND_FLAG_NO_PUSH" != "true" ]; then
+          if ! git -C "$DOTFILES" diff --quiet; then
+            echo "There are other changes waiting to be pushed"
+            exit 1
+          fi
+        fi
+
+        mkdir -p "$BREW_DIR"
+        cd "$BREW_DIR"
+        brew bundle dump --formula --cask --tap --describe --force
+
+        if [ "$WAND_FLAG_NO_PUSH" != "true" ]; then
+          git -C "$DOTFILES" add "$BREW_DIR/Brewfile"
+          git -C "$DOTFILES" commit -m "backup(brew): Update Brewfile for $DEVICE_UID ($SYNC_DATE)"
+          git -C "$DOTFILES" push
+        fi
+
+    restore:
+      description: Restore brew state from Brewfile
+      flags:
+        arch:
+          alias: a
+          description: Architecture to use
+          default: arm64
+      cmd: |
+        set -euo pipefail
+        DEVICE_UID=$(cat "$DOTFILES/.device_uid")
+        BREW_DIR="$DOTFILES/brew/$DEVICE_UID"
+        echo "Restoring Brewfile for $DEVICE_UID ($WAND_FLAG_ARCH)"
+        cd "$BREW_DIR"
+        if [ "$WAND_FLAG_ARCH" = "arm64" ]; then
+          arch -arm64 brew bundle
+        else
+          brew bundle
+        fi
+
+mush:
+  description: Backup/restore Mushclient profile
+  children:
+    backup:
+      description: Backup Mushclient profile
+      cmd: |
+        set -euo pipefail
+        LOCAL_BASE="$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover"
+        LOCAL_DIR="$LOCAL_BASE/MUSHclient"
+        SYNCED_DIR="$HOME/Nextcloud/synced"
+        SYNCED_BACKUP="$SYNCED_DIR/MUSHclient"
+
+        echo "Dumping Aardwolf.db to Aardwolf.dump.sql"
+        sqlite3 "$SYNCED_BACKUP/Aardwolf.db" .dump > "$LOCAL_DIR/Aardwolf.dump.sql"
+        echo "Copying to sync dir..."
+        rsync -vtr "$LOCAL_DIR" "$SYNCED_DIR"
+        echo "Backed up $LOCAL_DIR to $SYNCED_DIR"
+
+    restore:
+      description: Restore Mushclient profile
+      cmd: |
+        set -euo pipefail
+        LOCAL_BASE="$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover"
+        SYNCED_DIR="$HOME/Nextcloud/synced"
+        SYNCED_BACKUP="$SYNCED_DIR/MUSHclient"
+
+        echo "Copying $SYNCED_BACKUP to $LOCAL_BASE"
+        rsync -vtr --exclude .git "$SYNCED_BACKUP" "$LOCAL_BASE/"
+        echo "Restored $SYNCED_BACKUP to $LOCAL_BASE"
+
+    map-restore:
+      description: Restore Mushclient map database
+      cmd: |
+        set -euo pipefail
+        LOCAL_BASE="$HOME/Library/Application Support/CrossOver/Bottles/MushClient/drive_c/users/crossover"
+        SRC="Aardwolf.db.Backup_Manual"
+        BK="Aardwolf.db.$(date -u +"%Y-%m-%dT%H-%M-%SZ").bk"
+        DEST="Aardwolf.db"
+
+        cd "$LOCAL_BASE"
+        echo "Renaming $DEST to $BK"
+        mv "$DEST" "$BK"
+        echo "Copying db_backups/$SRC to $DEST"
+        cp "db_backups/$SRC" "$DEST"
+        echo "Done."
