@@ -94,7 +94,14 @@ install:
           only: ['linux']
 
   - name: gh
-    type: brew
+    type: group
+    steps:
+      - name: gh
+        type: brew
+      - name: gh
+        type: apt
+        platforms:
+          only: ['linux']
 
   - name: glab
     type: brew
@@ -415,10 +422,29 @@ install:
         bin_name: delta
 
   - name: jq
-    type: brew
+    type: group
+    steps:
+      - name: jq
+        type: brew
+      - name: jq
+        type: apt
+        platforms:
+          only: ['linux']
 
   - name: yq
-    type: brew
+    type: group
+    steps:
+      - name: yq
+        type: brew
+      - name: yq
+        type: github-release
+        platforms:
+          only: ['linux']
+        opts:
+          repository: mikefarah/yq
+          strategy: binary
+          destination: ~/.local/bin
+          download_filename: yq_linux_{{ .Arch }}
 
   - name: direnv
     type: group
@@ -447,10 +473,25 @@ install:
           command: curl -sfS https://dotenvx.sh | sh
 
   - name: ffmpeg
-    type: brew
+    type: group
+    steps:
+      - name: ffmpeg
+        type: brew
+      - name: ffmpeg
+        type: apt
+        platforms:
+          only: ['linux']
 
   - name: fd
-    type: brew
+    type: group
+    steps:
+      - name: fd
+        type: brew
+      - name: fd-find
+        bin_name: fd
+        type: apt
+        platforms:
+          only: ['linux']
 
   - name: aerospace
     type: group
@@ -479,10 +520,24 @@ install:
           update_command: aerospace reload-config
 
   - name: catimg
-    type: brew
+    type: group
+    steps:
+      - name: catimg
+        type: brew
+      - name: catimg
+        type: apt
+        platforms:
+          only: ['linux']
 
   - name: bat
-    type: brew
+    type: group
+    steps:
+      - name: bat
+        type: brew
+      - name: bat
+        type: apt
+        platforms:
+          only: ['linux']
 
   - name: pandoc
     type: group
