@@ -91,7 +91,7 @@ hp() {
   fi
   home push
 }
-alias hl="home pull && stow -R -t ~ ."
+alias hl="home pull && stow -R -d \$DOTFILES -t ~ ."
 
 # stow
 alias stow-deploy="stow -v -R -d \$DOTFILES -t ~ ."
