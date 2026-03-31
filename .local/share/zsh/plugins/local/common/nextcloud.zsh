@@ -238,24 +238,17 @@ nc-disable-db-proxy() {
   fi
 }
 
-# NOTE not working
 nc-aio-force-appupdate() {
-  JOB_CLASS="OCA\\UpdateNotification\\BackgroundJob\\UpdateAvailableNotifications"
-
-  echo "Busting appstore cache..."
   INSTANCE_ID=$(nc-aio-occ config:system:get instanceid | tr -d "\n" | tr -d "\r")
-  echo "Instance ID: $INSTANCE_ID"
-  mv "/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json" "/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json.bk"
-  echo '{}' > "/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json"
-
-  echo "Looking up job ID for UpdateAvailableNotifications..."
-  JOB_ID=$(nc-aio-occ background-job:list --output=json 2>/dev/null \
-    | jq -r --arg class "$JOB_CLASS" '.[] | select(.class == $class) | .id')
-  if [[ -z "$JOB_ID" ]]; then
-    echo "Error: could not find job for $JOB_CLASS" >&2
+  APPSTORE_DIR="/mnt/ncdata/appdata_${INSTANCE_ID}/appstore"
+  APPS_JSON="${APPSTORE_DIR}/apps.json"
+  mv "$APPS_JSON" "${APPS_JSON}.bk"
+  echo "Downloading appstore apps.json from Nextcloud..."
+  curl -L https://apps.nextcloud.com/api/v1/apps.json -o $APPS_JSON
+  if [ $? -ne 0 ]; then
+    echo "Failed to download apps.json. Restoring backup."
+    mv "${APPS_JSON}.bk" "$APPS_JSON"
     return 1
   fi
-
-  echo "Found job ID: $JOB_ID — running update check..."
-  nc-aio-occ background-job:execute --force-execute "$JOB_ID" && echo "Done." || echo "Job exited with an error (see above)."
+  chown www-data:www-data $APPS_JSON
 }
