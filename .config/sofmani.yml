@@ -405,6 +405,9 @@ install:
 
   - name: atuin
     type: shell
+    check_has_update: '[ "$(cat ~/.cache/sofmani/atuin-version.txt 2>/dev/null)" != "$(curl -fsSL https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name)" ]'
+    post_install: mkdir -p ~/.cache/sofmani && curl -fsSL https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name > ~/.cache/sofmani/atuin-version.txt
+    post_update: mkdir -p ~/.cache/sofmani && curl -fsSL https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name > ~/.cache/sofmani/atuin-version.txt
     opts:
       command: curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
       update_command: atuin-update
