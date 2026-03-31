@@ -19,9 +19,8 @@
 # fi
 
 export DOTFILES="$HOME/.dotfiles"
-export CFG="$DOTFILES/.config"
-export DOTBIN="$HOME/.config/bin"
-export DOTBIN_META="$HOME/.config/.bin"
+export CFG="$HOME/.config"
+export DOTBIN="$CFG/bin"
 
 # Load sofmani-managed zsh plugins
 
@@ -96,5 +95,5 @@ export VISUAL="$EDITOR"
 
 source "$DOTFILES/aliases.zsh"
 
-[[ ! -f "$HOME/.config/.p10k.zsh" ]] || source "$HOME/.config/.p10k.zsh"
+[[ ! -f "$CFG/.p10k.zsh" ]] || source "$CFG/.p10k.zsh"
 

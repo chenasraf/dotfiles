@@ -117,12 +117,12 @@ alias dvp="docker-volume-path"
 alias ldc="lazydocker"
 
 # tmux
-alias tmux="tmux -f ~/.config/tmux/conf.tmux"
+alias tmux="tmux -f \$CFG/tmux/conf.tmux"
 alias tn="tmux new"
 alias tns="tmux new -s"
 alias tas="tmux attach -t"
 alias tlw="tmux list-windows"
-alias trl="tmux source-file ~/.config/tmux/conf.tmux"
+alias trl="tmux source-file \$CFG/tmux/conf.tmux"
 alias trn="tmux rename-session -t"
 alias tks="tmux kill-server"
 alias tk="tx kill"
@@ -169,9 +169,8 @@ alias get-gh-token="op item get github --fields 'CI Access Token' --reveal"
 alias opsign="eval \$(op signin)"
 
 # sofmani/config
-alias cfg-update-sofmani="sofmani -u -f tag:sofmani-config"
 alias cfg-update="sofmani -u -f tag:config"
-alias cfg-edit="vi ~/.dotfiles/.config/sofmani.yml; cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
+alias cfg-edit="vi \$CFG/sofmani.yml"
 
 # atuin
 alias asc="atuin script run"
@@ -179,14 +178,6 @@ alias atu="atuin"
 
 # database
 alias lsq="lazysql"
-
-# gi_gen
-# [d]ev gi_gen
-alias dgi_gen="\$GOBIN/gi_gen"
-# [g]lobal gi_gen
-alias ggi_gen="\$DOTBIN/gi_gen"
-# go [i]nstall & run gi_gen
-alias igi_gen="go install && dgi_gen"
 
 # general
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
@@ -204,7 +195,6 @@ if is_linux; then
 fi
 alias lssh="lazyssh"
 alias lvim="nvim -c':e#<1'"
-alias cfg-reload="cp ~/.dotfiles/.config/sofmani.yml ~/.config/"
 alias sm="sofmani"
 alias gop="git open"
 alias exp="cospend -p home-2026"
