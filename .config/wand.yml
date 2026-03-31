@@ -1,3 +1,11 @@
+install:
+  description: Install dotfiles via stow (initial setup)
+  cmd: |
+    set -euo pipefail
+    DF="${DOTFILES:-$HOME/.dotfiles}"
+    stow -v --adopt -d "$DF" -t ~ .
+    git -C "$DF" checkout .
+
 brew:
   description: Manage Brewfile
   children:
