@@ -14,3 +14,4 @@ plugins/.cache
 var/log/sofmani
 .config/tmux_local.yml
 /_plugins/.cache
+/.config/direnv/lib
