@@ -95,6 +95,8 @@ install:
 
   - name: gh
     type: group
+    machines:
+      except: ['planck']
     steps:
       - name: gh
         type: brew
