@@ -1,0 +1,116 @@
+build:
+  description: Build a Flutter release APK and optionally install on a remote device
+  flags:
+    install:
+      alias: i
+      type: bool
+      description: Connect to remote device and install after build
+    device:
+      alias: d
+      default: "100"
+      description: Last octet of device IP (192.168.68.X)
+    port:
+      alias: p
+      default: "5555"
+      description: ADB TCP/IP port
+  cmd: |
+    set -euo pipefail
+
+    if [ ! -f "pubspec.yaml" ]; then
+      echo "Error: pubspec.yaml not found. Run this from your Flutter project root." >&2
+      exit 1
+    fi
+
+    name="$(awk '/^[[:space:]]*#/ {next} /^[[:space:]]*name:[[:space:]]*/ {sub(/^[[:space:]]*name:[[:space:]]*/,""); print; exit}' pubspec.yaml)"
+    version="$(awk '/^[[:space:]]*#/ {next} /^[[:space:]]*version:[[:space:]]*/ {sub(/^[[:space:]]*version:[[:space:]]*/,""); print; exit}' pubspec.yaml)"
+
+    [ -n "$name" ] || { echo "Error: Could not parse 'name' from pubspec.yaml" >&2; exit 1; }
+    [ -n "$version" ] || { echo "Error: Could not parse 'version' from pubspec.yaml" >&2; exit 1; }
+
+    safe_name="$(echo "$name" | tr ' ' '-')"
+
+    echo "App name:    $name"
+    echo "App version: $version"
+
+    echo "Building APK..."
+    flutter build apk
+
+    echo "Locating built APK..."
+    apk_path="build/app/outputs/flutter-apk/app-release.apk"
+    [ -f "$apk_path" ] || { echo "Error: No APK found at $apk_path" >&2; exit 1; }
+    echo "Found APK: $apk_path"
+
+    mkdir -p release/apk
+    dest="release/apk/${safe_name}-${version}.apk"
+    filename="$(basename "$dest")"
+    cp -f "$apk_path" "$dest"
+    echo "Copied to: $dest"
+
+    if [ "$WAND_FLAG_INSTALL" = "true" ]; then
+      TARGET="192.168.68.${WAND_FLAG_DEVICE}:${WAND_FLAG_PORT}"
+      command -v adb >/dev/null 2>&1 || { echo "Error: adb not found" >&2; exit 1; }
+      echo "Connecting to $TARGET ..."
+      adb connect "$TARGET"
+      echo "Pushing APK to /sdcard/Downloads on $TARGET ..."
+      adb -s "$TARGET" push "$dest" "/sdcard/Downloads/$filename"
+      echo "Installing via flutter to $TARGET ..."
+      flutter install -d "$TARGET"
+      echo "Done."
+    fi
+
+pair:
+  description: Pair with an Android device over wireless debugging
+  flags:
+    device:
+      alias: d
+      description: Last octet of device IP (192.168.68.X)
+    port:
+      alias: p
+      default: "5555"
+      description: ADB pairing port
+    code:
+      alias: c
+      description: Pairing code from Developer Options
+  cmd: |
+    set -euo pipefail
+    DEVICE="${WAND_FLAG_DEVICE:-$1}"
+    PORT="${WAND_FLAG_PORT}"
+    CODE="${WAND_FLAG_CODE:-$2}"
+
+    if [ -z "$DEVICE" ]; then
+      printf "Device octet (last octet of 192.168.68.X): "
+      read -r DEVICE
+    fi
+    if [ -z "$CODE" ]; then
+      printf "Pairing code: "
+      read -r CODE
+    fi
+
+    adb pair "192.168.68.${DEVICE}:${PORT}" --pairing-code "$CODE"
+
+connect:
+  description: Connect to an Android device over ADB TCP/IP
+  flags:
+    device:
+      alias: d
+      default: "100"
+      description: Last octet of device IP (192.168.68.X)
+    port:
+      alias: p
+      default: "5555"
+      description: ADB TCP/IP port
+  cmd: |
+    TARGET="192.168.68.${WAND_FLAG_DEVICE}:${WAND_FLAG_PORT}"
+    echo "Connecting to $TARGET ..."
+    adb connect "$TARGET"
+
+install:
+  description: Install the release APK from the current Flutter project onto a connected device
+  cmd: |
+    set -euo pipefail
+    if [ -f "pubspec.yaml" ]; then
+      adb install -r build/app/outputs/flutter-apk/app-release.apk
+    else
+      echo "Error: pubspec.yaml not found. Run this from your Flutter project root." >&2
+      exit 1
+    fi

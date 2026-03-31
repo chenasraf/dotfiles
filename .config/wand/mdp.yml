@@ -1,0 +1,50 @@
+main:
+  description: Preview a markdown file in the browser
+  flags:
+    keep:
+      alias: k
+      type: bool
+      description: Keep the generated HTML file instead of cleaning up after 10s
+  cmd: |
+    set -euo pipefail
+    FILE="${1:-README.md}"
+    TEMPLATE="$HOME/.local/share/zsh/plugins/local/assets/mdp-template.html"
+    TITLE="$(basename "$FILE")"
+    FILEWOEXT="$(basename "${FILE%.*}")"
+
+    if ! command -v pandoc >/dev/null 2>&1; then
+      echo "Pandoc not installed. Please install pandoc first." >&2
+      exit 1
+    fi
+
+    echo "Opening HTML preview for $TITLE..."
+
+    TMPDIR="$(mktemp -d)"
+    OUT="$TMPDIR/$FILEWOEXT.html"
+    BODY="$OUT.part"
+
+    cp "$TEMPLATE" "$OUT"
+    sed -E "s/<!--TITLE-->/$TITLE/" "$OUT" > "$OUT.tmp"
+    mv "$OUT.tmp" "$OUT"
+
+    pandoc "$FILE" > "$BODY"
+
+    sed -E "/<!--BODY-->/r $BODY" "$OUT" > "$OUT.tmp"
+    mv "$OUT.tmp" "$OUT"
+    rm "$BODY"
+
+    open -u "file:///$OUT"
+
+    if [ "$WAND_FLAG_KEEP" != "true" ]; then
+      ($SHELL -c "sleep 10; rm '$OUT'; exit 0" &)
+    fi
+
+html:
+  description: Convert a markdown file to HTML and output to stdout
+  cmd: |
+    FILE="${1:-README.md}"
+    if ! command -v pandoc >/dev/null 2>&1; then
+      echo "Pandoc not installed. Please install pandoc first." >&2
+      exit 1
+    fi
+    pandoc "$FILE"
