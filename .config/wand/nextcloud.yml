@@ -1,0 +1,258 @@
+use:
+  description: Set the Nextcloud dev version
+  cmd: |
+    VERSION_FILE="$HOME/.nc-dev-version"
+    VERSION="$1"
+    if [ -z "$VERSION" ]; then
+      VERSION="$(tr -d '\n' < "$VERSION_FILE" 2>/dev/null)"
+      [ -z "$VERSION" ] && VERSION="nextcloud"
+    else
+      if [ "$VERSION" != "master" ] && [ "$VERSION" != "latest" ] && [ "$VERSION" != "dev" ]; then
+        VERSION="stable$VERSION"
+      else
+        VERSION="nextcloud"
+      fi
+    fi
+    echo "$VERSION" > "$VERSION_FILE"
+    echo "Set Nextcloud dev version to: $VERSION"
+
+version:
+  description: Get the current Nextcloud dev version
+  cmd: |
+    VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+    [ -z "$VERSION" ] && VERSION="nextcloud"
+    echo "$VERSION"
+
+start:
+  description: Start the Nextcloud dev container
+  working_dir: ~/Dev/nextcloud-docker-dev
+  cmd: |
+    VERSION_FILE="$HOME/.nc-dev-version"
+    VERSION="$1"
+    if [ -n "$VERSION" ]; then
+      if [ "$VERSION" != "master" ] && [ "$VERSION" != "latest" ] && [ "$VERSION" != "dev" ]; then
+        VERSION="stable$VERSION"
+      else
+        VERSION="nextcloud"
+      fi
+      echo "$VERSION" > "$VERSION_FILE"
+    else
+      VERSION="$(tr -d '\n' < "$VERSION_FILE" 2>/dev/null)"
+      [ -z "$VERSION" ] && VERSION="nextcloud"
+    fi
+    echo "Set Nextcloud dev version to: $VERSION"
+    docker compose up -d "$VERSION"
+
+stop:
+  description: Stop the Nextcloud dev container
+  working_dir: ~/Dev/nextcloud-docker-dev
+  cmd: docker compose stop
+
+exec:
+  description: Execute command in the Nextcloud container
+  flags:
+    aio:
+      type: bool
+      description: Use AIO container instead of dev
+  cmd: |
+    if [ "$WAND_FLAG_AIO" = "true" ]; then
+      sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"
+    else
+      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+      [ -z "$VERSION" ] && VERSION="nextcloud"
+      docker exec --user www-data -it "nextcloud-${VERSION}-1" "$@"
+    fi
+
+occ:
+  description: Run occ command in Nextcloud container
+  flags:
+    aio:
+      type: bool
+      description: Use AIO container instead of dev
+  cmd: |
+    if [ "$WAND_FLAG_AIO" = "true" ]; then
+      sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ "$@"
+    else
+      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+      [ -z "$VERSION" ] && VERSION="nextcloud"
+      docker exec --user www-data -it "nextcloud-${VERSION}-1" php occ "$@"
+    fi
+
+logs:
+  description: Tail the Nextcloud log file
+  flags:
+    aio:
+      type: bool
+      description: Use AIO container instead of dev
+    pretty:
+      alias: p
+      type: bool
+      description: Pretty-print JSON logs with jq
+  cmd: |
+    if [ "$WAND_FLAG_AIO" = "true" ]; then
+      CONTAINER="nextcloud-aio-nextcloud"
+      SUDO="sudo"
+    else
+      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+      [ -z "$VERSION" ] && VERSION="nextcloud"
+      CONTAINER="nextcloud-${VERSION}-1"
+      SUDO=""
+    fi
+
+    if [ "$WAND_FLAG_PRETTY" = "true" ]; then
+      $SUDO docker exec --user www-data "$CONTAINER" tail "$@" /var/www/html/data/nextcloud.log \
+        | while IFS= read -r line; do
+            printf '%s\n' "$line" | jq -C -c --unbuffered .
+            printf '\n'
+          done
+    else
+      $SUDO docker exec --user www-data "$CONTAINER" tail "$@" /var/www/html/data/nextcloud.log
+    fi
+
+debug:
+  description: Set Nextcloud debug mode
+  flags:
+    aio:
+      type: bool
+      description: Use AIO container instead of dev
+  cmd: |
+    if [ "$WAND_FLAG_AIO" = "true" ]; then
+      sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ config:system:set debug --type bool --value "$1"
+    else
+      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+      [ -z "$VERSION" ] && VERSION="nextcloud"
+      docker exec --user www-data -it "nextcloud-${VERSION}-1" php occ config:system:set debug --type bool --value "$1"
+    fi
+
+upgrade:
+  description: Upgrade Nextcloud AIO
+  flags:
+    beta:
+      type: bool
+      description: Upgrade via beta channel
+  cmd: |
+    AIO="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
+    if [ "$WAND_FLAG_BETA" = "true" ]; then
+      $AIO php occ config:system:set updater.release.channel --value=beta
+      $AIO php updater/updater.phar --no-interaction
+      $AIO php occ config:system:set updater.release.channel --value=stable
+    else
+      $AIO php updater/updater.phar --no-interaction
+    fi
+
+force-appupdate:
+  description: Force refresh Nextcloud AIO app store cache
+  aliases: [fau]
+  cmd: |
+    AIO="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
+    INSTANCE_ID=$($AIO php occ config:system:get instanceid | tr -d "\n\r")
+    APPSTORE_DIR="/mnt/ncdata/appdata_${INSTANCE_ID}/appstore"
+    APPS_JSON="${APPSTORE_DIR}/apps.json"
+    mv "$APPS_JSON" "${APPS_JSON}.bk"
+    echo "Downloading appstore apps.json from Nextcloud..."
+    if ! curl -L https://apps.nextcloud.com/api/v1/apps.json -o "$APPS_JSON"; then
+      echo "Failed to download apps.json. Restoring backup."
+      mv "${APPS_JSON}.bk" "$APPS_JSON"
+      exit 1
+    fi
+    chown www-data:www-data "$APPS_JSON"
+
+backup:
+  description: Rsync Nextcloud data from remote server to external drive
+  confirm: This will sync from spider.casraf.dev to the 2T SSD. Continue?
+  cmd: |
+    DRIVE="/Volumes/2T SSD"
+    if [ ! -d "$DRIVE/Nextcloud/" ]; then
+      echo "Mount the 2T SSD first!"
+      exit 1
+    fi
+    rsync -avhz --delete --delete-excluded --partial --progress -e ssh \
+      --exclude 'appdata_*/' \
+      --exclude '._*' \
+      --exclude '.pnpm-store/' \
+      spider.casraf.dev:/mnt/ncdata/ \
+      "$DRIVE/Nextcloud/"
+    find "$DRIVE" -type f -name '._*' -exec rm -f -- {} +
+
+db-proxy:
+  description: Manage AIO database proxy
+  children:
+    start:
+      description: Start a local proxy to the Nextcloud AIO database container
+      env:
+        NC_CFG_PATH: /var/lib/docker/volumes/nextcloud_aio_nextcloud/_data/config/config.php
+        NC_DB_CONTAINER: nextcloud-aio-database
+        NC_PROXY_NAME: nc-db-proxy
+      cmd: |
+        DBTYPE="" DBHOST_RAW="" DBUSER="" DBPASS="" DBNAME=""
+        while IFS='=' read -r k v; do
+          case "$k" in
+            dbtype) DBTYPE="$v" ;;
+            dbhost) DBHOST_RAW="$v" ;;
+            dbuser) DBUSER="$v" ;;
+            dbpassword) DBPASS="$v" ;;
+            dbname) DBNAME="$v" ;;
+          esac
+        done <<EOF
+        $(sudo awk '/dbtype|dbname|dbuser|dbpassword|dbhost/ { gsub(/[ ,'\'';\t]/,""); gsub(/=>/,"="); print }' "$NC_CFG_PATH")
+        EOF
+
+        if [ -z "$DBTYPE" ] || [ -z "$DBHOST_RAW" ] || [ -z "$DBUSER" ] || [ -z "$DBPASS" ] || [ -z "$DBNAME" ]; then
+          echo "Failed to read DB settings from $NC_CFG_PATH" >&2
+          exit 1
+        fi
+
+        case "$DBTYPE" in
+          pgsql)    SCHEME="postgres"; DEFAULT_PORT=5432 ;;
+          mysql|mariadb) SCHEME="mysql"; DEFAULT_PORT=3306 ;;
+          *) echo "Unknown dbtype '$DBTYPE'" >&2; exit 1 ;;
+        esac
+
+        INTERNAL_HOST="$DBHOST_RAW"
+        case "$DBHOST_RAW" in
+          *:*) INTERNAL_HOST="${DBHOST_RAW%%:*}"; DBPORT="${DBHOST_RAW##*:}" ;;
+          *)   DBPORT="$DEFAULT_PORT" ;;
+        esac
+
+        if [ "$DBPORT" = "5432" ]; then LOCALPORT=55432; else LOCALPORT=53306; fi
+
+        if ! docker inspect "$NC_DB_CONTAINER" >/dev/null 2>&1; then
+          echo "Container $NC_DB_CONTAINER not found." >&2
+          exit 1
+        fi
+        NET=$(docker inspect -f '{{range $k, $_ := .NetworkSettings.Networks}}{{println $k}}{{end}}' "$NC_DB_CONTAINER" | head -n1)
+        if [ -z "$NET" ]; then
+          echo "Could not determine Docker network for $NC_DB_CONTAINER." >&2
+          exit 1
+        fi
+
+        docker rm -f "$NC_PROXY_NAME" >/dev/null 2>&1 || true
+        if ! docker run -d --rm --name "$NC_PROXY_NAME" --network "$NET" \
+          -p "127.0.0.1:${LOCALPORT}:${DBPORT}" \
+          alpine/socat \
+          "tcp-listen:${DBPORT},fork,reuseaddr" "tcp:${INTERNAL_HOST}:${DBPORT}" >/dev/null; then
+          echo "Failed to start proxy container." >&2
+          exit 1
+        fi
+
+        if [ "$SCHEME" = "postgres" ]; then
+          URI="postgres://${DBUSER}:${DBPASS}@127.0.0.1:${LOCALPORT}/${DBNAME}?sslmode=disable"
+        else
+          URI="mysql://${DBUSER}:${DBPASS}@127.0.0.1:${LOCALPORT}/${DBNAME}"
+        fi
+        echo "Proxy up: 127.0.0.1:${LOCALPORT} -> ${INTERNAL_HOST}:${DBPORT} (network: ${NET})"
+        echo "LazySQL connection URI:"
+        echo "  ${URI}"
+        echo
+        echo "When done, run: nxc db-proxy stop"
+
+    stop:
+      description: Stop the Nextcloud AIO database proxy
+      env:
+        NC_PROXY_NAME: nc-db-proxy
+      cmd: |
+        if docker rm -f "$NC_PROXY_NAME" >/dev/null 2>&1; then
+          echo "Proxy stopped."
+        else
+          echo "No proxy running."
+        fi
