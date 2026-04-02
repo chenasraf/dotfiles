@@ -131,21 +131,21 @@ upgrade:
       type: bool
       description: Upgrade via beta channel
   cmd: |
-    AIO="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
+    aio() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
     if [ "$WAND_FLAG_BETA" = "true" ]; then
-      $AIO php occ config:system:set updater.release.channel --value=beta
-      $AIO php updater/updater.phar --no-interaction
-      $AIO php occ config:system:set updater.release.channel --value=stable
+      aio php occ config:system:set updater.release.channel --value=beta
+      aio php updater/updater.phar --no-interaction
+      aio php occ config:system:set updater.release.channel --value=stable
     else
-      $AIO php updater/updater.phar --no-interaction
+      aio php updater/updater.phar --no-interaction
     fi
 
 force-appupdate:
   description: Force refresh Nextcloud AIO app store cache
   aliases: [fau]
   cmd: |
-    AIO="sudo docker exec --user www-data -it nextcloud-aio-nextcloud"
-    INSTANCE_ID=$($AIO php occ config:system:get instanceid | tr -d "\n\r")
+    aio() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
+    INSTANCE_ID=$(aio php occ config:system:get instanceid | tr -d "\n\r")
     APPSTORE_DIR="/mnt/ncdata/appdata_${INSTANCE_ID}/appstore"
     APPS_JSON="${APPSTORE_DIR}/apps.json"
     mv "$APPS_JSON" "${APPS_JSON}.bk"
