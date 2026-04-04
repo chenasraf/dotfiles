@@ -10,6 +10,23 @@ local function wrap_status()
   return (vim.wo.wrap and '✓' or '✗') .. ' TW'
 end
 
+local function macro_recording()
+  local reg = vim.fn.reg_recording()
+  if reg == '' then
+    return ''
+  end
+  return 'REC @' .. reg
+end
+
+-- Refresh lualine immediately when macro recording starts/stops
+vim.api.nvim_create_autocmd({ 'RecordingEnter', 'RecordingLeave' }, {
+  callback = function()
+    vim.schedule(function()
+      require('lualine').refresh()
+    end)
+  end,
+})
+
 return {
   -- Set lualine as statusline
   'nvim-lualine/lualine.nvim',
@@ -24,7 +41,7 @@ return {
     sections = {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
-      lualine_c = { 'filename' },
+      lualine_c = { 'filename', { macro_recording, color = { fg = '#ff5555', gui = 'bold' } } },
       lualine_d = { 'quickfix' },
       -- lualine_x = { 'require"nvim-treesitter".statusline()', lsp_supported, 'encoding', 'fileformat', 'filetype' },
       lualine_x = {
