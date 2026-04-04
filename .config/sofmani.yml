@@ -878,9 +878,11 @@ install:
     type: brew
     tags: font
     platforms: {only: ['macos']}
+    frequency: 26w
 
   - name: font-fira-code-nerd-font
     check_installed: fc-list | grep -q "Fira"
     type: brew
     tags: font
     platforms: {only: ['macos']}
+    frequency: 26w
