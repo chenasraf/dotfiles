@@ -245,47 +245,79 @@ vim.api.nvim_create_autocmd("FileType", {
       local function attempt_connect(octet, port)
         local target = "192.168.68." .. octet .. ":" .. port
         vim.notify("Connecting to " .. target .. "...", vim.log.levels.INFO)
+        local stdout_chunks = {}
+        local stderr_chunks = {}
         vim.fn.jobstart({ "adb", "connect", target }, {
+          stdout_buffered = true,
+          stderr_buffered = true,
+          on_stdout = function(_, data)
+            if data then vim.list_extend(stdout_chunks, data) end
+          end,
+          on_stderr = function(_, data)
+            if data then vim.list_extend(stderr_chunks, data) end
+          end,
           on_exit = function(_, exit_code)
             vim.schedule(function()
-              if exit_code == 0 then
+              local stdout = vim.trim(table.concat(stdout_chunks, "\n"))
+              local stderr = vim.trim(table.concat(stderr_chunks, "\n"))
+              -- `adb connect` often exits 0 even on failure; inspect output.
+              local output_lower = (stdout .. "\n" .. stderr):lower()
+              local failed = exit_code ~= 0
+                  or output_lower:match("fail")
+                  or output_lower:match("cannot connect")
+                  or output_lower:match("unable to connect")
+                  or output_lower:match("refused")
+                  or output_lower:match("error")
+              if not failed and output_lower:match("connected to") then
                 vim.notify("Successfully connected to " .. target, vim.log.levels.INFO)
-              else
-                vim.notify("Connection failed to " .. target, vim.log.levels.ERROR)
-                vim.ui.select({ "Retry", "Cancel" }, { prompt = "Connection failed. What would you like to do?" }, function(choice)
+                return
+              end
+              local msg = stdout ~= "" and stdout or stderr
+              if msg == "" then msg = "exit code " .. exit_code end
+              vim.notify("Connection failed to " .. target .. ": " .. msg, vim.log.levels.ERROR)
+              vim.ui.select({ "Retry", "Cancel" }, { prompt = "Connection failed. What would you like to do?" },
+                function(choice)
                   if choice == "Retry" then
                     vim.cmd("FlutterConnectDevice")
                   end
                 end)
-              end
             end)
           end,
         })
       end
 
-      local function ask_port(octet)
-        vim.ui.input({ prompt = "Device port (required, Esc to cancel): " }, function(port)
-          if port == nil then
-            vim.notify("Cancelled.", vim.log.levels.INFO)
+      require('input-form').create_form({
+        title = ' Connect Android Device ',
+        inputs = {
+          {
+            name = 'octet',
+            label = 'Device octet (192.168.68.X)',
+            type = 'text',
+            default = '100',
+          },
+          {
+            name = 'port',
+            label = 'Device port',
+            type = 'text',
+          },
+        },
+        on_submit = function(results)
+          local octet = results.octet
+          local port = results.port
+          if octet == nil or octet == '' then
+            vim.notify("Octet is required.", vim.log.levels.WARN)
             return
           end
-          if port == "" then
+          if port == nil or port == '' then
             vim.notify("Port is required.", vim.log.levels.WARN)
-            ask_port(octet)
             return
           end
           attempt_connect(octet, port)
-        end)
-      end
-
-      vim.ui.input({ prompt = "Device octet (192.168.68.X) [default 100, empty to cancel]: " }, function(octet)
-        if octet == nil then
+        end,
+        on_cancel = function()
           vim.notify("Cancelled.", vim.log.levels.INFO)
-          return
-        end
-        octet = octet == "" and "100" or octet
-        ask_port(octet)
-      end)
+        end,
+      }):show()
     end, { desc = 'Connect to Android device via ADB over TCP/IP' })
   end,
 })
@@ -322,6 +354,7 @@ return {
       { 'williamboman/mason.nvim', opts = {} },
       { 'j-hui/fidget.nvim',       opts = {} },
       'folke/neodev.nvim',
+      'chenasraf/input-form.nvim',
     },
     config = function()
       local mason_lspconfig = require('mason-lspconfig')

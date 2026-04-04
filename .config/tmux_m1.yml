@@ -315,3 +315,8 @@ cospend-cli:
   aliases: [cospend]
   windows:
     - ./
+
+input-form:
+  root: ~/Dev/input-form.nvim
+  windows:
+    - ./
