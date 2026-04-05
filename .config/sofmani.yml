@@ -356,9 +356,6 @@ install:
             - source: bin/nvim
               target: ~/.local/bin/nvim
 
-  # Homebrew's `tree-sitter` formula only ships the library, not the CLI.
-  # nvim-treesitter (main branch) needs the CLI binary. Release assets are a
-  # plain gzipped binary, so use the `gz` strategy.
   - name: tree-sitter
     type: github-release
     opts:
