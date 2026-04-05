@@ -355,8 +355,8 @@ function grename() {
 # Internal helper: search for an open PR in chenasraf/homebrew-tap by title
 # and add the "pr-pull" label if not already present.
 # Returns 0 if label was added or already present, 1 if no PR found.
-# Sets _gtp_pr_number to the matched PR number on success.
-function _gtp_label() {
+# Sets _git_homebrew_tap_pr_number to the matched PR number on success.
+function _git_homebrew_tap_add_pr_pull_label() {
   local search="$1"
   local pr_data
   pr_data=$(gh pr list --repo chenasraf/homebrew-tap --state open --search "$search in:title" --json number,title,labels --jq "[.[] | select(.title | test(\"$search\"; \"i\"))][0] | {number, labels: [.labels[].name]}" 2>/dev/null)
@@ -365,20 +365,20 @@ function _gtp_label() {
     return 1
   fi
 
-  _gtp_pr_number=$(echo "$pr_data" | jq -r '.number')
+  _git_homebrew_tap_pr_number=$(echo "$pr_data" | jq -r '.number')
 
   if echo "$pr_data" | jq -e '.labels | index("pr-pull")' &>/dev/null; then
-    echo "  ✓ PR #$_gtp_pr_number already has the \"pr-pull\" label"
+    echo "  ✓ PR #$_git_homebrew_tap_pr_number already has the \"pr-pull\" label"
     return 0
   fi
 
-  gh pr edit "$_gtp_pr_number" --repo chenasraf/homebrew-tap --add-label "pr-pull"
-  echo "  ✓ Added \"pr-pull\" label to PR #$_gtp_pr_number"
+  gh pr edit "$_git_homebrew_tap_pr_number" --repo chenasraf/homebrew-tap --add-label "pr-pull"
+  echo "  ✓ Added \"pr-pull\" label to PR #$_git_homebrew_tap_pr_number"
 }
 
 # Internal helper: wait for a homebrew-tap PR to be closed/merged.
 # Returns 0 if closed, 1 if checks failed.
-function _gtp_wait_closed() {
+function _git_homebrew_tap_wait_pr_closed() {
   local pr_number="$1"
   local pr_state
   pr_state=$(gh pr view "$pr_number" --repo chenasraf/homebrew-tap --json state --jq '.state' 2>/dev/null)
@@ -401,7 +401,7 @@ function _gtp_wait_closed() {
 
 # Search for an open PR in chenasraf/homebrew-tap by title and add the "pr-pull" label.
 # Polls until the PR is found.
-function gtp() {
+function git-homebrew-tap-pr-pull() {
   if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     echo "Usage: gtp <search_term>"
     echo ""
@@ -416,20 +416,23 @@ function gtp() {
     return 1
   fi
 
-  printf "Searching for homebrew-tap PR matching \"$1\" "
+  local search="$1"
+  [[ "$search" == "." ]] && search="${PWD:t}"
 
-  local _gtp_pr_number
+  printf "Searching for homebrew-tap PR matching \"$search\" "
+
+  local _git_homebrew_tap_pr_number
   while true; do
-    if _gtp_label "$1"; then
+    if _git_homebrew_tap_add_pr_pull_label "$search"; then
       echo ""
-      printf "Waiting for tap PR #$_gtp_pr_number to be merged "
+      printf "Waiting for tap PR #$_git_homebrew_tap_pr_number to be merged "
       local wait_rc
       while true; do
-        _gtp_wait_closed "$_gtp_pr_number"
+        _git_homebrew_tap_wait_pr_closed "$_git_homebrew_tap_pr_number"
         wait_rc=$?
         if [[ $wait_rc -eq 0 ]]; then
           echo ""
-          echo "  ✓ Tap PR #$_gtp_pr_number merged — release complete!"
+          echo "  ✓ Tap PR #$_git_homebrew_tap_pr_number merged — release complete!"
           return 0
         elif [[ $wait_rc -eq 1 ]]; then
           echo ""
@@ -443,11 +446,83 @@ function gtp() {
     sleep 15
   done
 }
+alias gtp=git-homebrew-tap-pr-pull
+
+# Find a release PR in chenasraf/<repo>, wait for checks to pass, and merge
+# via rebase. Same as git-release-please-merge-with-tap but without the
+# homebrew-tap follow-up, for repos that aren't published on the tap.
+function git-release-please-merge() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: grlo <repo_name>"
+    echo ""
+    echo "Find an open release PR (titled \"chore release\") in chenasraf/<repo_name>,"
+    echo "wait for all CI checks to pass, and merge it via rebase."
+    return 0
+  fi
+
+  if [[ -z "$1" ]]; then
+    echo "Usage: grlo <repo_name>"
+    return 1
+  fi
+
+  local repo_name="$1"
+  [[ "$repo_name" == "." ]] && repo_name="${PWD:t}"
+  local repo="chenasraf/$repo_name"
+
+  # Step 1: Find release PR
+  printf "Finding release PR in $repo "
+  local pr_number
+  while true; do
+    pr_number=$(gh pr list --repo "$repo" --state open --search "chore release in:title" --json number,title --jq '.[0].number')
+    if [[ -n "$pr_number" ]]; then
+      echo ""
+      echo "  ✓ Found release PR #$pr_number"
+      break
+    fi
+    printf "."
+    sleep 15
+  done
+
+  # Step 2: Poll until all checks pass
+  echo ""
+  printf "Waiting for checks on PR #$pr_number "
+  local check_output rc
+  while true; do
+    check_output=$(gh pr checks "$pr_number" --repo "$repo" 2>&1)
+    rc=$?
+
+    if [[ $rc -eq 0 ]]; then
+      echo ""
+      echo "  ✓ All checks passed!"
+      break
+    fi
+
+    if echo "$check_output" | grep -q "fail"; then
+      echo ""
+      echo "  ✗ Checks failed:"
+      echo "$check_output" | sed 's/^/    /'
+      return 1
+    fi
+
+    printf "."
+    sleep 15
+  done
+
+  # Step 3: Merge using rebase
+  echo ""
+  echo "Merging PR #$pr_number via rebase..."
+  if ! gh pr merge "$pr_number" --repo "$repo" --rebase; then
+    echo "  ✗ Failed to merge PR #$pr_number"
+    return 1
+  fi
+  echo "  ✓ Merged successfully — release complete!"
+}
+alias grlo=git-release-please-merge
 
 # Find a release PR in chenasraf/<repo>, wait for checks to pass, merge via
 # rebase, then poll for a homebrew-tap PR, add the "pr-pull" label, and wait
 # for it to be merged.
-function grl() {
+function git-release-please-merge-with-tap() {
   if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     echo "Usage: grl <repo_name> [tap_search_term]"
     echo ""
@@ -464,8 +539,11 @@ function grl() {
     return 1
   fi
 
-  local repo="chenasraf/$1"
-  local tap_search="${2:-$1}"
+  local repo_name="$1"
+  [[ "$repo_name" == "." ]] && repo_name="${PWD:t}"
+  local repo="chenasraf/$repo_name"
+  local tap_search="${2:-$repo_name}"
+  [[ "$tap_search" == "." ]] && tap_search="${PWD:t}"
 
   # Step 1: Find release PR
   printf "Finding release PR in $repo "
@@ -519,9 +597,9 @@ function grl() {
   echo ""
   printf "Searching for homebrew-tap PR matching \"$tap_search\" "
 
-  local _gtp_pr_number
+  local _git_homebrew_tap_pr_number
   while true; do
-    if _gtp_label "$tap_search"; then
+    if _git_homebrew_tap_add_pr_pull_label "$tap_search"; then
       break
     fi
     printf "."
@@ -530,14 +608,14 @@ function grl() {
 
   # Step 5: Wait for tap PR to be merged
   echo ""
-  printf "Waiting for tap PR #$_gtp_pr_number to be merged "
+  printf "Waiting for tap PR #$_git_homebrew_tap_pr_number to be merged "
   local wait_rc
   while true; do
-    _gtp_wait_closed "$_gtp_pr_number"
+    _git_homebrew_tap_wait_pr_closed "$_git_homebrew_tap_pr_number"
     wait_rc=$?
     if [[ $wait_rc -eq 0 ]]; then
       echo ""
-      echo "  ✓ Tap PR #$_gtp_pr_number merged — release complete!"
+      echo "  ✓ Tap PR #$_git_homebrew_tap_pr_number merged — release complete!"
       return 0
     elif [[ $wait_rc -eq 1 ]]; then
       echo ""
@@ -547,5 +625,6 @@ function grl() {
     sleep 15
   done
 }
+alias grl=git-release-please-merge-with-tap
 
 unset git_version
