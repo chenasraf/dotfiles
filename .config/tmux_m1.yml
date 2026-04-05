@@ -320,3 +320,9 @@ input-form:
   root: ~/Dev/input-form.nvim
   windows:
     - ./
+
+nvim-forks:
+  root: ~/Dev/
+  windows:
+    - ./vim-matchup
+    - ./nvim-treesitter
