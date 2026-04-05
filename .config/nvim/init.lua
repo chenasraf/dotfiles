@@ -3,6 +3,17 @@
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- Ensure common binary locations are on PATH for plugin-invoked tools
+-- (tree-sitter CLI for nvim-treesitter, etc.)
+do
+  local extra = { vim.fn.expand('~/.local/bin'), '/opt/homebrew/bin', '/usr/local/bin' }
+  for _, dir in ipairs(extra) do
+    if vim.fn.isdirectory(dir) == 1 and not vim.env.PATH:find(dir, 1, true) then
+      vim.env.PATH = dir .. ':' .. vim.env.PATH
+    end
+  end
+end
 ---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
 -- [[ Install `lazy.nvim` plugin manager ]]

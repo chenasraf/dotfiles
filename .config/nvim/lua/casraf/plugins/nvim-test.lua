@@ -1,5 +1,26 @@
 return {
   "klen/nvim-test",
+  init = function()
+    -- nvim-treesitter `main` branch removed `ts_utils`. nvim-test requires it at
+    -- load time for TestNearest node lookup. Provide a minimal shim so the
+    -- plugin loads; TestNearest uses get_node_at_cursor + get_node_text.
+    package.preload['nvim-treesitter.ts_utils'] = function()
+      return {
+        get_node_at_cursor = function(winnr)
+          winnr = winnr or 0
+          local ok, node = pcall(vim.treesitter.get_node, { winnr = winnr })
+          if ok then return node end
+          return nil
+        end,
+        get_node_text = function(node, source)
+          if not node then return {} end
+          local ok, text = pcall(vim.treesitter.get_node_text, node, source or 0)
+          if not ok or not text then return {} end
+          return vim.split(text, '\n', { plain = true })
+        end,
+      }
+    end
+  end,
   config = function()
     require('nvim-test').setup({
       termOpts = {
