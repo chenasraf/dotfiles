@@ -356,6 +356,18 @@ install:
             - source: bin/nvim
               target: ~/.local/bin/nvim
 
+  # Homebrew's `tree-sitter` formula only ships the library, not the CLI.
+  # nvim-treesitter (main branch) needs the CLI binary. Release assets are a
+  # plain gzipped binary, so use the `gz` strategy.
+  - name: tree-sitter
+    type: github-release
+    opts:
+      repository: tree-sitter/tree-sitter
+      destination: ~/.local/bin
+      strategy: gz
+      # tree-sitter release arch naming: arm64 | x64 (not amd64/x86_64)
+      download_filename: tree-sitter-{{ .OS }}-{{ if eq .Arch "amd64" }}x64{{ else }}{{ .Arch }}{{ end }}.gz
+
   - name: lazygit
     type: group
     steps:
