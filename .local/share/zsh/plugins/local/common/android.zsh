@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-alias adev="wand --wand-file \$HOME/.config/wand/android.yml"
+alias adev="wand --wand-file \$CFG/wand/android.yml"
 
 alias build-apk="adev build"
 alias adb-pair-device="adev pair"

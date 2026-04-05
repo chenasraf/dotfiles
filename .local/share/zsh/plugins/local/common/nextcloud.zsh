@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-alias nxc="wand --wand-file \$HOME/.config/wand/nextcloud.yml"
+alias nxc="wand --wand-file \$CFG/wand/nextcloud.yml"
 
 # dev
 alias nc-dev-use="nxc use"

@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
-alias mdp="wand --wand-file \$HOME/.config/wand/mdp.yml"
+alias mdp="wand --wand-file \$CFG/wand/mdp.yml"
 alias md2html="mdp html"

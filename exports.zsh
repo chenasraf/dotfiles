@@ -15,8 +15,8 @@ export PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.tmux/plugins"
 
 # Lazygit
-if [[ -d "$HOME/.config/lazygit" ]]; then
-  export LAZYGIT_HOME="$HOME/.config/lazygit"
+if [[ -d "$CFG/lazygit" ]]; then
+  export LAZYGIT_HOME="$CFG/lazygit"
 elif [[ -d "$HOME/Library/ApplicationSupport/lazygit" ]]; then
   export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
 fi
@@ -54,7 +54,7 @@ if [[ -d "/opt/homebrew" ]]; then
 fi
 
 # yamllint
-export YAMLLINT_CONFIG_FILE="$HOME/.config/.yamllint.yml"
+export YAMLLINT_CONFIG_FILE="$CFG/.yamllint.yml"
 
 # Atuin
 export PATH="$HOME/.atuin/bin:$PATH"
@@ -131,7 +131,7 @@ fi
 # Yarn
 # if [[ -f $(which yarn) ]]; then
 #   export PATH="$HOME/.yarn/bin:$PATH"
-#   export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+#   export PATH="$CFG/yarn/global/node_modules/.bin:$PATH"
 # fi
 
 # Ruby
