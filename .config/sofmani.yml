@@ -1,10 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/chenasraf/sofmani/master/schema/sofmani.schema.json
+
 # debug: true
 check_updates: true
 defaults:
   type:
     brew:
       platforms:
-        only: ['macos']
+        only: ["macos"]
     github-release:
       opts:
         github_token: $GITHUB_TOKEN
@@ -30,7 +32,7 @@ install:
     tags: config tmux
     skip_summary: true
     platforms:
-      only: ['macos']
+      only: ["macos"]
     opts:
       command: |
         if ! tmux source-file "$HOME/.config/tmux/conf.tmux"; then
@@ -51,11 +53,11 @@ install:
     type: shell
     tags: system
     skip_summary: true
+    check_installed: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
+    check_has_update: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
     platforms:
-      only: ['macos']
+      only: ["macos"]
     opts:
-      check_installed: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
-      check_has_update: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
       command: |
         defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
         defaults write -g NSScrollViewRubberbanding -bool FALSE
@@ -91,24 +93,24 @@ install:
       - name: stow
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: gh
     type: group
     machines:
-      except: ['planck']
+      except: ["planck"]
     steps:
       - name: gh
         type: brew
       - name: gh
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: glab
     type: brew
     machines:
-      only: ['planck']
+      only: ["planck"]
 
   - name: git-config
     type: shell
@@ -174,7 +176,7 @@ install:
       - name: sofmani
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/sofmani
           destination: ~/.local/bin
@@ -191,7 +193,7 @@ install:
       - name: vstask
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/vstask
           destination: ~/.local/bin
@@ -208,7 +210,7 @@ install:
       - name: watchr
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/watchr
           destination: ~/.local/bin
@@ -223,12 +225,9 @@ install:
         opts:
           tap: chenasraf/tap
       - name: treelike
-        type: shell
-        platforms:
-          only: ['linux']
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/treelike
           destination: ~/.local/bin
@@ -244,7 +243,7 @@ install:
       - name: gi_gen
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/gi_gen
           destination: ~/.local/bin
@@ -260,7 +259,7 @@ install:
       - name: tx
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/tx
           destination: ~/.local/bin
@@ -277,7 +276,7 @@ install:
       - name: wand
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/wand
           destination: ~/.local/bin
@@ -296,7 +295,7 @@ install:
         bin_name: cospend
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: chenasraf/cospend-cli
           destination: ~/.local/bin
@@ -319,7 +318,7 @@ install:
         type: git
         check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
         platforms:
-          only: ['linux']
+          only: ["linux"]
         post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
         post_update: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
         opts:
@@ -333,6 +332,30 @@ install:
   # - category: 🛠️ Dev Tools & Utilities
   #   desc: CLI utilities and general tools for development workflows.
 
+  - name: neovim
+    bin_name: nvim
+    type: group
+    steps:
+      - name: neovim
+        bin_name: nvim
+        type: brew
+        platforms:
+          only: ["macos"]
+
+      - name: nvim
+        type: github-release
+        platforms:
+          only: ["linux"]
+        opts:
+          repository: neovim/neovim
+          strategy: tar
+          download_filename: nvim-linux-{{ .ArchAlias }}.tar.gz
+          extract_to: ~/.local/share/neovim
+          strip_components: 1
+          bin_links:
+            - source: bin/nvim
+              target: ~/.local/bin/nvim
+
   - name: lazygit
     type: group
     steps:
@@ -341,7 +364,7 @@ install:
       - name: lazygit
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: jesseduffield/lazygit
           strategy: tar
@@ -359,7 +382,7 @@ install:
       - name: lazydocker
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: jesseduffield/lazydocker
           strategy: tar
@@ -377,7 +400,7 @@ install:
       - name: lazysql
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: jorgerojas26/lazysql
           strategy: tar
@@ -395,7 +418,7 @@ install:
       - name: lazyssh
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: Adembc/lazyssh
           strategy: tar
@@ -418,7 +441,7 @@ install:
       - name: delta
         type: shell
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           command: |
             curl https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb | dpkg -i
@@ -434,7 +457,7 @@ install:
       - name: jq
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: yq
     type: group
@@ -444,10 +467,9 @@ install:
       - name: yq
         type: github-release
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           repository: mikefarah/yq
-          strategy: binary
           destination: ~/.local/bin
           download_filename: yq_linux_{{ .Arch }}
 
@@ -459,7 +481,7 @@ install:
       - name: direnv
         type: shell
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           command: export bin_path=/usr/local/bin curl -sfL https://direnv.net/install.sh | bash
 
@@ -473,7 +495,7 @@ install:
       - name: dotenvx
         type: shell
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           command: curl -sfS https://dotenvx.sh | sh
 
@@ -485,7 +507,7 @@ install:
       - name: ffmpeg
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: fd
     type: group
@@ -496,11 +518,11 @@ install:
         bin_name: fd
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: aerospace
     type: group
-    platforms: {only: ['macos']}
+    platforms: { only: ["macos"] }
     steps:
       - name: borders
         type: brew
@@ -532,7 +554,7 @@ install:
       - name: catimg
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: bat
     type: group
@@ -542,7 +564,7 @@ install:
       - name: bat
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
   - name: pandoc
     type: group
@@ -559,7 +581,7 @@ install:
         #   download_filename: pandoc-{{ .Tag }}-linux-{{ .Arch }}
         type: shell
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
           command: |
             cd $(mktemp -d)
@@ -608,7 +630,7 @@ install:
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $VERSION" "$PLIST"
         opts:
           destination: ~/.local/build
-          clone_flags: --depth=1
+          flags: --depth=1
 
   - name: regex-tui
     type: github-release
@@ -624,7 +646,7 @@ install:
   - name: fastlane
     type: brew
     machines:
-      only: ['m1']
+      only: ["m1"]
 
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
@@ -655,9 +677,9 @@ install:
       - name: pyenv
         type: shell
         platforms:
-          only: ['linux']
+          only: ["linux"]
         opts:
-          command: 'curl https://pyenv.run | bash'
+          command: "curl https://pyenv.run | bash"
 
   # ----------------------------------------------------------------------
   # 📦 PNPM Ecosystem
@@ -668,15 +690,14 @@ install:
   #   desc: Global CLI tools and utilities installed via pnpm.
 
   - name: pnpm
-    type: npm
+    type: shell
     opts:
+      command: npm i -g pnpm
       update_command: pnpm self-update
 
   - name: typescript
     bin_name: tsc
     type: pnpm
-    opts:
-      command: pnpm i -g typescript
 
   - name: tldr
     type: pnpm
@@ -752,7 +773,7 @@ install:
 
       - name: ghcr.io/open-webui/open-webui:main
         bin_name: open-webui
-        tag: openwebui
+        tags: openwebui
         type: docker
         opts:
           skip_if_unavailable: true
@@ -780,7 +801,7 @@ install:
       - name: pipx
         type: apt
         platforms:
-          only: ['linux']
+          only: ["linux"]
 
       - name: jedi-language-server
         type: pipx
@@ -866,7 +887,6 @@ install:
     opts:
       cask: true
 
-
   # ----------------------------------------------------------------------
   # 🆎 Fonts
   # ----------------------------------------------------------------------
@@ -877,12 +897,12 @@ install:
     check_installed: fc-list | grep -q "Meslo"
     type: brew
     tags: font
-    platforms: {only: ['macos']}
+    platforms: { only: ["macos"] }
     frequency: 26w
 
   - name: font-fira-code-nerd-font
     check_installed: fc-list | grep -q "Fira"
     type: brew
     tags: font
-    platforms: {only: ['macos']}
+    platforms: { only: ["macos"] }
     frequency: 26w
