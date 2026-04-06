@@ -1,6 +1,6 @@
 return {
-  'chenasraf/input-form.nvim',
-  -- dir = vim.fn.expand('~/Dev/input-form.nvim'),
+  -- 'chenasraf/input-form.nvim',
+  dir = vim.fn.expand('~/Dev/input-form.nvim'),
   opts = {},
   keys = {
     {
@@ -32,6 +32,13 @@ return {
               validator = V.chain(V.non_empty(), V.is_number()),
             },
             {
+              name = 'terms',
+              label = 'Accept terms?',
+              type = 'checkbox',
+              default = false,
+              validator = V.checked(true),
+            },
+            {
               name = 'choice',
               label = 'Select an option',
               type = 'select',
@@ -48,6 +55,7 @@ return {
                 end
               end,
             },
+            { type = 'spacer' },
             {
               name = 'body',
               label = 'Enter multiline text',
