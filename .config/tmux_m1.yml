@@ -271,6 +271,7 @@ ncapps:
   aliases: [nc]
   windows:
     - ./forum
+    - ./pantry
     - ./autocurrency
     - ./jukebox
     - ./habitica
@@ -326,3 +327,8 @@ nvim-forks:
   windows:
     - ./vim-matchup
     - ./nvim-treesitter
+
+workflows:
+  root: ~/Dev/workflows
+  windows:
+    - ./
