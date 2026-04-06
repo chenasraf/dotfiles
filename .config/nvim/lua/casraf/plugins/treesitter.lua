@@ -15,7 +15,7 @@ return {
     local ensure_installed = {
       'c', 'cpp', 'go', 'python', 'rust', 'vimdoc', 'vim',
       'lua', 'tsx', 'javascript', 'typescript', 'bash', 'astro', 'css', 'scss',
-      'dart', 'json', 'yaml',
+      'dart', 'json', 'yaml', 'vue',
     }
     local nts = require('nvim-treesitter')
     if type(nts.install) == 'function' then
@@ -69,7 +69,7 @@ return {
       'c', 'cpp', 'go', 'python', 'rust', 'help', 'vim',
       'lua', 'typescriptreact', 'javascript', 'javascriptreact', 'typescript',
       'bash', 'sh', 'zsh', 'astro', 'css', 'scss', 'dart', 'json', 'yaml',
-      'ejs', 'firestorerules',
+      'ejs', 'firestorerules', 'vue',
     }
     vim.api.nvim_create_autocmd('FileType', {
       pattern = ts_filetypes,
