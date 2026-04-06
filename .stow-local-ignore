@@ -15,8 +15,6 @@ brew
 node_modules
 pnpm-lock\.yaml
 README\.md
-\.prettierrc
-\.prettierignore
 \.eslintignore
 \.shellcheckrc
 \.config/direnv/lib
