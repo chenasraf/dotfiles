@@ -1,3 +1,63 @@
+-- Directories/files to ignore in file picker and grep.
+-- Add or remove entries as needed.
+local ignore_patterns = {
+  -- Version control
+  '.git',
+
+  -- JavaScript / TypeScript
+  'node_modules',
+  '.next',
+  '.nuxt',
+  '.output',
+  'dist',
+  'build',
+  '.turbo',
+  '.cache',
+  '.parcel-cache',
+
+  -- Python
+  '__pycache__',
+  '.venv',
+  'venv',
+  '*.egg-info',
+  '.mypy_cache',
+  '.ruff_cache',
+  '.pytest_cache',
+
+  -- Go
+  'vendor',
+
+  -- Rust
+  'target',
+
+  -- Java / Kotlin
+  '.gradle',
+  '.idea',
+
+  -- .NET
+  'bin',
+  'obj',
+
+  -- iOS / macOS
+  'Pods',
+  '.build',
+  'DerivedData',
+
+  -- General
+  '.DS_Store',
+  'coverage',
+  '.nyc_output',
+  '.terraform',
+}
+
+local function rg_ignore_globs()
+  local globs = {}
+  for _, pat in ipairs(ignore_patterns) do
+    table.insert(globs, '-g "!' .. pat .. '"')
+  end
+  return table.concat(globs, ' ')
+end
+
 local function find_git_root()
   local current_file = vim.api.nvim_buf_get_name(0)
   local current_dir = ""
@@ -38,10 +98,10 @@ return {
           },
         },
         files = {
-          cmd = 'rg --files --hidden -g "!.git" -g "!node_modules"',
+          cmd = 'rg --files --hidden --no-ignore ' .. rg_ignore_globs(),
         },
         grep = {
-          rg_opts = '--color=never --no-heading --with-filename --line-number --column --smart-case --hidden -g "!.git" -g "!node_modules"',
+          rg_opts = '--color=never --no-heading --with-filename --line-number --column --smart-case --hidden --no-ignore ' .. rg_ignore_globs(),
         },
       })
 
