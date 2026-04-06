@@ -218,3 +218,4 @@ fbcurl() {
 alias fdg="fd --glob"
 alias mdf="prettier --config \$HOME/.prettierrc --ignore-path \$HOME/.prettierignore --write '**/*.md'"
 alias wands="alias G 'wand --wand-file' G -v wands"
+alias cc="claude"
