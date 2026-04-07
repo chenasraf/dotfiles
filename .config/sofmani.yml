@@ -518,6 +518,21 @@ install:
         platforms:
           only: ["linux"]
 
+  - name: fzf
+    type: group
+    steps:
+      - name: fzf
+        type: brew
+      - name: fzf
+        type: github-release
+        platforms:
+          only: ["linux"]
+        opts:
+          repository: junegunn/fzf
+          strategy: tar
+          destination: ~/.local/bin
+          download_filename: fzf-{{ .Version }}-linux_{{ .Arch }}.tar.gz
+
   - name: fd
     type: group
     steps:

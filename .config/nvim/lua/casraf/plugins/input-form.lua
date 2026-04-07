@@ -1,6 +1,6 @@
 return {
-  -- 'chenasraf/input-form.nvim',
-  dir = vim.fn.expand('~/Dev/input-form.nvim'),
+  'chenasraf/input-form.nvim',
+  -- dir = vim.fn.expand('~/Dev/input-form.nvim'),
   opts = {},
   keys = {
     {
