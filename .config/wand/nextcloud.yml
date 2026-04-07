@@ -174,6 +174,34 @@ backup:
       "$DRIVE/Nextcloud/"
     find "$DRIVE" -type f -name '._*' -exec rm -f -- {} +
 
+install-app:
+  description: Download and install a Nextcloud app from GitHub releases
+  flags:
+    aio:
+      type: bool
+      description: Use AIO container instead of dev
+  cmd: |
+    NAME="$1"
+    VERSION="$2"
+    if [ -z "$NAME" ] || [ -z "$VERSION" ]; then
+      echo "Usage: nxc install-app <name> <version>"
+      echo "Example: nxc install-app pantry 0.1.1"
+      exit 1
+    fi
+    URL="https://github.com/chenasraf/nextcloud-${NAME}/releases/download/v${VERSION}/${NAME}-v${VERSION}.tar.gz"
+    if [ "$WAND_FLAG_AIO" = "true" ]; then
+      sudo docker exec --user www-data nextcloud-aio-nextcloud bash -c "curl -L -o /tmp/${NAME}.tar.gz ${URL}"
+      sudo docker exec --user www-data nextcloud-aio-nextcloud bash -c "tar xzf /tmp/${NAME}.tar.gz -C /var/www/html/custom_apps/ && rm /tmp/${NAME}.tar.gz"
+      sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ app:enable "$NAME"
+    else
+      VERSION_TAG="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+      [ -z "$VERSION_TAG" ] && VERSION_TAG="nextcloud"
+      CONTAINER="nextcloud-${VERSION_TAG}-1"
+      docker exec --user www-data "$CONTAINER" bash -c "curl -L -o /tmp/${NAME}.tar.gz ${URL}"
+      docker exec --user www-data "$CONTAINER" bash -c "tar xzf /tmp/${NAME}.tar.gz -C /var/www/html/custom_apps/ && rm /tmp/${NAME}.tar.gz"
+      docker exec --user www-data -it "$CONTAINER" php occ app:enable "$NAME"
+    fi
+
 db-proxy:
   description: Manage AIO database proxy
   children:
