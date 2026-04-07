@@ -126,7 +126,58 @@ return {
         vim.keymap.set('n', '<leader>fk', fzf.keymaps, { desc = '[F]ind [K]eymaps', silent = true })
         vim.keymap.set('n', '<leader>ft', fzf.builtin, { desc = '[F]ind fzf-lua Pickers', silent = true })
         vim.keymap.set('n', '<leader>fq', fzf.quickfix, { desc = '[F]ind [Q]uickfix', silent = true })
-        vim.keymap.set('n', '<leader>fn', '<Cmd>Noice fzf<CR>', { desc = '[F]ind [N]otifications', silent = true })
+        vim.keymap.set('n', '<leader>fn', function()
+          local entries = {}
+          local seen = {}
+          -- Noice notification history
+          for _, msg in ipairs(require('noice.message.manager').get({}, {})) do
+            local text = msg:content()
+            if text and text ~= '' then
+              local first_line = '[noice] ' .. text:match('^[^\n]*')
+              if not seen[text] then
+                seen[text] = true
+                table.insert(entries, { first_line = first_line, full = text })
+              end
+            end
+          end
+          -- Vim :messages
+          local msg_output = vim.api.nvim_exec2('messages', { output = true }).output or ''
+          for _, line in ipairs(vim.split(msg_output, '\n')) do
+            if line ~= '' and not seen[line] then
+              seen[line] = true
+              table.insert(entries, { first_line = '[messages] ' .. line, full = line })
+            end
+          end
+          if #entries == 0 then
+            vim.notify('No notifications', vim.log.levels.INFO)
+            return
+          end
+          fzf.fzf_exec(
+            vim.tbl_map(function(e) return e.first_line end, entries),
+            {
+              prompt = 'Notifications> ',
+              actions = {
+                ['default'] = function(selected)
+                  if not selected or #selected == 0 then return end
+                  -- find matching entry
+                  for _, e in ipairs(entries) do
+                    if e.first_line == selected[1] then
+                      vim.cmd('enew')
+                      local buf = vim.api.nvim_get_current_buf()
+                      vim.bo[buf].buftype = 'nofile'
+                      vim.bo[buf].bufhidden = 'wipe'
+                      vim.bo[buf].swapfile = false
+                      vim.bo[buf].filetype = 'markdown'
+                      local lines = vim.split(e.full, '\n')
+                      vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+                      return
+                    end
+                  end
+                end,
+              },
+            }
+          )
+        end, { desc = '[F]ind [N]otifications', silent = true })
 
         -- Special file locations
         vim.keymap.set('n', '<leader>fp', function()
