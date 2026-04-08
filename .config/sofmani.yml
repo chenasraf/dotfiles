@@ -902,9 +902,11 @@ install:
 
   - name: wezterm
     type: brew
+    enabled: false
 
   - name: alacritty
     type: brew
+    enabled: false
 
   - name: ghostty
     type: brew
