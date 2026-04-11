@@ -146,11 +146,23 @@ force-appupdate:
   cmd: |
     aio() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
     INSTANCE_ID=$(aio php occ config:system:get instanceid | tr -d "\n\r")
+    NC_VERSION=$(aio php occ config:system:get version | tr -d "\n\r")
+    if [ -z "$NC_VERSION" ]; then
+      echo "Failed to detect Nextcloud version" >&2
+      exit 1
+    fi
+    # Platform endpoint expects MAJOR.0.0 (matches Nextcloud's own AppFetcher)
+    NC_MAJOR="${NC_VERSION%%.*}"
+    PLATFORM_VERSION="${NC_MAJOR}.0.0"
     APPSTORE_DIR="/mnt/ncdata/appdata_${INSTANCE_ID}/appstore"
     APPS_JSON="${APPSTORE_DIR}/apps.json"
     mv "$APPS_JSON" "${APPS_JSON}.bk"
-    echo "Downloading appstore apps.json from Nextcloud..."
-    if ! curl -L https://apps.nextcloud.com/api/v1/apps.json -o "$APPS_JSON"; then
+    URL="https://apps.nextcloud.com/api/v1/platform/${PLATFORM_VERSION}/apps.json"
+    echo "Downloading appstore apps.json for NC ${NC_VERSION} (platform ${PLATFORM_VERSION})..."
+    # Use a cache-busting query string and no-cache header to defeat any
+    # intermediate caches; the platform endpoint is dynamic but be safe.
+    if ! curl -L -H "Cache-Control: no-cache" -H "Pragma: no-cache" \
+        "${URL}?_=$(date +%s)" -o "$APPS_JSON"; then
       echo "Failed to download apps.json. Restoring backup."
       mv "${APPS_JSON}.bk" "$APPS_JSON"
       exit 1
