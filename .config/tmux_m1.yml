@@ -272,6 +272,7 @@ ncapps:
   windows:
     - ./forum
     - ./pantry
+    - ~/Dev/pantry-flutter
     - ./autocurrency
     - ./jukebox
     - ./habitica
@@ -330,5 +331,10 @@ nvim-forks:
 
 workflows:
   root: ~/Dev/workflows
+  windows:
+    - ./
+
+pantry-flutter:
+  root: ~/Dev/pantry-flutter
   windows:
     - ./
