@@ -40,17 +40,18 @@ if [[ -d "/opt/homebrew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   export BREW_HOME="/usr/local"
 
-  if [[ -d "$HOME/Library/Android/sdk" ]]; then
-    export ANDROID_HOME="$HOME/Library/Android/sdk"
-    export ANDROID_SDK_ROOT="$BREW_HOME/bin"
-  fi
-
   if [[ -d "$BREW_HOME/opt/flex" ]]; then
     export LDFLAGS="-L$BREW_HOME/opt/flex/lib"
     export CPPFLAGS="-I$BREW_HOME/opt/flex/include"
     export PATH="$BREW_HOME/opt/flex/bin:$PATH"
     export PATH="$BREW_HOME/opt/make/libexec/gnubin:$PATH"
   fi
+fi
+
+if [[ -d "$HOME/Library/Android/sdk" ]]; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+  export ANDROID_SDK_ROOT="$BREW_HOME/bin"
+  export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 fi
 
 # yamllint
