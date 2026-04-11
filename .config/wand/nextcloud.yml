@@ -157,6 +157,35 @@ force-appupdate:
     fi
     chown www-data:www-data "$APPS_JSON"
 
+latest-version:
+  description: Get the latest version of a Nextcloud app from the cached apps.json
+  aliases: [lv]
+  cmd: |
+    NAME="$1"
+    if [ -z "$NAME" ]; then
+      echo "Usage: nxc latest-version <app_id>"
+      exit 1
+    fi
+    aio() { sudo docker exec --user www-data nextcloud-aio-nextcloud "$@"; }
+    INSTANCE_ID=$(aio php occ config:system:get instanceid | tr -d "\n\r")
+    APPS_JSON="/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json"
+    if ! aio test -f "$APPS_JSON"; then
+      echo "apps.json not found at $APPS_JSON. Run 'nxc force-appupdate' first." >&2
+      exit 1
+    fi
+    VERSION=$(aio cat "$APPS_JSON" | jq -r --arg id "$NAME" '
+      (if type == "object" and has("data") then .data else . end)
+      | .[] | select(.id == $id) | .releases
+      | map(select(.isNightly == false) | .version)
+      | sort_by(split(".") | map(tonumber? // 0))
+      | last // empty
+    ')
+    if [ -z "$VERSION" ]; then
+      echo "No releases found for app: $NAME" >&2
+      exit 1
+    fi
+    echo "$VERSION"
+
 backup:
   description: Rsync Nextcloud data from remote server to external drive
   confirm: This will sync from spider.casraf.dev to the 2T SSD. Continue?
