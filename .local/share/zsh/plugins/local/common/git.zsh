@@ -376,6 +376,21 @@ function _git_homebrew_tap_add_pr_pull_label() {
   echo "  ✓ Added \"pr-pull\" label to PR #$_git_homebrew_tap_pr_number"
 }
 
+# Internal helper: get "owner/repo" from the current repo's origin remote.
+# Supports both SSH (git@host:owner/repo[.git]) and HTTPS (https://host/owner/repo[.git]) URLs.
+# Outputs nothing and returns 1 if not in a git repo or no origin remote is set.
+function _git_origin_owner_repo() {
+  local url
+  url=$(git remote get-url origin 2>/dev/null) || return 1
+  url="${url%.git}"
+  local repo owner
+  repo="${url##*/}"
+  url="${url%/$repo}"
+  owner="${url##*[/:]}"
+  [[ -z "$owner" || -z "$repo" ]] && return 1
+  echo "$owner/$repo"
+}
+
 # Internal helper: wait for a homebrew-tap PR to be closed/merged.
 # Returns 0 if closed, 1 if checks failed.
 function _git_homebrew_tap_wait_pr_closed() {
@@ -403,21 +418,28 @@ function _git_homebrew_tap_wait_pr_closed() {
 # Polls until the PR is found.
 function git-homebrew-tap-pr-pull() {
   if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    echo "Usage: gtp <search_term>"
+    echo "Usage: gtp [search_term]"
     echo ""
     echo "Search for an open PR in chenasraf/homebrew-tap whose title matches"
     echo "<search_term> and add the \"pr-pull\" label to it."
     echo "Polls until a matching PR is found."
+    echo ""
+    echo "If <search_term> is omitted or \".\", the repo name from the current"
+    echo "git origin remote is used."
     return 0
   fi
 
-  if [[ -z "$1" ]]; then
-    echo "Usage: gtp <search_term>"
-    return 1
+  local search
+  if [[ -z "$1" || "$1" == "." ]]; then
+    local origin
+    origin=$(_git_origin_owner_repo) || {
+      echo "Not in a git repo with an origin remote"
+      return 1
+    }
+    search="${origin##*/}"
+  else
+    search="$1"
   fi
-
-  local search="$1"
-  [[ "$search" == "." ]] && search="${PWD:t}"
 
   printf "Searching for homebrew-tap PR matching \"$search\" "
 
@@ -453,21 +475,28 @@ alias gtp=git-homebrew-tap-pr-pull
 # homebrew-tap follow-up, for repos that aren't published on the tap.
 function git-release-please-merge() {
   if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    echo "Usage: grlo <repo_name>"
+    echo "Usage: grlo [repo_name]"
     echo ""
     echo "Find an open release PR (titled \"chore release\") in chenasraf/<repo_name>,"
     echo "wait for all CI checks to pass, and merge it via rebase."
+    echo ""
+    echo "If <repo_name> is omitted or \".\", the owner/repo from the current"
+    echo "git origin remote is used. A bare name is prefixed with chenasraf/."
     return 0
   fi
 
-  if [[ -z "$1" ]]; then
-    echo "Usage: grlo <repo_name>"
-    return 1
+  local repo
+  if [[ -z "$1" || "$1" == "." ]]; then
+    repo=$(_git_origin_owner_repo) || {
+      echo "Not in a git repo with an origin remote"
+      return 1
+    }
+  elif [[ "$1" == */* ]]; then
+    repo="$1"
+  else
+    repo="chenasraf/$1"
   fi
-
-  local repo_name="$1"
-  [[ "$repo_name" == "." ]] && repo_name="${PWD:t}"
-  local repo="chenasraf/$repo_name"
+  local repo_name="${repo##*/}"
 
   # Step 1: Find release PR
   printf "Finding release PR in $repo "
@@ -524,26 +553,32 @@ alias grlo=git-release-please-merge
 # for it to be merged.
 function git-release-please-merge-with-tap() {
   if [[ "$1" == "-h" || "$1" == "--help" ]]; then
-    echo "Usage: grl <repo_name> [tap_search_term]"
+    echo "Usage: grl [repo_name] [tap_search_term]"
     echo ""
     echo "Find an open release PR (titled \"chore release\") in chenasraf/<repo_name>,"
     echo "wait for all CI checks to pass, merge it via rebase, then poll for a"
     echo "matching homebrew-tap PR, add the \"pr-pull\" label, and wait for it to close."
     echo ""
-    echo "If <tap_search_term> is omitted, <repo_name> is used to search the tap PR."
+    echo "If <repo_name> is omitted or \".\", the owner/repo from the current"
+    echo "git origin remote is used. A bare name is prefixed with chenasraf/."
+    echo "If <tap_search_term> is omitted or \".\", the resolved repo name is used."
     return 0
   fi
 
-  if [[ -z "$1" ]]; then
-    echo "Usage: grl <repo_name> [tap_search_term]"
-    return 1
+  local repo
+  if [[ -z "$1" || "$1" == "." ]]; then
+    repo=$(_git_origin_owner_repo) || {
+      echo "Not in a git repo with an origin remote"
+      return 1
+    }
+  elif [[ "$1" == */* ]]; then
+    repo="$1"
+  else
+    repo="chenasraf/$1"
   fi
-
-  local repo_name="$1"
-  [[ "$repo_name" == "." ]] && repo_name="${PWD:t}"
-  local repo="chenasraf/$repo_name"
+  local repo_name="${repo##*/}"
   local tap_search="${2:-$repo_name}"
-  [[ "$tap_search" == "." ]] && tap_search="${PWD:t}"
+  [[ "$tap_search" == "." ]] && tap_search="$repo_name"
 
   # Step 1: Find release PR
   printf "Finding release PR in $repo "
