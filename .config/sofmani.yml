@@ -109,8 +109,6 @@ install:
 
   - name: glab
     type: brew
-    machines:
-      only: ["planck"]
 
   - name: git-config
     type: shell
@@ -671,6 +669,22 @@ install:
     type: brew
     machines:
       only: ["m1"]
+
+  - name: lefthook
+    type: group
+    steps:
+      - name: lefthook
+        type: brew
+      - name: lefthook
+        type: github-release
+        platforms:
+          only: ["linux"]
+        opts:
+          repository: evilmartians/lefthook
+          strategy: none
+          destination: ~/.local/bin
+          download_filename:
+            linux: lefthook_{{ .Version }}_Linux_{{ .Arch }}
 
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
