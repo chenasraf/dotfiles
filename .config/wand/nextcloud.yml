@@ -161,12 +161,21 @@ force-appupdate:
     echo "Downloading appstore apps.json for NC ${NC_VERSION} (platform ${PLATFORM_VERSION})..."
     # Use a cache-busting query string and no-cache header to defeat any
     # intermediate caches; the platform endpoint is dynamic but be safe.
+    TMP_JSON=$(mktemp)
     if ! curl -L -H "Cache-Control: no-cache" -H "Pragma: no-cache" \
-        "${URL}?_=$(date +%s)" -o "$APPS_JSON"; then
+        "${URL}?_=$(date +%s)" -o "$TMP_JSON"; then
       echo "Failed to download apps.json. Restoring backup."
+      rm -f "$TMP_JSON"
       mv "${APPS_JSON}.bk" "$APPS_JSON"
       exit 1
     fi
+    # Wrap in NC's AppFetcher format with a far-future timestamp (1 week)
+    # so Nextcloud doesn't overwrite it on next page load.
+    FUTURE_TS=$(( $(date +%s) + 604800 ))
+    jq -n --argjson ts "$FUTURE_TS" --arg ver "$PLATFORM_VERSION" \
+      --slurpfile data "$TMP_JSON" \
+      '{ timestamp: $ts, data: $data[0], ncversion: $ver }' > "$APPS_JSON"
+    rm -f "$TMP_JSON"
     chown www-data:www-data "$APPS_JSON"
 
 latest-version:
