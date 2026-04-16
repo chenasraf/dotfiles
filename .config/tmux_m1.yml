@@ -272,7 +272,7 @@ ncapps:
   windows:
     - ./forum
     - ./pantry
-    - ~/Dev/pantry-flutter
+    - ../pantry-flutter
     - ./autocurrency
     - ./jukebox
     - ./habitica
@@ -305,12 +305,12 @@ tx:
     - ./
 
 proton-mail-manager:
-  root: ~/Dev/protonmail-pro-mcp
+  root: ~/Dev/protonmail-mail-manager
   aliases: [proton]
   windows:
-    - ./
-    - cwd: ../proton-mail-manager
+    - cwd: ./
       layout: claude
+    - ../protonmail-pro-mcp
 
 cospend-cli:
   root: ~/Dev/go/src/github.com/chenasraf/cospend-cli
