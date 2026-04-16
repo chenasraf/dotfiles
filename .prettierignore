@@ -1,1 +1,6 @@
-gen/
+.claude/
+deps/
+vendor/
+vendor-bin/
+CHANGELOG.md
+
