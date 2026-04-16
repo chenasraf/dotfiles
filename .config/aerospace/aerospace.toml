@@ -8,7 +8,7 @@ config-version = 2
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=8.0'
 ]
 
 # Start AeroSpace at login
@@ -124,8 +124,13 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
-    alt-shift-j = 'move down'
-    alt-shift-k = 'move up'
+    # NOTE: join-with fails silently if there's no neighbor in that direction.
+    # - alt-shift-j (down) uses 'right', so the rightmost window can't use it.
+    # - alt-shift-k (up)   uses 'left',  so the leftmost window can't use it.
+    # If this becomes annoying, wrap in a shell script that falls back to the
+    # opposite direction via the 'aerospace' CLI.
+    alt-shift-j = ['join-with right', 'move down']
+    alt-shift-k = ['join-with left', 'move up']
     alt-shift-l = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
@@ -208,6 +213,9 @@ on-mode-changed = []
 
     ## Custom
     alt-f = 'fullscreen'
+    alt-shift-f = 'layout floating tiling'
+    alt-shift-up = 'volume up'
+    alt-shift-down = 'volume down'
 
     alt-shift-m = 'exec-and-forget open -a "Proton Mail"'
     alt-shift-o = 'exec-and-forget open -a "Obsidian"'
