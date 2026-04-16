@@ -568,6 +568,13 @@ install:
           command: exit 1
           update_command: aerospace reload-config
 
+  - name: autoraise
+    type: brew
+    post_install: brew services start autoraise
+    post_update: brew services restart autoraise
+    opts:
+      tap: dimentium/autoraise
+
   - name: catimg
     type: group
     steps:
