@@ -117,6 +117,38 @@ local function run_in_terminal(cmd)
   })
 end
 
+-- Read .flutter-flags.yml(yaml) from project root for per-command CLI args.
+-- Format:
+--   default: --dart-define-from-file=.env
+--   FlutterRun: --flavor dev
+--   FlutterInstall: --release
+local function read_flutter_flags()
+  local flags = {}
+  for _, name in ipairs({ '.flutter-flags.yml', '.flutter-flags.yaml' }) do
+    local path = vim.fn.getcwd() .. '/' .. name
+    if vim.fn.filereadable(path) == 1 then
+      for _, line in ipairs(vim.fn.readfile(path)) do
+        line = line:match('^%s*(.-)%s*$')
+        if line ~= '' and not line:match('^#') then
+          local key, val = line:match('^([%w_%-]+):%s*(.+)$')
+          if key and val then flags[key] = val end
+        end
+      end
+      break
+    end
+  end
+  return flags
+end
+
+local function get_flutter_args(cmd_name)
+  local flags = read_flutter_flags()
+  local parts = {}
+  if flags.default then table.insert(parts, flags.default) end
+  if flags[cmd_name] then table.insert(parts, flags[cmd_name]) end
+  local extra = table.concat(parts, ' ')
+  return extra ~= '' and (' ' .. extra) or ''
+end
+
 local group = vim.api.nvim_create_augroup("flutter", {})
 vim.api.nvim_clear_autocmds({ group = group })
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -205,10 +237,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
               if selected and selected[1] then
                 local cmd = cmd_map[selected[1]]
                 if cmd then
-                  if (cmd == 'FlutterRun' or cmd == 'FlutterDebug') and vim.fn.filereadable('.env') == 1 then
-                    cmd = cmd .. ' --dart-define-from-file=.env'
-                  end
-                  vim.cmd(cmd)
+                  vim.cmd(cmd .. get_flutter_args(cmd))
                 end
               end
             end,
@@ -237,8 +266,7 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", '<C-S-l>', ':FlutterRestart<CR>',
       { buffer = true, desc = 'Flutter Restart', silent = true })
     vim.api.nvim_buf_create_user_command(0, 'FlutterInstall', function()
-      local dart_define = vim.fn.filereadable('.env') == 1 and ' --dart-define-from-file=.env' or ''
-      run_in_terminal('flutter build apk' .. dart_define .. ' && flutter install')
+      run_in_terminal('flutter build apk' .. get_flutter_args('FlutterInstall') .. ' && flutter install')
     end, { desc = 'Build APK and install on device' })
 
     vim.api.nvim_buf_create_user_command(0, 'FlutterConnectDevice', function()
