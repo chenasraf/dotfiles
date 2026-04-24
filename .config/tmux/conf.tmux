@@ -15,10 +15,14 @@ bind m run-shell 'tmux setenv -g MOVE_PANE_SESSION "#{session_name}" \; setenv -
 unbind '"'
 unbind %
 
-# sort sessions by name in selector
-# bind sn choose-tree -sZ -O name
-# sort by recently used
-# bind sr choose-tree -sZ -O time
+# default session sorting
+set -g @tree-mode-default-sort 'time'
+
+# sort sessions by name in selector (prefix → s → n)
+# sort by recently used (prefix → s → r)
+bind S switch-client -T session-sort
+bind -T session-sort n choose-tree -sZ -O name
+bind -T session-sort r choose-tree -sZ -O time
 
 # switch panes using Ctrl-Alt-arrow without prefix
 # bind -n C-M-Left select-pane -L
