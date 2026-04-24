@@ -69,6 +69,7 @@ alias grao="git remote add origin"
 alias gchen="git config user.name 'Chen Asraf'; git config user.email casraf@pm.me"
 alias lg="lazygit"
 grac() { git remote add origin "git@github.com:chenasraf/$1.git"; }
+alias gresetdate='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date="$(date)"'
 
 # home/dotfiles
 alias home="git -C \$DOTFILES"
