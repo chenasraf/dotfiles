@@ -135,11 +135,13 @@ fi
 #   export PATH="$CFG/yarn/global/node_modules/.bin:$PATH"
 # fi
 
-# Ruby
+# Ruby (rbenv must init before GEM_HOME so we pick up the right ruby)
+if [[ -f $(which rbenv) ]]; then
+  eval "$(command rbenv init - zsh)"
+fi
 if [[ -f $(which ruby) ]]; then
   export GEM_HOME="$HOME/.gem"
   export PATH="$GEM_HOME/bin:$PATH"
-  export PATH="$GEM_HOME/ruby/3.1.10/bin:$PATH"
 fi
 
 # Python 3.11
@@ -207,13 +209,6 @@ fi
 
 if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-fi
-if [[ -f $(which rbenv) ]]; then
-  rbenv() {
-    unset -f rbenv
-    eval "$(command rbenv init - zsh)"
-    rbenv "$@"
-  }
 fi
 
 export SHELLCHECK_OPTS='--shell=bash'
