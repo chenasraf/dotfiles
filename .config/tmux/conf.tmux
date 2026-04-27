@@ -34,7 +34,11 @@ bind -T session-sort r choose-tree -sZ -O time
 bind -n C-M-w confirm-before kill-session
 
 # Clickable close button in status-left — quits the terminal
-bind -n MouseUp1StatusLeft run-shell 'osascript -e "tell application \"System Events\" to keystroke \"q\" using command down"'
+if-shell "uname -s | grep -qi darwin" {
+  bind -n MouseUp1StatusLeft run-shell 'osascript -e "tell application \"System Events\" to keystroke \"q\" using command down"'
+} {
+  bind -n MouseUp1StatusLeft kill-server
+}
 
 # Clear screen and scrollback
 bind L clear-history \; send-keys C-l

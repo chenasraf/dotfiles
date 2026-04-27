@@ -35,6 +35,12 @@ is_linux() {
   return $?
 }
 
+# check if running inside WSL
+is_wsl() {
+  [[ -f /proc/version ]] && grep -qi microsoft /proc/version
+  return $?
+}
+
 # runs all scripts in directory $1 in order
 # same as run-parts from debian, but for osx
 if is_mac; then

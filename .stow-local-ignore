@@ -15,6 +15,7 @@ brew
 node_modules
 pnpm-lock\.yaml
 README\.md
+install\.sh
 \.eslintignore
 \.shellcheckrc
 \.config/direnv/lib

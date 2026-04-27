@@ -12,6 +12,9 @@ option_as_alt = "Both"
 # Spread extra padding evenly around the terminal content
 dynamic_padding = true
 
+# Windows: decorations = "Full" (no Transparent), remove option_as_alt.
+# To launch WSL: [shell] program = "wsl.exe", args = ["-d", "Ubuntu"]
+
 [window.padding]
 x = 8
 y = 0
@@ -113,6 +116,8 @@ color = "#f5e0dc"
 mouse = "Left"
 mods = "Command"
 action = "None"
+
+# Windows: replace "Command" with "Control" in all bindings below.
 
 # Key bindings
 # ==============================================================================

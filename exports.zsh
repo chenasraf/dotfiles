@@ -19,6 +19,8 @@ if [[ -d "$CFG/lazygit" ]]; then
   export LAZYGIT_HOME="$CFG/lazygit"
 elif [[ -d "$HOME/Library/ApplicationSupport/lazygit" ]]; then
   export LAZYGIT_HOME="$HOME/Library/ApplicationSupport/lazygit"
+elif [[ -n "$APPDATA" && -d "$APPDATA/lazygit" ]]; then
+  export LAZYGIT_HOME="$APPDATA/lazygit"
 fi
 
 # Postgres.app
@@ -46,11 +48,16 @@ if [[ -d "/opt/homebrew" ]]; then
     export PATH="$BREW_HOME/opt/flex/bin:$PATH"
     export PATH="$BREW_HOME/opt/make/libexec/gnubin:$PATH"
   fi
+elif [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 if [[ -d "$HOME/Library/Android/sdk" ]]; then
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export ANDROID_SDK_ROOT="$BREW_HOME/bin"
+  export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+elif [[ -d "/mnt/c/Users/$USER/AppData/Local/Android/Sdk" ]]; then
+  export ANDROID_HOME="/mnt/c/Users/$USER/AppData/Local/Android/Sdk"
   export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 fi
 
@@ -117,7 +124,11 @@ if [[ -f $(which npm) ]]; then
 fi
 
 # PNPM
-export PNPM_HOME="$HOME/Library/pnpm"
+if [[ -d "$HOME/Library/pnpm" ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
 *":$PNPM_HOME:"*) ;;
 *) export PATH="$PNPM_HOME:$PATH" ;;

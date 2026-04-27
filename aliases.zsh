@@ -17,6 +17,13 @@ addalias() {
 
 source "$HOME/.local/share/zsh/plugins/local/common/os_utils.zsh"
 
+# WSL equivalents for macOS commands
+if is_wsl 2>/dev/null; then
+  alias open="wslview"
+  alias pbcopy="clip.exe"
+  alias pbpaste="powershell.exe -command 'Get-Clipboard' | tr -d '\r'"
+fi
+
 # navigation
 alias ".."="cd .."
 alias "..."="cd ../.."
@@ -37,7 +44,11 @@ alias vim="nvim"
 alias lvim="nvim -c':e#<1'"
 
 # output pipes
-alias -g C="| pbcopy"
+if is_wsl 2>/dev/null; then
+  alias -g C="| clip.exe"
+else
+  alias -g C="| pbcopy"
+fi
 alias -g H="| head"
 alias -g T="| tail"
 alias -g G="| grep -i"
@@ -55,11 +66,17 @@ alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize"
 alias -g J="| jq"
-alias to-clipboard="pbcopy"
+if is_wsl 2>/dev/null; then
+  alias to-clipboard="clip.exe"
+else
+  alias to-clipboard="pbcopy"
+fi
 
-# architecture
-alias arm="arch -arm64"
-alias x86="arch -x86_64"
+# architecture (macOS only)
+if is_mac; then
+  alias arm="arch -arm64"
+  alias x86="arch -x86_64"
+fi
 
 # git
 alias gdiff="git diff"
@@ -135,11 +152,19 @@ alias tls="tx ls -s"
 # network/ip
 alias ip4="curl -4 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv4: '"
 alias ip6="curl -6 simpip.com --max-time 2 --proto-default https --silent | prepend 'ipv6: '"
-alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
+if is_wsl 2>/dev/null; then
+  alias iplocal="hostname -I | awk '{print \$1}' | prepend 'iplocal: '"
+else
+  alias iplocal="ipconfig getifaddr en0 | prepend 'iplocal: '"
+fi
 alias ip="iplocal; ip4; ip6"
 
 # package management
-alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g --latest; sudo \$SHELL -c \"gem update; gem cleanup\""
+if is_wsl 2>/dev/null; then
+  alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g --latest"
+else
+  alias pkgupdate="brew update; brew upgrade; brew cleanup; pnpm i -g pnpm; pnpm up -g --latest; sudo \$SHELL -c \"gem update; gem cleanup\""
+fi
 alias pi="platform_install"
 alias install-wezterm="brew tap homebrew/cask-versions;brew install --cask wezterm@nightly --force"
 alias update-wezterm="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
@@ -161,7 +186,11 @@ alias ollama-serve="brew services start ollama"
 alias geminif="gemini -m gemini-2.5-flash"
 
 # android emulator
-alias emulator="\$HOME/Library/Android/sdk/emulator/emulator"
+if is_wsl 2>/dev/null; then
+  alias emulator="/mnt/c/Users/\$USER/AppData/Local/Android/Sdk/emulator/emulator.exe"
+else
+  alias emulator="\$HOME/Library/Android/sdk/emulator/emulator"
+fi
 alias pixel9="emulator -avd Pixel_9_API_35"
 alias pixelwatch="emulator -avd Wear_OS_Small_Round_API_34"
 
@@ -182,8 +211,12 @@ alias lsq="lazysql"
 
 # general
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias unq="sudo xattr -rd com.apple.quarantine"
+if is_wsl 2>/dev/null; then
+  alias afk="rundll32.exe user32.dll,LockWorkStation"
+else
+  alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+  alias unq="sudo xattr -rd com.apple.quarantine"
+fi
 alias sf="search-file"
 alias fnu="find-up"
 alias lua="luajit"

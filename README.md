@@ -78,6 +78,17 @@ Some (but not all) of the plugins/modifications are listed here:
 
 ## How to install
 
+### Quick install (recommended)
+
+```bash
+git clone git@github.com:chenasraf/dotfiles.git --depth 1 ~/.dotfiles
+~/.dotfiles/install.sh
+```
+
+The script handles everything: installs Homebrew, zsh, stow, and sofmani; symlinks configs; and runs sofmani to set up all tools. It works on macOS, Linux, and WSL, and is safe to run multiple times.
+
+### Manual install
+
 1. Install zsh and [GNU Stow](https://www.gnu.org/software/stow/)
 
    ```bash

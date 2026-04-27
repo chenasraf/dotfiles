@@ -48,6 +48,9 @@ config.window_background_opacity = 0.85
 config.macos_window_background_blur = 30
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
+
+-- Windows: default_domain = "WSL:Ubuntu", win32_system_backdrop = "Acrylic"
+-- Windows: replace "CMD" with "CTRL" and "OPT" with "ALT" in key bindings
 config.mouse_bindings = {
   -- Disable the 'Down' event of Cmd-Click to avoid weird program behaviors
   {
