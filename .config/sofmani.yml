@@ -803,8 +803,8 @@ install:
           only: ["linux"]
         check_has_update: '[ "$(claude --version 2>/dev/null | head -1 | grep -oE "[0-9]+\.[0-9]+\.[0-9]+")" != "$(curl -fsSL https://registry.npmjs.org/@anthropic-ai/claude-code/latest | jq -r .version)" ]'
         opts:
-          command: curl -fsSL https://cli.anthropic.com/install.sh | sh
-          update_command: curl -fsSL https://cli.anthropic.com/install.sh | sh
+          command: curl -fsSL https://claude.ai/install.sh | bash
+          update_command: curl -fsSL https://claude.ai/install.sh | bash
 
   - name: opencode
     type: brew
