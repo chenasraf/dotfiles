@@ -787,11 +787,24 @@ install:
 
   - name: claude-code
     bin_name: claude
-    type: brew
-    post_install: xattr -rd com.apple.quarantine $(which claude)
-    post_update: xattr -rd com.apple.quarantine $(which claude)
-    opts:
-      cask: true
+    type: group
+    steps:
+      - name: claude-code
+        bin_name: claude
+        type: brew
+        post_install: xattr -rd com.apple.quarantine $(which claude)
+        post_update: xattr -rd com.apple.quarantine $(which claude)
+        opts:
+          cask: true
+      - name: claude-code
+        bin_name: claude
+        type: shell
+        platforms:
+          only: ["linux"]
+        check_has_update: '[ "$(claude --version 2>/dev/null | head -1 | grep -oE "[0-9]+\.[0-9]+\.[0-9]+")" != "$(curl -fsSL https://registry.npmjs.org/@anthropic-ai/claude-code/latest | jq -r .version)" ]'
+        opts:
+          command: curl -fsSL https://cli.anthropic.com/install.sh | sh
+          update_command: curl -fsSL https://cli.anthropic.com/install.sh | sh
 
   - name: opencode
     type: brew
