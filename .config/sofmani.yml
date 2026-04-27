@@ -701,7 +701,7 @@ install:
           strategy: none
           destination: ~/.local/bin
           download_filename:
-            linux: lefthook_{{ .Version }}_Linux_{{ .Arch }}
+            linux: lefthook_{{ .Version }}_Linux_{{ .ArchAlias }}
 
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
