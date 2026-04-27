@@ -265,9 +265,10 @@ vim.api.nvim_create_autocmd("FileType", {
       { buffer = true, desc = 'Flutter Reload', silent = true })
     vim.keymap.set("n", '<C-S-l>', ':FlutterRestart<CR>',
       { buffer = true, desc = 'Flutter Restart', silent = true })
-    vim.api.nvim_buf_create_user_command(0, 'FlutterInstall', function()
-      run_in_terminal('flutter build apk' .. get_flutter_args('FlutterInstall') .. ' && flutter install')
-    end, { desc = 'Build APK and install on device' })
+    vim.api.nvim_buf_create_user_command(0, 'FlutterInstall', function(opts)
+      local extra = opts.args ~= '' and (' ' .. opts.args) or get_flutter_args('FlutterInstall')
+      run_in_terminal('flutter build apk' .. extra .. ' && flutter install' .. extra)
+    end, { nargs = '*', desc = 'Build APK and install on device' })
 
     vim.api.nvim_buf_create_user_command(0, 'FlutterConnectDevice', function()
       local function attempt_connect(octet, port)
