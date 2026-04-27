@@ -595,6 +595,16 @@ install:
         platforms:
           only: ["linux"]
 
+  - name: btop
+    type: group
+    steps:
+      - name: btop
+        type: brew
+      - name: btop
+        type: apt
+        platforms:
+          only: ["linux"]
+
   - name: bat
     type: group
     steps:
