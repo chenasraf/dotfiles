@@ -42,6 +42,9 @@ bind L clear-history \; send-keys C-l
 # Enable mouse control
 set -g mouse on
 
+# Enable focus events to allow tmux to detect when it is focused or unfocused
+set -g focus-events on
+
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
