@@ -221,3 +221,4 @@ alias mdf="prettier --config \$HOME/.prettierrc --ignore-path \$HOME/.prettierig
 alias wands="alias G 'wand --wand-file' G -v wands"
 alias cc="claude"
 alias bex="bundle exec"
+alias resetdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
