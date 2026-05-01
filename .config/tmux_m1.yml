@@ -338,3 +338,9 @@ pantry-flutter:
   root: ~/Dev/pantry-flutter
   windows:
     - ./
+
+kamerie:
+  root: ~/Dev/kamerie
+  windows:
+    - ./server
+    - ./client
