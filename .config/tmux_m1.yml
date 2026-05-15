@@ -344,3 +344,4 @@ kamerie:
   windows:
     - ./server
     - ./client
+    - ./agents
