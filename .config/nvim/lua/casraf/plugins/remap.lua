@@ -90,10 +90,10 @@ end, { desc = "Reload buffer from disk", silent = true })
 -- NOTE find and replace
 --
 -- search and replace current word
-vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+vim.keymap.set("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Search and replace current word" })
 -- search and replace current selection
-vim.keymap.set("v", "<leader>r", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
+vim.keymap.set("v", "<leader>R", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]],
   { desc = "Search and replace current selection" })
 
 ---

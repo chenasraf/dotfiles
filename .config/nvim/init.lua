@@ -128,7 +128,7 @@ require('which-key').add({
   { '<leader>l', group = '[L]SP' },
   { '<leader>g', group = '[G]it' },
   { '<leader>h', group = 'More git' },
-  { '<leader>r', group = '[R]ename' },
+  { '<leader>R', group = '[R]ename' },
   { '<leader>s', group = '[S]earch' },
   { '<leader>S', group = '[S]erve' },
   { '<leader>t', group = '[T]ests' },
