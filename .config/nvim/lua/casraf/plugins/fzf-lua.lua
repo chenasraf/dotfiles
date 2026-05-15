@@ -34,6 +34,9 @@ local ignore_patterns = {
   '.gradle',
   '.idea',
 
+  -- Flutter
+  '.dart_tool',
+
   -- .NET
   'bin',
   'obj',
@@ -101,7 +104,9 @@ return {
           cmd = 'rg --files --hidden --no-ignore ' .. rg_ignore_globs(),
         },
         grep = {
-          rg_opts = '--color=never --no-heading --with-filename --line-number --column --smart-case --hidden --no-ignore ' .. rg_ignore_globs(),
+          rg_opts =
+              '--color=never --no-heading --with-filename --line-number --column --smart-case --hidden --no-ignore ' ..
+              rg_ignore_globs(),
         },
       })
 
