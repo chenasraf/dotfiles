@@ -261,9 +261,13 @@ vim.api.nvim_create_autocmd("FileType", {
       { buffer = true, desc = '[G]oto Super Class', silent = true })
     vim.keymap.set("n", '<F2>', ':FlutterRename<CR>',
       { buffer = true, desc = 'Flutter Rename', silent = true })
-    vim.keymap.set("n", '<C-S-r>', ':FlutterReload<CR>',
+    vim.keymap.set("n", '<C-A-r>', ':FlutterReload<CR>',
       { buffer = true, desc = 'Flutter Reload', silent = true })
-    vim.keymap.set("n", '<C-S-l>', ':FlutterRestart<CR>',
+    vim.keymap.set("n", '<C-A-l>', ':FlutterRestart<CR>',
+      { buffer = true, desc = 'Flutter Restart', silent = true })
+    vim.keymap.set("n", '<leader>rl', ':FlutterReload<CR>',
+      { buffer = true, desc = 'Flutter Reload', silent = true })
+    vim.keymap.set("n", '<leader>rs', ':FlutterRestart<CR>',
       { buffer = true, desc = 'Flutter Restart', silent = true })
     vim.api.nvim_buf_create_user_command(0, 'FlutterInstall', function(opts)
       local extra = opts.args ~= '' and (' ' .. opts.args) or get_flutter_args('FlutterInstall')
