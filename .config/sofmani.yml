@@ -746,6 +746,19 @@ install:
         opts:
           command: "curl https://pyenv.run | bash"
 
+  - name: uv
+    type: group
+    steps:
+      - name: uv
+        type: brew
+      - name: uv
+        type: shell
+        platforms:
+          only: ["linux"]
+        opts:
+          command: curl -LsSf https://astral.sh/uv/install.sh | sh
+          update_command: uv self update
+
   # ----------------------------------------------------------------------
   # 📦 PNPM Ecosystem
   # ----------------------------------------------------------------------
