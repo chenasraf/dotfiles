@@ -721,10 +721,10 @@ install:
       strategy: tar
       archive_bin_name:
         macos: lintree-darwin-{{ .ArchAlias }}
-        linux: lintree-linux-{{ .ArchAlias }}
+        linux: lintree-linux-{{ .Arch }}
       download_filename:
         macos: lintree-darwin-{{ .ArchAlias }}.tar.gz
-        linux: lintree-linux-{{ .ArchAlias }}.tar.gz
+        linux: lintree-linux-{{ .Arch }}.tar.gz
 
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
