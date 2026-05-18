@@ -27,7 +27,7 @@ alias popd="popd -q"
 # file listing
 alias ls="ls -h --color=auto"
 alias ll="ls -l"
-alias la="ls -la"
+alias la="ls -lAh"
 alias l="ls -A"
 
 # editor
@@ -35,6 +35,12 @@ alias v="nvim ."
 alias vi="nvim"
 alias vim="nvim"
 alias lvim="nvim -c':e#<1'"
+
+# file management
+alias cp="cp -iv"
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias mkdir="mkdir -pv"
 
 # output pipes
 alias -g C="| pbcopy"
