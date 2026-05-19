@@ -124,6 +124,9 @@ keybind = super+equal=text:\x02E
 # Select tmux session: Cmd+Shift+P
 keybind = super+shift+p=text:\x02s
 
+# Toggle between two most recent tmux sessions: Ctrl+Tab
+keybind = ctrl+tab=text:\x02T
+
 # ==============================================================================
 # vim bindings
 # ==============================================================================

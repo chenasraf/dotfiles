@@ -39,6 +39,9 @@ bind -n MouseUp1StatusLeft run-shell 'osascript -e "tell application \"System Ev
 # Clear screen and scrollback
 bind L clear-history \; send-keys C-l
 
+# Toggle between the two most recently used sessions
+bind T switch-client -l
+
 # Enable mouse control
 set -g mouse on
 
