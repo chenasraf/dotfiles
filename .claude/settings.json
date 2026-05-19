@@ -1,0 +1,26 @@
+{
+  "env": {
+    "DISABLE_AUTOUPDATER": "1"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash -c 'input=$(cat); cwd=$(echo \"$input\" | jq -r \".workspace.current_dir\"); model=$(echo \"$input\" | jq -r \".model.display_name\"); git_info=\"\"; if git -C \"$cwd\" rev-parse --git-dir &>/dev/null; then branch=$(git -C \"$cwd\" rev-parse --abbrev-ref HEAD 2>/dev/null); git_status=$(git -C \"$cwd\" --no-optional-locks status --porcelain 2>/dev/null); if [ -n \"$git_status\" ]; then git_info=\" $(printf \"\\033[38;5;220m\")${branch}$(printf \"\\033[0m\")\"; else git_info=\" $(printf \"\\033[38;5;76m\")${branch}$(printf \"\\033[0m\")\"; fi; fi; node_ver=\"\"; if command -v node &>/dev/null; then node_ver=\" $(printf \"\\033[38;5;74m\")node:$(node -v | sed \"s/v//\")$(printf \"\\033[0m\")\"; fi; printf \"$(printf \"\\033[38;5;39m\")%s$(printf \"\\033[0m\") in $(printf \"\\033[38;5;45m\")%s$(printf \"\\033[0m\")%s%s\" \"$model\" \"$cwd\" \"$git_info\" \"$node_ver\"'"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "clangd-lsp@claude-plugins-official": true,
+    "everything-claude-code@everything-claude-code": true
+  },
+  "extraKnownMarketplaces": {
+    "everything-claude-code": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/affaan-m/everything-claude-code.git"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high"
+}
