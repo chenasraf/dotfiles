@@ -305,7 +305,7 @@ tx:
     - ./
 
 proton-mail-manager:
-  root: ~/Dev/protonmail-mail-manager
+  root: ~/Dev/proton-mail-manager
   aliases: [proton]
   windows:
     - cwd: ./
