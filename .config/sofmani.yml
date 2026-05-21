@@ -726,6 +726,16 @@ install:
         macos: lintree-darwin-{{ .ArchAlias }}.tar.gz
         linux: lintree-linux-{{ .Arch }}.tar.gz
 
+  - name: tmux
+    type: group
+    steps:
+      - name: tmux
+        type: brew
+      - name: tmux
+        type: apt
+        platforms:
+          only: ["linux"]
+
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
   # ----------------------------------------------------------------------
