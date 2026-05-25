@@ -112,7 +112,15 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',  opts = {} },
+  {
+    'numToStr/Comment.nvim',
+    setup = function()
+      require('Comment').setup()
+
+      local ft = require('Comment.ft')
+      ft.set('tmux', '#%s')
+    end
+  },
   -- sort lines of text with :Sort
   { 'sQVe/sort.nvim' },
   -- For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
@@ -146,7 +154,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
