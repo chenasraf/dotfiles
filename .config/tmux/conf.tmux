@@ -33,9 +33,6 @@ bind -T session-sort r choose-tree -sZ -O time
 # Ctrl+Shift+W to close session
 bind -n C-M-w confirm-before kill-session
 
-# Clickable close button in status-left — quits the terminal
-bind -n MouseUp1StatusLeft run-shell 'osascript -e "tell application \"System Events\" to keystroke \"q\" using command down"'
-
 # Clear screen and scrollback
 bind L clear-history \; send-keys C-l
 
