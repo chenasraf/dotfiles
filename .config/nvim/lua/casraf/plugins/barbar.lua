@@ -11,7 +11,43 @@ return {
   },
   init = function() vim.g.barbar_auto_setup = false end,
   config = function()
-    require('barbar').setup()
+    local function apply_barbar_hl()
+      local ok, palette = pcall(function() return require('catppuccin.palettes').get_palette() end)
+      if not ok then return end
+      local set = vim.api.nvim_set_hl
+      for _, state in ipairs({ 'Current', 'Visible', 'Inactive', 'Alternate' }) do
+        local emphasize = state == 'Current' or state == 'Alternate'
+        set(0, 'Buffer' .. state .. 'Mod', { fg = palette.peach, bold = emphasize, italic = true })
+        set(0, 'Buffer' .. state .. 'ModBtn', { fg = palette.peach, bold = emphasize })
+        set(0, 'Buffer' .. state .. 'ADDED', { fg = palette.green, bold = emphasize })
+        set(0, 'Buffer' .. state .. 'CHANGED', { fg = palette.yellow, bold = emphasize })
+        set(0, 'Buffer' .. state .. 'DELETED', { fg = palette.red, bold = emphasize })
+        set(0, 'Buffer' .. state .. 'ERROR', { fg = palette.red, bold = emphasize })
+        set(0, 'Buffer' .. state .. 'WARN', { fg = palette.yellow, bold = emphasize })
+        set(0, 'Buffer' .. state .. 'HINT', { fg = palette.teal, bold = emphasize })
+      end
+    end
+    vim.api.nvim_create_autocmd('ColorScheme', { callback = apply_barbar_hl })
+    apply_barbar_hl()
+
+    require('barbar').setup({
+      icons = {
+        filetype = { enabled = true },
+        modified = { button = '●' },
+        pinned = { button = '', filename = true },
+        diagnostics = {
+          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = ' ' },
+          [vim.diagnostic.severity.WARN] = { enabled = true, icon = ' ' },
+          [vim.diagnostic.severity.INFO] = { enabled = false },
+          [vim.diagnostic.severity.HINT] = { enabled = true, icon = '󰌶 ' },
+        },
+        gitsigns = {
+          added = { enabled = true, icon = '+' },
+          changed = { enabled = true, icon = '~' },
+          deleted = { enabled = true, icon = '-' },
+        },
+      },
+    })
     -- Move to previous/next
     vim.keymap.set({ 'n', 'v' }, '<A-[>', '<Cmd>BufferPrevious<CR>')
     vim.keymap.set({ 'n', 'v' }, '<A-]>', '<Cmd>BufferNext<CR>')

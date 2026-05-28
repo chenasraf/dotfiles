@@ -67,6 +67,7 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {
       -- See `:help gitsigns.txt`
+      attach_to_untracked = true,
       signs = {
         add = { text = '+' },
         change = { text = '~' },
