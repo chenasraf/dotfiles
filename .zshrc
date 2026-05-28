@@ -73,26 +73,7 @@ export WORDCHARS='*?[]~&;!#$%^(){}<>'
 # Allow comments on interactive command lines
 setopt interactive_comments
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# export HIST_STAMPS="%d/%m/%Y %I:%M:%S"
-# export HIST_FIND_NO_DUPS=true
-# setopt histignoredups
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='nvim'
-# else
-#   export EDITOR='nvim'
-# fi
-
 export VISUAL="$EDITOR"
-
-# tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
 
 source "$DOTFILES/dirs.zsh"
 source "$DOTFILES/aliases.zsh"
