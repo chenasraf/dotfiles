@@ -59,7 +59,7 @@ set -ga status-right "#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
 # NOTE Pane Borders
 setw -g pane-border-status bottom
 setw -g pane-border-format ""
-setw -g pane-active-border-style "bg=#{@thm_overlay_1},fg=#{@thm_overlay_1}"
+setw -g pane-active-border-style "bg=#{@thm_sky},fg=#{@thm_sky}"
 setw -g pane-border-style "fg=#{@thm_surface_0}"
 setw -g pane-border-lines single
 
