@@ -48,8 +48,8 @@ return {
         ts_keys.ts_statusline,
         lsp_status.lsp_supported,
         wrap_status,
-        'encoding',
-        'fileformat',
+        -- 'encoding',
+        -- 'fileformat',
         'filetype'
       },
       lualine_y = { 'progress' },
