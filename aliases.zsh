@@ -186,6 +186,21 @@ alias atu="atuin"
 # database
 alias lsq="lazysql"
 
+# file suffixes
+alias -s md=bat
+alias -s json=jless
+alias -s yaml="bat -l yaml"
+alias -s yml="bat -l yaml"
+for ext in {txt,conf,ini,log}; do
+  alias -s $ext=less
+done
+for ext in {go,sh,py,rb,dart,js,ts,tsx,jsx}; do
+  alias -s $ext="\$EDITOR"
+done
+for ext in {jpg,jpeg,png,gif,webp,mp4,avi,mov}; do
+  alias -s $ext="open"
+done
+
 # general
 alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
