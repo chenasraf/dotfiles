@@ -1,5 +1,5 @@
 #compdef dfe dfs
-dfpath="$(wd path df)"
+dfpath="$(print -r -- ~df)"
 
 out=()
 

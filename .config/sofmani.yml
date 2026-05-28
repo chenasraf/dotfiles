@@ -936,12 +936,6 @@ install:
 
   # local-plugins: no longer needed — tracked in-place by bare repo at ~/.local/share/zsh/plugins/local/
 
-  - name: mfaerevaag/wd
-    type: git
-    tags: plugin zsh
-    opts:
-      destination: ~/.local/share/zsh/plugins
-
   - name: romkatv/powerlevel10k
     type: git
     tags: plugin zsh

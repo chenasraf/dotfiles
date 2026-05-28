@@ -26,8 +26,6 @@ export DOTBIN="$CFG/bin"
 
 source "$DOTFILES/_plugins/loader.zsh"
 
-wd() { . ~/.local/share/zsh/plugins/wd/wd.sh }
-
 source "$DOTFILES/exports.zsh"
 
 if [[ -t 0 && -t 1 ]]; then
@@ -52,10 +50,13 @@ if [[ $? -ne 0 ]]; then
   autoload -U edit-command-line
   zle -N edit-command-line
 fi
+autoload zmv
 
 bindkey '^X' edit-command-line
 bindkey -M viins '^X' edit-command-line
 bindkey -M vicmd '^X' edit-command-line
+bindkey '^_' undo
+bindkey ' ' magic-space
 
 # back/forward word
 bindkey "^[[1;3C" forward-word
@@ -93,6 +94,7 @@ export VISUAL="$EDITOR"
 
 # tmux source-file "$HOME/.config/tmux/conf.tmux" 2>/dev/null
 
+source "$DOTFILES/dirs.zsh"
 source "$DOTFILES/aliases.zsh"
 
 [[ ! -f "$CFG/.p10k.zsh" ]] || source "$CFG/.p10k.zsh"
