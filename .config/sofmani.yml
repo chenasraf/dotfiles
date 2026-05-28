@@ -35,7 +35,7 @@ install:
       only: ["macos"]
     opts:
       command: |
-        if ! tmux source-file "$HOME/.config/tmux/conf.tmux"; then
+        if ! tmux source-file "$HOME/.config/tmux/tmux.conf"; then
           echo "⚠️  Failed to source tmux config"
         fi
 
@@ -949,35 +949,10 @@ install:
     opts:
       destination: ~/.local/share/zsh/plugins
 
-  - name: tmux-plugins/tpm
-    type: git
-    tags: plugin tmux
+  - name: tpack
+    type: brew
     opts:
-      destination: ~/.tmux/plugins
-
-  - name: catppuccin/tmux
-    type: git
-    tags: plugin tmux
-    opts:
-      destination: ~/.tmux/plugins/catppuccin
-
-  - name: tmux-plugins/tmux-online-status
-    type: git
-    tags: plugin tmux
-    opts:
-      destination: ~/.tmux/plugins
-
-  - name: tmux-plugins/tmux-battery
-    type: git
-    tags: plugin tmux
-    opts:
-      destination: ~/.tmux/plugins
-
-  - name: tmux-plugins/tmux-cpu
-    type: git
-    tags: plugin tmux
-    opts:
-      destination: ~/.tmux/plugins
+      tap: tmuxpack/tpack
 
   # ----------------------------------------------------------------------
   # 🧭 Desktop Productivity Tools

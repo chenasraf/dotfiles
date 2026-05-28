@@ -124,12 +124,11 @@ alias dvp="docker-volume-path"
 alias ldc="lazydocker"
 
 # tmux
-alias tmux="tmux -f \$CFG/tmux/conf.tmux"
 alias tn="tmux new"
 alias tns="tmux new -s"
 alias tas="tmux attach -t"
 alias tlw="tmux list-windows"
-alias trl="tmux source-file \$CFG/tmux/conf.tmux"
+alias trl="tmux source-file \$CFG/tmux/tmux.conf"
 alias trn="tmux rename-session -t"
 alias tks="tmux kill-server"
 alias tk="tx kill"
