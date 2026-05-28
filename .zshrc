@@ -99,3 +99,7 @@ source "$DOTFILES/aliases.zsh"
 
 [[ ! -f "$CFG/.p10k.zsh" ]] || source "$CFG/.p10k.zsh"
 
+# if not in tmux...
+if [[ -z "$TMUX" ]]; then
+  tx df
+fi
