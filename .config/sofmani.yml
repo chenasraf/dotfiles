@@ -27,18 +27,6 @@ install:
   # - category: 🧰 Configs & Dotfiles
   #   desc: Installers that sync dotfiles or apply local system configurations.
 
-  - name: tmux-config
-    type: shell
-    tags: config tmux
-    skip_summary: true
-    platforms:
-      only: ["macos"]
-    opts:
-      command: |
-        if ! tmux source-file "$HOME/.config/tmux/tmux.conf"; then
-          echo "⚠️  Failed to source tmux config"
-        fi
-
   - name: tx-config
     type: shell
     tags: config tmux
