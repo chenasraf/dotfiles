@@ -256,6 +256,16 @@ vstask:
   windows:
     - ./
 
+go:
+  root: ~/Dev/go/src/github.com/chenasraf
+  windows:
+    - ./sofmani
+    - ./tx
+    - ./vstask
+    - ./cospend-cli
+    - ./wand
+    - ./watchr
+
 archanomachy:
   root: ~/Dev/Godot/archanomachy
   windows:
