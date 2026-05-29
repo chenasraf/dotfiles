@@ -9,6 +9,7 @@ exports\.zsh
 aliases\.zsh
 _local\.zsh
 ghostty\.zsh
+keybindings\.zsh
 autoload_completions\.zsh
 completions
 _plugins

@@ -42,25 +42,9 @@ fi
 export fpath=("$DOTFILES/completions" $fpath)
 zstyle ':completion:*:*:*:*:*' menu select
 
-# bindkey -e
-# Use ESC to edit the current command line:
-# check if edit-command-line not already loaded
-which edit-command-line &>/dev/null
-if [[ $? -ne 0 ]]; then
-  autoload -U edit-command-line
-  zle -N edit-command-line
-fi
 autoload zmv
 
-bindkey '^X' edit-command-line
-bindkey -M viins '^X' edit-command-line
-bindkey -M vicmd '^X' edit-command-line
-bindkey '^_' undo
-bindkey ' ' magic-space
-
-# back/forward word
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
+source "$DOTFILES/keybindings.zsh"
 
 # Customize word characters for navigation (remove / and = to make them word delimiters)
 if [[ -t 0 ]]; then
