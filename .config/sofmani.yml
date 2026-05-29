@@ -30,12 +30,12 @@ install:
   - name: tx-config
     type: shell
     tags: config tmux
-    enabled: test -f "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml"
-    check_installed: test -f ~/.config/tmux_local.yml
-    check_has_update: '! diff -q "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml > /dev/null 2>&1'
+    enabled: test -f "$DOTFILES/.config/tmux_{{ .DeviceIDAlias }}.yml"
+    check_installed: test -e ~/.config/tmux_local.yml && [ "$(readlink "$DOTFILES/.config/tmux_local.yml")" = "tmux_{{ .DeviceIDAlias }}.yml" ]
+    check_has_update: '[ "$(readlink "$DOTFILES/.config/tmux_local.yml" 2>/dev/null)" != "tmux_{{ .DeviceIDAlias }}.yml" ]'
     opts:
-      command: cp "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
-      update_command: cp "$HOME/.config/tmux_{{ .DeviceIDAlias }}.yml" ~/.config/tmux_local.yml
+      command: ln -sfn "tmux_{{ .DeviceIDAlias }}.yml" "$DOTFILES/.config/tmux_local.yml" && stow -R -d "$DOTFILES" -t ~ .
+      update_command: ln -sfn "tmux_{{ .DeviceIDAlias }}.yml" "$DOTFILES/.config/tmux_local.yml" && stow -R -d "$DOTFILES" -t ~ .
 
   - name: osx-defaults
     type: shell
