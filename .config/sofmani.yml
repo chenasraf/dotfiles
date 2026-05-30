@@ -323,7 +323,7 @@ install:
 
   - name: aseprite
     type: group
-    enabled: false
+    # enabled: false
     steps:
       - name: cmake
         type: brew
@@ -331,13 +331,23 @@ install:
         type: brew
       - name: aseprite/aseprite
         type: git
+        check_has_update: '[ "$(git -C ~/.local/build/aseprite rev-parse HEAD 2>/dev/null)" != "$(git ls-remote https://github.com/aseprite/aseprite refs/heads/main | cut -f1)" ]'
+        pre_update: |
+          cd ~/.local/build/aseprite
+          git fetch --depth=1 origin main
+          git reset --hard FETCH_HEAD
+          git submodule update --init --recursive --depth=1 -f
         post_install: |
           cd ~/.local/build/aseprite
+          git submodule update --init --recursive --depth=1
           rm -f build/CMakeCache.txt
           ./build.sh --auto --norun
-          cp bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
+          chmod +x build/bin/aseprite
+          cp -f build/bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
+          rsync -a --delete build/bin/data/ /Applications/Aseprite.app/Contents/Resources/data/
+          xattr -rd com.apple.quarantine /Applications/Aseprite.app
 
-          RAW_TAG=$(git describe --tags --abbrev=0)
+          RAW_TAG=$(gh api repos/aseprite/aseprite/releases/latest --jq .tag_name)
           VERSION=${RAW_TAG#v}
           PLIST="/Applications/Aseprite.app/Contents/Info.plist"
           plutil -convert xml1 "$PLIST"
@@ -347,9 +357,12 @@ install:
           cd ~/.local/build/aseprite
           rm -f build/CMakeCache.txt
           ./build.sh --auto --norun
-          cp bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
+          chmod +x build/bin/aseprite
+          cp -f build/bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
+          rsync -a --delete build/bin/data/ /Applications/Aseprite.app/Contents/Resources/data/
+          xattr -rd com.apple.quarantine /Applications/Aseprite.app
 
-          RAW_TAG=$(git describe --tags --abbrev=0)
+          RAW_TAG=$(gh api repos/aseprite/aseprite/releases/latest --jq .tag_name)
           VERSION=${RAW_TAG#v}
           PLIST="/Applications/Aseprite.app/Contents/Info.plist"
           plutil -convert xml1 "$PLIST"
@@ -357,7 +370,7 @@ install:
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $VERSION" "$PLIST"
         opts:
           destination: ~/.local/build
-          flags: --depth=1
+          install_flags: --depth=1 --recurse-submodules --shallow-submodules
 
   - name: regex-tui
     type: github-release
