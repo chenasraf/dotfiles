@@ -311,6 +311,9 @@ install:
   - name: bat
     type: brew
 
+  - name: eza
+    type: brew
+
   - name: pandoc
     type: brew
 
@@ -578,6 +581,12 @@ install:
       destination: ~/.local/share/zsh/plugins
 
   - name: zsh-users/zsh-autosuggestions
+    type: git
+    tags: plugin zsh
+    opts:
+      destination: ~/.local/share/zsh/plugins
+
+  - name: Aloxaf/fzf-tab
     type: git
     tags: plugin zsh
     opts:
