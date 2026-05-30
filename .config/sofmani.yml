@@ -323,7 +323,6 @@ install:
 
   - name: aseprite
     type: group
-    # enabled: false
     steps:
       - name: cmake
         type: brew
@@ -422,17 +421,7 @@ install:
   #   desc: Installers for language version managers like pyenv, fnm, etc.
 
   - name: fnm
-    type: shell
-    post_install: |
-      FNM_PATH="/root/.local/share/fnm"
-      if [ -d "$FNM_PATH" ]; then
-        export PATH="$FNM_PATH:$PATH"
-        eval "`fnm env`"
-      fi
-      fnm install --lts
-      fnm use lts-latest
-    opts:
-      command: curl -fsSL https://fnm.vercel.app/install | bash
+    type: brew
 
   - name: pyenv
     type: brew
@@ -564,17 +553,14 @@ install:
   #   desc: Python tools and utilities installed via pipx.
 
   - name: pipx
-    type: group
+    type: brew
     post_install: sudo pipx ensurepath --global
-    steps:
-      - name: pipx
-        type: brew
 
-      - name: jedi-language-server
-        type: pipx
+  - name: jedi-language-server
+    type: pipx
 
-      - name: black
-        type: pipx
+  - name: black
+    type: pipx
 
   # ----------------------------------------------------------------------
   # 🔌 Zsh & Tmux Plugins
