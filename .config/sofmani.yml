@@ -269,6 +269,14 @@ install:
   - name: fd
     type: brew
 
+  - name: superfile
+    type: brew
+    bin_name: spf
+
+  - name: zoxide
+    type: brew
+    bin_name: z
+
   - name: aerospace
     type: group
     platforms: { only: ["macos"] }
