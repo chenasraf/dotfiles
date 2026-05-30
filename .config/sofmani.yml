@@ -297,6 +297,8 @@ install:
 
   - name: autoraise
     type: brew
+    platforms:
+      only: ["macos"]
     post_install: brew services start autoraise
     post_update: brew services restart autoraise
     opts:
@@ -319,10 +321,14 @@ install:
 
   - name: nextcloud-talk
     type: brew
+    platforms:
+      only: ["macos"]
     check_installed: test -d "/Applications/Nextcloud Talk.app"
 
   - name: aseprite
     type: group
+    platforms:
+      only: ["macos"]
     steps:
       - name: cmake
         type: brew
@@ -480,24 +486,11 @@ install:
 
   - name: claude-code
     bin_name: claude
-    type: group
-    steps:
-      - name: claude-code
-        bin_name: claude
-        type: brew
-        post_install: xattr -rd com.apple.quarantine $(which claude)
-        post_update: xattr -rd com.apple.quarantine $(which claude)
-        opts:
-          cask: true
-      - name: claude-code
-        bin_name: claude
-        type: shell
-        platforms:
-          only: ["linux"]
-        check_has_update: '[ "$(claude --version 2>/dev/null | head -1 | grep -oE "[0-9]+\.[0-9]+\.[0-9]+")" != "$(curl -fsSL https://registry.npmjs.org/@anthropic-ai/claude-code/latest | jq -r .version)" ]'
-        opts:
-          command: curl -fsSL https://claude.ai/install.sh | bash
-          update_command: curl -fsSL https://claude.ai/install.sh | bash
+    type: brew
+    post_install: "[[ $(uname -s) != 'Darwin' ]] || xattr -rd com.apple.quarantine $(which claude)"
+    post_update: "[[ $(uname -s) != 'Darwin' ]] || xattr -rd com.apple.quarantine $(which claude)"
+    opts:
+      cask: true
 
   - name: opencode
     type: brew
