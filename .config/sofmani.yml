@@ -4,9 +4,6 @@
 check_updates: true
 defaults:
   type:
-    brew:
-      platforms:
-        only: ["macos"]
     github-release:
       opts:
         github_token: $GITHUB_TOKEN
@@ -74,26 +71,12 @@ install:
       destination: ~/.local/share/zsh/plugins
 
   - name: stow
-    type: group
-    steps:
-      - name: stow
-        type: brew
-      - name: stow
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: gh
-    type: group
+    type: brew
     machines:
       except: ["planck"]
-    steps:
-      - name: gh
-        type: brew
-      - name: gh
-        type: apt
-        platforms:
-          only: ["linux"]
 
   - name: glab
     type: brew
@@ -153,162 +136,53 @@ install:
   #   desc: Taps that provide custom tools or host additional formulas.
 
   - name: sofmani
-    type: group
-    steps:
-      - name: sofmani
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: sofmani
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/sofmani
-          destination: ~/.local/bin
-          strategy: tar
-          download_filename: sofmani-linux-{{ .Arch }}.tar.gz
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: vstask
-    type: group
-    steps:
-      - name: vstask
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: vstask
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/vstask
-          destination: ~/.local/bin
-          strategy: tar
-          download_filename: vstask-linux-{{ .Arch }}.tar.gz
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: watchr
-    type: group
-    steps:
-      - name: watchr
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: watchr
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/watchr
-          destination: ~/.local/bin
-          strategy: tar
-          download_filename: watchr-linux-{{ .Arch }}.tar.gz
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: treelike
-    type: group
-    steps:
-      - name: treelike
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: treelike
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/treelike
-          destination: ~/.local/bin
-          download_filename: treelike-linux-{{ .Arch }}.tar.gz
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: gi_gen
-    type: group
-    steps:
-      - name: gi_gen
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: gi_gen
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/gi_gen
-          destination: ~/.local/bin
-          download_filename: gi_gen-{{ .Tag }}-linux-{{ .Arch }}
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: tx
-    type: group
-    steps:
-      - name: tx
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: tx
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/tx
-          destination: ~/.local/bin
-          strategy: tar
-          download_filename: tx-linux-{{ .Arch }}.tar.gz
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: wand
-    type: group
-    steps:
-      - name: wand
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: wand
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/wand
-          destination: ~/.local/bin
-          strategy: tar
-          download_filename: wand-linux-{{ .Arch }}.tar.gz
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: cospend-cli
-    type: group
-    steps:
-      - name: cospend-cli
-        bin_name: cospend
-        type: brew
-        opts:
-          tap: chenasraf/tap
-      - name: cospend-cli
-        bin_name: cospend
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: chenasraf/cospend-cli
-          destination: ~/.local/bin
-          strategy: tar
-          download_filename: cospend-cli-linux-{{ .Arch }}.tar.gz
-          archive_bin_name: cospend-cli
+    bin_name: cospend
+    type: brew
+    opts:
+      tap: chenasraf/tap
 
   - name: direnv-dotenvx
-    type: group
-    steps:
-      - name: direnv-dotenvx
-        check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
-        type: brew
-        post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
-        post_update: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
-        opts:
-          tap: chenasraf/tap
-      - name: chenasraf/direnv-dotenvx
-        enabled: false
-        type: git
-        check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
-        platforms:
-          only: ["linux"]
-        post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
-        post_update: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
-        opts:
-          destination: ~/.local/bin
+    check_installed: test -f ~/.config/direnv/lib/use_dotenvx.sh
+    type: brew
+    post_install: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+    post_update: test -f  ~/.config/direnv/lib/use_dotenvx.sh || ln -s $(brew --prefix)/opt/direnv-dotenvx/libexec/use_dotenvx.sh ~/.config/direnv/lib/use_dotenvx.sh
+    opts:
+      tap: chenasraf/tap
 
   # ----------------------------------------------------------------------
   # 🛠️ Dev Tools & Utilities
@@ -320,27 +194,7 @@ install:
 
   - name: neovim
     bin_name: nvim
-    type: group
-    steps:
-      - name: neovim
-        bin_name: nvim
-        type: brew
-        platforms:
-          only: ["macos"]
-
-      - name: nvim
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: neovim/neovim
-          strategy: tar
-          download_filename: nvim-linux-{{ .ArchAlias }}.tar.gz
-          extract_to: ~/.local/share/neovim
-          strip_components: 1
-          bin_links:
-            - source: bin/nvim
-              target: ~/.local/bin/nvim
+    type: brew
 
   - name: tree-sitter
     type: github-release
@@ -352,74 +206,22 @@ install:
       download_filename: tree-sitter-{{ .OS }}-{{ if eq .Arch "amd64" }}x64{{ else }}{{ .Arch }}{{ end }}.gz
 
   - name: lazygit
-    type: group
-    steps:
-      - name: lazygit
-        type: brew
-      - name: lazygit
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: jesseduffield/lazygit
-          strategy: tar
-          destination: ~/.local/bin
-          # destination: /usr/local/bin
-          download_filename: lazygit_{{ .Version }}_Linux_{{ .ArchAlias }}.tar.gz
+    type: brew
 
   - name: lazydocker
-    type: group
-    steps:
-      - name: lazydocker
-        type: brew
-        opts:
-          tap: jesseduffield/lazydocker
-      - name: lazydocker
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: jesseduffield/lazydocker
-          strategy: tar
-          destination: ~/.local/bin
-          # destination: /usr/local/bin
-          download_filename: lazydocker_{{ .Version }}_Linux_{{ .ArchAlias }}.tar.gz
+    type: brew
+    opts:
+      tap: jesseduffield/lazydocker
 
   - name: lazysql
-    type: group
-    steps:
-      - name: lazysql
-        type: brew
-        opts:
-          tap: jorgerojas26/lazysql
-      - name: lazysql
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: jorgerojas26/lazysql
-          strategy: tar
-          destination: ~/.local/bin
-          # destination: /usr/local/bin
-          download_filename: lazysql_Linux_{{ .ArchAlias }}.tar.gz
+    type: brew
+    opts:
+      tap: jorgerojas26/lazysql
 
   - name: lazyssh
-    type: group
-    steps:
-      - name: lazyssh
-        type: brew
-        opts:
-          tap: Adembc/tap
-      - name: lazyssh
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: Adembc/lazyssh
-          strategy: tar
-          destination: ~/.local/bin
-          # destination: /usr/local/bin
-          download_filename: lazyssh_Linux_{{ .ArchAlias }}.tar.gz
+    type: brew
+    opts:
+      tap: Adembc/tap
 
   - name: devtui
     type: github-release
@@ -440,105 +242,32 @@ install:
       command: curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
       update_command: atuin-update
 
-  - name: delta
-    type: group
-    steps:
-      - name: delta
-        type: shell
-        platforms:
-          only: ["linux"]
-        opts:
-          command: |
-            curl https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb | dpkg -i
-      - name: git-delta
-        type: brew
-        bin_name: delta
+  - name: git-delta
+    type: brew
+    bin_name: delta
 
   - name: jq
-    type: group
-    steps:
-      - name: jq
-        type: brew
-      - name: jq
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: yq
-    type: group
-    steps:
-      - name: yq
-        type: brew
-      - name: yq
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: mikefarah/yq
-          destination: ~/.local/bin
-          download_filename: yq_linux_{{ .Arch }}
+    type: brew
 
   - name: direnv
-    type: group
-    steps:
-      - name: direnv
-        type: brew
-      - name: direnv
-        type: shell
-        platforms:
-          only: ["linux"]
-        opts:
-          command: export bin_path=/usr/local/bin curl -sfL https://direnv.net/install.sh | bash
+    type: brew
 
   - name: dotenvx
-    type: group
-    steps:
-      - name: dotenvx
-        type: brew
-        opts:
-          tap: dotenvx/brew
-      - name: dotenvx
-        type: shell
-        platforms:
-          only: ["linux"]
-        opts:
-          command: curl -sfS https://dotenvx.sh | sh
+    type: brew
+    opts:
+      tap: dotenvx/brew
 
   - name: ffmpeg
-    type: group
-    steps:
-      - name: ffmpeg
-        type: brew
-      - name: ffmpeg
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: fzf
-    type: group
-    steps:
-      - name: fzf
-        type: brew
-      - name: fzf
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: junegunn/fzf
-          strategy: tar
-          destination: ~/.local/bin
-          download_filename: fzf-{{ .Version }}-linux_{{ .Arch }}.tar.gz
+    type: brew
 
   - name: fd
-    type: group
-    steps:
-      - name: fd
-        type: brew
-      - name: fd-find
-        bin_name: fd
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: aerospace
     type: group
@@ -574,58 +303,16 @@ install:
       tap: dimentium/autoraise
 
   - name: catimg
-    type: group
-    steps:
-      - name: catimg
-        type: brew
-      - name: catimg
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: btop
-    type: group
-    steps:
-      - name: btop
-        type: brew
-      - name: btop
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: bat
-    type: group
-    steps:
-      - name: bat
-        type: brew
-      - name: bat
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: pandoc
-    type: group
-    steps:
-      - name: pandoc
-        type: brew
-      - name: pandoc
-        # type: github-release
-        # platforms:
-        #   only: ['linux']
-        # opts:
-        #   repository: jgm/pandoc
-        #   destination: ~/.local/bin
-        #   download_filename: pandoc-{{ .Tag }}-linux-{{ .Arch }}
-        type: shell
-        platforms:
-          only: ["linux"]
-        opts:
-          command: |
-            cd $(mktemp -d)
-            VERSION=$(curl -s "https://api.github.com/repos/jgm/pandoc/tags" | jq -r ".[] | select(.name | contains('cli')) | .name" | head -n 1)
-            curl -Lo pandoc.deb "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-${VERSION}-1-amd64.deb"
-            dpkg -i pandoc.deb
-            rm -rf pandoc.deb
+    type: brew
 
   - name: nextcloud-talk
     type: brew
@@ -686,20 +373,7 @@ install:
       only: ["m1"]
 
   - name: lefthook
-    type: group
-    steps:
-      - name: lefthook
-        type: brew
-      - name: lefthook
-        type: github-release
-        platforms:
-          only: ["linux"]
-        opts:
-          repository: evilmartians/lefthook
-          strategy: none
-          destination: ~/.local/bin
-          download_filename:
-            linux: lefthook_{{ .Version }}_Linux_{{ .ArchAlias }}
+    type: brew
 
   - name: lintree
     type: github-release
@@ -715,14 +389,7 @@ install:
         linux: lintree-linux-{{ .Arch }}.tar.gz
 
   - name: tmux
-    type: group
-    steps:
-      - name: tmux
-        type: brew
-      - name: tmux
-        type: apt
-        platforms:
-          only: ["linux"]
+    type: brew
 
   - name: jless
     type: brew
@@ -752,29 +419,10 @@ install:
       command: curl -fsSL https://fnm.vercel.app/install | bash
 
   - name: pyenv
-    type: group
-    steps:
-      - name: pyenv
-        type: brew
-      - name: pyenv
-        type: shell
-        platforms:
-          only: ["linux"]
-        opts:
-          command: "curl https://pyenv.run | bash"
+    type: brew
 
   - name: uv
-    type: group
-    steps:
-      - name: uv
-        type: brew
-      - name: uv
-        type: shell
-        platforms:
-          only: ["linux"]
-        opts:
-          command: curl -LsSf https://astral.sh/uv/install.sh | sh
-          update_command: uv self update
+    type: brew
 
   # ----------------------------------------------------------------------
   # 📦 PNPM Ecosystem
@@ -905,11 +553,6 @@ install:
     steps:
       - name: pipx
         type: brew
-
-      - name: pipx
-        type: apt
-        platforms:
-          only: ["linux"]
 
       - name: jedi-language-server
         type: pipx
