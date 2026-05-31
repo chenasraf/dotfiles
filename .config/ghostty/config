@@ -41,6 +41,8 @@ background = 1e1e2e
 foreground = cdd6f4
 cursor-color = f5e0dc
 cursor-text = 1e1e2e
+custom-shader = shaders/cursor_warp.glsl
+custom-shader-animation = true
 selection-background = f5e0dc
 selection-foreground = 1e1e2e
 
