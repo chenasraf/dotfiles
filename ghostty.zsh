@@ -9,7 +9,7 @@
 
 if [[ -n "$TMUX" ]]; then
   # Interactive / long-lived commands where a progress bar would be noise.
-  _ghostty_tmux_progress_skip='(nvim|vim|vi|emacs|nano|claude|ssh|mosh|tmux|less|more|man|top|htop|btop|btm|fzf|lazygit|gitui|k9s|ranger|nnn|lf|yazi|watch|tail)'
+  _ghostty_tmux_progress_skip='(nvim|vim|vi|emacs|nano|claude|ssh|mosh|tmux|less|more|man|top|htop|btop|btm|fzf|lazygit|gitui|k9s|ranger|nnn|lf|yazi|watch|tail|navi|spf)'
   # Wrappers to look past when resolving the real command.
   _ghostty_tmux_progress_prefixes='(sudo|doas|time|nice|command|exec|env|builtin)'
 
