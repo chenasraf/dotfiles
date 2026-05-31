@@ -340,6 +340,8 @@ install:
     type: group
     platforms:
       only: ["macos"]
+    machines:
+      only: ["m1"]
     steps:
       - name: cmake
         type: brew
