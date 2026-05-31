@@ -619,6 +619,8 @@ install:
 
   - name: ghostty
     type: brew
+    platforms:
+      only: ["macos"]
     opts:
       cask: true
 
