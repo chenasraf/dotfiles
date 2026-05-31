@@ -65,7 +65,7 @@ source "$DOTFILES/ghostty.zsh"
 
 [[ ! -f "$CFG/.p10k.zsh" ]] || source "$CFG/.p10k.zsh"
 
-# if not in tmux...
-if [[ -z "$TMUX" ]]; then
+# if not in tmux and not on ssh...
+if [[ -z "$TMUX" && -z "$SSH_TTY" ]]; then
   tx df
 fi
