@@ -16,3 +16,6 @@ var/log/sofmani
 /_plugins/.cache
 /.config/direnv/lib
 /.config/tmux/plugins
+/Library/Application Support/superfile
+!/Library/Application Support/superfile/hotkeys.toml
+!/Library/Application Support/superfile/config.toml
