@@ -277,6 +277,9 @@ install:
     type: brew
     bin_name: z
 
+  - name: navi
+    type: brew
+
   - name: aerospace
     type: group
     platforms: { only: ["macos"] }
