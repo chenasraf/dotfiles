@@ -12,6 +12,6 @@ hash -d ssd=/Volumes/2T
 if is_mac; then
   hash -d tap=/opt/homebrew/Library/Taps/chenasraf/homebrew-tap
   hash -d alfred=~/Nextcloud/synced/Alfred.alfredpreferences/workflows
-  hash -d apsu="~/Library/Application Support"
+  hash -d apsu=~/Library/Application\ Support
 fi
 
