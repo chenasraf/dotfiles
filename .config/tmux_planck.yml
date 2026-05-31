@@ -21,9 +21,9 @@ mwb:
   root: ~/Dev/planck
   windows:
     - cwd: ./max-ui
-      layout: fe
+      layout: claude
     - cwd: ./mwb-ui
-      layout: fe
+      layout: claude
     - cwd: ./mwb-services
       layout: claude
     - cwd: ./mwb-data-services
