@@ -224,6 +224,10 @@ if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
 
+if [[ $(which zoxide) ]]; then
+  eval "$(zoxide init zsh)"
+fi
+
 export SHELLCHECK_OPTS='--shell=bash'
 export DOCKER_CLI_HINTS=false
 
