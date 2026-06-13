@@ -48,12 +48,12 @@ gui:
   showCommandLog: true
   showBottomLine: true
   # showIcons: true
-  nerdFontsVersion: '3'
+  nerdFontsVersion: "3"
   showBranchCommitHash: false
   commandLogSize: 10
   splitDiff: auto
   skipRewordInEditorWarning: false
-  screenMode: ''
+  screenMode: ""
   border: single
   animateExplosion: true
 git:
@@ -65,7 +65,7 @@ git:
     signOff: false
   merging:
     manualCommit: false
-    args: ''
+    args: ""
   mainBranches:
     - master
     - main
@@ -105,12 +105,12 @@ keybinding:
     nextItem: <down>
     prevItem-alt: k
     nextItem-alt: j
-    prevPage: ','
+    prevPage: ","
     nextPage: .
     scrollLeft: H
     scrollRight: L
     gotoTop: <
-    gotoBottom: '>'
+    gotoBottom: ">"
     prevBlock: <left>
     nextBlock: <right>
     prevBlock-alt: h
@@ -118,22 +118,22 @@ keybinding:
     nextBlock-alt2: <tab>
     prevBlock-alt2: <backtab>
     jumpToBlock:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-    nextMatch: 'n'
-    prevMatch: 'N'
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+    nextMatch: "n"
+    prevMatch: "N"
     startSearch: /
-    optionMenu: ''
-    optionMenu-alt1: '?'
+    optionMenu: "?"
+    # optionMenu-alt1: '?'
     select: <space>
     goInto: <enter>
     confirm: <enter>
     confirmInEditor: <a-enter>
     remove: d
-    new: 'n'
+    new: "n"
     edit: e
     openFile: o
     scrollUpMain: <pgup>
@@ -142,14 +142,14 @@ keybinding:
     scrollDownMain-alt1: J
     scrollUpMain-alt2: <c-u>
     scrollDownMain-alt2: <c-d>
-    executeShellCommand: ':'
+    executeShellCommand: ":"
     createRebaseOptionsMenu: m
     pushFiles: P
     pullFiles: p
     refresh: R
     createPatchOptionsMenu: <c-p>
-    nextTab: ']'
-    prevTab: '['
+    nextTab: "]"
+    prevTab: "["
     nextScreenMode: +
     prevScreenMode: _
     undo: z
@@ -160,10 +160,10 @@ keybinding:
     copyToClipboard: <c-o>
     openRecentRepos: <c-r>
     submitEditorText: <enter>
-    extrasMenu: '@'
+    extrasMenu: "@"
     toggleWhitespaceInDiffView: <c-w>
-    increaseContextInDiffView: '}'
-    decreaseContextInDiffView: '{'
+    increaseContextInDiffView: "}"
+    decreaseContextInDiffView: "{"
   status:
     checkForUpdate: u
     recentRepos: <enter>
@@ -180,7 +180,7 @@ keybinding:
     toggleStagedAll: a
     viewResetOptions: D
     fetch: f
-    toggleTreeView: '`'
+    toggleTreeView: "`"
     openMergeOptions: M
     openStatusFilter: <c-b>
   branches:
@@ -221,7 +221,7 @@ keybinding:
     tagCommit: T
     checkoutCommit: <space>
     resetCherryPick: <c-x>
-    copyCommitAttributeToClipboard: 'y'
+    copyCommitAttributeToClipboard: "y"
     openLogMenu: <c-l>
     openInBrowser: o
     viewBisectOptions: b
@@ -244,27 +244,27 @@ os:
   openLink: open "$(echo {{link}} | sed 's/\[/\%5B/g; s/\]/\%5D/g')"
 disableStartupPopups: false
 customCommands:
-  - key: 'B'
-    context: 'global'
+  - key: "B"
+    context: "global"
     prompts:
-      - type: 'menu'
-        title: 'Choose an action'
-        key: 'action'
+      - type: "menu"
+        title: "Choose an action"
+        key: "action"
         options:
-          - name: 'Create Pull Request'
-            value: 'pr'
-          - name: 'Open Pull Requests'
-            value: 'prs'
-          - name: 'Open CI/Actions'
-            value: 'ci'
-          - name: 'Open Branch'
-            value: 'branch'
-          - name: 'Open Default Branch'
-            value: 'project'
-          - name: 'Open Commit'
-            value: 'commit'
-          - name: 'Open File'
-            value: 'file'
+          - name: "Create Pull Request"
+            value: "pr"
+          - name: "Open Pull Requests"
+            value: "prs"
+          - name: "Open CI/Actions"
+            value: "ci"
+          - name: "Open Branch"
+            value: "branch"
+          - name: "Open Default Branch"
+            value: "project"
+          - name: "Open Commit"
+            value: "commit"
+          - name: "Open File"
+            value: "file"
     command: >-
       lazygit-open
       {{.Form.action | quote}}
@@ -272,7 +272,7 @@ customCommands:
       {{if .SelectedRemoteBranch}}{{.SelectedRemoteBranch.Name | quote}}{{end}}
       {{if .SelectedLocalBranch}}{{.SelectedLocalBranch.Name | quote}}{{end}}
       {{if .SelectedCommit}}{{.SelectedCommit.Sha | quote}}{{end}}
-    loadingText: 'Opening...'
+    loadingText: "Opening..."
 services: {}
 notARepository: prompt
 promptToReturnFromSubprocess: false
