@@ -247,3 +247,6 @@ alias get-gh-gitea-token="op item get github --fields 'Gitea Access Token' --rev
 alias get-gitea-token="op item get gitea --fields 'Personal Access Token' --reveal"
 alias expand="print -r --"
 # alias z="zoxide"
+alias ccr="cc --resume"
+alias ccc="cc --continue"
+alias ccw="cc --worktree"
