@@ -1,0 +1,19 @@
+#compdef cwt
+
+local root dir="$PWD"
+while [[ "$dir" != "/" && -n "$dir" ]]; do
+  if [[ -d "$dir/.claude/worktrees" ]]; then
+    root="$dir/.claude/worktrees"
+    break
+  fi
+  dir="${dir:h}"
+done
+
+if [[ -z "$root" ]]; then
+  return 1
+fi
+
+local -a worktrees
+worktrees=("$root"/*(/N:t))
+
+_describe 'worktree' worktrees
