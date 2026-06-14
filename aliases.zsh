@@ -194,7 +194,7 @@ alias -s yml="bat -l yaml"
 for ext in {txt,conf,ini,log}; do
   alias -s $ext=less
 done
-for ext in {go,sh,py,rb,dart,js,ts,tsx,jsx}; do
+for ext in {go,py,rb,dart,js,ts,tsx,jsx}; do
   alias -s $ext="\$EDITOR"
 done
 for ext in {jpg,jpeg,png,gif,webp,mp4,avi,mov}; do
