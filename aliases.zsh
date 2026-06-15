@@ -169,6 +169,7 @@ alias geminif="gemini -m gemini-2.5-flash"
 # android emulator
 alias emulator="\$HOME/Library/Android/sdk/emulator/emulator"
 alias pixel9="emulator -avd Pixel_9_API_35"
+alias pixeltab10="emulator -avd Tablet_10_API_36"
 alias pixelwatch="emulator -avd Wear_OS_Small_Round_API_34"
 
 # 1password
