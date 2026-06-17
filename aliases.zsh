@@ -99,11 +99,11 @@ hp() {
   fi
   home push
 }
-alias hl="home pull && stow -R -d \$DOTFILES -t ~ ."
+alias hl="home pull && stow --no-folding -R -d \$DOTFILES -t ~ ."
 
 # stow
-alias stow-deploy="stow -v -R -d \$DOTFILES -t ~ ."
-alias stow-adopt="stow -v --adopt -d \$DOTFILES -t ~ ."
+alias stow-deploy="stow --no-folding -v -R -d \$DOTFILES -t ~ ."
+alias stow-adopt="stow --no-folding -v --adopt -d \$DOTFILES -t ~ ."
 alias stow-clean="stow -v -D -d \$DOTFILES -t ~ ."
 alias swd="stow-deploy"
 alias swa="stow-adopt"

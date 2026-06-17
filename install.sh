@@ -130,7 +130,7 @@ step_stow_deploy() {
   info "Ready to deploy dotfiles with: stow -t \"$HOME\" . (from $DOTFILES_DIR)"
   confirm "Run stow now?" || { skip "stow deploy"; return 0; }
 
-  (cd "$DOTFILES_DIR" && stow -t "$HOME" .)
+  (cd "$DOTFILES_DIR" && stow --no-folding -t "$HOME" .)
   ok "dotfiles deployed"
 }
 
