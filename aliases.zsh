@@ -110,7 +110,7 @@ alias swa="stow-adopt"
 alias swc="stow-clean"
 alias hlog="home log"
 alias motd="run-parts \$DOTFILES/_plugins/motd"
-alias spider="ssh root@spider.casraf.dev"
+alias spider="ssh spider"
 
 # docker
 alias dex="docker-exec"
