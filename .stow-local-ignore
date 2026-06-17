@@ -7,6 +7,8 @@
 \.github
 exports\.zsh
 aliases\.zsh
+dirs\.zsh
+install\.zsh
 _local\.zsh
 ghostty\.zsh
 keybindings\.zsh

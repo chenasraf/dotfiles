@@ -47,17 +47,7 @@ if [[ -d "/opt/homebrew" ]]; then
     export PATH="$BREW_HOME/opt/make/libexec/gnubin:$PATH"
   fi
 elif [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
-  # Linuxbrew lives under an unprivileged user; /usr/local/bin/brew is a shim
-  # that re-runs as the linuxbrew user. /usr/local/bin MUST come before
-  # /home/linuxbrew/.linuxbrew/bin so the shim wins over the real brew binary
-  # (which refuses to run as root). Other brew-installed binaries are
-  # world-readable and runnable directly.
-  export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-  export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
-  export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-  export PATH="/usr/local/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
-  export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH:+:$MANPATH}"
-  export INFOPATH="/home/linuxbrew/.linuxbrew/share/info${INFOPATH:+:$INFOPATH}"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   export BREW_HOME="/home/linuxbrew/.linuxbrew"
 fi
 
