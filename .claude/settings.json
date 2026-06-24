@@ -24,5 +24,10 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen",
+  "attribution": {
+    "pr": "",
+    "commit": ""
+  }
 }
