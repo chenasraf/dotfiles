@@ -284,6 +284,7 @@ nc:
     - ./pantry
     - ../pantry-flutter
     - ./autocurrency
+    - ../nextcloud-docker-dev
     # - ./jukebox
     # - ./habitica
 
