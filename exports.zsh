@@ -222,6 +222,22 @@ fi
 export SHELLCHECK_OPTS='--shell=bash'
 export DOCKER_CLI_HINTS=false
 
+# Stable SSH agent socket for sudo via pam_ssh_agent_auth.
+# Each SSH connection creates a new $SSH_AUTH_SOCK, but tmux outlives the
+# connection and its panes keep a stale path. Repoint a fixed symlink at the
+# live socket on every login, and use that fixed path inside tmux so panes
+# always reach the current forwarded agent. Only engages on remote hosts.
+if [[ -n "$SSH_CONNECTION" ]]; then
+  STABLE_SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+  if [[ -S "$SSH_AUTH_SOCK" && "$SSH_AUTH_SOCK" != "$STABLE_SSH_AUTH_SOCK" ]]; then
+    ln -sf "$SSH_AUTH_SOCK" "$STABLE_SSH_AUTH_SOCK"
+  fi
+  if [[ -n "$TMUX" && -S "$STABLE_SSH_AUTH_SOCK" ]]; then
+    export SSH_AUTH_SOCK="$STABLE_SSH_AUTH_SOCK"
+  fi
+  unset STABLE_SSH_AUTH_SOCK
+fi
+
 # Auto completion
 # [[ ! -f $BREW_HOME/opt/chruby/share/chruby/chruby.sh ]] || source $BREW_HOME/opt/chruby/share/chruby/chruby.sh
 # [[ ! -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]] || . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"
