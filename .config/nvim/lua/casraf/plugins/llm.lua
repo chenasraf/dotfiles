@@ -1,6 +1,7 @@
 return {
   {
     "greggh/claude-code.nvim",
+    enabled = false,
     dependencies = {
       "nvim-lua/plenary.nvim", -- Required for git operations
     },
@@ -37,6 +38,7 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "main",
+    enabled = false,
     dependencies = {
       { "zbirenbaum/copilot.lua" }, -- Or { "github/copilot.vim" }
       { "nvim-lua/plenary.nvim" },  -- for curl, log wrapper
@@ -87,6 +89,7 @@ return {
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
+    enabled = false,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
