@@ -323,15 +323,15 @@ vim.api.nvim_create_autocmd("FileType", {
         title = ' Connect Android Device ',
         inputs = {
           {
+            name = 'port',
+            label = 'Device port',
+            type = 'text',
+          },
+          {
             name = 'octet',
             label = 'Device octet (192.168.68.X)',
             type = 'text',
             default = '100',
-          },
-          {
-            name = 'port',
-            label = 'Device port',
-            type = 'text',
           },
         },
         on_submit = function(results)
