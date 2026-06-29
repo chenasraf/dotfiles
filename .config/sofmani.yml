@@ -341,6 +341,7 @@ install:
       only: ["macos"]
     machines:
       only: ["m1"]
+    frequency: 4w
     steps:
       - name: cmake
         type: brew
@@ -433,6 +434,8 @@ install:
   - name: lynis
     type: shell
     tags: security
+    machines:
+      only: ["spider"]
     platforms:
       only: ["linux"]
     # lynis runs as root, so it must live system-wide and be root-owned (it
