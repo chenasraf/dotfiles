@@ -430,6 +430,28 @@ install:
   - name: dysk
     type: brew
 
+  - name: lynis
+    type: shell
+    tags: security
+    platforms:
+      only: ["linux"]
+    # lynis runs as root, so it must live system-wide and be root-owned (it
+    # refuses to execute user-owned files as root). Clone into /usr/local/share
+    # and drop a wrapper on root's PATH — lynis resolves its include/ dir
+    # relative to $0, so the wrapper cd's into the checkout rather than symlink.
+    check_installed: command -v lynis > /dev/null 2>&1
+    check_has_update: '[ "$(sudo git -C /usr/local/share/lynis rev-parse HEAD 2>/dev/null)" != "$(git ls-remote https://github.com/CISOfy/lynis refs/heads/master | cut -f1)" ]'
+    opts:
+      command: |
+        sudo git clone --depth=1 https://github.com/CISOfy/lynis /usr/local/share/lynis
+        sudo chown -R 0:0 /usr/local/share/lynis
+        printf '#!/bin/sh\ncd /usr/local/share/lynis && exec ./lynis "$@"\n' | sudo tee /usr/local/bin/lynis > /dev/null
+        sudo chmod +x /usr/local/bin/lynis
+      update_command: |
+        sudo git -C /usr/local/share/lynis fetch --depth=1 origin master
+        sudo git -C /usr/local/share/lynis reset --hard FETCH_HEAD
+        sudo chown -R 0:0 /usr/local/share/lynis
+
   # ----------------------------------------------------------------------
   # 💻 Language Runtimes & Package Managers
   # ----------------------------------------------------------------------
