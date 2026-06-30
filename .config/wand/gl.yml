@@ -1,0 +1,83 @@
+review:
+  description: MRs across a GitLab group awaiting my review (fast glab API vs slow web UI)
+  flags:
+    pick:
+      alias: p
+      type: bool
+      description: Pick an MR with fzf and open it in the browser
+    web:
+      alias: w
+      type: bool
+      description: Open the GitLab filter page in the browser
+    group:
+      alias: g
+      description: Override the group full path (defaults to $GLMR_REVIEW_GROUP)
+  cmd: |
+    set -euo pipefail
+    GROUP="${WAND_FLAG_GROUP:-${GLMR_REVIEW_GROUP:?set GLMR_REVIEW_GROUP in _local.zsh}}"
+    ME="$(glab api user | jq -r .username)"
+    ENC="$(printf '%s' "$GROUP" | jq -sRr @uri)"
+    MODE=list; [ "$WAND_FLAG_PICK" = true ] && MODE=pick; [ "$WAND_FLAG_WEB" = true ] && MODE=web
+    sh "$CFG/wand/_glmr.sh" \
+      "groups/${ENC}/merge_requests?state=opened&reviewer_username=${ME}&scope=all&per_page=100" \
+      "https://gitlab.com/groups/${GROUP}/-/merge_requests/?sort=updated_desc&state=opened&reviewer_username=${ME}&first_page_size=50" \
+      "$MODE"
+
+mine:
+  description: Open MRs I authored across a GitLab group
+  flags:
+    pick:
+      alias: p
+      type: bool
+      description: Pick an MR with fzf and open it in the browser
+    web:
+      alias: w
+      type: bool
+      description: Open the GitLab filter page in the browser
+    group:
+      alias: g
+      description: Override the group full path (defaults to $GLMR_MINE_GROUP)
+  cmd: |
+    set -euo pipefail
+    GROUP="${WAND_FLAG_GROUP:-${GLMR_MINE_GROUP:?set GLMR_MINE_GROUP in _local.zsh}}"
+    ME="$(glab api user | jq -r .username)"
+    ENC="$(printf '%s' "$GROUP" | jq -sRr @uri)"
+    MODE=list; [ "$WAND_FLAG_PICK" = true ] && MODE=pick; [ "$WAND_FLAG_WEB" = true ] && MODE=web
+    sh "$CFG/wand/_glmr.sh" \
+      "groups/${ENC}/merge_requests?state=opened&author_username=${ME}&scope=all&per_page=100" \
+      "https://gitlab.com/groups/${GROUP}/-/merge_requests/?sort=updated_desc&state=opened&author_username=${ME}&first_page_size=50" \
+      "$MODE"
+
+repo:
+  description: Open MRs in a repo — pass a name from $GLMR_REPO_<name> or a full group/project path
+  flags:
+    pick:
+      alias: p
+      type: bool
+      description: Pick an MR with fzf and open it in the browser
+    web:
+      alias: w
+      type: bool
+      description: Open the GitLab filter page in the browser
+  cmd: |
+    set -euo pipefail
+    REF="${1:-${GLMR_REPO_DEFAULT:-}}"
+    if [ -z "$REF" ]; then
+      echo "usage: glmr repo <name|group/project>" >&2
+      echo "named repos (from _local.zsh):" >&2
+      env | sed -n 's/^GLMR_REPO_\([^=]*\)=.*/  \1/p' | grep -v '^  DEFAULT$' >&2
+      exit 1
+    fi
+    case "$REF" in
+    */*) PROJECT="$REF" ;;
+    *)
+      eval "PROJECT=\${GLMR_REPO_${REF}:-}"
+      [ -n "$PROJECT" ] || { echo "Unknown repo '$REF' — set GLMR_REPO_${REF} in _local.zsh" >&2; exit 1; }
+      ;;
+    esac
+    ENC="$(printf '%s' "$PROJECT" | jq -sRr @uri)"
+    MODE=list; [ "$WAND_FLAG_PICK" = true ] && MODE=pick; [ "$WAND_FLAG_WEB" = true ] && MODE=web
+    sh "$CFG/wand/_glmr.sh" \
+      "projects/${ENC}/merge_requests?state=opened&per_page=100" \
+      "https://gitlab.com/${PROJECT}/-/merge_requests/?sort=updated_desc&state=opened&first_page_size=50" \
+      "$MODE"
