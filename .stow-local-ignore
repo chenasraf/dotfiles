@@ -9,6 +9,7 @@ exports\.zsh
 aliases\.zsh
 dirs\.zsh
 install\.zsh
+install\.sh
 _local\.zsh
 ghostty\.zsh
 keybindings\.zsh
