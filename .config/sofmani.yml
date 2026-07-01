@@ -314,6 +314,13 @@ install:
     opts:
       tap: dimentium/autoraise
 
+  - name: hammerspoon
+    type: brew
+    platforms:
+      only: ["macos"]
+    opts:
+      cask: true
+
   - name: catimg
     type: brew
 
