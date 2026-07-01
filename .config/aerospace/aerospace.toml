@@ -248,6 +248,27 @@ on-mode-changed = []
 if.app-id = 'com.DanPristupov.Fork'
 run = ['layout floating']
 
+# Chat / mail apps always land on workspace 2
+[[on-window-detected]]
+if.app-id = 'ch.protonmail.desktop'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.nextcloud.talk.mac'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = ['move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = ['move-node-to-workspace 2']
+
 # [[on-window-detected]]
 # if.app-id = 'com.berserk-games.tabletop-simulator'
 # run = ['layout floating']
