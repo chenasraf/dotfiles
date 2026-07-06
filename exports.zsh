@@ -76,7 +76,10 @@ if [ -d "$HOME/.local/share/fnm" ]; then
 fi
 if [[ -f $(which fnm) ]]; then
   eval "`fnm env`"
-  fnm default lts-latest
+  # Only set the default alias once. Running this on every startup races when
+  # tmux restores multiple panes at once (each fnm fights over the same
+  # aliases/default symlink -> "File exists (os error 17)").
+  [[ -e "${FNM_PATH:-$HOME/.local/share/fnm}/aliases/default" ]] || fnm default lts-latest
   # fnm() {
   #   unset -f fnm
   #   eval "$(command fnm env)"
