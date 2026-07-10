@@ -164,6 +164,7 @@ keybinding:
     toggleWhitespaceInDiffView: <c-w>
     increaseContextInDiffView: "}"
     decreaseContextInDiffView: "{"
+    newWorktree: w
   status:
     checkForUpdate: u
     recentRepos: <enter>
@@ -198,8 +199,6 @@ keybinding:
     pushTag: P
     setUpstream: u
     fetchRemote: f
-  worktrees:
-    viewWorktreeOptions: w
   commits:
     squashDown: s
     renameCommit: r
