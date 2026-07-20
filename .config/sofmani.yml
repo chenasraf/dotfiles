@@ -656,6 +656,13 @@ install:
     opts:
       cask: true
 
+  - name: volumehud
+    type: brew
+    platforms:
+      only: ["macos"]
+    opts:
+      tap: dannystewart/apps
+
   # ----------------------------------------------------------------------
   # 🆎 Fonts
   # ----------------------------------------------------------------------
