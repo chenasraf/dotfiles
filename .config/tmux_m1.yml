@@ -9,6 +9,7 @@ casraf:
   windows:
     - ./
     - ./functions
+    - ../github-repos-astro-loader
 
 massarg:
   root: ~/Dev/massarg
