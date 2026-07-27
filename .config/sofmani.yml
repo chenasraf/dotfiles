@@ -660,6 +660,8 @@ install:
     type: brew
     platforms:
       only: ["macos"]
+    machines:
+      except: ["planck"]
     opts:
       tap: dannystewart/apps
 
