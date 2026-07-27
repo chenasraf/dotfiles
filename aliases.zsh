@@ -25,11 +25,11 @@ alias pushd="pushd -q"
 alias popd="popd -q"
 
 # file listing
-alias ls="eza -h --color=auto --icons"
-alias ll="eza -lh --icons"
-alias la="eza -lAh --icons"
-alias l="eza -A --icons"
-alias tree="eza -h --color=auto --icons --tree"
+alias ls="eza -h --color=auto --icons always"
+alias ll="eza -lh --icons always"
+alias la="eza -lAh --icons always"
+alias l="eza -A --icons always"
+alias tree="eza -h --color=auto --icons always --tree"
 
 # editor
 alias v="nvim ."
