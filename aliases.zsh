@@ -17,6 +17,9 @@ addalias() {
 
 source "$HOME/.local/share/zsh/plugins/local/common/os_utils.zsh"
 
+# expand aliases after sudo (trailing space makes zsh alias-expand the next word)
+alias sudo='sudo '
+
 # navigation
 alias ".."="cd .."
 alias "..."="cd ../.."
