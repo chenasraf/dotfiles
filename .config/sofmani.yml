@@ -48,6 +48,46 @@ install:
         defaults write -g NSScrollViewRubberbanding -bool FALSE
         defaults write cc.ffitch.shottr growingToolbar 1
 
+  - name: linuxbrew-perms
+    type: shell
+    tags: system brew
+    # This box runs a shared, multi-user Homebrew: the prefix is owned by
+    # root:brew and casraf drives it via brew-group membership. That setup
+    # drifts in three ways that break `brew` for a non-root group member —
+    # heal all three. check_installed is the "healthy?" predicate, so the
+    # command only runs when something has actually drifted.
+    machines:
+      only: ["spider"]
+    platforms:
+      only: ["linux"]
+    check_installed: |
+      repo="$(brew --repository 2>/dev/null)" || exit 0
+      pref="$(brew --prefix 2>/dev/null)"
+      [ -n "$repo" ] || exit 0
+      # every root-owned repo must be trusted, else git flags dubious ownership
+      for r in "$repo" "$repo"/Library/Taps/*/*; do
+        [ -d "$r/.git" ] || continue
+        git config --global --get-all safe.directory 2>/dev/null | grep -qxF "$r" || exit 1
+      done
+      # completion dir must stay group-writable, else upgrades that touch it fail
+      if [ -d "$pref/share/zsh/site-functions" ] && [ ! -w "$pref/share/zsh/site-functions" ]; then exit 1; fi
+      # brew refuses to write its trust store when it is group/world writable
+      if [ -d "$HOME/.homebrew" ] && find "$HOME/.homebrew" -maxdepth 0 -perm /022 | grep -q .; then exit 1; fi
+      exit 0
+    opts:
+      command: |
+        repo="$(brew --repository)"
+        pref="$(brew --prefix)"
+        for r in "$repo" "$repo"/Library/Taps/*/*; do
+          [ -d "$r/.git" ] || continue
+          git config --global --get-all safe.directory 2>/dev/null | grep -qxF "$r" || git config --global --add safe.directory "$r"
+        done
+        for d in "$pref/share/zsh" "$pref/share/zsh/site-functions"; do
+          [ -d "$d" ] && [ ! -w "$d" ] && sudo chmod g+w "$d"
+        done
+        [ -d "$HOME/.homebrew" ] && chmod g-w,o-w "$HOME/.homebrew"
+        true
+
   # ----------------------------------------------------------------------
   # 🧾 Git Setup
   # ----------------------------------------------------------------------
