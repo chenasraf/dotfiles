@@ -41,7 +41,31 @@ start:
       [ -z "$VERSION" ] && VERSION="nextcloud"
     fi
     echo "Set Nextcloud dev version to: $VERSION"
-    docker compose up -d "$VERSION"
+    docker compose up -d proxy "$VERSION"
+
+    # Expose the instance to other LAN devices (e.g. phone/Flutter app).
+    # IP_BIND=0.0.0.0 and PROXY_PORT_HTTPS live in .env; DEFAULT_HOST in the
+    # docker-compose.override.yml. Here we keep trusted_domains in sync with the
+    # Mac's current LAN IP so it survives DHCP changes / switching networks.
+    IFACE="$(route -n get default 2>/dev/null | awk '/interface:/{print $2}')"
+    LAN_IP="$(ipconfig getifaddr "$IFACE" 2>/dev/null)"
+    [ -z "$LAN_IP" ] && LAN_IP="$(ipconfig getifaddr en0 2>/dev/null)"
+    if [ -n "$LAN_IP" ]; then
+      CONTAINER="nextcloud-${VERSION}-1"
+      for _ in 1 2 3 4 5 6; do
+        docker exec --user www-data "$CONTAINER" php occ status >/dev/null 2>&1 && break
+        sleep 2
+      done
+      # Index 5 is our reserved slot for the dynamic dev LAN IP (base setup uses 0-4).
+      if docker exec --user www-data "$CONTAINER" \
+          php occ config:system:set trusted_domains 5 --value="$LAN_IP" >/dev/null 2>&1; then
+        echo "LAN access: http://$LAN_IP  (point the mobile app here)"
+      else
+        echo "Warning: could not update trusted_domains for $LAN_IP (container not ready?)" >&2
+      fi
+    else
+      echo "Warning: could not detect LAN IP; skipping trusted_domains update" >&2
+    fi
 
 stop:
   description: Stop the Nextcloud dev container
