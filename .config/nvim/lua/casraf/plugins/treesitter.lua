@@ -15,7 +15,7 @@ return {
     local ensure_installed = {
       'c', 'cpp', 'go', 'python', 'rust', 'vimdoc', 'vim',
       'lua', 'tsx', 'javascript', 'typescript', 'bash', 'astro', 'css', 'scss',
-      'dart', 'json', 'yaml', 'vue',
+      'dart', 'json', 'yaml', 'vue', 'php', 'php_only',
     }
     local nts = require('nvim-treesitter')
     if type(nts.install) == 'function' then
