@@ -2,6 +2,10 @@
   "env": {
     "DISABLE_AUTOUPDATER": "1"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "statusLine": {
     "type": "command",
     "command": "zsh ~/.claude/statusline-command.zsh"
@@ -12,7 +16,8 @@
     "frontend-design@claude-plugins-official": true,
     "clangd-lsp@claude-plugins-official": true,
     "everything-claude-code@everything-claude-code": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "everything-claude-code": {
@@ -24,10 +29,6 @@
   },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
-  "skipAutoPermissionPrompt": true,
   "tui": "fullscreen",
-  "attribution": {
-    "pr": "",
-    "commit": ""
-  }
+  "skipAutoPermissionPrompt": true
 }
