@@ -17,27 +17,45 @@ main:
       exit 1
     fi
 
-    echo "Opening HTML preview for $TITLE..."
-
     TMPDIR="$(mktemp -d)"
     OUT="$TMPDIR/$FILEWOEXT.html"
-    BODY="$OUT.part"
 
-    cp "$TEMPLATE" "$OUT"
-    sed -E "s/<!--TITLE-->/$TITLE/" "$OUT" > "$OUT.tmp"
-    mv "$OUT.tmp" "$OUT"
+    render() {
+      local body="$OUT.part"
+      cp "$TEMPLATE" "$OUT"
+      sed -E "s/<!--TITLE-->/$TITLE/" "$OUT" > "$OUT.tmp"
+      mv "$OUT.tmp" "$OUT"
+      pandoc "$FILE" > "$body"
+      sed -E "/<!--BODY-->/r $body" "$OUT" > "$OUT.tmp"
+      mv "$OUT.tmp" "$OUT"
+      rm "$body"
+    }
 
-    pandoc "$FILE" > "$BODY"
+    cleanup() {
+      if [ "$WAND_FLAG_KEEP" != "true" ]; then
+        rm -rf "$TMPDIR"
+      fi
+      echo ""
+      exit 0
+    }
+    trap cleanup INT TERM
 
-    sed -E "/<!--BODY-->/r $BODY" "$OUT" > "$OUT.tmp"
-    mv "$OUT.tmp" "$OUT"
-    rm "$BODY"
-
+    echo "Opening HTML preview for $TITLE..."
+    render
     open -u "file:///$OUT"
 
-    if [ "$WAND_FLAG_KEEP" != "true" ]; then
-      ($SHELL -c "sleep 10; rm '$OUT'; exit 0" &)
-    fi
+    echo "Press 'r' to reload, Ctrl+C to quit."
+    while true; do
+      read -k 1 key || break
+      case "$key" in
+        r|R)
+          render
+          open -u "file:///$OUT"
+          echo "Reloaded $TITLE."
+          ;;
+      esac
+    done
+    cleanup
 
 html:
   description: Convert a markdown file to HTML and output to stdout
