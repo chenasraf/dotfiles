@@ -7,6 +7,10 @@ export MANPATH="$DOTFILES/man:$MANPATH"
 export GITHUB_GPG_KEY_ID="B5690EEEBB952194"
 export EDITOR='nvim'
 
+# Prefer the XDG config dir over ~/Library/Application Support on macOS, so
+# XDG-aware tools (e.g. lazydocker) read their config from ~/.config.
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
 # local bin
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
