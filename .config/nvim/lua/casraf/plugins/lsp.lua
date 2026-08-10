@@ -555,7 +555,8 @@ return {
                 ---@diagnostic disable-next-line: param-type-mismatch
                 line:match("^flutter: " .. homedir .. "/Library/Containers/") or
                 ---@diagnostic disable-next-line: param-type-mismatch
-                line:match("^" .. homedir .. "/Library/Containers/")
+                line:match("^" .. homedir .. "/Library/Containers/") or
+                line:match("^I.+Use dataspace")
             then
               return false
             end
