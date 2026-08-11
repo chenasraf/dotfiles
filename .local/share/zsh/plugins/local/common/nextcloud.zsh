@@ -20,6 +20,13 @@ alias nc-aio-upgrade="nxc upgrade"
 alias nc-aio-upgrade-beta="nxc upgrade --beta"
 alias nc-aio-force-appupdate="nxc force-appupdate"
 
+# mcp (nextcloud-mcp-server, run via uvx by Claude). Refresh uv's cache so the
+# next server spawn uses the latest published version. No db upgrade needed: the
+# server auto-migrates on startup, and this setup uses the ephemeral token DB.
+nc-mcp-update() {
+  uvx --refresh nextcloud-mcp-server --version
+}
+
 # shared
 alias nc-backup="nxc backup"
 alias nc-enable-db-proxy="nxc db-proxy start"
