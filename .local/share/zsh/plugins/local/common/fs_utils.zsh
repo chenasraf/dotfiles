@@ -124,3 +124,13 @@ largest-dirs() {
 }
 # alias for largest-dirs
 alias largest-folders='largest-dirs'
+
+pbfile() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: pbfile <file>"
+    echo "Copy file contents to clipboard"
+    return 0
+  fi
+
+  cat "$1" | pbcopy
+}
