@@ -56,6 +56,12 @@ whether it should be symlinked (add nothing) or sourced (add a regex to `.stow-l
 - **Device-specific config** — `.config/tmux_<alias>.yml` files (e.g. `tmux_m1.yml`,
   `tmux_planck.yml`) are copied into `tmux_local.yml` by the `tx-config` sofmani step based on
   `DeviceIDAlias`. `.device_uid` identifies the current machine.
+- **Claude settings** — `.claude/settings.json` is **generated**, not edited. It is the deep merge
+  of `.claude/settings.base.json` (tracked, shared) with `.claude/settings.local.json` (untracked,
+  per-device override — local wins, recursively) produced by `.claude/settings-merge.sh` (jq `*`).
+  Edit `settings.base.json` for shared changes, `settings.local.json` for machine-only overrides;
+  never edit the generated `settings.json`. The `claude-settings` sofmani step regenerates it and
+  re-stows. Both `settings.json` and `settings.local.json` are git- and stow-ignored.
 
 ## Editing rule: never touch `~/.config` directly
 

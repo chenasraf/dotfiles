@@ -3,6 +3,8 @@
 \.stow-local-ignore
 \.DS_Store
 \.claude/settings\.local\.json
+\.claude/settings\.base\.json
+\.claude/settings-merge\.sh
 \.device_uid
 \.github
 exports\.zsh

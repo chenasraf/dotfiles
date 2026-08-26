@@ -34,6 +34,18 @@ install:
       command: ln -sfn "tmux_{{ .DeviceIDAlias }}.yml" "$DOTFILES/.config/tmux_local.yml" && stow -R -d "$DOTFILES" -t ~ .
       update_command: ln -sfn "tmux_{{ .DeviceIDAlias }}.yml" "$DOTFILES/.config/tmux_local.yml" && stow -R -d "$DOTFILES" -t ~ .
 
+  - name: claude-settings
+    type: shell
+    tags: config claude
+    # Regenerate ~/.claude/settings.json by deep-merging settings.local.json
+    # (per-device, untracked) over settings.base.json (shared). Rebuilds only
+    # when either input is newer than the generated output.
+    check_installed: test -f "$DOTFILES/.claude/settings.json" && ! test "$DOTFILES/.claude/settings.base.json" -nt "$DOTFILES/.claude/settings.json" && ! test "$DOTFILES/.claude/settings.local.json" -nt "$DOTFILES/.claude/settings.json"
+    check_has_update: '! test -f "$DOTFILES/.claude/settings.json" || test "$DOTFILES/.claude/settings.base.json" -nt "$DOTFILES/.claude/settings.json" || test "$DOTFILES/.claude/settings.local.json" -nt "$DOTFILES/.claude/settings.json"'
+    opts:
+      command: sh "$DOTFILES/.claude/settings-merge.sh" && stow -R -d "$DOTFILES" -t ~ .
+      update_command: sh "$DOTFILES/.claude/settings-merge.sh" && stow -R -d "$DOTFILES" -t ~ .
+
   - name: osx-defaults
     type: shell
     tags: system
