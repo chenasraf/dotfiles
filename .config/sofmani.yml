@@ -298,6 +298,11 @@ install:
     type: brew
     bin_name: delta
 
+  - name: rsync
+    type: brew
+    platforms:
+      only: ["macos"]
+
   - name: jq
     type: brew
 
