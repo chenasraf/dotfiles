@@ -240,13 +240,26 @@ backup:
       echo "Mount the 2T SSD first!"
       exit 1
     fi
-    rsync -avhz --delete --delete-excluded --partial --progress -e ssh \
+
+    RSYNC=""
+    for c in /opt/homebrew/bin/rsync /usr/local/bin/rsync; do
+      [ -x "$c" ] && RSYNC="$c" && break
+    done
+    if [ -z "$RSYNC" ]; then
+      echo "GNU rsync not found - run 'brew install rsync' (or 'sofmani')." >&2
+      exit 1
+    fi
+
+    "$RSYNC" -rltDvh --delete --delete-excluded --partial \
+      --info=progress2 --timeout=600 \
       --exclude 'appdata_*/' \
       --exclude '._*' \
       --exclude '.pnpm-store/' \
-      spider.casraf.dev:/mnt/ncdata/ \
+      --exclude '*.log' \
+      --exclude '*.log.*' \
+      spider:/mnt/ncdata/ \
       "$DRIVE/Nextcloud/"
-    find "$DRIVE" -type f -name '._*' -exec rm -f -- {} +
+    find "$DRIVE/Nextcloud" -type f -name '._*' -exec rm -f -- {} +
 
 install-app:
   description: Download and install a Nextcloud app from GitHub releases
