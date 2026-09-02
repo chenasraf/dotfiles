@@ -364,6 +364,7 @@ function grename() {
 function _git_homebrew_tap_add_pr_pull_label() {
   local search="$1"
   local pr_data
+  _git_release_colors
   pr_data=$(gh pr list --repo chenasraf/homebrew-tap --state open --search "$search in:title" --json number,title,url,labels --jq "[.[] | select(.title | test(\"$search\"; \"i\"))][0] | {number, url, labels: [.labels[].name]}" 2>/dev/null)
 
   if [[ -z "$pr_data" || "$pr_data" == "null" ]]; then
@@ -374,14 +375,14 @@ function _git_homebrew_tap_add_pr_pull_label() {
   _git_homebrew_tap_pr_url=$(echo "$pr_data" | jq -r '.url')
 
   if echo "$pr_data" | jq -e '.labels | index("pr-pull")' &>/dev/null; then
-    echo "  ✓ PR chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number already has the \"pr-pull\" label"
-    echo "    $_git_homebrew_tap_pr_url"
+    echo "  ${_git_c_ok}✓${_git_c_reset} PR ${_git_c_pr}chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number${_git_c_reset} already has the \"pr-pull\" label"
+    echo "    ${_git_c_url}$_git_homebrew_tap_pr_url${_git_c_reset}"
     return 0
   fi
 
   gh pr edit "$_git_homebrew_tap_pr_number" --repo chenasraf/homebrew-tap --add-label "pr-pull"
-  echo "  ✓ Added \"pr-pull\" label to PR chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number"
-  echo "    $_git_homebrew_tap_pr_url"
+  echo "  ${_git_c_ok}✓${_git_c_reset} Added \"pr-pull\" label to PR ${_git_c_pr}chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number${_git_c_reset}"
+  echo "    ${_git_c_url}$_git_homebrew_tap_pr_url${_git_c_reset}"
 }
 
 # Internal helper: get "owner/repo" from the current repo's origin remote.
@@ -397,6 +398,26 @@ function _git_origin_owner_repo() {
   owner="${url##*[/:]}"
   [[ -z "$owner" || -z "$repo" ]] && return 1
   echo "$owner/$repo"
+}
+
+# Internal helper: set the log colors used by the release flows. Every value is
+# empty when stdout is redirected or the terminal can't do color, so the same
+# message strings stay readable either way.
+function _git_release_colors() {
+  local colors="${USE_COLORS:-$(tput colors 2>/dev/null)}"
+  [[ -z "$colors" ]] && colors=0
+
+  if [[ ! -t 1 || "$colors" -lt 8 ]]; then
+    _git_c_ok='' _git_c_err='' _git_c_warn='' _git_c_pr='' _git_c_url='' _git_c_reset=''
+    return
+  fi
+
+  _git_c_ok=$'\e[32m'
+  _git_c_err=$'\e[31m'
+  _git_c_warn=$'\e[33m'
+  _git_c_pr=$'\e[36m'
+  _git_c_url=$'\e[34m'
+  _git_c_reset=$'\e[0m'
 }
 
 # Internal helper: raise a desktop notification, falling back to a terminal bell.
@@ -433,12 +454,13 @@ function _git_pr_awaiting_approval() {
 # the progress line the caller was printing.
 function _git_notify_pr_approval() {
   local repo="$1" pr_number="$2" pr_url="$3"
+  _git_release_colors
 
   echo ""
-  echo "  ⏸ PR $repo#$pr_number is waiting for its workflow runs to be approved"
-  echo "    $pr_url"
+  echo "  ${_git_c_warn}⏸ PR ${_git_c_pr}$repo#$pr_number${_git_c_warn} is waiting for its workflow runs to be approved${_git_c_reset}"
+  echo "    ${_git_c_url}$pr_url${_git_c_reset}"
   _git_notify "Release PR needs approval" "$repo#$pr_number is waiting for workflow approval" "$pr_url"
-  printf "Waiting for approval on PR $repo#$pr_number "
+  printf "Waiting for approval on PR ${_git_c_pr}$repo#$pr_number${_git_c_reset} "
 }
 
 # Internal helper: poll a PR's checks until they settle.
@@ -450,8 +472,9 @@ function _git_wait_pr_checks() {
   local repo="$1" pr_number="$2"
   local pr_url="${3:-https://github.com/$repo/pull/$pr_number}"
   local checks awaiting failed pending notified=0
+  _git_release_colors
 
-  printf "Waiting for checks on PR $repo#$pr_number "
+  printf "Waiting for checks on PR ${_git_c_pr}$repo#$pr_number${_git_c_reset} "
   while true; do
     checks=$(gh pr checks "$pr_number" --repo "$repo" --json name,state,bucket,link 2>&1)
 
@@ -462,7 +485,7 @@ function _git_wait_pr_checks() {
       if [[ "$checks" == *"no checks reported"* ]]; then
         if ! _git_pr_awaiting_approval "$repo" "$pr_number"; then
           echo ""
-          echo "  ✓ PR $repo#$pr_number has no checks to wait for"
+          echo "  ${_git_c_ok}✓${_git_c_reset} PR ${_git_c_pr}$repo#$pr_number${_git_c_reset} has no checks to wait for"
           return 0
         fi
         if (( notified == 0 )); then
@@ -481,8 +504,9 @@ function _git_wait_pr_checks() {
 
     if (( failed > 0 )); then
       echo ""
-      echo "  ✗ Checks failed:"
-      jq -r '.[] | select(.bucket == "fail" and .state != "ACTION_REQUIRED") | "    \(.name) — \(.link)"' <<<"$checks"
+      echo "  ${_git_c_err}✗ Checks failed:${_git_c_reset}"
+      jq -r --arg c "$_git_c_err" --arg u "$_git_c_url" --arg r "$_git_c_reset" \
+        '.[] | select(.bucket == "fail" and .state != "ACTION_REQUIRED") | "    \($c)\(.name)\($r) — \($u)\(.link)\($r)"' <<<"$checks"
       return 1
     fi
 
@@ -493,7 +517,7 @@ function _git_wait_pr_checks() {
 
     if (( pending == 0 && awaiting == 0 )); then
       echo ""
-      echo "  ✓ All checks passed!"
+      echo "  ${_git_c_ok}✓ All checks passed!${_git_c_reset}"
       return 0
     fi
 
@@ -508,6 +532,7 @@ function _git_homebrew_tap_wait_pr_closed() {
   local pr_number="$1"
   local pr_url="${2:-https://github.com/chenasraf/homebrew-tap/pull/$pr_number}"
   local pr_state
+  _git_release_colors
   pr_state=$(gh pr view "$pr_number" --repo chenasraf/homebrew-tap --json state --jq '.state' 2>/dev/null)
 
   if [[ "$pr_state" == "MERGED" || "$pr_state" == "CLOSED" ]]; then
@@ -518,8 +543,8 @@ function _git_homebrew_tap_wait_pr_closed() {
   local check_output
   check_output=$(gh pr checks "$pr_number" --repo chenasraf/homebrew-tap 2>&1)
   if echo "$check_output" | grep -q "fail"; then
-    echo "  ✗ Tap PR chenasraf/homebrew-tap#$pr_number checks failed:"
-    echo "    $pr_url"
+    echo "  ${_git_c_err}✗ Tap PR ${_git_c_pr}chenasraf/homebrew-tap#$pr_number${_git_c_err} checks failed:${_git_c_reset}"
+    echo "    ${_git_c_url}$pr_url${_git_c_reset}"
     echo "$check_output" | sed 's/^/    /'
     return 1
   fi
@@ -542,11 +567,13 @@ function git-homebrew-tap-pr-pull() {
     return 0
   fi
 
+  _git_release_colors
+
   local search
   if [[ -z "$1" || "$1" == "." ]]; then
     local origin
     origin=$(_git_origin_owner_repo) || {
-      echo "Not in a git repo with an origin remote"
+      echo "${_git_c_err}Not in a git repo with an origin remote${_git_c_reset}"
       return 1
     }
     search="${origin##*/}"
@@ -560,14 +587,14 @@ function git-homebrew-tap-pr-pull() {
   while true; do
     if _git_homebrew_tap_add_pr_pull_label "$search"; then
       echo ""
-      printf "Waiting for tap PR chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number to be merged "
+      printf "Waiting for tap PR ${_git_c_pr}chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number${_git_c_reset} to be merged "
       local wait_rc
       while true; do
         _git_homebrew_tap_wait_pr_closed "$_git_homebrew_tap_pr_number" "$_git_homebrew_tap_pr_url"
         wait_rc=$?
         if [[ $wait_rc -eq 0 ]]; then
           echo ""
-          echo "  ✓ Tap PR chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number merged — release complete!"
+          echo "  ${_git_c_ok}✓ Tap PR ${_git_c_pr}chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number${_git_c_ok} merged — release complete!${_git_c_reset}"
           return 0
         elif [[ $wait_rc -eq 1 ]]; then
           echo ""
@@ -598,10 +625,12 @@ function git-release-please-merge() {
     return 0
   fi
 
+  _git_release_colors
+
   local repo
   if [[ -z "$1" || "$1" == "." ]]; then
     repo=$(_git_origin_owner_repo) || {
-      echo "Not in a git repo with an origin remote"
+      echo "${_git_c_err}Not in a git repo with an origin remote${_git_c_reset}"
       return 1
     }
   elif [[ "$1" == */* ]]; then
@@ -612,7 +641,7 @@ function git-release-please-merge() {
   local repo_name="${repo##*/}"
 
   # Step 1: Find release PR
-  printf "Finding release PR in $repo "
+  printf "Finding release PR in ${_git_c_pr}$repo${_git_c_reset} "
   local pr_data pr_number pr_url
   while true; do
     pr_data=$(gh pr list --repo "$repo" --state open --search "chore release in:title" --json number,title,url --jq '.[0]')
@@ -620,8 +649,8 @@ function git-release-please-merge() {
     if [[ -n "$pr_number" ]]; then
       pr_url=$(echo "$pr_data" | jq -r '.url')
       echo ""
-      echo "  ✓ Found release PR $repo#$pr_number"
-      echo "    $pr_url"
+      echo "  ${_git_c_ok}✓${_git_c_reset} Found release PR ${_git_c_pr}$repo#$pr_number${_git_c_reset}"
+      echo "    ${_git_c_url}$pr_url${_git_c_reset}"
       break
     fi
     printf "."
@@ -634,13 +663,13 @@ function git-release-please-merge() {
 
   # Step 3: Merge using rebase
   echo ""
-  echo "Merging PR $repo#$pr_number via rebase..."
+  echo "Merging PR ${_git_c_pr}$repo#$pr_number${_git_c_reset} via rebase..."
   if ! gh pr merge "$pr_number" --repo "$repo" --rebase; then
-    echo "  ✗ Failed to merge PR $repo#$pr_number"
-    echo "    $pr_url"
+    echo "  ${_git_c_err}✗ Failed to merge PR ${_git_c_pr}$repo#$pr_number${_git_c_reset}"
+    echo "    ${_git_c_url}$pr_url${_git_c_reset}"
     return 1
   fi
-  echo "  ✓ Merged successfully — release complete!"
+  echo "  ${_git_c_ok}✓ Merged successfully — release complete!${_git_c_reset}"
 }
 alias grlo=git-release-please-merge
 
@@ -661,10 +690,12 @@ function git-release-please-merge-with-tap() {
     return 0
   fi
 
+  _git_release_colors
+
   local repo
   if [[ -z "$1" || "$1" == "." ]]; then
     repo=$(_git_origin_owner_repo) || {
-      echo "Not in a git repo with an origin remote"
+      echo "${_git_c_err}Not in a git repo with an origin remote${_git_c_reset}"
       return 1
     }
   elif [[ "$1" == */* ]]; then
@@ -677,7 +708,7 @@ function git-release-please-merge-with-tap() {
   [[ "$tap_search" == "." ]] && tap_search="$repo_name"
 
   # Step 1: Find release PR
-  printf "Finding release PR in $repo "
+  printf "Finding release PR in ${_git_c_pr}$repo${_git_c_reset} "
   local pr_data pr_number pr_url
   while true; do
     pr_data=$(gh pr list --repo "$repo" --state open --search "chore release in:title" --json number,title,url --jq '.[0]')
@@ -685,8 +716,8 @@ function git-release-please-merge-with-tap() {
     if [[ -n "$pr_number" ]]; then
       pr_url=$(echo "$pr_data" | jq -r '.url')
       echo ""
-      echo "  ✓ Found release PR $repo#$pr_number"
-      echo "    $pr_url"
+      echo "  ${_git_c_ok}✓${_git_c_reset} Found release PR ${_git_c_pr}$repo#$pr_number${_git_c_reset}"
+      echo "    ${_git_c_url}$pr_url${_git_c_reset}"
       break
     fi
     printf "."
@@ -699,13 +730,13 @@ function git-release-please-merge-with-tap() {
 
   # Step 3: Merge using rebase
   echo ""
-  echo "Merging PR $repo#$pr_number via rebase..."
+  echo "Merging PR ${_git_c_pr}$repo#$pr_number${_git_c_reset} via rebase..."
   if ! gh pr merge "$pr_number" --repo "$repo" --rebase; then
-    echo "  ✗ Failed to merge PR $repo#$pr_number"
-    echo "    $pr_url"
+    echo "  ${_git_c_err}✗ Failed to merge PR ${_git_c_pr}$repo#$pr_number${_git_c_reset}"
+    echo "    ${_git_c_url}$pr_url${_git_c_reset}"
     return 1
   fi
-  echo "  ✓ Merged successfully!"
+  echo "  ${_git_c_ok}✓ Merged successfully!${_git_c_reset}"
 
   # Step 4: Poll for homebrew-tap PR and add label
   echo ""
@@ -722,14 +753,14 @@ function git-release-please-merge-with-tap() {
 
   # Step 5: Wait for tap PR to be merged
   echo ""
-  printf "Waiting for tap PR chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number to be merged "
+  printf "Waiting for tap PR ${_git_c_pr}chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number${_git_c_reset} to be merged "
   local wait_rc
   while true; do
     _git_homebrew_tap_wait_pr_closed "$_git_homebrew_tap_pr_number" "$_git_homebrew_tap_pr_url"
     wait_rc=$?
     if [[ $wait_rc -eq 0 ]]; then
       echo ""
-      echo "  ✓ Tap PR chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number merged — release complete!"
+      echo "  ${_git_c_ok}✓ Tap PR ${_git_c_pr}chenasraf/homebrew-tap#$_git_homebrew_tap_pr_number${_git_c_ok} merged — release complete!${_git_c_reset}"
       return 0
     elif [[ $wait_rc -eq 1 ]]; then
       echo ""
