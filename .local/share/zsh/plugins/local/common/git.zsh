@@ -395,6 +395,109 @@ function _git_origin_owner_repo() {
   echo "$owner/$repo"
 }
 
+# Internal helper: raise a desktop notification, falling back to a terminal bell.
+# <url> is opened when the notification is clicked, where the backend supports it.
+function _git_notify() {
+  local title="$1" message="$2" url="$3"
+
+  if (( $+commands[terminal-notifier] )); then
+    terminal-notifier -title "$title" -message "$message" -sound default ${url:+-open "$url"} &>/dev/null
+  elif (( $+commands[osascript] )); then
+    osascript -e "display notification \"$message\" with title \"$title\" sound name \"default\"" &>/dev/null
+  elif (( $+commands[notify-send] )); then
+    notify-send "$title" "$message" &>/dev/null
+  else
+    printf '\a'
+  fi
+}
+
+# Internal helper: check whether any workflow run on the PR's head commit is held
+# for a maintainer to approve it.
+function _git_pr_awaiting_approval() {
+  local repo="$1" pr_number="$2"
+  local sha held
+
+  sha=$(gh pr view "$pr_number" --repo "$repo" --json headRefOid --jq '.headRefOid' 2>/dev/null)
+  [[ -z "$sha" ]] && return 1
+
+  held=$(gh api "repos/$repo/actions/runs?head_sha=$sha" \
+    --jq '[.workflow_runs[] | select(.status == "waiting" or .status == "action_required")] | length' 2>/dev/null)
+  [[ -n "$held" && "$held" != "0" ]]
+}
+
+# Internal helper: announce that a PR is held for workflow approval, and resume
+# the progress line the caller was printing.
+function _git_notify_pr_approval() {
+  local repo="$1" pr_number="$2"
+  local pr_url="https://github.com/$repo/pull/$pr_number"
+
+  echo ""
+  echo "  ⏸ PR #$pr_number is waiting for its workflow runs to be approved:"
+  echo "    $pr_url"
+  _git_notify "Release PR needs approval" "$repo PR #$pr_number is waiting for workflow approval" "$pr_url"
+  printf "Waiting for approval on PR #$pr_number "
+}
+
+# Internal helper: poll a PR's checks until they settle.
+# Returns 0 once every check has passed, or immediately if the PR has no checks
+# at all; 1 if any check failed. A PR held for maintainer approval is announced
+# once and then kept in the poll loop, so the caller proceeds on its own as soon
+# as the approval lands.
+function _git_wait_pr_checks() {
+  local repo="$1" pr_number="$2"
+  local checks awaiting failed pending notified=0
+
+  printf "Waiting for checks on PR #$pr_number "
+  while true; do
+    checks=$(gh pr checks "$pr_number" --repo "$repo" --json name,state,bucket,link 2>&1)
+
+    # With --json, gh writes JSON to stdout or an error to stderr; anything that
+    # isn't an array is an error, and only "no checks reported" is conclusive —
+    # the rest (network, auth, rate limit) is worth another poll.
+    if [[ "$checks" != \[* ]]; then
+      if [[ "$checks" == *"no checks reported"* ]]; then
+        if ! _git_pr_awaiting_approval "$repo" "$pr_number"; then
+          echo ""
+          echo "  ✓ PR #$pr_number has no checks to wait for"
+          return 0
+        fi
+        if (( notified == 0 )); then
+          _git_notify_pr_approval "$repo" "$pr_number"
+          notified=1
+        fi
+      fi
+      printf "."
+      sleep 15
+      continue
+    fi
+
+    awaiting=$(jq '[.[] | select(.state == "ACTION_REQUIRED")] | length' <<<"$checks")
+    failed=$(jq '[.[] | select(.bucket == "fail" and .state != "ACTION_REQUIRED")] | length' <<<"$checks")
+    pending=$(jq '[.[] | select(.bucket == "pending")] | length' <<<"$checks")
+
+    if (( failed > 0 )); then
+      echo ""
+      echo "  ✗ Checks failed:"
+      jq -r '.[] | select(.bucket == "fail" and .state != "ACTION_REQUIRED") | "    \(.name) — \(.link)"' <<<"$checks"
+      return 1
+    fi
+
+    if (( notified == 0 )) && { (( awaiting > 0 )) || _git_pr_awaiting_approval "$repo" "$pr_number" }; then
+      _git_notify_pr_approval "$repo" "$pr_number"
+      notified=1
+    fi
+
+    if (( pending == 0 && awaiting == 0 )); then
+      echo ""
+      echo "  ✓ All checks passed!"
+      return 0
+    fi
+
+    printf "."
+    sleep 15
+  done
+}
+
 # Internal helper: wait for a homebrew-tap PR to be closed/merged.
 # Returns 0 if closed, 1 if checks failed.
 function _git_homebrew_tap_wait_pr_closed() {
@@ -518,28 +621,7 @@ function git-release-please-merge() {
 
   # Step 2: Poll until all checks pass
   echo ""
-  printf "Waiting for checks on PR #$pr_number "
-  local check_output rc
-  while true; do
-    check_output=$(gh pr checks "$pr_number" --repo "$repo" 2>&1)
-    rc=$?
-
-    if [[ $rc -eq 0 ]]; then
-      echo ""
-      echo "  ✓ All checks passed!"
-      break
-    fi
-
-    if echo "$check_output" | grep -q "fail"; then
-      echo ""
-      echo "  ✗ Checks failed:"
-      echo "$check_output" | sed 's/^/    /'
-      return 1
-    fi
-
-    printf "."
-    sleep 15
-  done
+  _git_wait_pr_checks "$repo" "$pr_number" || return 1
 
   # Step 3: Merge using rebase
   echo ""
@@ -600,28 +682,7 @@ function git-release-please-merge-with-tap() {
 
   # Step 2: Poll until all checks pass
   echo ""
-  printf "Waiting for checks on PR #$pr_number "
-  local check_output rc
-  while true; do
-    check_output=$(gh pr checks "$pr_number" --repo "$repo" 2>&1)
-    rc=$?
-
-    if [[ $rc -eq 0 ]]; then
-      echo ""
-      echo "  ✓ All checks passed!"
-      break
-    fi
-
-    if echo "$check_output" | grep -q "fail"; then
-      echo ""
-      echo "  ✗ Checks failed:"
-      echo "$check_output" | sed 's/^/    /'
-      return 1
-    fi
-
-    printf "."
-    sleep 15
-  done
+  _git_wait_pr_checks "$repo" "$pr_number" || return 1
 
   # Step 3: Merge using rebase
   echo ""
