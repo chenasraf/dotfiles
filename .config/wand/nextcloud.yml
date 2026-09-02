@@ -1,3 +1,35 @@
+.config:
+  bin_name: nxc
+  flags:
+    aio:
+      type: bool
+      description: Use AIO container instead of dev (or set NXC_AIO=1)
+  env:
+    # Shared shell helpers, pulled into a command with `eval "$NC_LIB"`.
+    # nc_target resolves which instance the AIO-aware commands act on; the nc_aio_*
+    # helpers target AIO unconditionally, for commands that only make sense there.
+    NC_LIB: |
+      nc_target() {
+        NC_AIO=0
+        [ "$WAND_FLAG_AIO" = "true" ] && NC_AIO=1
+        case "$(printf '%s' "${NXC_AIO:-}" | tr '[:upper:]' '[:lower:]')" in
+          1|true|yes|y|on) NC_AIO=1 ;;
+        esac
+        if [ "$NC_AIO" = 1 ]; then
+          NC_SUDO=sudo
+          NC_CONTAINER=nextcloud-aio-nextcloud
+        else
+          NC_SUDO=
+          NC_VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
+          [ -z "$NC_VERSION" ] && NC_VERSION=nextcloud
+          NC_CONTAINER="nextcloud-${NC_VERSION}-1"
+        fi
+      }
+      nc_exec() { nc_target; $NC_SUDO docker exec --user www-data "$NC_CONTAINER" "$@"; }
+      nc_exec_tty() { nc_target; $NC_SUDO docker exec --user www-data -it "$NC_CONTAINER" "$@"; }
+      nc_aio() { sudo docker exec --user www-data nextcloud-aio-nextcloud "$@"; }
+      nc_aio_tty() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
+
 use:
   description: Set the Nextcloud dev version
   cmd: |
@@ -74,79 +106,42 @@ stop:
 
 exec:
   description: Execute command in the Nextcloud container
-  flags:
-    aio:
-      type: bool
-      description: Use AIO container instead of dev
   cmd: |
-    if [ "$WAND_FLAG_AIO" = "true" ]; then
-      sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"
-    else
-      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
-      [ -z "$VERSION" ] && VERSION="nextcloud"
-      docker exec --user www-data -it "nextcloud-${VERSION}-1" "$@"
-    fi
+    eval "$NC_LIB"
+    nc_exec_tty "$@"
 
 occ:
   description: Run occ command in Nextcloud container
-  flags:
-    aio:
-      type: bool
-      description: Use AIO container instead of dev
   cmd: |
-    if [ "$WAND_FLAG_AIO" = "true" ]; then
-      sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ "$@"
-    else
-      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
-      [ -z "$VERSION" ] && VERSION="nextcloud"
-      docker exec --user www-data -it "nextcloud-${VERSION}-1" php occ "$@"
-    fi
+    eval "$NC_LIB"
+    nc_exec_tty php occ "$@"
 
 logs:
   description: Tail the Nextcloud log file
   flags:
-    aio:
-      type: bool
-      description: Use AIO container instead of dev
     pretty:
       alias: p
       type: bool
       description: Pretty-print JSON logs with jq
   cmd: |
-    if [ "$WAND_FLAG_AIO" = "true" ]; then
-      CONTAINER="nextcloud-aio-nextcloud"
-      SUDO="sudo"
-    else
-      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
-      [ -z "$VERSION" ] && VERSION="nextcloud"
-      CONTAINER="nextcloud-${VERSION}-1"
-      SUDO=""
-    fi
+    eval "$NC_LIB"
+    nc_target
 
     if [ "$WAND_FLAG_PRETTY" = "true" ]; then
-      $SUDO docker exec --user www-data "$CONTAINER" tail "$@" /var/www/html/data/nextcloud.log \
+      $NC_SUDO docker exec --user www-data "$NC_CONTAINER" tail "$@" /var/www/html/data/nextcloud.log \
         | while IFS= read -r line; do
             printf '%s\n' "$line" | jq -C -c --unbuffered .
             printf '\n'
           done
     else
-      $SUDO docker exec --user www-data "$CONTAINER" tail "$@" /var/www/html/data/nextcloud.log
+      $NC_SUDO docker exec --user www-data "$NC_CONTAINER" tail "$@" /var/www/html/data/nextcloud.log
     fi
 
 debug:
   description: Set Nextcloud debug mode
-  flags:
-    aio:
-      type: bool
-      description: Use AIO container instead of dev
   cmd: |
-    if [ "$WAND_FLAG_AIO" = "true" ]; then
-      sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ config:system:set debug --type bool --value "$1"
-    else
-      VERSION="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
-      [ -z "$VERSION" ] && VERSION="nextcloud"
-      docker exec --user www-data -it "nextcloud-${VERSION}-1" php occ config:system:set debug --type bool --value "$1"
-    fi
+    eval "$NC_LIB"
+    nc_exec_tty php occ config:system:set debug --type bool --value "$1"
 
 upgrade:
   description: Upgrade Nextcloud AIO
@@ -155,22 +150,22 @@ upgrade:
       type: bool
       description: Upgrade via beta channel
   cmd: |
-    aio() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
+    eval "$NC_LIB"
     if [ "$WAND_FLAG_BETA" = "true" ]; then
-      aio php occ config:system:set updater.release.channel --value=beta
-      aio php updater/updater.phar --no-interaction
-      aio php occ config:system:set updater.release.channel --value=stable
+      nc_aio_tty php occ config:system:set updater.release.channel --value=beta
+      nc_aio_tty php updater/updater.phar --no-interaction
+      nc_aio_tty php occ config:system:set updater.release.channel --value=stable
     else
-      aio php updater/updater.phar --no-interaction
+      nc_aio_tty php updater/updater.phar --no-interaction
     fi
 
 force-appupdate:
   description: Force refresh Nextcloud AIO app store cache
   aliases: [fau]
   cmd: |
-    aio() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
-    INSTANCE_ID=$(aio php occ config:system:get instanceid | tr -d "\n\r")
-    NC_VERSION=$(aio php occ config:system:get version | tr -d "\n\r")
+    eval "$NC_LIB"
+    INSTANCE_ID=$(nc_aio_tty php occ config:system:get instanceid | tr -d "\n\r")
+    NC_VERSION=$(nc_aio_tty php occ config:system:get version | tr -d "\n\r")
     if [ -z "$NC_VERSION" ]; then
       echo "Failed to detect Nextcloud version" >&2
       exit 1
@@ -211,14 +206,14 @@ latest-version:
       echo "Usage: nxc latest-version <app_id>"
       exit 1
     fi
-    aio() { sudo docker exec --user www-data nextcloud-aio-nextcloud "$@"; }
-    INSTANCE_ID=$(aio php occ config:system:get instanceid | tr -d "\n\r")
+    eval "$NC_LIB"
+    INSTANCE_ID=$(nc_aio php occ config:system:get instanceid | tr -d "\n\r")
     APPS_JSON="/mnt/ncdata/appdata_${INSTANCE_ID}/appstore/apps.json"
-    if ! aio test -f "$APPS_JSON"; then
+    if ! nc_aio test -f "$APPS_JSON"; then
       echo "apps.json not found at $APPS_JSON. Run 'nxc force-appupdate' first." >&2
       exit 1
     fi
-    VERSION=$(aio cat "$APPS_JSON" | jq -r --arg id "$NAME" '
+    VERSION=$(nc_aio cat "$APPS_JSON" | jq -r --arg id "$NAME" '
       (if type == "object" and has("data") then .data else . end)
       | .[] | select(.id == $id) | .releases
       | map(select(.isNightly == false) | .version)
@@ -263,10 +258,6 @@ backup:
 
 install-app:
   description: Download and install a Nextcloud app from GitHub releases
-  flags:
-    aio:
-      type: bool
-      description: Use AIO container instead of dev
   cmd: |
     NAME="$1"
     VERSION="$2"
@@ -276,18 +267,10 @@ install-app:
       exit 1
     fi
     URL="https://github.com/chenasraf/nextcloud-${NAME}/releases/download/v${VERSION}/${NAME}-v${VERSION}.tar.gz"
-    if [ "$WAND_FLAG_AIO" = "true" ]; then
-      sudo docker exec --user www-data nextcloud-aio-nextcloud bash -c "curl -L -o /tmp/${NAME}.tar.gz ${URL}"
-      sudo docker exec --user www-data nextcloud-aio-nextcloud bash -c "tar xzf /tmp/${NAME}.tar.gz -C /var/www/html/custom_apps/ && rm /tmp/${NAME}.tar.gz"
-      sudo docker exec --user www-data -it nextcloud-aio-nextcloud php occ app:enable "$NAME"
-    else
-      VERSION_TAG="$(tr -d '\n' < "$HOME/.nc-dev-version" 2>/dev/null)"
-      [ -z "$VERSION_TAG" ] && VERSION_TAG="nextcloud"
-      CONTAINER="nextcloud-${VERSION_TAG}-1"
-      docker exec --user www-data "$CONTAINER" bash -c "curl -L -o /tmp/${NAME}.tar.gz ${URL}"
-      docker exec --user www-data "$CONTAINER" bash -c "tar xzf /tmp/${NAME}.tar.gz -C /var/www/html/custom_apps/ && rm /tmp/${NAME}.tar.gz"
-      docker exec --user www-data -it "$CONTAINER" php occ app:enable "$NAME"
-    fi
+    eval "$NC_LIB"
+    nc_exec bash -c "curl -L -o /tmp/${NAME}.tar.gz ${URL}"
+    nc_exec bash -c "tar xzf /tmp/${NAME}.tar.gz -C /var/www/html/custom_apps/ && rm /tmp/${NAME}.tar.gz"
+    nc_exec_tty php occ app:enable "$NAME"
 
 db-proxy:
   description: Manage AIO database proxy
