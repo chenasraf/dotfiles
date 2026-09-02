@@ -2,23 +2,24 @@
 
 alias nxc="wand --wand-file \$CFG/wand/nextcloud.yml"
 
-# dev
-alias nc-dev-use="nxc use"
-alias nc-dev-start="nxc start"
-alias nc-dev-stop="nxc stop"
-alias nc-dev="nxc exec --"
-alias nc-dev-occ="nxc occ --"
-alias nc-dev-logs="nxc logs --"
-alias nc-dev-pretty-logs="nxc logs --pretty --"
-alias nc-dev-debug="nxc debug --"
+# Instance-aware: target follows NXC_AIO, or an explicit --aio.
+alias nc-exec="nxc exec --"
+alias nc-occ="nxc occ --"
+alias nc-logs="nxc logs --"
+alias nc-pretty-logs="nxc logs --pretty --"
+alias nc-debug="nxc debug --"
+alias nc-install-app="nxc install-app --"
 
-# aio
-alias nc-aio="nxc exec --aio --"
-alias nc-aio-occ="nxc occ --aio --"
-alias nc-aio-debug="nxc debug --aio --"
-alias nc-aio-upgrade="nxc upgrade"
-alias nc-aio-upgrade-beta="nxc upgrade --beta"
-alias nc-aio-force-appupdate="nxc force-appupdate"
+# Dev instance
+alias nc-use="nxc use"
+alias nc-start="nxc start"
+alias nc-stop="nxc stop"
+
+# AIO instance
+alias nc-upgrade="nxc upgrade"
+alias nc-upgrade-beta="nxc upgrade --beta"
+alias nc-force-appupdate="nxc force-appupdate"
+alias nc-latest-version="nxc latest-version"
 
 # mcp (nextcloud-mcp-server, run via uvx by Claude). Refresh uv's cache so the
 # next server spawn uses the latest published version. No db upgrade needed: the
@@ -27,7 +28,6 @@ nc-mcp-update() {
   uvx --refresh nextcloud-mcp-server --version
 }
 
-# shared
 alias nc-backup="nxc backup"
 alias nc-enable-db-proxy="nxc db-proxy start"
 alias nc-disable-db-proxy="nxc db-proxy stop"
