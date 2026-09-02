@@ -371,3 +371,7 @@ db-proxy:
         else
           echo "No proxy running."
         fi
+unlock-files:
+  description: Clear dangling file locks
+  cmd: |
+    sudo docker exec nextcloud-aio-redis sh -c 'redis-cli -a "$REDIS_HOST_PASSWORD" --scan --pattern "*lockfiles*" | xargs redis-cli -a "$REDIS_HOST_PASSWORD" del'
