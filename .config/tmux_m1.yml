@@ -281,9 +281,9 @@ nc:
   root: ~/Dev/nextcloud-apps/
   aliases: [ncapps]
   windows:
-    - ./forum
     - ./pantry
     - ../pantry-flutter
+    - ./forum
     - ./autocurrency
     - ../nextcloud-docker-dev
     # - ./jukebox
