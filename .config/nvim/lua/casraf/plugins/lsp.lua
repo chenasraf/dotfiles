@@ -117,27 +117,60 @@ local function run_in_terminal(cmd)
   })
 end
 
--- Read .flutter-flags.yml(yaml) from project root for per-command CLI args.
+local function unquote(val)
+  local quote = val:sub(1, 1)
+  if (quote == '"' or quote == "'") and #val > 1 and val:sub(-1) == quote then
+    return val:sub(2, -2)
+  end
+  return val
+end
+
+-- Read .flutter-flags.yml(yaml) from project root for per-command CLI args and
+-- extra entries for the <F5> picker.
 -- Format:
 --   default: --dart-define-from-file=.env
 --   FlutterRun: --flavor dev
 --   FlutterInstall: --release
+--   _Custom:
+--     - name: FlutterRunWear
+--       label: Run (wear)
+--       cmd: ":FlutterRun --flavor wear --debug"
+--     - name: InstallWear
+--       cmd: "!flutter install --flavor wear"
+---@return table<string, string> flags, { name: string, label: string, cmd: string }[] custom
 local function read_flutter_flags()
   local flags = {}
+  local custom = {}
   for _, name in ipairs({ '.flutter-flags.yml', '.flutter-flags.yaml' }) do
     local path = vim.fn.getcwd() .. '/' .. name
     if vim.fn.filereadable(path) == 1 then
-      for _, line in ipairs(vim.fn.readfile(path)) do
-        line = line:match('^%s*(.-)%s*$')
+      local in_custom = false
+      for _, raw in ipairs(vim.fn.readfile(path)) do
+        local indented = raw:match('^%s') ~= nil
+        local line = raw:match('^%s*(.-)%s*$')
         if line ~= '' and not line:match('^#') then
-          local key, val = line:match('^([%w_%-]+):%s*(.+)$')
-          if key and val then flags[key] = val end
+          if in_custom and indented then
+            local item = line:match('^%-%s*(.*)$')
+            if item then
+              table.insert(custom, {})
+              line = item
+            end
+            local key, val = line:match('^([%w_%-]+):%s*(.+)$')
+            local entry = custom[#custom]
+            if key and val and entry then entry[key] = unquote(val) end
+          elseif line == '_Custom:' then
+            in_custom = true
+          else
+            in_custom = false
+            local key, val = line:match('^([%w_%-]+):%s*(.+)$')
+            if key and val then flags[key] = unquote(val) end
+          end
         end
       end
       break
     end
   end
-  return flags
+  return flags, custom
 end
 
 local function get_flutter_args(cmd_name)
@@ -147,6 +180,81 @@ local function get_flutter_args(cmd_name)
   if flags[cmd_name] then table.insert(parts, flags[cmd_name]) end
   local extra = table.concat(parts, ' ')
   return extra ~= '' and (' ' .. extra) or ''
+end
+
+-- Swap `{default}` for the `default:` flags, absorbing the surrounding spaces so an
+-- unset or placeholder-only `default` leaves no double space behind.
+local function expand_default(cmd, default)
+  local repl = (default and default ~= '') and (' ' .. default .. ' ') or ' '
+  local out = cmd:gsub('%s*{default}%s*', (repl:gsub('%%', '%%%%')))
+  return (out:match('^%s*(.-)%s*$'))
+end
+
+-- Flutter Ex commands only exist while a dart buffer is current, so switch to one
+-- (or open lib/main.dart) before running them.
+local function ensure_dart_buffer()
+  if vim.bo.filetype == 'dart' then
+    return true
+  end
+
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) then
+      local name = vim.api.nvim_buf_get_name(buf)
+      if name:match("%.dart$") then
+        vim.api.nvim_set_current_buf(buf)
+        return true
+      end
+    end
+  end
+
+  local main_dart = vim.fn.getcwd() .. '/lib/main.dart'
+  if vim.fn.filereadable(main_dart) == 1 then
+    vim.cmd('edit ' .. main_dart)
+    return true
+  end
+
+  vim.notify("No dart file found", vim.log.levels.WARN)
+  return false
+end
+
+-- Run a `_Custom` entry. `!cmd` runs in a terminal split, anything else is an
+-- Ex command (a leading `:` is optional).
+local function run_custom_cmd(cmd)
+  local flags = read_flutter_flags()
+  cmd = expand_default(cmd, flags.default)
+  local shell = cmd:match('^!%s*(.+)$')
+  if shell then
+    run_in_terminal(shell)
+    return
+  end
+  if not ensure_dart_buffer() then return end
+  local ok, err = pcall(vim.cmd, (cmd:gsub('^:', '')))
+  if not ok then
+    vim.notify('Custom command failed: ' .. tostring(err), vim.log.levels.ERROR)
+  end
+end
+
+-- Expose each named `_Custom` entry as a buffer-local Ex command, so `:FlutterRunWear`
+-- works without going through the picker. Trailing args are appended to the entry's `cmd`.
+local function register_custom_commands(buf)
+  local _, custom = read_flutter_flags()
+  for _, item in ipairs(custom) do
+    if item.name and item.cmd then
+      -- Vim requires user command names to start uppercase and stay alphanumeric.
+      if item.name:match('^%u[%w_]*$') then
+        vim.api.nvim_buf_create_user_command(buf, item.name, function(opts)
+          local cmd = item.cmd
+          if opts.args ~= '' then cmd = cmd .. ' ' .. opts.args end
+          run_custom_cmd(cmd)
+        end, { nargs = '*', desc = item.label or item.cmd })
+      else
+        vim.notify_once(
+          ('.flutter-flags: "%s" is not a valid command name (must start with an uppercase letter, ' ..
+            'then letters/digits/underscores only)'):format(item.name),
+          vim.log.levels.WARN)
+      end
+    end
+  end
 end
 
 local group = vim.api.nvim_create_augroup("flutter", {})
@@ -165,33 +273,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
     })[1]
 
     if pubspec then
-      local function ensure_dart_buffer()
-        -- Check if current buffer is dart
-        if vim.bo.filetype == 'dart' then
-          return true
-        end
-
-        -- Look for an existing buffer with a dart file
-        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-          if vim.api.nvim_buf_is_loaded(buf) then
-            local name = vim.api.nvim_buf_get_name(buf)
-            if name:match("%.dart$") then
-              vim.api.nvim_set_current_buf(buf)
-              return true
-            end
-          end
-        end
-
-        -- Try to load lib/main.dart
-        local main_dart = vim.fn.getcwd() .. '/lib/main.dart'
-        if vim.fn.filereadable(main_dart) == 1 then
-          vim.cmd('edit ' .. main_dart)
-          return true
-        end
-
-        vim.notify("No dart file found", vim.log.levels.WARN)
-        return false
-      end
+      register_custom_commands(args.buf)
 
       vim.keymap.set("n", "<F5>", function()
         if not ensure_dart_buffer() then
@@ -224,20 +306,44 @@ vim.api.nvim_create_autocmd("BufEnter", {
         }
 
         local labels = {}
-        local cmd_map = {}
-        for _, item in ipairs(commands) do
-          table.insert(labels, item.label)
-          cmd_map[item.label] = item.cmd
+        local entries = {}
+        local function add(label, entry)
+          if label == nil or entries[label] then return end
+          table.insert(labels, label)
+          entries[label] = entry
         end
+
+        local _, custom = read_flutter_flags()
+        local function custom_label(item) return item.label or item.name end
+        local function add_custom()
+          for _, item in ipairs(custom) do
+            if item.cmd then add(custom_label(item), { custom = item.cmd }) end
+          end
+        end
+
+        -- Project entries sit directly under 'Run', and shadow a built-in of the same name.
+        local shadowed = {}
+        for _, item in ipairs(custom) do
+          local label = custom_label(item)
+          if label then shadowed[label] = true end
+        end
+        for _, item in ipairs(commands) do
+          if not shadowed[item.label] then add(item.label, { cmd = item.cmd }) end
+          if item.label == 'Run' then add_custom() end
+        end
+        add_custom()
 
         require('fzf-lua').fzf_exec(labels, {
           prompt = 'Flutter> ',
           actions = {
             ['default'] = function(selected)
               if selected and selected[1] then
-                local cmd = cmd_map[selected[1]]
-                if cmd then
-                  vim.cmd(cmd .. get_flutter_args(cmd))
+                local entry = entries[selected[1]]
+                if not entry then return end
+                if entry.custom then
+                  run_custom_cmd(entry.custom)
+                else
+                  vim.cmd(entry.cmd .. get_flutter_args(entry.cmd))
                 end
               end
             end,
