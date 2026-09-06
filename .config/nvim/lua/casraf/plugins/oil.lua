@@ -15,7 +15,31 @@ return {
     },
   },
   config = function(_, opts)
-    require("oil").setup(opts)
+    local oil = require("oil")
+    oil.setup(opts)
+
+    local root_markers = {
+      ".git",
+      "package.json",
+      "pubspec.yaml",
+      "Cargo.toml",
+      "go.mod",
+      "pyproject.toml",
+      "Makefile",
+    }
+
+    local function project_root()
+      -- In an oil buffer the file path is an oil:// URL, so ask oil where it is
+      local start = oil.get_current_dir() or vim.fn.expand("%:p:h")
+      if start == nil or start == "" then
+        start = vim.fn.getcwd()
+      end
+      return vim.fs.root(start, root_markers) or vim.fn.getcwd()
+    end
+
     vim.keymap.set("n", "-", ":Oil<CR>", { desc = "[Oil] Back to parent dir", silent = true })
+    vim.keymap.set("n", "<leader>-", function()
+      oil.open(project_root())
+    end, { desc = "[Oil] Project root" })
   end,
 }

@@ -258,7 +258,6 @@ local function nope()
   vim.g.mapleader = " "
   -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "File explorer" })
   vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "File explorer" })
-  vim.keymap.set("n", "-", require("oil").open, { desc = "File explorer" })
 
   -- vim.keymap.set({"v", "n"}, "<C-.>", "<C-o>", { desc = "Go to previous cursor location" })
   -- vim.keymap.set({"v", "n"}, "<C-,>", "<C-i>", { desc = "Go to next cursor location" })
