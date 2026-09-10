@@ -256,6 +256,129 @@ backup:
       "$DRIVE/Nextcloud/"
     find "$DRIVE/Nextcloud" -type f -name '._*' -exec rm -f -- {} +
 
+upload:
+  description: Upload a file or folder to Nextcloud over WebDAV
+  aliases: [up]
+  cmd: |
+    SRC="$1"
+    DEST="$2"
+    if [ -z "$SRC" ]; then
+      echo "Usage: nxc upload <source> [target]" >&2
+      echo >&2
+      echo "  nxc upload ./notes.md              -> /notes.md" >&2
+      echo "  nxc upload ./notes.md Docs/        -> /Docs/notes.md" >&2
+      echo "  nxc upload ./notes.md Docs/new.md  -> /Docs/new.md" >&2
+      echo "  nxc upload ./photos Albums/        -> /Albums/photos/..." >&2
+      echo "  nxc upload ./photos Albums/2024    -> /Albums/2024/..." >&2
+      exit 1
+    fi
+    if [ ! -e "$SRC" ]; then
+      echo "No such file or directory: $SRC" >&2
+      exit 1
+    fi
+
+    DAV_HOST="${NXC_DAV_HOST:-${NEXTCLOUD_HOST:-}}"
+    DAV_USER="${NXC_DAV_USER:-${NEXTCLOUD_USERNAME:-}}"
+    DAV_PASS="${NXC_DAV_PASS:-${NEXTCLOUD_PASSWORD:-}}"
+    if [ -z "$DAV_HOST" ] || [ -z "$DAV_USER" ] || [ -z "$DAV_PASS" ]; then
+      echo "Missing credentials: set NEXTCLOUD_HOST, NEXTCLOUD_USERNAME and NEXTCLOUD_PASSWORD" >&2
+      echo "(or NXC_DAV_HOST / NXC_DAV_USER / NXC_DAV_PASS to target another instance)." >&2
+      exit 1
+    fi
+    DAV_ROOT="${DAV_HOST%/}/remote.php/dav/files/${DAV_USER}"
+
+    # Percent-encode each path segment; jq handles UTF-8, the separators go back in after.
+    urlenc() { printf '%s' "$1" | jq -sRr @uri | sed 's|%2F|/|g'; }
+    # --globoff: curl globs both the URL and the -T argument, so a "[...]" in a file
+    # name would otherwise be read as a range.
+    dav() { curl -sS --globoff -u "$DAV_USER:$DAV_PASS" "$@"; }
+
+    # curl draws the transfer bar on stderr, so it coexists with the captured status
+    # code on stdout. Off when stderr is not a terminal, to keep logs clean.
+    PROGRESS="-s"
+    [ -t 2 ] && PROGRESS="--progress-bar"
+    dav_put() { curl -S $PROGRESS --globoff -u "$DAV_USER:$DAV_PASS" "$@"; }
+
+    # MKCOL creates a single collection, so walk the path; 405 means it is already there.
+    mkcol_p() {
+      _rest="$1"
+      _acc=""
+      while [ -n "$_rest" ]; do
+        _seg="${_rest%%/*}"
+        case "$_rest" in
+          */*) _rest="${_rest#*/}" ;;
+          *) _rest="" ;;
+        esac
+        [ -z "$_seg" ] && continue
+        _acc="${_acc:+$_acc/}$_seg"
+        _code=$(dav -o /dev/null -w '%{http_code}' -X MKCOL "$DAV_ROOT/$(urlenc "$_acc")") \
+          || { echo "MKCOL $_acc failed (curl exit $?)" >&2; return 1; }
+        case "$_code" in
+          201|405) ;;
+          *) echo "MKCOL $_acc failed (HTTP $_code)" >&2; return 1 ;;
+        esac
+      done
+    }
+
+    # $3 labels the line printed above the transfer bar.
+    put() {
+      printf '%s %s\n' "${3:- }" "$2"
+      _code=$(dav_put -o /dev/null -w '%{http_code}' -T "$1" "$DAV_ROOT/$(urlenc "$2")") \
+        || { echo "PUT $2 failed (curl exit $?)" >&2; return 1; }
+      case "$_code" in
+        201|204) ;;
+        *) echo "PUT $2 failed (HTTP $_code)" >&2; return 1 ;;
+      esac
+    }
+
+    if [ -d "$SRC" ]; then
+      BASE="$(cd "$SRC" && pwd)"
+    else
+      BASE="$SRC"
+    fi
+    NAME="$(basename "$BASE")"
+
+    # A trailing slash on the target means "into this folder", anything else names the
+    # uploaded file/folder itself.
+    DEST="${DEST#/}"
+    case "$DEST" in
+      ""|*/) REMOTE="${DEST}${NAME}" ;;
+      *) REMOTE="$DEST" ;;
+    esac
+
+    if [ -f "$BASE" ]; then
+      case "$REMOTE" in
+        */*) mkcol_p "${REMOTE%/*}" || exit 1 ;;
+      esac
+      echo "$BASE -> /$REMOTE"
+      put "$BASE" "$REMOTE"
+      exit
+    fi
+
+    if [ ! -d "$BASE" ]; then
+      echo "Not a regular file or directory: $SRC" >&2
+      exit 1
+    fi
+
+    echo "$BASE/ -> /$REMOTE/"
+    mkcol_p "$REMOTE" || exit 1
+    TMP="$(mktemp)"
+    trap 'rm -f "$TMP"' EXIT
+    # The strip patterns quote "$BASE" so a "[...]" in the path stays literal instead of
+    # being read as a character class.
+    find "$BASE" -mindepth 1 -type d -print > "$TMP"
+    while IFS= read -r d; do
+      mkcol_p "$REMOTE/${d#"$BASE"/}" || exit 1
+    done < "$TMP"
+    find "$BASE" -type f ! -name '.DS_Store' ! -name '._*' -print > "$TMP"
+    TOTAL="$(wc -l < "$TMP" | tr -d ' ')"
+    N=0
+    while IFS= read -r f; do
+      N=$((N + 1))
+      put "$f" "$REMOTE/${f#"$BASE"/}" "[$N/$TOTAL]" || exit 1
+    done < "$TMP"
+    echo "Uploaded $N file(s) to /$REMOTE/"
+
 install-app:
   description: Download and install a Nextcloud app from GitHub releases
   cmd: |
