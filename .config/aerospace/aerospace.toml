@@ -129,8 +129,8 @@ on-mode-changed = []
     # - alt-shift-k (up)   uses 'left',  so the leftmost window can't use it.
     # If this becomes annoying, wrap in a shell script that falls back to the
     # opposite direction via the 'aerospace' CLI.
-    alt-shift-j = ['join-with right', 'move down']
-    alt-shift-k = ['join-with left', 'move up']
+    alt-shift-j = 'join-with left'
+    alt-shift-k = 'join-with right'
     alt-shift-l = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
