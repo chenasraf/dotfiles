@@ -259,17 +259,26 @@ backup:
 upload:
   description: Upload a file or folder to Nextcloud over WebDAV
   aliases: [up]
+  flags:
+    force:
+      alias: f
+      type: bool
+      description: Re-upload files even when the remote size already matches
   cmd: |
     SRC="$1"
     DEST="$2"
     if [ -z "$SRC" ]; then
-      echo "Usage: nxc upload <source> [target]" >&2
+      echo "Usage: nxc upload [--force] <source> [target]" >&2
       echo >&2
       echo "  nxc upload ./notes.md              -> /notes.md" >&2
       echo "  nxc upload ./notes.md Docs/        -> /Docs/notes.md" >&2
       echo "  nxc upload ./notes.md Docs/new.md  -> /Docs/new.md" >&2
       echo "  nxc upload ./photos Albums/        -> /Albums/photos/..." >&2
       echo "  nxc upload ./photos Albums/2024    -> /Albums/2024/..." >&2
+      echo >&2
+      echo "Files whose remote copy is the same size are skipped (--force overrides)." >&2
+      echo "Files above NXC_CHUNK_MB (default 32) MiB go up in chunks, and an" >&2
+      echo "interrupted run continues from the last chunk the server kept." >&2
       exit 1
     fi
     if [ ! -e "$SRC" ]; then
@@ -320,16 +329,142 @@ upload:
       done
     }
 
-    # $3 labels the line printed above the transfer bar.
-    put() {
-      printf '%s %s\n' "${3:- }" "$2"
-      _code=$(dav_put -o /dev/null -w '%{http_code}' -T "$1" "$DAV_ROOT/$(urlenc "$2")") \
+    fsize() { stat -f %z "$1" 2>/dev/null || stat -c %s "$1" 2>/dev/null; }
+    fmtime() { stat -f %m "$1" 2>/dev/null || stat -c %Y "$1" 2>/dev/null; }
+    hash_id() {
+      if command -v md5sum >/dev/null 2>&1; then
+        printf '%s' "$1" | md5sum | cut -d' ' -f1
+      elif command -v md5 >/dev/null 2>&1; then
+        printf '%s' "$1" | md5 -q
+      else
+        printf '%s' "$1" | cksum | tr -d ' '
+      fi
+    }
+
+    # Size of the remote file, empty when it is absent. Size is the whole comparison:
+    # the server exposes no checksum, and mtime only matches for files this command
+    # itself uploaded (it sends X-OC-Mtime).
+    remote_size() {
+      _head=$(curl -sS -I --globoff -u "$DAV_USER:$DAV_PASS" \
+        -w 'nxc_code:%{http_code}\n' "$DAV_ROOT/$(urlenc "$1")" 2>/dev/null) || return 0
+      case "$(printf '%s\n' "$_head" | sed -n 's|^nxc_code:||p')" in
+        200|204) ;;
+        *) return 0 ;;
+      esac
+      printf '%s\n' "$_head" | tr -d '\r' \
+        | sed -n 's|^[Cc]ontent-[Ll]ength: *\([0-9][0-9]*\).*|\1|p' | tail -n1
+    }
+
+    # "<chunk name> <size>" per line for the chunks an upload session already holds.
+    # tr splits the XML one tag per line so the prefixes (d:, D:, none) all parse the same.
+    list_chunks() {
+      dav -X PROPFIND -H 'Depth: 1' -H 'Content-Type: application/xml' \
+        --data '<?xml version="1.0"?><d:propfind xmlns:d="DAV:"><d:prop><d:getcontentlength/></d:prop></d:propfind>' \
+        "$1" 2>/dev/null \
+        | tr '<' '\n' \
+        | awk '
+            /^[A-Za-z0-9]*:?href>/ {
+              sub(/^[^>]*>/, ""); n = split($0, p, "/"); name = p[n]; next
+            }
+            /^[A-Za-z0-9]*:?getcontentlength>/ {
+              sub(/^[^>]*>/, ""); if (name ~ /^[0-9]+$/) print name, $0
+            }
+          '
+    }
+
+    put_simple() {
+      _code=$(dav_put -o /dev/null -w '%{http_code}' -H "X-OC-Mtime: $3" \
+        -T "$1" "$DAV_ROOT/$(urlenc "$2")") \
         || { echo "PUT $2 failed (curl exit $?)" >&2; return 1; }
       case "$_code" in
         201|204) ;;
         *) echo "PUT $2 failed (HTTP $_code)" >&2; return 1 ;;
       esac
     }
+
+    # Chunked upload: chunks land in a per-file session folder and the closing MOVE
+    # assembles them, so chunks a previous run finished survive an interruption.
+    # Names are zero-padded because the server assembles them in name order.
+    put_chunked() {
+      _src="$1"; _rem="$2"; _fsize="$3"; _mtime="$4"
+      _count=$(( (_fsize + CHUNK_SIZE - 1) / CHUNK_SIZE ))
+      _sess="${DAV_HOST%/}/remote.php/dav/uploads/${DAV_USER}/nxc-$(hash_id "$_rem|$_fsize|$_mtime")"
+      _dest="$DAV_ROOT/$(urlenc "$_rem")"
+
+      _code=$(dav -o /dev/null -w '%{http_code}' -X MKCOL -H "Destination: $_dest" "$_sess") \
+        || { echo "MKCOL upload session for $_rem failed (curl exit $?)" >&2; return 1; }
+      case "$_code" in
+        201|405) ;;
+        *) echo "MKCOL upload session for $_rem failed (HTTP $_code)" >&2; return 1 ;;
+      esac
+
+      _have=$(list_chunks "$_sess")
+      _i=0
+      while [ "$_i" -lt "$_count" ]; do
+        _n=$((_i + 1))
+        _name=$(printf '%016d' "$_n")
+        _want=$((_fsize - _i * CHUNK_SIZE))
+        [ "$_want" -gt "$CHUNK_SIZE" ] && _want=$CHUNK_SIZE
+        if [ "$(printf '%s\n' "$_have" | awk -v n="$_name" '$1 == n { print $2 }')" = "$_want" ]; then
+          printf '  chunk %s/%s (present)\n' "$_n" "$_count"
+          _i=$_n
+          continue
+        fi
+        dd if="$_src" of="$CHUNK_TMP" bs=1048576 skip=$((_i * CHUNK_MB)) count="$CHUNK_MB" 2>/dev/null \
+          || { echo "Reading chunk $_n of $_src failed" >&2; return 1; }
+        printf '  chunk %s/%s\n' "$_n" "$_count"
+        _code=$(dav_put -o /dev/null -w '%{http_code}' -T "$CHUNK_TMP" "$_sess/$_name") \
+          || { echo "PUT chunk $_n of $_rem failed (curl exit $?)" >&2; return 1; }
+        case "$_code" in
+          201|204) ;;
+          *) echo "PUT chunk $_n of $_rem failed (HTTP $_code)" >&2; return 1 ;;
+        esac
+        _i=$_n
+      done
+
+      _code=$(dav -o /dev/null -w '%{http_code}' -X MOVE -H "Destination: $_dest" \
+        -H "OC-Total-Length: $_fsize" -H "X-OC-Mtime: $_mtime" "$_sess/.file") \
+        || { echo "MOVE $_rem failed (curl exit $?)" >&2; return 1; }
+      case "$_code" in
+        201|204) ;;
+        *) echo "MOVE $_rem failed (HTTP $_code)" >&2; return 1 ;;
+      esac
+    }
+
+    # $3 labels the line printed above the transfer bar.
+    put() {
+      _lsize=$(fsize "$1")
+      _lmtime=$(fmtime "$1")
+      if [ -z "$_lsize" ]; then
+        echo "Could not stat $1" >&2
+        return 1
+      fi
+      if [ "$WAND_FLAG_FORCE" != "true" ] && [ "$(remote_size "$2")" = "$_lsize" ]; then
+        printf '%s %s (skipped)\n' "${3:- }" "$2"
+        SKIPPED=$((SKIPPED + 1))
+        return 0
+      fi
+      printf '%s %s\n' "${3:- }" "$2"
+      if [ "$_lsize" -gt "$CHUNK_SIZE" ]; then
+        put_chunked "$1" "$2" "$_lsize" "$_lmtime" || return 1
+      else
+        put_simple "$1" "$2" "$_lmtime" || return 1
+      fi
+      UPLOADED=$((UPLOADED + 1))
+    }
+
+    CHUNK_MB="${NXC_CHUNK_MB:-32}"
+    CHUNK_SIZE=$((CHUNK_MB * 1048576))
+    UPLOADED=0
+    SKIPPED=0
+    TMP=""
+    CHUNK_TMP="$(mktemp)"
+    # A signal handler that only cleans up leaves the shell running the next file, so
+    # these exit as well — Ctrl-C has to stop the whole transfer, not just one curl.
+    cleanup() { rm -f "$CHUNK_TMP" ${TMP:+"$TMP"}; }
+    trap 'cleanup' EXIT
+    trap 'cleanup; exit 130' INT
+    trap 'cleanup; exit 143' TERM
 
     if [ -d "$SRC" ]; then
       BASE="$(cd "$SRC" && pwd)"
@@ -351,8 +486,8 @@ upload:
         */*) mkcol_p "${REMOTE%/*}" || exit 1 ;;
       esac
       echo "$BASE -> /$REMOTE"
-      put "$BASE" "$REMOTE"
-      exit
+      put "$BASE" "$REMOTE" || exit 1
+      exit 0
     fi
 
     if [ ! -d "$BASE" ]; then
@@ -363,7 +498,6 @@ upload:
     echo "$BASE/ -> /$REMOTE/"
     mkcol_p "$REMOTE" || exit 1
     TMP="$(mktemp)"
-    trap 'rm -f "$TMP"' EXIT
     # The strip patterns quote "$BASE" so a "[...]" in the path stays literal instead of
     # being read as a character class.
     find "$BASE" -mindepth 1 -type d -print > "$TMP"
@@ -377,7 +511,7 @@ upload:
       N=$((N + 1))
       put "$f" "$REMOTE/${f#"$BASE"/}" "[$N/$TOTAL]" || exit 1
     done < "$TMP"
-    echo "Uploaded $N file(s) to /$REMOTE/"
+    printf '%s uploaded, %s skipped -> /%s/\n' "$UPLOADED" "$SKIPPED" "$REMOTE"
 
 install-app:
   description: Download and install a Nextcloud app from GitHub releases
