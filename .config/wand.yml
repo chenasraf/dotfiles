@@ -107,3 +107,186 @@ mush:
         echo "Copying db_backups/$SRC to $DEST"
         cp "db_backups/$SRC" "$DEST"
         echo "Done."
+
+clean:
+  description: Delete package caches and build output from projects you haven't touched in a while
+  flags:
+    dir:
+      alias: d
+      description: Root directory holding the projects
+      default: ~/Dev
+    months:
+      alias: m
+      description: Delete caches from projects untouched for this many months
+      default: "2"
+    skip:
+      alias: s
+      description: Comma-separated glob patterns, relative to the root, to leave alone
+      default: ""
+    dry_run:
+      alias: n
+      description: List what would be deleted, delete nothing
+      type: bool
+    yes:
+      alias: y
+      description: Skip the confirmation prompt
+      type: bool
+  cmd: |
+    set -eu
+
+    ROOT=$WAND_FLAG_DIR
+    case "$ROOT" in "~"*) ROOT="$HOME${ROOT#\~}" ;; esac
+    MONTHS=$WAND_FLAG_MONTHS
+
+    if date -v-1d >/dev/null 2>&1; then
+      STAMP=$(date -v-"${MONTHS}"m +%Y%m%d%H%M)
+      CUTOFF=$(date -v-"${MONTHS}"m +%s)
+    else
+      STAMP=$(date -d "$MONTHS months ago" +%Y%m%d%H%M)
+      CUTOFF=$(date -d "$MONTHS months ago" +%s)
+    fi
+
+    REF=$(mktemp)
+    LIST=$(mktemp)
+    SIZED=$(mktemp)
+    trap 'rm -f "$REF" "$LIST" "$SIZED"' EXIT
+    touch -t "$STAMP" "$REF"
+
+    progress() { [ -t 2 ] || return 0; printf '\r%-78.78s' "$1" >&2; }
+    progress_end() { [ -t 2 ] || return 0; printf '\r%-78.78s\r' '' >&2; }
+
+    skipped() {
+      rel=${1#$ROOT/}
+      rest=$WAND_FLAG_SKIP
+      while [ -n "$rest" ]; do
+        pat=${rest%%,*}
+        case "$rest" in *,*) rest=${rest#*,} ;; *) rest='' ;; esac
+        # eval so the pattern is globbed rather than compared literally — zsh does
+        # not expand a variable into a case pattern the way sh does.
+        eval "case \"\$rel\" in ($pat) return 0 ;; esac"
+      done
+      return 1
+    }
+
+    claim() {
+      [ -d "$1" ] || return 0
+      if skipped "$1"; then return 0; fi
+      printf '%s\n' "$1" >>"$LIST"
+    }
+
+    scanned=0
+    projects=0
+    for proj in "$ROOT"/*; do
+      if [ -d "$proj" ]; then projects=$((projects + 1)); fi
+    done
+
+    for proj in "$ROOT"/*; do
+      [ -d "$proj" ] || continue
+      scanned=$((scanned + 1))
+      progress "Scanning [$scanned/$projects] ${proj#$ROOT/}"
+
+      # Stale only if neither the working tree nor git history shows activity past
+      # the cutoff — uncommitted work keeps a project's caches alive. Regenerated
+      # output is pruned so it never reads as activity.
+      recent=$(find "$proj" \( \
+          -name .git \
+          -o -name node_modules -o -name .dart_tool -o -name .next -o -name .nuxt \
+          -o -name .svelte-kit -o -name .angular -o -name .turbo -o -name .parcel-cache \
+          -o -name .venv -o -name venv -o -name .tox -o -name .mypy_cache \
+          -o -name .pytest_cache -o -name .ruff_cache -o -name Pods -o -name .gradle \
+          -o -name build -o -name target -o -name vendor -o -name _build \
+          -o -name deps -o -name .build \
+        \) -prune -o -type f -newer "$REF" -print 2>/dev/null | head -n 1)
+      [ -z "$recent" ] || continue
+
+      if [ -d "$proj/.git" ]; then
+        last=$(git -C "$proj" log -1 --no-show-signature --format=%ct 2>/dev/null || echo 0)
+        case "$last" in ''|*[!0-9]*) last=0 ;; esac
+        if [ "$last" -gt "$CUTOFF" ]; then continue; fi
+      fi
+
+      # Dirs a package manager recreates from a lockfile are taken on name alone;
+      # names too generic for that (build, target, vendor…) need a manifest beside
+      # them. site-packages is pruned so a virtualenv's vendored node_modules stays
+      # with the virtualenv.
+      find "$proj" \( -name .git -o -name site-packages \) -prune \
+        -o -type d \( \
+          -name node_modules -o -name .dart_tool -o -name .next -o -name .nuxt \
+          -o -name .svelte-kit -o -name .angular -o -name .turbo -o -name .parcel-cache \
+          -o -name .venv -o -name venv -o -name .tox -o -name .mypy_cache \
+          -o -name .pytest_cache -o -name .ruff_cache -o -name Pods -o -name .gradle \
+        \) -prune -print \
+        -o -type f \( \
+          -name pubspec.yaml -o -name Cargo.toml -o -name composer.json \
+          -o -name Gemfile -o -name mix.exs -o -name Package.swift \
+        \) -print 2>/dev/null |
+        while IFS= read -r hit; do
+          if [ -d "$hit" ]; then
+            claim "$hit"
+            continue
+          fi
+          near=${hit%/*}
+          case "${hit##*/}" in
+            pubspec.yaml)  claim "$near/build" ;;
+            Cargo.toml)    claim "$near/target" ;;
+            composer.json) claim "$near/vendor" ;;
+            Gemfile)       claim "$near/vendor/bundle" ;;
+            mix.exs)       claim "$near/_build"; claim "$near/deps" ;;
+            Package.swift) claim "$near/.build" ;;
+          esac
+        done
+    done
+    progress_end
+
+    if [ ! -s "$LIST" ]; then
+      echo "No stale caches in $ROOT (older than $MONTHS months)."
+      exit 0
+    fi
+
+    sort -u "$LIST" -o "$LIST"
+    found=$(wc -l <"$LIST" | tr -d ' ')
+
+    measured=0
+    total=0
+    while IFS= read -r cache; do
+      measured=$((measured + 1))
+      progress "Measuring [$measured/$found] ${cache#$ROOT/}"
+      size=$(du -sk "$cache" 2>/dev/null | cut -f1)
+      size=${size:-0}
+      total=$((total + size))
+      printf '%s\t%s\n' "$size" "$cache" >>"$SIZED"
+      progress_end
+      printf '%8sM  %s\n' "$(( (size + 1023) / 1024 ))" "${cache#$ROOT/}"
+    done <"$LIST"
+    printf '\n%s cache dir(s), %sM total\n\n' "$found" "$(( (total + 1023) / 1024 ))"
+
+    if [ "$WAND_FLAG_DRY_RUN" = "true" ]; then
+      echo "Dry run — nothing deleted."
+      exit 0
+    fi
+
+    if [ "$WAND_FLAG_YES" != "true" ]; then
+      if ! { exec 3</dev/tty; } 2>/dev/null; then
+        echo "No terminal to confirm on — pass --yes to delete unattended." >&2
+        exit 1
+      fi
+      printf 'Delete these? [y/N] '
+      read -r answer <&3
+      exec 3<&-
+      case "$answer" in
+        [yY]*) ;;
+        *) echo "Aborted."; exit 1 ;;
+      esac
+    fi
+
+    deleted=0
+    freed=0
+    while IFS="$(printf '\t')" read -r size cache; do
+      deleted=$((deleted + 1))
+      progress "Deleting [$deleted/$found] ${cache#$ROOT/}"
+      rm -rf "$cache"
+      freed=$((freed + size))
+      progress_end
+      printf '[%s/%s] %s (%sM freed)\n' "$deleted" "$found" "${cache#$ROOT/}" "$(( (freed + 1023) / 1024 ))"
+    done <"$SIZED"
+    printf '\nFreed %sM from %s cache dir(s).\n' "$(( (freed + 1023) / 1024 ))" "$deleted"
