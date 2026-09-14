@@ -656,6 +656,25 @@ install:
   - name: black
     type: pipx
 
+  - name: nextcloud-mcp-server
+    type: shell
+    tags: mcp claude
+    machines:
+      only: ["m1"]
+    frequency: 1w
+    # Installed as a persistent uv tool rather than run through uvx: uvx
+    # re-resolves the latest release on every MCP server launch, upstream ships
+    # near-daily, and the 141-package dep tree (onnxruntime, numpy, pymupdf,
+    # boto3) leaves a ~500MB generation in the uv cache per resolution.
+    # --no-cache writes straight into the tool venv, so the footprint stays flat.
+    check_installed: uv tool list 2>/dev/null | grep -q '^nextcloud-mcp-server '
+    check_has_update: >-
+      [ "$(uv tool list 2>/dev/null | awk '/^nextcloud-mcp-server /{print $2}')" !=
+      "v$(curl -fsSL https://pypi.org/pypi/nextcloud-mcp-server/json | jq -r .info.version)" ]
+    opts:
+      command: uv tool install --no-cache nextcloud-mcp-server
+      update_command: uv tool upgrade --no-cache nextcloud-mcp-server
+
   # ----------------------------------------------------------------------
   # 🔌 Zsh & Tmux Plugins
   # ----------------------------------------------------------------------
