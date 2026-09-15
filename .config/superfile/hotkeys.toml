@@ -18,7 +18,7 @@
 
 #-- Basic Actions
 confirm = ['enter', '']
-quit = ['ctrl+c', ''] # a.k.a. "theprimeagen troller"
+quit = ['ctrl+c', 'q'] # a.k.a. "theprimeagen troller"
 cd_quit = ['Q', '']
 
 #-- Navigation
