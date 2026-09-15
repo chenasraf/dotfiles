@@ -56,9 +56,9 @@ from `pre`/`post`.
 | `default`     | `any`    | Default value                               |
 | `type`        | `string` | `"bool"` for boolean flags, omit for string |
 
-Flag values are accessible as `$WAND_FLAG_<NAME>` env vars (uppercased). Name flags with underscores
-rather than hyphens — `dry_run` gives `$WAND_FLAG_DRY_RUN`, while `dry-run` would produce
-`WAND_FLAG_DRY-RUN`, which is not a valid shell variable name and never reaches the command.
+Flag values are accessible as `$WAND_FLAG_<NAME>` env vars: the name is uppercased and hyphens
+become underscores, so both `dry_run` and `dry-run` are read as `$WAND_FLAG_DRY_RUN`. Prefer
+hyphens in the flag name — `--dry-run` is the conventional CLI spelling.
 
 ### Global Flags
 
