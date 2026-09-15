@@ -123,7 +123,7 @@ clean:
       alias: s
       description: Comma-separated glob patterns, relative to the root, to leave alone
       default: ""
-    dry_run:
+    dry-run:
       alias: n
       description: List what would be deleted, delete nothing
       type: bool
