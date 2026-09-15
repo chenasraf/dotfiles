@@ -334,26 +334,84 @@ upload:
       type: bool
       description: Re-upload files even when the remote size already matches
   cmd: |
-    SRC="$1"
-    DEST="$2"
-    if [ -z "$SRC" ]; then
-      echo "Usage: nxc upload [--force] <source> [target]" >&2
+    if [ "$#" -eq 0 ]; then
+      echo "Usage: nxc upload [--force] <source>... [target]" >&2
       echo >&2
       echo "  nxc upload ./notes.md              -> /notes.md" >&2
       echo "  nxc upload ./notes.md Docs/        -> /Docs/notes.md" >&2
       echo "  nxc upload ./notes.md Docs/new.md  -> /Docs/new.md" >&2
       echo "  nxc upload ./photos Albums/        -> /Albums/photos/..." >&2
       echo "  nxc upload ./photos Albums/2024    -> /Albums/2024/..." >&2
+      echo "  nxc upload a.md b.md Docs/         -> /Docs/a.md, /Docs/b.md" >&2
+      echo "  nxc upload ./photos/* Albums/2024  -> /Albums/2024/<each entry>" >&2
       echo >&2
+      echo "With two or more sources the last argument is the target folder, and each" >&2
+      echo "source keeps its own name inside it." >&2
       echo "Files whose remote copy is the same size are skipped (--force overrides)." >&2
       echo "Files above NXC_CHUNK_MB (default 32) MiB go up in chunks, and an" >&2
       echo "interrupted run continues from the last chunk the server kept." >&2
       exit 1
     fi
-    if [ ! -e "$SRC" ]; then
-      echo "No such file or directory: $SRC" >&2
-      exit 1
+
+    # cp-style split: with two or more arguments the last one is the target and
+    # everything before it is a source. Rotating through "$@" keeps the sources in
+    # order without arrays.
+    DEST=""
+    if [ "$#" -ge 2 ]; then
+      _argc=$#
+      _argi=1
+      while [ "$_argi" -le "$_argc" ]; do
+        _arg="$1"
+        shift
+        if [ "$_argi" -eq "$_argc" ]; then
+          DEST="$_arg"
+        else
+          set -- "$@" "$_arg"
+        fi
+        _argi=$((_argi + 1))
+      done
     fi
+
+    # Single-quote the whole pattern, then break out of the quotes around each glob
+    # metacharacter, so the eval below expands the pattern and nothing else in it —
+    # a name holding $(...), a quote or a space survives intact.
+    glob_quote() {
+      printf '%s' "$1" | sed "s/'/'\\\\''/g; s/[]*?[]/'&'/g; s/^/'/; s/\$/'/"
+    }
+
+    # A pattern arrives unexpanded when it was quoted, or when the calling shell
+    # leaves a non-matching glob alone; expanding it here makes both spellings
+    # behave alike. zsh needs the eval — it does not glob an unquoted "$var".
+    # A pattern matching nothing stays literal, so the existence check below names
+    # the pattern the caller typed.
+    _argc=$#
+    _argi=0
+    while [ "$_argi" -lt "$_argc" ]; do
+      _arg="$1"
+      shift
+      _argi=$((_argi + 1))
+      if [ -e "$_arg" ] || [ -L "$_arg" ]; then
+        set -- "$@" "$_arg"
+        continue
+      fi
+      case "$_arg" in
+        *[]*?[]*)
+          _before=$#
+          eval "set -- \"\$@\" $(glob_quote "$_arg")" 2>/dev/null
+          if [ "$#" -eq "$_before" ]; then
+            set -- "$@" "$_arg"
+          fi
+          ;;
+        *) set -- "$@" "$_arg" ;;
+      esac
+    done
+
+    for SRC in "$@"; do
+      if [ ! -e "$SRC" ] && [ ! -L "$SRC" ]; then
+        echo "No such file or directory: $SRC" >&2
+        exit 1
+      fi
+    done
 
     DAV_HOST="${NXC_DAV_HOST:-${NEXTCLOUD_HOST:-}}"
     DAV_USER="${NXC_DAV_USER:-${NEXTCLOUD_USERNAME:-}}"
@@ -522,65 +580,90 @@ upload:
       UPLOADED=$((UPLOADED + 1))
     }
 
+    # Send one source to its resolved remote path. The locals carry an _up_ prefix
+    # because the put_* helpers share this shell and reuse the shorter names.
+    upload_one() {
+      _up_base="$1"; _up_remote="$2"
+
+      if [ -f "$_up_base" ]; then
+        case "$_up_remote" in
+          */*) mkcol_p "${_up_remote%/*}" || return 1 ;;
+        esac
+        echo "$_up_base -> /$_up_remote"
+        put "$_up_base" "$_up_remote" || return 1
+        return 0
+      fi
+
+      if [ ! -d "$_up_base" ]; then
+        echo "Not a regular file or directory: $_up_base" >&2
+        return 1
+      fi
+
+      _up_was_up=$UPLOADED
+      _up_was_skip=$SKIPPED
+      echo "$_up_base/ -> /$_up_remote/"
+      mkcol_p "$_up_remote" || return 1
+      # The strip patterns quote "$_up_base" so a "[...]" in the path stays literal
+      # instead of being read as a character class.
+      find "$_up_base" -mindepth 1 -type d -print > "$TMP"
+      while IFS= read -r d; do
+        mkcol_p "$_up_remote/${d#"$_up_base"/}" || return 1
+      done < "$TMP"
+      find "$_up_base" -type f ! -name '.DS_Store' ! -name '._*' -print > "$TMP"
+      _up_total="$(wc -l < "$TMP" | tr -d ' ')"
+      _up_n=0
+      while IFS= read -r f; do
+        _up_n=$((_up_n + 1))
+        put "$f" "$_up_remote/${f#"$_up_base"/}" "[$_up_n/$_up_total]" || return 1
+      done < "$TMP"
+      printf '%s uploaded, %s skipped -> /%s/\n' \
+        "$((UPLOADED - _up_was_up))" "$((SKIPPED - _up_was_skip))" "$_up_remote"
+    }
+
     CHUNK_MB="${NXC_CHUNK_MB:-32}"
     CHUNK_SIZE=$((CHUNK_MB * 1048576))
     UPLOADED=0
     SKIPPED=0
-    TMP=""
+    TMP="$(mktemp)"
     CHUNK_TMP="$(mktemp)"
     # A signal handler that only cleans up leaves the shell running the next file, so
     # these exit as well — Ctrl-C has to stop the whole transfer, not just one curl.
-    cleanup() { rm -f "$CHUNK_TMP" ${TMP:+"$TMP"}; }
+    cleanup() { rm -f "$CHUNK_TMP" "$TMP"; }
     trap 'cleanup' EXIT
     trap 'cleanup; exit 130' INT
     trap 'cleanup; exit 143' TERM
 
-    if [ -d "$SRC" ]; then
-      BASE="$(cd "$SRC" && pwd)"
-    else
-      BASE="$SRC"
-    fi
-    NAME="$(basename "$BASE")"
-
-    # A trailing slash on the target means "into this folder", anything else names the
-    # uploaded file/folder itself.
+    MULTI=0
+    [ "$#" -gt 1 ] && MULTI=1
     DEST="${DEST#/}"
-    case "$DEST" in
-      ""|*/) REMOTE="${DEST}${NAME}" ;;
-      *) REMOTE="$DEST" ;;
-    esac
 
-    if [ -f "$BASE" ]; then
-      case "$REMOTE" in
-        */*) mkcol_p "${REMOTE%/*}" || exit 1 ;;
-      esac
-      echo "$BASE -> /$REMOTE"
-      put "$BASE" "$REMOTE" || exit 1
-      exit 0
+    for SRC in "$@"; do
+      if [ -d "$SRC" ]; then
+        BASE="$(cd "$SRC" && pwd)"
+      else
+        BASE="$SRC"
+      fi
+      NAME="$(basename "$BASE")"
+
+      # A trailing slash on the target means "into this folder", anything else names
+      # the uploaded file/folder itself. Several sources can only go into a folder,
+      # so there the target is one whether or not it ends in a slash.
+      if [ "$MULTI" = 1 ]; then
+        REMOTE="${DEST%/}"
+        REMOTE="${REMOTE:+$REMOTE/}$NAME"
+      else
+        case "$DEST" in
+          ""|*/) REMOTE="${DEST}${NAME}" ;;
+          *) REMOTE="$DEST" ;;
+        esac
+      fi
+
+      upload_one "$BASE" "$REMOTE" || exit 1
+    done
+
+    if [ "$MULTI" = 1 ]; then
+      printf '%s uploaded, %s skipped in total\n' "$UPLOADED" "$SKIPPED"
     fi
-
-    if [ ! -d "$BASE" ]; then
-      echo "Not a regular file or directory: $SRC" >&2
-      exit 1
-    fi
-
-    echo "$BASE/ -> /$REMOTE/"
-    mkcol_p "$REMOTE" || exit 1
-    TMP="$(mktemp)"
-    # The strip patterns quote "$BASE" so a "[...]" in the path stays literal instead of
-    # being read as a character class.
-    find "$BASE" -mindepth 1 -type d -print > "$TMP"
-    while IFS= read -r d; do
-      mkcol_p "$REMOTE/${d#"$BASE"/}" || exit 1
-    done < "$TMP"
-    find "$BASE" -type f ! -name '.DS_Store' ! -name '._*' -print > "$TMP"
-    TOTAL="$(wc -l < "$TMP" | tr -d ' ')"
-    N=0
-    while IFS= read -r f; do
-      N=$((N + 1))
-      put "$f" "$REMOTE/${f#"$BASE"/}" "[$N/$TOTAL]" || exit 1
-    done < "$TMP"
-    printf '%s uploaded, %s skipped -> /%s/\n' "$UPLOADED" "$SKIPPED" "$REMOTE"
 
 install-app:
   description: Download and install a Nextcloud app from GitHub releases
