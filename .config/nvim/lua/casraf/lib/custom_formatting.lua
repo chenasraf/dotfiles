@@ -49,7 +49,21 @@ local function format(force)
     end
   end
 
-  vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), async = force })
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  -- vim.lsp.buf.format() notifies on every save of a buffer no server formats;
+  -- only reach for it once a client that can actually format is attached.
+  if #vim.lsp.get_clients({ bufnr = bufnr, method = "textDocument/formatting" }) == 0 then
+    if force then
+      vim.api.nvim_echo({
+        { "No formatter for ", "WarningMsg" },
+        { filename,            "String" },
+      }, false, {})
+    end
+    return
+  end
+
+  vim.lsp.buf.format({ bufnr = bufnr, async = force })
   vim.api.nvim_echo({
     { "Formatted ", },
     { filename,     "String" },
