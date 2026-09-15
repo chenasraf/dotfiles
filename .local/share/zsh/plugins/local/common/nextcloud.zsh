@@ -9,6 +9,7 @@ alias nc-logs="nxc logs --"
 alias nc-pretty-logs="nxc logs --pretty --"
 alias nc-debug="nxc debug --"
 alias nc-install-app="nxc install-app --"
+alias nc-upgrade="nxc upgrade"
 
 # Dev instance
 alias nc-use="nxc use"
@@ -16,7 +17,6 @@ alias nc-start="nxc start"
 alias nc-stop="nxc stop"
 
 # AIO instance
-alias nc-upgrade="nxc upgrade"
 alias nc-upgrade-beta="nxc upgrade --beta"
 alias nc-force-appupdate="nxc force-appupdate"
 alias nc-latest-version="nxc latest-version"

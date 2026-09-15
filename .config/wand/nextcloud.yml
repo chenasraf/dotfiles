@@ -144,19 +144,88 @@ debug:
     nc_exec_tty php occ config:system:set debug --type bool --value "$1"
 
 upgrade:
-  description: Upgrade Nextcloud AIO
+  description: Upgrade Nextcloud — AIO runs the updater, dev pulls git + images
   flags:
     beta:
       type: bool
-      description: Upgrade via beta channel
+      description: Upgrade via beta channel (AIO only)
   cmd: |
     eval "$NC_LIB"
+    nc_target
+
+    if [ "$NC_AIO" = 1 ]; then
+      if [ "$WAND_FLAG_BETA" = "true" ]; then
+        nc_aio_tty php occ config:system:set updater.release.channel --value=beta
+        nc_aio_tty php updater/updater.phar --no-interaction
+        nc_aio_tty php occ config:system:set updater.release.channel --value=stable
+      else
+        nc_aio_tty php updater/updater.phar --no-interaction
+      fi
+      exit 0
+    fi
+
     if [ "$WAND_FLAG_BETA" = "true" ]; then
-      nc_aio_tty php occ config:system:set updater.release.channel --value=beta
-      nc_aio_tty php updater/updater.phar --no-interaction
-      nc_aio_tty php occ config:system:set updater.release.channel --value=stable
+      echo "--beta only applies to AIO; the dev instance tracks git branches." >&2
+      exit 1
+    fi
+
+    REPO="${NXC_DEV_REPO:-$HOME/Dev/nextcloud-docker-dev}"
+    if [ ! -d "$REPO/.git" ]; then
+      echo "No dev checkout at $REPO (set NXC_DEV_REPO to override)." >&2
+      exit 1
+    fi
+    cd "$REPO" || exit 1
+
+    # .env owns the checkout locations and writes them with $HOME unexpanded,
+    # so put them through the shell the way docker compose interpolates them.
+    env_path() {
+      _v="$(sed -n "s/^$1=//p" "$REPO/.env" 2>/dev/null | tail -n1)"
+      [ -z "$_v" ] && return 1
+      eval "printf '%s' \"$_v\""
+    }
+
+    if [ "$NC_VERSION" = "nextcloud" ]; then
+      SERVER="$(env_path REPO_PATH_SERVER)" || SERVER="$REPO/workspace/server"
     else
-      nc_aio_tty php updater/updater.phar --no-interaction
+      STABLE_ROOT="$(env_path STABLE_ROOT_PATH)" || STABLE_ROOT="$REPO/workspace"
+      SERVER="$STABLE_ROOT/$NC_VERSION"
+    fi
+
+    # .env and docker-compose.override.yml are gitignored, so they ride through
+    # untouched. --autostash covers the tracked files Nextcloud rewrites in place
+    # (.htaccess gains its ErrorDocument block at install time); a re-apply that
+    # conflicts aborts the pull and leaves the stash for you to recover.
+    pull() {
+      echo "==> Updating $1"
+      git -C "$1" pull --ff-only --autostash
+    }
+
+    pull "$REPO" || exit 1
+
+    if [ -d "$SERVER/.git" ]; then
+      pull "$SERVER" || exit 1
+      git -C "$SERVER" submodule update --init --recursive || exit 1
+    else
+      echo "No git checkout at $SERVER; skipping server update." >&2
+    fi
+
+    echo "==> Pulling images"
+    docker compose pull --include-deps proxy "$NC_VERSION" || exit 1
+
+    echo "==> Recreating containers"
+    docker compose up -d proxy "$NC_VERSION" || exit 1
+
+    for _ in 1 2 3 4 5 6 7 8 9 10; do
+      docker exec --user www-data "$NC_CONTAINER" php occ status >/dev/null 2>&1 && break
+      sleep 2
+    done
+
+    echo "==> Running occ upgrade"
+    docker exec --user www-data "$NC_CONTAINER" php occ upgrade
+    RC=$?
+    # 3 means the code was already current, which is a no-op rather than a failure.
+    if [ "$RC" -ne 0 ] && [ "$RC" -ne 3 ]; then
+      exit "$RC"
     fi
 
 force-appupdate:
