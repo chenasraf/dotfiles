@@ -381,6 +381,9 @@ install:
   - name: catimg
     type: brew
 
+  - name: lolcat
+    type: brew
+
   - name: btop
     type: brew
 
