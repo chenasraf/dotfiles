@@ -19,7 +19,7 @@
 #-- Basic Actions
 confirm = ['enter', '']
 quit = ['ctrl+c', ''] # a.k.a. "theprimeagen troller"
-cd_quit = ['q', '']
+cd_quit = ['Q', '']
 
 #-- Navigation
 list_up = ['k', '']
@@ -29,7 +29,7 @@ page_down = ['pgdown','']
 
 #-- File Panel Controls
 create_new_file_panel = ['n', '']
-close_file_panel = ['Q', '']
+close_file_panel = ['F', '']
 next_file_panel = ['tab', '']
 previous_file_panel = ['shift+tab', '']
 split_file_panel = ['N', '']
