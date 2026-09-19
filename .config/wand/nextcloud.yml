@@ -767,3 +767,49 @@ unlock-files:
   description: Clear dangling file locks
   cmd: |
     sudo docker exec nextcloud-aio-redis sh -c 'redis-cli -a "$REDIS_HOST_PASSWORD" --scan --pattern "*lockfiles*" | xargs redis-cli -a "$REDIS_HOST_PASSWORD" del'
+
+aio-login:
+  description: Print a pre-authenticated URL for the AIO interface
+  aliases: [aio]
+  flags:
+    remote:
+      alias: r
+      type: bool
+      description: Read the token over SSH instead of from the local Docker daemon
+  env:
+    NC_AIO_MASTER: nextcloud-aio-mastercontainer
+    NC_AIO_CONFIG: /mnt/docker-aio-config/data/configuration.json
+    NC_AIO_SSH: spider
+  cmd: |
+    # AIO blocks the password login on :8080 for as long as Nextcloud is running and
+    # expects the token handoff from Nextcloud's admin settings instead. That handoff
+    # comes from the bundled nextcloud-aio app, which Nextcloud disables on a major
+    # upgrade whenever the app's declared max-version lags behind the server. The
+    # mastercontainer's own token still opens a session, so read it straight from there.
+    if [ "$WAND_FLAG_REMOTE" = "true" ]; then
+      CFG="$(ssh "$NC_AIO_SSH" "sudo docker exec $NC_AIO_MASTER cat $NC_AIO_CONFIG")"
+    else
+      CFG="$(sudo docker exec "$NC_AIO_MASTER" cat "$NC_AIO_CONFIG")"
+    fi
+    if [ -z "$CFG" ]; then
+      echo "Could not read $NC_AIO_CONFIG from $NC_AIO_MASTER." >&2
+      echo "Running this off the server? Add --remote to go via ssh $NC_AIO_SSH." >&2
+      exit 1
+    fi
+
+    TOKEN="$(printf '%s' "$CFG" | jq -r '.AIO_TOKEN // empty')"
+    HOSTPORT="$(printf '%s' "$CFG" | jq -r '.AIO_URL // empty')"
+    if [ -z "$TOKEN" ] || [ -z "$HOSTPORT" ]; then
+      echo "AIO_TOKEN or AIO_URL missing from $NC_AIO_CONFIG" >&2
+      exit 1
+    fi
+    # AIO stores AIO_URL bare (host:port), and the interface is TLS-only.
+    case "$HOSTPORT" in
+      http://*|https://*) URL="$HOSTPORT" ;;
+      *) URL="https://$HOSTPORT" ;;
+    esac
+
+    echo "$URL/api/auth/getlogin?token=$TOKEN"
+    echo
+    echo "Grants full AIO admin access - treat it like a password." >&2
+    echo "The certificate is self-signed, so the browser warning is expected." >&2
