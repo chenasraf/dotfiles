@@ -62,6 +62,7 @@ export VISUAL="$EDITOR"
 source "$DOTFILES/dirs.zsh"
 source "$DOTFILES/aliases.zsh"
 source "$DOTFILES/ghostty.zsh"
+source "$DOTFILES/terminal.zsh"
 
 [[ ! -f "$CFG/.p10k.zsh" ]] || source "$CFG/.p10k.zsh"
 
