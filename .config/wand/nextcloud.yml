@@ -30,6 +30,77 @@
       nc_aio() { sudo docker exec --user www-data nextcloud-aio-nextcloud "$@"; }
       nc_aio_tty() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
 
+    # Helpers for db-backup, pulled in with `eval "$NC_DB_LIB"`. These reach the
+    # AIO instance over ssh rather than through nc_target: the dumps live on a
+    # drive attached to this machine, so the command only makes sense from here.
+    NC_DB_LIB: |
+      NC_SSH="${NXC_NC_SSH:-spider}"
+      NC_DB_CONTAINER=nextcloud-aio-database
+      NC_APP_CONTAINER=nextcloud-aio-nextcloud
+      NC_REDIS_CONTAINER=nextcloud-aio-redis
+      NC_DB_KEEP="${NXC_DB_KEEP:-5}"
+      # Dumps sit beside the rsync'd data, not inside it: `nxc backup` runs with
+      # --delete --delete-excluded over $DRIVE/Nextcloud and would take them along.
+      NC_DB_DIR="${NXC_DB_DIR:-/Volumes/2T SSD/Nextcloud-db}"
+
+      # psql and pg_dump read their credentials from the database container's own
+      # environment. The remote shell keeps $POSTGRES_* inside single quotes, so
+      # the password is expanded in the container and never reaches a command line
+      # on this machine or on the server.
+      nc_pg() { ssh -n "$NC_SSH" "sudo docker exec $NC_DB_CONTAINER sh -c 'set -o pipefail; $1'"; }
+      nc_pg_stdin() { ssh "$NC_SSH" "sudo docker exec -i $NC_DB_CONTAINER sh -c 'set -o pipefail; $1'"; }
+      nc_occ() { ssh -n "$NC_SSH" "sudo docker exec --user www-data $NC_APP_CONTAINER php occ $*"; }
+
+      NC_PG_DUMP='PGPASSWORD="$POSTGRES_PASSWORD" pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" --no-owner --no-privileges | gzip -c'
+      NC_PG_LOAD='PGPASSWORD="$POSTGRES_PASSWORD" exec psql -v ON_ERROR_STOP=1 -q -o /dev/null --single-transaction -U "$POSTGRES_USER" -d "$POSTGRES_DB"'
+      NC_PG_KICK='PGPASSWORD="$POSTGRES_PASSWORD" exec psql -q -o /dev/null -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()"'
+
+      nc_db_dir() {
+        _parent="${NC_DB_DIR%/*}"
+        if [ ! -d "$_parent" ]; then
+          echo "Mount the 2T SSD first! ($_parent not found)" >&2
+          return 1
+        fi
+        mkdir -p "$NC_DB_DIR"
+      }
+
+      # pg_dump writes this line once it has walked every table, so it separates a
+      # finished dump from one whose connection dropped partway — the latter still
+      # decompresses cleanly and would otherwise pass for a good backup.
+      nc_db_complete() {
+        gzip -dc "$1" 2>/dev/null | tail -n 20 | grep -q 'PostgreSQL database dump complete'
+      }
+
+      # Compression happens in the container, so only the compressed stream crosses
+      # the network. The dump lands under .partial until it is verified, keeping a
+      # half-written file out of the way of nc_db_latest.
+      nc_db_dump_to() {
+        _dest="$1"
+        if ! nc_pg "$NC_PG_DUMP" > "$_dest.partial"; then
+          rm -f "$_dest.partial"
+          echo "pg_dump failed" >&2
+          return 1
+        fi
+        if ! nc_db_complete "$_dest.partial"; then
+          rm -f "$_dest.partial"
+          echo "Dump is truncated; not keeping it." >&2
+          return 1
+        fi
+        mv "$_dest.partial" "$_dest"
+      }
+
+      nc_db_ls() { find "$NC_DB_DIR" -maxdepth 1 -type f -name "$1*.sql.gz" 2>/dev/null | sort; }
+      nc_db_latest() { nc_db_ls nextcloud-db- | tail -n 1; }
+
+      nc_db_prune() {
+        _keep=$NC_DB_KEEP
+        _drop=$(( $(nc_db_ls "$1" | grep -c .) - _keep ))
+        [ "$_drop" -le 0 ] && return 0
+        nc_db_ls "$1" | head -n "$_drop" | while IFS= read -r _old; do
+          rm -f "$_old" && echo "Pruned $(basename "$_old")"
+        done
+      }
+
 use:
   description: Set the Nextcloud dev version
   cmd: |
@@ -324,6 +395,89 @@ backup:
       spider:/mnt/ncdata/ \
       "$DRIVE/Nextcloud/"
     find "$DRIVE/Nextcloud" -type f -name '._*' -exec rm -f -- {} +
+
+db-backup:
+  description: Dump the AIO database to the external drive
+  confirm: This will dump the Nextcloud database from spider to the 2T SSD. Continue?
+  cmd: |
+    eval "$NC_DB_LIB"
+
+    # An unknown subcommand falls through to the parent as a positional argument,
+    # so a mistyped `restore` would silently take a backup instead.
+    if [ "$#" -gt 0 ]; then
+      echo "Usage: nxc db-backup                  # dump the database to the 2T SSD" >&2
+      echo "       nxc db-backup restore [dump]   # load a dump back into the database" >&2
+      exit 1
+    fi
+
+    nc_db_dir || exit 1
+    OUT="$NC_DB_DIR/nextcloud-db-$(date +%Y%m%d-%H%M%S).sql.gz"
+
+    echo "==> Dumping $NC_SSH:$NC_DB_CONTAINER"
+    nc_db_dump_to "$OUT" || exit 1
+    echo "Wrote $OUT ($(du -h "$OUT" | cut -f1 | tr -d ' '))"
+
+    nc_db_prune nextcloud-db-
+
+  children:
+    restore:
+      description: Load a dump from the external drive back into the AIO database
+      confirm: This will REPLACE the live Nextcloud database on spider. Continue?
+      cmd: |
+        eval "$NC_DB_LIB"
+        nc_db_dir || exit 1
+
+        SRC="$1"
+        if [ -z "$SRC" ]; then
+          SRC="$(nc_db_latest)"
+          if [ -z "$SRC" ]; then
+            echo "No dumps in $NC_DB_DIR — run 'nxc db-backup' first." >&2
+            exit 1
+          fi
+        fi
+        if [ ! -f "$SRC" ]; then
+          echo "No such dump: $SRC" >&2
+          exit 1
+        fi
+
+        echo "==> Checking $(basename "$SRC")"
+        gzip -t "$SRC" || { echo "$SRC is corrupt." >&2; exit 1; }
+        nc_db_complete "$SRC" || { echo "$SRC is truncated." >&2; exit 1; }
+
+        nc_occ maintenance:mode --on || exit 1
+
+        SAFETY="$NC_DB_DIR/pre-restore-$(date +%Y%m%d-%H%M%S).sql.gz"
+        echo "==> Saving the current database as $(basename "$SAFETY")"
+        if ! nc_db_dump_to "$SAFETY"; then
+          echo "No rollback copy, so nothing was replaced." >&2
+          nc_occ maintenance:mode --off
+          exit 1
+        fi
+        nc_db_prune pre-restore-
+
+        # Open connections would block the schema drop, and pg_stat_activity is
+        # read after the dump above so this cannot cut that connection short.
+        nc_pg "$NC_PG_KICK" || exit 1
+
+        # The schema reset travels in the same transaction as the dump, so a load
+        # that fails anywhere leaves the existing database exactly as it was.
+        echo "==> Loading $(basename "$SRC")"
+        if ! { printf 'SET client_min_messages = warning;\nDROP SCHEMA IF EXISTS public CASCADE;\nCREATE SCHEMA public;\n'
+               gzip -dc "$SRC"; } | nc_pg_stdin "$NC_PG_LOAD"; then
+          echo >&2
+          echo "Restore failed. The database is unchanged and Nextcloud stays in" >&2
+          echo "maintenance mode; take it out with: nxc occ maintenance:mode --off" >&2
+          exit 1
+        fi
+
+        # Redis caches rows and file locks from the database that was just replaced.
+        echo "==> Flushing the Redis cache"
+        ssh -n "$NC_SSH" "sudo docker exec $NC_REDIS_CONTAINER sh -c 'redis-cli -a \"\$REDIS_HOST_PASSWORD\" --no-auth-warning FLUSHALL'" \
+          || echo "Warning: could not flush Redis." >&2
+
+        nc_occ maintenance:mode --off
+        echo "Restored $SRC"
+        echo "Rollback copy: $SAFETY"
 
 upload:
   description: Upload a file or folder to Nextcloud over WebDAV

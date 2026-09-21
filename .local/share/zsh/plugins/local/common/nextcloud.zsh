@@ -29,5 +29,7 @@ nc-mcp-update() {
 }
 
 alias nc-backup="nxc backup"
+alias nc-db-backup="nxc db-backup"
+alias nc-db-restore="nxc db-backup restore --"
 alias nc-enable-db-proxy="nxc db-proxy start"
 alias nc-disable-db-proxy="nxc db-proxy stop"
