@@ -1,0 +1,46 @@
+#!/bin/sh
+# Lists the filesystems worth putting on a status bar, one per line:
+#
+#   disk <used-percent> <label>
+#
+# A label of "/" marks the machine's own volume and comes first; anything else
+# is named after its mount point. Runs on the local machine and, shipped over
+# the wire by ssh-stats, on remote ones — so it stays POSIX sh.
+
+df -Pk 2>/dev/null | awk '
+  NR == 1 { next }
+  $1 !~ /^\/dev\// { next } # real block devices only, no tmpfs or maps
+  $2 < 1048576 { next }     # and nothing smaller than a gigabyte
+  {
+    dev = $1
+    pct = $5
+    gsub("%", "", pct)
+    mount = $6
+    for (i = 7; i <= NF; i++) mount = mount " " $i
+    if (seen[dev]++) next
+
+    # A mac keeps the writable half of its root volume on its own device, and
+    # that is the half worth reporting.
+    if (mount == "/System/Volumes/Data") { data = pct; next }
+    if (mount == "/") { root = pct; next }
+
+    # Everything a machine mounts for its own housekeeping.
+    if (mount ~ /^\/System\//) next
+    if (mount ~ /^\/Library\//) next
+    if (mount ~ /^\/(boot|snap|efi)/) next
+    if (mount ~ /^\/var\/(snap|lib\/docker|lib\/containers)/) next
+
+    label = mount
+    sub(/.*\//, "", label)
+    if (label == "") label = mount
+    rest[++n] = pct "\t" label
+  }
+  END {
+    if (data != "") print "disk", data, "/"
+    else if (root != "") print "disk", root, "/"
+    for (i = 1; i <= n; i++) {
+      split(rest[i], f, "\t")
+      print "disk", f[1], f[2]
+    }
+  }
+'

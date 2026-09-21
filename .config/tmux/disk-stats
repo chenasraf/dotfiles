@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Prints one pill per filesystem this machine has mounted, each turning red
+# once it crosses the threshold.
+#
+#   disk-stats <separator> <crust> <icon-bg> <fg> <text-bg> <high-fg> <high-bg>
+#              [threshold]
+#
+# Which filesystems count is disk-list's call; the machine's own volume is
+# labelled "/", the rest are named after their mount point.
+
+set -u
+
+DISK_ICON="󰋊"
+LIST="${BASH_SOURCE[0]%/*}/disk-list"
+
+main() {
+  local sep=${1:-} crust=${2:-} icon_bg=${3:-} fg=${4:-} bg=${5:-}
+  local high_fg=${6:-} high_bg=${7:-} threshold=${8:-85}
+  local kind used label text_fg text_bg
+
+  while read -r kind used label; do
+    [ "$kind" = disk ] || continue
+    text_fg=$fg text_bg=$bg
+    if [ "$used" -ge "$threshold" ]; then
+      text_fg=$high_fg text_bg=$high_bg
+    fi
+    # A pill opens with the gap that separates it from the one before, so the
+    # last one on the line ends on its reading and the bar can cap it.
+    # The label belongs with the icon, on the icon's own colour.
+    printf '#[fg=%s] #[fg=%s]%s#[fg=%s,bg=%s]%s %s#[fg=%s,bg=%s] %s%%' \
+      "$bg" "$icon_bg" "$sep" "$crust" "$icon_bg" "$DISK_ICON" "${label:+$label }" \
+      "$text_fg" "$text_bg" "$used"
+  done < <("$LIST")
+}
+
+main "$@"

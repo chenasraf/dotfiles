@@ -16,7 +16,7 @@ export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # local plugins
 export PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
-export TMUX_PLUGINS_DIR="$HOME/.tmux/plugins"
+export TMUX_PLUGINS_DIR="$HOME/.config/tmux/plugins"
 
 # Lazygit
 if [[ -d "$CFG/lazygit" ]]; then

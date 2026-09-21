@@ -1,0 +1,320 @@
+#!/usr/bin/env bash
+# Prints CPU and disk usage of the host the given pane is SSH'd into, and
+# nothing at all when the pane holds no ssh client.
+#
+#   ssh-stats <pane-pid> [separator crust fg text-bg host-color disk-color
+#                         cpu-color uptime-color high-fg high-bg
+#                         [cpu-threshold] [disk-threshold]]
+#
+# Given the palette, the reading comes back as two status pills built the way
+# the local ones are; without it, as plain text.
+#
+# The status line redraws every few seconds, so the remote is sampled by a
+# detached refresher that leaves its answer in a cache file; the status call
+# itself only reads that file and returns immediately.
+
+set -u
+
+# Short path on purpose: the control socket below lands here, and macOS caps a
+# Unix domain socket path at 104 characters — a per-user $TMPDIR blows past it.
+CACHE_DIR="/tmp/tmux-ssh-stats-${UID:-$(id -u)}"
+DISK_LIST="${BASH_SOURCE[0]%/*}/disk-list"
+FRESH_TTL=15 # seconds a reading stays good for
+ERROR_TTL=60 # back off harder when the host did not answer
+HOST_TTL=45  # seconds a pane keeps its resolved host without a rescan
+
+# Same glyphs the local disk and cpu pills use. The cpu one (U+F2DB) is a
+# private-use codepoint that editors like to mangle, so spell it in bytes.
+HOST_ICON="󰒋"
+DISK_ICON="󰋊"
+UPTIME_ICON="󰔟"
+printf -v CPU_ICON '\xef\x8b\x9b'
+
+# Pid and command line of the ssh client running under the pane, if any.
+find_ssh_argv() {
+  ps -Ao pid=,ppid=,command= | awk -v root="$1" '
+    {
+      pid = $1; ppid = $2
+      $1 = ""; $2 = ""; sub(/^ +/, "")
+      cmd[pid] = $0
+      kids[ppid] = kids[ppid] " " pid
+    }
+    END {
+      queue[0] = root; n = 1
+      for (i = 0; i < n; i++) {
+        count = split(kids[queue[i]], child, " ")
+        for (j = 1; j <= count; j++) {
+          c = child[j]
+          queue[n++] = c
+          base = cmd[c]
+          sub(/ .*/, "", base)
+          sub(/.*\//, "", base)
+          if (base == "ssh") { print c, cmd[c]; exit }
+        }
+      }
+    }
+  '
+}
+
+# First non-option word of an ssh command line, minus any user@ or ssh:// part.
+ssh_target() {
+  local argv i=1 arg target=""
+  # shellcheck disable=SC2206 # splitting the command line into words is the point
+  argv=($1)
+  while [ $i -lt ${#argv[@]} ]; do
+    arg=${argv[$i]}
+    case "$arg" in
+      # options that swallow the following word
+      -[BbcDEeFIiJLlmOoPpQRSWw])
+        i=$((i + 2))
+        ;;
+      -*)
+        i=$((i + 1))
+        ;;
+      *)
+        target=$arg
+        break
+        ;;
+    esac
+  done
+  [ -n "$target" ] || return 1
+  target=${target#ssh://}
+  target=${target#*@}
+  target=${target%%/*}
+  target=${target%%:*}
+  printf '%s\n' "$target"
+}
+
+# Every cache file carries its own timestamp, so reading one back costs no fork
+# at all on the path tmux redraws from. Sets NOW rather than printing it, for
+# the same reason: a command substitution would fork.
+now() {
+  if [ -n "${EPOCHSECONDS:-}" ]; then
+    NOW=$EPOCHSECONDS
+  else
+    NOW=$(date +%s)
+  fi
+}
+
+# Fills STAMP and FIELDS from a single-line cache file; both empty when there is
+# no usable line to read.
+read_cache() {
+  STAMP=""
+  FIELDS=""
+  [ -r "$1" ] || return 1
+  read -r STAMP FIELDS <"$1" || true
+  case "$STAMP" in
+    "" | *[!0-9]*)
+      STAMP=""
+      FIELDS=""
+      return 1
+      ;;
+  esac
+}
+
+# A reading: the timestamp on the first line, then one line per disk and one for
+# the cpu. STATE is ok, err, or empty when there is nothing cached yet.
+read_reading() {
+  STAMP=""
+  STATE=""
+  CPU=""
+  UPTIME=""
+  DISKS=()
+  [ -r "$1" ] || return 1
+  local kind value label
+  {
+    read -r STAMP || true
+    while read -r kind value label; do
+      case "$kind" in
+        ERR) STATE=err ;;
+        cpu) CPU=$value ;;
+        uptime) UPTIME="$value${label:+ $label}" ;;
+        disk) DISKS+=("$value${label:+ $label}") ;;
+      esac
+    done
+  } <"$1"
+  case "$STAMP" in
+    "" | *[!0-9]*)
+      STAMP=""
+      return 1
+      ;;
+  esac
+  [ -n "$STATE" ] || [ -z "$CPU" ] || STATE=ok
+}
+
+expired() {
+  local stamp=$1 ttl=$2
+  [ -n "$stamp" ] || return 0
+  now
+  [ $((NOW - stamp)) -ge "$ttl" ]
+}
+
+# Sample the remote over a connection that survives between refreshes: reuse
+# the multiplexing socket ssh_config already defines, else keep one of our own.
+refresh() {
+  local host=$1 cache=$2 lock="$2.lock" cp out opts
+  if ! mkdir "$lock" 2>/dev/null; then
+    read_cache "$lock/stamp" && ! expired "$STAMP" 120 && return 0
+    rm -rf "$lock"
+    mkdir "$lock" 2>/dev/null || return 0
+  fi
+  now
+  printf '%s\n' "$NOW" >"$lock/stamp"
+  # shellcheck disable=SC2064 # bake the path in: the local is gone by exit time
+  trap "rm -rf '$lock'" EXIT
+
+  opts=(-o BatchMode=yes -o ConnectTimeout=4 -o ServerAliveInterval=3 -o ServerAliveCountMax=2)
+  cp=$(ssh -G "$host" 2>/dev/null | awk '$1 == "controlpath" { print $2; exit }')
+  if [ -z "$cp" ] || [ "$cp" = none ]; then
+    opts+=(-o ControlMaster=auto -o "ControlPath=$CACHE_DIR/%C" -o ControlPersist=120)
+  fi
+
+  # The same lister that draws this machine's disk pills, run over there.
+  out=$( {
+    cat "$DISK_LIST"
+    cat <<'REMOTE'
+if [ -r /proc/stat ]; then
+  set -- $(awk '$1 == "cpu" { print $2+$3+$4+$7+$8+$9, $5+$6; exit }' /proc/stat)
+  busy1=$1 idle1=$2
+  sleep 1
+  set -- $(awk '$1 == "cpu" { print $2+$3+$4+$7+$8+$9, $5+$6; exit }' /proc/stat)
+  busy2=$1 idle2=$2
+  total=$((busy2 - busy1 + idle2 - idle1))
+  if [ "$total" -gt 0 ]; then
+    cpu=$(awk -v busy=$((busy2 - busy1)) -v total="$total" 'BEGIN { printf "%.1f", 100 * busy / total }')
+  else
+    cpu=0.0
+  fi
+else
+  cpu=$(top -l 1 -n 0 2>/dev/null | awk '/CPU usage/ { gsub("%", ""); printf "%.1f", 100 - $7; exit }')
+fi
+[ -n "$cpu" ] && printf 'cpu %s\n' "$cpu"
+up=$(uptime | sed 's/^[^,]*up *//; s/, *[[:digit:]]* user.*//; s/ day.*, */d /; s/ hr\(s*\).*/h/; s/ min\(s*\).*/m/; s/ sec\(s*\).*/s/; s/\([0-9]\{1,2\}\):\([0-9]\{1,2\}\)/\1h \2m/;')
+[ -n "$up" ] && printf 'uptime %s\n' "$up"
+REMOTE
+  } | ssh "${opts[@]}" "$host" sh -s 2>/dev/null)
+
+  now
+  case "$out" in
+    *cpu\ *) printf '%s\n%s\n' "$NOW" "$out" >"$cache.tmp" ;;
+    *) printf '%s\nERR\n' "$NOW" >"$cache.tmp" ;;
+  esac
+  mv -f "$cache.tmp" "$cache"
+}
+
+# Scanning the process table costs ~100ms, long enough that the status line
+# would redraw once without the segment and again with it. Keep the answer per
+# pane so the drawing path is a couple of file reads, and let the background
+# refresher — which is already paying for a round trip — keep it warm.
+pane_host() {
+  local pane_pid=$1 pane_cache="$CACHE_DIR/pane-$1" found ssh_pid host
+  if [ "${2:-}" != --rescan ] && read_cache "$pane_cache" && [ -n "$FIELDS" ] &&
+    ! expired "$STAMP" "$HOST_TTL"; then
+    # The cached answer is only about this one ssh process: once it exits, the
+    # pane either holds a different connection or none, and either way the
+    # answer has to be looked up again.
+    ssh_pid=${FIELDS%% *}
+    if kill -0 "$ssh_pid" 2>/dev/null; then
+      printf '%s\n' "${FIELDS#* }"
+      return 0
+    fi
+  fi
+
+  found=$(find_ssh_argv "$pane_pid")
+  if [ -z "$found" ] || ! host=$(ssh_target "${found#* }"); then
+    rm -f "$pane_cache"
+    return 1
+  fi
+  now
+  printf '%s %s %s\n' "$NOW" "${found%% *}" "$host" >"$pane_cache"
+  printf '%s\n' "$host"
+}
+
+# One pill, shaped like the ones catppuccin builds: the previous pill's closing
+# space, then the separator, the icon on its own colour, then the reading. A
+# reading at or above the threshold carries the alert colours, as the local cpu
+# pill does.
+pill() {
+  local color=$1 icon=$2 label=$3 text=$4 threshold=${5:-} text_fg=$FG text_bg=$TEXT_BG
+  if [ -n "$threshold" ] && [ -n "$HIGH_BG" ] &&
+    awk -v v="$text" -v t="$threshold" 'BEGIN { exit !(v + 0 >= t) }'; then
+    text_fg=$HIGH_FG text_bg=$HIGH_BG
+  fi
+  # The label belongs with the icon, on the icon's own colour.
+  printf '#[fg=%s] #[fg=%s]%s#[fg=%s,bg=%s]%s %s#[fg=%s,bg=%s] %s' \
+    "$TEXT_BG" "$color" "$LSEP" "$CRUST" "$color" "$icon" "${label:+$label }" \
+    "$text_fg" "$text_bg" "$text"
+}
+
+main() {
+  local refreshing=no pane_pid host cache ttl entry label value
+  if [ "${1:-}" = --refresh ]; then
+    refreshing=yes
+    shift
+  fi
+  pane_pid=${1:-}
+  [ -n "$pane_pid" ] || exit 0
+  LSEP=${2:-} CRUST=${3:-} FG=${4:-} TEXT_BG=${5:-}
+  HOST_COLOR=${6:-} DISK_COLOR=${7:-} CPU_COLOR=${8:-} UPTIME_COLOR=${9:-}
+  HIGH_FG=${10:-} HIGH_BG=${11:-} CPU_THRESHOLD=${12:-80} DISK_THRESHOLD=${13:-85}
+
+  [ -d "$CACHE_DIR" ] || mkdir -p "$CACHE_DIR"
+  if [ "$refreshing" = yes ]; then
+    host=$(pane_host "$pane_pid" --rescan) || exit 0
+  else
+    host=$(pane_host "$pane_pid") || exit 0
+  fi
+  cache="$CACHE_DIR/${host//[^A-Za-z0-9._-]/_}"
+
+  if [ "$refreshing" = yes ]; then
+    refresh "$host" "$cache"
+    exit 0
+  fi
+
+  read_reading "$cache" || true
+  if [ "$STATE" = err ]; then ttl=$ERROR_TTL; else ttl=$FRESH_TTL; fi
+  if [ -z "$STATE" ] || expired "$STAMP" "$ttl"; then
+    # Detached, with every stream closed: tmux reads a #() job until EOF.
+    (nohup "$0" --refresh "$pane_pid" >/dev/null 2>&1 </dev/null &) &
+  fi
+
+  if [ -z "$TEXT_BG" ]; then
+    # No palette: plain text, for a look at what the pills would say.
+    case "$STATE" in
+      "") printf '%s ⋯' "$host" ;;
+      err) printf '%s ✗' "$host" ;;
+      *)
+        printf '%s' "$host"
+        for entry in "${DISKS[@]}"; do
+          value=${entry%% *}
+          label=${entry#* }
+          [ "$label" = "$value" ] && label=""
+          printf ' %s %s%s%%' "$DISK_ICON" "${label:+$label }" "$value"
+        done
+        printf '  %s %s%%%s' "$CPU_ICON" "$CPU" "${UPTIME:+  $UPTIME_ICON $UPTIME}"
+        ;;
+    esac
+    return 0
+  fi
+
+  case "$STATE" in
+    "") pill "$HOST_COLOR" "$HOST_ICON" "" "$host ⋯" ;;
+    err) pill "$HOST_COLOR" "$HOST_ICON" "" "$host ✗" ;;
+    *)
+      pill "$HOST_COLOR" "$HOST_ICON" "" "$host"
+      # Disks, then cpu, then uptime — the order the local pills sit in. Every
+      # filesystem the remote reports gets its own pill, named after its mount
+      # point.
+      for entry in "${DISKS[@]}"; do
+        value=${entry%% *}
+        label=${entry#* }
+        [ "$label" = "$value" ] && label=""
+        pill "$DISK_COLOR" "$DISK_ICON" "$label" "$value%" "$DISK_THRESHOLD"
+      done
+      pill "$CPU_COLOR" "$CPU_ICON" "" "$CPU%" "$CPU_THRESHOLD"
+      [ -n "$UPTIME" ] && pill "$UPTIME_COLOR" "$UPTIME_ICON" "" "$UPTIME"
+      ;;
+  esac
+}
+
+main "$@"

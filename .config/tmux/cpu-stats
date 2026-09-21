@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# Prints this machine's cpu pill, turning red once the load crosses the
+# threshold.
+#
+#   cpu-stats <separator> <crust> <icon-bg> <fg> <text-bg> <high-fg> <high-bg>
+#             [threshold]
+#
+# Sampling cpu means watching it for a second, which is far too long to hold up
+# a redraw, so a detached sampler leaves its answer in a cache file and the
+# drawing path only reads it.
+
+set -u
+
+CACHE_DIR="/tmp/tmux-cpu-stats-${UID:-$(id -u)}"
+CACHE="$CACHE_DIR/reading"
+FRESH_TTL=5
+
+printf -v ICON '\xef\x8b\x9b' # U+F2DB, the glyph the theme's cpu pill uses
+
+now() {
+  if [ -n "${EPOCHSECONDS:-}" ]; then
+    NOW=$EPOCHSECONDS
+  else
+    NOW=$(date +%s)
+  fi
+}
+
+# Busy percentage over one second, as a single decimal.
+sample() {
+  if [ -r /proc/stat ]; then
+    local busy1 idle1 busy2 idle2 total
+    # shellcheck disable=SC2046 # the fields are the point
+    set -- $(awk '$1 == "cpu" { print $2+$3+$4+$7+$8+$9, $5+$6; exit }' /proc/stat)
+    busy1=$1 idle1=$2
+    sleep 1
+    # shellcheck disable=SC2046
+    set -- $(awk '$1 == "cpu" { print $2+$3+$4+$7+$8+$9, $5+$6; exit }' /proc/stat)
+    busy2=$1 idle2=$2
+    total=$((busy2 - busy1 + idle2 - idle1))
+    [ "$total" -gt 0 ] || return 1
+    awk -v busy=$((busy2 - busy1)) -v total="$total" 'BEGIN { printf "%.1f", 100 * busy / total }'
+  else
+    # Two samples a second apart; the second one is the live reading.
+    iostat -c 2 disk0 2>/dev/null | awk 'NF > 6 { idle = $6 } END { if (idle == "") exit 1; printf "%.1f", 100 - idle }'
+  fi
+}
+
+refresh() {
+  local lock="$CACHE.lock" reading
+  mkdir "$lock" 2>/dev/null || return 0
+  # shellcheck disable=SC2064 # bake the path in: the local is gone by exit time
+  trap "rm -rf '$lock'" EXIT
+  reading=$(sample) || return 0
+  now
+  printf '%s %s\n' "$NOW" "$reading" >"$CACHE.tmp"
+  mv -f "$CACHE.tmp" "$CACHE"
+}
+
+main() {
+  local refreshing=no stamp reading text_fg text_bg
+  if [ "${1:-}" = --refresh ]; then
+    refreshing=yes
+    shift
+  fi
+  local sep=${1:-} crust=${2:-} icon_bg=${3:-} fg=${4:-} bg=${5:-}
+  local high_fg=${6:-} high_bg=${7:-} threshold=${8:-80}
+
+  [ -d "$CACHE_DIR" ] || mkdir -p "$CACHE_DIR"
+  if [ "$refreshing" = yes ]; then
+    refresh
+    exit 0
+  fi
+
+  stamp="" reading=""
+  if [ -r "$CACHE" ]; then
+    read -r stamp reading <"$CACHE" || true
+  fi
+  case "$stamp" in
+    "" | *[!0-9]*) stamp="" reading="" ;;
+  esac
+
+  now
+  if [ -z "$stamp" ] || [ $((NOW - stamp)) -ge "$FRESH_TTL" ]; then
+    # Detached, with every stream closed: tmux reads a #() job until EOF.
+    (nohup "$0" --refresh >/dev/null 2>&1 </dev/null &) &
+  fi
+  [ -n "$reading" ] || exit 0
+
+  text_fg=$fg text_bg=$bg
+  if awk -v v="$reading" -v t="$threshold" 'BEGIN { exit !(v >= t) }'; then
+    text_fg=$high_fg text_bg=$high_bg
+  fi
+  # A pill opens with the gap that separates it from the one before, so the
+  # last one on the line ends on its reading and the bar can cap it.
+  printf '#[fg=%s] #[fg=%s]%s#[fg=%s,bg=%s]%s #[fg=%s,bg=%s] %s%%' \
+    "$bg" "$icon_bg" "$sep" "$crust" "$icon_bg" "$ICON" "$text_fg" "$text_bg" "$reading"
+}
+
+main "$@"
