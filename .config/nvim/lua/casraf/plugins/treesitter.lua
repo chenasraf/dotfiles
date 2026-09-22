@@ -1,6 +1,6 @@
 return {
   -- Highlight, edit, and navigate code
-  'chenasraf/nvim-treesitter',
+  'nvim-treesitter/nvim-treesitter',
   branch = 'main',
   lazy = false,
   dependencies = {
