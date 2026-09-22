@@ -1,118 +1,72 @@
-return {
-  'MunifTanjim/prettier.nvim',
-  -- dependencies = { 'jose-elias-alvarez/null-ls.nvim' },
-  config = function()
-    require("prettier").setup({
-      bin = 'prettier', -- or `'prettierd'` (v0.23.3+)
-      filetypes = {
-        "css",
-        "graphql",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "less",
-        "markdown",
-        "scss",
-        "typescript",
-        "typescriptreact",
-        "yaml",
-      },
-    })
+local prettier = { "prettier" }
 
-    -- local nls = require("null-ls")
-    local custom_formatting = require("casraf.lib.custom_formatting")
-    local format_on_save = custom_formatting.format_on_save
-    local format_manually = custom_formatting.format_manually
-
-    local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-    local event = "BufWritePre" -- or "BufWritePost"
-    -- local async = event == "BufWritePost"
-
-    vim.keymap.set("n", "=", format_manually, { desc = "[nolsp] format" })
-
-    -- format on save
-    vim.api.nvim_clear_autocmds({ group = group })
-    vim.api.nvim_create_autocmd(event, {
-      group = group,
-      callback = format_on_save,
-      desc = "[lsp] format on save",
-    })
-
-    vim.api.nvim_create_user_command('Prettier', function()
-      local file = vim.fn.expand('%')
-
-      -- Find project root by looking for package.json
-      local function find_project_root()
-        local current = vim.fn.expand('%:p:h')
-        while current ~= '/' do
-          if vim.fn.filereadable(current .. '/package.json') == 1 then
-            return current
-          end
-          current = vim.fn.fnamemodify(current, ':h')
-        end
-        return nil
-      end
-
-      local project_root = find_project_root()
-      local cmd
-
-      if project_root then
-        -- Check if prettier exists in node_modules
-        local local_prettier = project_root .. '/node_modules/.bin/prettier'
-        if vim.fn.executable(local_prettier) == 1 then
-          cmd = 'cd ' .. vim.fn.shellescape(project_root) .. ' && pnpm prettier --write ' .. vim.fn.shellescape(file)
-          vim.cmd('!' .. cmd)
-          return
-        end
-      end
-
-      -- Fall back to system-wide prettier
-      if vim.fn.executable('prettier') == 1 then
-        -- Check for global config files
-        local config_locations = {
-          vim.fn.expand('~/.prettierrc'),
-          vim.fn.expand('~/.prettierrc.json'),
-          vim.fn.expand('~/.prettierrc.yml'),
-          vim.fn.expand('~/.prettierrc.yaml'),
-          vim.fn.expand('~/.prettierrc.js'),
-          vim.fn.expand('~/.config/prettier/.prettierrc'),
-          vim.fn.expand('~/.config/prettier/config.json'),
-        }
-
-        local config_found = false
-        for _, config in ipairs(config_locations) do
-          if vim.fn.filereadable(config) == 1 then
-            config_found = true
-            break
-          end
-        end
-
-        if not config_found then
-          print('Warning: No global Prettier config found. Create one at:')
-          print('  ~/.prettierrc (JSON)')
-          print('  ~/.prettierrc.json')
-          print('  ~/.config/prettier/.prettierrc')
-        end
-
-        cmd = 'prettier --write ' .. vim.fn.shellescape(file)
-        vim.cmd('!' .. cmd)
-      else
-        print('Error: Prettier not found (neither local nor global)')
-      end
-    end, {})
-
-    -- nls.setup({
-    --   ---@diagnostic disable-next-line: unused-local
-    --   on_attach = function(client, bufnr)
-    --     -- if client.supports_method("textDocument/formatting") then
-    --     vim.keymap.set("n", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
-    --     -- end
-    --
-    --     -- if client.supports_method("textDocument/rangeFormatting") then
-    --     vim.keymap.set("x", "<Leader>F", format_manually, { buffer = bufnr, desc = "[lsp] format" })
-    --     -- end
-    --   end,
-    -- })
+-- mason.nvim puts its own bin directory at the front of $PATH, so a `:MasonInstall
+-- prettier` silently shadows the copy sofmani provisions — and prettier >=3.9.0
+-- mangles markdown, dropping spaces around inline code and refusing to re-wrap the
+-- paragraph. Resolve the provisioned binary by path so mason can't win.
+local function provisioned_prettier()
+  local pnpm = vim.env.PNPM_HOME and (vim.env.PNPM_HOME .. "/prettier")
+  if pnpm and vim.fn.executable(pnpm) == 1 then
+    return pnpm
   end
+  return "prettier"
+end
+
+return {
+  "stevearc/conform.nvim",
+  lazy = false,
+  config = function()
+    local conform = require("conform")
+    local custom_formatting = require("casraf.lib.custom_formatting")
+
+    conform.setup({
+      formatters_by_ft = {
+        css = prettier,
+        graphql = prettier,
+        html = prettier,
+        javascript = prettier,
+        javascriptreact = prettier,
+        json = prettier,
+        jsonc = prettier,
+        less = prettier,
+        markdown = prettier,
+        ["markdown.mdx"] = prettier,
+        scss = prettier,
+        svelte = prettier,
+        typescript = prettier,
+        typescriptreact = prettier,
+        vue = prettier,
+        yaml = prettier,
+        dart = { "dart_format" },
+        python = { "black" },
+      },
+      formatters = {
+        prettier = {
+          command = require("conform.util").find_executable({ "node_modules/.bin/prettier" }, provisioned_prettier()),
+          -- Prettier 3 treats .gitignore as an ignore file. $HOME/.gitignore ignores
+          -- `*`, so any file whose project root resolves to $HOME comes back from
+          -- prettier untouched, exit 0, with nothing to say it was skipped.
+          prepend_args = { "--ignore-path", ".prettierignore" },
+        },
+      },
+      -- `fallback` means: run the configured external formatter when there is one, and
+      -- only reach for the LSP when there isn't, so prettier and ts_ls never both fire.
+      -- It lives here rather than in the per-call opts so that list_formatters_to_run
+      -- resolves the same way the format call does.
+      default_format_opts = { lsp_format = "fallback" },
+      format_on_save = custom_formatting.format_on_save,
+      -- Plenty of filetypes here have neither an external formatter nor an LSP that
+      -- formats; saving those shouldn't nag.
+      notify_no_formatters = false,
+    })
+
+    -- 'formatexpr' is deliberately left alone: prettier can't format a range, so
+    -- pointing it at conform turns `gq` into a no-op instead of wrapping the paragraph.
+
+    vim.keymap.set("n", "=", custom_formatting.format_manually, { desc = "Format buffer" })
+
+    vim.api.nvim_create_user_command("Prettier", function()
+      conform.format({ formatters = { "prettier" }, lsp_format = "never", async = true })
+    end, { desc = "Format current buffer with prettier" })
+  end,
 }

@@ -1,80 +1,59 @@
 local S = {}
 
-local function external_format_stdin(filetype, format_cmd)
-  if vim.bo.filetype == filetype then
-    local newline = "\n"
-    local buftxt = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
+local OPTS = { timeout_ms = 3000 }
 
-    local command = format_cmd .. [[ <<-'EOF']] .. newline .. buftxt .. newline .. [[EOF]]
-    local output = vim.fn.system(command)
-    local err = vim.v.shell_error
-    if err ~= 0 or output == "" or string.find(output, "command not found:") then
-      error("Error: " .. err .. ": " .. output)
-    end
-
-    local lines = vim.split(output, "\n")
-
-    vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-    return true
+--- Options for conform's format-on-save hook, or nil to leave the buffer alone.
+function S.format_on_save()
+  if not AutoFormatEnabled then
+    return nil
   end
-
-  return false
+  return OPTS
 end
 
-local function format(force)
-  if not force and not AutoFormatEnabled then
-    return
-  end
-  local formatters = {
-    -- ["lua"] = "lua-format -i",
-    -- ["python"] = "black -",
-    -- ["sh"] = "shfmt -i 2 -ci -s -bn",
-    -- ["javascript"] = "prettier --stdin-filepath ${INPUT}",
-    -- ["typescript"] = "prettier --stdin-filepath ${INPUT}",
-    -- ["typescriptreact"] = "prettier --stdin-filepath ${INPUT}",
-    ["dart"] = { "dart", "format --output show" },
-    ["python"] = { "black", "--quiet -" },
-  }
-
+--- Format the whole buffer and report which formatter did it.
+function S.format_manually()
+  local conform = require("conform")
+  local bufnr = vim.api.nvim_get_current_buf()
   local filename = vim.fn.expand("%:t")
 
-  for filetype, format_cmd in pairs(formatters) do
-    if external_format_stdin(filetype, format_cmd[1] .. " " .. format_cmd[2]) then
-      vim.api.nvim_echo({
-        { "Formatted ", },
-        { filename,                   "String" },
-        { " using " .. format_cmd[1], }
-      }, true, {})
-      return
-    end
+  local formatters, lsp = conform.list_formatters_to_run(bufnr)
+  local names = vim.tbl_map(function(formatter)
+    return formatter.name
+  end, formatters)
+  if lsp then
+    table.insert(names, "LSP")
   end
 
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  -- vim.lsp.buf.format() notifies on every save of a buffer no server formats;
-  -- only reach for it once a client that can actually format is attached.
-  if #vim.lsp.get_clients({ bufnr = bufnr, method = "textDocument/formatting" }) == 0 then
-    if force then
-      vim.api.nvim_echo({
-        { "No formatter for ", "WarningMsg" },
-        { filename,            "String" },
-      }, false, {})
-    end
+  if #names == 0 then
+    vim.api.nvim_echo({
+      { "No formatter for ", "WarningMsg" },
+      { filename,            "String" },
+    }, false, {})
     return
   end
 
-  vim.lsp.buf.format({ bufnr = bufnr, async = force })
-  vim.api.nvim_echo({
-    { "Formatted ", },
-    { filename,     "String" },
-    { " using LSP", }
-  }, true, {})
+  conform.format(vim.tbl_extend("force", OPTS, { bufnr = bufnr, async = true }), function(err)
+    -- A server with nothing to change answers the format request with null, which
+    -- conform surfaces as an error. The buffer is already clean; say so.
+    if err and err:find("No result returned from LSP formatter", 1, true) then
+      err = nil
+    end
+    if err then
+      vim.api.nvim_echo({
+        { "Could not format ", "WarningMsg" },
+        { filename,            "String" },
+        { ": " .. err,         "WarningMsg" },
+      }, false, {})
+      return
+    end
+    -- Deliberately not keyed off the callback's did_edit: an already-formatted
+    -- buffer edits nothing, and that is a success, not a missing formatter.
+    vim.api.nvim_echo({
+      { "Formatted " },
+      { filename,                              "String" },
+      { " using " .. table.concat(names, ", ") },
+    }, true, {})
+  end)
 end
-
-local function format_on_save() format(false) end
-local function format_manually() format(true) end
-
-S.format_on_save = format_on_save
-S.format_manually = format_manually
 
 return S
