@@ -57,8 +57,62 @@ Every entry in the `install` array supports these fields:
 | `pre_update` | string | Shell hook before update |
 | `post_update` | string | Shell hook after update |
 | `skip_summary` | bool/object | Exclude from summary (`true`, or `{ install: true, update: true }`) |
+| `allow_failure` | bool | Log the failure and continue with the next installer instead of stopping the run (default `false`) |
 | `env_shell` | object | Platform-specific shell override (e.g. `{ linux: /bin/bash }`) |
 | `opts` | object | Type-specific options (see below) |
+
+### allow_failure
+
+A failing installer stops the whole run. Set `allow_failure: true` on steps that may legitimately
+fail — a tool missing from a registry on one machine, a service that isn't running — to log the
+error, print `Allowed to fail, continuing`, and move on:
+
+```yaml
+- name: some-flaky-tool
+  type: brew
+  allow_failure: true
+```
+
+The failing step is left out of the summary. Works on group/manifest steps too: an allowed failure
+inside a group lets its sibling steps run. Can also be set for a whole type under `defaults.type`.
+
+## Version Pinning
+
+Most types take `opts.version` to hold the software at an exact version instead of following the
+newest release:
+
+```yaml
+- name: prettier
+  type: npm
+  opts:
+    version: 3.3.3
+```
+
+The version is written in the format the package manager expects:
+
+| Type | Installed as | Example |
+|------|--------------|---------|
+| `npm` / `pnpm` / `yarn` | `name@version` | `3.3.3` |
+| `pipx` | `name==version` | `24.3.0` |
+| `cargo` | `cargo install --version` | `14.1.0`, `~1.2` |
+| `go` | `module@version` | `v0.16.0`, a commit SHA |
+| `apt` / `apk` | `name=version` | `13.0.0-2` |
+| `brew` | versioned formula `name@version` | `20`, for `node@20` |
+| `docker` | image tag `name:version` | `v0.5.0` |
+| `github-release` | release tag | `v1.2.3` |
+
+A pinned installer does not move on its own — sofmani records the version it installed and reports
+an update only once the pin changes. Remove the pin to follow the newest release again.
+
+For every type but `docker` and `cargo`, the version can equally be written onto `name`
+(`prettier@3.3.3`, `black==24.3.0`, `ripgrep=13.0.0-2`), which takes precedence over `opts.version`.
+Docker is the exception: a tag written into the image name keeps following the registry (`:main`,
+`:latest` move), so pin with `opts.version`.
+
+Homebrew only offers versions it publishes as formulae of their own, so `version: 20` on `node`
+resolves to `node@20` and fails if no such formula exists. `git` and `manifest` pin through
+`opts.ref` instead; `pacman` / `yay` cannot pin at all — the Arch repositories carry only the
+current version.
 
 ## Installer Types
 
@@ -80,7 +134,7 @@ With tap:
     tap: chenasraf/tap
 ```
 
-opts: `tap`, `cask` (bool).
+opts: `tap`, `cask` (bool), `version` (versioned formula, e.g. `20` for `node@20`).
 
 ### group
 
@@ -133,7 +187,8 @@ Clone a git repository.
     ref: main
 ```
 
-opts: `repository` (required), `destination` (required), `ref`.
+opts: `repository` (required), `destination` (required), `ref` (pins the checkout to a branch, tag,
+or commit).
 
 GitHub shorthand: `repository: user/repo` expands to `https://github.com/user/repo.git`.
 
@@ -151,7 +206,7 @@ Download a binary from GitHub releases.
     download_filename: tool_{{ .Version }}_Linux_{{ .ArchAlias }}.tar.gz
 ```
 
-opts: `repository` (required), `destination` (required), `strategy` (`tar`/`binary`/`zip`), `download_filename` (supports template vars including `{{ .Version }}`, `{{ .Tag }}`, `{{ .Arch }}`, `{{ .ArchAlias }}`).
+opts: `repository` (required), `destination` (required), `strategy` (`tar`/`binary`/`zip`), `download_filename` (supports template vars including `{{ .Version }}`, `{{ .Tag }}`, `{{ .Arch }}`, `{{ .ArchAlias }}`), `version` (pins to a release tag instead of the latest release — it fills `{{ .Tag }}`).
 
 ### manifest
 
@@ -178,6 +233,8 @@ Debian/Ubuntu package manager.
     only: ['linux']
 ```
 
+opts: `version` (`name=version`).
+
 ### npm / pnpm / yarn
 
 Node.js package managers. Install global packages.
@@ -189,6 +246,8 @@ Node.js package managers. Install global packages.
     global: true
 ```
 
+opts: `version` (`name@version`).
+
 ### pipx
 
 Python tool installer.
@@ -196,7 +255,11 @@ Python tool installer.
 ```yaml
 - name: black
   type: pipx
+  opts:
+    version: 24.3.0
 ```
+
+opts: `version` (`name==version`).
 
 ### cargo
 
@@ -206,6 +269,8 @@ Rust package installer.
 - name: ripgrep
   type: cargo
 ```
+
+opts: `version` (passed as `cargo install --version`).
 
 ### rsync
 
@@ -229,6 +294,9 @@ Pull and optionally run containers.
   opts:
     image: nginx:latest
 ```
+
+opts: `version` (image tag, appended as `name:version`; ignored when the image name already carries
+a tag, since those often move).
 
 ## Common Patterns
 
