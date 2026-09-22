@@ -11,6 +11,7 @@ term = xterm-256color
 # ==============================================================================
 # Reduce scroll sensitivity (default: precision:0.1,discrete:1)
 # mouse-scroll-multiplier = precision:0.1,discrete:0.85
+copy-on-select = clipboard
 
 # ==============================================================================
 # Window
