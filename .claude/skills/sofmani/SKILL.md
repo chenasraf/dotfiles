@@ -66,9 +66,10 @@ read `references/installer-configuration.md`.
 
 ### Platform restrictions
 
-`apt`, `apk`, `pacman` and `yay` are Linux-only by default — sofmani adds that restriction itself,
-so don't write it out. Brew has no such default (Homebrew runs on Linux too), so restrict it
-explicitly where it matters, usually on the group:
+`apt`, `apk`, `pacman` and `yay` run on Linux and nowhere else; sofmani enforces that itself and
+ignores any `platforms` written on such a step, so don't write one (use `enabled` to turn one off).
+Brew has no such restriction (Homebrew runs on Linux too), so scope it explicitly where it matters,
+usually on the group:
 
 ```yaml
 - name: macos-wm
