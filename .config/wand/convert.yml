@@ -1,0 +1,992 @@
+.config:
+  bin_name: conv
+  flags:
+    quality:
+      alias: q
+      description: 'low | medium | high | max — how much detail to keep (default: medium)'
+    resize:
+      alias: r
+      description: '0.5 = half size | 1024w = width | 768h = height | 1024x768 = fit inside box'
+    format:
+      alias: f
+      description: 'Video: mp4 mov mkv webm gif — Image: png jpg webp avif gif tiff (default: the output extension)'
+    preset:
+      alias: p
+      description: 'Ready-made settings for a destination — run "conv presets" to see them'
+    max-size:
+      alias: m
+      description: 'Fit the result under a size, e.g. 10M — spends quality to get there'
+    stretch:
+      type: bool
+      description: With --resize WxH, stretch to exactly that size instead of fitting inside it
+    overwrite:
+      alias: y
+      type: bool
+      description: Replace the output file if it already exists
+    dry-run:
+      alias: n
+      type: bool
+      description: Print the commands that would run, without running them
+    verbose:
+      type: bool
+      description: Show all of the encoder's output, not just errors and progress
+  env:
+    # Shared shell helpers, pulled into a command with `eval "$CONV_LIB"`. Nothing
+    # here belongs to one medium: --resize is read once and handed to whichever
+    # tool does the work, and size parsing, output naming and the dry-run wrapper
+    # behave the same whatever is being converted.
+    CONV_LIB: |
+      conv_die() { printf 'conv: %s\n' "$*" >&2; exit 1; }
+
+      conv_need() {
+        command -v "$1" >/dev/null 2>&1 || conv_die "$1 is not installed"
+      }
+
+      # Render an argv the way a shell would accept it back, for --dry-run.
+      conv_quote() {
+        for _a in "$@"; do
+          case "$_a" in
+            ''|*[!A-Za-z0-9_@%+=:,./-]*)
+              printf " '%s'" "$(printf '%s' "$_a" | sed "s/'/'\\\\''/g")" ;;
+            *) printf ' %s' "$_a" ;;
+          esac
+        done
+      }
+
+      conv_exec() {
+        if [ "$WAND_FLAG_DRY_RUN" = "true" ]; then
+          printf '+%s\n' "$(conv_quote "$@")"
+          return 0
+        fi
+        "$@"
+      }
+
+      # Like conv_exec, but keeps a chatty tool's progress off the terminal.
+      # --dry-run still prints the command, and stderr still comes through.
+      conv_exec_quiet() {
+        if [ "$WAND_FLAG_DRY_RUN" = "true" ] || [ "$WAND_FLAG_VERBOSE" = "true" ]; then
+          conv_exec "$@"
+          return $?
+        fi
+        "$@" >/dev/null
+      }
+
+      conv_add_filter() {
+        [ -n "$1" ] || return 0
+        if [ -z "$FILTERS" ]; then FILTERS="$1"; else FILTERS="$FILTERS,$1"; fi
+      }
+
+      # One spelling of --resize for every medium. The spec is read here; each
+      # renderer below only translates the result into its own tool's syntax.
+      conv_parse_resize() {
+        CONV_RS_KIND=; CONV_RS_W=; CONV_RS_H=; CONV_RS_FACTOR=
+        _spec="$1"
+        [ -n "$_spec" ] || return 0
+        case "$_spec" in
+          *x*)
+            CONV_RS_W="${_spec%x*}"; CONV_RS_H="${_spec#*x}"
+            case "$CONV_RS_W" in ''|*[!0-9]*) conv_die "bad --resize '$_spec'" ;; esac
+            case "$CONV_RS_H" in ''|*[!0-9]*) conv_die "bad --resize '$_spec'" ;; esac
+            CONV_RS_KIND=box ;;
+          *w)
+            CONV_RS_W="${_spec%w}"
+            case "$CONV_RS_W" in ''|*[!0-9]*) conv_die "bad --resize '$_spec'" ;; esac
+            CONV_RS_KIND=width ;;
+          *h)
+            CONV_RS_H="${_spec%h}"
+            case "$CONV_RS_H" in ''|*[!0-9]*) conv_die "bad --resize '$_spec'" ;; esac
+            CONV_RS_KIND=height ;;
+          *)
+            CONV_RS_FACTOR="$_spec"
+            case "$CONV_RS_FACTOR" in ''|*[!0-9.]*) conv_die "bad --resize '$_spec' (try 0.5, 1024w, 768h or 1024x768)" ;; esac
+            CONV_RS_KIND=factor ;;
+        esac
+      }
+
+      # Video encoders subsample chroma, so both dimensions have to stay even —
+      # hence the rounding in the scale expressions rather than a plain multiply.
+      conv_scale_filter() {
+        conv_parse_resize "$1" || return 1
+        case "$CONV_RS_KIND" in
+          '') ;;
+          box)
+            if [ "$WAND_FLAG_STRETCH" = "true" ]; then
+              printf 'scale=%s:%s' "$CONV_RS_W" "$CONV_RS_H"
+            else
+              printf 'scale=w=%s:h=%s:force_original_aspect_ratio=decrease:force_divisible_by=2' "$CONV_RS_W" "$CONV_RS_H"
+            fi ;;
+          width) printf 'scale=%s:-2' "$CONV_RS_W" ;;
+          height) printf 'scale=-2:%s' "$CONV_RS_H" ;;
+          factor) printf 'scale=trunc(iw*%s/2)*2:trunc(ih*%s/2)*2' "$CONV_RS_FACTOR" "$CONV_RS_FACTOR" ;;
+        esac
+      }
+
+      # ImageMagick geometry — a bare WxH already means "fit inside", and a
+      # trailing ! is what overrides it.
+      conv_scale_geometry() {
+        conv_parse_resize "$1" || return 1
+        case "$CONV_RS_KIND" in
+          '') ;;
+          box)
+            printf '%sx%s' "$CONV_RS_W" "$CONV_RS_H"
+            [ "$WAND_FLAG_STRETCH" = "true" ] && printf '!' ;;
+          width) printf '%sx' "$CONV_RS_W" ;;
+          height) printf 'x%s' "$CONV_RS_H" ;;
+          factor) awk -v f="$CONV_RS_FACTOR" 'BEGIN { printf "%g%%", f * 100 }' ;;
+        esac
+        return 0
+      }
+
+      # rsvg-convert renders at the requested size instead of rasterising once and
+      # scaling after, so vector sources stay sharp at whatever size is asked for.
+      conv_rsvg_size_args() {
+        conv_parse_resize "$1" || return 1
+        case "$CONV_RS_KIND" in
+          '') ;;
+          box)
+            printf -- '-w %s -h %s' "$CONV_RS_W" "$CONV_RS_H"
+            [ "$WAND_FLAG_STRETCH" = "true" ] || printf -- ' -a' ;;
+          width) printf -- '-w %s' "$CONV_RS_W" ;;
+          height) printf -- '-h %s' "$CONV_RS_H" ;;
+          factor) printf -- '-z %s' "$CONV_RS_FACTOR" ;;
+        esac
+        return 0
+      }
+
+      conv_quality() {
+        case "$1" in
+          '') printf 'medium' ;;
+          low|medium|high|max) printf '%s' "$1" ;;
+          *) conv_die "bad --quality '$1' (low, medium, high, max)" ;;
+        esac
+      }
+
+      conv_bytes() {
+        _s="$(printf '%s' "$1" | tr 'A-Z' 'a-z' | tr -d ' ib')"
+        case "$_s" in
+          *k) _mul=1024; _n="${_s%k}" ;;
+          *m) _mul=1048576; _n="${_s%m}" ;;
+          *g) _mul=1073741824; _n="${_s%g}" ;;
+          *)  _mul=1; _n="$_s" ;;
+        esac
+        case "$_n" in ''|*[!0-9.]*) conv_die "bad size '$1' (try 10M, 500K or 1.5G)" ;; esac
+        awk -v n="$_n" -v m="$_mul" 'BEGIN { printf "%d", n * m }'
+      }
+
+      conv_hsize() {
+        awk -v b="$1" 'BEGIN {
+          split("B KB MB GB", u, " ")
+          i = 1; while (b >= 1024 && i < 4) { b /= 1024; i++ }
+          printf (i == 1 ? "%d %s" : "%.1f %s"), b, u[i]
+        }'
+      }
+
+      conv_filesize() { wc -c < "$1" | tr -d ' '; }
+
+      # Accepts 90, 1:30 or 00:01:30.5 and answers in seconds.
+      conv_secs() {
+        printf '%s' "$1" | awk -F: '{ s = 0; for (i = 1; i <= NF; i++) s = s * 60 + $i; printf "%.3f", s }'
+      }
+
+      conv_duration() {
+        ffprobe -v error -show_entries format=duration -of default=nk=1:nw=1 "$1" 2>/dev/null
+      }
+
+      conv_has_audio() {
+        [ -n "$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$1" 2>/dev/null)" ]
+      }
+
+      conv_report() {
+        [ "$WAND_FLAG_DRY_RUN" != "true" ] || return 0
+        [ -f "$2" ] || return 0
+        _ib="$(conv_filesize "$1")"; _ob="$(conv_filesize "$2")"
+        printf '%s -> %s  (%s -> %s, %s%% of the original)\n' \
+          "$1" "$2" "$(conv_hsize "$_ib")" "$(conv_hsize "$_ob")" \
+          "$(awk -v a="$_ib" -v b="$_ob" 'BEGIN { printf "%d", b * 100 / a }')"
+      }
+
+      # Name the output after the input with the target extension. When that lands
+      # on the input itself, the first free -1, -2, … suffix keeps the source safe.
+      conv_out_path() {
+        _in="$1"; _ext="$2"
+        _base="$_in"
+        case "$_base" in *.*) _base="${_base%.*}" ;; esac
+        _out="$_base.$_ext"
+        if [ "$_out" = "$_in" ]; then
+          _n=1
+          while [ -e "$_base-$_n.$_ext" ]; do _n=$((_n + 1)); done
+          _out="$_base-$_n.$_ext"
+        fi
+        printf '%s' "$_out"
+      }
+
+    # Quality names mapped onto each encoder's own scale, plus the codec each
+    # container gets by default.
+    CONV_CODEC_LIB: |
+      conv_codec_for_format() {
+        case "$1" in
+          mp4|mov|m4v|mkv) printf 'h264' ;;
+          webm) printf 'vp9' ;;
+          gif) printf 'gif' ;;
+          *) conv_die "unknown --format '$1' (mp4, mov, mkv, webm, gif)" ;;
+        esac
+      }
+
+      conv_video_encoder() {
+        case "$1" in
+          h264) printf 'libx264' ;;
+          h265) printf 'libx265' ;;
+          vp9) printf 'libvpx-vp9' ;;
+          av1) printf 'libsvtav1' ;;
+          *) conv_die "unknown --codec '$1' (h264, h265, vp9, av1)" ;;
+        esac
+      }
+
+      conv_audio_encoder() {
+        case "$1" in
+          vp9|av1) printf 'libopus' ;;
+          *) printf 'aac' ;;
+        esac
+      }
+
+      conv_crf() {
+        case "$1:$2" in
+          h264:low) printf 32 ;; h264:medium) printf 28 ;; h264:high) printf 23 ;; h264:max) printf 18 ;;
+          h265:low) printf 36 ;; h265:medium) printf 32 ;; h265:high) printf 26 ;; h265:max) printf 20 ;;
+          vp9:low)  printf 42 ;; vp9:medium)  printf 36 ;; vp9:high)  printf 31 ;; vp9:max)  printf 24 ;;
+          av1:low)  printf 50 ;; av1:medium)  printf 42 ;; av1:high)  printf 34 ;; av1:max)  printf 26 ;;
+          *) conv_die "no quality mapping for codec '$1'" ;;
+        esac
+      }
+
+      conv_audio_kbps() {
+        case "$1" in low) printf 64 ;; medium) printf 96 ;; high) printf 128 ;; max) printf 192 ;; esac
+      }
+
+      conv_x264_preset() {
+        case "$1" in low|medium) printf 'medium' ;; *) printf 'slow' ;; esac
+      }
+
+      # x265 costs several times what x264 does at the same preset name, so each
+      # quality step sits one notch faster than its x264 counterpart.
+      conv_x265_preset() {
+        case "$1" in low) printf 'veryfast' ;; medium) printf 'fast' ;; high) printf 'medium' ;; *) printf 'slow' ;; esac
+      }
+
+      conv_svt_preset() {
+        case "$1" in low) printf 8 ;; medium) printf 6 ;; high) printf 5 ;; max) printf 4 ;; esac
+      }
+
+      conv_gif_colors() {
+        case "$1" in low) printf 64 ;; medium) printf 128 ;; high) printf 192 ;; max) printf 256 ;; esac
+      }
+
+      # atempo only accepts 0.5–2.0, so anything beyond that is a chain.
+      conv_atempo_chain() {
+        awk -v s="$1" 'BEGIN {
+          out = ""
+          while (s > 2.0) { out = out "atempo=2.0,"; s /= 2.0 }
+          while (s < 0.5) { out = out "atempo=0.5,"; s /= 0.5 }
+          printf "%satempo=%s", out, s
+        }'
+      }
+
+      conv_video_preset() {
+        case "$1" in
+          '') return 0 ;;
+          github|discord) P_FORMAT=mp4; P_CODEC=h264; P_QUALITY=high; P_MAXSIZE=10M ;;
+          web) P_FORMAT=mp4; P_CODEC=h264; P_QUALITY=high; P_RESIZE=1280w ;;
+          gif) P_FORMAT=gif; P_FPS=15; P_RESIZE=640w ;;
+          tiny) P_FORMAT=mp4; P_CODEC=h264; P_QUALITY=low; P_FPS=24; P_RESIZE=0.5 ;;
+          archive) P_FORMAT=mkv; P_CODEC=h265; P_QUALITY=max ;;
+          *) conv_die "unknown video --preset '$1' (github, discord, web, gif, tiny, archive)" ;;
+        esac
+      }
+
+    # Raster work goes through ImageMagick, which reads and writes every format
+    # here bar one: it accepts an .avif filename but writes PNG bytes into it, so
+    # AVIF is handed to avifenc. SVG is rendered by rsvg-convert — ImageMagick
+    # delegates SVG to Ghostscript, which is not part of this toolchain.
+    CONV_IMAGE_LIB: |
+      conv_image_format() {
+        case "$1" in
+          png|jpg|jpeg|webp|avif|gif|tiff|pdf|eps|ps|svg) printf '%s' "$1" ;;
+          *) conv_die "unknown --format '$1' (png, jpg, webp, avif, gif, tiff; pdf, eps, ps, svg from an svg source)" ;;
+        esac
+      }
+
+      # A single 0–100 scale across the encoders, so --quality means the same
+      # thing whichever format the file lands in.
+      conv_image_level() {
+        case "$1" in low) printf 55 ;; medium) printf 78 ;; high) printf 90 ;; max) printf 97 ;; esac
+      }
+
+      conv_is_vector_format() {
+        case "$1" in pdf|eps|ps|svg) return 0 ;; *) return 1 ;; esac
+      }
+
+      conv_is_svg_file() {
+        case "$(printf '%s' "$1" | tr 'A-Z' 'a-z')" in *.svg|*.svgz) return 0 ;; *) return 1 ;; esac
+      }
+
+      # ImageMagick's heic coder module is absent from this install, so these
+      # arrive as a plain png decoded by ffmpeg before any editing happens.
+      conv_needs_decode() {
+        case "$(printf '%s' "$1" | tr 'A-Z' 'a-z')" in *.avif|*.heic|*.heif) return 0 ;; *) return 1 ;; esac
+      }
+
+      # Formats that cannot carry an alpha channel need the transparent areas
+      # painted in, or the encoder decides for itself and usually picks black.
+      conv_format_keeps_alpha() {
+        case "$1" in png|webp|avif|gif|tiff|svg|pdf) return 0 ;; *) return 1 ;; esac
+      }
+
+      conv_image_preset() {
+        case "$1" in
+          '') return 0 ;;
+          web) P_FORMAT=webp; P_QUALITY=high; P_RESIZE=1600w ;;
+          github) P_FORMAT=webp; P_QUALITY=high; P_RESIZE=1600w; P_MAXSIZE=10M ;;
+          thumb) P_FORMAT=webp; P_QUALITY=medium; P_RESIZE=400w ;;
+          avatar) P_FORMAT=webp; P_QUALITY=high; P_RESIZE=512x512 ;;
+          tiny) P_FORMAT=jpg; P_QUALITY=low; P_RESIZE=0.5 ;;
+          archive) P_FORMAT=png; P_QUALITY=max ;;
+          *) conv_die "unknown image --preset '$1' (web, github, thumb, avatar, tiny, archive)" ;;
+        esac
+      }
+
+video:
+  description: Convert a video file — conv video <input> [output]
+  aliases:
+    - v
+  flags:
+    fps:
+      description: 'Frames per second, e.g. 30 (default: unchanged, or 15 for gif)'
+    crf:
+      description: Exact quality number for the codec, overriding --quality (lower is better)
+    codec:
+      alias: c
+      description: 'h264 | h265 | vp9 | av1 (default: whatever the format normally carries)'
+    mute:
+      type: bool
+      description: Drop the audio track
+    audio-bitrate:
+      description: 'Audio bitrate, e.g. 128k (default: follows --quality)'
+    start:
+      alias: s
+      description: Trim from this timestamp, e.g. 5 or 00:00:05
+    end:
+      alias: e
+      description: Trim up to this timestamp
+    duration:
+      alias: d
+      description: Keep this many seconds from --start, instead of using --end
+    speed:
+      description: 'Playback multiplier — 2 plays twice as fast, 0.5 half (default: 1)'
+    loop:
+      description: 'gif loop count — 0 repeats forever, 1 plays once (default: 0)'
+  cmd: |
+    eval "$CONV_LIB"
+    eval "$CONV_CODEC_LIB"
+    conv_need ffmpeg
+    conv_need ffprobe
+
+    IN="$1"; OUT="$2"
+    [ -n "$IN" ] || conv_die "no input file — usage: conv video <input> [output]"
+    [ -f "$IN" ] || conv_die "no such file: $IN"
+
+    P_FORMAT=; P_CODEC=; P_QUALITY=; P_FPS=; P_RESIZE=; P_MAXSIZE=
+    conv_video_preset "$WAND_FLAG_PRESET" || exit 1
+
+    FORMAT="$WAND_FLAG_FORMAT"
+    if [ -z "$FORMAT" ] && [ -n "$OUT" ]; then
+      case "$OUT" in *.*) FORMAT="${OUT##*.}" ;; esac
+    fi
+    [ -n "$FORMAT" ] || FORMAT="$P_FORMAT"
+    [ -n "$FORMAT" ] || FORMAT=mp4
+    FORMAT="$(printf '%s' "$FORMAT" | tr 'A-Z' 'a-z')"
+
+    QUALITY="$WAND_FLAG_QUALITY"; [ -n "$QUALITY" ] || QUALITY="$P_QUALITY"
+    QUALITY="$(conv_quality "$QUALITY")" || exit 1
+
+    RESIZE="$WAND_FLAG_RESIZE"; [ -n "$RESIZE" ] || RESIZE="$P_RESIZE"
+    FPS="$WAND_FLAG_FPS"; [ -n "$FPS" ] || FPS="$P_FPS"
+    MAXSIZE="$WAND_FLAG_MAX_SIZE"; [ -n "$MAXSIZE" ] || MAXSIZE="$P_MAXSIZE"
+    SPEED="$WAND_FLAG_SPEED"; [ -n "$SPEED" ] || SPEED=1
+
+    if [ "$FORMAT" = gif ]; then
+      CODEC=gif
+      [ -n "$FPS" ] || FPS=15
+    else
+      CODEC="$WAND_FLAG_CODEC"; [ -n "$CODEC" ] || CODEC="$P_CODEC"
+      if [ -z "$CODEC" ]; then
+        CODEC="$(conv_codec_for_format "$FORMAT")" || exit 1
+      fi
+      conv_video_encoder "$CODEC" >/dev/null || exit 1
+    fi
+
+    [ -n "$OUT" ] || OUT="$(conv_out_path "$IN" "$FORMAT")" || exit 1
+    [ "$OUT" != "$IN" ] || conv_die "that would overwrite the input — name a different output"
+    if [ -e "$OUT" ] && [ "$WAND_FLAG_OVERWRITE" != "true" ]; then
+      conv_die "$OUT already exists — pass --overwrite to replace it"
+    fi
+
+    MUTE="$WAND_FLAG_MUTE"
+    conv_has_audio "$IN" || MUTE=true
+
+    # Trim window. -ss goes ahead of -i so ffmpeg seeks rather than decodes up to
+    # the start, which makes -t the length of what is kept, not an end timestamp.
+    START="$WAND_FLAG_START"
+    KEEP="$WAND_FLAG_DURATION"
+    if [ -z "$KEEP" ] && [ -n "$WAND_FLAG_END" ]; then
+      _s=0; [ -n "$START" ] && _s="$(conv_secs "$START")"
+      KEEP="$(awk -v a="$(conv_secs "$WAND_FLAG_END")" -v b="$_s" 'BEGIN { printf "%.3f", a - b }')"
+      case "$KEEP" in -*) conv_die "--end comes before --start" ;; esac
+    fi
+
+    FILTERS=
+    case "$SPEED" in
+      1|1.0) ;;
+      *[!0-9.]*) conv_die "bad --speed '$SPEED' (a number, e.g. 2 or 0.5)" ;;
+      *) conv_add_filter "setpts=PTS/$SPEED" ;;
+    esac
+    [ -n "$FPS" ] && conv_add_filter "fps=$FPS"
+    SCALE="$(conv_scale_filter "$RESIZE")" || exit 1
+    conv_add_filter "$SCALE"
+
+    AFILTER=
+    case "$SPEED" in 1|1.0) ;; *) AFILTER="$(conv_atempo_chain "$SPEED")" ;; esac
+
+    AKBPS="$WAND_FLAG_AUDIO_BITRATE"
+    if [ -n "$AKBPS" ]; then
+      AKBPS="${AKBPS%k}"
+    else
+      AKBPS="$(conv_audio_kbps "$QUALITY")"
+    fi
+
+    # --max-size buys a bitrate budget instead of a quality target: total bits the
+    # file may hold, spread over however much playing time survives trim and speed.
+    VKBPS=
+    if [ -n "$MAXSIZE" ]; then
+      [ "$FORMAT" != gif ] || conv_die "--max-size has no meaning for gif — shrink it with --fps, --resize and --quality"
+      case "$CODEC" in av1) conv_die "--max-size works with h264, h265 and vp9" ;; esac
+      BYTES="$(conv_bytes "$MAXSIZE")" || exit 1
+      SECS="$KEEP"
+      [ -n "$SECS" ] || SECS="$(conv_duration "$IN")"
+      [ -n "$SECS" ] || conv_die "could not read the duration of $IN"
+      _abudget=0
+      [ "$MUTE" = true ] || _abudget="$AKBPS"
+      VKBPS="$(awk -v b="$BYTES" -v d="$SECS" -v s="$SPEED" -v a="$_abudget" \
+        'BEGIN { d = d / s; if (d <= 0) exit 1; printf "%d", (b * 8 / d / 1000) * 0.95 - a }')" \
+        || conv_die "could not work out a bitrate for $MAXSIZE"
+      [ "$VKBPS" -ge 32 ] || conv_die "$MAXSIZE is too small for this clip — trim it, drop --fps or use --resize"
+    fi
+
+    TMP="${TMPDIR:-/tmp}"; TMP="${TMP%/}"
+    PASSLOG="$TMP/conv-pass-$$"
+    PALETTE="$TMP/conv-palette-$$.png"
+
+    # Only the source input, so that -t can be added once every input is in place
+    # — ahead of an -i it would cap that input's length instead of the output's.
+    ff_open() {
+      set -- ffmpeg -hide_banner -y
+      [ "$WAND_FLAG_VERBOSE" = "true" ] || set -- "$@" -loglevel error -stats
+      [ -n "$START" ] && set -- "$@" -ss "$START"
+      set -- "$@" -i "$IN"
+      printf '%s\n' "$(conv_quote "$@")"
+    }
+
+    run_video() {
+      _pass="$1"
+      eval "set -- $(ff_open)"
+      [ -n "$KEEP" ] && set -- "$@" -t "$KEEP"
+      [ -n "$FILTERS" ] && set -- "$@" -vf "$FILTERS"
+
+      case "$CODEC" in
+        h264) set -- "$@" -c:v libx264 -preset "$(conv_x264_preset "$QUALITY")" -pix_fmt yuv420p ;;
+        h265)
+          set -- "$@" -c:v libx265 -preset "$(conv_x265_preset "$QUALITY")" -pix_fmt yuv420p
+          case "$FORMAT" in mp4|mov|m4v) set -- "$@" -tag:v hvc1 ;; esac ;;
+        vp9) set -- "$@" -c:v libvpx-vp9 -row-mt 1 -deadline good -cpu-used 2 -pix_fmt yuv420p ;;
+        av1) set -- "$@" -c:v libsvtav1 -preset "$(conv_svt_preset "$QUALITY")" -pix_fmt yuv420p ;;
+      esac
+
+      if [ -n "$VKBPS" ]; then
+        set -- "$@" -b:v "${VKBPS}k" -maxrate "$((VKBPS * 3 / 2))k" -bufsize "$((VKBPS * 3))k"
+      elif [ -n "$WAND_FLAG_CRF" ]; then
+        set -- "$@" -crf "$WAND_FLAG_CRF"
+        [ "$CODEC" = vp9 ] && set -- "$@" -b:v 0
+      else
+        set -- "$@" -crf "$(conv_crf "$CODEC" "$QUALITY")"
+        [ "$CODEC" = vp9 ] && set -- "$@" -b:v 0
+      fi
+
+      if [ "$_pass" = 1 ]; then
+        set -- "$@" -pass 1 -passlogfile "$PASSLOG" -an -f null /dev/null
+        conv_exec "$@"
+        return $?
+      fi
+      [ "$_pass" = 2 ] && set -- "$@" -pass 2 -passlogfile "$PASSLOG"
+
+      if [ "$MUTE" = true ]; then
+        set -- "$@" -an
+      else
+        set -- "$@" -c:a "$(conv_audio_encoder "$CODEC")" -b:a "${AKBPS}k"
+        [ -n "$AFILTER" ] && set -- "$@" -filter:a "$AFILTER"
+      fi
+      case "$FORMAT" in mp4|mov|m4v) set -- "$@" -movflags +faststart ;; esac
+
+      set -- "$@" "$OUT"
+      conv_exec "$@"
+    }
+
+    # A gif is only as good as its palette, so one pass collects the colours the
+    # clip actually uses and the second maps the frames onto them.
+    run_gif() {
+      _colors="$(conv_gif_colors "$QUALITY")"
+      _loop="$WAND_FLAG_LOOP"; [ -n "$_loop" ] || _loop=0
+      _vf="$FILTERS"; [ -n "$_vf" ] || _vf="null"
+
+      eval "set -- $(ff_open)"
+      [ -n "$KEEP" ] && set -- "$@" -t "$KEEP"
+      set -- "$@" -vf "$_vf,palettegen=max_colors=$_colors:stats_mode=diff" "$PALETTE"
+      conv_exec "$@" || return 1
+
+      eval "set -- $(ff_open)"
+      set -- "$@" -i "$PALETTE"
+      [ -n "$KEEP" ] && set -- "$@" -t "$KEEP"
+      set -- "$@" \
+        -lavfi "${_vf}[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle" \
+        -loop "$_loop" -an "$OUT"
+      conv_exec "$@"
+    }
+
+    if [ "$FORMAT" = gif ]; then
+      run_gif || exit 1
+      rm -f "$PALETTE"
+    elif [ -n "$VKBPS" ]; then
+      run_video 1 || exit 1
+      run_video 2 || exit 1
+
+      # A bitrate budget is an average the encoder aims at, not a ceiling it
+      # respects, and the container adds its own overhead on top. Measure what
+      # actually landed and buy back the difference — pass 1's statistics still
+      # describe the same frames, so only the final pass has to run again.
+      if [ "$WAND_FLAG_DRY_RUN" != "true" ]; then
+        _try=0
+        while [ "$(conv_filesize "$OUT")" -gt "$BYTES" ] && [ "$_try" -lt 3 ]; do
+          _try=$((_try + 1))
+          _got="$(conv_filesize "$OUT")"
+          VKBPS="$(awk -v v="$VKBPS" -v a="$_abudget" -v want="$BYTES" -v got="$_got" \
+            'BEGIN { printf "%d", (v + a) * (want / got) * 0.97 - a }')"
+          [ "$VKBPS" -ge 32 ] || conv_die "$MAXSIZE is too small for this clip — trim it, drop --fps or use --resize"
+          printf 'conv: %s over budget, re-running at %s kbps\n' "$(conv_hsize "$_got")" "$VKBPS" >&2
+          run_video 2 || exit 1
+        done
+        [ "$(conv_filesize "$OUT")" -le "$BYTES" ] ||
+          printf 'conv: could not get under %s — %s is as small as this encode goes\n' \
+            "$MAXSIZE" "$(conv_hsize "$(conv_filesize "$OUT")")" >&2
+      fi
+
+      rm -f "$PASSLOG-0.log" "$PASSLOG-0.log.mbtree"
+    else
+      run_video 0 || exit 1
+    fi
+
+    conv_report "$IN" "$OUT"
+
+image:
+  description: Convert an image file — conv image <input> [output]
+  aliases:
+    - img
+  flags:
+    level:
+      description: 'Exact encoder quality 0-100, overriding --quality (higher is better)'
+    lossless:
+      type: bool
+      description: Encode without discarding detail (png, webp, avif, tiff)
+    background:
+      alias: b
+      description: 'Colour painted behind transparency, e.g. white or "#1e1e2e" (default: white)'
+    rotate:
+      description: Turn the image 90, 180 or 270 degrees clockwise
+    flip:
+      description: 'Mirror the image — h across the vertical axis, v across the horizontal'
+    grayscale:
+      type: bool
+      description: Drop the colour
+    strip:
+      type: bool
+      description: Remove EXIF and any other metadata
+    dpi:
+      description: 'Pixels per inch used when rendering an svg (default: 96)'
+    batch:
+      type: bool
+      description: Treat every argument as an input and name each output automatically
+  cmd: |
+    eval "$CONV_LIB"
+    eval "$CONV_IMAGE_LIB"
+    conv_need magick
+
+    [ $# -ge 1 ] || conv_die "no input file — usage: conv image <input> [output]"
+
+    case "$WAND_FLAG_ROTATE" in
+      ''|90|180|270) ;;
+      *) conv_die "bad --rotate '$WAND_FLAG_ROTATE' (90, 180 or 270)" ;;
+    esac
+    FLIP="$(printf '%s' "$WAND_FLAG_FLIP" | tr 'A-Z' 'a-z')"
+    case "$FLIP" in
+      ''|h|v|horizontal|vertical) ;;
+      *) conv_die "bad --flip '$WAND_FLAG_FLIP' (h or v)" ;;
+    esac
+
+    TMP="${TMPDIR:-/tmp}"; TMP="${TMP%/}"
+    SEQ=0
+
+    render_image() {
+      _lvl="$1"
+      _src="$IN"
+      _geom="$GEOM"
+
+      # A vector source is rendered straight to the size that was asked for, so
+      # nothing is ever scaled up from a smaller rasterisation.
+      if [ "$IS_SVG" = true ]; then
+        eval "set -- rsvg-convert $(conv_rsvg_size_args "$RESIZE")"
+        [ -n "$WAND_FLAG_DPI" ] && set -- "$@" -d "$WAND_FLAG_DPI" -p "$WAND_FLAG_DPI"
+        [ -n "$FLATTEN" ] && set -- "$@" -b "$FLATTEN"
+        if conv_is_vector_format "$FORMAT"; then
+          set -- "$@" -f "$FORMAT" -o "$OUT" "$IN"
+          conv_exec "$@"
+          return $?
+        fi
+        set -- "$@" -f png -o "$RASTER" "$IN"
+        conv_exec "$@" || return 1
+        _src="$RASTER"
+        _geom=
+      elif [ "$DECODE" = true ]; then
+        set -- ffmpeg -hide_banner -loglevel error -y -i "$IN" "$RASTER"
+        conv_exec "$@" || return 1
+        _src="$RASTER"
+      fi
+
+      _dst="$OUT"
+      [ "$FORMAT" != avif ] || _dst="$STAGE"
+
+      set -- magick "$_src"
+      [ "$WAND_FLAG_STRIP" = "true" ] && set -- "$@" -strip
+      [ -n "$_geom" ] && set -- "$@" -resize "$_geom"
+      [ -n "$WAND_FLAG_ROTATE" ] && set -- "$@" -rotate "$WAND_FLAG_ROTATE"
+      case "$FLIP" in
+        h|horizontal) set -- "$@" -flop ;;
+        v|vertical) set -- "$@" -flip ;;
+      esac
+      [ "$WAND_FLAG_GRAYSCALE" = "true" ] && set -- "$@" -colorspace Gray
+      [ -n "$FLATTEN" ] && set -- "$@" -background "$FLATTEN" -alpha remove -alpha off
+
+      if [ "$FORMAT" = avif ]; then
+        : # the staging file is a plain lossless png; avifenc carries the quality
+      elif [ "$WAND_FLAG_LOSSLESS" = "true" ]; then
+        case "$FORMAT" in
+          webp) set -- "$@" -define webp:lossless=true ;;
+          png|tiff) ;;
+          *) conv_die "--lossless needs png, webp, avif or tiff" ;;
+        esac
+      else
+        set -- "$@" -quality "$_lvl"
+      fi
+
+      set -- "$@" "$_dst"
+      conv_exec "$@" || return 1
+
+      [ "$FORMAT" = avif ] || return 0
+
+      set -- avifenc --speed 6 --jobs all
+      if [ "$WAND_FLAG_LOSSLESS" = "true" ]; then
+        set -- "$@" --lossless
+      else
+        set -- "$@" -q "$_lvl"
+      fi
+      set -- "$@" "$STAGE" "$OUT"
+      conv_exec_quiet "$@"
+    }
+
+    convert_one() {
+      IN="$1"; OUT="$2"
+      [ -f "$IN" ] || conv_die "no such file: $IN"
+
+      P_FORMAT=; P_QUALITY=; P_RESIZE=; P_MAXSIZE=
+      conv_image_preset "$WAND_FLAG_PRESET" || return 1
+
+      IS_SVG=false
+      conv_is_svg_file "$IN" && IS_SVG=true
+      DECODE=false
+      if [ "$IS_SVG" != true ] && conv_needs_decode "$IN"; then
+        DECODE=true
+        conv_need ffmpeg
+      fi
+
+      FORMAT="$WAND_FLAG_FORMAT"
+      if [ -z "$FORMAT" ] && [ -n "$OUT" ]; then
+        case "$OUT" in *.*) FORMAT="${OUT##*.}" ;; esac
+      fi
+      [ -n "$FORMAT" ] || FORMAT="$P_FORMAT"
+      # With nothing to go on, a raster keeps its own format — asking only for
+      # --resize should not also silently re-encode into something else.
+      if [ -z "$FORMAT" ]; then
+        if [ "$IS_SVG" = true ]; then
+          FORMAT=png
+        else
+          case "$IN" in *.*) FORMAT="${IN##*.}" ;; *) FORMAT=png ;; esac
+        fi
+      fi
+      FORMAT="$(printf '%s' "$FORMAT" | tr 'A-Z' 'a-z')"
+      FORMAT="$(conv_image_format "$FORMAT")" || return 1
+      [ "$FORMAT" = jpeg ] && FORMAT=jpg
+
+      if conv_is_vector_format "$FORMAT" && [ "$IS_SVG" != true ]; then
+        conv_die "$FORMAT output needs an svg source"
+      fi
+      [ "$IS_SVG" != true ] || conv_need rsvg-convert
+      [ "$FORMAT" != avif ] || conv_need avifenc
+
+      [ -n "$OUT" ] || OUT="$(conv_out_path "$IN" "$FORMAT")" || return 1
+      [ "$OUT" != "$IN" ] || conv_die "that would overwrite the input — name a different output"
+      if [ -e "$OUT" ] && [ "$WAND_FLAG_OVERWRITE" != "true" ]; then
+        conv_die "$OUT already exists — pass --overwrite to replace it"
+      fi
+
+      QUALITY="$WAND_FLAG_QUALITY"; [ -n "$QUALITY" ] || QUALITY="$P_QUALITY"
+      QUALITY="$(conv_quality "$QUALITY")" || return 1
+      LEVEL="$WAND_FLAG_LEVEL"
+      [ -n "$LEVEL" ] || LEVEL="$(conv_image_level "$QUALITY")"
+      case "$LEVEL" in ''|*[!0-9]*) conv_die "bad --level '$LEVEL' (0 to 100)" ;; esac
+      [ "$LEVEL" -le 100 ] || conv_die "bad --level '$LEVEL' (0 to 100)"
+
+      RESIZE="$WAND_FLAG_RESIZE"; [ -n "$RESIZE" ] || RESIZE="$P_RESIZE"
+      MAXSIZE="$WAND_FLAG_MAX_SIZE"; [ -n "$MAXSIZE" ] || MAXSIZE="$P_MAXSIZE"
+      GEOM="$(conv_scale_geometry "$RESIZE")" || return 1
+
+      FLATTEN=
+      if ! conv_format_keeps_alpha "$FORMAT"; then
+        FLATTEN="$WAND_FLAG_BACKGROUND"
+        [ -n "$FLATTEN" ] || FLATTEN=white
+      elif [ -n "$WAND_FLAG_BACKGROUND" ]; then
+        FLATTEN="$WAND_FLAG_BACKGROUND"
+      fi
+
+      BYTES=
+      if [ -n "$MAXSIZE" ]; then
+        case "$FORMAT" in
+          jpg|webp|avif) ;;
+          *) conv_die "--max-size needs a format that trades quality for size — try -f webp, jpg or avif" ;;
+        esac
+        [ "$WAND_FLAG_LOSSLESS" != "true" ] || conv_die "--max-size and --lossless ask for opposite things"
+        BYTES="$(conv_bytes "$MAXSIZE")" || return 1
+      fi
+
+      SEQ=$((SEQ + 1))
+      RASTER="$TMP/conv-raster-$$-$SEQ.png"
+      STAGE="$TMP/conv-stage-$$-$SEQ.png"
+
+      if [ -z "$BYTES" ] || [ "$WAND_FLAG_DRY_RUN" = "true" ]; then
+        render_image "$LEVEL" || return 1
+      else
+        # Image encoders have no bitrate to aim at, so the budget is met by
+        # walking the quality down until the file fits.
+        set -- "$LEVEL"
+        for _step in 85 75 65 55 45 35 25 15 8; do
+          [ "$_step" -lt "$LEVEL" ] && set -- "$@" "$_step"
+        done
+        _fit=false
+        for _lvl in "$@"; do
+          render_image "$_lvl" || return 1
+          if [ "$(conv_filesize "$OUT")" -le "$BYTES" ]; then _fit=true; break; fi
+          printf 'conv: %s at quality %s, going lower\n' \
+            "$(conv_hsize "$(conv_filesize "$OUT")")" "$_lvl" >&2
+        done
+        [ "$_fit" = true ] || printf 'conv: could not get under %s — %s is as small as %s goes at these dimensions\n' \
+          "$MAXSIZE" "$(conv_hsize "$(conv_filesize "$OUT")")" "$FORMAT" >&2
+      fi
+
+      rm -f "$RASTER" "$STAGE"
+      conv_report "$IN" "$OUT"
+    }
+
+    if [ "$WAND_FLAG_BATCH" = "true" ]; then
+      for _file in "$@"; do
+        convert_one "$_file" "" || exit 1
+      done
+    else
+      [ $# -le 2 ] || conv_die "too many arguments — pass --batch to convert several files at once"
+      convert_one "$1" "$2" || exit 1
+    fi
+
+info:
+  description: Show the format, codecs, resolution, duration and size of a media file
+  aliases:
+    - i
+  cmd: |
+    eval "$CONV_LIB"
+    eval "$CONV_IMAGE_LIB"
+
+    IN="$1"
+    [ -n "$IN" ] || conv_die "no file — usage: conv info <file>"
+    [ -f "$IN" ] || conv_die "no such file: $IN"
+
+    printf 'file      %s\n' "$IN"
+    printf 'size      %s\n' "$(conv_hsize "$(conv_filesize "$IN")")"
+
+    # An svg has no pixels of its own, so report the size it renders at by default.
+    if conv_is_svg_file "$IN"; then
+      conv_need rsvg-convert
+      conv_need magick
+      TMP="${TMPDIR:-/tmp}"; TMP="${TMP%/}"
+      _probe="$TMP/conv-info-$$.png"
+      printf 'kind      svg (vector)\n'
+      if rsvg-convert -f png -o "$_probe" "$IN" 2>/dev/null; then
+        printf 'renders   %s at 96 dpi\n' "$(magick identify -format '%wx%h' "$_probe" 2>/dev/null)"
+      fi
+      rm -f "$_probe"
+      exit 0
+    fi
+
+    case "$(printf '%s' "$IN" | tr 'A-Z' 'a-z')" in
+      *.png|*.jpg|*.jpeg|*.webp|*.avif|*.gif|*.tif|*.tiff|*.bmp|*.heic|*.heif)
+        _id="$(magick identify -format '%m|%w|%h|%[colorspace]|%[bit-depth]|%A|%n\n' "$IN" 2>/dev/null | head -1)"
+        # ImageMagick reads most of these; the ones its heic coder would have
+        # handled come back through ffprobe instead.
+        if [ -z "$_id" ]; then
+          _id="$(ffprobe -v error -select_streams v:0 -of default=nw=1 \
+            -show_entries stream=codec_name,width,height,pix_fmt "$IN" 2>/dev/null |
+            awk -F= '{ f[$1] = $2 } END { printf "%s|%s|%s|%s|||", f["codec_name"], f["width"], f["height"], f["pix_fmt"] }')"
+        fi
+        printf '%s\n' "$_id" | awk -F'|' '{
+          if ($2 == "") exit
+          printf "kind      %s\npixels    %sx%s\n", $1, $2, $3
+          if ($4 != "") {
+            printf "colour    %s", $4
+            if ($5 != "") printf ", %s-bit", $5
+            if ($6 != "" && $6 != "Undefined" && $6 != "None") printf ", alpha"
+            printf "\n"
+          }
+          if ($7 > 1) printf "frames    %s\n", $7
+        }'
+        exit 0 ;;
+    esac
+
+    conv_need ffprobe
+
+    _dur="$(conv_duration "$IN")"
+    [ -n "$_dur" ] && printf 'duration  %s\n' "$(awk -v d="$_dur" 'BEGIN { printf "%dm %05.2fs", int(d / 60), d % 60 }')"
+
+    # key=value output, read by name: ffprobe emits the fields in its own order,
+    # not the order they are asked for.
+    ffprobe -v error -select_streams v:0 -of default=nw=1 \
+      -show_entries stream=codec_name,width,height,r_frame_rate,bit_rate "$IN" 2>/dev/null |
+      awk -F= '
+        { f[$1] = $2 }
+        END {
+          if (!("codec_name" in f)) exit
+          split(f["r_frame_rate"], r, "/")
+          printf "video     %s %sx%s @ %g fps", f["codec_name"], f["width"], f["height"], r[2] ? r[1] / r[2] : r[1]
+          if (f["bit_rate"] ~ /^[0-9]+$/) printf ", %d kbps", f["bit_rate"] / 1000
+          printf "\n"
+        }'
+
+    ffprobe -v error -select_streams a:0 -of default=nw=1 \
+      -show_entries stream=codec_name,channels,sample_rate,bit_rate "$IN" 2>/dev/null |
+      awk -F= '
+        { f[$1] = $2 }
+        END {
+          if (!("codec_name" in f)) exit
+          printf "audio     %s, %s ch, %s Hz", f["codec_name"], f["channels"], f["sample_rate"]
+          if (f["bit_rate"] ~ /^[0-9]+$/) printf ", %d kbps", f["bit_rate"] / 1000
+          printf "\n"
+        }'
+
+presets:
+  description: List the --preset targets and what each one sets
+  cmd: |
+    cat <<'TXT'
+    conv video
+
+      github, discord   mp4 / h264, quality high, squeezed under 10M
+      web               mp4 / h264, quality high, at most 1280px wide
+      gif               animated gif at 15 fps, 640px wide
+      tiny              mp4 / h264, quality low, 24 fps, half size
+      archive           mkv / h265, quality max
+
+    conv image
+
+      web               webp, quality high, at most 1600px wide
+      github            the same, squeezed under 10M
+      thumb             webp, quality medium, 400px wide
+      avatar            webp, quality high, fitted inside 512x512
+      tiny              jpg, quality low, half size
+      archive           png, lossless
+
+    A preset only fills in what you leave out, so any flag you pass wins:
+
+      conv video demo.mov -p github
+      conv video demo.mov -p github --resize 1024w
+      conv image shot.png -p thumb
+      conv image logo.svg -p web --resize 800w
+    TXT
+
+examples:
+  description: Show a cheat sheet of common conversions
+  cmd: |
+    cat <<'TXT'
+    Basics — output name and format follow from the input when you leave them out
+
+      conv video clip.mov                    clip.mp4 beside the input
+      conv video clip.mov out.webm           format taken from the extension
+      conv video clip.mov -f gif             clip.gif
+      conv video clip.mov -f mov             clip-1.mov, so the input survives
+
+    Size and quality
+
+      conv video clip.mov -q high            low | medium | high | max
+      conv video clip.mov -m 10M             fit under 10 MB, whatever it takes
+      conv video clip.mov --crf 20           hand the codec an exact number
+      conv video clip.mov -p github          mp4 under 10 MB, ready to drop in
+
+    Dimensions — the same spellings work for every medium
+
+      conv video clip.mov -r 0.5             half as wide and tall
+      conv video clip.mov -r 1024w           1024 px wide, height follows
+      conv video clip.mov -r 768h            768 px tall, width follows
+      conv video clip.mov -r 1024x768        fit inside the box
+      conv video clip.mov -r 1024x768 --stretch    exactly that, aspect be damned
+
+    Trimming, timing and audio
+
+      conv video clip.mov -s 5 -e 20         keep 00:05 to 00:20
+      conv video clip.mov -s 5 -d 10         keep 10 seconds from 00:05
+      conv video clip.mov --speed 2          twice as fast, audio pitch intact
+      conv video clip.mov --fps 30           resample to 30 fps
+      conv video clip.mov --mute             drop the audio track
+
+    Images — the same quality, resize, format and preset flags
+
+      conv image shot.png                    shot-1.png, re-encoded in place of nothing
+      conv image shot.png shot.webp          png to webp
+      conv image shot.png -f jpg -q high     transparency flattened onto white
+      conv image shot.png -f jpg -b '#1e1e2e'      flattened onto that colour instead
+      conv image shot.png -r 400w -m 200K    resize, then step quality down to fit
+      conv image photo.jpg --strip           drop EXIF, keep everything else
+      conv image photo.jpg --rotate 90 --grayscale
+      conv image --batch *.png -f webp       every file, named automatically
+
+    SVG — rendered by rsvg-convert, at whatever size you ask for
+
+      conv image logo.svg                    logo.png at its natural size
+      conv image logo.svg -r 1024w           rendered at 1024px wide, not upscaled
+      conv image logo.svg -f pdf             pdf, eps and ps come out as vectors too
+      conv image logo.svg -f png --dpi 300   render at 300 dpi instead of 96
+
+    Looking before you leap
+
+      conv info clip.mov                     codecs, resolution, duration, size
+      conv info shot.png                     format, pixels, colour depth
+      conv video clip.mov -m 10M -n          print the commands, run nothing
+    TXT
