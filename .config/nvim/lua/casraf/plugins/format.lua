@@ -1,11 +1,11 @@
 local prettier = { "prettier" }
 
 -- mason.nvim puts its own bin directory at the front of $PATH, so a `:MasonInstall
--- prettier` silently shadows the copy sofmani provisions — and prettier >=3.9.0
--- mangles markdown, dropping spaces around inline code and refusing to re-wrap the
--- paragraph. Resolve the provisioned binary by path so mason can't win.
+-- prettier` silently shadows the copy sofmani provisions, and the two drift to
+-- different versions that format the same file differently. Resolve the provisioned
+-- binary by path so mason can't win.
 local function provisioned_prettier()
-  local pnpm = vim.env.PNPM_HOME and (vim.env.PNPM_HOME .. "/prettier")
+  local pnpm = vim.env.PNPM_HOME and (vim.env.PNPM_HOME .. "/bin/prettier")
   if pnpm and vim.fn.executable(pnpm) == 1 then
     return pnpm
   end
