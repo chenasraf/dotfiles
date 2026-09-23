@@ -4,4 +4,4 @@ set -gq "@catppuccin_${MODULE_NAME}_icon" " "
 set -gqF "@catppuccin_${MODULE_NAME}_color" "#{E:@thm_blue}"
 set -gq "@catppuccin_${MODULE_NAME}_text" " #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}}"
 
-source "${TMUX_PLUGINS_DIR}/*/utils/status_module.conf"
+source -q "${TMUX_PLUGINS_DIR}/*/utils/status_module.conf"

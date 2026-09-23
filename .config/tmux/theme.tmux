@@ -1,3 +1,8 @@
+# Each module signs off with `source -q` of catppuccin's status_module.conf, and
+# the -q carries weight: tpack parses this config to discover the plugin list and
+# follows every non-optional source it finds. A hard source into a plugin
+# directory that has no clone in it fails the parse, so `tpack init` bails out
+# before it can bind the keys that clone the plugin.
 # source "~/.config/tmux/modules/close.tmux"
 source "~/.config/tmux/modules/date.tmux"
 source "~/.config/tmux/modules/dir.tmux"
