@@ -680,7 +680,7 @@ return {
         lsp = {
           on_attach = function(client, bufnr)
             on_attach(client, bufnr)
-            if vim.lsp.document_color then vim.lsp.document_color.enable(true, bufnr) end
+            if vim.lsp.document_color then vim.lsp.document_color.enable(true, { bufnr = bufnr }) end
           end,
           -- capabilities = dart_capabilities, -- e.g. lsp_status capabilities
           --- OR you can specify a function to deactivate or change or control how the config is created
