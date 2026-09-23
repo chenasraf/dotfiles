@@ -48,6 +48,7 @@ vim.keymap.set("n", "<M-C-O>", "O<Esc>j", { desc = "Insert newline above", silen
 vim.keymap.set("i", "<M-o>", "<Esc>o<Esc>gi", { desc = "Insert newline below", silent = true })
 vim.keymap.set("i", "<M-S-O>", "<Esc>O<Esc>gi", { desc = "Insert newline above", silent = true })
 
+
 -- delete words
 vim.keymap.set("i", "<A-Backspace>", "<C-o>db", { desc = "Delete word backwards", silent = true })
 vim.keymap.set("i", "<A-Del>", "<C-o>de", { desc = "Delete word forwards", silent = true })
@@ -74,12 +75,10 @@ vim.keymap.set("n", "<leader>W", "<cmd>wa<CR>", { desc = "Save all files", silen
 -- reload buffer from disk
 vim.keymap.set("n", "<C-r>", function()
   if vim.bo.modified then
-    vim.ui.select({ "Yes", "No" }, { prompt = "Buffer has unsaved changes. Reload anyway?" }, function(choice)
-      if choice == "Yes" then
-        vim.cmd("e!")
-        vim.notify("Buffer reloaded", vim.log.levels.INFO)
-      end
-    end)
+    if vim.fn.confirm("Buffer has unsaved changes. Reload anyway?", "&Yes\n&No", 2) == 1 then
+      vim.cmd("e!")
+      vim.notify("Buffer reloaded", vim.log.levels.INFO)
+    end
   else
     vim.cmd("e!")
     vim.notify("Buffer reloaded", vim.log.levels.INFO)
