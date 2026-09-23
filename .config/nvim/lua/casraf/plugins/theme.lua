@@ -12,6 +12,13 @@ return {
         FloatBorder = { bg = "NONE", fg = C.surface1 },
         TelescopeNormal = { bg = "NONE" },
         TelescopeBorder = { bg = "NONE", fg = C.surface1 },
+        -- The popup menu opts out of the transparent background: it overlays the
+        -- buffer rather than framing it, so it needs to read as a raised surface.
+        Pmenu = { bg = C.surface0 },
+        PmenuSel = { bg = C.surface2, bold = true },
+        PmenuBorder = { bg = C.surface0, fg = C.surface2 },
+        PmenuSbar = { bg = C.surface0 },
+        PmenuThumb = { bg = C.overlay0 },
       }
     end,
   },
