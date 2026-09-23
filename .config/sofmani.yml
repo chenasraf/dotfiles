@@ -285,14 +285,25 @@ install:
         macos: devtui_Darwin_{{ .ArchAlias }}.tar.gz
         linux: devtui_Linux_{{ .ArchAlias }}.tar.gz
 
+  # The release lookups run unauthenticated where there is no GITHUB_TOKEN: curl
+  # drops a header carrying no value, whereas a blank "Bearer" earns a 401.
   - name: atuin
     type: shell
-    check_has_update: '[ "$(cat ~/.cache/sofmani/atuin-version.txt 2>/dev/null)" != "$(curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name)" ]'
-    post_install: 'mkdir -p ~/.cache/sofmani && curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name > ~/.cache/sofmani/atuin-version.txt'
-    post_update: 'mkdir -p ~/.cache/sofmani && curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name > ~/.cache/sofmani/atuin-version.txt'
+    check_has_update: '[ "$(cat ~/.cache/sofmani/atuin-version.txt 2>/dev/null)" != "$(curl -fsSL -H "Authorization:${GITHUB_TOKEN:+ Bearer $GITHUB_TOKEN}" https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name)" ]'
+    post_install: 'mkdir -p ~/.cache/sofmani && curl -fsSL -H "Authorization:${GITHUB_TOKEN:+ Bearer $GITHUB_TOKEN}" https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name > ~/.cache/sofmani/atuin-version.txt'
+    post_update: 'mkdir -p ~/.cache/sofmani && curl -fsSL -H "Authorization:${GITHUB_TOKEN:+ Bearer $GITHUB_TOKEN}" https://api.github.com/repos/atuinsh/atuin/releases/latest | jq -r .tag_name > ~/.cache/sofmani/atuin-version.txt'
     opts:
       command: curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-      update_command: atuin-update
+      # atuin-update arrives with the setup script into ~/.atuin/bin, a directory
+      # that reaches PATH only through exports.zsh — and holds nothing at all when
+      # atuin came from a package manager. The installer upgrades in place, so it
+      # covers whatever the binary can't.
+      update_command: |
+        if [ -x "$HOME/.atuin/bin/atuin-update" ]; then
+          "$HOME/.atuin/bin/atuin-update"
+        else
+          curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+        fi
 
   - name: git-delta
     type: brew
