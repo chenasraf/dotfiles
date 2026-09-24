@@ -39,6 +39,16 @@ return {
         yaml = prettier,
         dart = { "dart_format" },
         python = { "black" },
+        kotlin = { "ktfmt" },
+        php = { "pretty-php" },
+        -- shfmt parses bash and POSIX sh; zsh is a different enough language that it
+        -- refuses the file rather than reformatting it.
+        sh = { "shfmt" },
+        bash = { "shfmt" },
+        -- swiftlint is deliberately not chained here. Its --fix mode prints nothing at
+        -- all when it finds nothing left to correct, which is the normal case once
+        -- swiftformat has run, and conform discards the whole result on empty output.
+        swift = { "swiftformat" },
       },
       formatters = {
         prettier = {
