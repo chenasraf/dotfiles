@@ -518,6 +518,13 @@ install:
   - name: dysk
     type: brew
 
+  - name: godot
+    type: brew
+    platforms:
+      only: ['macos']
+    opts:
+      cask: true
+
   - name: lynis
     type: shell
     tags: security
