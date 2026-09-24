@@ -1,0 +1,114 @@
+.config:
+  bin_name: ght
+
+repo:
+  description: GitHub repositories
+  children:
+    create:
+      description: Create a GitHub repo and point the local checkout at it
+      aliases:
+        - new
+      flags:
+        owner:
+          alias: o
+          description: 'Owner of the new repo (default: $GHT_OWNER, else the authenticated user)'
+        'yes':
+          alias: y
+          type: bool
+          description: Skip the settings picker and take the flags as given
+        public:
+          type: bool
+          description: Start with "private" unticked
+        no-issues:
+          type: bool
+          description: Start with "issues" unticked
+        wiki:
+          type: bool
+          description: Start with "wiki" ticked
+        discussions:
+          type: bool
+          description: Start with "discussions" ticked
+        clone:
+          type: bool
+          description: Start with "clone" ticked
+      cmd: |
+        set -euo pipefail
+
+        for _need in gh git fzf; do
+          command -v "$_need" >/dev/null 2>&1 || { echo "ght: $_need is not installed" >&2; exit 1; }
+        done
+
+        NAME="${1:-}"
+        if [ -z "$NAME" ]; then
+          printf 'Repository name: '
+          read -r NAME
+        fi
+        [ -n "$NAME" ] || { echo "ght: no repository name given" >&2; exit 1; }
+
+        OWNER="${WAND_FLAG_OWNER:-${GHT_OWNER:-}}"
+        case "$NAME" in
+        */*)
+          OWNER="${NAME%%/*}"
+          NAME="${NAME#*/}"
+          ;;
+        esac
+        [ -n "$OWNER" ] || OWNER="$(gh api user --jq .login)"
+
+        SEL_private=1
+        SEL_issues=1
+        SEL_wiki=0
+        SEL_discussions=0
+        SEL_clone=0
+        [ "$WAND_FLAG_PUBLIC" = true ] && SEL_private=0
+        [ "$WAND_FLAG_NO_ISSUES" = true ] && SEL_issues=0
+        [ "$WAND_FLAG_WIKI" = true ] && SEL_wiki=1
+        [ "$WAND_FLAG_DISCUSSIONS" = true ] && SEL_discussions=1
+        [ "$WAND_FLAG_CLONE" = true ] && SEL_clone=1
+
+        if [ "$WAND_FLAG_YES" != true ]; then
+          STATE="$(mktemp)"
+          trap 'rm -f "$STATE" "$STATE.tmp"' EXIT
+          {
+            printf '%s private Repository is private\n' "$SEL_private"
+            printf '%s issues Issue tracker is enabled\n' "$SEL_issues"
+            printf '%s wiki Wiki is enabled\n' "$SEL_wiki"
+            printf '%s discussions Discussions are enabled\n' "$SEL_discussions"
+            printf '%s clone Clone into ./%s instead of initialising here\n' "$SEL_clone" "$NAME"
+          } >"$STATE"
+
+          sh "$CFG/wand/_checkbox.sh" "$STATE" "$OWNER/$NAME  " \
+            'tab/space toggle · enter confirm · esc cancel' \
+            || { echo "ght: cancelled" >&2; exit 1; }
+
+          while read -r ON KEY DESC; do
+            eval "SEL_$KEY=$ON"
+          done <"$STATE"
+        fi
+
+        set -- "$OWNER/$NAME"
+        if [ "$SEL_private" = 1 ]; then
+          set -- "$@" --private
+        else
+          set -- "$@" --public
+        fi
+        [ "$SEL_issues" = 1 ] || set -- "$@" --disable-issues
+        [ "$SEL_wiki" = 1 ] || set -- "$@" --disable-wiki
+
+        gh repo create "$@"
+
+        # gh only exposes discussions on an existing repo, never at creation.
+        if [ "$SEL_discussions" = 1 ]; then
+          gh repo edit "$OWNER/$NAME" --enable-discussions >/dev/null
+        fi
+
+        REMOTE="git@github.com:$OWNER/$NAME.git"
+        if [ "$SEL_clone" = 1 ]; then
+          git clone "$REMOTE"
+        else
+          git rev-parse --git-dir >/dev/null 2>&1 || git init
+          if git remote get-url origin >/dev/null 2>&1; then
+            echo "ght: origin is already $(git remote get-url origin), leaving it alone" >&2
+          else
+            git remote add origin "$REMOTE"
+          fi
+        fi
