@@ -25,13 +25,19 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
+    -- dapDebugServer.js listens on the port given as its first argument, so the
+    -- placeholder has to be passed through as well as declared — left off, the server
+    -- picks a port of its own and nothing ever connects to it.
     dap.adapters["pwa-node"] = {
       type = "server",
       host = "localhost",
       port = "${port}",
       executable = {
         command = "node",
-        args = { vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter' },
+        args = {
+          vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js',
+          "${port}",
+        },
       }
     }
 
