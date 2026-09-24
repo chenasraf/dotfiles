@@ -147,6 +147,7 @@ install:
         git config --global init.defaultBranch "master"
         git config --global credential.helper "store"
         git config --global pull.rebase true
+        git config --global pull.autoStash true
         git config --global core.excludesfile "~/.config/.gitignore"
         # git config --global core.untrackedCache true
         # git config --global core.fsmonitor true
