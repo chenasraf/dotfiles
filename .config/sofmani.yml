@@ -53,7 +53,7 @@ install:
     check_installed: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
     check_has_update: test $(defaults read -g PMPrintingExpandedStateForPrint) -eq 1
     platforms:
-      only: ["macos"]
+      only: ['macos']
     opts:
       command: |
         defaults write -g PMPrintingExpandedStateForPrint -bool TRUE
@@ -69,9 +69,9 @@ install:
     # heal all three. check_installed is the "healthy?" predicate, so the
     # command only runs when something has actually drifted.
     machines:
-      only: ["spider"]
+      only: ['spider']
     platforms:
-      only: ["linux"]
+      only: ['linux']
     check_installed: |
       repo="$(brew --repository 2>/dev/null)" || exit 0
       pref="$(brew --prefix 2>/dev/null)"
@@ -128,7 +128,7 @@ install:
   - name: gh
     type: brew
     machines:
-      except: ["planck"]
+      except: ['planck']
 
   - name: glab
     type: brew
@@ -312,7 +312,7 @@ install:
   - name: rsync
     type: brew
     platforms:
-      only: ["macos"]
+      only: ['macos']
 
   - name: jq
     type: brew
@@ -349,7 +349,7 @@ install:
 
   - name: aerospace
     type: group
-    platforms: { only: ["macos"] }
+    platforms: { only: ['macos'] }
     steps:
       - name: borders
         type: brew
@@ -376,7 +376,7 @@ install:
   - name: autoraise
     type: brew
     platforms:
-      only: ["macos"]
+      only: ['macos']
     post_install: brew services start autoraise
     post_update: brew services restart autoraise
     opts:
@@ -385,7 +385,7 @@ install:
   - name: hammerspoon
     type: brew
     platforms:
-      only: ["macos"]
+      only: ['macos']
     opts:
       cask: true
 
@@ -418,15 +418,15 @@ install:
   - name: nextcloud-talk
     type: brew
     platforms:
-      only: ["macos"]
+      only: ['macos']
     check_installed: test -d "/Applications/Nextcloud Talk.app"
 
   - name: aseprite
     type: group
     platforms:
-      only: ["macos"]
+      only: ['macos']
     machines:
-      only: ["m1"]
+      only: ['m1']
     frequency: 4w
     steps:
       - name: cmake
@@ -490,7 +490,7 @@ install:
   - name: fastlane
     type: brew
     machines:
-      only: ["m1"]
+      only: ['m1']
 
   - name: lefthook
     type: brew
@@ -521,9 +521,9 @@ install:
     type: shell
     tags: security
     machines:
-      only: ["spider"]
+      only: ['spider']
     platforms:
-      only: ["linux"]
+      only: ['linux']
     # lynis runs as root, so it must live system-wide and be root-owned (it
     # refuses to execute user-owned files as root). Clone into /usr/local/share
     # and drop a wrapper on root's PATH — lynis resolves its include/ dir
@@ -551,6 +551,19 @@ install:
 
   - name: fnm
     type: brew
+
+  - name: node
+    type: shell
+    tags: node
+    check_installed: fnm exec --using=lts-latest node --version > /dev/null 2>&1
+    check_has_update:
+      '[ "$(fnm exec --using=lts-latest node --version 2>/dev/null)" != "$(fnm ls-remote --lts |
+      tail -1 | cut -d" " -f1)" ]'
+    confirm_install: true
+    confirm_update: true
+    opts:
+      command: fnm install --lts && fnm default lts-latest
+      update_command: fnm install --lts && fnm default lts-latest
 
   - name: pyenv
     type: brew
@@ -619,12 +632,12 @@ install:
     type: brew
     enabled: false
 
-  - name: "@google/gemini-cli"
+  - name: '@google/gemini-cli'
     bin_name: gemini
     type: pnpm
     enabled: false
 
-  - name: "@openai/codex"
+  - name: '@openai/codex'
     bin_name: codex
     type: pnpm
     enabled: false
@@ -682,7 +695,7 @@ install:
     type: shell
     tags: mcp claude
     machines:
-      only: ["m1"]
+      only: ['m1']
     frequency: 1w
     # Installed as a persistent uv tool rather than run through uvx: uvx
     # re-resolves the latest release on every MCP server launch, upstream ships
@@ -750,16 +763,16 @@ install:
   - name: ghostty
     type: brew
     platforms:
-      only: ["macos"]
+      only: ['macos']
     opts:
       cask: true
 
   - name: volumehud
     type: brew
     platforms:
-      only: ["macos"]
+      only: ['macos']
     machines:
-      except: ["planck"]
+      except: ['planck']
     opts:
       tap: dannystewart/apps
 
@@ -773,12 +786,12 @@ install:
     check_installed: fc-list | grep -q "Meslo"
     type: brew
     tags: font
-    platforms: { only: ["macos"] }
+    platforms: { only: ['macos'] }
     frequency: 26w
 
   - name: font-fira-code-nerd-font
     check_installed: fc-list | grep -q "Fira"
     type: brew
     tags: font
-    platforms: { only: ["macos"] }
+    platforms: { only: ['macos'] }
     frequency: 26w
