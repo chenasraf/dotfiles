@@ -97,12 +97,7 @@ return {
       -- see mason-nvim-dap README for more information
       handlers = {},
 
-      -- You'll need to check that you have the required things installed
-      -- online, please don't ask me how to install them :)
-      ensure_installed = {
-        -- Update this to ensure that you have the debuggers for the langs you want
-        'js-debug-adapter',
-      },
+      -- Adapter packages are installed from the list in mason.lua.
     }
 
     -- Basic debugging keymaps, feel free to change to your liking!

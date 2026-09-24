@@ -496,22 +496,10 @@ return {
       'chenasraf/input-form.nvim',
     },
     config = function()
-      local mason_lspconfig = require('mason-lspconfig')
       require('mason').setup()
-      mason_lspconfig.setup {
-        on_attach = on_attach,
-        ensure_installed = {
-          'ast_grep',
-          'bashls',
-          'cssls',
-          'eslint',
-          'html',
-          'jsonls',
-          'lua_ls',
-          'rust_analyzer',
-          'tailwindcss',
-          'ts_ls',
-        },
+      -- What to install lives in mason.lua. `automatic_enable` hooks the registry's
+      -- install events, so a server that lands mid-session is enabled without a restart.
+      require('mason-lspconfig').setup {
         automatic_enable = true,
       }
 
@@ -568,20 +556,18 @@ return {
         },
       }
 
-      -- Configure all installed servers using the default settings
-      for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-        lsp.config(server, {
-          on_attach = on_attach,
-          capabilities = mason_capabilities,
-        })
-      end
+      -- '*' is the base every server's config is merged onto, so a server installed
+      -- later in this session picks these up too. Enumerating the installed servers
+      -- instead would miss every one of them on a machine's first launch, where the
+      -- installs finish long after this runs.
+      lsp.config('*', {
+        on_attach = on_attach,
+        capabilities = mason_capabilities,
+      })
 
       -- Configure servers with custom settings
       for server, config in pairs(settings) do
-        lsp.config(server, vim.tbl_deep_extend('force', {
-          on_attach = on_attach,
-          capabilities = mason_capabilities,
-        }, config))
+        lsp.config(server, config)
       end
     end,
   },
