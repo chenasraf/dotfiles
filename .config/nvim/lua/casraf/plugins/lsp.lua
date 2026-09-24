@@ -462,11 +462,16 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers.
+-- This is only the completion branch — `default_capabilities` reads its argument as
+-- overrides for that branch rather than as a base to extend, so there is nothing to be
+-- gained by seeding it. Nvim fills in the rest, deep-merging this over
+-- `make_client_capabilities()` when it starts a client.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local dart_capabilities = vim.lsp.protocol.make_client_capabilities()
+-- dartls advertises a code action menu built from the kinds it is offered, so the
+-- set is pinned here rather than left to the defaults.
+local dart_capabilities = vim.deepcopy(capabilities)
 dart_capabilities.textDocument.codeAction = {
   dynamicRegistration = false,
   codeActionLiteralSupport = {
@@ -484,7 +489,6 @@ dart_capabilities.textDocument.codeAction = {
     },
   },
 }
-vim.tbl_extend('keep', dart_capabilities, capabilities)
 
 return {
   {
@@ -504,9 +508,6 @@ return {
       }
 
       require('neodev').setup()
-
-      -- Replace `on_attach` and `capabilities` with your own if needed
-      local mason_capabilities = vim.lsp.protocol.make_client_capabilities()
 
       -- Configure individual servers using new API
       local lsp = vim.lsp
@@ -562,7 +563,7 @@ return {
       -- installs finish long after this runs.
       lsp.config('*', {
         on_attach = on_attach,
-        capabilities = mason_capabilities,
+        capabilities = capabilities,
       })
 
       -- Configure servers with custom settings
@@ -670,8 +671,11 @@ return {
           end,
           -- capabilities = dart_capabilities, -- e.g. lsp_status capabilities
           --- OR you can specify a function to deactivate or change or control how the config is created
+          -- flutter-tools hands its own full capability set in, so the merge has to be
+          -- deep and has to let this side win: a shallow one matches on `textDocument`
+          -- and drops everything under it, override included.
           capabilities = function(config)
-            return vim.tbl_extend('keep', config, dart_capabilities)
+            return vim.tbl_deep_extend('force', config, dart_capabilities)
           end,
           -- see the link below for details on each option:
           -- https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md#client-workspace-configuration
