@@ -68,7 +68,7 @@ return {
     -- Pin/unpin buffer
     vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>')
     -- Close buffer
-    vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>')
+    vim.keymap.set('n', '<A-c>', require('casraf.lib.buffers').close_current)
     -- Close all but current
     vim.keymap.set('n', '<A-C>', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>')
     -- Magic buffer-picking mode

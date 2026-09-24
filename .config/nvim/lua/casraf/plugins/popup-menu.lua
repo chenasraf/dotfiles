@@ -132,7 +132,7 @@ local items = {
     mode = 'a',
     label = 'Close Tab',
     hint = '<A-c>',
-    fn = function() vim.cmd.BufferClose() end,
+    fn = function() require('casraf.lib.buffers').close_current() end,
     enabled = function() return vim.bo.buflisted end,
   },
   {
