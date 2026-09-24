@@ -407,6 +407,14 @@ install:
   - name: pandoc
     type: brew
 
+  # mdp renders through pandoc and serves through python3. Any python3 on PATH
+  # answers for it — the system one, pyenv's, or brew's — so the formula is only
+  # reached for when the machine has none, and brew never owns the upgrade.
+  - name: python3
+    type: brew
+    check_installed: command -v python3
+    check_has_update: false
+
   - name: nextcloud-talk
     type: brew
     platforms:

@@ -2,27 +2,32 @@
   bin_name: mdp
   env:
     # Directories whose contents are never part of the documentation, and which
-    # are big enough that walking them would dominate the render.
+    # are big enough that walking them would dominate the search for a page to
+    # open or the listing of a directory that has no index.
     MDP_PRUNE: .git node_modules vendor dist build target .next .nuxt .venv venv __pycache__ .cache coverage .terraform Pods .dart_tool .svelte-kit
 
 main:
-  description: Preview a markdown project in the browser
+  description: Preview a markdown project in the browser, reloading as you edit
   flags:
-    keep:
-      alias: k
-      type: bool
-      description: Keep the generated HTML instead of cleaning up on exit
     root:
       alias: r
-      description: 'Project directory to render (default: the git root, else the file''s directory)'
+      description: 'Project directory to serve (default: the git root, else the file''s directory)'
+    port:
+      alias: p
+      description: 'Port to listen on (default: whatever the system hands out)'
+    host:
+      description: 'Address to bind (default: 127.0.0.1 — use 0.0.0.0 to read it from another device)'
+    no-open:
+      type: bool
+      description: Print the URL instead of opening a browser
   cmd: |
     set -uo pipefail
 
-    if ! command -v pandoc >/dev/null 2>&1; then
-      echo "Pandoc not installed. Please install pandoc first." >&2
-      exit 1
-    fi
+    for _need in pandoc python3; do
+      command -v "$_need" >/dev/null 2>&1 || { echo "mdp: $_need is not installed" >&2; exit 1; }
+    done
 
+    SERVER="$CFG/wand/_mdp_server.py"
     TEMPLATE="$HOME/.local/share/zsh/plugins/local/assets/mdp-template.html"
     [ -f "$TEMPLATE" ] || { echo "mdp: template missing at $TEMPLATE" >&2; exit 1; }
 
@@ -61,202 +66,13 @@ main:
       esac
     fi
 
-    MIRROR="$(mktemp -d)"
-    LIST="$MIRROR/.mdp-files"
-    STAMP="$MIRROR/.mdp-stamp"
+    set -- --root "$ROOT" --template "$TEMPLATE"
+    [ -n "$ENTRY" ] && set -- "$@" --entry "$ENTRY"
+    [ -n "$WAND_FLAG_PORT" ] && set -- "$@" --port "$WAND_FLAG_PORT"
+    [ -n "$WAND_FLAG_HOST" ] && set -- "$@" --host "$WAND_FLAG_HOST"
+    [ "$WAND_FLAG_NO_OPEN" = "true" ] && set -- "$@" --no-open
 
-    scan() {
-      set -- "$ROOT"
-      for _p in $=MDP_PRUNE; do
-        set -- "$@" -name "$_p" -o
-      done
-      shift
-      find "$ROOT" \( "$@" -false \) -prune -o \( -type f -o -type l \) -print
-    }
-
-    # Everything that is not markdown is linked into place rather than copied, so
-    # relative image and asset paths resolve exactly as they do in the project.
-    # The fork is what this costs, not the link, so a directory's files go over
-    # in one call — which is why the list is kept sorted, to hold them together.
-    link_assets() {
-      _curdir=
-      set --
-      while IFS= read -r _src; do
-        case "$_src" in *.md|*.markdown) continue ;; esac
-        _rel="${_src#"$ROOT"/}"
-        case "$_rel" in */*) _dir="${_rel%/*}" ;; *) _dir= ;; esac
-        if [ "$_dir" != "$_curdir" ]; then
-          [ $# -gt 0 ] && { ln -s "$@" "$MIRROR/$_curdir"; set --; }
-          _curdir="$_dir"
-          [ -d "$MIRROR/$_dir" ] || mkdir -p "$MIRROR/$_dir"
-        fi
-        if [ ! -e "$MIRROR/$_rel" ] && [ ! -L "$MIRROR/$_rel" ]; then
-          set -- "$@" "$_src"
-          # Keep one call's arguments well short of the system limit.
-          [ $# -ge 500 ] && { ln -s "$@" "$MIRROR/$_curdir"; set --; }
-        fi
-      done < "$LIST"
-      [ $# -gt 0 ] && ln -s "$@" "$MIRROR/$_curdir"
-      return 0
-    }
-
-    render_one() {
-      _md="$1"; _html="$2"; _title="$3"
-      _body="$_html.part"
-      # Links between markdown files are pointed at the pages they became; a
-      # target carrying a scheme keeps a colon, so https://…/README.md is left
-      # alone. --wrap=none is what keeps that a plain substitution, by holding
-      # every attribute on one line. Dollar-sign math is off because prose
-      # mentioning $TWO $VARIABLES otherwise reads as an equation.
-      if ! pandoc -f markdown-tex_math_dollars --wrap=none "$_md" |
-           sed -E 's/href="([^":]*)\.md(#[^"]*)?"/href="\1.html\2"/g' > "$_body"; then
-        touch "$MIRROR/.mdp-failed"
-        return 1
-      fi
-
-      MDP_TITLE="$_title" awk -v bodyfile="$_body" '
-        {
-          i = index($0, "<!--TITLE-->")
-          if (i) $0 = substr($0, 1, i - 1) ENVIRON["MDP_TITLE"] substr($0, i + 12)
-          if (index($0, "<!--BODY-->")) {
-            while ((getline l < bodyfile) > 0) print l
-            close(bodyfile)
-            next
-          }
-          print
-        }' "$TEMPLATE" > "$_html"
-      rm -f "$_body"
-    }
-
-    RENDERED=0
-    render_all() {
-      _skip="${1:-}"
-      RENDERED=0
-      rm -f "$MIRROR/.mdp-failed"
-      # pandoc spends most of its time starting up, so a project's worth of files
-      # costs far less run together than one after another. Overshooting the core
-      # count keeps the cores busy while the batch's slowest file finishes.
-      _cap="$(sysctl -n hw.ncpu 2>/dev/null)"
-      case "$_cap" in ''|*[!0-9]*) _cap=4 ;; esac
-      _cap=$((_cap * 2))
-      [ "$_cap" -gt 32 ] && _cap=32
-      # Stamped before the pass, not after: a file saved while the pass is
-      # running would otherwise look older than the stamp and be skipped by the
-      # next reload. Dating it from the start costs a redundant render instead.
-      [ -e "$STAMP.new" ] || touch "$STAMP.new"
-      _running=0
-      while IFS= read -r _src; do
-        case "$_src" in *.md|*.markdown) ;; *) continue ;; esac
-        [ "$_src" = "$_skip" ] && continue
-        [ -f "$STAMP" ] && [ ! "$_src" -nt "$STAMP" ] && continue
-        _rel="${_src#"$ROOT"/}"
-        _dst="$MIRROR/${_rel%.*}.html"
-        [ -d "${_dst%/*}" ] || mkdir -p "${_dst%/*}"
-        # A project that ships its own foo.html would have been linked here; drop
-        # the link so the render writes a file instead of following it back.
-        rm -f "$_dst"
-        render_one "$_src" "$_dst" "${_src##*/}" &
-        RENDERED=$((RENDERED + 1))
-        _running=$((_running + 1))
-        [ "$_running" -ge "$_cap" ] && { wait; _running=0; }
-      done < "$LIST"
-      wait
-      mv "$STAMP.new" "$STAMP"
-      [ -f "$MIRROR/.mdp-failed" ] && echo "mdp: some files failed to convert" >&2
-      return 0
-    }
-
-    # Assets are linked before anything opens: the browser asks for the first
-    # page's images almost immediately, and a link that is not there yet shows up
-    # as a broken image rather than as something that arrives late.
-    prepare() {
-      scan | sort > "$LIST" || return 1
-      _total="$(grep -c . "$LIST")"
-      if [ "$_total" -gt 5000 ]; then
-        echo "mdp: $ROOT holds $_total files — point --root at the docs instead" >&2
-        return 1
-      fi
-      link_assets
-    }
-
-    build() {
-      prepare || return 1
-      render_all
-    }
-
-    prepare || { rm -rf "$MIRROR"; exit 1; }
-
-    MDCOUNT="$(grep -cE '\.(md|markdown)$' "$LIST")"
-    [ "$MDCOUNT" -gt 0 ] || { echo "mdp: no markdown files under $ROOT" >&2; rm -rf "$MIRROR"; exit 1; }
-
-    # With no file named, the README next to you wins over the one at the root.
-    if [ -z "$ENTRY" ]; then
-      for _try in "$PWD/README.md" "$ROOT/README.md"; do
-        [ -f "$_try" ] && { ENTRY="$_try"; break; }
-      done
-      case "${ENTRY:-}" in
-        "$ROOT"/*) ;;
-        *) ENTRY="$(grep -m1 -E '\.(md|markdown)$' "$LIST")" ;;
-      esac
-    fi
-
-    ENTRY_REL="${ENTRY#"$ROOT"/}"
-    ENTRY_HTML="$MIRROR/${ENTRY_REL%.*}.html"
-
-    BGPID=
-
-    cleanup() {
-      [ -n "$BGPID" ] && kill "$BGPID" 2>/dev/null
-      if [ "$WAND_FLAG_KEEP" = "true" ]; then
-        echo ""
-        echo "HTML kept in $MIRROR"
-      else
-        rm -rf "$MIRROR"
-        echo ""
-      fi
-      exit 0
-    }
-    trap cleanup INT TERM
-
-    # The page being opened is rendered on its own so the browser has something
-    # to show straight away; the rest of the project follows behind it, and is
-    # only ever needed once a link is actually clicked.
-    touch "$STAMP.new"
-    [ -d "${ENTRY_HTML%/*}" ] || mkdir -p "${ENTRY_HTML%/*}"
-    rm -f "$ENTRY_HTML"
-    render_one "$ENTRY" "$ENTRY_HTML" "${ENTRY##*/}" || { rm -rf "$MIRROR"; exit 1; }
-
-    echo "Opening $ENTRY_REL..."
-    open -u "file://$ENTRY_HTML"
-    echo "Press 'r' to reload, Ctrl+C to quit."
-
-    ready() {
-      printf 'Rendered %s markdown file%s from %s\n' "$MDCOUNT" "$([ "$MDCOUNT" = 1 ] || echo s)" "$ROOT"
-    }
-
-    if [ "$MDCOUNT" -gt 1 ]; then
-      { render_all "$ENTRY"; ready; } &
-      BGPID=$!
-    else
-      mv "$STAMP.new" "$STAMP"
-      ready
-    fi
-
-    while true; do
-      read -k 1 key || break
-      case "$key" in
-        r|R)
-          # Let the opening pass land before starting another, so the two are
-          # never writing the same page at once.
-          if [ -n "$BGPID" ]; then wait "$BGPID" 2>/dev/null; BGPID=; fi
-          if build; then
-            open -u "file://$ENTRY_HTML"
-            printf 'Reloaded %s changed file%s.\n' "$RENDERED" "$([ "$RENDERED" = 1 ] || echo s)"
-          fi
-          ;;
-      esac
-    done
-    cleanup
+    exec python3 "$SERVER" "$@"
 
 html:
   description: Convert a markdown file to HTML and write it to stdout
