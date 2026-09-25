@@ -55,6 +55,20 @@ elif [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
   export BREW_HOME="/home/linuxbrew/.linuxbrew"
 fi
 
+# Java. Homebrew's macOS openjdk keg holds a .jdk bundle; on Linux the keg root
+# is itself the JDK home.
+if [[ -n "$HOMEBREW_PREFIX" ]]; then
+  for _jdk in \
+    "$HOMEBREW_PREFIX/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home" \
+    "$HOMEBREW_PREFIX/opt/openjdk@21"; do
+    if [[ -x "$_jdk/bin/java" ]]; then
+      export JAVA_HOME="$_jdk"
+      break
+    fi
+  done
+  unset _jdk
+fi
+
 if [[ -d "$HOME/Library/Android/sdk" ]]; then
   export ANDROID_HOME="$HOME/Library/Android/sdk"
   export ANDROID_SDK_ROOT="$BREW_HOME/bin"
