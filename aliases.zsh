@@ -34,6 +34,9 @@ alias la="eza -lAh --icons always"
 alias l="eza -A --icons always"
 alias tree="eza -h --color=auto --icons always --tree"
 
+alias cat="bat"
+alias grep="rg --color=auto"
+
 # editor
 alias v="nvim ."
 alias vi="nvim"
