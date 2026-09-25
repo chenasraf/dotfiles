@@ -487,9 +487,12 @@ upload:
       alias: f
       type: bool
       description: Re-upload files even when the remote size already matches
+    exclude:
+      alias: x
+      description: Comma-separated glob patterns to leave out
   cmd: |
     if [ "$#" -eq 0 ]; then
-      echo "Usage: nxc upload [--force] <source>... [target]" >&2
+      echo "Usage: nxc upload [--force] [--exclude <glob>] <source>... [target]" >&2
       echo >&2
       echo "  nxc upload ./notes.md              -> /notes.md" >&2
       echo "  nxc upload ./notes.md Docs/        -> /Docs/notes.md" >&2
@@ -504,6 +507,31 @@ upload:
       echo "Files whose remote copy is the same size are skipped (--force overrides)." >&2
       echo "Files above NXC_CHUNK_MB (default 32) MiB go up in chunks, and an" >&2
       echo "interrupted run continues from the last chunk the server kept." >&2
+      echo >&2
+      echo "--exclude / -x takes glob patterns, comma-separated. An entry is left" >&2
+      echo "out when any one of them matches it." >&2
+      echo >&2
+      echo "  -x '*.raw'              every .raw, at any depth" >&2
+      echo "  -x '**/*.import'        the same — a leading **/ is already the default" >&2
+      echo "  -x 'node_modules'       that folder anywhere, and all of its contents" >&2
+      echo "  -x 'build/dist'         that path under the source, not ./src/build/dist" >&2
+      echo "  -x 'IMG_00??.jpg'       ? stands for exactly one character" >&2
+      echo "  -x '[Tt]humbs.db'       [...] stands for one character out of a set" >&2
+      echo "  -x '*.log,*.tmp,.git'   three patterns at once" >&2
+      echo >&2
+      echo "A pattern without a slash is matched against every name along a path, so" >&2
+      echo "it drops a folder and everything inside it. A pattern with a slash is" >&2
+      echo "matched against the path relative to the source, so it is anchored there." >&2
+      echo >&2
+      echo "Quote the pattern — otherwise the shell expands it against the working" >&2
+      echo "directory before nxc ever sees it." >&2
+      echo >&2
+      echo "There is no --include; narrow the sources instead, which the shell" >&2
+      echo "already does well:" >&2
+      echo >&2
+      echo "  nxc upload ./photos/*.jpg Albums/2024" >&2
+      echo "  nxc upload ./src Code/ -x 'node_modules,dist,*.log'" >&2
+      echo "  nxc upload ./assets Dev/Assets -x '**/*.import,.godot'" >&2
       exit 1
     fi
 
@@ -589,7 +617,25 @@ upload:
     [ -t 2 ] && PROGRESS="--progress-bar"
     dav_put() { curl -S $PROGRESS --globoff -u "$DAV_USER:$DAV_PASS" "$@"; }
 
+    # One-line progress for the phases that finish no file, so a large tree does
+    # not sit silent while it is scanned and its folders are created. stderr, so
+    # the list of uploaded paths on stdout stays pipeable.
+    status() {
+      [ -t 2 ] && printf '  %s\033[K\r' "$1" >&2
+      return 0
+    }
+    status_done() {
+      [ -t 2 ] && printf '  %s\033[K\n' "$1" >&2
+      return 0
+    }
+
+    # The x survives command substitution stripping the trailing newlines.
+    NL="$(printf '\nx')"; NL="${NL%x}"
+
     # MKCOL creates a single collection, so walk the path; 405 means it is already there.
+    # Every collection confirmed this run is remembered: a deep tree shares its
+    # parents between hundreds of children, and re-confirming each costs a round trip.
+    MKCOL_DONE="$NL"
     mkcol_p() {
       _rest="$1"
       _acc=""
@@ -601,13 +647,78 @@ upload:
         esac
         [ -z "$_seg" ] && continue
         _acc="${_acc:+$_acc/}$_seg"
+        case "$MKCOL_DONE" in *"$NL$_acc$NL"*) continue ;; esac
         _code=$(dav -o /dev/null -w '%{http_code}' -X MKCOL "$DAV_ROOT/$(urlenc "$_acc")") \
           || { echo "MKCOL $_acc failed (curl exit $?)" >&2; return 1; }
         case "$_code" in
-          201|405) ;;
+          201|405) MKCOL_DONE="$MKCOL_DONE$_acc$NL" ;;
           *) echo "MKCOL $_acc failed (HTTP $_code)" >&2; return 1 ;;
         esac
       done
+    }
+
+    # Does $1 match the glob in $2? zsh matches an unquoted $var in a case
+    # pattern literally, where every other shell re-reads it as a pattern;
+    # ${~2} asks zsh for that reading. The eval hides the zsh-only spelling from
+    # the other shells' parsers.
+    if [ -n "${ZSH_VERSION:-}" ]; then
+      eval 'glob_match() { case "$1" in ${~2}) return 0 ;; esac; return 1; }'
+    else
+      glob_match() { case "$1" in $2) return 0 ;; esac; return 1; }
+    fi
+
+    # A pattern holding a slash is matched against the path relative to the
+    # source; one without it against each name along that path, so it drops the
+    # contents of a folder it matches too. Both also try every ancestor, so
+    # "build/dist" excludes what is under it. A leading "**/" means "at any
+    # depth", which is what the rest of the pattern already does on its own.
+    EXCLUDES="$WAND_FLAG_EXCLUDE"
+    excluded() {
+      [ -n "$EXCLUDES" ] || return 1
+      _ex_rest="$EXCLUDES"
+      while [ -n "$_ex_rest" ]; do
+        _ex_pat="${_ex_rest%%,*}"
+        case "$_ex_rest" in
+          *,*) _ex_rest="${_ex_rest#*,}" ;;
+          *) _ex_rest="" ;;
+        esac
+        while [ "$_ex_pat" != "${_ex_pat#\*\*/}" ]; do
+          _ex_pat="${_ex_pat#\*\*/}"
+        done
+        [ -z "$_ex_pat" ] && continue
+        _ex_path="$1"
+        while : ; do
+          case "$_ex_pat" in
+            */*) _ex_cand="$_ex_path" ;;
+            *) _ex_cand="${_ex_path##*/}" ;;
+          esac
+          glob_match "$_ex_cand" "$_ex_pat" && return 0
+          case "$_ex_path" in
+            */*) _ex_path="${_ex_path%/*}" ;;
+            *) break ;;
+          esac
+        done
+      done
+      return 1
+    }
+
+    # Drops the excluded entries from a find listing, leaving FILTER_COUNT set to
+    # what survived. Without --exclude the listing is already the answer, and wc
+    # counts a tree of 100k files in the time a shell loop needs for a few hundred.
+    filter_list() {
+      _fl_src="$1"; _fl_dst="$2"; _fl_base="$3"; _fl_label="$4"
+      if [ -z "$EXCLUDES" ]; then
+        cp "$_fl_src" "$_fl_dst" || return 1
+        FILTER_COUNT="$(wc -l < "$_fl_dst" | tr -d ' ')"
+        return 0
+      fi
+      FILTER_COUNT=0
+      while IFS= read -r _fl_p; do
+        excluded "${_fl_p#"$_fl_base"/}" && continue
+        FILTER_COUNT=$((FILTER_COUNT + 1))
+        [ "$((FILTER_COUNT % 200))" -eq 0 ] && status "$_fl_label $FILTER_COUNT"
+        printf '%s\n' "$_fl_p"
+      done < "$_fl_src" > "$_fl_dst"
     }
 
     fsize() { stat -f %z "$1" 2>/dev/null || stat -c %s "$1" 2>/dev/null; }
@@ -739,6 +850,11 @@ upload:
     upload_one() {
       _up_base="$1"; _up_remote="$2"
 
+      if excluded "${_up_base##*/}"; then
+        echo "$_up_base (excluded)"
+        return 0
+      fi
+
       if [ -f "$_up_base" ]; then
         case "$_up_remote" in
           */*) mkcol_p "${_up_remote%/*}" || return 1 ;;
@@ -757,14 +873,26 @@ upload:
       _up_was_skip=$SKIPPED
       echo "$_up_base/ -> /$_up_remote/"
       mkcol_p "$_up_remote" || return 1
+      status "scanning folders"
+      find "$_up_base" -mindepth 1 -type d -print > "$SCAN"
+      filter_list "$SCAN" "$DIRS" "$_up_base" "folders found:" || return 1
+      _up_dirs="$FILTER_COUNT"
+      status "scanning files"
+      find "$_up_base" -type f ! -name '.DS_Store' ! -name '._*' -print > "$SCAN"
+      filter_list "$SCAN" "$TMP" "$_up_base" "files found:" || return 1
+      _up_total="$FILTER_COUNT"
+      status_done "$_up_dirs folders, $_up_total files"
+
       # The strip patterns quote "$_up_base" so a "[...]" in the path stays literal
       # instead of being read as a character class.
-      find "$_up_base" -mindepth 1 -type d -print > "$TMP"
+      _up_n=0
       while IFS= read -r d; do
+        _up_n=$((_up_n + 1))
+        status "folder $_up_n/$_up_dirs"
         mkcol_p "$_up_remote/${d#"$_up_base"/}" || return 1
-      done < "$TMP"
-      find "$_up_base" -type f ! -name '.DS_Store' ! -name '._*' -print > "$TMP"
-      _up_total="$(wc -l < "$TMP" | tr -d ' ')"
+      done < "$DIRS"
+      [ "$_up_dirs" -gt 0 ] && status_done "$_up_dirs folders ready"
+
       _up_n=0
       while IFS= read -r f; do
         _up_n=$((_up_n + 1))
@@ -779,10 +907,12 @@ upload:
     UPLOADED=0
     SKIPPED=0
     TMP="$(mktemp)"
+    DIRS="$(mktemp)"
+    SCAN="$(mktemp)"
     CHUNK_TMP="$(mktemp)"
     # A signal handler that only cleans up leaves the shell running the next file, so
     # these exit as well — Ctrl-C has to stop the whole transfer, not just one curl.
-    cleanup() { rm -f "$CHUNK_TMP" "$TMP"; }
+    cleanup() { rm -f "$CHUNK_TMP" "$TMP" "$DIRS" "$SCAN"; }
     trap 'cleanup' EXIT
     trap 'cleanup; exit 130' INT
     trap 'cleanup; exit 143' TERM
