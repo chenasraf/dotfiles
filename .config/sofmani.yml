@@ -522,6 +522,8 @@ install:
     type: brew
     platforms:
       only: ['macos']
+    machines:
+      only: ['m1']
     opts:
       cask: true
 
@@ -779,8 +781,6 @@ install:
     type: brew
     platforms:
       only: ['macos']
-    machines:
-      except: ['planck']
     opts:
       tap: dannystewart/apps
 
