@@ -123,8 +123,8 @@ config.keys = {
   { key = "f",         mods = "CMD|SHIFT", action = act { SendString = "\x1b\x1b fg\n" } },
   -- open file picker in neovim: Cmd+P
   { key = "p",         mods = "CMD",       action = act { SendString = "\x1b\x1b ff\n" } },
-  -- open lazygit in neovim: Cmd+G
-  { key = "g",         mods = "CMD",       action = act { SendString = "\x1b\x1b gs\n" } },
+  -- open lazygit in a tmux popup: Cmd+G
+  { key = "g",         mods = "CMD",       action = act { SendString = "\x02g" } },
   -- Cmd+Shift+P - Select tmux session
   { key = "p",         mods = "CMD|SHIFT", action = act { SendString = "\x02s" } },
 

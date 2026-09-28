@@ -159,8 +159,8 @@ keybind = super+shift+f=text:\x1b\x1b fg
 # Open file picker in neovim: Cmd+P
 keybind = super+p=text:\x1b\x1b ff
 
-# Open lazygit in neovim: Cmd+G
-keybind = super+g=text:\x1b\x1b gs
+# Open lazygit in a tmux popup: Cmd+G
+keybind = super+g=text:\x02g
 
 # ==============================================================================
 # Terminal bindings

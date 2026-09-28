@@ -96,3 +96,8 @@ set -g window-status-current-style "bg=#{@thm_teal},fg=#{@thm_surface_0},bold"
 # anywhere inside #{?...} would split it into another branch.
 set -g "@status_ssh" "#(~/.config/tmux/ssh-stats #{pane_pid} '#{E:@catppuccin_status_left_separator}' '#{E:@thm_crust}' '#{E:@thm_fg}' '#{E:@thm_surface_0}' '#{E:@thm_mauve}' '#{E:@thm_green}' '#{E:@thm_yellow}' '#{E:@thm_sapphire}' '#{E:@thm_crust}' '#{E:@thm_red}' 80 85)#[fg=#{@thm_surface_0},bg=default]#[noreverse]"
 set -g status-right "#{?#{m:ssh*,#{pane_current_command}},#{E:@status_ssh},#{E:@status_local}}"
+
+# NOTE Popups
+setw -g popup-border-lines rounded
+setw -g popup-border-style "fg=#{@thm_sky}"
+setw -g popup-style "bg=#{@thm_bg}"
