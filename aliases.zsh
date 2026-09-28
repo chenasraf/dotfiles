@@ -82,6 +82,15 @@ alias grao="git remote add origin"
 alias gchen="git config user.name 'Chen Asraf'; git config user.email casraf@pm.me"
 alias lg="lazygit"
 grac() { git remote add origin "git@github.com:chenasraf/$1.git"; }
+cdgr() {
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+    print -u2 "cdgr: not a git repository"
+    return 1
+  }
+  [[ "$PWD" == "$root" ]] && return 0
+  cd "$root"
+}
 alias gresetdate='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date="$(date)"'
 
 # home/dotfiles
