@@ -253,6 +253,27 @@ fbcurl() {
   curl -fsSL -H "Authorization: Bearer $FBPWD" "$@"
 }
 
+# Load the encrypted secrets from an env file into this shell. Their private key
+# lives in the OS keychain, so no file on disk holds a usable copy; the price is
+# ~700ms per decrypt, too slow to sit on a startup path — exports.zsh, and with it
+# _local.zsh, is re-sourced on every statusline render.
+loadenv() {
+  local file="${1:-$DOTFILES/.env}" json key val
+  local -a loaded
+  json="$(dotenvx get -f "$file" --strict 2>/dev/null)" || {
+    print -ru2 "loadenv: could not decrypt $file"
+    return 1
+  }
+  # Values round-trip through base64 so quotes, $ and newlines survive the shell.
+  while IFS=$'\t' read -r key val; do
+    export "$key=$(printf '%s' "$val" | base64 -d)"
+    loaded+=("$key")
+  done < <(
+    jq -r 'to_entries[] | select(.key != "DOTENV_PUBLIC_KEY") | [.key, (.value | @base64)] | @tsv' <<<"$json"
+  )
+  print -ru2 "loadenv: ${loaded[*]}"
+}
+
 alias fdg="fd --glob"
 alias mdf="prettier --config \$HOME/.prettierrc --ignore-path \$HOME/.prettierignore --write '**/*.md'"
 alias wands="alias G 'wand --wand-file' G -v wands"
