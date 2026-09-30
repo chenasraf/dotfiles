@@ -598,6 +598,11 @@ upload:
     DAV_HOST="${NXC_DAV_HOST:-${NEXTCLOUD_HOST:-}}"
     DAV_USER="${NXC_DAV_USER:-${NEXTCLOUD_USERNAME:-}}"
     DAV_PASS="${NXC_DAV_PASS:-${NEXTCLOUD_PASSWORD:-}}"
+    # The password is encrypted in $DOTFILES/.env with its key in the OS keychain,
+    # so most shells do not carry it. Decrypting costs ~700ms, so it happens only
+    # when nothing in the environment already supplies one — an NXC_DAV_PASS aimed
+    # at another instance must not be overridden by the dotfiles secret.
+    [ -n "$DAV_PASS" ] || DAV_PASS="$(dotenvx get NEXTCLOUD_PASSWORD -f "$DOTFILES/.env" --strict 2>/dev/null)"
     if [ -z "$DAV_HOST" ] || [ -z "$DAV_USER" ] || [ -z "$DAV_PASS" ]; then
       echo "Missing credentials: set NEXTCLOUD_HOST, NEXTCLOUD_USERNAME and NEXTCLOUD_PASSWORD" >&2
       echo "(or NXC_DAV_HOST / NXC_DAV_USER / NXC_DAV_PASS to target another instance)." >&2
