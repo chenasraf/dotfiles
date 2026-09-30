@@ -20,3 +20,6 @@ var/log/sofmani
 .claude/settings.json
 Library/pnpm
 __pycache__
+/.envrc
+/.env.keys
+/.env
