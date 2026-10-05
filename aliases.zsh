@@ -218,7 +218,6 @@ for ext in {jpg,jpeg,png,gif,webp,mp4,avi,mov}; do
 done
 
 # general
-alias serve="open http://localhost:\${PORT:-3001} & http-server -p \${PORT:-3001}"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias unq="sudo xattr -rd com.apple.quarantine"
 alias sf="search-file"
