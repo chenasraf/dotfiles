@@ -518,6 +518,23 @@ install:
   - name: dysk
     type: brew
 
+  - name: dbx
+    type: group
+    steps:
+      # The cask is flagged auto_updates: DBX ships its own signed updater, so
+      # brew installs it and then leaves the version alone.
+      - name: dbx
+        type: brew
+        platforms:
+          only: ['macos']
+        opts:
+          cask: true
+
+      - name: dbx-cli
+        type: brew
+        opts:
+          tap: t8y2/tap
+
   - name: godot
     type: brew
     platforms:
