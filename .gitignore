@@ -13,6 +13,7 @@ plugins/.cache
 .config/local.tmux
 var/log/sofmani
 .config/tmux_local.yml
+.config/sofmani_local.yml
 /_plugins/.cache
 /.config/direnv/lib
 /.config/tmux/plugins
