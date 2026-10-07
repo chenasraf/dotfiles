@@ -647,6 +647,10 @@ install:
     bin_name: vscode-json-language-server
     type: pnpm
 
+  - name: '@dokploy/cli'
+    bin_name: dokploy
+    type: pnpm
+
   # ----------------------------------------------------------------------
   # 🤖 AI
   # ----------------------------------------------------------------------
