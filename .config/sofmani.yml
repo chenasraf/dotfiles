@@ -430,61 +430,6 @@ install:
       only: ['macos']
     check_installed: test -d "/Applications/Nextcloud Talk.app"
 
-  - name: aseprite
-    type: group
-    platforms:
-      only: ['macos']
-    machines:
-      only: ['m1']
-    frequency: 4w
-    steps:
-      - name: cmake
-        type: brew
-      - name: ninja
-        type: brew
-      - name: aseprite/aseprite
-        type: git
-        check_has_update: '[ "$(git -C ~/.local/build/aseprite rev-parse HEAD 2>/dev/null)" != "$(git ls-remote https://github.com/aseprite/aseprite refs/heads/main | cut -f1)" ]'
-        pre_update: |
-          cd ~/.local/build/aseprite
-          git fetch --depth=1 origin main
-          git reset --hard FETCH_HEAD
-          git submodule update --init --recursive --depth=1 -f
-        post_install: |
-          cd ~/.local/build/aseprite
-          git submodule update --init --recursive --depth=1
-          rm -f build/CMakeCache.txt
-          ./build.sh --auto --norun
-          chmod +x build/bin/aseprite
-          cp -f build/bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
-          rsync -a --delete build/bin/data/ /Applications/Aseprite.app/Contents/Resources/data/
-          xattr -rd com.apple.quarantine /Applications/Aseprite.app
-
-          RAW_TAG=$(gh api repos/aseprite/aseprite/releases/latest --jq .tag_name)
-          VERSION=${RAW_TAG#v}
-          PLIST="/Applications/Aseprite.app/Contents/Info.plist"
-          plutil -convert xml1 "$PLIST"
-          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST"
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $VERSION" "$PLIST"
-        post_update: |
-          cd ~/.local/build/aseprite
-          rm -f build/CMakeCache.txt
-          ./build.sh --auto --norun
-          chmod +x build/bin/aseprite
-          cp -f build/bin/aseprite /Applications/Aseprite.app/Contents/MacOS/aseprite
-          rsync -a --delete build/bin/data/ /Applications/Aseprite.app/Contents/Resources/data/
-          xattr -rd com.apple.quarantine /Applications/Aseprite.app
-
-          RAW_TAG=$(gh api repos/aseprite/aseprite/releases/latest --jq .tag_name)
-          VERSION=${RAW_TAG#v}
-          PLIST="/Applications/Aseprite.app/Contents/Info.plist"
-          plutil -convert xml1 "$PLIST"
-          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST"
-          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $VERSION" "$PLIST"
-        opts:
-          destination: ~/.local/build
-          install_flags: --depth=1 --recurse-submodules --shallow-submodules
-
   - name: regex-tui
     type: github-release
     opts:
@@ -495,11 +440,6 @@ install:
         macos: regex-tui_{{ .Tag }}_darwin.{{ .Arch }}
         linux: regex-tui_{{ .Tag }}_linux.{{ .Arch }}
         windows: regex-tui_{{ .Tag }}_windows.{{ .Arch }}.exe
-
-  - name: fastlane
-    type: brew
-    machines:
-      only: ['m1']
 
   - name: lefthook
     type: brew
@@ -542,15 +482,6 @@ install:
         type: brew
         opts:
           tap: t8y2/tap
-
-  - name: godot
-    type: brew
-    platforms:
-      only: ['macos']
-    machines:
-      only: ['m1']
-    opts:
-      cask: true
 
   - name: lynis
     type: shell
@@ -729,25 +660,6 @@ install:
 
   - name: black
     type: pipx
-
-  - name: nextcloud-mcp-server
-    type: shell
-    tags: mcp claude
-    machines:
-      only: ['m1']
-    frequency: 1w
-    # Installed as a persistent uv tool rather than run through uvx: uvx
-    # re-resolves the latest release on every MCP server launch, upstream ships
-    # near-daily, and the 141-package dep tree (onnxruntime, numpy, pymupdf,
-    # boto3) leaves a ~500MB generation in the uv cache per resolution.
-    # --no-cache writes straight into the tool venv, so the footprint stays flat.
-    check_installed: uv tool list 2>/dev/null | grep -q '^nextcloud-mcp-server '
-    check_has_update: >-
-      [ "$(uv tool list 2>/dev/null | awk '/^nextcloud-mcp-server /{print $2}')" !=
-      "v$(curl -fsSL https://pypi.org/pypi/nextcloud-mcp-server/json | jq -r .info.version)" ]
-    opts:
-      command: uv tool install --no-cache nextcloud-mcp-server
-      update_command: uv tool upgrade --no-cache nextcloud-mcp-server
 
   # ----------------------------------------------------------------------
   # 🔌 Zsh & Tmux Plugins
