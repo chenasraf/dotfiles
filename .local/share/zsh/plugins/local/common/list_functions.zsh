@@ -12,19 +12,19 @@ list_exported_functions() {
   local file
   for file in "$@"; do
     # Get unset functions from this file
-    local unset_funcs=$(grep -oE 'unset\s+-f\s+[a-zA-Z0-9_-]+' "$file" 2>/dev/null | \
+    local unset_funcs=$(command grep -oE 'unset\s+-f\s+[a-zA-Z0-9_-]+' "$file" 2>/dev/null | \
       awk '{print $3}')
 
     # Parse function definitions directly from the file
     # Matches: function_name() or function function_name()
-    grep -oE '^\s*(function\s+)?[a-zA-Z0-9_-]+\s*\(\)' "$file" 2>/dev/null | \
+    command grep -oE '^\s*(function\s+)?[a-zA-Z0-9_-]+\s*\(\)' "$file" 2>/dev/null | \
       sed -E 's/^[[:space:]]*//' | \
       sed -E 's/^function[[:space:]]+//' | \
       sed 's/()$//' | \
-      grep -v -E '^(_.*|comp.*|bashcomp.*|autoload_completions|complete)$' | \
+      command grep -v -E '^(_.*|comp.*|bashcomp.*|autoload_completions|complete)$' | \
       while read -r func; do
         # Skip if this function was unset
-        if ! echo "$unset_funcs" | grep -qx "$func"; then
+        if ! echo "$unset_funcs" | command grep -qx "$func"; then
           echo "$func"
         fi
       done

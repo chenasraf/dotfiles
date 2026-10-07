@@ -16,7 +16,7 @@ _sc_detect_js_pm() {
 
   # check engines field
   local engines_pm
-  engines_pm=$(jq -r '.engines | keys[]' "$pkg_json" 2>/dev/null | grep -E '^(pnpm|yarn|npm)$' | head -1)
+  engines_pm=$(jq -r '.engines | keys[]' "$pkg_json" 2>/dev/null | command grep -E '^(pnpm|yarn|npm)$' | head -1)
   if [[ -n "$engines_pm" ]]; then
     echo "$engines_pm"
     return
@@ -81,7 +81,7 @@ _sc_collect_py() {
 _sc_collect_make() {
   local makefile="$1"
   # parse targets that aren't hidden (no leading dot/underscore) and aren't variable assignments
-  grep -oE '^[a-zA-Z0-9][a-zA-Z0-9_-]*:' "$makefile" 2>/dev/null | sed 's/:$//' | while read -r target; do
+  command grep -oE '^[a-zA-Z0-9][a-zA-Z0-9_-]*:' "$makefile" 2>/dev/null | sed 's/:$//' | while read -r target; do
     echo "make $target"
   done
 }
@@ -122,7 +122,7 @@ sc() {
   fi
 
   local selected
-  selected=$(printf '%s\n' "${lines[@]}" | grep -v '^$' | fzf --prompt="Run script: ")
+  selected=$(printf '%s\n' "${lines[@]}" | command grep -v '^$' | fzf --prompt="Run script: ")
 
   if [[ -n "$selected" ]]; then
     # for make targets, run from the Makefile's directory
