@@ -535,6 +535,16 @@ install:
         opts:
           tap: t8y2/tap
 
+  - name: jira-cli
+    bin_name: twg
+    type: shell
+    machines:
+      only: ['planck']
+    check_installed: command -v twg > /dev/null 2>&1
+    check_has_update: false
+    opts:
+      command: curl -fsSL --retry 2 https://teamwork-graph.atlassian.com/cli/install | bash
+
   - name: godot
     type: brew
     platforms:
