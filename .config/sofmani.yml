@@ -39,7 +39,8 @@ install:
     tags: config
     enabled: test -f ~/.dotfiles/.config/sofmani_local.yml
     opts:
-      source: ~/.dotfiles/.config/sofmani_local.yml
+      source: ~/.dotfiles/.config
+      path: sofmani_local.yml
 
   - name: claude-settings
     type: shell
