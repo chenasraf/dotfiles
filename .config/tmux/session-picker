@@ -1,0 +1,635 @@
+#!/usr/bin/env python3
+
+# Session/window picker for a tmux popup.
+#
+#   session-picker <client>          fzf list of sessions and windows; Enter switches <client>
+#   session-picker preview <target>  draw <target>'s window: real pane layout + pane contents
+#   session-picker list [query]      rows for fzf's reload: the expanded tree, or the matches for query
+#   session-picker key <k> <id> <q>  fzf actions for right/left (expand/collapse), esc, and new results
+#
+# The preview never switches the client — it reads geometry with list-panes and contents with
+# capture-pane, then scales everything into the fzf preview area.
+
+import json
+import os
+import re
+import subprocess
+import sys
+import tempfile
+import unicodedata
+
+SELF = os.path.abspath(__file__)
+
+U, R, D, L = 1, 2, 4, 8
+BOX = {
+    R | L: "─",
+    U | D: "│",
+    R | D: "╭",
+    L | D: "╮",
+    U | R: "╰",
+    U | L: "╯",
+    U | R | D: "├",
+    U | L | D: "┤",
+    L | R | D: "┬",
+    U | L | R: "┴",
+    U | R | D | L: "┼",
+    R: "─",
+    L: "─",
+    U: "│",
+    D: "│",
+}
+
+SGR = re.compile(r"\x1b\[([0-9;:]*)m")
+OTHER_ESC = re.compile(
+    r"\x1b(\[[0-9;:?<>=]*[@-~]|\][^\x07\x1b]*(\x07|\x1b\\)|[()][0-9A-Za-z]|[=>])"
+)
+ANY_ESC = re.compile(f"{SGR.pattern}|{OTHER_ESC.pattern}")
+
+
+def tmux(*args):
+    return subprocess.run(["tmux", *args], capture_output=True, text=True).stdout
+
+
+def rows(*args):
+    return [line.split("\t") for line in tmux(*args).splitlines() if line]
+
+
+def fg(hex_color, bold=False):
+    if not hex_color.startswith("#") or len(hex_color) != 7:
+        return "\x1b[1m" if bold else ""
+    r, g, b = (int(hex_color[i : i + 2], 16) for i in (1, 3, 5))
+    return f"\x1b[{'1;' if bold else ''}38;2;{r};{g};{b}m"
+
+
+def theme():
+    names = [
+        "sky",
+        "overlay_0",
+        "overlay_1",
+        "blue",
+        "green",
+        "subtext_0",
+        "text",
+        "peach",
+    ]
+    values = (
+        tmux("display", "-p", "\t".join(f"#{{@thm_{n}}}" for n in names))
+        .rstrip("\n")
+        .split("\t")
+    )
+    return dict(zip(names, values + [""] * len(names)))
+
+
+def char_width(ch):
+    if unicodedata.combining(ch):
+        return 0
+    return 2 if unicodedata.east_asian_width(ch) in ("W", "F") else 1
+
+
+def parse_cells(lines):
+    """Turn capture-pane -e output into rows of (char, style) cells.
+
+    capture-pane carries SGR state across lines, so style must too.
+    """
+    style = ""
+    out = []
+    for line in lines:
+        cells = []
+        pos = 0
+        for m in ANY_ESC.finditer(line + "\x1b[m"):
+            for ch in line[pos : m.start()].replace("\t", " "):
+                w = char_width(ch)
+                if w == 0:
+                    if cells and cells[-1][0]:
+                        cells[-1] = (cells[-1][0] + ch, cells[-1][1])
+                    continue
+                cells.append((ch, style))
+                if w == 2:
+                    cells.append((None, style))
+            pos = m.end()
+            if m.start() >= len(line):
+                break
+            params = m.group(1)
+            if params is not None:
+                style = "" if params in ("", "0") else style + m.group(0)
+        out.append(cells)
+    return out
+
+
+def is_blank(cells):
+    return all(c is None or c.isspace() for c, _ in cells)
+
+
+class Canvas:
+    def __init__(self, width, height):
+        self.w, self.h = width, height
+        self.cells = [[(" ", "") for _ in range(width)] for _ in range(height)]
+
+    def put(self, x, y, ch, style=""):
+        if 0 <= x < self.w and 0 <= y < self.h:
+            self.cells[y][x] = (ch, style)
+
+    def text(self, x, y, s, style="", limit=None):
+        for i, ch in enumerate(s[: limit if limit is not None else len(s)]):
+            self.put(x + i, y, ch, style)
+
+    def render(self):
+        out = []
+        for row in self.cells:
+            line, cur = [], None
+            for i, (ch, style) in enumerate(row):
+                if ch is None:
+                    continue
+                # a wide char whose right half got overwritten (e.g. by a border) would push the line
+                if (
+                    i + 1 < len(row)
+                    and row[i + 1][0] is not None
+                    and char_width(ch[0]) == 2
+                ):
+                    ch = " "
+                if style != cur:
+                    line.append("\x1b[0m" + style)
+                    cur = style
+                line.append(ch)
+            out.append("".join(line) + "\x1b[0m")
+        return "\n".join(out)
+
+
+def preview(target):
+    cols = int(os.environ.get("FZF_PREVIEW_COLUMNS", "80"))
+    lines = int(os.environ.get("FZF_PREVIEW_LINES", "24"))
+    t = theme()
+
+    info = tmux(
+        "display",
+        "-p",
+        "-t",
+        target,
+        "#{session_id}\t#{window_id}\t#{window_width}\t#{window_height}\t#{window_zoomed_flag}",
+    )
+    sid, wid, ww, wh, zoomed = info.rstrip("\n").split("\t")
+    ww, wh = int(ww), int(wh)
+
+    canvas = Canvas(cols, lines)
+
+    # header: the session's windows, previewed one highlighted
+    x = 0
+    for _, w_id, idx, name in rows(
+        "list-windows",
+        "-t",
+        sid,
+        "-F",
+        "#{session_id}\t#{window_id}\t#{window_index}\t#{window_name}",
+    ):
+        label = f" {idx} {name} "
+        style = fg(t["sky"], bold=True) if w_id == wid else fg(t["overlay_1"])
+        canvas.text(x, 0, label, style)
+        x += len(label) + 1
+
+    panes = rows(
+        "list-panes",
+        "-t",
+        wid,
+        "-F",
+        "#{pane_id}\t#{pane_index}\t#{pane_left}\t#{pane_top}\t#{pane_width}\t#{pane_height}"
+        "\t#{pane_active}\t#{pane_floating_flag}\t#{alternate_on}\t#{pane_current_command}",
+    )
+    panes = [
+        dict(
+            id=p[0],
+            index=p[1],
+            left=int(p[2]),
+            top=int(p[3]),
+            width=int(p[4]),
+            height=int(p[5]),
+            active=p[6] == "1",
+            floating=p[7] == "1",
+            alternate=p[8] == "1",
+            command=p[9],
+        )
+        for p in panes
+    ]
+    if zoomed == "1":
+        # geometry of hidden panes is stale while zoomed, so show only what is actually visible
+        panes = [
+            dict(p, left=0, top=0, width=ww, height=wh) for p in panes if p["active"]
+        ]
+
+    # layout area sits below the header; window cell (x, y) has its borders at x and x+width+1
+    top, area_w, area_h = 1, cols, lines - 1
+    sx = (area_w - 1) / (ww + 1)
+    sy = (area_h - 1) / (wh + 1)
+
+    def box(p):
+        return (
+            round(p["left"] * sx),
+            top + round(p["top"] * sy),
+            round((p["left"] + p["width"] + 1) * sx),
+            top + round((p["top"] + p["height"] + 1) * sy),
+        )
+
+    border = fg(t["overlay_0"])
+    active_border = fg(t["sky"])
+
+    def perimeter(x0, y0, x1, y1):
+        for x in range(x0, x1 + 1):
+            yield x, y0
+            yield x, y1
+        for y in range(y0 + 1, y1):
+            yield x0, y
+            yield x1, y
+
+    def draw_contents(p, x0, y0, x1, y1):
+        iw, ih = x1 - x0 - 1, y1 - y0 - 1
+        if iw <= 0 or ih <= 0:
+            return
+        cells = parse_cells(
+            tmux("capture-pane", "-p", "-e", "-t", p["id"]).split("\n")[: p["height"]]
+        )
+        if p["alternate"]:
+            # full-screen apps (editors, TUIs) read best from the top
+            shown = cells[:ih]
+        else:
+            # shells: the interesting part is the most recent output, just above the prompt
+            while cells and is_blank(cells[-1]):
+                cells.pop()
+            shown = cells[-ih:]
+        for dy, row in enumerate(shown):
+            for dx, cell in enumerate(row[:iw]):
+                ch, style = cell
+                if ch is not None and dx == iw - 1 and char_width(ch[0]) == 2:
+                    ch = " "
+                canvas.cells[y0 + 1 + dy][x0 + 1 + dx] = (ch, style)
+            for dx in range(len(row[:iw]), iw):
+                canvas.cells[y0 + 1 + dy][x0 + 1 + dx] = (" ", "")
+
+    def draw_label(p, x0, y0, x1, style):
+        label = f" {p['index']} {p['command']} "
+        room = x1 - x0 - 3
+        if room >= 3:
+            canvas.text(x0 + 2, y0, label, style, limit=room)
+
+    # tiled panes share borders, so merge their edges into proper junctions
+    tiled = [p for p in panes if not p["floating"]]
+    edges = {}
+
+    def add(x, y, bit):
+        edges[(x, y)] = edges.get((x, y), 0) | bit
+
+    for p in tiled:
+        x0, y0, x1, y1 = box(p)
+        for x in range(x0, x1):
+            for y in (y0, y1):
+                add(x, y, R)
+                add(x + 1, y, L)
+        for y in range(y0, y1):
+            for x in (x0, x1):
+                add(x, y, D)
+                add(x, y + 1, U)
+    for (x, y), mask in edges.items():
+        canvas.put(x, y, BOX.get(mask, " "), border)
+
+    for p in tiled:
+        x0, y0, x1, y1 = box(p)
+        draw_contents(p, x0, y0, x1, y1)
+    for p in tiled:
+        if p["active"]:
+            x0, y0, x1, y1 = box(p)
+            for x, y in perimeter(x0, y0, x1, y1):
+                if 0 <= y < canvas.h and 0 <= x < canvas.w:
+                    canvas.cells[y][x] = (canvas.cells[y][x][0], active_border)
+    for p in tiled:
+        x0, y0, x1, _ = box(p)
+        draw_label(p, x0, y0, x1, active_border if p["active"] else fg(t["subtext_0"]))
+
+    # floating panes sit on top and own their whole box
+    for p in (p for p in panes if p["floating"]):
+        x0, y0, x1, y1 = box(p)
+        style = active_border if p["active"] else border
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                canvas.put(x, y, " ")
+        for x in range(x0 + 1, x1):
+            canvas.put(x, y0, "─", style)
+            canvas.put(x, y1, "─", style)
+        for y in range(y0 + 1, y1):
+            canvas.put(x0, y, "│", style)
+            canvas.put(x1, y, "│", style)
+        for x, y, ch in ((x0, y0, "╭"), (x1, y0, "╮"), (x0, y1, "╰"), (x1, y1, "╯")):
+            canvas.put(x, y, ch, style)
+        draw_contents(p, x0, y0, x1, y1)
+        draw_label(p, x0, y0, x1, style)
+
+    print(canvas.render())
+
+
+# Per-launch state (session order, pending cursor focus) lives in a file shared between fzf's
+# reload/transform invocations of this script, since each one is a separate process.
+def load_state():
+    with open(os.environ["SESSION_PICKER_STATE"]) as f:
+        return json.load(f)
+
+
+def save_state(state):
+    with open(os.environ["SESSION_PICKER_STATE"], "w") as f:
+        json.dump(state, f)
+
+
+def fuzzy(query, text):
+    """Positions of query in text — a substring if possible, else a subsequence — or None. Smart case."""
+    hay, needle = (
+        (text, query)
+        if any(c.isupper() for c in query)
+        else (text.lower(), query.lower())
+    )
+    start = hay.find(needle)
+    if start >= 0:
+        return set(range(start, start + len(needle)))
+    positions, j = set(), 0
+    for i, ch in enumerate(hay):
+        if j < len(needle) and ch == needle[j]:
+            positions.add(i)
+            j += 1
+    return positions if j == len(needle) else None
+
+
+def highlight(text, positions, style, match_style):
+    if not positions:
+        return f"{style}{text}\x1b[0m"
+    return "".join(
+        f"{match_style if i in positions else style}{ch}\x1b[0m"
+        for i, ch in enumerate(text)
+    )
+
+
+# Expansion is a session option rather than picker state, so it carries over between launches and
+# goes away with the session.
+EXPANDED_OPT = "@session_picker_expanded"
+
+
+def is_expanded(sid):
+    return tmux("show", "-qv", "-t", sid, EXPANDED_OPT).strip() == "1"
+
+
+def set_expanded(sid, on):
+    if on:
+        tmux("set", "-t", sid, EXPANDED_OPT, "1")
+    else:
+        tmux("set", "-u", "-t", sid, EXPANDED_OPT)
+
+
+# Last highlighted row (session or window id), so the next launch reopens where you left off
+LAST_OPT = "@session_picker_last"
+
+
+def session_order():
+    """Session ids, most recently active first."""
+    return [
+        sid
+        for _, sid in sorted(
+            rows("list-sessions", "-F", "#{session_activity}\t#{session_id}"),
+            key=lambda s: -int(s[0]),
+        )
+    ]
+
+
+def items(order, query=""):
+    """Rows as (id, session_id, display, matched).
+
+    Without a query, windows are listed only under expanded sessions. With one, the script filters
+    instead of fzf so a matching window always brings its session row along.
+
+    order is fixed when the picker opens: activity keeps changing while it is up, and re-sorting
+    would shuffle sessions under the cursor.
+    """
+    t = theme()
+    sessions = rows(
+        "list-sessions",
+        "-F",
+        "#{session_id}\t#{session_name}\t#{session_windows}\t#{session_attached}"
+        f"\t#{{{EXPANDED_OPT}}}",
+    )
+    windows = rows(
+        "list-windows",
+        "-a",
+        "-F",
+        "#{session_id}\t#{window_id}\t#{window_index}\t#{window_name}\t#{window_panes}",
+    )
+
+    reset = "\x1b[0m"
+    match_style = fg(t["peach"], bold=True)
+    rank = {sid: i for i, sid in enumerate(order)}
+    out = []
+    for sid, name, count, attached, expanded in sorted(
+        sessions, key=lambda s: rank.get(s[0], len(rank))
+    ):
+        own = [w for w in windows if w[0] == sid]
+        if query:
+            s_pos = fuzzy(query, name)
+            shown = [(w, p) for w in own if (p := fuzzy(query, w[3])) is not None]
+            if s_pos is None and not shown:
+                continue
+        else:
+            s_pos = set()
+            shown = [(w, set()) for w in own] if expanded == "1" else []
+
+        arrow = f"{fg(t['overlay_1'])}{'▾' if shown else '▸'}{reset}"
+        dot = f" {fg(t['green'])}●{reset}" if attached != "0" else ""
+        label = highlight(name, s_pos, fg(t["blue"], bold=True), match_style)
+        count_label = f"{count} window{'' if count == '1' else 's'}"
+        out.append(
+            (
+                sid,
+                sid,
+                f"{arrow} {label} {fg(t['overlay_0'])}{count_label}{reset}{dot}",
+                bool(query) and s_pos is not None,
+            )
+        )
+        for (_, wid, idx, wname, panes), w_pos in shown:
+            extra = f" {fg(t['overlay_0'])}{panes} panes{reset}" if panes != "1" else ""
+            label = highlight(wname, w_pos, fg(t["text"]), match_style)
+            out.append(
+                (
+                    wid,
+                    sid,
+                    f"    {fg(t['overlay_1'])}{idx}{reset} {label}{extra}",
+                    bool(query),
+                )
+            )
+    return out
+
+
+def print_list(query):
+    for row_id, _, display, _ in items(load_state()["order"], query):
+        print(f"{row_id}\t{display}")
+
+
+def key(action, target, query):
+    """Print fzf actions for a key press or event (consumed by fzf's transform)."""
+    state = load_state()
+    reload = f"reload('{SELF}' list {{q}})"
+    searching = os.environ.get("FZF_INPUT_STATE", "hidden") != "hidden"
+
+    # Cursor placement after a reload happens here rather than via fzf's track-current: tracking
+    # blocks the UI until it resolves, which swallows the hide-input chained after esc.
+    if action == "result":
+        rows_ = items(state["order"], query)
+        focus = state.get("focus")
+        if focus:
+            index = next((i for i, row in enumerate(rows_) if row[0] == focus), None)
+            # a query change fires result against the old list before the reload lands, so the focus
+            # is kept until fzf holds this list and the cursor is really on it
+            landed = target == focus and os.environ.get("FZF_TOTAL_COUNT") == str(
+                len(rows_)
+            )
+            if index is None or landed:
+                del state["focus"]
+                save_state(state)
+                return
+        elif query:
+            # land on the first match so Enter goes straight to it
+            index = next((i for i, row in enumerate(rows_) if row[3]), None)
+        else:
+            return
+        if index is not None:
+            print(f"pos({index + 1})")
+        return
+
+    if action == "esc":
+        if not searching:
+            print("abort")
+            return
+        # leaving search on a window: open its session so the window stays visible in the tree
+        if target.startswith("@"):
+            set_expanded(tmux("display", "-p", "-t", target, "#{session_id}").strip(), True)
+        state["focus"] = target
+        save_state(state)
+        # clear-query doesn't fire the change event, so reload explicitly. hide-input is chained
+        # after the transform in the binding: inside a transform it restores the cleared query.
+        print(f"clear-query+reload('{SELF}' list)")
+        return
+
+    # while searching, left/right move the cursor in the query
+    if searching or not target:
+        print("forward-char" if action == "right" else "backward-char")
+        return
+
+    is_session = target.startswith("$")
+    sid = (
+        target
+        if is_session
+        else tmux("display", "-p", "-t", target, "#{session_id}").strip()
+    )
+    expanded = is_expanded(sid)
+
+    if action == "right" and is_session:
+        if expanded:
+            print("down")
+            return
+        set_expanded(sid, True)
+    elif action == "left" and expanded:
+        set_expanded(sid, False)
+    else:
+        return
+
+    # collapsing from a window lands on its session, since the window row goes away
+    state["focus"] = sid
+    save_state(state)
+    print(reload)
+
+
+def picker(client):
+    current = (
+        tmux("display", "-p", "-c", client, "#{session_id}").strip() if client else ""
+    )
+    order = session_order()
+    rows_ = items(order)
+
+    # reopen on the last highlighted row; a window hidden under a since-collapsed session falls back
+    # to that session, and anything gone falls back to the client's current session
+    last = tmux("show", "-gqv", LAST_OPT).strip()
+    candidates = [last]
+    if last.startswith("@"):
+        candidates.append(tmux("display", "-p", "-t", last, "#{session_id}").strip())
+    candidates.append(current)
+    ids = [row[0] for row in rows_]
+    start = next((ids.index(c) + 1 for c in candidates if c and c in ids), 1)
+
+    fd, state_path = tempfile.mkstemp(prefix="session-picker-", suffix=".json")
+    os.close(fd)
+    os.environ["SESSION_PICKER_STATE"] = state_path
+    save_state({"order": order})
+
+    run = f"'{SELF}'"
+    try:
+        result = subprocess.run(
+            # --disabled: the script does the filtering (see items), fzf only displays
+            [
+                "fzf",
+                "--ansi",
+                "--delimiter",
+                "\t",
+                "--with-nth",
+                "2",
+                "--layout",
+                "reverse",
+                "--no-sort",
+                "--disabled",
+                "--no-input",
+                "--highlight-line",
+                "--info",
+                "inline-right",
+                "--prompt",
+                "/ ",
+                "--pointer",
+                "▌",
+                "--preview",
+                f"{run} preview {{1}}",
+                "--preview-window",
+                "right,78%,border-left",
+                "--bind",
+                f"load:pos({start})+unbind(load)",
+                "--bind",
+                f"focus:execute-silent(tmux set -g {LAST_OPT} {{1}})",
+                "--bind",
+                f"change:reload({run} list {{q}})",
+                "--bind",
+                f"result:transform({run} key result {{1}} {{q}})",
+                "--bind",
+                f"right:transform({run} key right {{1}} {{q}})",
+                "--bind",
+                f"left:transform({run} key left {{1}} {{q}})",
+                "--bind",
+                f"esc:transform({run} key esc {{1}} {{q}})+hide-input",
+                # the query only takes keys once / reveals the input; until then q quits
+                "--bind",
+                '/:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo show-input || echo "put(/)"',
+                "--bind",
+                'q:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo abort || echo "put(q)"',
+            ],
+            input="\n".join(f"{row_id}\t{display}" for row_id, _, display, _ in rows_),
+            stdout=subprocess.PIPE,
+            text=True,
+        )
+    finally:
+        os.unlink(state_path)
+
+    if result.returncode == 0 and result.stdout:
+        target = result.stdout.split("\t", 1)[0]
+        args = ["switch-client", "-t", target] + (["-c", client] if client else [])
+        tmux(*args)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) >= 3 and sys.argv[1] == "preview":
+        preview(sys.argv[2])
+    elif len(sys.argv) >= 2 and sys.argv[1] == "list":
+        print_list(sys.argv[2] if len(sys.argv) > 2 else "")
+    elif len(sys.argv) >= 3 and sys.argv[1] == "key":
+        key(
+            sys.argv[2],
+            sys.argv[3] if len(sys.argv) > 3 else "",
+            sys.argv[4] if len(sys.argv) > 4 else "",
+        )
+    else:
+        picker(sys.argv[1] if len(sys.argv) > 1 else "")
