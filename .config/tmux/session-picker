@@ -7,6 +7,11 @@
 #   session-picker list [query]      rows for fzf's reload: the expanded tree, or the matches for query
 #   session-picker key <k> <id> <q>  fzf actions for right/left (expand/collapse), esc, and new results
 #
+#   session-picker claude <client>   fzf list of Claude Code panes; i works in one, Enter switches
+#   session-picker claude-list       rows for that list's reload
+#   session-picker peek <pane>       attach a nested client to <pane> inside the popup
+#   session-picker after-peek        fzf actions once that client detaches (quit or refresh)
+#
 # The preview never switches the client — it reads geometry with list-panes and contents with
 # capture-pane, then scales everything into the fzf preview area.
 
@@ -155,7 +160,82 @@ class Canvas:
         return "\n".join(out)
 
 
+def draw_contents(canvas, p, x0, y0, x1, y1, from_bottom=None):
+    """Fill the inside of box (x0, y0)-(x1, y1) with pane p's captured contents."""
+    iw, ih = x1 - x0 - 1, y1 - y0 - 1
+    if iw <= 0 or ih <= 0:
+        return
+    cells = parse_cells(
+        tmux("capture-pane", "-p", "-e", "-t", p["id"]).split("\n")[: p["height"]]
+    )
+    if from_bottom is None:
+        # full-screen apps (editors, TUIs) read best from the top; shells from the most recent
+        # output, just above the prompt
+        from_bottom = not p["alternate"]
+    if from_bottom:
+        while cells and is_blank(cells[-1]):
+            cells.pop()
+        shown = cells[-ih:]
+    else:
+        shown = cells[:ih]
+    for dy, row in enumerate(shown):
+        for dx, cell in enumerate(row[:iw]):
+            ch, style = cell
+            if ch is not None and dx == iw - 1 and char_width(ch[0]) == 2:
+                ch = " "
+            canvas.cells[y0 + 1 + dy][x0 + 1 + dx] = (ch, style)
+        for dx in range(len(row[:iw]), iw):
+            canvas.cells[y0 + 1 + dy][x0 + 1 + dx] = (" ", "")
+
+
+def draw_box(canvas, x0, y0, x1, y1, style):
+    for x in range(x0 + 1, x1):
+        canvas.put(x, y0, "─", style)
+        canvas.put(x, y1, "─", style)
+    for y in range(y0 + 1, y1):
+        canvas.put(x0, y, "│", style)
+        canvas.put(x1, y, "│", style)
+    for x, y, ch in ((x0, y0, "╭"), (x1, y0, "╮"), (x0, y1, "╰"), (x1, y1, "╯")):
+        canvas.put(x, y, ch, style)
+
+
+def preview_pane(pane):
+    """A single pane, bottom-anchored, under a header naming where it lives."""
+    cols = int(os.environ.get("FZF_PREVIEW_COLUMNS", "80"))
+    lines = int(os.environ.get("FZF_PREVIEW_LINES", "24"))
+    t = theme()
+    session, idx, window, path, height = (
+        tmux(
+            "display",
+            "-p",
+            "-t",
+            pane,
+            "#{session_name}\t#{window_index}\t#{window_name}\t#{pane_current_path}"
+            "\t#{pane_height}",
+        )
+        .rstrip("\n")
+        .split("\t")
+    )
+    home = os.path.expanduser("~")
+    if path == home or path.startswith(home + "/"):
+        path = "~" + path[len(home) :]
+
+    canvas = Canvas(cols, lines)
+    canvas.text(0, 0, f" {session}", fg(t["blue"], bold=True))
+    canvas.text(len(session) + 2, 0, f"{idx} {window}", fg(t["overlay_1"]))
+    canvas.text(len(session) + len(idx) + len(window) + 4, 0, path, fg(t["overlay_0"]))
+    draw_box(canvas, 0, 1, cols - 1, lines - 1, fg(t["sky"]))
+    # agent TUIs keep their prompt and latest output at the bottom
+    p = dict(id=pane, height=int(height), alternate=True)
+    draw_contents(canvas, p, 0, 1, cols - 1, lines - 1, from_bottom=True)
+    print(canvas.render())
+
+
 def preview(target):
+    if target.startswith("%"):
+        preview_pane(target)
+        return
+
     cols = int(os.environ.get("FZF_PREVIEW_COLUMNS", "80"))
     lines = int(os.environ.get("FZF_PREVIEW_LINES", "24"))
     t = theme()
@@ -239,30 +319,6 @@ def preview(target):
             yield x0, y
             yield x1, y
 
-    def draw_contents(p, x0, y0, x1, y1):
-        iw, ih = x1 - x0 - 1, y1 - y0 - 1
-        if iw <= 0 or ih <= 0:
-            return
-        cells = parse_cells(
-            tmux("capture-pane", "-p", "-e", "-t", p["id"]).split("\n")[: p["height"]]
-        )
-        if p["alternate"]:
-            # full-screen apps (editors, TUIs) read best from the top
-            shown = cells[:ih]
-        else:
-            # shells: the interesting part is the most recent output, just above the prompt
-            while cells and is_blank(cells[-1]):
-                cells.pop()
-            shown = cells[-ih:]
-        for dy, row in enumerate(shown):
-            for dx, cell in enumerate(row[:iw]):
-                ch, style = cell
-                if ch is not None and dx == iw - 1 and char_width(ch[0]) == 2:
-                    ch = " "
-                canvas.cells[y0 + 1 + dy][x0 + 1 + dx] = (ch, style)
-            for dx in range(len(row[:iw]), iw):
-                canvas.cells[y0 + 1 + dy][x0 + 1 + dx] = (" ", "")
-
     def draw_label(p, x0, y0, x1, style):
         label = f" {p['index']} {p['command']} "
         room = x1 - x0 - 3
@@ -291,7 +347,7 @@ def preview(target):
 
     for p in tiled:
         x0, y0, x1, y1 = box(p)
-        draw_contents(p, x0, y0, x1, y1)
+        draw_contents(canvas, p, x0, y0, x1, y1)
     for p in tiled:
         if p["active"]:
             x0, y0, x1, y1 = box(p)
@@ -309,15 +365,8 @@ def preview(target):
         for y in range(y0, y1 + 1):
             for x in range(x0, x1 + 1):
                 canvas.put(x, y, " ")
-        for x in range(x0 + 1, x1):
-            canvas.put(x, y0, "─", style)
-            canvas.put(x, y1, "─", style)
-        for y in range(y0 + 1, y1):
-            canvas.put(x0, y, "│", style)
-            canvas.put(x1, y, "│", style)
-        for x, y, ch in ((x0, y0, "╭"), (x1, y0, "╮"), (x0, y1, "╰"), (x1, y1, "╯")):
-            canvas.put(x, y, ch, style)
-        draw_contents(p, x0, y0, x1, y1)
+        draw_box(canvas, x0, y0, x1, y1, style)
+        draw_contents(canvas, p, x0, y0, x1, y1)
         draw_label(p, x0, y0, x1, style)
 
     print(canvas.render())
@@ -606,11 +655,194 @@ def picker(client):
         tmux(*args)
 
 
+def claude_items():
+    """Rows for every pane running Claude Code, titled by directory (+ #n when shared)."""
+    t = theme()
+    reset = "\x1b[0m"
+    seen_panes, panes = set(), []
+    for p in rows(
+        "list-panes",
+        "-a",
+        "-F",
+        "#{session_id}\t#{window_index}\t#{pane_index}\t#{pane_id}"
+        "\t#{pane_current_command}\t#{pane_current_path}\t#{pane_title}",
+    ):
+        # grouped sessions list the same pane once per session
+        if p[4] == "claude" and p[3] not in seen_panes:
+            seen_panes.add(p[3])
+            panes.append(p)
+    panes.sort(key=lambda p: (int(p[0].lstrip("$")), int(p[1]), int(p[2])))
+
+    names = [os.path.basename(p[5].rstrip("/")) or "/" for p in panes]
+    total = {n: names.count(n) for n in names}
+    numbered = {}
+    out = []
+    for p, name in zip(panes, names):
+        numbered[name] = numbered.get(name, 0) + 1
+        label = f"{name} #{numbered[name]}" if total[name] > 1 else name
+        title = f" {fg(t['overlay_0'])}{p[6]}{reset}" if p[6] else ""
+        out.append(f"{p[3]}\t{fg(t['blue'], bold=True)}{label}{reset}{title}")
+    return out
+
+
+# Working in a Claude pane from the popup: a nested client attaches to a throwaway session grouped
+# with the pane's session, so it can show the pane's window without moving the user's own client.
+# That session's key-table makes C-c/C-d detach (C-d flagging the picker to quit too) and passes
+# every other key to the pane. Quitting goes through the picker rather than closing the popup,
+# which would kill it with SIGHUP and make the popup binding report a failure.
+PEEK_TABLE = "claude-peek"
+
+
+def peek(pane):
+    sid, wid, zoomed = (
+        tmux(
+            "display",
+            "-p",
+            "-t",
+            pane,
+            "#{session_id}\t#{window_id}\t#{window_zoomed_flag}",
+        )
+        .rstrip("\n")
+        .split("\t")
+    )
+    active = tmux("display", "-p", "-t", wid, "#{pane_id}").strip()
+    name = f"claude-peek-{os.getpid()}"
+
+    tmux("new-session", "-d", "-s", name, "-t", sid)
+    for opt, value in (
+        ("status", "off"),
+        ("key-table", PEEK_TABLE),
+        ("@claude_peek_restore", f"{wid} {active} {zoomed}"),
+    ):
+        # set/show take a pane target, where an exact session match needs the trailing colon
+        tmux("set", "-t", f"={name}:", opt, value)
+    tmux("bind", "-T", PEEK_TABLE, "C-c", "detach-client")
+    # one string, so the ; separates commands inside the binding rather than ending the bind
+    tmux("bind", "-T", PEEK_TABLE, "C-d", "set @claude_peek_quit 1 ; detach-client")
+
+    # zoom is per window, so the pane's window is zoomed onto it here and restored in unpeek
+    tmux("select-window", "-t", f"={name}:{wid}")
+    if zoomed == "1":
+        tmux("resize-pane", "-Z", "-t", active)
+    tmux("select-pane", "-t", pane)
+    tmux("resize-pane", "-Z", "-t", pane)
+
+    # $TMUX has to go for tmux to allow the nested client, so pass its server socket explicitly
+    socket = os.environ.get("TMUX", "").split(",")[0]
+    env = {k: v for k, v in os.environ.items() if k != "TMUX"}
+    try:
+        # under fzf's execute, stdout is the pipe the picker reads fzf's result from, so hand the
+        # client the terminal itself — by its real name, since tmux refuses the /dev/tty alias
+        tty_name = subprocess.run(
+            ["ps", "-o", "tty=", "-p", str(os.getpid())], capture_output=True, text=True
+        ).stdout.strip()
+        with open(f"/dev/{tty_name}", "r+b", buffering=0) as tty:
+            subprocess.run(
+                ["tmux", *(["-S", socket] if socket else []), "attach", "-t", f"={name}"],
+                env=env,
+                stdin=tty,
+                stdout=tty,
+                stderr=tty,
+            )
+    finally:
+        if tmux("show", "-qv", "-t", f"={name}:", "@claude_peek_quit").strip() == "1":
+            open(os.environ["CLAUDE_PICKER_QUIT"], "w").close()
+        unpeek(name)
+
+
+def after_peek():
+    """fzf actions once a peek ends: leave if it ended with C-d, else refresh the list."""
+    flag = os.environ["CLAUDE_PICKER_QUIT"]
+    if os.path.exists(flag):
+        os.unlink(flag)
+        print("abort")
+    else:
+        print(f"reload('{SELF}' claude-list)+refresh-preview")
+
+
+def unpeek(name):
+    """Put the pane's window back as it was and drop the peek session (idempotent)."""
+    restore = tmux("show", "-qv", "-t", f"={name}:", "@claude_peek_restore").split()
+    if restore:
+        wid, active, zoomed = restore
+        if tmux("display", "-p", "-t", wid, "#{window_zoomed_flag}").strip() == "1":
+            tmux("resize-pane", "-Z", "-t", wid)
+        tmux("select-pane", "-t", active)
+        if zoomed == "1":
+            tmux("resize-pane", "-Z", "-t", active)
+    tmux("kill-session", "-t", f"={name}")
+
+
+def claude_picker(client):
+    run = f"'{SELF}'"
+    hidden = '[ "$FZF_INPUT_STATE" = hidden ]'
+    # peek (under fzf's execute) creates this when a peek ends with C-d; after_peek consumes it
+    quit_flag = os.path.join(tempfile.gettempdir(), f"claude-picker-quit-{os.getpid()}")
+    os.environ["CLAUDE_PICKER_QUIT"] = quit_flag
+    result = subprocess.run(
+        [
+            "fzf",
+            "--ansi",
+            "--delimiter",
+            "\t",
+            "--with-nth",
+            "2",
+            "--layout",
+            "reverse",
+            "--no-sort",
+            "--no-input",
+            "--highlight-line",
+            "--info",
+            "inline-right",
+            "--prompt",
+            "/ ",
+            "--pointer",
+            "▌",
+            "--preview",
+            f"{run} preview {{1}}",
+            "--preview-window",
+            "right,70%,border-left",
+            # agents keep working while the list is up
+            "--bind",
+            "every(1):refresh-preview",
+            "--bind",
+            f'/:transform:{hidden} && echo show-input || echo "put(/)"',
+            "--bind",
+            f'q:transform:{hidden} && echo abort || echo "put(q)"',
+            # hide-input sits outside the transform: inside one it restores the cleared query
+            "--bind",
+            f"esc:transform({hidden} && echo abort || echo clear-query)+hide-input",
+            "--bind",
+            f"i:transform:{hidden}"
+            f' && echo "execute({run} peek {{1}})+transform({run} after-peek)"'
+            ' || echo "put(i)"',
+        ],
+        input="\n".join(claude_items()),
+        stdout=subprocess.PIPE,
+        text=True,
+    )
+    if os.path.exists(quit_flag):
+        os.unlink(quit_flag)
+    if result.returncode == 0 and result.stdout:
+        pane = result.stdout.split("\t", 1)[0]
+        tmux("select-window", "-t", pane)
+        tmux("select-pane", "-t", pane)
+        tmux("switch-client", "-t", pane, *(["-c", client] if client else []))
+
+
 if __name__ == "__main__":
     if len(sys.argv) >= 3 and sys.argv[1] == "preview":
         preview(sys.argv[2])
     elif len(sys.argv) >= 2 and sys.argv[1] == "list":
         print_list(sys.argv[2] if len(sys.argv) > 2 else "")
+    elif len(sys.argv) >= 2 and sys.argv[1] == "claude":
+        claude_picker(sys.argv[2] if len(sys.argv) > 2 else "")
+    elif len(sys.argv) >= 2 and sys.argv[1] == "claude-list":
+        print("\n".join(claude_items()))
+    elif len(sys.argv) >= 3 and sys.argv[1] == "peek":
+        peek(sys.argv[2])
+    elif len(sys.argv) >= 2 and sys.argv[1] == "after-peek":
+        after_peek()
     elif len(sys.argv) >= 3 and sys.argv[1] == "key":
         key(
             sys.argv[2],
