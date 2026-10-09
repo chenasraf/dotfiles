@@ -432,6 +432,35 @@ def highlight(text, positions, style, match_style):
     )
 
 
+# Rows 1-10 get the keys 0-9
+def quick_key(n, t):
+    return f"{fg(t['sky'])}{n - 1}\x1b[0m" if n <= 10 else " "
+
+
+def digit(d, kind):
+    """fzf actions for a digit key: type it while searching, else pick the row numbered with it."""
+    if os.environ.get("FZF_INPUT_STATE", "hidden") != "hidden":
+        print(f"put({d})")
+        return
+    n = int(d) + 1
+    if kind == "claude":
+        # leaving search clears the query, so with the input hidden every row is listed
+        index = n if n <= int(os.environ.get("FZF_TOTAL_COUNT", "0")) else None
+    else:
+        sessions = [i + 1 for i, row in enumerate(items()) if row[0] == row[1]]
+        index = sessions[n - 1] if n <= len(sessions) else None
+    if index:
+        print(f"pos({index})+accept")
+
+
+def digit_binds(kind):
+    return [
+        arg
+        for d in "0123456789"
+        for arg in ("--bind", f"{d}:transform('{SELF}' digit {d} {kind})")
+    ]
+
+
 # Expansion is a session option rather than picker state, so it carries over between launches and
 # goes away with the session.
 EXPANDED_OPT = "@session_picker_expanded"
@@ -475,8 +504,8 @@ def items(query=""):
     reset = "\x1b[0m"
     match_style = fg(t["peach"], bold=True)
     out = []
-    for sid, name, count, attached, expanded in sorted(
-        sessions, key=lambda s: int(s[0].lstrip("$"))
+    for n, (sid, name, count, attached, expanded) in enumerate(
+        sorted(sessions, key=lambda s: int(s[0].lstrip("$"))), 1
     ):
         own = [w for w in windows if w[0] == sid]
         if query:
@@ -496,7 +525,7 @@ def items(query=""):
             (
                 sid,
                 sid,
-                f"{arrow} {label} {fg(t['overlay_0'])}{count_label}{reset}{dot}",
+                f"{quick_key(n, t)} {arrow} {label} {fg(t['overlay_0'])}{count_label}{reset}{dot}",
                 bool(query) and s_pos is not None,
             )
         )
@@ -507,7 +536,7 @@ def items(query=""):
                 (
                     wid,
                     sid,
-                    f"    {fg(t['overlay_1'])}{idx}{reset} {label}{extra}",
+                    f"      {fg(t['overlay_1'])}{idx}{reset} {label}{extra}",
                     bool(query),
                 )
             )
@@ -637,6 +666,7 @@ def picker(client):
                     [
                         ("↑↓", "move"),
                         ("→←", "expand/collapse"),
+                        ("0-9", "switch to session"),
                         ("/", "search"),
                         ("enter", "switch"),
                         ("esc", "leave search"),
@@ -672,6 +702,7 @@ def picker(client):
                 '/:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo show-input || echo "put(/)"',
                 "--bind",
                 'q:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo abort || echo "put(q)"',
+                *digit_binds("session"),
             ],
             input="\n".join(f"{row_id}\t{display}" for row_id, _, display, _ in rows_),
             stdout=subprocess.PIPE,
@@ -708,11 +739,13 @@ def claude_items():
     total = {n: names.count(n) for n in names}
     numbered = {}
     out = []
-    for p, name in zip(panes, names):
+    for n, (p, name) in enumerate(zip(panes, names), 1):
         numbered[name] = numbered.get(name, 0) + 1
         label = f"{name} #{numbered[name]}" if total[name] > 1 else name
         title = f" {fg(t['overlay_0'])}{p[6]}{reset}" if p[6] else ""
-        out.append(f"{p[3]}\t{fg(t['blue'], bold=True)}{label}{reset}{title}")
+        out.append(
+            f"{p[3]}\t{quick_key(n, t)} {fg(t['blue'], bold=True)}{label}{reset}{title}"
+        )
     return out
 
 
@@ -827,6 +860,7 @@ def claude_picker(client):
                 [
                     ("↑↓", "move"),
                     ("i", "interact"),
+                    ("0-9", "switch to pane"),
                     ("^c", "back to list"),
                     ("^d", "close"),
                     ("/", "search"),
@@ -859,6 +893,7 @@ def claude_picker(client):
             f"i:transform:{hidden}"
             f' && echo "execute({run} peek {{1}})+transform({run} after-peek)"'
             ' || echo "put(i)"',
+            *digit_binds("claude"),
         ],
         input="\n".join(claude_items()),
         stdout=subprocess.PIPE,
@@ -886,6 +921,8 @@ if __name__ == "__main__":
         peek(sys.argv[2])
     elif len(sys.argv) >= 2 and sys.argv[1] == "after-peek":
         after_peek()
+    elif len(sys.argv) >= 4 and sys.argv[1] == "digit":
+        digit(sys.argv[2], sys.argv[3])
     elif len(sys.argv) >= 3 and sys.argv[1] == "key":
         key(
             sys.argv[2],
