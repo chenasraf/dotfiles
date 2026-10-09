@@ -323,7 +323,7 @@ def preview(target):
     print(canvas.render())
 
 
-# Per-launch state (session order, pending cursor focus) lives in a file shared between fzf's
+# Per-launch state (pending cursor focus) lives in a file shared between fzf's
 # reload/transform invocations of this script, since each one is a separate process.
 def load_state():
     with open(os.environ["SESSION_PICKER_STATE"]) as f:
@@ -382,25 +382,11 @@ def set_expanded(sid, on):
 LAST_OPT = "@session_picker_last"
 
 
-def session_order():
-    """Session ids, most recently active first."""
-    return [
-        sid
-        for _, sid in sorted(
-            rows("list-sessions", "-F", "#{session_activity}\t#{session_id}"),
-            key=lambda s: -int(s[0]),
-        )
-    ]
-
-
-def items(order, query=""):
-    """Rows as (id, session_id, display, matched).
+def items(query=""):
+    """Rows as (id, session_id, display, matched), sessions in creation (id) order.
 
     Without a query, windows are listed only under expanded sessions. With one, the script filters
     instead of fzf so a matching window always brings its session row along.
-
-    order is fixed when the picker opens: activity keeps changing while it is up, and re-sorting
-    would shuffle sessions under the cursor.
     """
     t = theme()
     sessions = rows(
@@ -418,10 +404,9 @@ def items(order, query=""):
 
     reset = "\x1b[0m"
     match_style = fg(t["peach"], bold=True)
-    rank = {sid: i for i, sid in enumerate(order)}
     out = []
     for sid, name, count, attached, expanded in sorted(
-        sessions, key=lambda s: rank.get(s[0], len(rank))
+        sessions, key=lambda s: int(s[0].lstrip("$"))
     ):
         own = [w for w in windows if w[0] == sid]
         if query:
@@ -460,7 +445,7 @@ def items(order, query=""):
 
 
 def print_list(query):
-    for row_id, _, display, _ in items(load_state()["order"], query):
+    for row_id, _, display, _ in items(query):
         print(f"{row_id}\t{display}")
 
 
@@ -473,7 +458,7 @@ def key(action, target, query):
     # Cursor placement after a reload happens here rather than via fzf's track-current: tracking
     # blocks the UI until it resolves, which swallows the hide-input chained after esc.
     if action == "result":
-        rows_ = items(state["order"], query)
+        rows_ = items(query)
         focus = state.get("focus")
         if focus:
             index = next((i for i, row in enumerate(rows_) if row[0] == focus), None)
@@ -501,7 +486,9 @@ def key(action, target, query):
             return
         # leaving search on a window: open its session so the window stays visible in the tree
         if target.startswith("@"):
-            set_expanded(tmux("display", "-p", "-t", target, "#{session_id}").strip(), True)
+            set_expanded(
+                tmux("display", "-p", "-t", target, "#{session_id}").strip(), True
+            )
         state["focus"] = target
         save_state(state)
         # clear-query doesn't fire the change event, so reload explicitly. hide-input is chained
@@ -542,8 +529,7 @@ def picker(client):
     current = (
         tmux("display", "-p", "-c", client, "#{session_id}").strip() if client else ""
     )
-    order = session_order()
-    rows_ = items(order)
+    rows_ = items()
 
     # reopen on the last highlighted row; a window hidden under a since-collapsed session falls back
     # to that session, and anything gone falls back to the client's current session
@@ -558,7 +544,7 @@ def picker(client):
     fd, state_path = tempfile.mkstemp(prefix="session-picker-", suffix=".json")
     os.close(fd)
     os.environ["SESSION_PICKER_STATE"] = state_path
-    save_state({"order": order})
+    save_state({})
 
     run = f"'{SELF}'"
     try:
