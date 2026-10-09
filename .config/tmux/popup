@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+
+# Popups that follow the terminal's size.
+#
+#   popup open <client> <name> <dir> <display-popup flags...> -- <command...>
+#                                  run <command> in <dir> inside a popup on <client>
+#   popup resized <client>         reopen <client>'s popup at its new size (client-resized hook)
+#
+# tmux sizes a popup once, when it opens. So the command runs in a hidden session and the popup
+# only holds a client attached to it; on resize the popup is closed and reopened around the same
+# session, and the app inside just sees its terminal resize, keeping all its state.
+
+import contextlib
+import fcntl
+import json
+import os
+import re
+import shlex
+import subprocess
+import sys
+import tempfile
+import time
+
+PREFIX = "_popup_"
+# an empty key table with no prefix: every key goes to the app, none to tmux bindings
+KEY_TABLE = "popup"
+
+
+def tmux(*args):
+    return subprocess.run(["tmux", *args], capture_output=True, text=True).stdout
+
+
+def option(session, name):
+    return tmux("show", "-qv", "-t", f"={session}:", name).strip()
+
+
+def set_option(session, name, value):
+    # set/show take a pane target, where an exact session match needs the trailing colon
+    tmux("set", "-t", f"={session}:", name, value)
+
+
+def session_name(name, client):
+    return f"{PREFIX}{name}_{re.sub(r'[^A-Za-z0-9]', '', os.path.basename(client))}"
+
+
+def open_popup(client, name, directory, flags, command):
+    session = session_name(name, client)
+    tmux("kill-session", "-t", f"={session}")
+    width, height = (
+        tmux("display", "-p", "-c", client, "#{client_width}\t#{client_height}")
+        .strip()
+        .split("\t")
+    )
+    tmux(
+        "new-session", "-d", "-s", session, "-x", width, "-y", height, "-c", directory,
+        shlex.join(command),
+    )
+    for opt, value in (
+        ("status", "off"),
+        ("prefix", "None"),
+        ("prefix2", "None"),
+        ("key-table", KEY_TABLE),
+        ("@popup_client", client),
+        ("@popup_flags", json.dumps(flags)),
+    ):
+        set_option(session, opt, value)
+    token = claim(session)
+    with lock(session):
+        popup = show(client, session)
+    finish(popup, session, token)
+
+
+# Whichever launcher last claimed the session owns it: only the owner reopens the popup on a resize
+# or kills the session once its popup is gone. Tokens are unique, so two launchers claiming at once
+# can't both end up owning it.
+def claim(session):
+    token = f"{os.getpid()}-{time.time_ns()}"
+    set_option(session, "@popup_owner", token)
+    return token
+
+
+@contextlib.contextmanager
+def lock(session):
+    """Serialise closing and reopening the popup, so one reopen can't close another's half-open popup."""
+    with open(os.path.join(tempfile.gettempdir(), f"tmux-{session}.lock"), "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        yield
+
+
+def show(client, session):
+    """Open the popup around the session, returning once its client has attached."""
+    flags = json.loads(option(session, "@popup_flags"))
+    socket = tmux("display", "-p", "#{socket_path}").strip()
+    # the popup runs this through default-shell, and zsh expands an unquoted leading = as a
+    # command path, which shlex leaves bare
+    attach = f"env -u TMUX tmux -S {shlex.quote(socket)} attach -t '={session}'"
+    popup = subprocess.Popen(["tmux", "popup", "-E", "-c", client, *flags, attach])
+    deadline = time.monotonic() + 2
+    while popup.poll() is None and time.monotonic() < deadline:
+        if attached(session):
+            break
+        time.sleep(0.02)
+    return popup
+
+
+def attached(session):
+    return tmux("display", "-p", "-t", f"={session}:", "#{session_attached}").strip() not in ("", "0")
+
+
+def finish(popup, session, token):
+    popup.wait()
+    # the popup closed without the app exiting: a resize reopened it (and that launcher owns the
+    # session now) or the client went away, which leaves the session orphaned
+    if option(session, "@popup_owner") == token and not attached(session):
+        tmux("kill-session", "-t", f"={session}")
+
+
+def resized(client):
+    for session, owner in (
+        line.split("\t")
+        for line in tmux("list-sessions", "-F", "#{session_name}\t#{@popup_client}").splitlines()
+    ):
+        if not session.startswith(PREFIX) or owner != client:
+            continue
+        token = claim(session)
+        # a drag fires a burst of resizes; only the last one reopens
+        time.sleep(0.2)
+        with lock(session):
+            if option(session, "@popup_owner") != token:
+                continue
+            tmux("popup", "-C", "-c", client)
+            popup = show(client, session)
+        finish(popup, session, token)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) >= 3 and sys.argv[1] == "resized":
+        resized(sys.argv[2])
+    elif len(sys.argv) >= 6 and sys.argv[1] == "open" and "--" in sys.argv:
+        split = sys.argv.index("--")
+        client, name, directory = sys.argv[2:5]
+        open_popup(client, name, directory, sys.argv[5:split], sys.argv[split + 1 :])
+    else:
+        sys.exit(f"usage: {sys.argv[0]} open <client> <name> <dir> <flags...> -- <command...>")

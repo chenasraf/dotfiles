@@ -23,7 +23,6 @@
 import json
 import os
 import re
-import shlex
 import subprocess
 import sys
 import tempfile
@@ -510,6 +509,8 @@ def items(query=""):
     reset = "\x1b[0m"
     match_style = fg(t["peach"], bold=True)
     out = []
+    # the popup script's hidden sessions hold popups (this picker included), not work
+    sessions = [s for s in sessions if not s[1].startswith("_popup_")]
     for n, (sid, name, count, attached, expanded) in enumerate(
         sorted(sessions, key=lambda s: int(s[0].lstrip("$"))), 1
     ):
@@ -691,6 +692,9 @@ def picker(client):
                 "right,78%,border-left",
                 "--bind",
                 f"load:pos({start})+unbind(load)",
+                # the preview is drawn to fit its area, so a resize needs a fresh one
+                "--bind",
+                "resize:refresh-preview",
                 "--bind",
                 f"focus:execute-silent(tmux set -g {LAST_OPT} {{1}})",
                 "--bind",
@@ -889,6 +893,8 @@ def claude_picker(client):
             "--bind",
             "every(1):refresh-preview",
             "--bind",
+            "resize:refresh-preview",
+            "--bind",
             f'/:transform:{hidden} && echo show-input || echo "put(/)"',
             "--bind",
             f'q:transform:{hidden} && echo abort || echo "put(q)"',
@@ -924,9 +930,10 @@ def popup(kind, client):
     else:
         frame = ["-w", "100%", "-h", "100%", "-B"]
     args = [SELF, client] if kind == "sessions" else [SELF, "claude", client]
-    cmd = ["tmux", "popup", "-E", *(["-c", client] if client else []), *frame]
-    # exec, so run-shell sees the popup's own exit status
-    os.execvp("tmux", [*cmd, shlex.join(args)])
+    # the popup script reopens the popup at the new size when the terminal resizes
+    popup_script = os.path.join(os.path.dirname(SELF), "popup")
+    home = os.path.expanduser("~")
+    os.execv(popup_script, [popup_script, "open", client, kind, home, *frame, "--", *args])
 
 
 if __name__ == "__main__":
