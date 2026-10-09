@@ -66,6 +66,27 @@ def fg(hex_color, bold=False):
     return f"\x1b[{'1;' if bold else ''}38;2;{r};{g};{b}m"
 
 
+def help_line(keys):
+    """fzf args for a key legend along the bottom of the whole popup.
+
+    fzf's footer only spans the list column; the border wraps list and preview both, so its
+    bottom label is what reaches across the full width.
+    """
+    t = theme()
+    reset = "\x1b[0m"
+    label = "  ".join(f"{fg(t['sky'])}{k}{reset} {fg(t['overlay_1'])}{d}{reset}" for k, d in keys)
+    return [
+        "--border",
+        "bottom",
+        "--border-label",
+        f" {label} ",
+        "--border-label-pos",
+        "2:bottom",
+        "--color",
+        f"border:{t['overlay_0']}" if t["overlay_0"] else "border:dim",
+    ]
+
+
 def theme():
     names = [
         "sky",
@@ -612,6 +633,16 @@ def picker(client):
                 "--disabled",
                 "--no-input",
                 "--highlight-line",
+                *help_line(
+                    [
+                        ("↑↓", "move"),
+                        ("→←", "expand/collapse"),
+                        ("/", "search"),
+                        ("enter", "switch"),
+                        ("esc", "leave search"),
+                        ("q", "quit"),
+                    ]
+                ),
                 "--info",
                 "inline-right",
                 "--prompt",
@@ -792,6 +823,18 @@ def claude_picker(client):
             "--no-sort",
             "--no-input",
             "--highlight-line",
+            *help_line(
+                [
+                    ("↑↓", "move"),
+                    ("i", "interact"),
+                    ("^c", "back to list"),
+                    ("^d", "close"),
+                    ("/", "search"),
+                    ("enter", "switch"),
+                    ("esc", "leave search"),
+                    ("q", "quit"),
+                ]
+            ),
             "--info",
             "inline-right",
             "--prompt",
