@@ -7,7 +7,9 @@
 #                                    screen, 1-100 a bordered popup at that percentage
 #   session-picker digit <d> <kind>  fzf actions for a 0-9 key: pick the row numbered <d>
 #   session-picker kill <kind> <id>  fzf actions for d: arm a kill of row <id>, or confirm it
-#   session-picker disarm <kind> <t> fzf actions once arming <t> times out: restore the key legend
+#   session-picker disarm <t>        once arming <t> times out, restore the key legend
+#   session-picker legend <kind> <state> <pid>
+#                                    draw the key legend in a pane under the picker <pid>
 #
 #   session-picker <client>          fzf list of sessions and windows; Enter switches <client>
 #   session-picker preview <target>  draw <target>'s window: real pane layout + pane contents
@@ -23,10 +25,11 @@
 # The preview never switches the client — it reads geometry with list-panes and contents with
 # capture-pane, then scales everything into the fzf preview area.
 
+import contextlib
 import json
 import os
 import re
-import contextlib
+import select
 import signal
 import subprocess
 import sys
@@ -85,55 +88,173 @@ def fg(hex_color, bold=False):
     return f"\x1b[{'1;' if bold else ''}38;2;{r};{g};{b}m"
 
 
+# Legend rows: getting around on the first, everything else on the second
 SESSION_KEYS = [
-    ("↑↓/jk", "move"),
-    ("→←/lh", "expand/collapse"),
-    ("0-9", "switch to session"),
-    ("/", "search"),
-    ("enter", "switch"),
-    ("dd", "kill"),
-    ("esc", "leave search"),
-    ("q", "quit"),
+    [
+        ("↑↓/jk", "move"),
+        ("→←/lh", "expand/collapse"),
+        ("enter", "switch"),
+        ("0-9", "switch to session"),
+    ],
+    [
+        ("/", "search"),
+        ("esc", "leave search"),
+        ("dd", "kill"),
+        ("q", "quit"),
+    ],
 ]
 CLAUDE_KEYS = [
-    ("↑↓/jk", "move"),
-    ("i", "interact"),
-    ("0-9", "switch to pane"),
-    ("^c", "back to list"),
-    ("^d", "close"),
-    ("/", "search"),
-    ("enter", "switch"),
-    ("dd", "kill"),
-    ("esc", "leave search"),
-    ("q", "quit"),
+    [
+        ("↑↓/jk", "move"),
+        ("enter", "switch"),
+        ("0-9", "switch to pane"),
+        ("i", "interact"),
+        ("^c", "back to list"),
+        ("^d", "close"),
+    ],
+    [
+        ("/", "search"),
+        ("esc", "leave search"),
+        ("dd", "kill"),
+        ("q", "quit"),
+    ],
 ]
 KEYS = {"session": SESSION_KEYS, "claude": CLAUDE_KEYS}
 
 
-def help_label(keys):
+# The key legend lives in its own tmux pane under fzf rather than in fzf: fzf's footer only spans
+# the list column, and its border label, which does span the popup, is a single line. The pane runs
+# `session-picker legend`, which redraws on SIGUSR1 (state changed) and SIGWINCH, and sizes its
+# pane to the lines the legend wraps to.
+@contextlib.contextmanager
+def legend(kind):
+    pane = os.environ.get("TMUX_PANE")
+    if not pane:
+        yield
+        return
+    t = theme()
+    border = f"fg={t['overlay_0']}" if t["overlay_0"] else "dim"
+    legend_id, legend_pid = (
+        tmux(
+            "split-window",
+            "-d",
+            "-v",
+            "-l",
+            "2",
+            "-t",
+            pane,
+            "-P",
+            "-F",
+            "#{pane_id}\t#{pane_pid}",
+            SELF,
+            "legend",
+            kind,
+            os.environ["SESSION_PICKER_STATE"],
+            str(os.getpid()),
+        )
+        .strip()
+        .split("\t")
+    )
+    # the theme gives every pane a bottom status line and the active one a filled border
+    for opt, value in (
+        ("pane-border-status", "off"),
+        ("pane-border-style", border),
+        ("pane-active-border-style", border),
+    ):
+        tmux("set", "-w", "-t", pane, opt, value)
+    os.environ["SESSION_PICKER_LEGEND"] = legend_pid
+    try:
+        yield
+    finally:
+        # the popup only closes once its session ends, and this pane would keep it alive
+        tmux("kill-pane", "-t", legend_id)
+
+
+def redraw_legend():
+    with contextlib.suppress(KeyError, ValueError, ProcessLookupError):
+        os.kill(int(os.environ["SESSION_PICKER_LEGEND"]), signal.SIGUSR1)
+
+
+def legend_lines(kind, width, state):
     t = theme()
     reset = "\x1b[0m"
-    label = "  ".join(f"{fg(t['sky'])}{k}{reset} {fg(t['overlay_1'])}{d}{reset}" for k, d in keys)
-    return f" {label} "
+    armed = state.get("armed")
+    if armed:
+        return [
+            f"  {fg(t['red'], bold=True)}d{reset} {fg(t['text'])}again to kill{reset}"
+            f" {fg(t['peach'], bold=True)}{armed['what']}{reset}"
+        ]
+    rows_ = KEYS[kind]
+    gap, margin = 4, 2
 
+    def entry(k, d, pad=0):
+        return f"{fg(t['sky'])}{k}{reset} {fg(t['overlay_1'])}{d}{reset}" + " " * pad
 
-def help_line(keys):
-    """fzf args for a key legend along the bottom of the whole popup.
+    def size(k, d):
+        return len(k) + 1 + len(d)
 
-    fzf's footer only spans the list column; the border wraps list and preview both, so its
-    bottom label is what reaches across the full width.
-    """
-    t = theme()
-    return [
-        "--border",
-        "bottom",
-        "--border-label",
-        help_label(keys),
-        "--border-label-pos",
-        "2:bottom",
-        "--color",
-        f"border:{t['overlay_0']}" if t["overlay_0"] else "border:dim",
+    # entries line up in columns, as long as the widest row fits
+    cols = [
+        max(size(*row[i]) for row in rows_ if i < len(row))
+        for i in range(max(map(len, rows_)))
     ]
+    if margin + sum(cols) + gap * (len(cols) - 1) <= width:
+        return [
+            " " * margin
+            + (" " * gap).join(
+                entry(k, d, cols[i] - size(k, d) if i < len(row) - 1 else 0)
+                for i, (k, d) in enumerate(row)
+            )
+            for row in rows_
+        ]
+
+    # too narrow: each row wraps on its own
+    lines = []
+    for row in rows_:
+        line, used = [], margin
+        for k, d in row:
+            w = size(k, d) + (gap if line else 0)
+            if line and used + w > width:
+                lines.append(line)
+                line, used, w = [], margin, size(k, d)
+            line.append(entry(k, d))
+            used += w
+        lines.append(line)
+    return [" " * margin + (" " * gap).join(line) for line in lines]
+
+
+def legend_pane(kind, state_path, owner):
+    os.environ["SESSION_PICKER_STATE"] = state_path
+    wake_r, wake_w = os.pipe()
+    os.set_blocking(wake_w, False)
+    signal.set_wakeup_fd(wake_w)
+    for sig in (signal.SIGUSR1, signal.SIGWINCH):
+        signal.signal(sig, lambda *_: None)
+    # no cursor, and no autowrap: an overlong line is cut rather than spilling onto the next
+    sys.stdout.write("\x1b[?25l\x1b[?7l")
+    height = None
+    while True:
+        try:
+            state = load_state()
+        except (OSError, ValueError):
+            state = {}
+        cols, rows_ = os.get_terminal_size()
+        lines = legend_lines(kind, cols, state)
+        # an armed prompt is shorter, but the list shouldn't jump while it shows
+        if not state.get("armed"):
+            height = len(lines)
+        if height and rows_ != height:
+            tmux("resize-pane", "-t", os.environ["TMUX_PANE"], "-y", str(height))
+        sys.stdout.write("\x1b[H\x1b[2J" + "\r\n".join(lines))
+        sys.stdout.flush()
+        # wake on a signal, or each second to notice the picker is gone if it died without
+        # killing this pane
+        while not select.select([wake_r], [], [], 1)[0]:
+            try:
+                os.kill(owner, 0)
+            except ProcessLookupError:
+                return
+        os.read(wake_r, 1024)
 
 
 def theme():
@@ -558,36 +679,31 @@ def kill_key(kind, target):
                 state["focus"] = focus
             reload = f"reload('{SELF}' list {{q}})"
         save_state(state)
-        # the label goes last: the colon form takes the rest of the line, + included
-        print(f"{reload}+change-border-label:{help_label(KEYS[kind])}")
+        redraw_legend()
+        print(reload)
         return
 
     token = str(time.time_ns())
-    state["armed"] = dict(target=target, at=time.time(), token=token)
-    save_state(state)
-    t = theme()
-    reset = "\x1b[0m"
     what = describe_claude(target) if kind == "claude" else describe_row(target)
-    label = (
-        f" {fg(t['red'], bold=True)}d{reset} {fg(t['text'])}again to kill{reset}"
-        f" {fg(t['peach'], bold=True)}{what}{reset} "
-    )
-    print(f"bg-transform('{SELF}' disarm {kind} {token})+change-border-label:{label}")
+    state["armed"] = dict(target=target, at=time.time(), token=token, what=what)
+    save_state(state)
+    redraw_legend()
+    print(f"bg-transform('{SELF}' disarm {token})")
 
 
-def disarm(kind, token):
+def disarm(token):
     time.sleep(KILL_TIMEOUT)
     try:
         state = load_state()
     except (OSError, ValueError):
         # the picker already exited
         return
-    # a later d re-armed or confirmed, and owns the label now
+    # a later d re-armed or confirmed, and owns the legend now
     if state.get("armed", {}).get("token") != token:
         return
     del state["armed"]
     save_state(state)
-    print(f"change-border-label:{help_label(KEYS[kind])}")
+    redraw_legend()
 
 
 def kill_scope(target):
@@ -847,7 +963,7 @@ def picker(client):
 
     os.environ["SESSION_PICKER_CLIENT"] = client
     run = f"'{SELF}'"
-    with picker_state():
+    with picker_state(), legend("session"):
         result = subprocess.run(
             # --disabled: the script does the filtering (see items), fzf only displays
             [
@@ -863,7 +979,6 @@ def picker(client):
                 "--disabled",
                 "--no-input",
                 "--highlight-line",
-                *help_line(SESSION_KEYS),
                 "--info",
                 "inline-right",
                 "--prompt",
@@ -1082,7 +1197,7 @@ def claude_picker(client):
     # peek (under fzf's execute) creates this when a peek ends with C-d; after_peek consumes it
     quit_flag = os.path.join(tempfile.gettempdir(), f"claude-picker-quit-{os.getpid()}")
     os.environ["CLAUDE_PICKER_QUIT"] = quit_flag
-    with picker_state():
+    with picker_state(), legend("claude"):
         result = subprocess.run(
             [
                 "fzf",
@@ -1096,7 +1211,6 @@ def claude_picker(client):
                 "--no-sort",
                 "--no-input",
                 "--highlight-line",
-                *help_line(CLAUDE_KEYS),
                 "--info",
                 "inline-right",
                 "--prompt",
@@ -1176,8 +1290,10 @@ if __name__ == "__main__":
         digit(sys.argv[2], sys.argv[3])
     elif len(sys.argv) >= 3 and sys.argv[1] == "kill":
         kill_key(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "")
-    elif len(sys.argv) >= 4 and sys.argv[1] == "disarm":
-        disarm(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) >= 3 and sys.argv[1] == "disarm":
+        disarm(sys.argv[2])
+    elif len(sys.argv) >= 5 and sys.argv[1] == "legend":
+        legend_pane(sys.argv[2], sys.argv[3], int(sys.argv[4]))
     elif len(sys.argv) >= 3 and sys.argv[1] == "key":
         key(
             sys.argv[2],
