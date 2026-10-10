@@ -2,11 +2,14 @@
 
 # debug: true
 check_updates: true
+env_command:
+  command: out="$(dotenvx get -f ~/.dotfiles/.env --format eval-export --strict)" && eval "$out"
+  shell: zsh
 defaults:
   type:
     github-release:
       opts:
-        github_token_command: dotenvx get -f ~/.dotfiles/.env GITHUB_TOKEN
+        github_token: $GITHUB_TOKEN
     rsync:
       verbose: true
 
