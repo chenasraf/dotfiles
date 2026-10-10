@@ -132,6 +132,9 @@ keybinding:
     goInto: <enter>
     confirm: <enter>
     confirmInEditor: <a-enter>
+    # tmux doesn't pass on lazygit's kitty keyboard request, so alt+enter arrives as legacy
+    # ESC CR, which lazygit decodes as alt+ctrl+m
+    confirmInEditor-alt: <alt+ctrl+m>
     remove: d
     new: "n"
     edit: e
