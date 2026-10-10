@@ -12,7 +12,8 @@
 #   session-picker <client>          fzf list of sessions and windows; Enter switches <client>
 #   session-picker preview <target>  draw <target>'s window: real pane layout + pane contents
 #   session-picker list [query]      rows for fzf's reload: the expanded tree, or the matches for query
-#   session-picker key <k> <id> <q>  fzf actions for right/left (expand/collapse), esc, and new results
+#   session-picker key <k> <id> <q>  fzf actions for right/left and l/h (expand/collapse), esc, and new
+#                                    results
 #
 #   session-picker claude <client>   fzf list of Claude Code panes; i works in one, Enter switches
 #   session-picker claude-list       rows for that list's reload
@@ -85,8 +86,8 @@ def fg(hex_color, bold=False):
 
 
 SESSION_KEYS = [
-    ("↑↓", "move"),
-    ("→←", "expand/collapse"),
+    ("↑↓/jk", "move"),
+    ("→←/lh", "expand/collapse"),
     ("0-9", "switch to session"),
     ("/", "search"),
     ("enter", "switch"),
@@ -95,7 +96,7 @@ SESSION_KEYS = [
     ("q", "quit"),
 ]
 CLAUDE_KEYS = [
-    ("↑↓", "move"),
+    ("↑↓/jk", "move"),
     ("i", "interact"),
     ("0-9", "switch to pane"),
     ("^c", "back to list"),
@@ -522,6 +523,18 @@ def digit_binds(kind):
     ]
 
 
+def jk_binds():
+    """j/k move like down/up, unless the search input is up and they're typed into the query."""
+    return [
+        arg
+        for k, move in (("j", "down"), ("k", "up"))
+        for arg in (
+            "--bind",
+            f'{k}:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo {move} || echo "put({k})"',
+        )
+    ]
+
+
 # dd kills the row under the cursor, vim style: the first d arms it and swaps the key legend for a
 # prompt, and a second d on the same row within KILL_TIMEOUT confirms
 KILL_TIMEOUT = 1.0
@@ -742,6 +755,12 @@ def key(action, target, query):
     reload = f"reload('{SELF}' list {{q}})"
     searching = os.environ.get("FZF_INPUT_STATE", "hidden") != "hidden"
 
+    if action in ("h", "l"):
+        if searching:
+            print(f"put({action})")
+            return
+        action = "left" if action == "h" else "right"
+
     # Cursor placement after a reload happens here rather than via fzf's track-current: tracking
     # blocks the UI until it resolves, which swallows the hide-input chained after esc.
     if action == "result":
@@ -870,6 +889,11 @@ def picker(client):
                 f"right:transform({run} key right {{1}} {{q}})",
                 "--bind",
                 f"left:transform({run} key left {{1}} {{q}})",
+                "--bind",
+                f"l:transform({run} key l {{1}} {{q}})",
+                "--bind",
+                f"h:transform({run} key h {{1}} {{q}})",
+                *jk_binds(),
                 "--bind",
                 f"esc:transform({run} key esc {{1}} {{q}})+hide-input",
                 # the query only takes keys once / reveals the input; until then q quits
@@ -1101,6 +1125,7 @@ def claude_picker(client):
                 ' || echo "put(i)"',
                 "--bind",
                 f"d:transform({run} kill claude {{1}})",
+                *jk_binds(),
                 *digit_binds("claude"),
             ],
             input="\n".join(claude_items()),
