@@ -6,6 +6,8 @@
 #                                    sized by $TMUX_SWITCHER_SIZE: 0 (default) is borderless full
 #                                    screen, 1-100 a bordered popup at that percentage
 #   session-picker digit <d> <kind>  fzf actions for a 0-9 key: pick the row numbered <d>
+#   session-picker kill <kind> <id>  fzf actions for d: arm a kill of row <id>, or confirm it
+#   session-picker disarm <kind> <t> fzf actions once arming <t> times out: restore the key legend
 #
 #   session-picker <client>          fzf list of sessions and windows; Enter switches <client>
 #   session-picker preview <target>  draw <target>'s window: real pane layout + pane contents
@@ -23,9 +25,12 @@
 import json
 import os
 import re
+import contextlib
+import signal
 import subprocess
 import sys
 import tempfile
+import time
 import unicodedata
 
 SELF = os.path.abspath(__file__)
@@ -64,11 +69,51 @@ def rows(*args):
     return [line.split("\t") for line in tmux(*args).splitlines() if line]
 
 
+def client_session(client):
+    # display -c only scopes client formats; #{session_id} there is still the caller's session
+    return next(
+        (s for c, s in rows("list-clients", "-F", "#{client_name}\t#{session_id}") if c == client),
+        "",
+    )
+
+
 def fg(hex_color, bold=False):
     if not hex_color.startswith("#") or len(hex_color) != 7:
         return "\x1b[1m" if bold else ""
     r, g, b = (int(hex_color[i : i + 2], 16) for i in (1, 3, 5))
     return f"\x1b[{'1;' if bold else ''}38;2;{r};{g};{b}m"
+
+
+SESSION_KEYS = [
+    ("↑↓", "move"),
+    ("→←", "expand/collapse"),
+    ("0-9", "switch to session"),
+    ("/", "search"),
+    ("enter", "switch"),
+    ("dd", "kill"),
+    ("esc", "leave search"),
+    ("q", "quit"),
+]
+CLAUDE_KEYS = [
+    ("↑↓", "move"),
+    ("i", "interact"),
+    ("0-9", "switch to pane"),
+    ("^c", "back to list"),
+    ("^d", "close"),
+    ("/", "search"),
+    ("enter", "switch"),
+    ("dd", "kill"),
+    ("esc", "leave search"),
+    ("q", "quit"),
+]
+KEYS = {"session": SESSION_KEYS, "claude": CLAUDE_KEYS}
+
+
+def help_label(keys):
+    t = theme()
+    reset = "\x1b[0m"
+    label = "  ".join(f"{fg(t['sky'])}{k}{reset} {fg(t['overlay_1'])}{d}{reset}" for k, d in keys)
+    return f" {label} "
 
 
 def help_line(keys):
@@ -78,13 +123,11 @@ def help_line(keys):
     bottom label is what reaches across the full width.
     """
     t = theme()
-    reset = "\x1b[0m"
-    label = "  ".join(f"{fg(t['sky'])}{k}{reset} {fg(t['overlay_1'])}{d}{reset}" for k, d in keys)
     return [
         "--border",
         "bottom",
         "--border-label",
-        f" {label} ",
+        help_label(keys),
         "--border-label-pos",
         "2:bottom",
         "--color",
@@ -102,6 +145,7 @@ def theme():
         "subtext_0",
         "text",
         "peach",
+        "red",
     ]
     values = (
         tmux("display", "-p", "\t".join(f"#{{@thm_{n}}}" for n in names))
@@ -410,6 +454,18 @@ def save_state(state):
         json.dump(state, f)
 
 
+@contextlib.contextmanager
+def picker_state():
+    fd, path = tempfile.mkstemp(prefix="session-picker-", suffix=".json")
+    os.close(fd)
+    os.environ["SESSION_PICKER_STATE"] = path
+    save_state({})
+    try:
+        yield
+    finally:
+        os.unlink(path)
+
+
 def fuzzy(query, text):
     """Positions of query in text — a substring if possible, else a subsequence — or None. Smart case."""
     hay, needle = (
@@ -466,6 +522,129 @@ def digit_binds(kind):
     ]
 
 
+# dd kills the row under the cursor, vim style: the first d arms it and swaps the key legend for a
+# prompt, and a second d on the same row within KILL_TIMEOUT confirms
+KILL_TIMEOUT = 1.0
+
+
+def kill_key(kind, target):
+    if os.environ.get("FZF_INPUT_STATE", "hidden") != "hidden":
+        print("put(d)")
+        return
+    if not target:
+        return
+    state = load_state()
+    armed = state.pop("armed", None)
+    if armed and armed["target"] == target and time.time() - armed["at"] < KILL_TIMEOUT:
+        if kind == "claude":
+            kill_claude(target)
+            reload = f"reload('{SELF}' claude-list)"
+        else:
+            focus = kill_row(target)
+            if focus:
+                state["focus"] = focus
+            reload = f"reload('{SELF}' list {{q}})"
+        save_state(state)
+        # the label goes last: the colon form takes the rest of the line, + included
+        print(f"{reload}+change-border-label:{help_label(KEYS[kind])}")
+        return
+
+    token = str(time.time_ns())
+    state["armed"] = dict(target=target, at=time.time(), token=token)
+    save_state(state)
+    t = theme()
+    reset = "\x1b[0m"
+    what = describe_claude(target) if kind == "claude" else describe_row(target)
+    label = (
+        f" {fg(t['red'], bold=True)}d{reset} {fg(t['text'])}again to kill{reset}"
+        f" {fg(t['peach'], bold=True)}{what}{reset} "
+    )
+    print(f"bg-transform('{SELF}' disarm {kind} {token})+change-border-label:{label}")
+
+
+def disarm(kind, token):
+    time.sleep(KILL_TIMEOUT)
+    try:
+        state = load_state()
+    except (OSError, ValueError):
+        # the picker already exited
+        return
+    # a later d re-armed or confirmed, and owns the label now
+    if state.get("armed", {}).get("token") != token:
+        return
+    del state["armed"]
+    save_state(state)
+    print(f"change-border-label:{help_label(KEYS[kind])}")
+
+
+def kill_scope(target):
+    """The session or window a kill on row <target> takes down: a session's only window is the session."""
+    if target.startswith("$"):
+        return target
+    sid, count = (
+        tmux("display", "-p", "-t", target, "#{session_id}\t#{session_windows}")
+        .strip()
+        .split("\t")
+    )
+    return target if count != "1" else sid
+
+
+def describe_row(target):
+    target = kill_scope(target)
+    fmt = (
+        "session #{session_name}"
+        if target.startswith("$")
+        else "window #{window_index} #{window_name}"
+    )
+    return tmux("display", "-p", "-t", target, fmt).strip()
+
+
+def kill_row(target):
+    """Kill row <target>'s session or window, returning the row to land on afterwards."""
+    target = kill_scope(target)
+    rows_ = items()
+    doomed = {row[0] for row in rows_ if target in (row[0], row[1])}
+    ids = [row[0] for row in rows_]
+    i = ids.index(target) if target in ids else 0
+    focus = next(
+        (r for r in [*reversed(ids[:i]), *ids[i + 1 :]] if r not in doomed), None
+    )
+    if target.startswith("$"):
+        kill_session(target)
+    else:
+        tmux("kill-window", "-t", target)
+    return focus
+
+
+def kill_session(sid):
+    client = os.environ.get("SESSION_PICKER_CLIENT", "")
+    # killing the client's own session would detach it, so move it off first
+    if client and client_session(client) == sid:
+        fallback = fallback_session(sid, client)
+        if fallback:
+            tmux("switch-client", "-c", client, "-t", fallback)
+    tmux("kill-session", "-t", sid)
+
+
+def fallback_session(sid, client):
+    """The client's previous session, else the one before <sid> in the list, else the one after."""
+    sessions = sorted(
+        (
+            s
+            for s in rows("list-sessions", "-F", "#{session_id}\t#{session_name}")
+            if not s[1].startswith(POPUP_PREFIX)
+        ),
+        key=lambda s: int(s[0].lstrip("$")),
+    )
+    last = tmux("display", "-p", "-c", client, "#{client_last_session}").strip()
+    if found := next((s for s, name in sessions if name == last and s != sid), None):
+        return found
+    ids = [s for s, _ in sessions]
+    i = ids.index(sid) if sid in ids else 0
+    others = [*reversed(ids[:i]), *ids[i + 1 :]]
+    return others[0] if others else None
+
+
 # Expansion is a session option rather than picker state, so it carries over between launches and
 # goes away with the session.
 EXPANDED_OPT = "@session_picker_expanded"
@@ -484,6 +663,9 @@ def set_expanded(sid, on):
 
 # Last highlighted row (session or window id), so the next launch reopens where you left off
 LAST_OPT = "@session_picker_last"
+
+# the popup script's hidden sessions hold popups (this picker included), not work
+POPUP_PREFIX = "_popup_"
 
 
 def items(query=""):
@@ -509,8 +691,7 @@ def items(query=""):
     reset = "\x1b[0m"
     match_style = fg(t["peach"], bold=True)
     out = []
-    # the popup script's hidden sessions hold popups (this picker included), not work
-    sessions = [s for s in sessions if not s[1].startswith("_popup_")]
+    sessions = [s for s in sessions if not s[1].startswith(POPUP_PREFIX)]
     for n, (sid, name, count, attached, expanded) in enumerate(
         sorted(sessions, key=lambda s: int(s[0].lstrip("$"))), 1
     ):
@@ -632,9 +813,7 @@ def key(action, target, query):
 
 
 def picker(client):
-    current = (
-        tmux("display", "-p", "-c", client, "#{session_id}").strip() if client else ""
-    )
+    current = client_session(client) if client else ""
     rows_ = items()
 
     # reopen on the last highlighted row; a window hidden under a since-collapsed session falls back
@@ -647,13 +826,9 @@ def picker(client):
     ids = [row[0] for row in rows_]
     start = next((ids.index(c) + 1 for c in candidates if c and c in ids), 1)
 
-    fd, state_path = tempfile.mkstemp(prefix="session-picker-", suffix=".json")
-    os.close(fd)
-    os.environ["SESSION_PICKER_STATE"] = state_path
-    save_state({})
-
+    os.environ["SESSION_PICKER_CLIENT"] = client
     run = f"'{SELF}'"
-    try:
+    with picker_state():
         result = subprocess.run(
             # --disabled: the script does the filtering (see items), fzf only displays
             [
@@ -669,17 +844,7 @@ def picker(client):
                 "--disabled",
                 "--no-input",
                 "--highlight-line",
-                *help_line(
-                    [
-                        ("↑↓", "move"),
-                        ("→←", "expand/collapse"),
-                        ("0-9", "switch to session"),
-                        ("/", "search"),
-                        ("enter", "switch"),
-                        ("esc", "leave search"),
-                        ("q", "quit"),
-                    ]
-                ),
+                *help_line(SESSION_KEYS),
                 "--info",
                 "inline-right",
                 "--prompt",
@@ -712,14 +877,14 @@ def picker(client):
                 '/:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo show-input || echo "put(/)"',
                 "--bind",
                 'q:transform:[ "$FZF_INPUT_STATE" = hidden ] && echo abort || echo "put(q)"',
+                "--bind",
+                f"d:transform({run} kill session {{1}})",
                 *digit_binds("session"),
             ],
             input="\n".join(f"{row_id}\t{display}" for row_id, _, display, _ in rows_),
             stdout=subprocess.PIPE,
             text=True,
         )
-    finally:
-        os.unlink(state_path)
 
     if result.returncode == 0 and result.stdout:
         target = result.stdout.split("\t", 1)[0]
@@ -847,70 +1012,101 @@ def unpeek(name):
     tmux("kill-session", "-t", f"={name}")
 
 
+def describe_claude(pane):
+    path = tmux("display", "-p", "-t", pane, "#{pane_current_path}").strip()
+    return f"claude in {os.path.basename(path.rstrip('/')) or '/'}"
+
+
+def claude_pid(pane):
+    """The claude process in <pane>, preferring the one in the terminal's foreground."""
+    tty = tmux("display", "-p", "-t", pane, "#{pane_tty}").strip()
+    if not tty:
+        return None
+    out = subprocess.run(
+        ["ps", "-t", tty.removeprefix("/dev/"), "-o", "pid=,tpgid=,comm="],
+        capture_output=True,
+        text=True,
+    ).stdout
+    found = []
+    for line in out.splitlines():
+        pid, tpgid, comm = line.split(None, 2)
+        if os.path.basename(comm.strip()) == "claude":
+            found.append((pid != tpgid, int(pid)))
+    return min(found)[1] if found else None
+
+
+def kill_claude(pane):
+    """SIGTERM lets Claude Code shut down cleanly; SIGKILL only if it outlasts the grace period.
+
+    Waits for the exit either way, since the list reloads right after and would still show it.
+    """
+    pid = claude_pid(pane)
+    if not pid:
+        return
+    with contextlib.suppress(ProcessLookupError):
+        os.kill(pid, signal.SIGTERM)
+        deadline = time.monotonic() + 3
+        while time.monotonic() < deadline:
+            time.sleep(0.05)
+            os.kill(pid, 0)
+        os.kill(pid, signal.SIGKILL)
+
+
 def claude_picker(client):
     run = f"'{SELF}'"
     hidden = '[ "$FZF_INPUT_STATE" = hidden ]'
     # peek (under fzf's execute) creates this when a peek ends with C-d; after_peek consumes it
     quit_flag = os.path.join(tempfile.gettempdir(), f"claude-picker-quit-{os.getpid()}")
     os.environ["CLAUDE_PICKER_QUIT"] = quit_flag
-    result = subprocess.run(
-        [
-            "fzf",
-            "--ansi",
-            "--delimiter",
-            "\t",
-            "--with-nth",
-            "2",
-            "--layout",
-            "reverse",
-            "--no-sort",
-            "--no-input",
-            "--highlight-line",
-            *help_line(
-                [
-                    ("↑↓", "move"),
-                    ("i", "interact"),
-                    ("0-9", "switch to pane"),
-                    ("^c", "back to list"),
-                    ("^d", "close"),
-                    ("/", "search"),
-                    ("enter", "switch"),
-                    ("esc", "leave search"),
-                    ("q", "quit"),
-                ]
-            ),
-            "--info",
-            "inline-right",
-            "--prompt",
-            "/ ",
-            "--pointer",
-            "▌",
-            "--preview",
-            f"{run} preview {{1}}",
-            "--preview-window",
-            "right,70%,border-left",
-            # agents keep working while the list is up
-            "--bind",
-            "every(1):refresh-preview",
-            "--bind",
-            "resize:refresh-preview",
-            "--bind",
-            f'/:transform:{hidden} && echo show-input || echo "put(/)"',
-            "--bind",
-            f'q:transform:{hidden} && echo abort || echo "put(q)"',
-            # hide-input sits outside the transform: inside one it restores the cleared query
-            "--bind",
-            f"esc:transform({hidden} && echo abort || echo clear-query)+hide-input",
-            "--bind",
-            f"i:transform:{hidden}"
-            f' && echo "execute({run} peek {{1}})+transform({run} after-peek)"'
-            ' || echo "put(i)"',
-            *digit_binds("claude"),
-        ],
-        input="\n".join(claude_items()),
-        stdout=subprocess.PIPE,
-        text=True,
-    )
+    with picker_state():
+        result = subprocess.run(
+            [
+                "fzf",
+                "--ansi",
+                "--delimiter",
+                "\t",
+                "--with-nth",
+                "2",
+                "--layout",
+                "reverse",
+                "--no-sort",
+                "--no-input",
+                "--highlight-line",
+                *help_line(CLAUDE_KEYS),
+                "--info",
+                "inline-right",
+                "--prompt",
+                "/ ",
+                "--pointer",
+                "▌",
+                "--preview",
+                f"{run} preview {{1}}",
+                "--preview-window",
+                "right,70%,border-left",
+                # agents keep working while the list is up
+                "--bind",
+                "every(1):refresh-preview",
+                "--bind",
+                "resize:refresh-preview",
+                "--bind",
+                f'/:transform:{hidden} && echo show-input || echo "put(/)"',
+                "--bind",
+                f'q:transform:{hidden} && echo abort || echo "put(q)"',
+                # hide-input sits outside the transform: inside one it restores the cleared query
+                "--bind",
+                f"esc:transform({hidden} && echo abort || echo clear-query)+hide-input",
+                "--bind",
+                f"i:transform:{hidden}"
+                f' && echo "execute({run} peek {{1}})+transform({run} after-peek)"'
+                ' || echo "put(i)"',
+                "--bind",
+                f"d:transform({run} kill claude {{1}})",
+                *digit_binds("claude"),
+            ],
+            input="\n".join(claude_items()),
+            stdout=subprocess.PIPE,
+            text=True,
+        )
     if os.path.exists(quit_flag):
         os.unlink(quit_flag)
     if result.returncode == 0 and result.stdout:
@@ -953,6 +1149,10 @@ if __name__ == "__main__":
         after_peek()
     elif len(sys.argv) >= 4 and sys.argv[1] == "digit":
         digit(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) >= 3 and sys.argv[1] == "kill":
+        kill_key(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "")
+    elif len(sys.argv) >= 4 and sys.argv[1] == "disarm":
+        disarm(sys.argv[2], sys.argv[3])
     elif len(sys.argv) >= 3 and sys.argv[1] == "key":
         key(
             sys.argv[2],
