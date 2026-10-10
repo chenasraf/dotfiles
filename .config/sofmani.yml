@@ -6,7 +6,7 @@ defaults:
   type:
     github-release:
       opts:
-        github_token: $GITHUB_TOKEN
+        github_token_command: dotenvx get -f ~/.dotfiles/.env GITHUB_TOKEN
     rsync:
       verbose: true
 
