@@ -37,13 +37,14 @@ install:
       command: ln -sfn "tmux_{{ .DeviceIDAlias }}.yml" "$DOTFILES/.config/tmux_local.yml" && stow -R -d "$DOTFILES" -t ~ .
       update_command: ln -sfn "tmux_{{ .DeviceIDAlias }}.yml" "$DOTFILES/.config/tmux_local.yml" && stow -R -d "$DOTFILES" -t ~ .
 
-  - name: sofmani-local
+  - name: local-manifest
     type: manifest
     tags: config
     enabled: test -f ~/.dotfiles/.config/sofmani_local.yml
     opts:
       source: ~/.dotfiles/.config
       path: sofmani_local.yml
+      inherit: true
 
   - name: claude-settings
     type: shell
