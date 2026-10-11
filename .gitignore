@@ -24,3 +24,4 @@ __pycache__
 /.envrc
 /.env.keys
 /.env
+/.config/tmux_*.yml
