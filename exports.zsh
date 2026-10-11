@@ -80,6 +80,7 @@ export YAMLLINT_CONFIG_FILE="$CFG/.yamllint.yml"
 
 # Atuin
 export PATH="$HOME/.atuin/bin:$PATH"
+export ATUIN_FILTER_MODE_SHELL_UP_KEY_BINDING=directory
 eval "$(atuin init zsh)"
 # atuin() {
 #   unset -f atuin
