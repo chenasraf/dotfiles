@@ -240,10 +240,6 @@ on-mode-changed = []
 #     alt-shift-k = ['join-with up', 'mode main']
 #     alt-shift-l = ['join-with right', 'mode main']
 
-[[on-window-detected]]
-if.app-id = 'com.DanPristupov.Fork'
-run = ['layout floating']
-
 # Chat / mail apps always land on workspace 2
 [[on-window-detected]]
 if.app-id = 'ch.protonmail.desktop'
