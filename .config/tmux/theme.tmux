@@ -101,3 +101,9 @@ set -g status-right "#{?#{m:ssh*,#{pane_current_command}},#{E:@status_ssh},#{E:@
 setw -g popup-border-lines rounded
 setw -g popup-border-style "fg=#{@thm_sky}"
 setw -g popup-style "bg=#{@thm_bg}"
+
+# NOTE Menus
+setw -g menu-border-lines rounded
+setw -g menu-border-style "fg=#{@thm_sky}"
+setw -g menu-style "bg=#{@thm_bg},fg=#{@thm_fg}"
+setw -g menu-selected-style "bg=#{@thm_teal},fg=#{@thm_surface_0},bold"

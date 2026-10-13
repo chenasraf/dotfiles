@@ -127,6 +127,9 @@ keybind = super+equal=text:\x02E
 # Select tmux session: Cmd+Shift+P
 keybind = super+shift+p=text:\x02s
 
+# tx preset/project picker: Cmd+Shift+T
+keybind = super+shift+t=text:\x02N
+
 # Claude Code sessions picker: Cmd+Shift+O
 keybind = super+shift+o=text:\x02a
 
