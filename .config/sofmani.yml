@@ -360,6 +360,11 @@ install:
   - name: navi
     type: brew
 
+  - name: terminal-notifier
+    type: brew
+    platforms:
+      only: ['macos']
+
   - name: aerospace
     type: group
     platforms: { only: ['macos'] }
