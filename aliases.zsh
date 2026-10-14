@@ -26,6 +26,7 @@ alias "..."="cd ../.."
 alias p..="pushd .."
 alias pushd="pushd -q"
 alias popd="popd -q"
+alias rcd="WD_=\$(basename \$PWD) && cd .. && cd \$WD_ && unset WD_"
 
 # file listing
 alias ls="eza -h --color=auto --icons always"
