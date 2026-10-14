@@ -30,6 +30,15 @@
       nc_aio() { sudo docker exec --user www-data nextcloud-aio-nextcloud "$@"; }
       nc_aio_tty() { sudo docker exec --user www-data -it nextcloud-aio-nextcloud "$@"; }
 
+    # Desktop notification when the command finishes, pulled in with
+    # `NC_TASK="nxc ..."; eval "$NC_NOTIFY"` once its arguments check out. wand runs
+    # commands through zsh, so the notify plugin loads straight in. The trap is set
+    # here rather than in a function because zsh scopes a function's EXIT trap to it.
+    NC_NOTIFY: |
+      source "$DOTFILES/.local/share/zsh/plugins/local/common/notify.zsh" 2>/dev/null
+      _nc_start=$EPOCHREALTIME
+      trap '_nc_rc=$?; (( $+functions[_notify_result] )) && _notify_result $_nc_rc $(( EPOCHREALTIME - _nc_start )) "$NC_TASK"' EXIT
+
     # Helpers for db-backup, pulled in with `eval "$NC_DB_LIB"`. These reach the
     # AIO instance over ssh rather than through nc_target: the dumps live on a
     # drive attached to this machine, so the command only makes sense from here.
@@ -223,6 +232,7 @@ upgrade:
   cmd: |
     eval "$NC_LIB"
     nc_target
+    NC_TASK="nxc upgrade"; eval "$NC_NOTIFY"
 
     if [ "$NC_AIO" = 1 ]; then
       if [ "$WAND_FLAG_BETA" = "true" ]; then
@@ -304,6 +314,7 @@ force-appupdate:
   aliases: [fau]
   cmd: |
     eval "$NC_LIB"
+    NC_TASK="nxc force-appupdate"; eval "$NC_NOTIFY"
     INSTANCE_ID=$(nc_aio_tty php occ config:system:get instanceid | tr -d "\n\r")
     NC_VERSION=$(nc_aio_tty php occ config:system:get version | tr -d "\n\r")
     if [ -z "$NC_VERSION" ]; then
@@ -370,6 +381,7 @@ backup:
   description: Rsync Nextcloud data from remote server to external drive
   confirm: This will sync from spider.casraf.dev to the 2T SSD. Continue?
   cmd: |
+    NC_TASK="nxc backup"; eval "$NC_NOTIFY"
     DRIVE="/Volumes/2T SSD"
     if [ ! -d "$DRIVE/Nextcloud/" ]; then
       echo "Mount the 2T SSD first!"
@@ -410,6 +422,7 @@ db-backup:
       exit 1
     fi
 
+    NC_TASK="nxc db-backup"; eval "$NC_NOTIFY"
     nc_db_dir || exit 1
     OUT="$NC_DB_DIR/nextcloud-db-$(date +%Y%m%d-%H%M%S).sql.gz"
 
@@ -425,6 +438,7 @@ db-backup:
       confirm: This will REPLACE the live Nextcloud database on spider. Continue?
       cmd: |
         eval "$NC_DB_LIB"
+        NC_TASK="nxc db-backup restore"; eval "$NC_NOTIFY"
         nc_db_dir || exit 1
 
         SRC="$1"
@@ -966,6 +980,7 @@ install-app:
     fi
     URL="https://github.com/chenasraf/nextcloud-${NAME}/releases/download/v${VERSION}/${NAME}-v${VERSION}.tar.gz"
     eval "$NC_LIB"
+    NC_TASK="nxc install-app $NAME $VERSION"; eval "$NC_NOTIFY"
     nc_exec bash -c "curl -L -o /tmp/${NAME}.tar.gz ${URL}"
     nc_exec bash -c "tar xzf /tmp/${NAME}.tar.gz -C /var/www/html/custom_apps/ && rm /tmp/${NAME}.tar.gz"
     nc_exec_tty php occ app:enable "$NAME"
