@@ -259,6 +259,8 @@ if [[ -n "$SSH_CONNECTION" ]]; then
   unset STABLE_SSH_AUTH_SOCK
 fi
 
+export GPG_TTY=$(tty)
+
 # Auto completion
 # [[ ! -f $BREW_HOME/opt/chruby/share/chruby/chruby.sh ]] || source $BREW_HOME/opt/chruby/share/chruby/chruby.sh
 # [[ ! -f "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc" ]] || . "$HOME/.gcloud/google-cloud-sdk/completion.zsh.inc"
