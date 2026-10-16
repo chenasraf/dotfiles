@@ -1,0 +1,126 @@
+.config:
+  bin_name: ntfy
+  flags:
+    topic:
+      alias: t
+      description: 'Topic to publish to (default: $NTFY_TOPIC, else dev)'
+    title:
+      alias: T
+      description: Notification title
+    priority:
+      alias: p
+      description: 'min | low | default | high | max, or 1-5'
+    tags:
+      description: 'Comma-separated tags; emoji shortcodes like warning or tada show as icons'
+    click:
+      alias: u
+      description: Open this URL when the notification is tapped
+    markdown:
+      alias: m
+      type: bool
+      description: Render the message as Markdown
+  env:
+    # Shared shell helpers, pulled into a command with `eval "$NTFY_LIB"`.
+    # Messages go out as JSON rather than as curl headers: header values are
+    # ASCII-only, which would mangle emoji and non-Latin titles.
+    NTFY_LIB: |
+      ntfy_die() { printf 'ntfy: %s\n' "$*" >&2; exit 1; }
+
+      for _need in curl jq; do
+        command -v "$_need" >/dev/null 2>&1 || ntfy_die "$_need is not installed"
+      done
+
+      [ -n "$NTFY_HOST" ] || ntfy_die 'NTFY_HOST is not set'
+      case "$NTFY_HOST" in
+        *://*) NTFY_URL="$NTFY_HOST" ;;
+        *) NTFY_URL="https://$NTFY_HOST" ;;
+      esac
+
+      # The token is decrypted from the dotfiles .env on each send, because
+      # loadenv is kept off shell startup and most shells never run it. A token
+      # already in the environment wins, which skips the slow decrypt.
+      ntfy_token() {
+        if [ -n "$NTFY_TOKEN" ]; then
+          printf '%s' "$NTFY_TOKEN"
+        elif command -v dotenvx >/dev/null 2>&1; then
+          dotenvx get NTFY_TOKEN -f "${DOTFILES:-$HOME/.dotfiles}/.env" --strict 2>/dev/null
+        fi
+      }
+
+      # ntfy_send <message> [title] — the flags fill in everything else
+      ntfy_send() {
+        _prio="${WAND_FLAG_PRIORITY:-default}"
+        case "$_prio" in
+          min) _prio=1 ;; low) _prio=2 ;; default) _prio=3 ;; high) _prio=4 ;; max|urgent) _prio=5 ;;
+          [1-5]) ;;
+          *) ntfy_die "unknown priority: $_prio" ;;
+        esac
+
+        _body=$(jq -n \
+          --arg topic "${WAND_FLAG_TOPIC:-${NTFY_TOPIC:-dev}}" \
+          --arg message "$1" \
+          --arg title "${2:-$WAND_FLAG_TITLE}" \
+          --argjson priority "$_prio" \
+          --arg tags "$WAND_FLAG_TAGS" \
+          --arg click "$WAND_FLAG_CLICK" \
+          --argjson markdown "${WAND_FLAG_MARKDOWN:-false}" \
+          '{topic: $topic, message: $message, priority: $priority, markdown: $markdown}
+            + (if $title == "" then {} else {title: $title} end)
+            + (if $tags == "" then {} else {tags: ($tags | split(",") | map(gsub("^ +| +$"; "")))} end)
+            + (if $click == "" then {} else {click: $click} end)')
+
+        # Two expansions rather than one: zsh doesn't word-split, so a single
+        # ${_tok:+-H "..."} would reach curl as one argument
+        _tok=$(ntfy_token)
+        curl -fsS -o /dev/null "$NTFY_URL" \
+          ${_tok:+-H} ${_tok:+"Authorization: Bearer $_tok"} \
+          -H 'Content-Type: application/json' \
+          -d "$_body" || {
+            printf 'ntfy: could not publish to %s\n' "$NTFY_URL" >&2
+            [ -n "$_tok" ] || printf 'ntfy: no token sent; check NTFY_TOKEN in the dotfiles .env\n' >&2
+            return 1
+          }
+      }
+
+send:
+  description: Send a notification; the message is the arguments, or stdin when there are none
+  aliases: [s]
+  cmd: |
+    eval "$NTFY_LIB"
+    if [ $# -gt 0 ]; then
+      MSG="$*"
+    elif [ ! -t 0 ]; then
+      MSG=$(cat)
+    fi
+    [ -n "$MSG" ] || ntfy_die 'usage: ntfy send [flags] -- <message...>  (or pipe the message in)'
+    ntfy_send "$MSG" || exit 1
+
+run:
+  description: Run a command, then send its result and how long it took
+  aliases: [r]
+  cmd: |
+    eval "$NTFY_LIB"
+    [ $# -gt 0 ] || ntfy_die 'usage: ntfy run [flags] -- <command> [args...]'
+
+    START=$(date +%s)
+    "$@"
+    RC=$?
+    TOOK=$(( $(date +%s) - START ))
+    if [ $TOOK -ge 3600 ]; then
+      TOOK="$(( TOOK / 3600 ))h $(( TOOK % 3600 / 60 ))m"
+    elif [ $TOOK -ge 60 ]; then
+      TOOK="$(( TOOK / 60 ))m $(( TOOK % 60 ))s"
+    else
+      TOOK="${TOOK}s"
+    fi
+
+    # ^C means whoever pressed it is already watching
+    if [ $RC -ne 130 ]; then
+      if [ $RC -eq 0 ]; then
+        ntfy_send "$*" "✓ Done in $TOOK on $(hostname -s)"
+      else
+        [ -n "$WAND_FLAG_PRIORITY" ] || WAND_FLAG_PRIORITY=high
+        ntfy_send "$*" "✗ Exit $RC after $TOOK on $(hostname -s)"
+      fi
+    fi
+    exit $RC
