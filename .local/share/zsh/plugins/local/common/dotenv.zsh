@@ -27,6 +27,9 @@ dumpenv() {
   done
 }
 
+# print one secret's value: getenv NTFY_TOKEN
+alias getenv='dotenvx get -f "$DOTFILES/.env" --strict'
+
 # Prints one KEY<TAB>base64(value) line per secret in an encrypted env file.
 # Values round-trip through base64 so quotes, $ and newlines survive the shell.
 _dotenv_pairs() {
