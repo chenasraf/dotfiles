@@ -35,6 +35,7 @@ PRIORITY=3
 TAGS=${NTFY_AGENT_TAGS:-robot}
 CLICK=''
 MARKDOWN=false
+DRY_RUN=false
 
 usage() {
     cat <<'EOF'
@@ -46,6 +47,7 @@ Usage: ntfy-agent [options] [message...]
       --tags <a,b>     emoji shortcodes ntfy renders as the icon
   -u, --click <url>    open this URL when the notification is tapped
   -m, --markdown       render the message as Markdown
+  -n, --dry-run        show what would be sent and where, and send nothing
   -h, --help           show this help
 
 With no message arguments the message is read from stdin.
@@ -62,6 +64,7 @@ while [ "$#" -gt 0 ]; do
         --tags) TAGS="$2"; shift 2 ;;
         -u|--click) CLICK="$2"; shift 2 ;;
         -m|--markdown) MARKDOWN=true; shift ;;
+        -n|--dry-run) DRY_RUN=true; shift ;;
         -h|--help) usage; exit 0 ;;
         --) shift; break ;;
         -*) usage >&2; die "unknown option: $1" ;;
@@ -127,6 +130,29 @@ BODY=$(jq -n \
     '{topic: $topic, title: $title, message: $message, priority: $priority, markdown: $markdown}
       + (if $tags  == "" then {} else {tags: ($tags | split(",") | map(gsub("^ +| +$"; "")))} end)
       + (if $click == "" then {} else {click: $click} end)')
+
+# Where the token came from, for the dry run. Never the token itself: this is
+# meant to be safe to paste into a chat when something is not working.
+token_source() {
+    if [ -n "${NTFY_TOKEN:-}" ]; then echo '$NTFY_TOKEN'
+    elif [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/ntfy/token" ]; then
+        echo "${XDG_CONFIG_HOME:-$HOME/.config}/ntfy/token"
+    elif command -v dotenvx >/dev/null 2>&1; then echo "dotenvx (${DOTFILES:-$HOME/.dotfiles}/.env)"
+    else echo 'nowhere'
+    fi
+}
+
+if [ "$DRY_RUN" = true ]; then
+    printf 'would post to : %s\n' "$URL"
+    printf 'topic         : %s\n' "$TOPIC"
+    printf 'title         : %s\n' "$TITLE"
+    printf 'token         : %s, from %s\n' \
+        "$([ -n "$TOKEN" ] && echo "found, ${#TOKEN} chars" || echo 'NOT FOUND')" "$(token_source)"
+    printf 'curl          : %s\n' "$(command -v curl || echo 'MISSING')"
+    printf 'jq            : %s\n' "$(command -v jq || echo 'MISSING')"
+    printf 'payload       : %s\n' "$BODY"
+    exit 0
+fi
 
 # Two expansions rather than one so the header reaches curl as its own argument.
 if curl -fsS -o /dev/null --max-time 15 "$URL" \
