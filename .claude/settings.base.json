@@ -33,5 +33,30 @@
   "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
   "agentPushNotifEnabled": true,
-  "inputNeededNotifEnabled": true
+  "inputNeededNotifEnabled": true,
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.dotfiles/.local/bin/claude-turn-notify start",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.dotfiles/.local/bin/claude-turn-notify stop",
+            "async": true,
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
 }
