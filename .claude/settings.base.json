@@ -32,5 +32,6 @@
   "effortLevel": "high",
   "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true
 }
