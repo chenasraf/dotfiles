@@ -55,6 +55,22 @@ function _git_release_colors() {
   _git_c_reset=$'\e[0m'
 }
 
+# Internal helper: push a release's outcome (done | fail) to ntfy. The notify calls
+# along the way reach only this machine's desktop, and a release runs long enough
+# to walk away from. ntfy-agent rather than the ntfy alias because an alias used in
+# a function resolves when the function is defined, so it hangs on load order; it
+# runs in the background since decrypting the token can take a moment.
+function _git_release_ntfy() {
+  local outcome="$1" repo="$2" url="$3" message="$4"
+  local -a args=(-t "${NTFY_TOPIC:-dev}" -T "$repo" ${url:+-u} ${url:+"$url"})
+  if [[ "$outcome" == fail ]]; then
+    args+=(-p high --tags x)
+  else
+    args+=(--tags white_check_mark)
+  fi
+  "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-agent" "${args[@]}" "$message" &>/dev/null &!
+}
+
 # Internal helper: look up the workflow runs on the PR's head commit. Sets
 # _git_pr_held_runs to the IDs of runs held for a maintainer's approval and
 # _git_pr_active_runs to how many are queued or running. Runs on a bot-opened PR
@@ -477,11 +493,15 @@ function git-release-please-merge() {
     repo="chenasraf/$1"
   fi
   local _git_release_pr_number _git_release_pr_url
-  _git_release_pr_merge "$repo" || return 1
+  _git_release_pr_merge "$repo" || {
+    _git_release_ntfy fail "$repo" "$_git_release_pr_url" "Release failed on PR #$_git_release_pr_number"
+    return 1
+  }
 
   echo ""
   echo "  ${_git_c_ok}✓ Release complete!${_git_c_reset}"
   notify -t "$repo" -u "$_git_release_pr_url" "✓ Release complete"
+  _git_release_ntfy done "$repo" "$_git_release_pr_url" "Release complete (PR #$_git_release_pr_number)"
 }
 alias grlo=git-release-please-merge
 
@@ -522,7 +542,10 @@ function git-release-please-merge-with-tap() {
 
   # Step 1: Find the release PR, wait for it to settle, merge it
   local _git_release_pr_number _git_release_pr_url
-  _git_release_pr_merge "$repo" || return 1
+  _git_release_pr_merge "$repo" || {
+    _git_release_ntfy fail "$repo" "$_git_release_pr_url" "Release failed on PR #$_git_release_pr_number"
+    return 1
+  }
 
   # Step 2: Poll for homebrew-tap PR and add label
   echo ""
@@ -539,10 +562,14 @@ function git-release-please-merge-with-tap() {
 
   # Step 3: Wait for tap PR to be merged and for the runs it triggers
   echo ""
-  _git_tap_pr_finish "$_git_homebrew_tap_pr_number" "$_git_homebrew_tap_pr_url" || return 1
+  _git_tap_pr_finish "$_git_homebrew_tap_pr_number" "$_git_homebrew_tap_pr_url" || {
+    _git_release_ntfy fail "$repo" "$_git_homebrew_tap_pr_url" "Released, but tap PR #$_git_homebrew_tap_pr_number failed"
+    return 1
+  }
 
   echo ""
   echo "  ${_git_c_ok}✓ Release complete!${_git_c_reset}"
   notify -t "$repo" -u "$_git_release_pr_url" "✓ Release complete"
+  _git_release_ntfy done "$repo" "$_git_release_pr_url" "Release complete, tap PR #$_git_homebrew_tap_pr_number merged"
 }
 alias grl=git-release-please-merge-with-tap
