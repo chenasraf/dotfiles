@@ -21,10 +21,12 @@ set -euo pipefail
 PATH=/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin
 export PATH
 
-# Seconds a turn must run before finishing is worth a notification. Claude
-# routinely takes under a minute, so a low value here recreates the noise this
-# is meant to avoid.
-THRESHOLD=${CLAUDE_TURN_NOTIFY_AFTER:-120}
+# Seconds a turn must run before finishing is worth a notification. It can be
+# this low because `watching` below suppresses the case the threshold used to
+# guard against — a ping arriving while you sit there looking at the turn
+# finish. What is left for the threshold is not bothering to notify about a
+# turn that was quick even though you stepped away.
+THRESHOLD=${CLAUDE_TURN_NOTIFY_AFTER:-60}
 STATE_DIR="${TMPDIR:-/tmp}/claude-turn-notify-$(id -u)"
 AGENT="${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-agent"
 
@@ -44,6 +46,33 @@ SESSION=$(printf '%s' "$PAYLOAD" | jq -r '.session_id // empty' 2>/dev/null || t
 [ -n "$SESSION" ] || SESSION=default
 SESSION=$(printf '%s' "$SESSION" | tr -c 'A-Za-z0-9._-' '_')
 STAMP="$STATE_DIR/$SESSION"
+
+# Whether you are looking at this terminal right now: it is the frontmost app
+# and, inside tmux, this is the active pane of an attached session's active
+# window. Ported from _notify_watching in notify.zsh, which already tuned this
+# for the same purpose, and deliberately keeping its fail-open direction — over
+# SSH or off macOS there is no telling, so it reports not watching and the
+# notification goes out. A notifier that guesses wrong should err towards
+# sending, not towards silence.
+watching() {
+    [ "${CLAUDE_TURN_NOTIFY_ALWAYS:-}" = 1 ] && return 1
+    [ -n "${SSH_CONNECTION:-}" ] && return 1
+    command -v lsappinfo >/dev/null 2>&1 || return 1
+
+    local front
+    front=$(lsappinfo info -only bundleid "$(lsappinfo front)" 2>/dev/null) || return 1
+    case "$front" in
+        *"bundleID=\"${NOTIFY_TERMINAL_BUNDLE:-com.mitchellh.ghostty}\""*) ;;
+        *) return 1 ;;
+    esac
+
+    if [ -n "${TMUX:-}" ]; then
+        local visible
+        visible=$(tmux display-message -p -t "${TMUX_PANE:-}" \
+            '#{&&:#{window_active},#{pane_active}}#{?session_attached,1,0}' 2>/dev/null) || return 1
+        [ "$visible" = 11 ] || return 1
+    fi
+}
 
 human() {
     if [ "$1" -ge 3600 ]; then printf '%dh %dm' "$(( $1 / 3600 ))" "$(( $1 % 3600 / 60 ))"
@@ -68,6 +97,10 @@ case "$MODE" in
 
         ELAPSED=$(( $(date +%s) - STARTED ))
         [ "$ELAPSED" -ge "$THRESHOLD" ] || exit 0
+
+        # Checked after the threshold because it is the expensive one: it shells
+        # out to lsappinfo and possibly tmux, where the threshold is arithmetic.
+        if watching; then exit 0; fi
 
         # The directory, because the useful question on a phone is which project
         # wants attention, not which session id.
