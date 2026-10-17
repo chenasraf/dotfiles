@@ -8,7 +8,7 @@ prepend() {
     return 0
   fi
   echo -n "$@"
-  cat -
+  command cat -
 }
 
 # transform to lowercase
