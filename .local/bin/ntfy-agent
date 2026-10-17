@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+# Publish a notification from an agent — a Claude Code hook, a long-running
+# task, anything that is not an interactive shell.
+#
+# This exists because the `ntfy` wand helper cannot be reached from a hook:
+# it is a zsh alias, aliases do not exist in the non-interactive bash a hook
+# runs in, `wand` lives in a brew prefix that is not on a bare PATH, and the
+# $NTFY_HOST / $CFG exports a hook might rely on are only present if Claude Code
+# happened to be launched from a shell that had loaded them. A hook built on any
+# of that works from the terminal and silently does nothing when launched any
+# other way — the worst way for a notifier to fail.
+#
+# So: a real file, called by absolute path, that resolves everything itself.
+#
+#   ntfy-agent 'build finished'
+#   ntfy-agent -T 'needs input' -p high 'waiting on a permission prompt'
+#   printf 'line\nline\n' | ntfy-agent -T 'output'
+set -euo pipefail
+
+# Pinned because a hook's PATH may be little more than /usr/bin:/bin. Both brew
+# prefixes are listed since these dotfiles are shared between macOS and Linux,
+# and jq and dotenvx are often only in brew. Unlike the root-owned scripts on
+# spider, brew is fine here: this runs as the user who owns that prefix.
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin
+export PATH
+
+HOST=${NTFY_HOST:-ntfy.casraf.dev}
+TOPIC=${NTFY_AGENT_TOPIC:-agent}
+# The machine, not the task: one topic can then serve every machine running an
+# agent, and the notification still says which one it came from.
+PREFIX=${NTFY_AGENT_TITLE_PREFIX:-$(hostname -s 2>/dev/null || hostname)}
+
+TITLE=''
+PRIORITY=3
+TAGS=${NTFY_AGENT_TAGS:-robot}
+CLICK=''
+MARKDOWN=false
+
+usage() {
+    cat <<'EOF'
+Usage: ntfy-agent [options] [message...]
+
+  -t, --topic <t>      publish here instead of $NTFY_AGENT_TOPIC (default: agent)
+  -T, --title <t>      title, prefixed with this machine's hostname
+  -p, --priority <p>   min | low | default | high | max, or 1-5
+      --tags <a,b>     emoji shortcodes ntfy renders as the icon
+  -u, --click <url>    open this URL when the notification is tapped
+  -m, --markdown       render the message as Markdown
+  -h, --help           show this help
+
+With no message arguments the message is read from stdin.
+EOF
+}
+
+die() { printf 'ntfy-agent: %s\n' "$*" >&2; exit 1; }
+
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        -t|--topic) TOPIC="$2"; shift 2 ;;
+        -T|--title) TITLE="$2"; shift 2 ;;
+        -p|--priority) PRIORITY="$2"; shift 2 ;;
+        --tags) TAGS="$2"; shift 2 ;;
+        -u|--click) CLICK="$2"; shift 2 ;;
+        -m|--markdown) MARKDOWN=true; shift ;;
+        -h|--help) usage; exit 0 ;;
+        --) shift; break ;;
+        -*) usage >&2; die "unknown option: $1" ;;
+        *) break ;;
+    esac
+done
+
+case "$PRIORITY" in
+    min) PRIORITY=1 ;;
+    low) PRIORITY=2 ;;
+    default) PRIORITY=3 ;;
+    high) PRIORITY=4 ;;
+    max|urgent) PRIORITY=5 ;;
+    [1-5]) ;;
+    *) die "unknown priority: $PRIORITY" ;;
+esac
+
+if [ "$#" -gt 0 ]; then
+    MESSAGE="$*"
+elif [ ! -t 0 ]; then
+    MESSAGE=$(cat)
+else
+    usage >&2
+    exit 1
+fi
+[ -n "$MESSAGE" ] || die 'nothing to send'
+
+if [ -n "$TITLE" ]; then
+    TITLE="$PREFIX · $TITLE"
+else
+    TITLE="$PREFIX"
+fi
+
+# Cheapest first: an exported token, then a plain file, then a decrypt. dotenvx
+# is a last resort because it is slow enough to notice and needs the private key
+# to be present, which a hook cannot count on.
+token() {
+    if [ -n "${NTFY_TOKEN:-}" ]; then
+        printf '%s' "$NTFY_TOKEN"
+    elif [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/ntfy/token" ]; then
+        tr -d '\r\n' < "${XDG_CONFIG_HOME:-$HOME/.config}/ntfy/token"
+    elif command -v dotenvx >/dev/null 2>&1; then
+        dotenvx get NTFY_TOKEN -f "${DOTFILES:-$HOME/.dotfiles}/.env" 2>/dev/null || true
+    fi
+}
+TOKEN=$(token)
+
+case "$HOST" in
+    *://*) URL="$HOST" ;;
+    *) URL="https://$HOST" ;;
+esac
+
+# JSON rather than curl headers: header values are ASCII-only, which would
+# mangle emoji and non-Latin text.
+BODY=$(jq -n \
+    --arg topic "$TOPIC" \
+    --arg title "$TITLE" \
+    --arg message "$MESSAGE" \
+    --argjson priority "$PRIORITY" \
+    --arg tags "$TAGS" \
+    --arg click "$CLICK" \
+    --argjson markdown "$MARKDOWN" \
+    '{topic: $topic, title: $title, message: $message, priority: $priority, markdown: $markdown}
+      + (if $tags  == "" then {} else {tags: ($tags | split(",") | map(gsub("^ +| +$"; "")))} end)
+      + (if $click == "" then {} else {click: $click} end)')
+
+# Two expansions rather than one so the header reaches curl as its own argument.
+if curl -fsS -o /dev/null --max-time 15 "$URL" \
+    ${TOKEN:+-H} ${TOKEN:+"Authorization: Bearer $TOKEN"} \
+    -H 'Content-Type: application/json' \
+    -d "$BODY"; then
+    exit 0
+fi
+
+printf 'ntfy-agent: could not publish to %s\n' "$URL" >&2
+[ -n "$TOKEN" ] || printf 'ntfy-agent: no token found (NTFY_TOKEN, ~/.config/ntfy/token, or the dotfiles .env)\n' >&2
+exit 1
