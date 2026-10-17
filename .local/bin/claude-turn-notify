@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+# Notify when a Claude Code turn finishes, but only if it ran long enough to be
+# worth hearing about.
+#
+# Called from two hooks, which both receive the hook JSON on stdin:
+#
+#   UserPromptSubmit -> claude-turn-notify start
+#   Stop             -> claude-turn-notify stop
+#
+# The guard is the whole point. `Stop` fires on every stop — including /clear,
+# resume and compact — so a hook that notifies unconditionally is one
+# notification per turn, which is how a channel gets muted and stops being read.
+# `notify.zsh` solves the same problem for shell commands with NOTIFY_AFTER;
+# this is that idea, with the start time carried between two hook invocations
+# because a hook cannot keep state in memory.
+#
+# A stop with no recorded start sends nothing, which is what makes /clear,
+# compaction and a resumed session quiet without having to detect them.
+set -euo pipefail
+
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin
+export PATH
+
+# Seconds a turn must run before finishing is worth a notification. Claude
+# routinely takes under a minute, so a low value here recreates the noise this
+# is meant to avoid.
+THRESHOLD=${CLAUDE_TURN_NOTIFY_AFTER:-120}
+STATE_DIR="${TMPDIR:-/tmp}/claude-turn-notify-$(id -u)"
+AGENT="${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-agent"
+
+usage() { printf 'usage: claude-turn-notify start|stop   (hook JSON on stdin)\n' >&2; }
+
+MODE=${1:-}
+
+PAYLOAD=''
+if [ ! -t 0 ]; then
+    PAYLOAD=$(cat)
+fi
+
+# Keyed per session so two sessions running at once cannot time each other's
+# turns. A payload without session_id degrades to one shared key rather than
+# failing: wrong only if two sessions overlap, and still better than silence.
+SESSION=$(printf '%s' "$PAYLOAD" | jq -r '.session_id // empty' 2>/dev/null || true)
+[ -n "$SESSION" ] || SESSION=default
+SESSION=$(printf '%s' "$SESSION" | tr -c 'A-Za-z0-9._-' '_')
+STAMP="$STATE_DIR/$SESSION"
+
+human() {
+    if [ "$1" -ge 3600 ]; then printf '%dh %dm' "$(( $1 / 3600 ))" "$(( $1 % 3600 / 60 ))"
+    elif [ "$1" -ge 60 ]; then printf '%dm %ds' "$(( $1 / 60 ))" "$(( $1 % 60 ))"
+    else printf '%ds' "$1"
+    fi
+}
+
+case "$MODE" in
+    start)
+        mkdir -p "$STATE_DIR"
+        date +%s > "$STAMP"
+        # Sessions that ended without a Stop would otherwise accumulate here.
+        find "$STATE_DIR" -type f -mtime +1 -delete 2>/dev/null || true
+        ;;
+    stop)
+        [ -r "$STAMP" ] || exit 0
+        STARTED=''
+        read -r STARTED 2>/dev/null < "$STAMP" || STARTED=''
+        rm -f "$STAMP"
+        case "$STARTED" in ''|*[!0-9]*) exit 0 ;; esac
+
+        ELAPSED=$(( $(date +%s) - STARTED ))
+        [ "$ELAPSED" -ge "$THRESHOLD" ] || exit 0
+
+        # The directory, because the useful question on a phone is which project
+        # wants attention, not which session id.
+        WHERE=$(basename "$(pwd)")
+        "$AGENT" -T "finished after $(human "$ELAPSED")" \
+            "Claude finished a turn in $WHERE." || true
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
+esac

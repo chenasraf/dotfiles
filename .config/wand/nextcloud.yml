@@ -93,6 +93,25 @@
         if ! nc_db_complete "$_dest.partial"; then
           rm -f "$_dest.partial"
           echo "Dump is truncated; not keeping it." >&2
+          # Its own notification rather than leaving this to the desktop one
+          # NC_NOTIFY raises at the end. That one says "Exit 1", which reads the
+          # same as an ssh failure or an unmounted drive, and it never leaves
+          # the machine. This is the failure that would otherwise pass for a
+          # good backup: the dump decompresses cleanly and is only missing its
+          # completion marker.
+          #
+          # Sent to spider-warn, not the agent topic: this is an alert about
+          # spider's data, not agent chatter, and on the agent topic it would
+          # sit among "finished after 7m" pings. warn rather than crit by the
+          # severity table in spider-services — nothing is down, but the backup
+          # you think you have is older than you think, which needs attention
+          # today. ntfy-agent is only the transport here; it sends anywhere -t
+          # points it, and it keeps working if this ever runs from cron.
+          "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-agent" \
+            -t "${NTFY_ALERT_TOPIC:-spider-warn}" -p high \
+            -T 'Nextcloud DB backup discarded' \
+            "pg_dump produced a truncated dump of $(basename "$_dest"), so it was thrown away. The newest dump in $NC_DB_DIR is therefore older than it looks." \
+            2>/dev/null || true
           return 1
         fi
         mv "$_dest.partial" "$_dest"
