@@ -28,7 +28,18 @@ HOST=${NTFY_HOST:-ntfy.casraf.dev}
 TOPIC=${NTFY_AGENT_TOPIC:-agent}
 # The machine, not the task: one topic can then serve every machine running an
 # agent, and the notification still says which one it came from.
-PREFIX=${NTFY_AGENT_TITLE_PREFIX:-$(hostname -s 2>/dev/null || hostname)}
+#
+# The name comes from sofmani's machine_aliases when this machine has one,
+# because a hostname can be an asset tag like DXFQ2HJGVQ that says nothing.
+machine_name() {
+    local alias
+    alias=$(sofmani --vars 2>/dev/null | awk '$2 == ".DeviceIDAlias" { print $4 }' || true)
+    case "$alias" in
+        ''|'<'*) hostname -s 2>/dev/null || hostname ;;
+        *) printf '%s' "$alias" ;;
+    esac
+}
+PREFIX=${NTFY_AGENT_TITLE_PREFIX:-$(machine_name)}
 
 TITLE=''
 PRIORITY=3
@@ -42,7 +53,8 @@ usage() {
 Usage: ntfy-agent [options] [message...]
 
   -t, --topic <t>      publish here instead of $NTFY_AGENT_TOPIC (default: agent)
-  -T, --title <t>      title, prefixed with this machine's hostname
+  -T, --title <t>      title, prefixed with this machine's sofmani alias, or
+                       its hostname when it has none
   -p, --priority <p>   min | low | default | high | max, or 1-5
       --tags <a,b>     emoji shortcodes ntfy renders as the icon
   -u, --click <url>    open this URL when the notification is tapped
