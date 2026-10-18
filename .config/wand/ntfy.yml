@@ -26,6 +26,18 @@
     NTFY_LIB: |
       ntfy_die() { printf 'ntfy: %s\n' "$*" >&2; exit 1; }
 
+      # Why a publish did not happen, with what the server actually said: the
+      # failures worth diagnosing here are a host that is not ntfy and a token
+      # that cannot write the topic, and neither is obvious without both.
+      ntfy_publish_failed() {
+        printf 'ntfy: %s\n' "$1" >&2
+        [ -z "$_resp" ] || printf 'ntfy: it answered: %s\n' "$_resp" >&2
+        if [ -z "$_tok" ]; then
+          printf 'ntfy: no token sent; check NTFY_TOKEN in the dotfiles .env\n' >&2
+        fi
+        printf 'ntfy: publishing to topic %s at %s\n' "$_topic" "$NTFY_URL" >&2
+      }
+
       for _need in curl jq; do
         command -v "$_need" >/dev/null 2>&1 || ntfy_die "$_need is not installed"
       done
@@ -56,8 +68,10 @@
           *) ntfy_die "unknown priority: $_prio" ;;
         esac
 
+        _topic="${WAND_FLAG_TOPIC:-${NTFY_TOPIC:-dev}}"
+
         _body=$(jq -n \
-          --arg topic "${WAND_FLAG_TOPIC:-${NTFY_TOPIC:-dev}}" \
+          --arg topic "$_topic" \
           --arg message "$1" \
           --arg title "${2:-$WAND_FLAG_TITLE}" \
           --argjson priority "$_prio" \
@@ -72,14 +86,39 @@
         # Two expansions rather than one: zsh doesn't word-split, so a single
         # ${_tok:+-H "..."} would reach curl as one argument
         _tok=$(ntfy_token)
-        curl -fsS -o /dev/null "$NTFY_URL" \
+        _out=$(mktemp 2>/dev/null) || ntfy_die 'could not create a temporary file'
+        _code=$(curl -sS -o "$_out" -w '%{http_code}' --max-time 15 "$NTFY_URL" \
           ${_tok:+-H} ${_tok:+"Authorization: Bearer $_tok"} \
           -H 'Content-Type: application/json' \
-          -d "$_body" || {
-            printf 'ntfy: could not publish to %s\n' "$NTFY_URL" >&2
-            [ -n "$_tok" ] || printf 'ntfy: no token sent; check NTFY_TOKEN in the dotfiles .env\n' >&2
-            return 1
-          }
+          -d "$_body") || _code=000
+        _resp=$(head -c 300 "$_out" 2>/dev/null)
+        rm -f "$_out"
+
+        # Redirects are deliberately not followed. A host that is not ntfy very
+        # often answers one, and following it would post the notification
+        # somewhere else and call it a success.
+        case "$_code" in
+          2??) ;;
+          000)
+            ntfy_publish_failed "could not reach $NTFY_URL"
+            return 1 ;;
+          3??)
+            ntfy_publish_failed "$NTFY_URL redirected (HTTP $_code) — check NTFY_HOST points at ntfy"
+            return 1 ;;
+          *)
+            ntfy_publish_failed "$NTFY_URL refused the publish (HTTP $_code)"
+            return 1 ;;
+        esac
+
+        # A 2xx is not proof either: the wrong host can serve a page and return
+        # 200. ntfy answers a publish with its own JSON describing the message
+        # it stored, so that — and that it is the topic asked for — is what
+        # actually confirms the notification exists.
+        if ! printf '%s' "$_resp" | jq -e --arg t "$_topic" \
+             '.event == "message" and .topic == $t' >/dev/null 2>&1; then
+          ntfy_publish_failed "$NTFY_URL returned HTTP $_code but did not answer like ntfy"
+          return 1
+        fi
       }
 
 send:
