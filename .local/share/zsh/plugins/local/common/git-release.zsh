@@ -338,10 +338,12 @@ function _git_tap_pr_finish() {
 }
 
 # Internal helper: find the open release PR in <repo>, polling until one exists.
-# Sets _git_release_pr_number and _git_release_pr_url.
+# Sets _git_release_pr_number, _git_release_pr_url, and _git_release_version
+# (e.g. "v1.2.3", from the "chore(main): release 1.2.3" title; empty if the
+# title doesn't end in a version).
 function _git_find_release_pr() {
   local repo="$1"
-  local pr_data
+  local pr_data title
   _git_release_colors
 
   printf "Finding release PR in ${_git_c_pr}$repo${_git_c_reset} "
@@ -350,8 +352,15 @@ function _git_find_release_pr() {
     _git_release_pr_number=$(echo "$pr_data" | jq -r '.number // empty')
     if [[ -n "$_git_release_pr_number" ]]; then
       _git_release_pr_url=$(echo "$pr_data" | jq -r '.url')
+      title=$(echo "$pr_data" | jq -r '.title')
+      _git_release_version="${title##* }"
+      if [[ "$_git_release_version" =~ '^v?[0-9]+\.[0-9]+' ]]; then
+        _git_release_version="v${_git_release_version#v}"
+      else
+        _git_release_version=''
+      fi
       echo ""
-      echo "  ${_git_c_ok}✓${_git_c_reset} Found release PR ${_git_c_pr}$repo#$_git_release_pr_number${_git_c_reset}"
+      echo "  ${_git_c_ok}✓${_git_c_reset} Found release PR ${_git_c_pr}$repo#$_git_release_pr_number${_git_c_reset}${_git_release_version:+ ($_git_release_version)}"
       echo "    ${_git_c_url}$_git_release_pr_url${_git_c_reset}"
       return 0
     fi
@@ -364,7 +373,7 @@ function _git_find_release_pr() {
 # are quiet, merge it via rebase, then wait for the runs the merge triggered.
 # release-please rewrites the release PR from a default-branch run, so any run
 # there sends the flow back to re-resolve the PR and re-wait on its checks.
-# Sets _git_release_pr_number and _git_release_pr_url.
+# Sets _git_release_pr_number, _git_release_pr_url, and _git_release_version.
 function _git_release_pr_merge() {
   local repo="$1"
   local branch resolve=0
@@ -373,7 +382,7 @@ function _git_release_pr_merge() {
   branch=$(_git_default_branch "$repo")
 
   _git_find_release_pr "$repo" || return 1
-  notify -t "$repo" -u "$_git_release_pr_url" "Found release PR #$_git_release_pr_number"
+  notify -t "$repo" -u "$_git_release_pr_url" "Found release PR #$_git_release_pr_number${_git_release_version:+ ($_git_release_version)}"
 
   while true; do
     if [[ -n "$branch" ]]; then
@@ -408,7 +417,7 @@ function _git_release_pr_merge() {
     return 1
   fi
   echo "  ${_git_c_ok}✓ Merged successfully!${_git_c_reset}"
-  notify -t "$repo" -u "$_git_release_pr_url" "Merged release PR #$_git_release_pr_number"
+  notify -t "$repo" -u "$_git_release_pr_url" "Merged release PR #$_git_release_pr_number${_git_release_version:+ ($_git_release_version)}"
 
   if [[ -n "$branch" ]]; then
     echo ""
@@ -492,16 +501,16 @@ function git-release-please-merge() {
   else
     repo="chenasraf/$1"
   fi
-  local _git_release_pr_number _git_release_pr_url
+  local _git_release_pr_number _git_release_pr_url _git_release_version
   _git_release_pr_merge "$repo" || {
-    _git_release_ntfy fail "$repo" "$_git_release_pr_url" "Release failed on PR #$_git_release_pr_number"
+    _git_release_ntfy fail "$repo" "$_git_release_pr_url" "Release${_git_release_version:+ $_git_release_version} failed on PR #$_git_release_pr_number"
     return 1
   }
 
   echo ""
-  echo "  ${_git_c_ok}✓ Release complete!${_git_c_reset}"
-  notify -t "$repo" -u "$_git_release_pr_url" "✓ Release complete"
-  _git_release_ntfy done "$repo" "$_git_release_pr_url" "Release complete (PR #$_git_release_pr_number)"
+  echo "  ${_git_c_ok}✓ Release${_git_release_version:+ $_git_release_version} complete!${_git_c_reset}"
+  notify -t "$repo" -u "$_git_release_pr_url" "✓ Release${_git_release_version:+ $_git_release_version} complete"
+  _git_release_ntfy done "$repo" "$_git_release_pr_url" "Release${_git_release_version:+ $_git_release_version} complete (PR #$_git_release_pr_number)"
 }
 alias grlo=git-release-please-merge
 
@@ -541,9 +550,9 @@ function git-release-please-merge-with-tap() {
   [[ "$tap_search" == "." ]] && tap_search="$repo_name"
 
   # Step 1: Find the release PR, wait for it to settle, merge it
-  local _git_release_pr_number _git_release_pr_url
+  local _git_release_pr_number _git_release_pr_url _git_release_version
   _git_release_pr_merge "$repo" || {
-    _git_release_ntfy fail "$repo" "$_git_release_pr_url" "Release failed on PR #$_git_release_pr_number"
+    _git_release_ntfy fail "$repo" "$_git_release_pr_url" "Release${_git_release_version:+ $_git_release_version} failed on PR #$_git_release_pr_number"
     return 1
   }
 
@@ -563,13 +572,13 @@ function git-release-please-merge-with-tap() {
   # Step 3: Wait for tap PR to be merged and for the runs it triggers
   echo ""
   _git_tap_pr_finish "$_git_homebrew_tap_pr_number" "$_git_homebrew_tap_pr_url" || {
-    _git_release_ntfy fail "$repo" "$_git_homebrew_tap_pr_url" "Released, but tap PR #$_git_homebrew_tap_pr_number failed"
+    _git_release_ntfy fail "$repo" "$_git_homebrew_tap_pr_url" "Released${_git_release_version:+ $_git_release_version}, but tap PR #$_git_homebrew_tap_pr_number failed"
     return 1
   }
 
   echo ""
-  echo "  ${_git_c_ok}✓ Release complete!${_git_c_reset}"
-  notify -t "$repo" -u "$_git_release_pr_url" "✓ Release complete"
-  _git_release_ntfy done "$repo" "$_git_release_pr_url" "Release complete, tap PR #$_git_homebrew_tap_pr_number merged"
+  echo "  ${_git_c_ok}✓ Release${_git_release_version:+ $_git_release_version} complete!${_git_c_reset}"
+  notify -t "$repo" -u "$_git_release_pr_url" "✓ Release${_git_release_version:+ $_git_release_version} complete"
+  _git_release_ntfy done "$repo" "$_git_release_pr_url" "Release${_git_release_version:+ $_git_release_version} complete, tap PR #$_git_homebrew_tap_pr_number merged"
 }
 alias grl=git-release-please-merge-with-tap
