@@ -36,6 +36,10 @@ _dotenv_pairs() {
   local name="$1" file="$2" json
   json="$(dotenvx get -f "$file" --strict 2>/dev/null)" || {
     print -ru2 "$name: could not decrypt $file"
+    # Headless Linux keeps the key in a keyring that is locked after every boot.
+    if (( $+commands[keyring-unlock] )) && ! keyring-unlock --check; then
+      print -ru2 "$name: the keyring is locked; run keyring-unlock"
+    fi
     return 1
   }
   jq -r 'to_entries[] | select(.key != "DOTENV_PUBLIC_KEY") | [.key, (.value | @base64)] | @tsv' <<<"$json"

@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+# Unlock the GNOME login keyring on a headless Linux box, where it holds the
+# dotenvx private keys (`dotenvx native`).
+#
+# With no desktop there is no PAM login to unlock the keyring and no GUI to
+# prompt for its passphrase, and D-Bus activation starts the daemon with the
+# keyring locked. The daemon can only take the passphrase on stdin at startup,
+# so this replaces whatever daemon is running with one started under the
+# systemd user manager — where lingering keeps it, and the unlocked keyring,
+# alive across SSH logins until the next reboot.
+#
+# The passphrase reaches the daemon through a 0600 FIFO, never argv, the
+# environment or a unit file.
+#
+#   keyring-unlock           unlock (prompts for the passphrase)
+#   keyring-unlock --check   exit 0 if unlocked, 1 if not; prints nothing
+#   keyring-unlock --create  create the login keyring with a new passphrase
+set -euo pipefail
+
+unit=gnome-keyring-unlocked
+bus_name=org.freedesktop.secrets
+collection=/org/freedesktop/secrets/collection/login
+keyring_file="${XDG_DATA_HOME:-$HOME/.local/share}/keyrings/login.keyring"
+runtime_dir="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+
+die() { printf 'keyring-unlock: %s\n' "$*" >&2; exit 1; }
+
+# `busctl status` asks the bus who owns the name without activating it, so
+# probing never starts a fresh locked daemon.
+owner_pid() {
+  { busctl --user status "$bus_name" 2>/dev/null || true; } | awk -F= '/^PID=/ { print $2 }'
+}
+
+is_unlocked() {
+  [ -n "$(owner_pid)" ] || return 1
+  [ "$(busctl --user get-property "$bus_name" "$collection" \
+    org.freedesktop.Secret.Collection Locked 2>/dev/null)" = 'b false' ]
+}
+
+read_secret() {
+  local prompt="$1" value
+  IFS= read -rs -p "$prompt" value </dev/tty
+  printf '\n' >/dev/tty
+  printf '%s' "$value"
+}
+
+start_daemon() {
+  local pass="$1" pid
+  systemctl --user stop "$unit" 2>/dev/null || true
+  systemctl --user reset-failed "$unit" 2>/dev/null || true
+
+  pid="$(owner_pid)"
+  if [ -n "$pid" ]; then
+    kill "$pid"
+    for _ in $(seq 40); do [ -z "$(owner_pid)" ] && break; sleep 0.25; done
+    [ -z "$(owner_pid)" ] || die "the running keyring daemon (pid $pid) did not exit"
+  fi
+  # A killed daemon leaves its control socket behind, and a new daemon that
+  # cannot bind it exits.
+  rm -f "$runtime_dir/keyring/control"
+
+  fifo="$(mktemp -u "$runtime_dir/keyring-unlock.XXXXXX")"
+  mkfifo -m 600 "$fifo"
+  trap 'rm -f "$fifo"' EXIT
+
+  systemd-run --user --quiet --unit="$unit" \
+    -p StandardInput="file:$fifo" -p StandardOutput=journal -p StandardError=journal \
+    -E HOME="$HOME" -E DBUS_SESSION_BUS_ADDRESS="$DBUS_SESSION_BUS_ADDRESS" \
+    /usr/bin/gnome-keyring-daemon --foreground --unlock --components=secrets \
+    --control-directory="$runtime_dir/keyring"
+  printf '%s' "$pass" >"$fifo"
+
+  local main
+  main="$(systemctl --user show -P MainPID "$unit")"
+  for _ in $(seq 40); do [ "$(owner_pid)" = "$main" ] && break; sleep 0.25; done
+  [ "$(owner_pid)" = "$main" ] || die "the keyring daemon did not come up; see: journalctl --user -u $unit"
+}
+
+case "${1:-}" in
+  --check)
+    is_unlocked
+    ;;
+  --create)
+    [ ! -e "$keyring_file" ] || die "$keyring_file already exists"
+    pass="$(read_secret 'New keyring passphrase: ')"
+    [ -n "$pass" ] || die 'an empty passphrase stores the keyring unencrypted'
+    [ "$pass" = "$(read_secret 'Repeat passphrase: ')" ] || die 'passphrases do not match'
+    start_daemon "$pass"
+    is_unlocked || die "keyring was not created; see: journalctl --user -u $unit"
+    echo "keyring-unlock: created and unlocked $keyring_file"
+    ;;
+  '')
+    if is_unlocked; then echo 'keyring-unlock: already unlocked'; exit 0; fi
+    # --unlock creates the keyring when none exists, so a typo here would
+    # silently make a new, empty keyring under the wrong passphrase.
+    [ -e "$keyring_file" ] || die "no keyring at $keyring_file; create one with --create"
+    start_daemon "$(read_secret 'Keyring passphrase: ')"
+    if ! is_unlocked; then
+      systemctl --user stop "$unit" 2>/dev/null || true
+      die 'wrong passphrase'
+    fi
+    echo 'keyring-unlock: unlocked'
+    ;;
+  *)
+    die "usage: keyring-unlock [--check | --create]"
+    ;;
+esac
