@@ -327,6 +327,9 @@ install:
     platforms:
       only: ['macos']
 
+  - name: go
+    type: brew
+
   - name: jq
     type: brew
 
