@@ -59,9 +59,16 @@ whether it should be symlinked (add nothing) or sourced (add a regex to `.stow-l
 - **Claude settings** — `.claude/settings.json` is **generated**, not edited. It is the deep merge
   of `.claude/settings.base.json` (tracked, shared) with `.claude/settings.local.json` (untracked,
   per-device override — local wins, recursively) produced by `.claude/settings-merge.sh` (jq `*`).
+  Arrays are replaced, not merged: a `permissions.allow`/`deny` list in `settings.local.json`
+  must repeat the base entries it should keep.
   Edit `settings.base.json` for shared changes, `settings.local.json` for machine-only overrides;
   never edit the generated `settings.json`. The `claude-settings` sofmani step regenerates it and
   re-stows. Both `settings.json` and `settings.local.json` are git- and stow-ignored.
+
+- **agent-browser** — Claude's browser (see `.claude/rules/agent-browser.md`). Its config,
+  `.agent-browser/config.json`, is stow-ignored and linked into `~/.agent-browser/` by the
+  `agent-browser-config` sofmani step: that directory also holds the Chrome build, profile and
+  daemon sockets, which must stay out of the repo.
 
 ## Editing rule: never touch `~/.config` directly
 

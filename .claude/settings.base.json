@@ -7,6 +7,10 @@
     "pr": "",
     "sessionUrl": false
   },
+  "permissions": {
+    "allow": ["Bash(agent-browser:*)"],
+    "deny": ["mcp__claude-in-chrome"]
+  },
   "statusLine": {
     "type": "command",
     "command": "zsh ~/.claude/statusline-command.zsh"

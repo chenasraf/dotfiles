@@ -6,6 +6,7 @@
 \.claude/settings\.base\.json
 \.claude/settings-merge\.sh
 \.device_uid
+\.agent-browser
 \.github
 exports\.zsh
 aliases\.zsh

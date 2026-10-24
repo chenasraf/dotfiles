@@ -607,6 +607,30 @@ install:
     opts:
       cask: true
 
+  # Browser automation for Claude.
+  - name: agent-browser
+    type: group
+    machines:
+      only: ['m1']
+    steps:
+      # The formula ships the CLI only; `install` fetches the Chrome for Testing
+      # build it drives.
+      - name: agent-browser
+        type: brew
+        post_install: agent-browser install
+        post_update: agent-browser install
+      # ~/.agent-browser also holds the browser build, profile and daemon
+      # sockets, so only the config file is linked: stowing the directory would
+      # land all of that inside the repo.
+      - name: agent-browser-config
+        type: shell
+        tags: config claude
+        check_installed: '[ "$(readlink ~/.agent-browser/config.json)" = "$DOTFILES/.agent-browser/config.json" ]'
+        check_has_update: '[ "$(readlink ~/.agent-browser/config.json 2>/dev/null)" != "$DOTFILES/.agent-browser/config.json" ]'
+        opts:
+          command: mkdir -p ~/.agent-browser && ln -sfn "$DOTFILES/.agent-browser/config.json" ~/.agent-browser/config.json
+          update_command: mkdir -p ~/.agent-browser && ln -sfn "$DOTFILES/.agent-browser/config.json" ~/.agent-browser/config.json
+
   - name: opencode
     type: brew
     enabled: false
