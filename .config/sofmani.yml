@@ -523,6 +523,8 @@ install:
 
   # - category: 💻 Language Runtimes & Package Managers
   #   desc: Installers for language version managers like pyenv, fnm, etc.
+  - name: go
+    type: brew
 
   - name: fnm
     type: brew
