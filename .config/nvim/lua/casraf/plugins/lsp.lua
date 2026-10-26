@@ -562,8 +562,16 @@ return {
       -- instead would miss every one of them on a machine's first launch, where the
       -- installs finish long after this runs.
       lsp.config('*', {
-        on_attach = on_attach,
         capabilities = capabilities,
+      })
+
+      -- Keymaps hang off LspAttach rather than '*'.on_attach: lspconfig's own configs for
+      -- ts_ls, eslint, rust_analyzer and others set an on_attach that replaces the base one.
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('casraf_lsp_attach', {}),
+        callback = function(args)
+          on_attach(vim.lsp.get_client_by_id(args.data.client_id), args.buf)
+        end,
       })
 
       -- Configure servers with custom settings
@@ -665,8 +673,7 @@ return {
           auto_open = false    -- if true this will open the outline automatically when it is first populated
         },
         lsp = {
-          on_attach = function(client, bufnr)
-            on_attach(client, bufnr)
+          on_attach = function(_, bufnr)
             if vim.lsp.document_color then vim.lsp.document_color.enable(true, { bufnr = bufnr }) end
           end,
           -- capabilities = dart_capabilities, -- e.g. lsp_status capabilities
