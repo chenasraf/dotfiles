@@ -111,6 +111,13 @@ return {
       })
 
       vim.defer_fn(function()
+        -- dressing.nvim claims vim.ui.select when it loads and runs one picker at a time,
+        -- releasing the next only once the last reports a choice. A cancelled code action
+        -- picker never reports one, so every later picker queued behind it for good.
+        -- fzf-lua drew these pickers anyway; it takes over from dressing here, after
+        -- startup has loaded it.
+        fzf.register_ui_select()
+
         -- Basic mappings
         vim.keymap.set('n', '<leader>?', fzf.oldfiles, { desc = '[?] Find recently opened files' })
         vim.keymap.set('n', '<leader><space>', fzf.buffers, { desc = '[ ] Find existing buffers' })
