@@ -23,9 +23,6 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-  -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   -- Nvim hands the server only the diagnostics whose span holds the cursor column, so a
   -- quick fix shows up only with the cursor on the flagged token. Send the whole line's.
   -- A line can repeat one diagnostic per occurrence (clangd's missing-includes does), and
@@ -46,7 +43,9 @@ local on_attach = function(_, bufnr)
 
   vim.keymap.set({ 'n', 'v' }, 'ga', code_action, { desc = 'Code [A]ction', silent = true })
   vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', code_action, { desc = 'Code [A]ction', silent = true })
+  nmap('<leader>ca', code_action, '[C]ode [A]ction')
   vim.keymap.set({ "n", "v", "i" }, "<F2>", vim.lsp.buf.rename)
+  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
   local fzf = require('fzf-lua')
 
