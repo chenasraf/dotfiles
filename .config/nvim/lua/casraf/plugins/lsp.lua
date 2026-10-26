@@ -28,11 +28,16 @@ local on_attach = function(_, bufnr)
   -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   -- Nvim hands the server only the diagnostics whose span holds the cursor column, so a
   -- quick fix shows up only with the cursor on the flagged token. Send the whole line's.
+  -- A line can repeat one diagnostic per occurrence (clangd's missing-includes does), and
+  -- each copy brings back the same fix, so only the first of each is sent.
   local function code_action()
     local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
     local diagnostics = {}
+    local seen = {}
     for _, d in ipairs(vim.diagnostic.get(0, { lnum = lnum })) do
-      if d.user_data and d.user_data.lsp then
+      local key = tostring(d.code) .. '\0' .. d.message
+      if d.user_data and d.user_data.lsp and not seen[key] then
+        seen[key] = true
         table.insert(diagnostics, d.user_data.lsp)
       end
     end
