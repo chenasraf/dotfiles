@@ -26,8 +26,21 @@ local on_attach = function(_, bufnr)
   -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
   -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-  vim.keymap.set({ 'n', 'v' }, 'ga', vim.lsp.buf.code_action, { desc = 'Code [A]ction', silent = true })
-  vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', vim.lsp.buf.code_action, { desc = 'Code [A]ction', silent = true })
+  -- Nvim hands the server only the diagnostics whose span holds the cursor column, so a
+  -- quick fix shows up only with the cursor on the flagged token. Send the whole line's.
+  local function code_action()
+    local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
+    local diagnostics = {}
+    for _, d in ipairs(vim.diagnostic.get(0, { lnum = lnum })) do
+      if d.user_data and d.user_data.lsp then
+        table.insert(diagnostics, d.user_data.lsp)
+      end
+    end
+    vim.lsp.buf.code_action({ context = { diagnostics = diagnostics } })
+  end
+
+  vim.keymap.set({ 'n', 'v' }, 'ga', code_action, { desc = 'Code [A]ction', silent = true })
+  vim.keymap.set({ 'n', 'i', 'v' }, '<F4>', code_action, { desc = 'Code [A]ction', silent = true })
   vim.keymap.set({ "n", "v", "i" }, "<F2>", vim.lsp.buf.rename)
 
   local fzf = require('fzf-lua')
