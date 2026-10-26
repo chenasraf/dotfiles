@@ -63,6 +63,13 @@ local items = {
     enabled = has_lsp,
   },
   {
+    mode = 'a',
+    label = 'Rename Symbol',
+    hint = '<F2>',
+    fn = vim.lsp.buf.rename,
+    enabled = has_lsp,
+  },
+  {
     mode = 'n',
     label = 'Back',
     keys = '<C-t>',
