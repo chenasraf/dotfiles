@@ -144,8 +144,8 @@ on-mode-changed = []
     alt-9 = 'workspace 9'
 
     # Cycle workspaces in numeric order (1-2-3-...), not most-recently-used
-    alt-shift-leftSquareBracket = 'workspace --wrap-around prev'
-    alt-shift-rightSquareBracket = 'workspace --wrap-around next'
+    alt-ctrl-leftSquareBracket = 'workspace --wrap-around prev'
+    alt-ctrl-rightSquareBracket = 'workspace --wrap-around next'
     # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
     # alt-b = 'workspace B'
     # alt-c = 'workspace C'
