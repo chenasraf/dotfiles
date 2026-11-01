@@ -354,6 +354,181 @@
         esac
       }
 
+    # The flag-driven encode of one image, shared by `image` and `image stitch`.
+    # Expects $FLIP from the caller when --flip applies.
+    CONV_IMAGE_CONVERT_LIB: |
+      TMP="${TMPDIR:-/tmp}"; TMP="${TMP%/}"
+      SEQ=0
+
+      render_image() {
+        _lvl="$1"
+        _src="$IN"
+        _geom="$GEOM"
+
+        # A vector source is rendered straight to the size that was asked for, so
+        # nothing is ever scaled up from a smaller rasterisation.
+        if [ "$IS_SVG" = true ]; then
+          eval "set -- rsvg-convert $(conv_rsvg_size_args "$RESIZE")"
+          [ -n "$WAND_FLAG_DPI" ] && set -- "$@" -d "$WAND_FLAG_DPI" -p "$WAND_FLAG_DPI"
+          [ -n "$FLATTEN" ] && set -- "$@" -b "$FLATTEN"
+          if conv_is_vector_format "$FORMAT"; then
+            set -- "$@" -f "$FORMAT" -o "$OUT" "$IN"
+            conv_exec "$@"
+            return $?
+          fi
+          set -- "$@" -f png -o "$RASTER" "$IN"
+          conv_exec "$@" || return 1
+          _src="$RASTER"
+          _geom=
+        elif [ "$DECODE" = true ]; then
+          set -- ffmpeg -hide_banner -loglevel error -y -i "$IN" "$RASTER"
+          conv_exec "$@" || return 1
+          _src="$RASTER"
+        fi
+
+        _dst="$OUT"
+        [ "$FORMAT" != avif ] || _dst="$STAGE"
+
+        set -- magick "$_src"
+        [ "$WAND_FLAG_STRIP" = "true" ] && set -- "$@" -strip
+        [ -n "$_geom" ] && set -- "$@" -resize "$_geom"
+        [ -n "$WAND_FLAG_ROTATE" ] && set -- "$@" -rotate "$WAND_FLAG_ROTATE"
+        case "$FLIP" in
+          h|horizontal) set -- "$@" -flop ;;
+          v|vertical) set -- "$@" -flip ;;
+        esac
+        [ "$WAND_FLAG_GRAYSCALE" = "true" ] && set -- "$@" -colorspace Gray
+        [ -n "$FLATTEN" ] && set -- "$@" -background "$FLATTEN" -alpha remove -alpha off
+
+        if [ "$FORMAT" = avif ]; then
+          : # the staging file is a plain lossless png; avifenc carries the quality
+        elif [ "$WAND_FLAG_LOSSLESS" = "true" ]; then
+          case "$FORMAT" in
+            webp) set -- "$@" -define webp:lossless=true ;;
+            png|tiff) ;;
+            *) conv_die "--lossless needs png, webp, avif or tiff" ;;
+          esac
+        else
+          set -- "$@" -quality "$_lvl"
+        fi
+
+        set -- "$@" "$_dst"
+        conv_exec "$@" || return 1
+
+        [ "$FORMAT" = avif ] || return 0
+
+        set -- avifenc --speed 6 --jobs all
+        if [ "$WAND_FLAG_LOSSLESS" = "true" ]; then
+          set -- "$@" --lossless
+        else
+          set -- "$@" -q "$_lvl"
+        fi
+        set -- "$@" "$STAGE" "$OUT"
+        conv_exec_quiet "$@"
+      }
+
+      convert_one() {
+        IN="$1"; OUT="$2"
+        [ -f "$IN" ] || conv_die "no such file: $IN"
+
+        P_FORMAT=; P_QUALITY=; P_RESIZE=; P_MAXSIZE=
+        conv_image_preset "$WAND_FLAG_PRESET" || return 1
+
+        IS_SVG=false
+        conv_is_svg_file "$IN" && IS_SVG=true
+        DECODE=false
+        if [ "$IS_SVG" != true ] && conv_needs_decode "$IN"; then
+          DECODE=true
+          conv_need ffmpeg
+        fi
+
+        FORMAT="$WAND_FLAG_FORMAT"
+        if [ -z "$FORMAT" ] && [ -n "$OUT" ]; then
+          case "$OUT" in *.*) FORMAT="${OUT##*.}" ;; esac
+        fi
+        [ -n "$FORMAT" ] || FORMAT="$P_FORMAT"
+        # With nothing to go on, a raster keeps its own format — asking only for
+        # --resize should not also silently re-encode into something else.
+        if [ -z "$FORMAT" ]; then
+          if [ "$IS_SVG" = true ]; then
+            FORMAT=png
+          else
+            case "$IN" in *.*) FORMAT="${IN##*.}" ;; *) FORMAT=png ;; esac
+          fi
+        fi
+        FORMAT="$(printf '%s' "$FORMAT" | tr 'A-Z' 'a-z')"
+        FORMAT="$(conv_image_format "$FORMAT")" || return 1
+        [ "$FORMAT" = jpeg ] && FORMAT=jpg
+
+        if conv_is_vector_format "$FORMAT" && [ "$IS_SVG" != true ]; then
+          conv_die "$FORMAT output needs an svg source"
+        fi
+        [ "$IS_SVG" != true ] || conv_need rsvg-convert
+        [ "$FORMAT" != avif ] || conv_need avifenc
+
+        [ -n "$OUT" ] || OUT="$(conv_out_path "$IN" "$FORMAT")" || return 1
+        [ "$OUT" != "$IN" ] || conv_die "that would overwrite the input — name a different output"
+        if [ -e "$OUT" ] && [ "$WAND_FLAG_OVERWRITE" != "true" ]; then
+          conv_die "$OUT already exists — pass --overwrite to replace it"
+        fi
+
+        QUALITY="$WAND_FLAG_QUALITY"; [ -n "$QUALITY" ] || QUALITY="$P_QUALITY"
+        QUALITY="$(conv_quality "$QUALITY")" || return 1
+        LEVEL="$WAND_FLAG_LEVEL"
+        [ -n "$LEVEL" ] || LEVEL="$(conv_image_level "$QUALITY")"
+        case "$LEVEL" in ''|*[!0-9]*) conv_die "bad --level '$LEVEL' (0 to 100)" ;; esac
+        [ "$LEVEL" -le 100 ] || conv_die "bad --level '$LEVEL' (0 to 100)"
+
+        RESIZE="$WAND_FLAG_RESIZE"; [ -n "$RESIZE" ] || RESIZE="$P_RESIZE"
+        MAXSIZE="$WAND_FLAG_MAX_SIZE"; [ -n "$MAXSIZE" ] || MAXSIZE="$P_MAXSIZE"
+        GEOM="$(conv_scale_geometry "$RESIZE")" || return 1
+
+        FLATTEN=
+        if ! conv_format_keeps_alpha "$FORMAT"; then
+          FLATTEN="$WAND_FLAG_BACKGROUND"
+          [ -n "$FLATTEN" ] || FLATTEN=white
+        elif [ -n "$WAND_FLAG_BACKGROUND" ]; then
+          FLATTEN="$WAND_FLAG_BACKGROUND"
+        fi
+
+        BYTES=
+        if [ -n "$MAXSIZE" ]; then
+          case "$FORMAT" in
+            jpg|webp|avif) ;;
+            *) conv_die "--max-size needs a format that trades quality for size — try -f webp, jpg or avif" ;;
+          esac
+          [ "$WAND_FLAG_LOSSLESS" != "true" ] || conv_die "--max-size and --lossless ask for opposite things"
+          BYTES="$(conv_bytes "$MAXSIZE")" || return 1
+        fi
+
+        SEQ=$((SEQ + 1))
+        RASTER="$TMP/conv-raster-$$-$SEQ.png"
+        STAGE="$TMP/conv-stage-$$-$SEQ.png"
+
+        if [ -z "$BYTES" ] || [ "$WAND_FLAG_DRY_RUN" = "true" ]; then
+          render_image "$LEVEL" || return 1
+        else
+          # Image encoders have no bitrate to aim at, so the budget is met by
+          # walking the quality down until the file fits.
+          set -- "$LEVEL"
+          for _step in 85 75 65 55 45 35 25 15 8; do
+            [ "$_step" -lt "$LEVEL" ] && set -- "$@" "$_step"
+          done
+          _fit=false
+          for _lvl in "$@"; do
+            render_image "$_lvl" || return 1
+            if [ "$(conv_filesize "$OUT")" -le "$BYTES" ]; then _fit=true; break; fi
+            printf 'conv: %s at quality %s, going lower\n' \
+              "$(conv_hsize "$(conv_filesize "$OUT")")" "$_lvl" >&2
+          done
+          [ "$_fit" = true ] || printf 'conv: could not get under %s — %s is as small as %s goes at these dimensions\n' \
+            "$MAXSIZE" "$(conv_hsize "$(conv_filesize "$OUT")")" "$FORMAT" >&2
+        fi
+
+        rm -f "$RASTER" "$STAGE"
+        conv_report "$IN" "$OUT"
+      }
+
 video:
   description: Convert a video file — conv video <input> [output]
   aliases:
@@ -625,6 +800,7 @@ image:
   cmd: |
     eval "$CONV_LIB"
     eval "$CONV_IMAGE_LIB"
+    eval "$CONV_IMAGE_CONVERT_LIB"
     conv_need magick
 
     [ $# -ge 1 ] || conv_die "no input file — usage: conv image <input> [output]"
@@ -639,178 +815,6 @@ image:
       *) conv_die "bad --flip '$WAND_FLAG_FLIP' (h or v)" ;;
     esac
 
-    TMP="${TMPDIR:-/tmp}"; TMP="${TMP%/}"
-    SEQ=0
-
-    render_image() {
-      _lvl="$1"
-      _src="$IN"
-      _geom="$GEOM"
-
-      # A vector source is rendered straight to the size that was asked for, so
-      # nothing is ever scaled up from a smaller rasterisation.
-      if [ "$IS_SVG" = true ]; then
-        eval "set -- rsvg-convert $(conv_rsvg_size_args "$RESIZE")"
-        [ -n "$WAND_FLAG_DPI" ] && set -- "$@" -d "$WAND_FLAG_DPI" -p "$WAND_FLAG_DPI"
-        [ -n "$FLATTEN" ] && set -- "$@" -b "$FLATTEN"
-        if conv_is_vector_format "$FORMAT"; then
-          set -- "$@" -f "$FORMAT" -o "$OUT" "$IN"
-          conv_exec "$@"
-          return $?
-        fi
-        set -- "$@" -f png -o "$RASTER" "$IN"
-        conv_exec "$@" || return 1
-        _src="$RASTER"
-        _geom=
-      elif [ "$DECODE" = true ]; then
-        set -- ffmpeg -hide_banner -loglevel error -y -i "$IN" "$RASTER"
-        conv_exec "$@" || return 1
-        _src="$RASTER"
-      fi
-
-      _dst="$OUT"
-      [ "$FORMAT" != avif ] || _dst="$STAGE"
-
-      set -- magick "$_src"
-      [ "$WAND_FLAG_STRIP" = "true" ] && set -- "$@" -strip
-      [ -n "$_geom" ] && set -- "$@" -resize "$_geom"
-      [ -n "$WAND_FLAG_ROTATE" ] && set -- "$@" -rotate "$WAND_FLAG_ROTATE"
-      case "$FLIP" in
-        h|horizontal) set -- "$@" -flop ;;
-        v|vertical) set -- "$@" -flip ;;
-      esac
-      [ "$WAND_FLAG_GRAYSCALE" = "true" ] && set -- "$@" -colorspace Gray
-      [ -n "$FLATTEN" ] && set -- "$@" -background "$FLATTEN" -alpha remove -alpha off
-
-      if [ "$FORMAT" = avif ]; then
-        : # the staging file is a plain lossless png; avifenc carries the quality
-      elif [ "$WAND_FLAG_LOSSLESS" = "true" ]; then
-        case "$FORMAT" in
-          webp) set -- "$@" -define webp:lossless=true ;;
-          png|tiff) ;;
-          *) conv_die "--lossless needs png, webp, avif or tiff" ;;
-        esac
-      else
-        set -- "$@" -quality "$_lvl"
-      fi
-
-      set -- "$@" "$_dst"
-      conv_exec "$@" || return 1
-
-      [ "$FORMAT" = avif ] || return 0
-
-      set -- avifenc --speed 6 --jobs all
-      if [ "$WAND_FLAG_LOSSLESS" = "true" ]; then
-        set -- "$@" --lossless
-      else
-        set -- "$@" -q "$_lvl"
-      fi
-      set -- "$@" "$STAGE" "$OUT"
-      conv_exec_quiet "$@"
-    }
-
-    convert_one() {
-      IN="$1"; OUT="$2"
-      [ -f "$IN" ] || conv_die "no such file: $IN"
-
-      P_FORMAT=; P_QUALITY=; P_RESIZE=; P_MAXSIZE=
-      conv_image_preset "$WAND_FLAG_PRESET" || return 1
-
-      IS_SVG=false
-      conv_is_svg_file "$IN" && IS_SVG=true
-      DECODE=false
-      if [ "$IS_SVG" != true ] && conv_needs_decode "$IN"; then
-        DECODE=true
-        conv_need ffmpeg
-      fi
-
-      FORMAT="$WAND_FLAG_FORMAT"
-      if [ -z "$FORMAT" ] && [ -n "$OUT" ]; then
-        case "$OUT" in *.*) FORMAT="${OUT##*.}" ;; esac
-      fi
-      [ -n "$FORMAT" ] || FORMAT="$P_FORMAT"
-      # With nothing to go on, a raster keeps its own format — asking only for
-      # --resize should not also silently re-encode into something else.
-      if [ -z "$FORMAT" ]; then
-        if [ "$IS_SVG" = true ]; then
-          FORMAT=png
-        else
-          case "$IN" in *.*) FORMAT="${IN##*.}" ;; *) FORMAT=png ;; esac
-        fi
-      fi
-      FORMAT="$(printf '%s' "$FORMAT" | tr 'A-Z' 'a-z')"
-      FORMAT="$(conv_image_format "$FORMAT")" || return 1
-      [ "$FORMAT" = jpeg ] && FORMAT=jpg
-
-      if conv_is_vector_format "$FORMAT" && [ "$IS_SVG" != true ]; then
-        conv_die "$FORMAT output needs an svg source"
-      fi
-      [ "$IS_SVG" != true ] || conv_need rsvg-convert
-      [ "$FORMAT" != avif ] || conv_need avifenc
-
-      [ -n "$OUT" ] || OUT="$(conv_out_path "$IN" "$FORMAT")" || return 1
-      [ "$OUT" != "$IN" ] || conv_die "that would overwrite the input — name a different output"
-      if [ -e "$OUT" ] && [ "$WAND_FLAG_OVERWRITE" != "true" ]; then
-        conv_die "$OUT already exists — pass --overwrite to replace it"
-      fi
-
-      QUALITY="$WAND_FLAG_QUALITY"; [ -n "$QUALITY" ] || QUALITY="$P_QUALITY"
-      QUALITY="$(conv_quality "$QUALITY")" || return 1
-      LEVEL="$WAND_FLAG_LEVEL"
-      [ -n "$LEVEL" ] || LEVEL="$(conv_image_level "$QUALITY")"
-      case "$LEVEL" in ''|*[!0-9]*) conv_die "bad --level '$LEVEL' (0 to 100)" ;; esac
-      [ "$LEVEL" -le 100 ] || conv_die "bad --level '$LEVEL' (0 to 100)"
-
-      RESIZE="$WAND_FLAG_RESIZE"; [ -n "$RESIZE" ] || RESIZE="$P_RESIZE"
-      MAXSIZE="$WAND_FLAG_MAX_SIZE"; [ -n "$MAXSIZE" ] || MAXSIZE="$P_MAXSIZE"
-      GEOM="$(conv_scale_geometry "$RESIZE")" || return 1
-
-      FLATTEN=
-      if ! conv_format_keeps_alpha "$FORMAT"; then
-        FLATTEN="$WAND_FLAG_BACKGROUND"
-        [ -n "$FLATTEN" ] || FLATTEN=white
-      elif [ -n "$WAND_FLAG_BACKGROUND" ]; then
-        FLATTEN="$WAND_FLAG_BACKGROUND"
-      fi
-
-      BYTES=
-      if [ -n "$MAXSIZE" ]; then
-        case "$FORMAT" in
-          jpg|webp|avif) ;;
-          *) conv_die "--max-size needs a format that trades quality for size — try -f webp, jpg or avif" ;;
-        esac
-        [ "$WAND_FLAG_LOSSLESS" != "true" ] || conv_die "--max-size and --lossless ask for opposite things"
-        BYTES="$(conv_bytes "$MAXSIZE")" || return 1
-      fi
-
-      SEQ=$((SEQ + 1))
-      RASTER="$TMP/conv-raster-$$-$SEQ.png"
-      STAGE="$TMP/conv-stage-$$-$SEQ.png"
-
-      if [ -z "$BYTES" ] || [ "$WAND_FLAG_DRY_RUN" = "true" ]; then
-        render_image "$LEVEL" || return 1
-      else
-        # Image encoders have no bitrate to aim at, so the budget is met by
-        # walking the quality down until the file fits.
-        set -- "$LEVEL"
-        for _step in 85 75 65 55 45 35 25 15 8; do
-          [ "$_step" -lt "$LEVEL" ] && set -- "$@" "$_step"
-        done
-        _fit=false
-        for _lvl in "$@"; do
-          render_image "$_lvl" || return 1
-          if [ "$(conv_filesize "$OUT")" -le "$BYTES" ]; then _fit=true; break; fi
-          printf 'conv: %s at quality %s, going lower\n' \
-            "$(conv_hsize "$(conv_filesize "$OUT")")" "$_lvl" >&2
-        done
-        [ "$_fit" = true ] || printf 'conv: could not get under %s — %s is as small as %s goes at these dimensions\n' \
-          "$MAXSIZE" "$(conv_hsize "$(conv_filesize "$OUT")")" "$FORMAT" >&2
-      fi
-
-      rm -f "$RASTER" "$STAGE"
-      conv_report "$IN" "$OUT"
-    }
-
     if [ "$WAND_FLAG_BATCH" = "true" ]; then
       for _file in "$@"; do
         convert_one "$_file" "" || exit 1
@@ -819,6 +823,103 @@ image:
       [ $# -le 2 ] || conv_die "too many arguments — pass --batch to convert several files at once"
       convert_one "$1" "$2" || exit 1
     fi
+  children:
+    stitch:
+      description: Join two images edge to edge — conv image stitch <first> <second> [output]
+      flags:
+        horizontal:
+          type: bool
+          description: Place the images side by side instead of stacking them
+        align:
+          alias: a
+          description: 'Where the smaller image sits: start (left or top), center or end (right or bottom) (default: center)'
+        background:
+          alias: b
+          description: 'Colour filling the space beside the smaller image (default: transparent, or white for jpg)'
+        level:
+          description: 'Exact encoder quality 0-100, overriding --quality (higher is better)'
+        lossless:
+          type: bool
+          description: Encode without discarding detail (png, webp, avif, tiff)
+      cmd: |
+        eval "$CONV_LIB"
+        eval "$CONV_IMAGE_LIB"
+        eval "$CONV_IMAGE_CONVERT_LIB"
+        conv_need magick
+
+        [ $# -ge 2 ] || conv_die "needs two images — usage: conv image stitch <first> <second> [output]"
+        [ $# -le 3 ] || conv_die "too many arguments — usage: conv image stitch <first> <second> [output]"
+        A="$1"; B="$2"; OUT="$3"
+        [ -f "$A" ] || conv_die "no such file: $A"
+        [ -f "$B" ] || conv_die "no such file: $B"
+
+        # The free space runs along the join, so start and end swap axes with it.
+        case "$WAND_FLAG_ALIGN:$WAND_FLAG_HORIZONTAL" in
+          :*|center:*) GRAVITY=center ;;
+          start:true) GRAVITY=north ;;
+          end:true) GRAVITY=south ;;
+          start:*) GRAVITY=west ;;
+          end:*) GRAVITY=east ;;
+          *) conv_die "bad --align '$WAND_FLAG_ALIGN' (start, center or end)" ;;
+        esac
+
+        if [ -z "$OUT" ]; then
+          P_FORMAT=
+          conv_image_preset "$WAND_FLAG_PRESET" || exit 1
+          _ext="$WAND_FLAG_FORMAT"
+          [ -n "$_ext" ] || _ext="$P_FORMAT"
+          if [ -z "$_ext" ]; then
+            case "$A" in *.*) _ext="$(printf '%s' "${A##*.}" | tr 'A-Z' 'a-z')" ;; esac
+            case "$_ext" in png|jpg|jpeg|webp|avif|gif|tiff) ;; *) _ext=png ;; esac
+          fi
+          _base="$A"
+          case "$_base" in *.*) _base="${_base%.*}" ;; esac
+          OUT="$_base-stitched.$_ext"
+        fi
+        [ "$OUT" != "$A" ] && [ "$OUT" != "$B" ] || conv_die "that would overwrite an input — name a different output"
+        if [ -e "$OUT" ] && [ "$WAND_FLAG_OVERWRITE" != "true" ]; then
+          conv_die "$OUT already exists — pass --overwrite to replace it"
+        fi
+
+        CANVAS="$TMP/conv-stitch-$$.png"
+        RASTER_A="$TMP/conv-stitch-$$-a.png"
+        RASTER_B="$TMP/conv-stitch-$$-b.png"
+        trap 'rm -f "$CANVAS" "$RASTER_A" "$RASTER_B"' EXIT
+
+        # [0] holds an animated gif or multi-page tiff to its first frame, which
+        # would otherwise each take a slot of their own in the join.
+        stitch_source() {
+          if conv_is_svg_file "$1"; then
+            conv_need rsvg-convert
+            conv_exec rsvg-convert -f png -o "$2" "$1" || exit 1
+            SRC="$2"
+          elif conv_needs_decode "$1"; then
+            conv_need ffmpeg
+            conv_exec ffmpeg -hide_banner -loglevel error -y -i "$1" "$2" || exit 1
+            SRC="$2"
+          else
+            SRC="$1[0]"
+          fi
+        }
+        stitch_source "$A" "$RASTER_A"; SRC_A="$SRC"
+        stitch_source "$B" "$RASTER_B"; SRC_B="$SRC"
+
+        APPEND=-append
+        [ "$WAND_FLAG_HORIZONTAL" = "true" ] && APPEND=+append
+
+        # Append sizes the canvas to the larger image across the join and never
+        # scales or crops. The canvas stays lossless and transparent around the
+        # smaller image; convert_one paints the background and encodes the result.
+        conv_exec magick "$SRC_A" "$SRC_B" -auto-orient -background none -gravity "$GRAVITY" "$APPEND" "$CANVAS" || exit 1
+
+        # convert_one requires its input to exist, and a dry run never writes it.
+        [ "$WAND_FLAG_DRY_RUN" != "true" ] || : > "$CANVAS"
+
+        # The canvas path means nothing to the reader, so the report names the inputs.
+        conv_report() { :; }
+        convert_one "$CANVAS" "$OUT" || exit 1
+
+        [ "$WAND_FLAG_DRY_RUN" = "true" ] || printf '%s + %s -> %s  (%s)\n' "$A" "$B" "$OUT" "$(conv_hsize "$(conv_filesize "$OUT")")"
 
 info:
   description: Show the format, codecs, resolution, duration and size of a media file
@@ -976,6 +1077,14 @@ examples:
       conv image photo.jpg --strip           drop EXIF, keep everything else
       conv image photo.jpg --rotate 90 --grayscale
       conv image --batch *.png -f webp       every file, named automatically
+
+    Stitching — never scales or crops; the smaller image is centred unless aligned
+
+      conv image stitch top.png bottom.png   stacked, as top-stitched.png
+      conv image stitch --horizontal left.png right.png    side by side
+      conv image stitch top.png bottom.png --align start   smaller image on the left
+      conv image stitch --horizontal a.png b.png -a end    smaller image at the bottom
+      conv image stitch a.png b.png out.jpg -b black       gaps filled with black
 
     SVG — rendered by rsvg-convert, at whatever size you ask for
 
