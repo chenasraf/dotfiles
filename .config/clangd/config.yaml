@@ -1,6 +1,7 @@
 # clangd's user config. Linux reads it here; macOS only looks in ~/Library/Preferences/clangd,
 # which Library/Preferences/clangd in this repo symlinks back to this directory.
-# A project's own .clangd or .clang-tidy layers on top.
+# clangd applies this file after a project's .clangd and .clang-tidy, so a project can't turn
+# back off a check that this file adds.
 Diagnostics:
   UnusedIncludes: Strict
   MissingIncludes: Strict
@@ -14,6 +15,7 @@ Diagnostics:
     Remove:
       - bugprone-easily-swappable-parameters
       - modernize-avoid-c-arrays
+      - modernize-use-designated-initializers
       - modernize-use-nodiscard
       - modernize-use-trailing-return-type
       - readability-function-cognitive-complexity
