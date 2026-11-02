@@ -21,25 +21,32 @@ return {
       }
     end
   end,
-  config = function()
-    require('nvim-test').setup({
-      termOpts = {
-        width = 100,
-        go_back = true,
-      },
-    })
-    vim.keymap.set("n", "<leader>tt", "<cmd>TestFile<cr>", { noremap = true, desc = "[T]est Current [F]ile" })
-    vim.keymap.set("n", "<leader>tn", "<cmd>TestNearest<cr>", { noremap = true, desc = "[T]est [N]earest" })
-    vim.keymap.set("n", "<leader>ts", "<cmd>TestSuite<cr>", { noremap = true, desc = "[T]est [S]uite" })
-    vim.keymap.set("n", "<leader>tl", "<cmd>TestLast<cr>", { noremap = true, desc = "[T]est [L]ast" })
-    vim.keymap.set("n", "<leader>tf", "<cmd>TestVisit<cr>", { noremap = true, desc = "[T]est [V]isit Last Run" })
-    vim.keymap.set("n", "<leader>te", "<cmd>TestEdit<cr>", { noremap = true, desc = "[T]est [E]dit File" })
+  opts = {
+    termOpts = {
+      width = 100,
+      go_back = true,
+    },
+    runners = {
+      javascript = 'casraf.lib.nvim_test_js',
+      javascriptreact = 'casraf.lib.nvim_test_js',
+      typescript = 'casraf.lib.nvim_test_js',
+      typescriptreact = 'casraf.lib.nvim_test_js',
+      oil = 'casraf.lib.nvim_test_js',
+    },
+  },
+  keys = {
+    { "<leader>tt", "<cmd>TestFile<cr>",    desc = "[T]est Current [F]ile" },
+    { "<leader>tn", "<cmd>TestNearest<cr>", desc = "[T]est [N]earest" },
+    { "<leader>ts", "<cmd>TestSuite<cr>",   desc = "[T]est [S]uite" },
+    { "<leader>tl", "<cmd>TestLast<cr>",    desc = "[T]est [L]ast" },
+    { "<leader>tf", "<cmd>TestVisit<cr>",   desc = "[T]est [V]isit Last Run" },
+    { "<leader>te", "<cmd>TestEdit<cr>",    desc = "[T]est [E]dit File" },
+  },
 
-    --[[ require('nvim-test.runners.dart'):setup({
-      command = "dart",
-      args = { "test" },
-      file_pattern = "test/.*_test.dart$",
-      find_files = { "{name}_test.dart", "test/{name}_test.dart" },
-    }) ]]
-  end
+  --[[ require('nvim-test.runners.dart'):setup({
+    command = "dart",
+    args = { "test" },
+    file_pattern = "test/.*_test.dart$",
+    find_files = { "{name}_test.dart", "test/{name}_test.dart" },
+  }) ]]
 }
