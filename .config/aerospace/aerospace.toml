@@ -202,6 +202,14 @@ on-mode-changed = []
     # alt-shift-y = 'move-node-to-workspace Y'
     # alt-shift-z = 'move-node-to-workspace Z'
 
+    # Send the focused window to the previous/next monitor in left-to-right order (landing on
+    # whichever workspace is visible there, so external monitors don't need a number in 1-9) and
+    # follow it. Unlike left/right, prev/next ignore vertical placement, so staggered layouts
+    # work, and any number of monitors is handled. With a single monitor the keys do nothing.
+    # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
+    alt-shift-comma = 'move-node-to-monitor --focus-follows-window prev'
+    alt-shift-period = 'move-node-to-monitor --focus-follows-window next'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
 
