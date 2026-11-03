@@ -28,8 +28,10 @@ vim.keymap.set("n", "ß", "<C-w>s", { desc = "Split window horizontally", silent
 vim.keymap.set({ "n", "v" }, "<C-->", "<C-o>", { desc = "Go to previous cursor location", silent = true })
 vim.keymap.set({ "n", "v" }, "<C-=>", "<C-i>", { desc = "Go to next cursor location", silent = true })
 
-vim.keymap.set({ "i", "n" }, "<M-Left>", "b", { desc = "Move back word", silent = true })
-vim.keymap.set({ "i", "n" }, "<M-Right>", "w", { desc = "Move forward word", silent = true })
+vim.keymap.set("n", "<M-Left>", "b", { desc = "Move back word", silent = true })
+vim.keymap.set("n", "<M-Right>", "w", { desc = "Move forward word", silent = true })
+vim.keymap.set("i", "<M-Left>", "<S-Left>", { desc = "Move back word", silent = true })
+vim.keymap.set("i", "<M-Right>", "<S-Right>", { desc = "Move forward word", silent = true })
 
 --
 -- NOTE line manipulations
