@@ -112,11 +112,21 @@ require('lazy').setup({
     opts = {},
   },
 
-  -- "gc" to comment visual regions/lines
+  -- "gc" to comment visual regions/lines, "gb" to wrap them in a block comment
   {
     'numToStr/Comment.nvim',
-    setup = function()
-      require('Comment').setup()
+    config = function()
+      local U = require('Comment.utils')
+      -- `padding` takes no args, so pre_hook (which runs first) records the ctx
+      -- to keep inline block comments tight (`/*obj*/`) while lines stay `// obj`.
+      local inline = false
+      require('Comment').setup({
+        padding = function() return not inline end,
+        pre_hook = function(ctx)
+          inline = ctx.ctype == U.ctype.blockwise
+            and (ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.char)
+        end,
+      })
 
       local ft = require('Comment.ft')
       ft.set('tmux', '#%s')
