@@ -16,6 +16,17 @@ return {
           replace = true, -- allow Noice to replace default notify view
         },
       },
+      routes = {
+        -- `:!cmd` output arrives under its own msg kinds, which noice's default
+        -- routes don't match, so without this it is silently dropped.
+        {
+          view = "popup",
+          filter = {
+            event = "msg_show",
+            kind = { "shell_cmd", "shell_out", "shell_err", "shell_ret" },
+          },
+        },
+      },
       -- you can enable a preset for easier configuration
       -- presets = {
       --   -- bottom_search = true,         -- use a classic bottom cmdline for search
