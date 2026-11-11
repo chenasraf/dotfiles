@@ -2,6 +2,10 @@
 # which Library/Preferences/clangd in this repo symlinks back to this directory.
 # clangd applies this file after a project's .clangd and .clang-tidy, so a project can't turn
 # back off a check that this file adds.
+CompileFlags:
+  # A default case turns off -Wswitch, which warns when an enum switch misses a value. Butano's
+  # flags include -Wswitch-default, which asks every switch for one.
+  Add: [-Wno-switch-default]
 Diagnostics:
   UnusedIncludes: Strict
   MissingIncludes: Strict
@@ -21,4 +25,7 @@ Diagnostics:
       - readability-function-cognitive-complexity
       - readability-identifier-length
       - readability-magic-numbers
+      # Flags `= {}` on a member, which GCC's -Wmissing-field-initializers (-Wextra) needs for
+      # a designated initializer to leave the member out.
+      - readability-redundant-member-init
       - readability-uppercase-literal-suffix
