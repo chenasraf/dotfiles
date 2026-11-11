@@ -760,6 +760,25 @@ install:
     opts:
       tap: dannystewart/apps
 
+  # Patches two freezes in the app; see _patches/top-down-sprite-maker. An app
+  # update replaces the bundle and drops the patch, which fails the check, so the
+  # next run puts it back.
+  - name: top-down-sprite-maker
+    type: group
+    platforms: { only: ['macos'] }
+    enabled: test -d "/Applications/Top Down Sprite Maker.app"
+    steps:
+      - name: openjdk
+        type: brew
+      - name: top-down-sprite-maker-fixes
+        type: shell
+        tags: patch
+        check_installed: sh "$DOTFILES/_patches/top-down-sprite-maker/apply.sh" --check
+        check_has_update: '! sh "$DOTFILES/_patches/top-down-sprite-maker/apply.sh" --check'
+        opts:
+          command: sh "$DOTFILES/_patches/top-down-sprite-maker/apply.sh"
+          update_command: sh "$DOTFILES/_patches/top-down-sprite-maker/apply.sh"
+
   # ----------------------------------------------------------------------
   # 🆎 Fonts
   # ----------------------------------------------------------------------

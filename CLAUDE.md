@@ -65,6 +65,9 @@ whether it should be symlinked (add nothing) or sourced (add a regex to `.stow-l
   never edit the generated `settings.json`. The `claude-settings` sofmani step regenerates it and
   re-stows. Both `settings.json` and `settings.local.json` are git- and stow-ignored.
 
+- **`_patches/`** — stow-ignored fixes for third-party apps, one directory per app with a README
+  and an idempotent `apply.sh`, run by a sofmani step that reapplies it after the app updates.
+
 - **agent-browser** — Claude's browser (see `.claude/rules/agent-browser.md`). Its config,
   `.agent-browser/config.json`, is stow-ignored and linked into `~/.agent-browser/` by the
   `agent-browser-config` sofmani step: that directory also holds the Chrome build, profile and

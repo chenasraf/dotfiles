@@ -21,6 +21,7 @@ keybindings\.zsh
 autoload_completions\.zsh
 completions
 _plugins
+_patches
 brew
 node_modules
 pnpm-lock\.yaml
