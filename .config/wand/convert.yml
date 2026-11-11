@@ -825,11 +825,14 @@ image:
     fi
   children:
     stitch:
-      description: Join two images edge to edge — conv image stitch <first> <second> [output]
+      description: Join images edge to edge — conv image stitch <image>... <output>, or <first> <second> to name it automatically
       flags:
         horizontal:
           type: bool
           description: Place the images side by side instead of stacking them
+        grid:
+          alias: g
+          description: 'Lay the images out in rows of this many, left to right then top to bottom'
         align:
           alias: a
           description: 'Where the smaller image sits: start (left or top), center or end (right or bottom) (default: center)'
@@ -847,19 +850,36 @@ image:
         eval "$CONV_IMAGE_CONVERT_LIB"
         conv_need magick
 
-        [ $# -ge 2 ] || conv_die "needs two images — usage: conv image stitch <first> <second> [output]"
-        [ $# -le 3 ] || conv_die "too many arguments — usage: conv image stitch <first> <second> [output]"
-        A="$1"; B="$2"; OUT="$3"
-        [ -f "$A" ] || conv_die "no such file: $A"
-        [ -f "$B" ] || conv_die "no such file: $B"
+        [ $# -ge 2 ] || conv_die "needs two images — usage: conv image stitch <image>... <output>"
 
-        # The free space runs along the join, so start and end swap axes with it.
-        case "$WAND_FLAG_ALIGN:$WAND_FLAG_HORIZONTAL" in
-          :*|center:*) GRAVITY=center ;;
-          start:true) GRAVITY=north ;;
-          end:true) GRAVITY=south ;;
-          start:*) GRAVITY=west ;;
-          end:*) GRAVITY=east ;;
+        # Two arguments can only be two inputs, since one image has nothing to
+        # join; from three on, the last argument names the output.
+        NIN=$#; OUT=
+        if [ $# -ge 3 ]; then
+          NIN=$(($# - 1))
+          eval "OUT=\"\${$#}\""
+        fi
+        FIRST="$1"
+
+        # Every layout is a grid: a plain stack is one column, --horizontal one row.
+        if [ -n "$WAND_FLAG_GRID" ]; then
+          case "$WAND_FLAG_GRID" in
+            *[!0-9]*|0*) conv_die "bad --grid '$WAND_FLAG_GRID' (a number of columns, 1 or more)" ;;
+          esac
+          [ "$WAND_FLAG_HORIZONTAL" != "true" ] || conv_die "--grid sets its own rows — drop --horizontal"
+          COLS="$WAND_FLAG_GRID"
+        elif [ "$WAND_FLAG_HORIZONTAL" = "true" ]; then
+          COLS=$NIN
+        else
+          COLS=1
+        fi
+        ROWS=$(( (NIN + COLS - 1) / COLS ))
+
+        # Images in a row are shifted up and down, rows left and right.
+        case "$WAND_FLAG_ALIGN" in
+          ''|center) ROW_GRAVITY=center; COL_GRAVITY=center ;;
+          start) ROW_GRAVITY=north; COL_GRAVITY=west ;;
+          end) ROW_GRAVITY=south; COL_GRAVITY=east ;;
           *) conv_die "bad --align '$WAND_FLAG_ALIGN' (start, center or end)" ;;
         esac
 
@@ -869,22 +889,31 @@ image:
           _ext="$WAND_FLAG_FORMAT"
           [ -n "$_ext" ] || _ext="$P_FORMAT"
           if [ -z "$_ext" ]; then
-            case "$A" in *.*) _ext="$(printf '%s' "${A##*.}" | tr 'A-Z' 'a-z')" ;; esac
+            case "$FIRST" in *.*) _ext="$(printf '%s' "${FIRST##*.}" | tr 'A-Z' 'a-z')" ;; esac
             case "$_ext" in png|jpg|jpeg|webp|avif|gif|tiff) ;; *) _ext=png ;; esac
           fi
-          _base="$A"
+          _base="$FIRST"
           case "$_base" in *.*) _base="${_base%.*}" ;; esac
           OUT="$_base-stitched.$_ext"
         fi
-        [ "$OUT" != "$A" ] && [ "$OUT" != "$B" ] || conv_die "that would overwrite an input — name a different output"
+
+        # Checked up front, so a missing file fails before any svg is rendered.
+        NAMES=; _i=0
+        for _arg in "$@"; do
+          [ "$_i" -lt "$NIN" ] || break
+          _i=$((_i + 1))
+          [ -f "$_arg" ] || conv_die "no such file: $_arg"
+          [ "$_arg" != "$OUT" ] || conv_die "that would overwrite an input — name a different output"
+          NAMES="${NAMES:+$NAMES + }$_arg"
+        done
         if [ -e "$OUT" ] && [ "$WAND_FLAG_OVERWRITE" != "true" ]; then
           conv_die "$OUT already exists — pass --overwrite to replace it"
         fi
 
-        CANVAS="$TMP/conv-stitch-$$.png"
-        RASTER_A="$TMP/conv-stitch-$$-a.png"
-        RASTER_B="$TMP/conv-stitch-$$-b.png"
-        trap 'rm -f "$CANVAS" "$RASTER_A" "$RASTER_B"' EXIT
+        WORK="$TMP/conv-stitch-$$"
+        mkdir -p "$WORK" || exit 1
+        trap 'rm -rf "$WORK"' EXIT
+        CANVAS="$WORK/canvas.png"
 
         # [0] holds an animated gif or multi-page tiff to its first frame, which
         # would otherwise each take a slot of their own in the join.
@@ -901,16 +930,37 @@ image:
             SRC="$1[0]"
           fi
         }
-        stitch_source "$A" "$RASTER_A"; SRC_A="$SRC"
-        stitch_source "$B" "$RASTER_B"; SRC_B="$SRC"
-
-        APPEND=-append
-        [ "$WAND_FLAG_HORIZONTAL" = "true" ] && APPEND=+append
-
         # Append sizes the canvas to the larger image across the join and never
         # scales or crops. The canvas stays lossless and transparent around the
         # smaller image; convert_one paints the background and encodes the result.
-        conv_exec magick "$SRC_A" "$SRC_B" -auto-orient -background none -gravity "$GRAVITY" "$APPEND" "$CANVAS" || exit 1
+        # With several rows of several images, each row is joined in its own
+        # parentheses and the rows are then stacked.
+        GROUPED=false
+        [ "$ROWS" -gt 1 ] && [ "$COLS" -gt 1 ] && GROUPED=true
+        # The loop's word list is fixed when it starts, so "$@" is free to
+        # become the magick command as the inputs are read off it.
+        _i=0
+        for _arg in "$@"; do
+          [ "$_i" -lt "$NIN" ] || break
+          [ "$_i" -gt 0 ] || set -- magick -background none
+          stitch_source "$_arg" "$WORK/$_i.png"
+          [ "$GROUPED" = true ] && [ $((_i % COLS)) -eq 0 ] && set -- "$@" '('
+          set -- "$@" "$SRC"
+          _i=$((_i + 1))
+          if [ "$GROUPED" = true ] && { [ $((_i % COLS)) -eq 0 ] || [ "$_i" -eq "$NIN" ]; }; then
+            set -- "$@" -auto-orient -gravity "$ROW_GRAVITY" +append ')'
+          fi
+        done
+        if [ "$GROUPED" = true ]; then
+          set -- "$@" -gravity "$COL_GRAVITY" -append
+        elif [ "$ROWS" -eq 1 ]; then
+          set -- "$@" -auto-orient -gravity "$ROW_GRAVITY" +append
+        else
+          set -- "$@" -auto-orient -gravity "$COL_GRAVITY" -append
+        fi
+        # The joined image inherits the first input's page geometry, which a
+        # later flatten would crop it back down to.
+        conv_exec "$@" +repage "$CANVAS" || exit 1
 
         # convert_one requires its input to exist, and a dry run never writes it.
         [ "$WAND_FLAG_DRY_RUN" != "true" ] || : > "$CANVAS"
@@ -919,7 +969,7 @@ image:
         conv_report() { :; }
         convert_one "$CANVAS" "$OUT" || exit 1
 
-        [ "$WAND_FLAG_DRY_RUN" = "true" ] || printf '%s + %s -> %s  (%s)\n' "$A" "$B" "$OUT" "$(conv_hsize "$(conv_filesize "$OUT")")"
+        [ "$WAND_FLAG_DRY_RUN" = "true" ] || printf '%s -> %s  (%s)\n' "$NAMES" "$OUT" "$(conv_hsize "$(conv_filesize "$OUT")")"
 
 info:
   description: Show the format, codecs, resolution, duration and size of a media file
@@ -1085,6 +1135,8 @@ examples:
       conv image stitch top.png bottom.png --align start   smaller image on the left
       conv image stitch --horizontal a.png b.png -a end    smaller image at the bottom
       conv image stitch a.png b.png out.jpg -b black       gaps filled with black
+      conv image stitch a.png b.png c.png out.png          any number; the last one is the output
+      conv image stitch --grid 3 *.png sheet.png           rows of three, the last row centred
 
     SVG — rendered by rsvg-convert, at whatever size you ask for
 
