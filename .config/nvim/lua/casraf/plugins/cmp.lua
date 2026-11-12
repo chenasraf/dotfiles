@@ -127,6 +127,16 @@ return {
           { name = 'luasnip' },
         },
       }
+
+      -- A drag from Insert mode selects in Insert-Visual, and every click after it bounces
+      -- through InsertLeave/InsertEnter. cmp queues a `<Cmd>lua require"cmp.utils.feedkeys".run(N)<CR>`
+      -- on each InsertEnter, and under tmux that sometimes lands in the buffer as text. Leaving
+      -- Insert mode before the drag makes it a plain Visual selection; stopinsert (unlike <Esc>)
+      -- keeps the cursor, so the selection still starts where the button went down.
+      vim.keymap.set('i', '<LeftDrag>', function()
+        vim.cmd.stopinsert()
+        return '<LeftDrag>'
+      end, { expr = true, desc = 'Mouse drag selects from Normal mode' })
     end,
   },
 
