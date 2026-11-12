@@ -38,7 +38,7 @@ return {
         vue = prettier,
         yaml = prettier,
         dart = { "dart_format" },
-        python = { "black" },
+        python = { "ruff_format" },
         kotlin = { "ktfmt" },
         php = { "pretty-php" },
         -- shfmt parses bash and POSIX sh; zsh is a different enough language that it

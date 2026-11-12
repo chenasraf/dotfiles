@@ -36,7 +36,7 @@ return {
       'vue-language-server',
       'yaml-language-server',
 
-      -- Formatters and linters. prettier and black are deliberately absent — sofmani
+      -- Formatters and linters. prettier and ruff are deliberately absent — sofmani
       -- provisions those, and a mason copy would shadow it on $PATH.
       'ktfmt',
       'pretty-php',
