@@ -124,6 +124,9 @@ keybind = super+t=text:\x02c
 # Set tmux split equal: Cmd+=
 keybind = super+equal=text:\x02E
 
+# Set tmux split equal around the current pane: Cmd+Opt+=
+keybind = super+alt+equal=text:\x02e
+
 # Select tmux session: Cmd+Shift+P
 keybind = super+shift+p=text:\x02s
 

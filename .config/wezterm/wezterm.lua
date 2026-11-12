@@ -102,6 +102,8 @@ config.keys = {
   { key = "t",         mods = "CMD",       action = act { SendString = "\x02c" } },
   -- Set split equal - Cmd+=
   { key = "=",         mods = "CMD",       action = act { SendString = "\x02E" } },
+  -- Set split equal around the current pane - Cmd+Opt+=
+  { key = "=",         mods = "CMD|OPT",   action = act { SendString = "\x02e" } },
 
   ----------------------------------------------------------------------------------
   --- vim

@@ -1,0 +1,57 @@
+#!/bin/sh
+# Even out the panes of a pane's window.
+#
+#   spread-panes <pane>           every split, at every level of nesting, like vim's <C-w>=
+#   spread-panes --around <pane>  only the split the pane sits in, or the nearest split above
+#                                 it when that one is already even
+#
+# --around is what tmux's own `select-layout -E` means to do, but -E gives up on a split whose
+# other side is split again, so from the left pane of a left | top/bottom layout it never evens
+# the columns.
+
+around=false
+if [ "$1" = "--around" ]; then
+  around=true
+  shift
+fi
+pane="$1"
+
+layout="$(tmux display -p -t "$pane" '#{window_layout}')" || exit 1
+id="$(tmux display -p -t "$pane" '#{pane_id}')" || exit 1
+
+# Each split loses one cell per border between its children. With --around, the splits that
+# aren't evened keep their proportions as the split around them changes size.
+spread="$(printf '%s' "$layout" | jq -c --argjson all "$([ "$around" = true ] && echo false || echo true)" --arg id "$id" '
+  def lens: .t as $t | [.c[] | if $t == "h" then .w else .h end];
+  def size: if .t == "h" then .w else .h end;
+  # The last child takes what rounding leaves, as tmux does.
+  def shares($size; $n): (($size - ($n - 1)) / $n | floor) as $each
+    | [range($n - 1) | $each] | . + [$size - ($n - 1) - add];
+  def scaled($old; $size): ($old | add) as $was | ($size - (($old | length) - 1)) as $now
+    | [$old[:-1][] | . * $now / $was | floor] | . + [$now - add];
+  def even: lens == shares(size; .c | length);
+
+  def place($x; $y; $w; $h):
+    .t as $t
+    | .x = $x | .y = $y | .w = $w | .h = $h
+    | if $t == "h" or $t == "v" then
+        lens as $old
+        | (if $all or .spread then shares(size; $old | length) else scaled($old; size) end) as $lens
+        | del(.spread)
+        | .c |= [to_entries[] | .key as $i | (($lens[:$i] | add // 0) + $i) as $at
+            | .value
+            | if $t == "h" then place($x + $at; $y; $lens[$i]; $h)
+              else place($x; $y + $at; $w; $lens[$i]) end]
+      else . end;
+
+  if $all then .
+  else
+    [paths(type == "object" and .I == $id)][0] as $path
+    | ([range($path | length) as $j | select($path[$j] == "c") | $path[:$j]] | reverse) as $splits
+    | ([$splits[] as $p | select(getpath($p) | even | not) | $p] | first) as $target
+    | if $target == null then . else setpath($target + ["spread"]; true) end
+  end
+  | .L |= place(.x; .y; .w; .h)
+')" || exit 1
+
+tmux select-layout -t "$pane" "$spread"
