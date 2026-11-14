@@ -1,0 +1,7 @@
+{
+  "IWYU pragma: keep": {
+    "prefix": "/prk",
+    "body": "// IWYU pragma: keep",
+    "description": "Keep an include that include-what-you-use and clangd's unused-include check would drop"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "casraf-snippets",
+  "contributes": {
+    "snippets": [
+      { "language": ["c", "cpp"], "path": "./c.json" }
+    ]
+  }
+}
