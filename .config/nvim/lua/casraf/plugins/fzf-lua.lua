@@ -86,7 +86,31 @@ return {
     config = function()
       local fzf = require('fzf-lua')
 
+      local image_exts = { png = true, jpg = true, jpeg = true, gif = true, bmp = true, webp = true, ico = true }
+
+      -- The bat previewer has no per-extension commands (only the builtin one does), so
+      -- this wraps it to hand images to catimg and everything else to bat.
+      local bat_catimg = require('fzf-lua.previewer.fzf').bat_async:extend()
+      function bat_catimg:cmdline(o)
+        local act = bat_catimg.super.cmdline(self, o)
+        local bat_cmd = act.fn
+        act.fn = function(items, fzf_lines, fzf_columns)
+          local filepath, _, errcmd = self:parse_entry_and_verify(items[1])
+          local ext = filepath and filepath:match('%.(%w+)$')
+          if errcmd or not ext or not image_exts[ext:lower()] then
+            return bat_cmd(items, fzf_lines, fzf_columns)
+          end
+          -- fzf-lua runs this outside fzf's preview env, so $FZF_PREVIEW_COLUMNS is unset;
+          -- catimg -w counts half-columns
+          return ('catimg -w %d %s'):format((fzf_columns or 80) * 2,vim.fn.shellescape(filepath))
+        end
+        return act
+      end
+
       fzf.setup({
+        previewers = {
+          bat = { _ctor = function() return bat_catimg end },
+        },
         winopts = {
           preview = {
             default = 'bat',
