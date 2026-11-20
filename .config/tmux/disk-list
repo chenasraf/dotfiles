@@ -29,6 +29,7 @@ df -Pk 2>/dev/null | awk '
     if (mount ~ /^\/Library\//) next
     if (mount ~ /^\/(boot|snap|efi)/) next
     if (mount ~ /^\/var\/(snap|lib\/docker|lib\/containers)/) next
+    if (mount ~ /^(\/private)?\/var\/folders\//) next
 
     label = mount
     sub(/.*\//, "", label)
