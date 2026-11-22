@@ -1,0 +1,13 @@
+# Skills that belong to specific repos rather than to every Claude Code session.
+# Each skill lives at project-skills/<group>/<skill>/ and is symlinked into the
+# `.claude/skills/` of every repo listed under it by link.sh. Repos missing on a
+# machine are skipped.
+#
+# <group>:
+#   <skill>:
+#     - <repo path>
+
+pantry:
+  release-notes:
+    - ~/Dev/pantry-flutter
+    - ~/Dev/nextcloud-apps/pantry

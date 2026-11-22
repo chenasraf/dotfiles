@@ -58,6 +58,17 @@ install:
       command: sh "$DOTFILES/.claude/settings-merge.sh" && stow -R -d "$DOTFILES" -t ~ .
       update_command: sh "$DOTFILES/.claude/settings-merge.sh" && stow -R -d "$DOTFILES" -t ~ .
 
+  - name: claude-project-skills
+    type: shell
+    tags: config claude
+    # Link the repo-scoped skills in .claude/project-skills/manifest.yml into
+    # each listed repo's .claude/skills/.
+    check_installed: '"$DOTFILES/.claude/project-skills/link.sh" --check'
+    check_has_update: '! "$DOTFILES/.claude/project-skills/link.sh" --check'
+    opts:
+      command: '"$DOTFILES/.claude/project-skills/link.sh"'
+      update_command: '"$DOTFILES/.claude/project-skills/link.sh"'
+
   - name: osx-defaults
     type: shell
     tags: system

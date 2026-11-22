@@ -30,3 +30,4 @@ CLAUDE\.md
 \.eslintignore
 \.shellcheckrc
 \.config/direnv/lib
+\.claude/project-skills
