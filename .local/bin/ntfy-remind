@@ -1,0 +1,416 @@
+#!/usr/bin/env bash
+# One-time and recurring reminders, delivered through ntfy-agent.
+#
+# Each reminder is one JSON file in the state directory holding its message
+# and the epoch it next fires at. `tick` runs every minute — launchd on macOS,
+# cron on Linux, both set up by `install` — and sends whatever is due. A
+# reminder that came due while the machine slept fires on the first tick after
+# it wakes, marked late, rather than being skipped: a reminder that can be
+# silently missed is worse than none.
+#
+# Reminders are per machine: they fire from the machine they were added on.
+#
+# Interactively this is `ntfy remind …`, the wand front in .config/wand/ntfy.yml;
+# the tick and Claude call this file by path, which needs no shell setup.
+#
+#   ntfy-remind add --in 20m 'take the laundry out'
+#   ntfy-remind add --at 15:30 -T 'standup' 'join the call'
+#   ntfy-remind add --every weekday --at 09:00 'check the deploy dashboard'
+#   ntfy-remind list
+#   ntfy-remind rm 3f2a
+#
+# Written for bash 3.2, the /bin/bash launchd and cron find on macOS.
+set -euo pipefail
+
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/usr/local/bin:/home/linuxbrew/.linuxbrew/bin
+export PATH
+
+DOTFILES=${DOTFILES:-$HOME/.dotfiles}
+SELF="$DOTFILES/.local/bin/ntfy-remind"
+AGENT="$DOTFILES/.local/bin/ntfy-agent"
+DIR=${NTFY_REMIND_DIR:-${XDG_STATE_HOME:-$HOME/.local/state}/ntfy-remind}
+LABEL=dev.casraf.ntfy-remind
+PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
+CRON_TAG='# ntfy-remind'
+# How late a reminder can fire before its message says so. Ticks are a minute
+# apart, so anything past this means the machine was asleep or off.
+LATE_AFTER=300
+
+die() { printf 'ntfy-remind: %s\n' "$*" >&2; exit 1; }
+
+usage() {
+    cat <<'EOF'
+Usage: ntfy-remind <command> [options]
+
+  add [options] <message...>   schedule a reminder (message from stdin if none)
+      --in <dur>               once, after a duration: 20m, 2h, 1h30m, 3d, 1w
+      --at <when>              once at HH:MM (next occurrence), 'tomorrow HH:MM'
+                               or 'YYYY-MM-DD HH:MM'; with --every, the time of day
+                               (day rules) or the first fire (intervals)
+      --every <rule>           repeat: an interval (2h, 1d), or days — day,
+                               weekday, weekend, or a list like mon,wed,fri —
+                               which need --at HH:MM
+      -T, --title <t>          notification title (default: reminder)
+      -p, --priority <p>       min | low | default | high | max, or 1-5
+      --tags <a,b>             emoji shortcodes (default: alarm_clock)
+      -u, --click <url>        open this URL when tapped
+      -t, --topic <t>          ntfy topic (default: ntfy-agent's)
+      -m, --markdown           render the message as Markdown
+  list [--json]                show reminders, soonest first
+  rm <id>...                   delete reminders
+  tick                         send what is due (run every minute by install)
+  install [--check]            set up the per-minute tick (launchd / cron)
+  uninstall                    remove the per-minute tick
+EOF
+}
+
+# --- dates ----------------------------------------------------------------
+# GNU and BSD date share almost nothing beyond +FORMAT, so every date
+# operation goes through these two.
+if date --version >/dev/null 2>&1; then GNU_DATE=1; else GNU_DATE=0; fi
+
+# Epoch of a local wall time, 'YYYY-MM-DD HH:MM'.
+to_epoch() {
+    if [ "$GNU_DATE" = 1 ]; then
+        date -d "$1:00" +%s
+    else
+        # Seconds are spelled out: BSD fills any field the format leaves out
+        # from the current time.
+        date -j -f '%Y-%m-%d %H:%M:%S' "$1:00" +%s
+    fi
+}
+
+# Format an epoch: fmt <epoch> <+format>
+fmt() {
+    if [ "$GNU_DATE" = 1 ]; then date -d "@$1" "$2"; else date -r "$1" "$2"; fi
+}
+
+# Seconds in a duration like 1h30m. Units: s m h d w.
+dur_secs() {
+    local s=$1 total=0 n u
+    [[ $s =~ ^([0-9]+[smhdw])+$ ]] || return 1
+    while [ -n "$s" ]; do
+        [[ $s =~ ^([0-9]+)([smhdw])(.*)$ ]]
+        n=$((10#${BASH_REMATCH[1]})) u=${BASH_REMATCH[2]} s=${BASH_REMATCH[3]}
+        case "$u" in
+            s) total=$((total + n)) ;;
+            m) total=$((total + n * 60)) ;;
+            h) total=$((total + n * 3600)) ;;
+            d) total=$((total + n * 86400)) ;;
+            w) total=$((total + n * 604800)) ;;
+        esac
+    done
+    [ "$total" -gt 0 ] || return 1
+    printf '%s' "$total"
+}
+
+human_dur() {
+    local s=$1 out=''
+    [ "$s" -ge 86400 ] && out="${out}$((s / 86400))d" && s=$((s % 86400))
+    [ "$s" -ge 3600 ] && out="${out}$((s / 3600))h" && s=$((s % 3600))
+    [ "$s" -ge 60 ] && out="${out}$((s / 60))m" && s=$((s % 60))
+    [ "$s" -gt 0 ] && out="${out}${s}s"
+    printf '%s' "${out:-0s}"
+}
+
+# Normalise H:MM / HH:MM to HH:MM, or fail.
+hhmm() {
+    [[ $1 =~ ^([0-9]{1,2}):([0-9]{2})$ ]] || return 1
+    local h=$((10#${BASH_REMATCH[1]})) m=$((10#${BASH_REMATCH[2]}))
+    [ "$h" -le 23 ] && [ "$m" -le 59 ] || return 1
+    printf '%02d:%02d' "$h" "$m"
+}
+
+# Day rule to ISO weekdays (1 = Monday), comma-separated.
+days_of() {
+    case "$1" in
+        day|days|daily) echo 1,2,3,4,5,6,7; return ;;
+        weekday|weekdays) echo 1,2,3,4,5; return ;;
+        weekend|weekends) echo 6,7; return ;;
+    esac
+    local out='' d n
+    for d in $(printf '%s' "$1" | tr ',' ' '); do
+        case "$d" in
+            mon) n=1 ;; tue) n=2 ;; wed) n=3 ;; thu) n=4 ;;
+            fri) n=5 ;; sat) n=6 ;; sun) n=7 ;;
+            *) return 1 ;;
+        esac
+        out="${out:+$out,}$n"
+    done
+    [ -n "$out" ] || return 1
+    printf '%s' "$out"
+}
+
+# First time strictly after <after> that is <HH:MM> on one of <days>.
+# Days are stepped from noon so a DST change can never push the step into
+# the neighbouring date.
+next_on_days() {
+    local after=$1 days=$2 time=$3 noon d day cand
+    noon=$(to_epoch "$(fmt "$after" +%Y-%m-%d) 12:00")
+    for d in 0 1 2 3 4 5 6 7; do
+        case ",$days," in *",$(fmt $((noon + d * 86400)) +%u),"*) ;; *) continue ;; esac
+        day=$(fmt $((noon + d * 86400)) +%Y-%m-%d)
+        cand=$(to_epoch "$day $time")
+        if [ "$cand" -gt "$after" ]; then printf '%s' "$cand"; return; fi
+    done
+    return 1
+}
+
+# Epoch for a one-time --at value.
+at_epoch() {
+    local now=$1 when=$2 t e
+    if t=$(hhmm "$when"); then
+        next_on_days "$now" 1,2,3,4,5,6,7 "$t"
+    elif [[ $when =~ ^tomorrow\ (.+)$ ]] && t=$(hhmm "${BASH_REMATCH[1]}"); then
+        e=$(to_epoch "$(fmt $((now + 86400)) +%Y-%m-%d) $t")
+        printf '%s' "$e"
+    elif [[ $when =~ ^([0-9]{4}-[0-9]{2}-[0-9]{2})\ (.+)$ ]] && t=$(hhmm "${BASH_REMATCH[2]}"); then
+        e=$(to_epoch "${BASH_REMATCH[1]} $t" 2>/dev/null) || return 1
+        [ "$e" -gt "$now" ] || die "$when is in the past"
+        printf '%s' "$e"
+    else
+        return 1
+    fi
+}
+
+# --- commands -------------------------------------------------------------
+
+cmd_add() {
+    local in='' at='' every='' title=reminder prio=default tags=alarm_clock click='' topic='' markdown=false
+    while [ "$#" -gt 0 ]; do
+        case "$1" in
+            --in) in="$2"; shift 2 ;;
+            --at) at="$2"; shift 2 ;;
+            --every) every="$2"; shift 2 ;;
+            -T|--title) title="$2"; shift 2 ;;
+            -p|--priority) prio="$2"; shift 2 ;;
+            --tags) tags="$2"; shift 2 ;;
+            -u|--click) click="$2"; shift 2 ;;
+            -t|--topic) topic="$2"; shift 2 ;;
+            -m|--markdown) markdown=true; shift ;;
+            --) shift; break ;;
+            -*) die "unknown option: $1" ;;
+            *) break ;;
+        esac
+    done
+    case "$prio" in min|low|default|high|max|urgent|[1-5]) ;; *) die "unknown priority: $prio" ;; esac
+
+    local message
+    if [ "$#" -gt 0 ]; then
+        message="$*"
+    elif [ ! -t 0 ]; then
+        message=$(cat)
+    fi
+    [ -n "${message:-}" ] || die 'nothing to remind about: give a message'
+
+    local now next interval=0 days='' time='' repeat='' secs
+    now=$(date +%s)
+    if [ -z "$every" ]; then
+        [ -n "$in" ] || [ -n "$at" ] || die 'say when: --in, --at or --every'
+        [ -z "$in" ] || [ -z "$at" ] || die '--in and --at are exclusive'
+        if [ -n "$in" ]; then
+            secs=$(dur_secs "$in") || die "bad duration: $in (e.g. 20m, 2h, 1h30m)"
+            next=$((now + secs))
+        else
+            next=$(at_epoch "$now" "$at") || die "bad time: $at (HH:MM, 'tomorrow HH:MM' or 'YYYY-MM-DD HH:MM')"
+        fi
+    elif interval=$(dur_secs "$every"); then
+        [ -z "$in" ] || [ -z "$at" ] || die '--in and --at are exclusive'
+        if [ -n "$in" ]; then
+            secs=$(dur_secs "$in") || die "bad duration: $in"
+            next=$((now + secs))
+        elif [ -n "$at" ]; then
+            next=$(at_epoch "$now" "$at") || die "bad time: $at"
+        else
+            next=$((now + interval))
+        fi
+        repeat="every $(human_dur "$interval")"
+    else
+        interval=0
+        days=$(days_of "$every") || die "bad --every: $every (an interval like 2h, or day, weekday, weekend, mon,wed,...)"
+        [ -z "$in" ] || die '--in does not combine with a day rule; use --at HH:MM'
+        [ -n "$at" ] || die "--every $every needs --at HH:MM"
+        time=$(hhmm "$at") || die "--every $every takes a time of day for --at, like 09:00"
+        next=$(next_on_days "$now" "$days" "$time")
+        repeat="every $every at $time"
+    fi
+
+    mkdir -p "$DIR"
+    local id
+    while :; do
+        id=$(od -An -N2 -tx1 /dev/urandom | tr -d ' \n')
+        [ -e "$DIR/$id.json" ] || break
+    done
+    jq -n \
+        --arg id "$id" --arg message "$message" --arg title "$title" \
+        --arg priority "$prio" --arg tags "$tags" --arg click "$click" --arg topic "$topic" \
+        --argjson markdown "$markdown" --argjson next "$next" --argjson created "$now" \
+        --argjson interval "$interval" --arg days "$days" --arg time "$time" --arg repeat "$repeat" \
+        '{id: $id, message: $message, title: $title, priority: $priority, tags: $tags,
+          click: $click, topic: $topic, markdown: $markdown, next: $next, created: $created,
+          interval: $interval, days: $days, time: $time, repeat: $repeat}' \
+        > "$DIR/$id.json.tmp"
+    mv "$DIR/$id.json.tmp" "$DIR/$id.json"
+
+    printf '%s  %s%s  %s\n' "$id" "$(fmt "$next" '+%a %d %b %H:%M')" "${repeat:+, $repeat}" "$message"
+    installed || printf 'ntfy-remind: the tick is not installed here, so this will not fire; run: ntfy remind install\n' >&2
+}
+
+cmd_list() {
+    local json=false
+    [ "${1:-}" = --json ] && json=true
+    if ! ls "$DIR"/*.json >/dev/null 2>&1; then
+        if [ "$json" = true ]; then echo '[]'; else echo 'no reminders'; fi
+        return
+    fi
+    if [ "$json" = true ]; then
+        jq -s 'sort_by(.next)' "$DIR"/*.json
+        return
+    fi
+    local id next repeat title message
+    jq -rs 'sort_by(.next)[] | [.id, .next, (if .repeat == "" then "once" else .repeat end),
+        .title, (.message | gsub("\n"; " "))] | @tsv' "$DIR"/*.json |
+    while IFS=$'\t' read -r id next repeat title message; do
+        printf '%s  %s  %-26s  %s: %s\n' "$id" "$(fmt "$next" '+%a %d %b %H:%M')" "$repeat" "$title" "$message"
+    done
+}
+
+cmd_rm() {
+    [ "$#" -gt 0 ] || die 'usage: ntfy-remind rm <id>...'
+    local id rc=0
+    for id in "$@"; do
+        if [[ ! $id =~ ^[0-9a-f]+$ ]] || [ ! -f "$DIR/$id.json" ]; then
+            printf 'ntfy-remind: no reminder %s\n' "$id" >&2
+            rc=1
+            continue
+        fi
+        printf 'removed %s: %s\n' "$id" "$(jq -r .message "$DIR/$id.json")"
+        rm -f "$DIR/$id.json"
+    done
+    return "$rc"
+}
+
+cmd_tick() {
+    [ -d "$DIR" ] || return 0
+    # A slow send must not let the next minute's tick send the same reminder
+    # twice. mkdir is the lock because it is atomic on both systems and needs
+    # no flock, which macOS lacks. A lock older than ten minutes belongs to a
+    # tick that died, not one still sending.
+    # Global, not local: the EXIT trap runs after this function's scope is gone.
+    LOCK="$DIR/.lock"
+    if ! mkdir "$LOCK" 2>/dev/null; then
+        [ -n "$(find "$LOCK" -maxdepth 0 -mmin +10 2>/dev/null)" ] || return 0
+        rmdir "$LOCK" 2>/dev/null; mkdir "$LOCK" 2>/dev/null || return 0
+    fi
+    trap 'rmdir "$LOCK" 2>/dev/null || true' EXIT
+
+    local now f next message title prio tags click topic markdown interval days time repeat id
+    now=$(date +%s)
+    for f in "$DIR"/*.json; do
+        [ -e "$f" ] || continue
+        next=$(jq -r .next "$f" 2>/dev/null) || continue
+        [ "$next" -le "$now" ] || continue
+
+        id=$(jq -r .id "$f") message=$(jq -r .message "$f") title=$(jq -r .title "$f")
+        prio=$(jq -r .priority "$f") tags=$(jq -r .tags "$f") click=$(jq -r .click "$f")
+        topic=$(jq -r .topic "$f") interval=$(jq -r .interval "$f") days=$(jq -r .days "$f")
+        time=$(jq -r .time "$f") repeat=$(jq -r .repeat "$f")
+        markdown=$(jq -r 'if .markdown then "-m" else "" end' "$f")
+
+        [ $((now - next)) -lt "$LATE_AFTER" ] ||
+            message="$message"$'\n'"(due $(fmt "$next" '+%a %H:%M'), sent late)"
+        [ -z "$repeat" ] ||
+            message="$message"$'\n'"($repeat · ntfy remind rm $id)"
+
+        # A failed send leaves the reminder due, so the next tick retries it.
+        "$AGENT" -T "$title" -p "$prio" --tags "$tags" $markdown \
+            ${click:+-u "$click"} ${topic:+-t "$topic"} "$message" || continue
+
+        if [ "$interval" -gt 0 ]; then
+            next=$((next + ((now - next) / interval + 1) * interval))
+        elif [ -n "$days" ]; then
+            next=$(next_on_days "$now" "$days" "$time")
+        else
+            rm -f "$f"
+            continue
+        fi
+        jq --argjson next "$next" '.next = $next' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+    done
+}
+
+cron_line() { printf '* * * * * "%s" tick >>"%s/tick.log" 2>&1 %s' "$SELF" "$DIR" "$CRON_TAG"; }
+
+plist() {
+    cat <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>$LABEL</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>$SELF</string>
+        <string>tick</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>60</integer>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>$DIR/tick.log</string>
+</dict>
+</plist>
+EOF
+}
+
+installed() {
+    if [ "$(uname)" = Darwin ]; then
+        [ -f "$PLIST" ] && [ "$(cat "$PLIST")" = "$(plist)" ] &&
+            launchctl print "gui/$(id -u)/$LABEL" >/dev/null 2>&1
+    else
+        crontab -l 2>/dev/null | grep -qxF "$(cron_line)"
+    fi
+}
+
+cmd_install() {
+    if [ "${1:-}" = --check ]; then installed; return; fi
+    installed && { echo 'ntfy-remind: tick already installed'; return; }
+    mkdir -p "$DIR"
+    if [ "$(uname)" = Darwin ]; then
+        # launchd rather than cron: it runs a tick missed during sleep on wake,
+        # and cron on macOS needs Full Disk Access to read much of $HOME.
+        mkdir -p "$(dirname "$PLIST")"
+        launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null || true
+        plist > "$PLIST"
+        launchctl bootstrap "gui/$(id -u)" "$PLIST"
+        echo "ntfy-remind: tick installed as launchd agent $LABEL"
+    else
+        command -v crontab >/dev/null 2>&1 || die 'crontab not found; install cron first'
+        { crontab -l 2>/dev/null | grep -vF "$CRON_TAG" || true; cron_line; echo; } | crontab -
+        echo 'ntfy-remind: tick installed in crontab'
+    fi
+}
+
+cmd_uninstall() {
+    if [ "$(uname)" = Darwin ]; then
+        launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null || true
+        rm -f "$PLIST"
+    else
+        { crontab -l 2>/dev/null | grep -vF "$CRON_TAG" || true; } | crontab -
+    fi
+    echo 'ntfy-remind: tick removed; reminders are kept'
+}
+
+CMD=${1:-}
+[ "$#" -gt 0 ] && shift
+case "$CMD" in
+    add|a) cmd_add "$@" ;;
+    list|ls|l) cmd_list "$@" ;;
+    rm|remove|del) cmd_rm "$@" ;;
+    tick) cmd_tick ;;
+    install) cmd_install "$@" ;;
+    uninstall) cmd_uninstall ;;
+    -h|--help|help) usage ;;
+    *) usage >&2; exit 1 ;;
+esac

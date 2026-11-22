@@ -163,3 +163,55 @@ run:
       fi
     fi
     exit $RC
+
+remind:
+  description: One-time and recurring reminders, sent from this machine when due (lists them with no subcommand)
+  aliases: [rem]
+  # A front for .local/bin/ntfy-remind, which does the work: the scheduled
+  # tick and the agent both call it by path, where this alias cannot reach.
+  cmd: exec "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-remind" list
+  children:
+    add:
+      description: "Schedule a reminder — ntfy remind add --in 20m 'take the laundry out'"
+      aliases: [a]
+      flags:
+        in:
+          description: 'Once, after a duration: 20m, 2h, 1h30m, 3d, 1w'
+        at:
+          description: "Once at HH:MM, 'tomorrow HH:MM' or 'YYYY-MM-DD HH:MM'; with --every, the time of day or first fire"
+        every:
+          description: 'Repeat: an interval (2h, 1d), or day, weekday, weekend, mon,wed,... (needs --at HH:MM)'
+      cmd: |
+        # The global flags are passed on only when given, so ntfy-remind's own
+        # defaults apply otherwise — in particular its topic, which is
+        # ntfy-agent's rather than the $NTFY_TOPIC/dev that `send` uses.
+        opts=()
+        [ -z "$WAND_FLAG_IN" ] || opts+=(--in "$WAND_FLAG_IN")
+        [ -z "$WAND_FLAG_AT" ] || opts+=(--at "$WAND_FLAG_AT")
+        [ -z "$WAND_FLAG_EVERY" ] || opts+=(--every "$WAND_FLAG_EVERY")
+        [ -z "$WAND_FLAG_TITLE" ] || opts+=(-T "$WAND_FLAG_TITLE")
+        [ -z "$WAND_FLAG_PRIORITY" ] || opts+=(-p "$WAND_FLAG_PRIORITY")
+        [ -z "$WAND_FLAG_TAGS" ] || opts+=(--tags "$WAND_FLAG_TAGS")
+        [ -z "$WAND_FLAG_CLICK" ] || opts+=(-u "$WAND_FLAG_CLICK")
+        [ -z "$WAND_FLAG_TOPIC" ] || opts+=(-t "$WAND_FLAG_TOPIC")
+        [ "$WAND_FLAG_MARKDOWN" != true ] || opts+=(-m)
+        exec "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-remind" add "${opts[@]}" -- "$@"
+    list:
+      description: List reminders, soonest first
+      aliases: [ls, l]
+      flags:
+        json:
+          type: bool
+          description: Print them as JSON
+      cmd: |
+        if [ "$WAND_FLAG_JSON" = true ]; then
+          exec "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-remind" list --json
+        fi
+        exec "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-remind" list
+    rm:
+      description: Delete reminders by id — ntfy remind rm <id>...
+      aliases: [remove, del]
+      cmd: exec "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-remind" rm "$@"
+    install:
+      description: Set up the per-minute tick on this machine (launchd / cron)
+      cmd: exec "${DOTFILES:-$HOME/.dotfiles}/.local/bin/ntfy-remind" install

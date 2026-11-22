@@ -69,6 +69,17 @@ install:
       command: '"$DOTFILES/.claude/project-skills/link.sh"'
       update_command: '"$DOTFILES/.claude/project-skills/link.sh"'
 
+  - name: ntfy-remind
+    type: shell
+    tags: config ntfy
+    # Run `ntfy-remind tick` every minute so scheduled reminders fire: a
+    # launchd agent on macOS, a crontab line on Linux.
+    check_installed: '"$DOTFILES/.local/bin/ntfy-remind" install --check'
+    check_has_update: '! "$DOTFILES/.local/bin/ntfy-remind" install --check'
+    opts:
+      command: '"$DOTFILES/.local/bin/ntfy-remind" install'
+      update_command: '"$DOTFILES/.local/bin/ntfy-remind" install'
+
   - name: osx-defaults
     type: shell
     tags: system
