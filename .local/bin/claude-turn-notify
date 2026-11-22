@@ -81,6 +81,25 @@ human() {
     fi
 }
 
+# The opening paragraph of the turn's final reply, as plain text. Replies lead
+# with the outcome, so that paragraph is the summary; the rest is detail that
+# does not fit on a lock screen. Markdown is stripped because the notification
+# is sent as plain text, where `**` and backticks show up literally. Done in jq
+# rather than sed/awk because truncating by bytes can split a UTF-8 character.
+summarize() {
+    jq -r '
+        (.last_assistant_message // "")
+        | gsub("\r"; "")
+        | gsub("(?m)^[ \t]*#+[^\n]*$"; "")
+        | [splits("\n[ \t]*\n")] | map(select(test("\\S"))) | first // ""
+        | gsub("\\[(?<t>[^\\]]*)\\]\\([^)]*\\)"; "\(.t)")
+        | gsub("\\*\\*|__|`"; "")
+        | gsub("\\s+"; " ")
+        | gsub("^ +| +$"; "") | sub("^([-*+]|[0-9]+\\.) "; "")
+        | if length > 240 then .[0:239] + "…" else . end
+    '
+}
+
 case "$MODE" in
     start)
         mkdir -p "$STATE_DIR"
@@ -105,8 +124,9 @@ case "$MODE" in
         # The directory, because the useful question on a phone is which project
         # wants attention, not which session id.
         WHERE=$(basename "$(pwd)")
+        SUMMARY=$(printf '%s' "$PAYLOAD" | summarize 2>/dev/null || true)
         "$AGENT" -T "finished after $(human "$ELAPSED")" \
-            "Claude finished a turn in $WHERE." || true
+            "[$WHERE]: ${SUMMARY:-Claude finished a turn.}" || true
         ;;
     *)
         usage
