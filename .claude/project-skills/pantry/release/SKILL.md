@@ -1,0 +1,198 @@
+---
+name: release
+description:
+  Ship a Pantry version everywhere in the right order — merge the server's release PR, then the
+  app's, check the app version has a published server release, then upload to Google Play (phone),
+  the App Store and the Mac App Store, and park the Wear OS upload until the phone build is live.
+  Picks up where a previous run stopped. This skill should be used when the user runs /release,
+  /release wear or /release status in pantry-flutter, or asks to release, ship or publish a Pantry
+  version to the stores.
+argument-hint: '[version] | wear | status'
+---
+
+# Pantry release
+
+The request: **$ARGUMENTS**
+
+A release runs in one order, and each step is checked before the next:
+
+1. The server (`chenasraf/nextcloud-pantry`) is released first. Merging its release PR publishes to
+   the Nextcloud App Store within minutes, so the merge is always confirmed first.
+2. The app version must match a published server release, or nothing reaches a store.
+3. The app (`chenasraf/pantry-flutter`) is released; CI builds the GitHub release assets, and
+   F-Droid, Linux and Windows go out from the tag on their own.
+4. Phone, iOS and macOS upload in one run.
+5. Wear OS uploads separately, after the user confirms the phone build is live. Uploading Wear with
+   the phone puts both in the same Play review, which holds the phone release up for days.
+
+Run everything from the pantry-flutter checkout. This skill's scripts are in `scripts/` next to this
+file; `$SKILL` below means this skill's directory.
+
+## Progress
+
+`.scratch/release/<version>.json`, managed by `$SKILL/scripts/progress.sh`:
+
+```bash
+"$SKILL/scripts/progress.sh" list                        # versions with a progress file, and their next step
+"$SKILL/scripts/progress.sh" <version> show
+"$SKILL/scripts/progress.sh" <version> next              # first step not done
+"$SKILL/scripts/progress.sh" <version> done <step> [note]
+"$SKILL/scripts/progress.sh" <version> fail <step> <note>
+```
+
+Steps, in order: `server-merged`, `server-released`, `parity`, `app-merged`, `app-released`,
+`notes`, `play`, `ios`, `macos`, `wear`. Record each step the moment it is done or fails, never
+in a batch at the end: a closed session resumes from this file.
+
+## Arguments
+
+- **`status`**: `progress.sh list`, then `show` for each version that isn't released. Nothing else.
+- **`wear`**: see [Wear](#wear).
+- **A version**: release that version.
+- **Nothing**: a version from `progress.sh list` whose next step isn't `wear` or `released` comes
+  first (ask when there are several). Otherwise, the open app release PR's version:
+  `gh pr list --repo chenasraf/pantry-flutter --state open --search 'head:release-please--' --json number,title`
+  — the title is `chore(master): release <version>`. Neither → print `progress.sh list` and what's
+  left (a version waiting on `/release wear` says so), and stop.
+
+Start at `progress.sh <version> next` and go down the steps from there.
+
+## Steps
+
+### server-merged
+
+- `gh release view v<version> --repo chenasraf/nextcloud-pantry` succeeds → record
+  `server-merged` and `server-released` done, go to `parity`.
+- Otherwise find the open server release PR titled `chore(master): release <version>`
+  (`gh pr list --repo chenasraf/nextcloud-pantry --state open --search 'head:release-please--' --json number,title,url`).
+  None, or one for another version → stop: the app waits for a server release of the same version.
+- `gh pr checks <n> --repo chenasraf/nextcloud-pantry`:
+  - `release-notes / check` failing → stop, and point at `/release-notes` in
+    `~/Dev/nextcloud-apps/pantry`.
+  - Any check pending → say which, and wait for it (poll as in [Waiting](#waiting)).
+  - Another check failing → show it and ask whether to go on.
+- Show the PR link and its `release-notes/<version>/appstore.md` (from the PR branch:
+  `gh api repos/chenasraf/nextcloud-pantry/contents/release-notes/<version>/appstore.md?ref=<branch> --jq .content | base64 -d`),
+  and ask "Merge the server release PR? It publishes to the Nextcloud App Store." with
+  AskUserQuestion. Only a yes merges: `gh pr merge <n> --repo chenasraf/nextcloud-pantry --squash`.
+  Record `server-merged` with the PR number.
+
+### server-released
+
+Wait for the `Release` workflow run on the merge commit
+(`gh run list --repo chenasraf/nextcloud-pantry --workflow release.yml --commit <sha> --event push`)
+to finish, then check that `gh release view v<version>` exists and the run's
+`Release to Nextcloud Apps` job succeeded (`gh run view <id> --json jobs`). A failed job → record
+`fail` with the job's URL and stop.
+
+### parity
+
+`gh release view v<version> --repo chenasraf/nextcloud-pantry --json tagName,isDraft` exists and
+isn't a draft. Missing → stop; never go on to the app without it. This is a version match only: no
+feature-gate analysis.
+
+### app-merged
+
+The same as `server-merged`, on `chenasraf/pantry-flutter`:
+
+- Tag `v<version>` already exists (`gh release view v<version> --repo chenasraf/pantry-flutter`)
+  → record done, go to `app-released`.
+- Open release PR for this version, `release-notes / check` green (red → `/release-notes` here),
+  other checks as above.
+- Show the PR link and the four store notes from the PR branch
+  (`release-notes/<version>/{play,wear,ios,macos}.txt`), ask "Merge the app release PR?", and only on
+  a yes `gh pr merge <n> --repo chenasraf/pantry-flutter --squash`.
+
+### app-released
+
+Wait for the `CI/CD` run (`release.yml`) on the merge commit to finish, then
+`"$SKILL/scripts/assets.sh" <version>`. Missing assets → show the failed jobs of the run and ask
+whether to rebuild them with
+`gh workflow run release.yml --repo chenasraf/pantry-flutter -f release_tag=v<version> -f targets=<platforms>`
+(the workflow's own vocabulary: android, wear, fdroid, macos, linux, windows) or to go on without.
+Record done once the assets are there or the user chose to go on (note which are missing).
+
+### Check out the tag
+
+The store lanes build from the working tree, so it has to be the tagged commit:
+
+- `git status --porcelain` must be empty (ignored files like `.scratch/` and signing keys don't
+  count). Otherwise stop and say what's uncommitted; never stash or discard it.
+- `git fetch --tags origin && git switch --detach v<version>`, then check `pubspec.yaml`'s version
+  is `<version>`.
+- When the run ends (done, failed or stopped), `git switch master`.
+
+### notes
+
+`.claude/skills/release-notes/scripts/check.sh "$PWD" <version>` — the same rules as
+`release-notes-check`, against the tagged tree. A failure → stop and point at `/release-notes`.
+
+### play, ios, macos
+
+Show the plan once and confirm it with AskUserQuestion:
+
+```
+Pantry <version> from tag v<version>:
+  1. Google Play phone, production   make android-deploy
+  2. App Store, submit for review    make ios-deploy DEST=appstore STATUS=completed
+  3. Mac App Store, submit for review make macos-deploy DEST=appstore STATUS=completed
+Wear OS waits for /release wear.
+```
+
+Leave out the steps already done. Then run them one at a time, in that order, each with
+`run_in_background: true` (a build takes many minutes) and its output through `tee`:
+
+```bash
+set -o pipefail; make android-deploy 2>&1 | tee .scratch/release/<version>-play.log
+```
+
+Wait for each to finish before starting the next. Success → `progress.sh done <step>`. Failure →
+read the log, `progress.sh fail <step> '<one-line cause>'`, stop the run, and report it.
+
+Re-running a step is safe: the iOS and macOS lanes skip a binary App Store Connect already has.
+Google Play instead rejects the upload with "Version code … has already been used": that means the
+phone build from the earlier run went through, so record `play` done with that note.
+
+Never use `make deploy-production`: it uploads Wear with the phone.
+
+### Park Wear
+
+Switch back to master, then send the reminder (see the `ntfy` skill):
+
+```bash
+"$HOME/.dotfiles/.local/bin/ntfy-agent" -T 'Pantry <version> Wear' --tags alarm_clock \
+  'Pantry <version>: confirm the phone build is live, then run /release wear'
+```
+
+End with what shipped, where, and what's left.
+
+## Wear
+
+`/release wear [version]`:
+
+1. The version: the one from `progress.sh list` whose next step is `wear` (ask when there are
+   several, or use the one given). `play` must be done; otherwise refuse and say which step is next.
+2. Ask one yes/no with AskUserQuestion: "Is Pantry <version> live on Google Play for phones?" Neither
+   the public listing nor the Play API shows review state, so the answer is the user's. No → stop
+   and record nothing.
+3. Check out the tag and run `notes` as above, then, in the background,
+   `set -o pipefail; make wear-deploy 2>&1 | tee .scratch/release/<version>-wear.log`. The
+   "Version code … has already been used" rule applies here too.
+4. Record `wear`, switch back to master, and send a done notification (`white_check_mark`).
+
+## Waiting
+
+For a PR check or a workflow run, poll in a background Bash command that sends the ntfy itself when
+it finishes or gives up, as the `ntfy` skill describes (30 s interval, capped at an hour for the
+server and two hours for the app's build run). Carry on with the next step when its notification
+arrives.
+
+## Rules
+
+- No merge without a yes for that PR in this run. Never `--admin`, never merge a PR with a red
+  `release-notes / check`.
+- Server before app, parity before any store, phone before Wear: never reorder or skip a step, even
+  when asked to "just upload".
+- Linux, Windows and F-Droid are built and published by CI and F-Droid from the tag; this skill only
+  checks their assets exist.
+- Never stash, reset or discard changes in either repo; a dirty tree stops the run.

@@ -11,3 +11,5 @@ pantry:
   release-notes:
     - ~/Dev/pantry-flutter
     - ~/Dev/nextcloud-apps/pantry
+  release:
+    - ~/Dev/pantry-flutter
