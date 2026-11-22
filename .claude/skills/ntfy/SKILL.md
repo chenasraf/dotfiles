@@ -3,8 +3,10 @@ name: ntfy
 description:
   Send the user a push notification through ntfy (it reaches their phone) when an event they name
   happens — the agent's own task finishing, a background agent or workflow reporting back, CI or a
-  deploy completing, a file or process changing, or a set time passing. This skill should be used
-  when the user runs /ntfy, or says "notify me", "ping me" or "let me know on my phone when …".
+  deploy completing, a file or process changing — and schedule one-time or recurring reminders
+  with ntfy-remind, listing and removing them too. This skill should be used when the user runs
+  /ntfy, says "notify me", "ping me" or "let me know on my phone when …", or asks to be reminded
+  of something, to see their reminders, or to cancel one.
 argument-hint: <what to notify about, and when>
 ---
 
@@ -84,9 +86,46 @@ printf '%s' "$msg" | "$HOME/.dotfiles/.local/bin/ntfy-agent" -T 'research done' 
   fi
   ```
 
-- **A time** ("in 20 minutes", "at 15:00") — compute the seconds until it, then run
-  `sleep <seconds> && ntfy-agent …` with `run_in_background: true`. This lives only as long as the
-  session; for anything that must survive the session closing, say so and offer `/schedule`.
+- **A time** ("in 20 minutes", "at 15:00", "every weekday at 9", "remind me to …") — schedule a
+  reminder with `ntfy-remind` (below). It fires from launchd / cron, so it survives the session
+  closing and needs nothing from the agent afterwards.
+
+## Reminders
+
+`ntfy-remind` stores one-time and recurring reminders on this machine and sends each through
+`ntfy-agent` when due. A per-minute tick (launchd on macOS, cron on Linux, set up by the
+`ntfy-remind` sofmani step) does the sending; a reminder missed while the machine slept fires on
+wake, marked late.
+
+```bash
+R="$HOME/.dotfiles/.local/bin/ntfy-remind"
+"$R" add --in 2h -T 'deploy' 'check the deploy finished cleanly'   # once, after a duration
+"$R" add --at 15:30 'join the standup'                             # once, next 15:30
+"$R" add --at 'tomorrow 09:00' 'renew the cert'                    # once, tomorrow
+"$R" add --at '2026-12-24 18:00' 'call the family'                 # once, exact date
+"$R" add --every weekday --at 09:00 'review open PRs'              # recurring, by day
+"$R" add --every 2h 'stretch'                                      # recurring, interval
+"$R" list            # id, next fire, repeat rule, title: message — soonest first
+"$R" list --json     # the same, for parsing
+"$R" rm 3f2a         # delete by id (several ids allowed)
+```
+
+- **When:** `--in` takes `20m`, `2h`, `1h30m`, `3d`, `1w`. `--at` takes `HH:MM`,
+  `'tomorrow HH:MM'` or `'YYYY-MM-DD HH:MM'`, in local time. `--every` takes an interval, or
+  `day`, `weekday`, `weekend` or a list like `mon,wed,fri` — day rules need `--at HH:MM`. With an
+  interval, `--at` / `--in` set the first fire instead of one interval from now.
+- **Content:** `-T`, `-p`, `--tags`, `-u`, `-t` as for `ntfy-agent`; the defaults are title
+  `reminder` and tag `alarm_clock`. The message is the remaining arguments, or stdin. Write it as
+  the instruction the user will act on, with the context they will have forgotten by then: "Check
+  the kamerie migration finished: `kubectl get jobs -n kamerie`", not "reminder".
+- **After adding**, tell the user the id and the time it prints, so they can remove it later.
+  Recurring reminders carry their own `ntfy remind rm <id>` line in every notification. When
+  pointing the user at commands to run themselves, give the wand form: `ntfy remind` (lists),
+  `ntfy remind add …`, `ntfy remind rm <id>` — same flags. The agent itself keeps calling `"$R"`,
+  since the `ntfy` alias is invisible to Bash tool calls.
+- **To remove** one the user names by content, `list` first and match it, then `rm` the id — do
+  not guess an id. Confirm before removing more than the one asked for.
+- If `add` warns the tick is not installed, run `"$R" install` (or `sofmani -f ntfy-remind`).
 
 ## Rules
 
