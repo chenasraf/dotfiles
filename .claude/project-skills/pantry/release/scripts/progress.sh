@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-STEPS=(server-merged server-released parity app-merged app-released notes play ios macos wear)
+STEPS=(server-merged server-released website parity app-merged app-released notes play ios macos wear)
 
 command -v jq >/dev/null || { echo "progress.sh: jq is required" >&2; exit 1; }
 

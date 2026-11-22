@@ -1,8 +1,8 @@
 ---
 name: release
 description:
-  Ship a Pantry version everywhere in the right order — merge the server's release PR, then the
-  app's, check the app version has a published server release, then upload to Google Play (phone),
+  Ship a Pantry version everywhere in the right order — merge the server's release PR and publish
+  the docs website, then merge the app's, check the app version has a published server release, then upload to Google Play (phone),
   the App Store and the Mac App Store, and park the Wear OS upload until the phone build is live.
   Picks up where a previous run stopped. This skill should be used when the user runs /release,
   /release wear or /release status in pantry-flutter, or asks to release, ship or publish a Pantry
@@ -18,11 +18,13 @@ A release runs in one order, and each step is checked before the next:
 
 1. The server (`chenasraf/nextcloud-pantry`) is released first. Merging its release PR publishes to
    the Nextcloud App Store within minutes, so the merge is always confirmed first.
-2. The app version must match a published server release, or nothing reaches a store.
-3. The app (`chenasraf/pantry-flutter`) is released; CI builds the GitHub release assets, and
+2. The docs website is published from the server's master, so the docs for what the web app just
+   shipped go live with it.
+3. The app version must match a published server release, or nothing reaches a store.
+4. The app (`chenasraf/pantry-flutter`) is released; CI builds the GitHub release assets, and
    F-Droid, Linux and Windows go out from the tag on their own.
-4. Phone, iOS and macOS upload in one run.
-5. Wear OS uploads separately, after the user confirms the phone build is live. Uploading Wear with
+5. Phone, iOS and macOS upload in one run.
+6. Wear OS uploads separately, after the user confirms the phone build is live. Uploading Wear with
    the phone puts both in the same Play review, which holds the phone release up for days.
 
 Run everything from the pantry-flutter checkout. This skill's scripts are in `scripts/` next to this
@@ -40,7 +42,7 @@ file; `$SKILL` below means this skill's directory.
 "$SKILL/scripts/progress.sh" <version> fail <step> <note>
 ```
 
-Steps, in order: `server-merged`, `server-released`, `parity`, `app-merged`, `app-released`,
+Steps, in order: `server-merged`, `server-released`, `website`, `parity`, `app-merged`, `app-released`,
 `notes`, `play`, `ios`, `macos`, `wear`. Record each step the moment it is done or fails, never
 in a batch at the end: a closed session resumes from this file.
 
@@ -62,7 +64,7 @@ Start at `progress.sh <version> next` and go down the steps from there.
 ### server-merged
 
 - `gh release view v<version> --repo chenasraf/nextcloud-pantry` succeeds → record
-  `server-merged` and `server-released` done, go to `parity`.
+  `server-merged` and `server-released` done, go to `website`.
 - Otherwise find the open server release PR titled `chore(master): release <version>`
   (`gh pr list --repo chenasraf/nextcloud-pantry --state open --search 'head:release-please--' --json number,title,url`).
   None, or one for another version → stop: the app waits for a server release of the same version.
@@ -84,6 +86,22 @@ Wait for the `Release` workflow run on the merge commit
 to finish, then check that `gh release view v<version>` exists and the run's
 `Release to Nextcloud Apps` job succeeded (`gh run view <id> --json jobs`). A failed job → record
 `fail` with the job's URL and stop.
+
+### website
+
+Publish the docs website, so the docs for what this server release shipped on the web go live with
+it. The website lives in the server repo and never deploys on a push, so docs merged since the last
+deploy are waiting for this. No confirmation needed: it only rebuilds the site from master.
+
+- `gh workflow run deploy-website.yml --repo chenasraf/nextcloud-pantry --ref master`, with no
+  `app_version`: the download links resolve to the latest published app release, which is still
+  the previous one. The app's own release dispatches the website again once its assets are up, so
+  the links move to the new version then.
+- Find the run it started
+  (`gh run list --repo chenasraf/nextcloud-pantry --workflow deploy-website.yml --event workflow_dispatch --limit 1 --json databaseId,status,createdAt`)
+  and wait for it (see [Waiting](#waiting), capped at 15 minutes).
+- Success → record `website` done with the run URL. Failure → record `fail` with the run URL, show
+  the failed job, and ask whether to go on to the app. A broken docs deploy doesn't block the app.
 
 ### parity
 
@@ -157,14 +175,21 @@ Never use `make deploy-production`: it uploads Wear with the phone.
 
 ### Park Wear
 
-Switch back to master, then send the reminder (see the `ntfy` skill):
+Switch back to master, then schedule two reminders with `ntfy-remind` (see the `ntfy` skill), one
+hour and two hours after the phone upload. Play review of a phone build usually takes that long,
+and the session is likely closed by then, so they fire from the machine on their own:
 
 ```bash
-"$HOME/.dotfiles/.local/bin/ntfy-agent" -T 'Pantry <version> Wear' --tags alarm_clock \
-  'Pantry <version>: confirm the phone build is live, then run /release wear'
+R="$HOME/.dotfiles/.local/bin/ntfy-remind"
+for when in 1h 2h; do
+  "$R" add --in "$when" -T 'Pantry <version> Wear' \
+    'Pantry <version>: check the phone build is live on Google Play, then run /release wear in pantry-flutter'
+done
 ```
 
-End with what shipped, where, and what's left.
+The title `Pantry <version> Wear` is how [Wear](#wear) finds them again, so keep it exact.
+
+End with what shipped, where, what's left, and the two reminder ids and times `add` printed.
 
 ## Wear
 
@@ -179,6 +204,9 @@ End with what shipped, where, and what's left.
    `set -o pipefail; make wear-deploy 2>&1 | tee .scratch/release/<version>-wear.log`. The
    "Version code … has already been used" rule applies here too.
 4. Record `wear`, switch back to master, and send a done notification (`white_check_mark`).
+5. Remove the Wear reminders that haven't fired yet, with `R` as in [Park Wear](#park-wear):
+   `"$R" list --json | jq -r '.[] | select(.title == "Pantry <version> Wear") | .id'`, then
+   `"$R" rm` those ids. None left is fine.
 
 ## Waiting
 
