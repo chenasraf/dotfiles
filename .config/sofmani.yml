@@ -537,7 +537,6 @@ install:
       '[ "$(fnm exec --using=lts-latest node --version 2>/dev/null)" != "$(fnm ls-remote --lts |
       tail -1 | cut -d" " -f1)" ]'
     confirm_install: true
-    confirm_update: true
     opts:
       command: fnm install --lts && fnm default lts-latest
       update_command: fnm install --lts && fnm default lts-latest
