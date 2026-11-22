@@ -78,12 +78,18 @@ does. Present tense, second person, no jargon (no API, sync, cache, endpoint, co
    fragments whose `platforms` reach it (through the `platforms:` map):
    - **Long text (limit ≥ 4000, Apple) and markdown (Nextcloud App Store)**: each headline as its
      own short paragraph; notable items as a list; minor items folded per area ("Shopping trips:
-     three smaller fixes."). Text destinations are plain text: no markdown syntax, `- ` for list
+     three smaller fixes."). Text destinations are plain text: no markdown syntax, `• ` for list
      items. Markdown destinations use paragraphs and lists only, never headings: `make appstore`
      adds the `## <version>` heading.
-   - **Short (limit 500, Play and Wear)**: at most 2–3 headlines, the notable items folded into one
-     "Also: …" line, the minor ones collapsed into "…and N smaller fixes", then the full-notes link
+   - **Short (limit 500, Play and Wear)**: at most 2–3 headlines — one is a sentence, more than one
+     a `• ` list, one line each — then the notable features as a
+     `More features:` list (`• ` items, a few words each), then one `Also: fixes for …` line: the
+     notable fixes named, the minor ones collapsed into "and N smaller ones". End with the full-notes link
      (config.yml `full-notes-url`). Rewrite until it fits; never cut mid-sentence.
+   - **Nothing for the watch**: when no fragment reaches `wear` and `packages/pantry_wear` changed
+     only in `pubspec.lock` since the tag, `wear.txt` still has to exist for the check: say that
+     nothing changes on the watch, sum up the phone's headlines in a sentence, and link the full
+     notes. Tell the owner the Wear upload can be skipped for this release (`/release` skips it).
    - Word each destination afresh: the fragments are the source, not a template to concatenate.
 5. **full.md**: every fragment of the release, in full, grouped as `## Highlights`, `## New`,
    `## Fixes`, then by area, with each item's platforms in parentheses when it isn't `all`. Then

@@ -157,6 +157,13 @@ Pantry <version> from tag v<version>:
 Wear OS waits for /release wear.
 ```
 
+When the release has nothing for the watch — every item in `release-notes/<version>/full.md` is
+marked with platforms that don't reach `wear` in `release-notes/config.yml`, and
+`git diff --name-only v<last>..v<version> -- packages/pantry_wear` lists only `pubspec.lock` — the
+plan's last line is `Wear OS: skipped, nothing changes on the watch.` instead. Once the user
+confirms the plan, record `progress.sh <version> done wear 'skipped: nothing for the watch'` and
+skip [Park Wear](#park-wear) entirely.
+
 Leave out the steps already done. Then run them one at a time, in that order, each with
 `run_in_background: true` (a build takes many minutes) and its output through `tee`:
 
@@ -220,7 +227,8 @@ arrives.
 - No merge without a yes for that PR in this run. Never `--admin`, never merge a PR with a red
   `release-notes / check`.
 - Server before app, parity before any store, phone before Wear: never reorder or skip a step, even
-  when asked to "just upload".
+  when asked to "just upload". The one exception is Wear in a release with nothing for the watch
+  (see [play, ios, macos](#play-ios-macos)).
 - Linux, Windows and F-Droid are built and published by CI and F-Droid from the tag; this skill only
   checks their assets exist.
 - Never stash, reset or discard changes in either repo; a dirty tree stops the run.
