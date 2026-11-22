@@ -89,15 +89,32 @@ does. Present tense, second person, no jargon (no API, sync, cache, endpoint, co
    `## Fixes`, then by area, with each item's platforms in parentheses when it isn't `all`. Then
    delete the fragments from `next/` (keep `next/.gitkeep`).
 6. **Check** with `scripts/check.sh <repo> <version>` (this skill's directory): the same rules as CI
-   — every destination file plus `full.md`, non-empty, within its limit, no `<!--`.
+   — every destination file plus `full.md`, non-empty, within its limit, no `<!--`, and no
+   fragments left in `next/`.
 7. **Onboarding.** List the fragments marked `onboarding: yes` or `maybe` against the rubric and the
    budget, and ask the owner which get a page. File each approved page as a card on the Deck board
    (see the repo's `.scratch/docs/agents/issue-tracker.md`); the pass doesn't write pages.
 8. **Show and commit.** Show every rendered file with its length, then commit to master as
-   `chore(release): add release notes for <version>` once the owner approves, and push when they
-   say so. The push updates the release PR and its check goes green; in the app, CI also copies
+   `chore(release): add release notes for <version>` (`update` on a re-run) once the owner
+   approves, and push when they say so. The push updates the release PR and its check goes green; in the app, CI also copies
    `play.txt` into F-Droid's changelog on the PR.
 9. **Paired repo.** If the paired repo has an open release PR too, offer to run the pass there.
+
+### Re-running for the same version
+
+Work that lands after the pass adds fragments to `next/`, and the `release-notes` check fails until
+they are in the notes. To re-run, keep `release-notes/<version>/` as the starting point:
+
+- `full.md` holds every fragment already rendered. Add the new fragments to it in their groups, then
+  delete them from `next/`.
+- Re-render every destination from the whole `full.md`, not only the new items: a new headline can
+  push an older one into "Also:", and the short notes still have to fit.
+- Keep the owner's own edits in the rendered files (`git log -p release-notes/<version>/` shows
+  them): reword around them rather than over them, and ask before dropping one.
+- Run the onboarding step for the new fragments only; earlier approvals stand.
+
+When the release PR's version changes (a breaking change bumps it further), `git mv` the folder to
+the new version before re-running.
 
 ## Onboarding rubric
 

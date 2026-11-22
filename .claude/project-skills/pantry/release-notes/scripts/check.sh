@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Local mirror of chenasraf/workflows' release-notes-check.yml: checks
-# release-notes/<version>/ in a repo against its release-notes/config.yml.
+# release-notes/<version>/ in a repo against its release-notes/config.yml, and
+# that release-notes/next/ holds no fragments left out of it.
 #
 #   check.sh <repo> [version]   version defaults to the one in config.yml's version file
 
@@ -50,6 +51,12 @@ check_file() {
     echo "ok   $path: ${#text} chars${limit:+ / $limit}"
   fi
 }
+
+for fragment in "$repo"/release-notes/next/*.md; do
+  [ -e "$fragment" ] || continue
+  echo "FAIL $fragment is not in the notes for $version yet"
+  failures=$((failures + 1))
+done
 
 check_file "$dir/full.md" ""
 while IFS= read -r dest; do
