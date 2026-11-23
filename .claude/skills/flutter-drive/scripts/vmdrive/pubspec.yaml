@@ -1,0 +1,6 @@
+name: vmdrive
+publish_to: none
+environment:
+  sdk: ^3.0.0
+dependencies:
+  vm_service: any

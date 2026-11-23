@@ -1,0 +1,185 @@
+#!/usr/bin/env zsh
+# fdrive — launch a Flutter desktop app and drive it without touching the
+# user's mouse or keyboard focus. See ../SKILL.md.
+#
+#   fdrive launch [--app NAME] [-- <flutter run args>]   start in its own tmux session
+#   fdrive attach --uri URI --app NAME [--log FILE]      drive an app run elsewhere
+#   fdrive shot [FILE]                                   screenshot the app window
+#   fdrive tap X Y | longpress X Y | drag X1 Y1 X2 Y2    coords from the last shot
+#        (add --logical before the numbers to pass Flutter logical px instead)
+#   fdrive type TEXT                                     set the focused text field
+#   fdrive reload | restart | stop                       hot reload / restart / quit
+#   fdrive log [N]                                       last N lines of the run log
+#   fdrive size | uri | state
+#   fdrive eval LIBRARY_URI EXPRESSION                   raw VM service evaluate
+#
+# State is per project directory (the cwd), so several apps can be driven at
+# once from different repos.
+set -euo pipefail
+
+SKILL_DIR=${0:A:h}
+CACHE=${XDG_CACHE_HOME:-$HOME/.cache}/flutter-drive
+BIN=$CACHE/bin
+PROJECT=${FDRIVE_PROJECT:-$PWD}
+SLUG=$(print -r -- "$PROJECT" | shasum | cut -c1-10)
+STATE_DIR=$CACHE/projects/${PROJECT:t}-$SLUG
+STATE=$STATE_DIR/state
+mkdir -p "$BIN" "$STATE_DIR"
+
+die() { print -u2 -- "fdrive: $*"; exit 1; }
+
+# -- tools ----------------------------------------------------------------
+
+build_tools() {
+  local src=$SKILL_DIR/winid.swift
+  if [[ ! -x $BIN/winid || $src -nt $BIN/winid ]]; then
+    swiftc -O "$src" -o "$BIN/winid" >/dev/null || die "could not build winid"
+  fi
+  src=$SKILL_DIR/vmdrive/bin/vmdrive.dart
+  if [[ ! -x $BIN/vmdrive || $src -nt $BIN/vmdrive ]]; then
+    # Built from a copy: pub writes .dart_tool and a lockfile next to the
+    # pubspec, which do not belong in the dotfiles.
+    local work=$CACHE/vmdrive-src
+    rm -rf "$work" && mkdir -p "$work"
+    cp -R "$SKILL_DIR/vmdrive/." "$work/"
+    (cd "$work" && dart pub get >/dev/null && dart compile exe bin/vmdrive.dart -o "$BIN/vmdrive" >/dev/null) \
+      || die "could not build vmdrive"
+  fi
+}
+
+# -- state ----------------------------------------------------------------
+
+typeset -A S
+load_state() { [[ -f $STATE ]] && while IFS='=' read -r k v; do S[$k]=$v; done < "$STATE"; return 0; }
+save_state() { : > "$STATE"; for k v in "${(@kv)S}"; do print -r -- "$k=$v" >> "$STATE"; done; }
+
+vm_uri() {
+  if [[ -n ${S[log]:-} && -f ${S[log]} ]]; then
+    # A hot restart keeps the URI, but a relaunch writes a new one.
+    local u=$(grep -o 'http://127\.0\.0\.1:[0-9]*/[^ ]*/' "${S[log]}" | grep -v devtools | tail -1 || true)
+    [[ -n $u ]] && { print -r -- "$u"; return; }
+  fi
+  [[ -n ${S[uri]:-} ]] && { print -r -- "${S[uri]}"; return; }
+  die "no VM service URI — run 'fdrive launch' or 'fdrive attach' first"
+}
+
+vmdrive() { "$BIN/vmdrive" "$(vm_uri)" "$@"; }
+
+# Pane commands go to the pane id (%N) recorded at launch. A bare
+# `-t name` is resolved against window names in *other* sessions too, which
+# can type into an unrelated program.
+pane() { [[ -n ${S[pane]:-} ]] || die "app was not started by 'fdrive launch'"; print -r -- "${S[pane]}"; }
+
+window() {
+  local line=$("$BIN/winid" "${S[app]:?no app name — pass --app}" | head -1)
+  [[ -n $line ]] || die "no on-screen window owned by an app named '${S[app]}*'"
+  print -r -- "$line"
+}
+
+app_name_guess() {
+  local cfg=$PROJECT/macos/Runner/Configs/AppInfo.xcconfig
+  [[ -f $cfg ]] && sed -n 's/^PRODUCT_NAME *= *//p' "$cfg" | head -1
+}
+
+# Coordinates in the last screenshot -> Flutter logical px.
+to_logical() {
+  local scale=${S[scale]:-1}
+  if [[ ${1:-} == --logical ]]; then shift; print -r -- "$@"; return; fi
+  local out=()
+  for v in "$@"; do out+=$(( v * scale )); done
+  print -r -- "${out[@]}"
+}
+
+# -- commands -------------------------------------------------------------
+
+build_tools
+load_state
+cmd=${1:-state}; shift || true
+
+case $cmd in
+  launch)
+    local app="" ; local -a run_args
+    while (( $# )); do
+      case $1 in
+        --app) app=$2; shift 2 ;;
+        --) shift; run_args=("$@"); break ;;
+        *) run_args+=("$1"); shift ;;
+      esac
+    done
+    (( ${#run_args} )) || run_args=(-d macos)
+    [[ -n $app ]] || app=$(app_name_guess)
+    [[ -n $app ]] || die "could not tell the app's window name — pass --app NAME"
+    local session=fdrive-${PROJECT:t}
+    local log=$STATE_DIR/run.log
+    # `=` makes the match exact, so only this tool's own session can go.
+    tmux kill-session -t "=$session" 2>/dev/null || true
+    : > "$log"
+    local cmdline="cd ${(q)PROJECT} && flutter run ${(j: :)${(@q)run_args}} 2>&1 | tee ${(q)log}"
+    local pane_id=$(tmux new-session -d -P -F '#{pane_id}' -s "$session" -x 220 -y 50 "$cmdline")
+    S=(app "$app" log "$log" pane "$pane_id" session "$session" scale 1)
+    save_state
+    print "launching in tmux session $session (pane $pane_id), log: $log"
+    for i in {1..600}; do
+      grep -q 'Flutter run key commands' "$log" 2>/dev/null && { print "ready"; exit 0; }
+      if ! tmux has-session -t "=$session" 2>/dev/null; then
+        tail -n 30 "$log"; die "flutter run exited"
+      fi
+      sleep 1
+    done
+    die "app did not come up in 10 minutes — see $log"
+    ;;
+  attach)
+    local uri="" app="" log=""
+    while (( $# )); do
+      case $1 in
+        --uri) uri=$2; shift 2 ;; --app) app=$2; shift 2 ;; --log) log=$2; shift 2 ;;
+        *) die "unknown option $1" ;;
+      esac
+    done
+    [[ -n $uri || -n $log ]] || die "attach needs --uri or --log"
+    S=(app "${app:-$(app_name_guess)}" uri "$uri" log "$log" scale 1)
+    save_state
+    vmdrive size
+    ;;
+  shot)
+    local out=${1:-$STATE_DIR/shot.png}
+    local id x y w h; read -r id x y w h <<< "$(window)"
+    screencapture -x -o -l "$id" "$out"
+    local logical_w=$(vmdrive size | sed -E 's/Size\(([0-9.]+), .*/\1/')
+    # Kept at most 1400 px wide so an image viewer shows it unscaled and the
+    # pixel you read off it is the pixel you tap.
+    sips -Z 1400 "$out" >/dev/null
+    local img_w=$(sips -g pixelWidth "$out" | awk '/pixelWidth/ {print $2}')
+    S[scale]=$(( logical_w / ${img_w}.0 ))
+    save_state
+    print -r -- "$out (${img_w}px wide, 1px = ${S[scale]} logical px)"
+    ;;
+  tap|longpress)
+    (( $# >= 2 )) || die "$cmd X Y"
+    vmdrive "$cmd" ${=$(to_logical "$@")}
+    ;;
+  drag)
+    (( $# >= 4 )) || die "drag X1 Y1 X2 Y2"
+    vmdrive drag ${=$(to_logical "$@")}
+    ;;
+  type) vmdrive type "$*" ;;
+  size) vmdrive size ;;
+  eval) vmdrive eval "$1" "$2" ;;
+  reload|restart|stop)
+    local key; case $cmd in reload) key=r ;; restart) key=R ;; stop) key=q ;; esac
+    local p=$(pane)
+    local before=$(wc -l < "${S[log]}")
+    tmux send-keys -t "$p" "$key"
+    [[ $cmd == stop ]] && exit 0
+    local want; [[ $cmd == reload ]] && want='Reloaded' || want='Restarted application'
+    for i in {1..60}; do
+      tail -n +$(( before + 1 )) "${S[log]}" | grep -m1 -E "$want|Error|error:" && exit 0
+      sleep 0.5
+    done
+    die "no '$want' in the log after 30s"
+    ;;
+  log) tail -n "${1:-40}" "${S[log]:?no log}" ;;
+  uri) vm_uri ;;
+  state) cat "$STATE" 2>/dev/null || print "no state for $PROJECT" ;;
+  *) die "unknown command $cmd" ;;
+esac
