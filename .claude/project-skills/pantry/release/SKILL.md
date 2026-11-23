@@ -76,7 +76,7 @@ Start at `progress.sh <version> next` and go down the steps from there.
 - Show the PR link and its `release-notes/<version>/appstore.md` (from the PR branch:
   `gh api repos/chenasraf/nextcloud-pantry/contents/release-notes/<version>/appstore.md?ref=<branch> --jq .content | base64 -d`),
   and ask "Merge the server release PR? It publishes to the Nextcloud App Store." with
-  AskUserQuestion. Only a yes merges: `gh pr merge <n> --repo chenasraf/nextcloud-pantry --squash`.
+  AskUserQuestion. Only a yes merges: `gh pr merge <n> --repo chenasraf/nextcloud-pantry --rebase`.
   Record `server-merged` with the PR number.
 
 ### server-released
@@ -119,7 +119,7 @@ The same as `server-merged`, on `chenasraf/pantry-flutter`:
   other checks as above.
 - Show the PR link and the four store notes from the PR branch
   (`release-notes/<version>/{play,wear,ios,macos}.txt`), ask "Merge the app release PR?", and only on
-  a yes `gh pr merge <n> --repo chenasraf/pantry-flutter --squash`.
+  a yes `gh pr merge <n> --repo chenasraf/pantry-flutter --rebase`.
 
 ### app-released
 
@@ -226,6 +226,11 @@ arrives.
 
 - No merge without a yes for that PR in this run. Never `--admin`, never merge a PR with a red
   `release-notes / check`.
+- Release PRs merge with `--rebase`, never `--squash`.
+- A red `release-notes / check` whose notes are already on master ran before they landed:
+  release-please doesn't push its branch for a `chore` commit, and re-running the job reuses the
+  old merge commit. Wait until the PR's `merge_commit_sha` (`gh api repos/<repo>/pulls/<n>`) sits
+  on the current master, then close and reopen the PR to start a fresh run.
 - Server before app, parity before any store, phone before Wear: never reorder or skip a step, even
   when asked to "just upload". The one exception is Wear in a release with nothing for the watch
   (see [play, ios, macos](#play-ios-macos)).

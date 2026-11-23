@@ -35,7 +35,10 @@ check_file() {
     failures=$((failures + 1))
     return
   fi
+  # Trimmed at both ends, as the store lanes send it.
   text=$(cat "$path")
+  text="${text#"${text%%[![:space:]]*}"}"
+  text="${text%"${text##*[![:space:]]}"}"
   local note=""
   if [ -z "${text//[[:space:]]/}" ]; then
     note=" — empty"
