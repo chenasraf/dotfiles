@@ -94,7 +94,7 @@ if [ -d "$HOME/.local/share/fnm" ]; then
   export PATH="$FNM_PATH:$PATH"
 fi
 if [[ -f $(which fnm) ]]; then
-  eval "`fnm env`"
+  eval "`fnm env --use-on-cd`"
   # Only set the default alias once. Running this on every startup races when
   # tmux restores multiple panes at once (each fnm fights over the same
   # aliases/default symlink -> "File exists (os error 17)").
