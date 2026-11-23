@@ -622,8 +622,8 @@ install:
   # Browser automation for Claude.
   - name: agent-browser
     type: group
-    machines:
-      only: ['m1']
+    platforms:
+      only: ['macos']
     steps:
       # The formula ships the CLI only; `install` fetches the Chrome for Testing
       # build it drives.
