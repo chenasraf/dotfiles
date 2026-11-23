@@ -269,3 +269,4 @@ alias ccr="cc --resume"
 alias ccc="cc --continue"
 alias ccw="cc --worktree"
 alias tmpv="vi \$(mktemp)"
+alias spider-ip='launchctl kickstart "gui/$(id -u)/dev.casraf.home-ip"'
