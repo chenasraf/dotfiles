@@ -80,7 +80,8 @@ does. Present tense, second person, no jargon (no API, sync, cache, endpoint, co
      own short paragraph; notable items as a list; minor items folded per area ("Shopping trips:
      three smaller fixes."). Text destinations are plain text: no markdown syntax, `• ` for list
      items. Markdown destinations use paragraphs and lists only, never headings: `make appstore`
-     adds the `## <version>` heading.
+     adds the `## <version>` heading. Every destination keeps each paragraph and list item on one
+     line, never hard-wrapped: the server's What's new dialog shows every newline as a line break.
    - **Short (limit 500, Play and Wear)**: at most 2–3 headlines — one is a sentence, more than one
      a `• ` list, one line each — then the notable features as a
      `More features:` list (`• ` items, a few words each), then one `Also: fixes for …` line: the
